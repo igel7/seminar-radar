@@ -1,0 +1,41 @@
+name: daily-update
+
+on:
+  schedule:
+    # 毎日 04:30 UTC = ドイツ夏時間 06:30 / 冬時間 05:30 / 日本時間 13:30
+    - cron: "30 4 * * *"
+  workflow_dispatch: {}   # Actionsタブから手動実行も可能
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pyyaml
+
+      - name: Run update
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/update_api.py
+
+      - name: Commit & push
+        run: |
+          git config user.name  "seminar-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "daily update $(date -u +%F)"
+          git push

@@ -1,0 +1,82 @@
+# ============================================================
+# セミナー・レーダー 設定ファイル
+# 巡回先の追加・削除はこのファイルを編集するだけでよい
+# ============================================================
+
+settings:
+  # ページ抽出に使うモデル(安価なモデルで十分)
+  extraction_model: "claude-haiku-4-5"
+  # ネット検索による新規発見に使うモデル
+  discovery_model: "claude-sonnet-4-6"
+  # 1ページから抽出するテキストの最大文字数
+  max_page_chars: 30000
+  # discovery(ネット検索)での最大検索回数/日
+  max_searches_per_day: 8
+  # 何日前より古い終了イベントをアーカイブに落とすか
+  archive_after_days: 30
+
+# ------------------------------------------------------------
+# 定点観測リスト
+# verified: このURLは2026-07-13時点で実在確認済みか
+# ------------------------------------------------------------
+sources:
+  - name: "ECB – Conferences & seminars"
+    url: "https://www.ecb.europa.eu/press/conferences/html/index.en.html"
+    verified: true
+
+  - name: "Bundesbank – Termine"
+    url: "https://www.bundesbank.de/de/service/termine"
+    verified: true
+
+  - name: "Bundesbank – Forschungskonferenzen"
+    url: "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656"
+    verified: true
+
+  - name: "Bundesbank – Forum Bundesbank (Hauptverwaltungen)"
+    url: "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen"
+    verified: true
+
+  - name: "ifo Institut – Veranstaltungen"
+    url: "https://www.ifo.de/veranstaltungen"
+    verified: true
+
+  - name: "DIW Berlin – Veranstaltungen"
+    url: "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"
+    verified: true
+
+  - name: "IfW Kiel – Veranstaltungen"
+    url: "https://www.ifw-kiel.de/de/institut/veranstaltungen/"
+    verified: false   # 親ページURLは推定(下層ページは確認済み)。初回実行のステータス欄で確認のこと
+
+  - name: "RWI Essen – Veranstaltungen"
+    url: "https://www.rwi-essen.de/veranstaltungen"
+    verified: false
+
+  - name: "SAFE Frankfurt – Events"
+    url: "https://safe-frankfurt.de/news-latest/events.html"
+    verified: true
+
+  - name: "IMFS Frankfurt – 全ての今後のイベント"
+    url: "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen"
+    verified: true
+
+  - name: "House of Finance (Goethe大) – Veranstaltungen"
+    url: "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen"
+    verified: true
+
+  - name: "SUERF – Events"
+    url: "https://www.suerf.org/events/"
+    verified: false
+
+  - name: "ZEW Mannheim – Veranstaltungen"
+    url: "https://www.zew.de/veranstaltungen"
+    verified: false
+
+# ------------------------------------------------------------
+# ネット検索による新規発見(定点リスト外の拾い漏れ対策)
+# 毎日この観点で web 検索を行い、新規イベントを追加する
+# ------------------------------------------------------------
+discovery_topics:
+  - "中央銀行・金融政策に関する会議やセミナー(ドイツ国内またはオンライン)。例: monetary policy conference Frankfurt, Geldpolitik Konferenz"
+  - "ドイツ実体経済に関するセミナー。特にエネルギー価格・オイルショック、防衛支出拡大、インフラ投資(Sondervermögen)関連。例: defence industry conference Germany, Energiepreise Konferenz, Infrastruktur Investitionen Veranstaltung"
+  - "金融規制・金融市場に関する会議。例: banking regulation conference Frankfurt, financial stability conference Germany, Bankenaufsicht Symposium"
