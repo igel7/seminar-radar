@@ -1,1 +1,16 @@
-[]
+[
+  {"name": "ECB – Conferences & seminars", "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "ok": true, "found": 6},
+  {"name": "Bundesbank – Termine", "url": "https://www.bundesbank.de/de/service/termine", "ok": true, "found": 4},
+  {"name": "Bundesbank – Forschungskonferenzen", "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656", "ok": true, "found": 2},
+  {"name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen", "ok": true, "found": 2},
+  {"name": "ifo Institut – Veranstaltungen", "url": "https://www.ifo.de/veranstaltungen", "ok": true, "found": 0},
+  {"name": "DIW Berlin – Veranstaltungen", "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html", "ok": true, "found": 0},
+  {"name": "IfW Kiel – Veranstaltungen", "url": "https://www.ifw-kiel.de/de/institut/veranstaltungen/", "ok": true, "found": 4, "error": "URLは www.kielinstitut.de へ301リダイレクト。リダイレクト先から取得成功。sources.yamlの更新を推奨。"},
+  {"name": "RWI Essen – Veranstaltungen", "url": "https://www.rwi-essen.de/veranstaltungen", "ok": true, "found": 0, "error": "WebFetchが503。curlで取得成功したが、当該ページは案内(ランディング)のみで日付付きイベントの掲載なし。"},
+  {"name": "SAFE Frankfurt – Events", "url": "https://safe-frankfurt.de/news-latest/events.html", "ok": true, "found": 7},
+  {"name": "IMFS Frankfurt – 全ての今後のイベント", "url": "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen", "ok": true, "found": 0, "error": "一覧ページのイベント明細がJS描画のため取得できず。日付確定分なし。"},
+  {"name": "House of Finance (Goethe大) – Veranstaltungen", "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen", "ok": true, "found": 1},
+  {"name": "SUERF – Events", "url": "https://www.suerf.org/events/", "ok": true, "found": 3, "error": "WebFetchが403。curlで取得成功。"},
+  {"name": "ZEW Mannheim – Veranstaltungen", "url": "https://www.zew.de/veranstaltungen", "ok": true, "found": 0},
+  {"name": "web検索(discovery)", "url": "", "ok": true, "found": 0, "error": "英独8クエリを実施。予算・景気予測資料が中心で、開催日・場所を確定できる定点リスト外の新規イベントはなし。"}
+]
