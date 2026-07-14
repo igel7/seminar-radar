@@ -37,9 +37,9 @@ python3 scripts/ingest.py
 `docs/index.html` が更新されたことを確認する。
 
 ### 6. コミットとプッシュ
-変更された `data/` と `docs/` をコミットし、**mainブランチに直接プッシュ**する。
+変更された `data/` と `docs/` をコミットし、実行環境が指定するブランチ(`claude/...`)にプッシュする。
 コミットメッセージ: `daily update YYYY-MM-DD`
-プルリクエストは作らない。ブランチも切らない。
+プルリクエストは作らない。mainへの反映はGitHub Actionsの自動マージが行うので、mainに直接プッシュできなくてよい。
 
 ## イベントのスキーマ
 
