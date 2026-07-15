@@ -5,6 +5,7 @@ on:
       - 'claude/**'
 permissions:
   contents: write
+  issues: write
 concurrency:
   group: automerge
   cancel-in-progress: false
@@ -16,12 +17,60 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Merge routine branch into main
+      # data/ と docs/ だけの変更(日次Routine)か、コードを含む変更かを判別する
+      - name: Classify changes
+        id: classify
+        run: |
+          git fetch origin "${GITHUB_REF_NAME}"
+          CHANGED=$(git diff --name-only "origin/main...origin/${GITHUB_REF_NAME}")
+          echo "changed files:"
+          echo "$CHANGED"
+          CODE=$(printf '%s\n' "$CHANGED" | grep -vE '^(data|docs)/' | grep -v '^$' || true)
+          if [ -n "$CODE" ]; then
+            echo "mode=code" >> "$GITHUB_OUTPUT"
+            {
+              echo "files<<FILES_EOF"
+              echo "$CODE"
+              echo "FILES_EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=data" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Git identity
         run: |
           git config user.name  "seminar-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git merge --no-edit -X theirs "origin/${GITHUB_REF_NAME}"
+      # セキュリティ: 日次Routineは信頼できない外部ページを読むエージェントのため、
+      # pushされた docs/ は信用せず、data/ のみ取り込んで docs/ は main 側の
+      # scripts/ で再生成する(改ざんHTMLの公開を防ぐ)
+      - name: Data update — take data/ only and regenerate docs/
+        if: steps.classify.outputs.mode == 'data'
+        run: |
+          git checkout "origin/${GITHUB_REF_NAME}" -- data/
+          python3 scripts/ingest.py
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "daily update (from ${GITHUB_REF_NAME})"
           git push origin main
+      # コード変更も自動マージする(手動マージなしの運用方針)。ただし直後に
+      # 通知Issueを立て、身に覚えのないマージに気づけるようにする(検知型の防御)
+      - name: Code change — merge and regenerate docs/
+        if: steps.classify.outputs.mode == 'code'
+        run: |
+          git merge --no-edit -X theirs "origin/${GITHUB_REF_NAME}"
+          python3 scripts/ingest.py
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "regenerate docs/ after code merge"
+          git push origin main
+      - name: Notify code merge via issue
+        if: steps.classify.outputs.mode == 'code'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILES: ${{ steps.classify.outputs.files }}
+        run: |
+          BODY=$(printf 'ブランチ `%s` のコード変更を自動マージしました。\n\n変更されたファイル:\n```\n%s\n```\n\n自分の指示に心当たりのある変更なら、このIssueを閉じるだけでOKです。\n心当たりがない場合は改ざんの可能性があるため、直ちに main の履歴を確認して revert してください。' "${GITHUB_REF_NAME}" "${FILES}")
+          gh issue create --repo "${GITHUB_REPOSITORY}" \
+            --title "コード変更を自動マージ: ${GITHUB_REF_NAME}" \
+            --body "${BODY}" || true
       - name: Delete routine branch
         run: git push origin --delete "${GITHUB_REF_NAME}" || true
       - name: Request Pages rebuild
