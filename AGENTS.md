@@ -62,6 +62,10 @@ python3 scripts/ingest.py
 | `registration_note` | 申込に関する短い日本語メモ(例「要事前登録・無料」)。不明なら `null` |
 | `url` | イベント詳細ページのURL(なければ掲載元ページのURL) |
 | `summary_ja` | 内容の日本語要約(1〜2文) |
+| `language` | 開催言語。`"en"` / `"de"` / `"en+de"`。不明なら `null` |
+| `country` | 開催国のISO 3166-1 alpha-2コード(例 `"DE"`, `"AT"`)。オンラインのみ開催なら `null` |
+| `organizer_short` | 主催者の一般的な略称(例 `"ECB"`, `"Bundesbank"`, `"IfW Kiel"`, `"SAFE"`)。定着した略称がなければ組織名の短い形 |
+| `title_short` | カレンダーセル表示用の短い英語テーマ(40字以内目安)。原題から年号・回数・シリーズ名などの冠飾を落とした中核テーマ(例 "ECB Annual Research Conference 2026 – Geoeconomics and the International Trading System" → "Geoeconomics and Int'l Trading System") |
 | `source` | 情報源の名前(sources.yamlの`name`、または`"web検索(discovery)"`) |
 
 ## 抽出ルール
@@ -74,6 +78,7 @@ python3 scripts/ingest.py
   教員研修、採用イベント、開催日未定のCall for Papers。
 - 日付が読み取れないイベントは含めない。**推測で日付を作らない。**
 - ページに書かれていない情報は `null` / `"unknown"` とする。**捏造しない。**
+- 開催言語はページの記載・告知文の言語から判断する。推測が難しければ `null`。
 
 ## 禁止事項
 

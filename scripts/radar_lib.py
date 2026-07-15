@@ -64,6 +64,21 @@ def sanitize(ev):
         ev["fee"] = "unknown"
     if ev.get("format") not in ("onsite", "online", "hybrid"):
         ev["format"] = None
+    lang = ev.get("language")
+    if isinstance(lang, str) and lang.lower() in ("de+en",):
+        lang = "en+de"
+    if lang not in ("en", "de", "en+de"):
+        lang = None
+    ev["language"] = lang
+    country = ev.get("country")
+    if isinstance(country, str):
+        country = country.upper()
+    if not (isinstance(country, str) and re.fullmatch(r"[A-Z]{2}", country)):
+        country = None
+    ev["country"] = country
+    for key in ("organizer_short", "title_short"):
+        val = ev.get(key)
+        ev[key] = val if isinstance(val, str) and val else None
     end = ev.get("date_end") or ev.get("date_start")
     if date.fromisoformat(end) < TODAY - timedelta(days=1):
         return None
