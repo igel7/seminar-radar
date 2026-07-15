@@ -26,6 +26,14 @@ TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
 THEMES = ["central_bank", "real_economy", "fin_markets"]
 
+_URL_RE = re.compile(r"^https?://", re.IGNORECASE)
+
+
+def safe_url(u):
+    """http(s)以外のスキーム(javascript:等)のURLを除去する。"""
+    u = str(u or "").strip()
+    return u if _URL_RE.match(u) else None
+
 
 # ----------------------------------------------------------------------
 # 正規化・検証・マージ
@@ -79,6 +87,7 @@ def sanitize(ev):
     for key in ("organizer_short", "title_short"):
         val = ev.get(key)
         ev[key] = val if isinstance(val, str) and val else None
+    ev["url"] = safe_url(ev.get("url"))
     end = ev.get("date_end") or ev.get("date_start")
     if date.fromisoformat(end) < TODAY - timedelta(days=1):
         return None
@@ -128,15 +137,46 @@ def split_archive(events, archive_days=30):
 # ----------------------------------------------------------------------
 # 出力生成
 # ----------------------------------------------------------------------
+def script_json(obj):
+    """<script>内に埋め込むJSON。"<"を全てエスケープし、"</script>"や"<!--"による
+    タグ脱出・パーサ状態操作を防ぐ(U+2028/2029は旧ブラウザのJS構文対策)。"""
+    return (json.dumps(obj, ensure_ascii=False)
+            .replace("<", "\\u003c")
+            .replace(" ", "\\u2028")
+            .replace(" ", "\\u2029"))
+
+
+def sanitize_statuses(statuses):
+    """status.json はLLMが直接書くため、描画前に型とURLスキームを強制する。"""
+    out = []
+    for s in statuses if isinstance(statuses, list) else []:
+        if not isinstance(s, dict):
+            continue
+        found = s.get("found")
+        out.append({
+            "name": str(s.get("name") or ""),
+            "url": safe_url(s.get("url")) or "",
+            "ok": bool(s.get("ok")),
+            "found": found if isinstance(found, int) and not isinstance(found, bool) else 0,
+            "error": str(s.get("error"))[:300] if s.get("error") is not None else None,
+        })
+    return out
+
+
 def render_html(events, statuses):
     template = TEMPLATE_FILE.read_text(encoding="utf-8")
-    events_sorted = sorted(events, key=lambda e: (e["date_start"], e.get("title") or ""))
+    events_sorted = [dict(e, url=safe_url(e.get("url"))) for e in
+                     sorted(events, key=lambda e: (e["date_start"], e.get("title") or ""))]
     updated = datetime.now(TZ).strftime("%Y-%m-%d %H:%M (%Z)")
-    html = (template
-            .replace("__EVENTS_JSON__", json.dumps(events_sorted, ensure_ascii=False))
-            .replace("__STATUS_JSON__", json.dumps(statuses, ensure_ascii=False))
-            .replace("__UPDATED__", updated)
-            .replace("__TODAY__", TODAY.isoformat()))
+    # 置換はシングルパスで行う(データ内にプレースホルダ文字列を仕込む注入への対策)
+    mapping = {
+        "__EVENTS_JSON__": script_json(events_sorted),
+        "__STATUS_JSON__": script_json(sanitize_statuses(statuses)),
+        "__UPDATED__": updated,
+        "__TODAY__": TODAY.isoformat(),
+    }
+    pattern = re.compile("|".join(map(re.escape, mapping)))
+    html = pattern.sub(lambda m: mapping[m.group(0)], template)
     HTML_FILE.write_text(html, encoding="utf-8")
 
 

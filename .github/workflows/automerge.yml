@@ -16,11 +16,29 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Merge routine branch into main
+      # セキュリティ: 日次Routineは信頼できない外部ページを読むエージェントのため、
+      # data/ と docs/ 以外の変更(コード・ワークフロー等)は自動反映しない
+      - name: Verify only data/ and docs/ changed
+        run: |
+          git fetch origin "${GITHUB_REF_NAME}"
+          CHANGED=$(git diff --name-only "origin/main...origin/${GITHUB_REF_NAME}")
+          echo "changed files:"
+          echo "$CHANGED"
+          BAD=$(printf '%s\n' "$CHANGED" | grep -vE '^(data|docs)/' | grep -v '^$' || true)
+          if [ -n "$BAD" ]; then
+            echo "::error::data/ と docs/ 以外の変更を検出したため自動反映を中止します。手動でレビュー・マージしてください: ${BAD}"
+            exit 1
+          fi
+      # セキュリティ: pushされた docs/ は信用せず、ブランチからは data/ のみ取り込み、
+      # docs/ は main 側の scripts/ で再生成する(改ざんHTMLの公開を防ぐ)
+      - name: Take data/ from routine branch and regenerate docs/
         run: |
           git config user.name  "seminar-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git merge --no-edit -X theirs "origin/${GITHUB_REF_NAME}"
+          git checkout "origin/${GITHUB_REF_NAME}" -- data/
+          python3 scripts/ingest.py
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "daily update (from ${GITHUB_REF_NAME})"
           git push origin main
       - name: Delete routine branch
         run: git push origin --delete "${GITHUB_REF_NAME}" || true
