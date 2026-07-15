@@ -7,15 +7,15 @@
 <title>Seminar Radar — ドイツ経済・金融セミナー</title>
 <style>
   :root{
-    --bg:#0a0e14; --panel:#10161f; --cell:#0c121b; --cell2:#0e141d;
-    --line:#1c2531; --line2:#28323f;
+    --bg:#080b10; --panel:#10161f; --cal:#141b26; --cell:#0c121b; --cell2:#111925;
+    --line:#232e3c; --line2:#303d4e;
     --ink:#e6e9ee; --sub:#818d9b; --dim:#4a5462;
     --amber:#f5a623; --amber-dim:#b9781a;
     /* テーマ3色(暗背景用) */
     --cb:#35c4dc;  --cb-tx:#63d6ea; --cb-bg:rgba(53,196,220,.12);   /* 中央銀行=シアン */
     --re:#f5a623;  --re-tx:#f7bb52; --re-bg:rgba(245,166,35,.13);   /* 実体経済=アンバー */
     --fm:#46c17a;  --fm-tx:#6ad196; --fm-bg:rgba(70,193,122,.13);   /* 規制・市場=グリーン */
-    --new:#f5a623; --fail:#ff5257; --ok:#46c17a;
+    --fail:#ff5257; --ok:#46c17a;
     --mono:"SF Mono","JetBrains Mono",Consolas,"Roboto Mono",Menlo,monospace;
   }
   *{box-sizing:border-box}
@@ -23,34 +23,28 @@
     font-family:"Segoe UI","Hiragino Sans","Yu Gothic UI",Meiryo,sans-serif;
     font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .wrap{max-width:1120px;margin:0 auto;padding:16px 16px 60px}
+  .wrap{max-width:1120px;margin:0 auto;padding:14px 16px 60px}
 
-  /* ---------- ヘッダー(ターミナルのステータスバー風) ---------- */
+  /* ---------- ヘッダー(圧縮したステータスバー風) ---------- */
   header{border:1px solid var(--line2);background:var(--panel);
-    border-radius:6px;padding:12px 16px;margin-bottom:16px}
-  .statusbar{display:flex;justify-content:space-between;align-items:baseline;
-    gap:12px;flex-wrap:wrap}
-  .brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-  .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.26em;
+    border-radius:6px;padding:8px 14px;margin-bottom:14px}
+  .statusbar{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
+  .kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;
     text-transform:uppercase;color:var(--amber)}
-  h1{margin:0;font-size:22px;letter-spacing:.06em;font-family:var(--mono);
+  h1{margin:0;font-size:16px;letter-spacing:.05em;font-family:var(--mono);
     font-weight:700;color:var(--ink)}
   h1::before{content:"▸ ";color:var(--amber)}
-  .live{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
-    color:var(--ok);text-transform:uppercase}
-  .live .blip{color:var(--ok);animation:blink 1.6s step-end infinite}
-  @keyframes blink{50%{opacity:.25}}
-  .updated{font-family:var(--mono);font-size:11px;color:var(--sub);
-    letter-spacing:.03em;margin-top:8px;white-space:nowrap;overflow:hidden;
-    text-overflow:ellipsis}
+  .updated{font-family:var(--mono);font-size:10.5px;color:var(--sub);
+    letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .updated b{color:var(--amber-dim);font-weight:600}
+  .tagline{flex-basis:100%;font-size:11.5px;color:var(--sub);margin-top:1px;
+    line-height:1.4}
 
   /* ---------- フィルタ ---------- */
-  .filters{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:flex-end;
-    margin:16px 0 20px}
-  .chiprow{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+  .filters{margin:14px 0 18px}
+  .chiprow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:11px}
   .chip{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
-    padding:5px 11px;cursor:pointer;font-size:12px;user-select:none;display:flex;
+    padding:6px 12px;cursor:pointer;font-size:12.5px;user-select:none;display:flex;
     align-items:center;gap:7px;font-family:var(--mono);letter-spacing:.02em;
     color:var(--sub);transition:opacity .12s}
   .chip .dot{width:8px;height:8px;border-radius:1px;flex:0 0 auto}
@@ -59,14 +53,15 @@
   .chip.t-cb{color:var(--cb-tx)} .chip.t-re{color:var(--re-tx)} .chip.t-fm{color:var(--fm-tx)}
   .chip.t-cb .dot{background:var(--cb)} .chip.t-re .dot{background:var(--re)}
   .chip.t-fm .dot{background:var(--fm)}
+  .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
   .fld{display:flex;flex-direction:column;gap:3px}
   .fld .cap{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--dim)}
   select,input[type=search]{border:1px solid var(--line2);border-radius:4px;
-    padding:6px 9px;font-size:12.5px;background:var(--cell);color:var(--ink);
+    padding:8px 11px;font-size:14px;background:var(--cell);color:var(--ink);
     font-family:var(--mono)}
   select{cursor:pointer}
-  input[type=search]{min-width:170px}
+  input[type=search]{min-width:200px}
   select:focus,input:focus{outline:none;border-color:var(--amber);
     box-shadow:0 0 0 1px var(--amber)}
 
@@ -78,28 +73,33 @@
     width:30px;height:30px;cursor:pointer;font-size:15px;color:var(--ink);
     font-family:var(--mono);line-height:1}
   .navbtn:hover{border-color:var(--amber);color:var(--amber)}
-  table.cal{width:100%;border-collapse:collapse;background:var(--panel);
+  table.cal{width:100%;border-collapse:collapse;background:var(--cal);
     border:1px solid var(--line2);table-layout:fixed}
-  table.cal th{border:1px solid var(--line);padding:5px 4px;font-size:10px;
-    font-weight:600;color:var(--sub);background:var(--cell);font-family:var(--mono);
-    letter-spacing:.12em;text-transform:uppercase;width:14.285%}
-  table.cal td{border:1px solid var(--line);vertical-align:top;height:90px;
-    padding:3px 4px;width:14.285%;overflow:hidden;background:var(--panel)}
-  td .dnum{font-family:var(--mono);font-size:11px;color:var(--sub);display:block}
-  td.out{background:var(--bg)} td.out .dnum{color:var(--dim)}
+  table.cal th{border:1px solid var(--line2);padding:6px 4px;font-size:10px;
+    font-weight:700;color:var(--sub);background:var(--cell2);font-family:var(--mono);
+    letter-spacing:.12em;text-transform:uppercase;width:14.285%;
+    border-bottom:2px solid var(--amber-dim)}
+  table.cal td{border:1px solid var(--line);vertical-align:top;height:96px;
+    padding:3px 4px;width:14.285%;background:var(--cal)}
+  td .dnum{font-family:var(--mono);font-size:11.5px;color:var(--ink);display:block;
+    font-weight:600;margin-bottom:1px}
+  td.out{background:var(--bg)} td.out .dnum{color:var(--dim);font-weight:400}
   td.today{outline:2px solid var(--amber);outline-offset:-2px}
   td.today .dnum{color:var(--amber);font-weight:700}
   td.wend{background:var(--cell2)}
-  td.wend.out{background:#080b10}
-  .ev{display:block;font-size:10.5px;line-height:1.35;margin:2px 0;
-    padding:1px 4px 1px 6px;border-left:3px solid;border-radius:2px;cursor:pointer;
-    overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-decoration:none}
+  td.wend.out{background:#0a0e14}
+  .ev{display:block;line-height:1.32;margin:2px 0;
+    padding:1px 4px 2px 6px;border-left:3px solid;border-radius:2px;cursor:pointer;
+    text-decoration:none;overflow-wrap:anywhere;word-break:normal}
+  .ev.i3{font-size:13px;font-weight:700;line-height:1.28}
+  .ev.i2{font-size:11.5px;font-weight:400}
+  .ev.i1{font-size:10px;font-weight:400;opacity:.82}
   .ev.c-cb{border-color:var(--cb);background:var(--cb-bg);color:var(--cb-tx)}
   .ev.c-re{border-color:var(--re);background:var(--re-bg);color:var(--re-tx)}
   .ev.c-fm{border-color:var(--fm);background:var(--fm-bg);color:var(--fm-tx)}
   .ev:hover{filter:brightness(1.25)}
   .more{font-size:9.5px;color:var(--sub);font-family:var(--mono);display:block;
-    padding-left:6px}
+    padding-left:6px;margin-top:1px}
 
   /* ---------- 一覧 ---------- */
   h2.sect{font-size:12px;font-family:var(--mono);letter-spacing:.2em;
@@ -112,12 +112,15 @@
   .row{display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);
     border-radius:5px;padding:11px 14px;margin-bottom:7px}
   .row.hl{outline:2px solid var(--amber);outline-offset:-1px}
-  .when{font-family:var(--mono);font-size:13px;min-width:96px;color:var(--ink);
+  .when{font-family:var(--mono);font-size:13px;min-width:104px;color:var(--ink);
     white-space:nowrap}
   .when .wd{color:var(--sub);font-size:11px;display:block}
+  .when .imp{color:var(--amber-dim);font-size:11px;letter-spacing:.06em;display:block;
+    margin-top:2px}
   .body{flex:1;min-width:0}
   .title{font-weight:600;font-size:14.5px;font-family:var(--mono);
     letter-spacing:.01em;color:var(--ink);line-height:1.4}
+  .title.i3{font-size:16px} .title.i1{font-size:13.5px;color:#cfd4db}
   .title a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line2)}
   .title a:hover{border-bottom-color:var(--amber);color:var(--amber)}
   .orig{color:var(--sub);font-size:12px;margin-top:2px;line-height:1.4}
@@ -133,9 +136,12 @@
   .badge.free{color:var(--fm-tx);border-color:var(--fm)}
   .badge.paid{color:var(--re-tx);border-color:var(--re)}
   .badge.closed{color:var(--fail);border-color:var(--fail)}
-  .badge.new{color:#0a0e14;background:var(--new);border-color:var(--new);font-weight:700}
   .sum{font-size:13px;margin-top:7px;color:#c7ccd3}
   .reg{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .reglink{font-size:12.5px;margin-top:3px}
+  .reglink a{color:var(--cb-tx);text-decoration:none;font-family:var(--mono);
+    border-bottom:1px solid var(--line2)}
+  .reglink a:hover{border-bottom-color:var(--cb-tx)}
   .src{font-size:10.5px;color:var(--dim);margin-top:5px;font-family:var(--mono)}
   .empty{color:var(--sub);padding:24px;text-align:center;font-family:var(--mono);
     border:1px dashed var(--line2);border-radius:5px}
@@ -152,22 +158,33 @@
   footer{margin-top:40px;font-size:12px;color:var(--sub);
     border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
 
+  /* ---------- スクロールトップボタン ---------- */
+  #totop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;
+    border-radius:6px;border:1px solid var(--line2);background:var(--panel);
+    color:var(--amber-dim);font-size:19px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);
+    opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;
+    box-shadow:0 2px 8px rgba(0,0,0,.4);z-index:50}
+  #totop.show{opacity:.85;visibility:visible}
+  #totop:hover{opacity:1;border-color:var(--amber);color:var(--amber)}
+
   @media(max-width:640px){
     .wrap{padding:12px 10px 48px}
-    h1{font-size:19px}
-    .filters{gap:8px}
+    h1{font-size:15px}
+    .controls{gap:8px}
     .fld{flex:1 1 42%;min-width:0}
     .fld select{width:100%}
     input[type=search]{min-width:0;width:100%}
     .fld.search{flex:1 1 100%}
     .calhead h2{font-size:13px;min-width:0}
     table.cal td{height:58px}
-    .ev{font-size:0;padding:0;height:6px;border-left-width:0;margin:2px 1px;
-      border-radius:1px}
+    .ev,.ev.i1,.ev.i2,.ev.i3{font-size:0;font-weight:400;padding:0;height:6px;
+      border-left-width:0;margin:2px 1px;border-radius:1px;opacity:1}
     .ev.c-cb{background:var(--cb)} .ev.c-re{background:var(--re)} .ev.c-fm{background:var(--fm)}
     .more{font-size:9px}
     .row{flex-direction:column;gap:4px}
     .when{min-width:0}
+    #totop{right:12px;bottom:12px;width:38px;height:38px;font-size:17px}
   }
 </style>
 </head>
@@ -175,15 +192,11 @@
 <div class="wrap">
 <header>
   <div class="statusbar">
-    <div class="brand">
-      <div>
-        <div class="kicker">Germany &middot; Europe — Economics &amp; Finance Terminal</div>
-        <h1>Seminar Radar</h1>
-      </div>
-    </div>
-    <span class="live"><span class="blip">●</span> LIVE FEED</span>
+    <span class="kicker">Germany &middot; Europe — Econ &amp; Finance</span>
+    <h1>Seminar Radar</h1>
+    <span class="updated">SURVEY COMPLETED: <b>__UPDATED__</b></span>
+    <div class="tagline">ドイツ(順次欧州へ拡大予定)の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
-  <div class="updated">LAST SYNC <b>__UPDATED__</b> &nbsp;|&nbsp; AUTO-REFRESH DAILY &nbsp;|&nbsp; PUBLIC SOURCES ONLY</div>
 </header>
 
 <div class="filters">
@@ -192,31 +205,33 @@
     <span class="chip t-re" data-th="real_economy" data-on="1"><span class="dot"></span>② 実体経済(エネルギー・防衛・インフラ)</span>
     <span class="chip t-fm" data-th="fin_markets" data-on="1"><span class="dot"></span>③ 金融規制・金融市場</span>
   </div>
-  <label class="fld"><span class="cap">Format 形式</span>
-    <select id="fmt">
-      <option value="">すべて</option>
-      <option value="onsite">現地のみ</option>
-      <option value="remote">オンライン参加可</option>
-    </select></label>
-  <label class="fld"><span class="cap">Lang 言語</span>
-    <select id="lang">
-      <option value="">すべて</option>
-      <option value="en">英語</option>
-      <option value="de">ドイツ語</option>
-    </select></label>
-  <label class="fld"><span class="cap">Fee 参加費</span>
-    <select id="fee">
-      <option value="free_unknown">無料(不明含む)</option>
-      <option value="free_only">無料のみ</option>
-      <option value="paid">有料</option>
-      <option value="all">すべて</option>
-    </select></label>
-  <label class="fld"><span class="cap">Country 国</span>
-    <select id="country"></select></label>
-  <label class="fld"><span class="cap">City 都市</span>
-    <select id="city"></select></label>
-  <label class="fld search"><span class="cap">Search キーワード</span>
-    <input type="search" id="q" placeholder="キーワード検索"></label>
+  <div class="controls">
+    <label class="fld"><span class="cap">Lang</span>
+      <select id="lang">
+        <option value="">All</option>
+        <option value="en">English</option>
+        <option value="de">German</option>
+      </select></label>
+    <label class="fld"><span class="cap">Fee</span>
+      <select id="fee">
+        <option value="free_unknown">Free (incl. unknown)</option>
+        <option value="free_only">Free only</option>
+        <option value="paid">Paid</option>
+        <option value="all">All</option>
+      </select></label>
+    <label class="fld"><span class="cap">Country</span>
+      <select id="country"></select></label>
+    <label class="fld"><span class="cap">City</span>
+      <select id="city"></select></label>
+    <label class="fld"><span class="cap">Importance</span>
+      <select id="imp">
+        <option value="">All</option>
+        <option value="2">2+</option>
+        <option value="3">3 only</option>
+      </select></label>
+    <label class="fld search"><span class="cap">Search</span>
+      <input type="search" id="q" placeholder="keyword"></label>
+  </div>
 </div>
 
 <div class="calhead">
@@ -235,11 +250,14 @@
 <table class="st"><tbody id="status"></tbody></table>
 
 <footer>
-  凡例: NEW = 直近4日以内に新規検出。①②③の色分けは各イベントの主テーマ。
+  ★の数は重要度(★★★=大規模国際会議・中銀総裁級登壇 / ★★☆=中規模カンファレンス / ★☆☆=定例セミナー)。
+  ①②③の色分けは各イベントの主テーマ。
   情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
   日付・参加費等は必ずリンク先の原文で確認すること。
 </footer>
 </div>
+
+<button id="totop" title="トップへ" aria-label="Scroll to top">&#8593;</button>
 
 <script>
 const EVENTS = __EVENTS_JSON__;
@@ -252,10 +270,13 @@ const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm"};
 const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau",
                     "Eltville am Rhein":"Eltville"};
 const LANG_SHORT = {en:"英", de:"独", "en+de":"英独"};
-const COUNTRY_NAME = {DE:"ドイツ", AT:"オーストリア", IT:"イタリア", CH:"スイス",
-                      FR:"フランス", NL:"オランダ"};
+const LANG_JA    = {en:"英語", de:"独語", "en+de":"英語・独語"};
+const COUNTRY_EN = {DE:"Germany", AT:"Austria", IT:"Italy", CH:"Switzerland",
+                    FR:"France", NL:"Netherlands"};
 
 /* ---------- ラベル生成 ---------- */
+function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
+function stars(ev){ const n=imp(ev); return "★".repeat(n)+"☆".repeat(3-n); }
 function cityShort(ev){
   if(ev.city) return CITY_SHORT[ev.city] || ev.city;
   if(ev.format==="online") return "Online";
@@ -285,12 +306,12 @@ function evFull(ev){
 /* ---------- 状態 ---------- */
 const dataCountries = [...new Set(EVENTS.map(e=>e.country).filter(Boolean))].sort();
 const state = {themes:new Set(["central_bank","real_economy","fin_markets"]),
-               fmt:"", lang:"", fee:"free_unknown",
+               lang:"", fee:"free_unknown",
                country: dataCountries.includes("DE") ? "DE" : "",
-               city:"", q:"",
+               city:"", imp:"", q:"",
                y:+TODAY.slice(0,4), m:+TODAY.slice(5,7)-1};
 
-const LS_KEY = "sr_filters_v2";
+const LS_KEY = "sr_filters_v3";
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
@@ -300,9 +321,9 @@ function loadState(){
     if(t.length) state.themes = new Set(t);
     else state.themes = new Set();  /* 全部オフの保存も尊重 */
   }
-  if(["","onsite","remote"].includes(s.fmt)) state.fmt = s.fmt;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
   if(["free_unknown","free_only","paid","all"].includes(s.fee)) state.fee = s.fee;
+  if(["","2","3"].includes(s.imp)) state.imp = s.imp;
   if(typeof s.q==="string") state.q = s.q;
   if(s.country==="" || dataCountries.includes(s.country)) state.country = s.country;
   if(typeof s.city==="string") state.city = s.city; /* 都市は候補構築時に検証 */
@@ -310,8 +331,8 @@ function loadState(){
 function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
-      themes:[...state.themes], fmt:state.fmt, lang:state.lang, fee:state.fee,
-      country:state.country, city:state.city, q:state.q
+      themes:[...state.themes], lang:state.lang, fee:state.fee,
+      country:state.country, city:state.city, imp:state.imp, q:state.q
     }));
   }catch(e){}
 }
@@ -325,13 +346,13 @@ function passCountry(ev){
 }
 function visible(ev){
   if(!ev.themes.some(t=>state.themes.has(t))) return false;
-  if(state.fmt==="onsite" && ev.format!=="onsite") return false;
-  if(state.fmt==="remote" && !(ev.format==="online"||ev.format==="hybrid")) return false;
   if(state.lang==="en" && !(ev.language==="en"||ev.language==="en+de"||ev.language==null)) return false;
   if(state.lang==="de" && !(ev.language==="de"||ev.language==="en+de"||ev.language==null)) return false;
   if(state.fee==="free_unknown" && ev.fee==="paid") return false;
   if(state.fee==="free_only" && ev.fee!=="free") return false;
   if(state.fee==="paid" && ev.fee!=="paid") return false;
+  if(state.imp==="2" && imp(ev)<2) return false;
+  if(state.imp==="3" && imp(ev)<3) return false;
   if(!passCountry(ev)) return false;
   if(state.city && ev.city!==state.city) return false;
   if(state.q){
@@ -343,17 +364,13 @@ function visible(ev){
 }
 const fEvents=()=>EVENTS.filter(visible);
 const inRange=(ev,iso)=>iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
-const isNew=ev=>{
-  const d=(new Date(TODAY)-new Date(ev.first_seen))/86400000;
-  return d>=0 && d<=4;
-};
 
 /* ---------- 動的セレクト構築 ---------- */
 function buildCountry(){
   const sel=document.getElementById("country");
-  let opts=`<option value="">すべて</option>`;
+  let opts=`<option value="">All</option>`;
   for(const c of dataCountries)
-    opts+=`<option value="${c}">${esc(COUNTRY_NAME[c]||c)}</option>`;
+    opts+=`<option value="${c}">${esc(COUNTRY_EN[c]||c)}</option>`;
   sel.innerHTML=opts;
   sel.value=state.country;
 }
@@ -365,7 +382,7 @@ function buildCity(){
   const cand=cityCandidates();
   if(state.city && !cand.includes(state.city)) state.city="";
   const sel=document.getElementById("city");
-  let opts=`<option value="">すべて</option>`;
+  let opts=`<option value="">All</option>`;
   for(const c of cand) opts+=`<option value="${esc(c)}">${esc(c)}</option>`;
   sel.innerHTML=opts;
   sel.value=state.city;
@@ -385,11 +402,12 @@ function drawCal(){
       const iso=cur.toISOString().slice(0,10);
       const out=cur.getUTCMonth()!==state.m;
       const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
-      const day=evs.filter(e=>inRange(e,iso));
-      let chips=day.slice(0,3).map(e=>
-        `<a class="ev c-${THCLS[e.themes[0]]}" href="#ev-${e.id}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
+      const day=evs.filter(e=>inRange(e,iso))
+                   .sort((a,b)=>imp(b)-imp(a));
+      let chips=day.slice(0,4).map(e=>
+        `<a class="ev i${imp(e)} c-${THCLS[e.themes[0]]}" href="#ev-${e.id}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
       ).join("");
-      if(day.length>3) chips+=`<span class="more">+${day.length-3}</span>`;
+      if(day.length>4) chips+=`<span class="more">+${day.length-4}</span>`;
       html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${chips}</td>`;
     }
     html+="</tr>";
@@ -405,8 +423,11 @@ function fmtWhen(ev){
   let t=ev.date_start.slice(5).replace("-","/");
   if(ev.date_end && ev.date_end!==ev.date_start)
     t+="–"+ev.date_end.slice(5).replace("-","/");
-  const wd="("+WD[s.getDay()]+")"+(ev.time?" "+ev.time:"");
-  return `${t}<span class="wd">${wd}</span>`;
+  let tm="";
+  if(ev.time && ev.time_end) tm=" "+ev.time+"–"+ev.time_end;
+  else if(ev.time) tm=" "+ev.time;
+  const wd="("+WD[s.getDay()]+")"+tm;
+  return `${t}<span class="wd">${wd}</span><span class="imp">${stars(ev)}</span>`;
 }
 function drawList(){
   const evs=fEvents().filter(e=>(e.date_end||e.date_start)>=TODAY);
@@ -420,8 +441,8 @@ function drawList(){
       lastMonth=mo;
     }
     const badges=[];
-    if(isNew(ev)) badges.push('<span class="badge new">NEW</span>');
     ev.themes.forEach(t=>badges.push(`<span class="badge th-${t}">${THLBL[t]}</span>`));
+    if(ev.language) badges.push(`<span class="badge">${LANG_JA[ev.language]||ev.language}</span>`);
     if(ev.format==="online") badges.push('<span class="badge">オンライン</span>');
     if(ev.format==="hybrid") badges.push('<span class="badge">ハイブリッド</span>');
     if(ev.format==="onsite") badges.push('<span class="badge">現地開催</span>');
@@ -432,15 +453,17 @@ function drawList(){
     const orig=ev.url
       ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.title)}</a>`
       : esc(ev.title);
+    const iv=imp(ev);
     html+=`<div class="row" id="ev-${ev.id}">
       <div class="when">${fmtWhen(ev)}</div>
       <div class="body">
-        <div class="title">${esc(label)}</div>
+        <div class="title i${iv}">${esc(label)}</div>
         <div class="orig">${orig}</div>
         ${ev.title_ja?`<div class="ja">${esc(ev.title_ja)}</div>`:""}
         <div class="meta">${badges.join("")}</div>
         ${ev.summary_ja?`<div class="sum">${esc(ev.summary_ja)}</div>`:""}
         ${ev.registration_note?`<div class="reg">申込: ${esc(ev.registration_note)}</div>`:""}
+        ${ev.registration_url?`<div class="reglink"><a href="${esc(ev.registration_url)}" target="_blank" rel="noopener">申込ページ →</a></div>`:""}
         <div class="src">情報源: ${esc(ev.source||"")} ／ 初検出: ${esc(ev.first_seen||"")}</div>
       </div></div>`;
   }
@@ -466,9 +489,9 @@ buildCity();
 document.querySelectorAll(".chip").forEach(c=>{
   c.dataset.on = state.themes.has(c.dataset.th) ? "1" : "0";
 });
-document.getElementById("fmt").value  = state.fmt;
 document.getElementById("lang").value = state.lang;
 document.getElementById("fee").value  = state.fee;
+document.getElementById("imp").value  = state.imp;
 document.getElementById("q").value    = state.q;
 
 /* ---------- イベントハンドラ ---------- */
@@ -478,9 +501,9 @@ document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
   on?state.themes.delete(t):state.themes.add(t);
   redraw();
 }));
-document.getElementById("fmt").addEventListener("change",e=>{state.fmt=e.target.value;redraw();});
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
 document.getElementById("fee").addEventListener("change",e=>{state.fee=e.target.value;redraw();});
+document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
 document.getElementById("country").addEventListener("change",e=>{
   state.country=e.target.value; buildCity(); redraw();
 });
@@ -493,6 +516,16 @@ document.addEventListener("click",e=>{
   const el=document.querySelector(a.getAttribute("href"));
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
 });
+
+/* ---------- スクロールトップボタン ---------- */
+const totop=document.getElementById("totop");
+function onScroll(){
+  if(window.pageYOffset>300) totop.classList.add("show");
+  else totop.classList.remove("show");
+}
+window.addEventListener("scroll",onScroll,{passive:true});
+totop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+onScroll();
 
 redraw();drawStatus();
 </script>
