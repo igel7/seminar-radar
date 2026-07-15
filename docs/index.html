@@ -119,10 +119,16 @@
   .callegend .cap{color:var(--dim)}
   .callegend .fg{border-left:3px dashed var(--sub);padding-left:8px;color:var(--sub)}
 
+  /* ---------- 週ビュー(モバイル専用・デスクトップでは非表示) ---------- */
+  #weekbody{display:none}
+
   /* ---------- 一覧 ---------- */
   h2.sect{font-size:12px;font-family:var(--mono);letter-spacing:.2em;
     text-transform:uppercase;color:var(--amber);border-bottom:1px solid var(--line2);
     padding-bottom:5px;margin:34px 0 12px}
+  .listhead{display:flex;align-items:flex-end;gap:14px;margin:34px 0 12px}
+  .listhead h2.sect{flex:1;margin:0}
+  .listhead .fld{flex:0 0 auto}
   h2.sect::before{content:"// "}
   .month-h{font-size:13px;font-weight:700;margin:20px 0 8px;font-family:var(--mono);
     letter-spacing:.06em;padding-left:9px;border-left:3px solid var(--amber);
@@ -191,12 +197,29 @@
     .fld select{width:100%}
     input[type=search]{min-width:0;width:100%}
     .fld.search{flex:1 1 100%}
-    .calhead h2{font-size:13px;min-width:0}
-    table.cal td{height:58px}
-    .ev,.ev.i1,.ev.i2,.ev.i3{font-size:0;font-weight:400;padding:0;height:6px;
-      border-left-width:0;margin:2px 1px;border-radius:1px;opacity:1}
-    .ev.i3{background:var(--imp3)} .ev.i2{background:var(--imp2)} .ev.i1{background:var(--imp1)}
-    .ev.foreign{outline:1.5px dashed var(--sub);outline-offset:0;border-radius:0}
+    .calhead h2{font-size:12px;min-width:0;letter-spacing:.04em}
+    /* モバイルでは月グリッドを隠し、週ビューを表示 */
+    table.cal{display:none}
+    #weekbody{display:block;border:1px solid var(--line2);border-radius:4px;
+      overflow:hidden;background:var(--cal)}
+    .wday{border-bottom:1px solid var(--line);padding:6px 9px}
+    .wday:last-child{border-bottom:0}
+    .wday.wend{background:var(--cell2)}
+    .wday.today{background:rgba(245,166,35,.07);
+      box-shadow:inset 0 0 0 2px var(--amber)}
+    .wday.empty{padding:3px 9px;opacity:.5}
+    .wdhead{display:flex;gap:7px;align-items:baseline;font-family:var(--mono)}
+    .wdate{font-size:12px;font-weight:600;color:var(--ink)}
+    .wday.today .wdate{color:var(--amber);font-weight:700}
+    .wday.empty .wdate{font-weight:400;color:var(--dim)}
+    .wdow{font-size:10.5px;color:var(--sub)}
+    .wevs{display:flex;flex-direction:column;gap:3px;margin-top:5px}
+    .wevs .ev{display:block;font-size:12px;line-height:1.35;font-weight:500;
+      padding:3px 7px 4px 8px;border-left-width:3px;border-radius:2px;margin:0;
+      height:auto;opacity:1}
+    .wevs .ev.i1,.wevs .ev.i2{font-size:12px}
+    .wevs .ev.i3{font-size:12.5px;font-weight:700}
+    .wevs .ev.foreign{border-left-style:dashed}
     .more{font-size:9px}
     .row{flex-direction:column;gap:4px}
     .when{min-width:0}
@@ -210,7 +233,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">SURVEY COMPLETED: <b>2026-07-15 21:14 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-15 21:23 (CEST)</b></span>
     <div class="tagline">ドイツ(順次欧州へ拡大予定)の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
@@ -258,13 +281,21 @@
 <table class="cal"><thead><tr>
   <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
 </tr></thead><tbody id="calbody"></tbody></table>
+<div id="weekbody"></div>
 <div class="callegend">
   <span class="cap">色=重要度:</span>
   <span class="lgset"><span class="lg i3">高</span><span class="lg i2">中</span><span class="lg i1">低</span></span>
   <span class="fg">◇ ドイツ国外での開催</span>
 </div>
 
-<h2 class="sect">今後のイベント一覧</h2>
+<div class="listhead">
+  <h2 class="sect">今後のイベント一覧</h2>
+  <label class="fld"><span class="cap">Sort</span>
+    <select id="sort">
+      <option value="date">日付順</option>
+      <option value="imp">重要度順</option>
+    </select></label>
+</div>
 <div id="list"></div>
 
 <h2 class="sect">巡回ステータス</h2>
@@ -326,13 +357,24 @@ function evFull(ev){
   return [ev.title, ev.organizer, ev.city].filter(Boolean).join(" / ");
 }
 
+/* ---------- 週ビュー用の日付ヘルパー ---------- */
+const mqMobile = window.matchMedia("(max-width:640px)");
+const isoOf = d => d.toISOString().slice(0,10);
+function mondayOf(iso){
+  const d=new Date(iso+"T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay()+6)%7));
+  return d;
+}
+
 /* ---------- 状態 ---------- */
 const dataCountries = [...new Set(EVENTS.map(e=>e.country).filter(Boolean))].sort();
+const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 const state = {themes:new Set(["central_bank","real_economy","fin_markets"]),
                lang:"", fee:"free_unknown",
                country: dataCountries.includes("DE") ? "DE" : "",
-               city:"", imp:"", q:"",
-               y:+TODAY.slice(0,4), m:+TODAY.slice(5,7)-1};
+               city:"", imp:"", q:"", sort:"date",
+               y:TODAY_Y, m:TODAY_M,
+               weekStart:isoOf(mondayOf(TODAY))};
 
 const LS_KEY = "sr_filters_v3";
 function loadState(){
@@ -348,6 +390,7 @@ function loadState(){
   if(["free_unknown","free_only","paid","all"].includes(s.fee)) state.fee = s.fee;
   if(["","2","3"].includes(s.imp)) state.imp = s.imp;
   if(typeof s.q==="string") state.q = s.q;
+  if(["date","imp"].includes(s.sort)) state.sort = s.sort;
   if(s.country==="" || dataCountries.includes(s.country)) state.country = s.country;
   if(typeof s.city==="string") state.city = s.city; /* 都市は候補構築時に検証 */
 }
@@ -355,7 +398,8 @@ function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
       themes:[...state.themes], lang:state.lang, fee:state.fee,
-      country:state.country, city:state.city, imp:state.imp, q:state.q
+      country:state.country, city:state.city, imp:state.imp, q:state.q,
+      sort:state.sort
     }));
   }catch(e){}
 }
@@ -411,8 +455,34 @@ function buildCity(){
   sel.value=state.city;
 }
 
-/* ---------- カレンダー ---------- */
+/* ---------- カレンダー(描画モード分岐) ---------- */
 function drawCal(){
+  if(mqMobile.matches) drawWeek();
+  else drawMonth();
+}
+
+/* ---------- 週の基準日 ⇄ 月表示 の整合 ---------- */
+function shiftWeek(days){
+  const d=new Date(state.weekStart+"T00:00:00Z");
+  d.setUTCDate(d.getUTCDate()+days);
+  state.weekStart=isoOf(d);
+}
+function syncToMobile(){
+  /* 現在表示中の月に基づいて週を決める(今日を含む月なら今日の週) */
+  const rep = (state.y===TODAY_Y && state.m===TODAY_M)
+    ? TODAY
+    : `${state.y}-${String(state.m+1).padStart(2,"0")}-01`;
+  state.weekStart = isoOf(mondayOf(rep));
+}
+function syncToDesktop(){
+  /* 週が属する月(週の中日=木曜で判定)を表示 */
+  const d=new Date(state.weekStart+"T00:00:00Z");
+  d.setUTCDate(d.getUTCDate()+3);
+  state.y=d.getUTCFullYear(); state.m=d.getUTCMonth();
+}
+
+/* ---------- 月グリッド(デスクトップ) ---------- */
+function drawMonth(){
   document.getElementById("callabel").textContent=
     state.y+" / "+String(state.m+1).padStart(2,"0");
   const first=new Date(Date.UTC(state.y,state.m,1));
@@ -437,6 +507,37 @@ function drawCal(){
   document.getElementById("calbody").innerHTML=html;
 }
 
+/* ---------- 週ビュー(モバイル) ---------- */
+const WD_WEEK=["月","火","水","木","金","土","日"]; /* index 0=月 */
+function drawWeek(){
+  const start=new Date(state.weekStart+"T00:00:00Z"); /* 月曜 */
+  const days=[];
+  for(let i=0;i<7;i++){const d=new Date(start);d.setUTCDate(start.getUTCDate()+i);days.push(d);}
+  const sIso=isoOf(days[0]), eIso=isoOf(days[6]);
+  document.getElementById("callabel").textContent=
+    `${start.getUTCFullYear()}/${String(start.getUTCMonth()+1).padStart(2,"0")} · `+
+    `${sIso.slice(5).replace("-","/")} – ${eIso.slice(5).replace("-","/")}`;
+  const evs=fEvents();
+  let html="";
+  for(let i=0;i<7;i++){
+    const d=days[i], iso=isoOf(d), isToday=iso===TODAY, isWend=i>=5;
+    const day=evs.filter(e=>inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
+    /* 土日はイベントが無ければ非表示(ただし今日は常に表示) */
+    if(isWend && day.length===0 && !isToday) continue;
+    const empty=day.length===0;
+    const cls=["wday", isToday?"today":"", isWend?"wend":"", empty?"empty":""].join(" ");
+    const evHtml=day.map(e=>
+      `<a class="ev i${imp(e)}${isForeign(e)?' foreign':''}" href="#ev-${e.id}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
+    ).join("");
+    html+=`<div class="${cls}">`+
+      `<div class="wdhead"><span class="wdate">${d.getUTCMonth()+1}/${d.getUTCDate()}</span>`+
+      `<span class="wdow">(${WD_WEEK[i]})</span></div>`+
+      (empty?"":`<div class="wevs">${evHtml}</div>`)+
+    `</div>`;
+  }
+  document.getElementById("weekbody").innerHTML=html;
+}
+
 /* ---------- 一覧 ---------- */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const safeUrl=u=>{u=String(u??"").trim();return /^https?:\/\//i.test(u)?u:null;};
@@ -453,15 +554,22 @@ function fmtWhen(ev){
   return `${t}<span class="wd">${wd}</span><span class="imp">${stars(ev)}</span>`;
 }
 function drawList(){
-  const evs=fEvents().filter(e=>(e.date_end||e.date_start)>=TODAY);
+  let evs=fEvents().filter(e=>(e.date_end||e.date_start)>=TODAY);
   const box=document.getElementById("list");
   if(!evs.length){box.innerHTML='<div class="empty">条件に合うイベントはありません。</div>';return;}
+  const byImp = state.sort==="imp";
+  if(byImp){
+    /* 重要度降順、同重要度内は日付昇順(元配列は日付順のため安定ソートで維持) */
+    evs=evs.slice().sort((a,b)=>imp(b)-imp(a));
+  }
   let html="",lastMonth="";
   for(const ev of evs){
-    const mo=ev.date_start.slice(0,7);
-    if(mo!==lastMonth){
-      html+=`<div class="month-h">${mo.slice(0,4)}年${+mo.slice(5)}月</div>`;
-      lastMonth=mo;
+    if(!byImp){
+      const mo=ev.date_start.slice(0,7);
+      if(mo!==lastMonth){
+        html+=`<div class="month-h">${mo.slice(0,4)}年${+mo.slice(5)}月</div>`;
+        lastMonth=mo;
+      }
     }
     const badges=[];
     ev.themes.forEach(t=>badges.push(`<span class="badge th-${t}">${THLBL[t]}</span>`));
@@ -518,6 +626,7 @@ document.getElementById("lang").value = state.lang;
 document.getElementById("fee").value  = state.fee;
 document.getElementById("imp").value  = state.imp;
 document.getElementById("q").value    = state.q;
+document.getElementById("sort").value = state.sort;
 
 /* ---------- イベントハンドラ ---------- */
 document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
@@ -534,8 +643,22 @@ document.getElementById("country").addEventListener("change",e=>{
 });
 document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
-document.getElementById("prev").addEventListener("click",()=>{if(--state.m<0){state.m=11;state.y--;}drawCal();});
-document.getElementById("next").addEventListener("click",()=>{if(++state.m>11){state.m=0;state.y++;}drawCal();});
+document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
+document.getElementById("prev").addEventListener("click",()=>{
+  if(mqMobile.matches) shiftWeek(-7);
+  else if(--state.m<0){state.m=11;state.y--;}
+  drawCal();
+});
+document.getElementById("next").addEventListener("click",()=>{
+  if(mqMobile.matches) shiftWeek(7);
+  else if(++state.m>11){state.m=0;state.y++;}
+  drawCal();
+});
+/* 月表示 ⇄ 週表示 の切替(リサイズ・回転に追従) */
+mqMobile.addEventListener("change",e=>{
+  if(e.matches) syncToMobile(); else syncToDesktop();
+  drawCal();
+});
 document.addEventListener("click",e=>{
   const a=e.target.closest("a.ev"); if(!a)return;
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
