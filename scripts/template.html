@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex">
 <title>Seminar Radar — ドイツ経済・金融セミナー</title>
 <style>
@@ -392,7 +393,7 @@ function buildCountry(){
   const sel=document.getElementById("country");
   let opts=`<option value="">すべて</option>`;
   for(const c of dataCountries)
-    opts+=`<option value="${c}">${esc(COUNTRY_JA[c]||c)}</option>`;
+    opts+=`<option value="${esc(c)}">${esc(COUNTRY_NAME[c]||c)}</option>`;
   sel.innerHTML=opts;
   sel.value=state.country;
 }
@@ -424,10 +425,9 @@ function drawCal(){
       const iso=cur.toISOString().slice(0,10);
       const out=cur.getUTCMonth()!==state.m;
       const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
-      const day=evs.filter(e=>inRange(e,iso))
-                   .sort((a,b)=>imp(b)-imp(a));
-      let chips=day.slice(0,4).map(e=>
-        `<a class="ev i${imp(e)}${isForeign(e)?' foreign':''}" href="#ev-${e.id}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
+      const day=evs.filter(e=>inRange(e,iso));
+      let chips=day.slice(0,3).map(e=>
+        `<a class="ev c-${THCLS[e.themes[0]]}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
       ).join("");
       if(day.length>4) chips+=`<span class="more">+${day.length-4}</span>`;
       html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${chips}</td>`;
@@ -439,6 +439,7 @@ function drawCal(){
 
 /* ---------- 一覧 ---------- */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const safeUrl=u=>{u=String(u??"").trim();return /^https?:\/\//i.test(u)?u:null;};
 const WD=["日","月","火","水","木","金","土"];
 function fmtWhen(ev){
   const s=new Date(ev.date_start+"T00:00:00");
@@ -472,11 +473,11 @@ function drawList(){
     if(ev.fee==="paid") badges.push('<span class="badge paid">有料</span>');
     if(ev.open_to_public===false) badges.push('<span class="badge closed">招待制</span>');
     const label=evLabel(ev);
-    const orig=ev.url
-      ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.title)}</a>`
+    const u=safeUrl(ev.url);
+    const orig=u
+      ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(ev.title)}</a>`
       : esc(ev.title);
-    const iv=imp(ev);
-    html+=`<div class="row" id="ev-${ev.id}">
+    html+=`<div class="row" id="ev-${esc(ev.id)}">
       <div class="when">${fmtWhen(ev)}</div>
       <div class="body">
         <div class="title i${iv}">${esc(label)}</div>
@@ -494,10 +495,12 @@ function drawList(){
 
 /* ---------- ステータス ---------- */
 function drawStatus(){
-  document.getElementById("status").innerHTML=STATUS.map(s=>
-    `<tr><td>${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
-     <td>${s.ok?`<span class="ok">[OK] ${s.found}件</span>`
-              :`<span class="ng">[FAIL]</span> <small>${esc(s.error||"")}</small>`}</td></tr>`).join("");
+  document.getElementById("status").innerHTML=STATUS.map(s=>{
+    const u=safeUrl(s.url);
+    return `<tr><td>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
+     <td>${s.ok?`<span class="ok">[OK] ${esc(s.found)}件</span>`
+              :`<span class="ng">[FAIL]</span> <small>${esc(s.error||"")}</small>`}</td></tr>`;
+  }).join("");
 }
 
 /* ---------- 再描画 ---------- */
@@ -535,7 +538,7 @@ document.getElementById("prev").addEventListener("click",()=>{if(--state.m<0){st
 document.getElementById("next").addEventListener("click",()=>{if(++state.m>11){state.m=0;state.y++;}drawCal();});
 document.addEventListener("click",e=>{
   const a=e.target.closest("a.ev"); if(!a)return;
-  const el=document.querySelector(a.getAttribute("href"));
+  let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
 });
 
