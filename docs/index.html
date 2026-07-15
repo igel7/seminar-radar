@@ -11,10 +11,12 @@
     --line:#232e3c; --line2:#303d4e;
     --ink:#e6e9ee; --sub:#818d9b; --dim:#4a5462;
     --amber:#f5a623; --amber-dim:#b9781a;
-    /* テーマ3色(暗背景用) */
-    --cb:#35c4dc;  --cb-tx:#63d6ea; --cb-bg:rgba(53,196,220,.12);   /* 中央銀行=シアン */
-    --re:#f5a623;  --re-tx:#f7bb52; --re-bg:rgba(245,166,35,.13);   /* 実体経済=アンバー */
-    --fm:#46c17a;  --fm-tx:#6ad196; --fm-bg:rgba(70,193,122,.13);   /* 規制・市場=グリーン */
+    /* 重要度3色(暗背景用): 高=アンバー / 中=シアン / 低=ニュートラルグレー(可読) */
+    --imp3:#f5a623; --imp3-tx:#f8bd57; --imp3-bg:rgba(245,166,35,.15);
+    --imp2:#35c4dc; --imp2-tx:#63d6ea; --imp2-bg:rgba(53,196,220,.12);
+    --imp1:#63707f; --imp1-tx:#b3bcc7; --imp1-bg:rgba(120,135,152,.12);
+    /* アクセント色(リンク=シアン系 / 有料=アンバー系 / 無料=グリーン系) */
+    --cb-tx:#63d6ea; --re-tx:#f7bb52; --fm-tx:#6ad196;
     --fail:#ff5257; --ok:#46c17a;
     --mono:"SF Mono","JetBrains Mono",Consolas,"Roboto Mono",Menlo,monospace;
   }
@@ -28,16 +30,21 @@
   /* ---------- ヘッダー(圧縮したステータスバー風) ---------- */
   header{border:1px solid var(--line2);background:var(--panel);
     border-radius:6px;padding:8px 14px;margin-bottom:14px}
-  .statusbar{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
-  .kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;
-    text-transform:uppercase;color:var(--amber)}
-  h1{margin:0;font-size:16px;letter-spacing:.05em;font-family:var(--mono);
-    font-weight:700;color:var(--ink)}
+  .statusbar{display:flex;align-items:baseline;gap:5px 15px;flex-wrap:wrap}
+  h1{margin:0;font-size:28px;letter-spacing:.055em;font-family:var(--mono);
+    font-weight:700;color:var(--ink);line-height:1.05}
   h1::before{content:"▸ ";color:var(--amber)}
+  .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);
+    font-size:10.5px;font-weight:700;letter-spacing:.2em;color:var(--ok);
+    text-transform:uppercase;align-self:center}
+  .live .ld{width:8px;height:8px;border-radius:50%;background:var(--ok);
+    box-shadow:0 0 6px var(--ok),0 0 2px var(--ok);
+    animation:liveblink 1.15s steps(1,end) infinite}
+  @keyframes liveblink{0%,55%{opacity:1}56%,100%{opacity:.15}}
   .updated{font-family:var(--mono);font-size:10.5px;color:var(--sub);
     letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .updated b{color:var(--amber-dim);font-weight:600}
-  .tagline{flex-basis:100%;font-size:11.5px;color:var(--sub);margin-top:1px;
+  .tagline{flex-basis:100%;font-size:11.5px;color:var(--sub);margin-top:2px;
     line-height:1.4}
 
   /* ---------- フィルタ ---------- */
@@ -46,13 +53,9 @@
   .chip{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
     padding:6px 12px;cursor:pointer;font-size:12.5px;user-select:none;display:flex;
     align-items:center;gap:7px;font-family:var(--mono);letter-spacing:.02em;
-    color:var(--sub);transition:opacity .12s}
-  .chip .dot{width:8px;height:8px;border-radius:1px;flex:0 0 auto}
-  .chip[data-on="1"]{border-color:currentColor}
-  .chip[data-on="0"]{opacity:.32}
-  .chip.t-cb{color:var(--cb-tx)} .chip.t-re{color:var(--re-tx)} .chip.t-fm{color:var(--fm-tx)}
-  .chip.t-cb .dot{background:var(--cb)} .chip.t-re .dot{background:var(--re)}
-  .chip.t-fm .dot{background:var(--fm)}
+    color:var(--sub);transition:opacity .12s,border-color .12s,color .12s,background .12s}
+  .chip[data-on="1"]{color:var(--ink);border-color:var(--sub);background:var(--cell2)}
+  .chip[data-on="0"]{opacity:.5;color:var(--dim);border-style:dashed}
   .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
   .fld{display:flex;flex-direction:column;gap:3px}
   .fld .cap{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
@@ -91,15 +94,29 @@
   .ev{display:block;line-height:1.32;margin:2px 0;
     padding:1px 4px 2px 6px;border-left:3px solid;border-radius:2px;cursor:pointer;
     text-decoration:none;overflow-wrap:anywhere;word-break:normal}
-  .ev.i3{font-size:13px;font-weight:700;line-height:1.28}
-  .ev.i2{font-size:11.5px;font-weight:400}
-  .ev.i1{font-size:10px;font-weight:400;opacity:.82}
-  .ev.c-cb{border-color:var(--cb);background:var(--cb-bg);color:var(--cb-tx)}
-  .ev.c-re{border-color:var(--re);background:var(--re-bg);color:var(--re-tx)}
-  .ev.c-fm{border-color:var(--fm);background:var(--fm-bg);color:var(--fm-tx)}
+  .ev.i3{font-size:13px;font-weight:700;line-height:1.28;
+    border-color:var(--imp3);background:var(--imp3-bg);color:var(--imp3-tx)}
+  .ev.i2{font-size:12px;font-weight:500;
+    border-color:var(--imp2);background:var(--imp2-bg);color:var(--imp2-tx)}
+  .ev.i1{font-size:11px;font-weight:400;
+    border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
+  .ev.foreign{border-left-style:dashed;border-left-width:3px}
   .ev:hover{filter:brightness(1.25)}
   .more{font-size:9.5px;color:var(--sub);font-family:var(--mono);display:block;
     padding-left:6px;margin-top:1px}
+
+  /* ---------- カレンダー凡例 ---------- */
+  .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
+    margin:9px 0 2px;font-family:var(--mono);font-size:10.5px;color:var(--sub);
+    letter-spacing:.02em}
+  .callegend .lgset{display:flex;align-items:center;gap:6px}
+  .callegend .lg{border-left:3px solid;padding:1px 8px;border-radius:2px}
+  .callegend .lg.i3{border-color:var(--imp3);background:var(--imp3-bg);
+    color:var(--imp3-tx);font-weight:700}
+  .callegend .lg.i2{border-color:var(--imp2);background:var(--imp2-bg);color:var(--imp2-tx)}
+  .callegend .lg.i1{border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
+  .callegend .cap{color:var(--dim)}
+  .callegend .fg{border-left:3px dashed var(--sub);padding-left:8px;color:var(--sub)}
 
   /* ---------- 一覧 ---------- */
   h2.sect{font-size:12px;font-family:var(--mono);letter-spacing:.2em;
@@ -130,11 +147,8 @@
   .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px}
   .badge{border-radius:3px;padding:1px 7px;border:1px solid var(--line2);
     color:var(--sub);font-family:var(--mono);letter-spacing:.02em}
-  .badge.th-central_bank{color:var(--cb-tx);border-color:var(--cb);background:var(--cb-bg)}
-  .badge.th-real_economy{color:var(--re-tx);border-color:var(--re);background:var(--re-bg)}
-  .badge.th-fin_markets{color:var(--fm-tx);border-color:var(--fm);background:var(--fm-bg)}
-  .badge.free{color:var(--fm-tx);border-color:var(--fm)}
-  .badge.paid{color:var(--re-tx);border-color:var(--re)}
+  .badge.free{color:var(--fm-tx);border-color:var(--fm-tx)}
+  .badge.paid{color:var(--re-tx);border-color:var(--re-tx)}
   .badge.closed{color:var(--fail);border-color:var(--fail)}
   .sum{font-size:13px;margin-top:7px;color:#c7ccd3}
   .reg{font-size:12.5px;color:var(--sub);margin-top:3px}
@@ -180,7 +194,8 @@
     table.cal td{height:58px}
     .ev,.ev.i1,.ev.i2,.ev.i3{font-size:0;font-weight:400;padding:0;height:6px;
       border-left-width:0;margin:2px 1px;border-radius:1px;opacity:1}
-    .ev.c-cb{background:var(--cb)} .ev.c-re{background:var(--re)} .ev.c-fm{background:var(--fm)}
+    .ev.i3{background:var(--imp3)} .ev.i2{background:var(--imp2)} .ev.i1{background:var(--imp1)}
+    .ev.foreign{outline:1.5px dashed var(--sub);outline-offset:0;border-radius:0}
     .more{font-size:9px}
     .row{flex-direction:column;gap:4px}
     .when{min-width:0}
@@ -192,45 +207,45 @@
 <div class="wrap">
 <header>
   <div class="statusbar">
-    <span class="kicker">Germany &middot; Europe — Econ &amp; Finance</span>
     <h1>Seminar Radar</h1>
-    <span class="updated">SURVEY COMPLETED: <b>2026-07-15 18:23 (CEST)</b></span>
+    <span class="live"><span class="ld"></span>LIVE</span>
+    <span class="updated">SURVEY COMPLETED: <b>2026-07-15 18:31 (CEST)</b></span>
     <div class="tagline">ドイツ(順次欧州へ拡大予定)の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
 
 <div class="filters">
   <div class="chiprow">
-    <span class="chip t-cb" data-th="central_bank" data-on="1"><span class="dot"></span>① 中央銀行・金融政策</span>
-    <span class="chip t-re" data-th="real_economy" data-on="1"><span class="dot"></span>② 実体経済(エネルギー・防衛・インフラ)</span>
-    <span class="chip t-fm" data-th="fin_markets" data-on="1"><span class="dot"></span>③ 金融規制・金融市場</span>
+    <span class="chip" data-th="central_bank" data-on="1">① 中央銀行・金融政策</span>
+    <span class="chip" data-th="real_economy" data-on="1">② 実体経済(エネルギー・防衛・インフラ)</span>
+    <span class="chip" data-th="fin_markets" data-on="1">③ 金融規制・金融市場</span>
   </div>
   <div class="controls">
-    <label class="fld"><span class="cap">Lang</span>
-      <select id="lang">
-        <option value="">All</option>
-        <option value="en">English</option>
-        <option value="de">German</option>
-      </select></label>
-    <label class="fld"><span class="cap">Fee</span>
-      <select id="fee">
-        <option value="free_unknown">Free (incl. unknown)</option>
-        <option value="free_only">Free only</option>
-        <option value="paid">Paid</option>
-        <option value="all">All</option>
-      </select></label>
     <label class="fld"><span class="cap">Country</span>
       <select id="country"></select></label>
     <label class="fld"><span class="cap">City</span>
       <select id="city"></select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
-        <option value="">All</option>
-        <option value="2">2+</option>
-        <option value="3">3 only</option>
+        <option value="">全部(低・中・高)</option>
+        <option value="2">中・高</option>
+        <option value="3">高</option>
+      </select></label>
+    <label class="fld"><span class="cap">Lang</span>
+      <select id="lang">
+        <option value="">すべて</option>
+        <option value="en">英語</option>
+        <option value="de">ドイツ語</option>
+      </select></label>
+    <label class="fld"><span class="cap">Fee</span>
+      <select id="fee">
+        <option value="free_unknown">無料(不明含む)</option>
+        <option value="free_only">無料のみ</option>
+        <option value="paid">有料</option>
+        <option value="all">すべて</option>
       </select></label>
     <label class="fld search"><span class="cap">Search</span>
-      <input type="search" id="q" placeholder="keyword"></label>
+      <input type="search" id="q" placeholder="キーワード"></label>
   </div>
 </div>
 
@@ -242,6 +257,11 @@
 <table class="cal"><thead><tr>
   <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
 </tr></thead><tbody id="calbody"></tbody></table>
+<div class="callegend">
+  <span class="cap">色=重要度:</span>
+  <span class="lgset"><span class="lg i3">高</span><span class="lg i2">中</span><span class="lg i1">低</span></span>
+  <span class="fg">◇ ドイツ国外での開催</span>
+</div>
 
 <h2 class="sect">今後のイベント一覧</h2>
 <div id="list"></div>
@@ -250,8 +270,9 @@
 <table class="st"><tbody id="status"></tbody></table>
 
 <footer>
-  ★の数は重要度(★★★=大規模国際会議・中銀総裁級登壇 / ★★☆=中規模カンファレンス / ★☆☆=定例セミナー)。
-  ①②③の色分けは各イベントの主テーマ。
+  カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
+  シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
+  ◇ が付くイベントはドイツ国外での開催。一覧の①②③はイベントの主テーマ(モノクロ表示)。
   情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
   日付・参加費等は必ずリンク先の原文で確認すること。
 </footer>
@@ -271,11 +292,12 @@ const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau
                     "Eltville am Rhein":"Eltville"};
 const LANG_SHORT = {en:"英", de:"独", "en+de":"英独"};
 const LANG_JA    = {en:"英語", de:"独語", "en+de":"英語・独語"};
-const COUNTRY_EN = {DE:"Germany", AT:"Austria", IT:"Italy", CH:"Switzerland",
-                    FR:"France", NL:"Netherlands"};
+const COUNTRY_JA = {DE:"ドイツ", AT:"オーストリア", IT:"イタリア", CH:"スイス",
+                    FR:"フランス", NL:"オランダ"};
 
 /* ---------- ラベル生成 ---------- */
 function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
+function isForeign(ev){ return ev.country!=null && ev.country!=="DE"; }
 function stars(ev){ const n=imp(ev); return "★".repeat(n)+"☆".repeat(3-n); }
 function cityShort(ev){
   if(ev.city) return CITY_SHORT[ev.city] || ev.city;
@@ -297,7 +319,7 @@ function evLabel(ev){
   const lang = ev.language ? LANG_SHORT[ev.language] : null;
   const mid = lang ? `${lang}・${orgShort(ev)}` : orgShort(ev);
   const theme = ev.title_short || ev.title || "";
-  return `[${cityShort(ev)}][${mid}]${theme}`;
+  return `${isForeign(ev)?"◇ ":""}[${cityShort(ev)}][${mid}]${theme}`;
 }
 function evFull(ev){
   return [ev.title, ev.organizer, ev.city].filter(Boolean).join(" / ");
@@ -368,9 +390,9 @@ const inRange=(ev,iso)=>iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
 /* ---------- 動的セレクト構築 ---------- */
 function buildCountry(){
   const sel=document.getElementById("country");
-  let opts=`<option value="">All</option>`;
+  let opts=`<option value="">すべて</option>`;
   for(const c of dataCountries)
-    opts+=`<option value="${c}">${esc(COUNTRY_EN[c]||c)}</option>`;
+    opts+=`<option value="${c}">${esc(COUNTRY_JA[c]||c)}</option>`;
   sel.innerHTML=opts;
   sel.value=state.country;
 }
@@ -382,7 +404,7 @@ function buildCity(){
   const cand=cityCandidates();
   if(state.city && !cand.includes(state.city)) state.city="";
   const sel=document.getElementById("city");
-  let opts=`<option value="">All</option>`;
+  let opts=`<option value="">すべて</option>`;
   for(const c of cand) opts+=`<option value="${esc(c)}">${esc(c)}</option>`;
   sel.innerHTML=opts;
   sel.value=state.city;
@@ -405,7 +427,7 @@ function drawCal(){
       const day=evs.filter(e=>inRange(e,iso))
                    .sort((a,b)=>imp(b)-imp(a));
       let chips=day.slice(0,4).map(e=>
-        `<a class="ev i${imp(e)} c-${THCLS[e.themes[0]]}" href="#ev-${e.id}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
+        `<a class="ev i${imp(e)}${isForeign(e)?' foreign':''}" href="#ev-${e.id}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
       ).join("");
       if(day.length>4) chips+=`<span class="more">+${day.length-4}</span>`;
       html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${chips}</td>`;
