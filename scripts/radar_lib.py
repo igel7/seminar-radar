@@ -79,6 +79,21 @@ def sanitize(ev):
     for key in ("organizer_short", "title_short"):
         val = ev.get(key)
         ev[key] = val if isinstance(val, str) and val else None
+    importance = ev.get("importance")
+    if isinstance(importance, str) and importance.isdigit():
+        importance = int(importance)
+    if not (isinstance(importance, int) and not isinstance(importance, bool)
+            and importance in (1, 2, 3)):
+        importance = None
+    ev["importance"] = importance
+    reg_url = ev.get("registration_url")
+    if not (isinstance(reg_url, str) and reg_url.startswith(("http://", "https://"))):
+        reg_url = None
+    ev["registration_url"] = reg_url
+    time_end = ev.get("time_end")
+    if not (isinstance(time_end, str) and re.fullmatch(r"\d{2}:\d{2}", time_end)):
+        time_end = None
+    ev["time_end"] = time_end
     end = ev.get("date_end") or ev.get("date_start")
     if date.fromisoformat(end) < TODAY - timedelta(days=1):
         return None

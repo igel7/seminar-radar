@@ -66,6 +66,9 @@ python3 scripts/ingest.py
 | `country` | 開催国のISO 3166-1 alpha-2コード(例 `"DE"`, `"AT"`)。オンラインのみ開催なら `null` |
 | `organizer_short` | 主催者の一般的な略称(例 `"ECB"`, `"Bundesbank"`, `"IfW Kiel"`, `"SAFE"`)。定着した略称がなければ組織名の短い形 |
 | `title_short` | カレンダーセル表示用の短い英語テーマ(40字以内目安)。原題から年号・回数・シリーズ名などの冠飾を落とした中核テーマ(例 "ECB Annual Research Conference 2026 – Geoeconomics and the International Trading System" → "Geoeconomics and Int'l Trading System") |
+| `importance` | イベントの重要度。`3`=大規模国際会議や中銀総裁・理事級の登壇があるフラッグシップイベント / `2`=中規模の研究会議・政策カンファレンス / `1`=定例セミナー・ブラウンバッグ・小規模講演 |
+| `registration_url` | 参加申込ページのURL(イベント詳細ページと別に申込窓口がある場合)。不明なら `null` |
+| `time_end` | 終了時刻 `"HH:MM"`(現地時間)。不明なら `null` |
 | `source` | 情報源の名前(sources.yamlの`name`、または`"web検索(discovery)"`) |
 
 ## 抽出ルール
@@ -79,6 +82,7 @@ python3 scripts/ingest.py
 - 日付が読み取れないイベントは含めない。**推測で日付を作らない。**
 - ページに書かれていない情報は `null` / `"unknown"` とする。**捏造しない。**
 - 開催言語はページの記載・告知文の言語から判断する。推測が難しければ `null`。
+- 重要度は主催機関の格・登壇者の地位・規模(日数・国際性)から総合判断する。迷ったら低い方に倒す。
 
 ## 禁止事項
 
