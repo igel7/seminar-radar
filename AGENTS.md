@@ -1,4 +1,4 @@
-# ROUTINE.md — 日次更新の作業指示書
+# AGENTS.md — 日次更新の作業指示書
 
 あなた(Claude Code)は毎日1回このリポジトリ上で実行され、ドイツ国内の
 経済・金融セミナー情報を収集してカレンダーページを更新する。
@@ -77,7 +77,7 @@ python3 scripts/ingest.py
 
 ## 禁止事項
 
-- `scripts/` `sources.yaml` `ROUTINE.md` 本体を書き換えないこと
+- `scripts/` `sources.yaml` `AGENTS.md` 本体を書き換えないこと
   (ingest.pyのエラー修正が必要な場合のみ最小限の修正を許可)。
 - `data/events.json` を直接編集しないこと(必ず new_events.json 経由)。
 - 外部への通知・イシュー作成・PR作成をしないこと。
