@@ -65,7 +65,7 @@ python3 scripts/ingest.py
 | `language` | 開催言語。`"en"` / `"de"` / `"en+de"`。不明なら `null` |
 | `country` | 開催国のISO 3166-1 alpha-2コード(例 `"DE"`, `"AT"`)。オンラインのみ開催なら `null` |
 | `organizer_short` | 主催者の一般的な略称(例 `"ECB"`, `"Bundesbank"`, `"IfW Kiel"`, `"SAFE"`)。定着した略称がなければ組織名の短い形 |
-| `title_short` | カレンダーセル表示用の短い英語テーマ(40字以内目安)。原題から年号・回数・シリーズ名などの冠飾を落とした中核テーマ(例 "ECB Annual Research Conference 2026 – Geoeconomics and the International Trading System" → "Geoeconomics and Int'l Trading System") |
+| `title_short` | カレンダーセル表示用の英語一言テーマ。**最大5単語**(冠詞・前置詞含む)。原題を写すのではなく、イベントの中核テーマを自分で考えて要約する(例: "Geoeconomics and Global Trade", "Digital Euro", "Housing Market Frictions")。年号・回数・シリーズ名・主催者名は入れない。ドイツ語イベントもtitle_shortは英語でよい。 |
 | `importance` | イベントの重要度。`3`=大規模国際会議や中銀総裁・理事級の登壇があるフラッグシップイベント / `2`=中規模の研究会議・政策カンファレンス / `1`=定例セミナー・ブラウンバッグ・小規模講演 |
 | `registration_url` | 参加申込ページのURL(イベント詳細ページと別に申込窓口がある場合)。不明なら `null` |
 | `time_end` | 終了時刻 `"HH:MM"`(現地時間)。不明なら `null` |
