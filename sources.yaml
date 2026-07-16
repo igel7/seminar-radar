@@ -17,7 +17,7 @@ settings:
 
 # ------------------------------------------------------------
 # 定点観測リスト
-# verified: このURLは2026-07-13時点で実在確認済みか
+# verified: このURLは2026-07-16時点で実在確認済みか
 # ------------------------------------------------------------
 sources:
   - name: "ECB – Conferences & seminars"
@@ -38,19 +38,19 @@ sources:
 
   - name: "ifo Institut – Veranstaltungen"
     url: "https://www.ifo.de/veranstaltungen"
-    verified: true
+    verified: false   # JS描画: fetch_page.pyを使用
 
   - name: "DIW Berlin – Veranstaltungen"
     url: "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"
     verified: true
 
   - name: "IfW Kiel – Veranstaltungen"
-    url: "https://www.ifw-kiel.de/de/institut/veranstaltungen/"
-    verified: false   # 親ページURLは推定(下層ページは確認済み)。初回実行のステータス欄で確認のこと
+    url: "https://www.kielinstitut.de/de/institut/veranstaltungen/"
+    verified: true
 
   - name: "RWI Essen – Veranstaltungen"
     url: "https://www.rwi-essen.de/veranstaltungen"
-    verified: false
+    verified: true
 
   - name: "SAFE Frankfurt – Events"
     url: "https://safe-frankfurt.de/news-latest/events.html"
@@ -58,7 +58,7 @@ sources:
 
   - name: "IMFS Frankfurt – 全ての今後のイベント"
     url: "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen"
-    verified: true
+    verified: true   # JS描画: fetch_page.pyを使用
 
   - name: "House of Finance (Goethe大) – Veranstaltungen"
     url: "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen"
@@ -66,49 +66,49 @@ sources:
 
   - name: "SUERF – Events"
     url: "https://www.suerf.org/events/"
-    verified: false
+    verified: true
 
   - name: "ZEW Mannheim – Veranstaltungen"
     url: "https://www.zew.de/veranstaltungen"
-    verified: false
+    verified: true
 
   # --- 追加: 中央銀行・金融政策系 ---
   - name: "CFS – Center for Financial Studies (Frankfurt) – Events"
-    url: "https://www.ifk-cfs.de/events.html"
-    verified: false
+    url: "https://gfk-cfs.de/en/events/"
+    verified: true
 
   - name: "Frankfurt School of Finance & Management – Events"
-    url: "https://www.frankfurt-school.de/en/home/about-us/events"
-    verified: false
+    url: "https://forum.frankfurt-school.de/konferenzen/"
+    verified: true
 
   - name: "CESifo (München) – Veranstaltungen"
-    url: "https://www.cesifo.org/de/veranstaltungen"
-    verified: false
+    url: "https://www.ifo.de/en/cesifo/events"
+    verified: true
 
   - name: "Hertie School (Berlin) – Events"
     url: "https://www.hertie-school.org/en/events"
-    verified: false
+    verified: true
 
   - name: "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen"
     url: "https://www.iwh-halle.de/veranstaltungen/"
-    verified: false
+    verified: true
 
   # --- 追加: 金融規制・市場系 ---
   - name: "BaFin – Veranstaltungen"
-    url: "https://www.bafin.de/DE/Service/Veranstaltungen/veranstaltungen_node.html"
-    verified: false
+    url: "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html"
+    verified: true
 
   - name: "EIOPA (Frankfurt) – Events"
     url: "https://www.eiopa.europa.eu/media/events_en"
-    verified: false
+    verified: true
 
   - name: "SRB – Single Resolution Board – Events"
     url: "https://www.srb.europa.eu/en/events"
-    verified: false
+    verified: true
 
   - name: "Deutsche Börse Group – Veranstaltungen"
-    url: "https://www.deutsche-boerse.com/dbg-de/media/veranstaltungen"
-    verified: false
+    url: "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen"
+    verified: true
 
   # --- 追加: 実体経済(エネルギー・防衛・インフラ)系 ---
   - name: "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen"
@@ -117,74 +117,111 @@ sources:
 
   - name: "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen"
     url: "https://dgap.org/de/veranstaltungen"
-    verified: false
+    verified: true
 
   - name: "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen"
     url: "https://www.ewi.uni-koeln.de/de/veranstaltungen/"
-    verified: false
+    verified: true
 
   - name: "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen"
     url: "https://www.iwkoeln.de/veranstaltungen.html"
-    verified: false
+    verified: false   # JS描画: fetch_page.pyを使用
 
   # --- 追加: 欧州(将来拡大の布石) ---
   - name: "Bruegel (Brussels) – Events"
     url: "https://www.bruegel.org/events"
-    verified: false
+    verified: true
 
   - name: "OMFIF – Events/Meetings"
-    url: "https://www.omfif.org/events/"
-    verified: false
+    url: "https://www.omfif.org/meetings/"
+    verified: true
 
   - name: "BIS – Bank for International Settlements – Events"
-    url: "https://www.bis.org/events/index.htm"
-    verified: false
+    url: "https://www.bis.org/ifc/events.htm"
+    verified: true
 
   # --- 追加: 欧州の中央銀行(定点) ---
   - name: "SNB – Swiss National Bank – Events"
-    url: "https://www.snb.ch/en/services-events/events"
-    verified: false
+    url: "https://www.snb.ch/en/services-events/digital-services/event-schedule"
+    verified: true
 
   - name: "OeNB – Oesterreichische Nationalbank – Veranstaltungen"
-    url: "https://www.oenb.at/en/Termine.html"
-    verified: false
+    url: "https://www.oenb.at/en/Calendar.html"
+    verified: true
 
   - name: "CNB – Czech National Bank – Conferences, Seminars, Workshops"
-    url: "https://www.cnb.cz/en/economic-research/conferences-seminars-workshops/"
-    verified: false
+    url: "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/"
+    verified: true
 
   - name: "NBP – Narodowy Bank Polski – Conferences"
-    url: "https://nbp.pl/en/research-and-publications/conferences/"
-    verified: false
+    url: "https://nbp.pl/en/economic-education/conferences/"
+    verified: false   # 403継続時は site:nbp.pl 検索で補完
 
   - name: "NBU – National Bank of Ukraine – Research Events"
-    url: "https://bank.gov.ua/en/news/events"
-    verified: false
+    url: "https://bank.gov.ua/en/research/events"
+    verified: true
 
   - name: "NBS – Národná banka Slovenska – Events"
-    url: "https://nbs.sk/en/events/"
-    verified: false
+    url: "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/"
+    verified: true
 
   - name: "Bank of Lithuania – Events"
     url: "https://www.lb.lt/en/events"
-    verified: false
+    verified: false   # Cloudflareブロック: data/manual/ の手動取込で補完
 
   - name: "Latvijas Banka – Research/Events"
     url: "https://www.macroeconomics.lv/events"
-    verified: false
+    verified: true
 
   # --- 追加: 中銀系研究機関・研究ネットワーク ---
   - name: "Study Center Gerzensee – Events"
-    url: "https://www.szgerzensee.ch/events"
-    verified: false
+    url: "https://www.szgerzensee.ch/programs/conferences-events"
+    verified: true
 
   - name: "CEBRA – Central Bank Research Association – Events"
     url: "https://www.cebra.org/events"
-    verified: false
+    verified: true
 
   # --- 追加: ECBの見落とし対策 ---
   - name: "ECB – Calls for Papers"
     url: "https://www.ecb.europa.eu/press/calls/html/index.en.html"
+    verified: true
+
+  # --- 追加: 東欧・バルカン・バルトの中央銀行 ---
+  - name: "Eesti Pank (エストニア) – Events"
+    url: "https://www.eestipank.ee/en/events"
+    verified: false
+
+  - name: "MNB – Magyar Nemzeti Bank (ハンガリー) – Events"
+    url: "https://www.mnb.hu/en/events"
+    verified: false
+
+  - name: "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars"
+    url: "https://www.bnr.ro/Conferences-and-seminars-6864.aspx"
+    verified: false
+
+  - name: "HNB – Croatian National Bank – Conferences"
+    url: "https://www.hnb.hr/en/core-functions/research/conferences"
+    verified: false
+
+  - name: "BNB – Bulgarian National Bank – Events"
+    url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
+    verified: false
+
+  - name: "National Bank of Serbia – Events"
+    url: "https://www.nbs.rs/en/events/"
+    verified: false
+
+  - name: "Banka Slovenije – Events"
+    url: "https://www.bsi.si/en/events"
+    verified: false
+
+  - name: "CBBH – Central Bank of Bosnia and Herzegovina – Events"
+    url: "https://www.cbbh.ba/en/Events"
+    verified: false
+
+  - name: "Bank of Albania – Events"
+    url: "https://www.bankofalbania.org/Events/"
     verified: false
 
 # ------------------------------------------------------------
