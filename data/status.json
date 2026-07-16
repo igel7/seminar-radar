@@ -3,287 +3,355 @@
   "name": "ECB – Conferences & seminars",
   "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
   "ok": true,
-  "found": 0,
-  "error": "6件の今後の会議(Annual Research Conf 09-16, Legal Conf 09-28, ESRB 10-01, Monetary Policy Conf 10-05, Money Markets 11-05, Financial Stability 12-02)を確認したが全て既載のため新規なし。"
+  "found": 6,
+  "error": "ECB Forum on Central Banking (29 Jun–1 Jul 2026, Sintra) excluded as past (end date < 2026-07-16)."
  },
  {
   "name": "ECB – Calls for Papers",
-  "url": "https://www.ecb.europa.eu/press/conferences/html/20261015_bog_ecb_workshop.en.html",
+  "url": "https://www.ecb.europa.eu/press/calls/html/index.en.html",
   "ok": true,
-  "found": 1,
-  "error": "代替URL: 一覧ページ /press/calls/html/index.en.html は404のため個別会議ページを参照。開催日確定のBank of Greece/ECBワークショップ(Athens 10-15、ECB主催のため開催国不問で収載)を採用。BIS/BoE/ECB/IMF Spillover Conf(04-28)は終了済みで除外。Expectations Surveys会議は開催日未確定で除外。他の締切系Call(Money Markets/Monetary Policy/Financial Stability会議)は本体が既載。"
+  "found": 3,
+  "error": "代替URL: https://www.ecb.europa.eu/press/conferences/html/index.en.html — listing page 404; calls with confirmed event dates recovered from the conferences index."
  },
  {
   "name": "Bundesbank – Termine",
   "url": "https://www.bundesbank.de/de/service/termine",
   "ok": true,
-  "found": 0,
-  "error": "家族向け/子供向けワークショップ(Münze gestalten, Banknotendetektive等)・見学ツアーは除外。Bayerischer Sparkassentag(07-16)は既載。3rd Frankfurt Summer School(07-26〜31)は研修講座のため除外。新規なし。"
+  "found": 1,
+  "error": "Most listed items were museum/coin/kids workshops and family tours (excluded); only the Bavarian Savings Bank Conference panel matched themes."
  },
  {
   "name": "Bundesbank – Forschungskonferenzen",
   "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656",
   "ok": true,
-  "found": 0,
-  "error": "掲載の研究会議(Microstructure Conf 09-10, SAFE Asset Pricing 09-29, Fall Frankfurt Macro Seminar 11-05)は全て既載。Frankfurt Summer School(07-26)は研修講座で除外。新規なし。"
+  "found": 4,
+  "error": null
  },
  {
   "name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
   "ok": true,
-  "found": 0,
-  "error": "支払い行動をテーマとする公開講演3件(Mainz 08-11, Frankfurt 08-18, Düsseldorf 09-09)を採用(central_bank、既載のデジタルユーロ講演と同カテゴリ)。貨幣史講演(Mehrfachtaler/Prachtvolles Geld)は博物館的内容で除外、AI講演・年金財政講演はテーマ非該当で除外、Digitaler Euro Saarbrücken(09-22)は既載。 【編集判断】支払行動調査(Zahlungsverhaltensstudie)の結果紹介公開講演3件は報告書公表・広報種別かつ金融政策テーマ非該当のため不採用。"
- },
- {
-  "name": "ifo Institut – Veranstaltungen",
-  "url": "https://www.ifo.de/veranstaltungen",
-  "ok": false,
-  "found": 0,
-  "error": "メインページはJS描画/bot対策で実イベント一覧が静的HTMLに出ず(プレースホルダのみ)。ifo独自イベントは取得不能。CESifo/EconPolのイベントはソース6(CESifo)で計上済みのためここでは重複計上せず。"
- },
- {
-  "name": "DIW Berlin – Veranstaltungen",
-  "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
-  "ok": true,
-  "found": 0,
-  "error": "curlで静的HTML取得(WebFetchは503)。全11件中、テーマ該当2件を抽出(Productivity workshop, Firms/Workers/Households in Crisis)。除外:Medieneffekte/Migration・Well-Being測定・Berlin IO Day・Economics of Crime(いずれもテーマ外)、Cluster-Seminar Öffentliche Finanzen(定例・汎題)、SOEPcampus/SOEP入門(研修講座)。 【編集判断】生産性WS・企業/労働/家計WSは労働/生産性系で3テーマ非該当のため不採用(前回踏襲)。"
- },
- {
-  "name": "IfW Kiel – Veranstaltungen",
-  "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://www.kielinstitut.de/de/institut/veranstaltungen/ (ifw-kiel.deから301)。掲載イベントは全てexisting.txtに既載(Diverging Cycles 7/16、Parenti 7/23、GDPLive 8/18、Chenzi Xu 9/10、Kiel-CEPR Geoeconomics 11/3)。Advanced Studies Program/Math Camp等は研修講座で除外。新規なし。"
- },
- {
-  "name": "RWI Essen – Veranstaltungen",
-  "url": "https://www.rwi-essen.de/veranstaltungen",
-  "ok": true,
-  "found": 0,
-  "error": "curlで取得。メイン/veranstaltungenはハブページで日付付きイベントなし。Research Seminar一覧・Workshops・Termineページも確認。7/16以降の該当開催はEnvironmental and Behavioral/Regional Economics Seminarの講演者のみ(9/3,9/22,11/17、演題記載なし・テーマ外)で除外。Ökonomie Hautnah/Ruhr Macro/Labour Dayは過去または対象外。新規なし。"
- },
- {
-  "name": "ZEW Mannheim – Veranstaltungen",
-  "url": "https://www.zew.de/veranstaltungen",
-  "ok": true,
-  "found": 0,
-  "error": "WebFetch成功。掲載8件は全てテーマ外のため除外:大気汚染/薬剤耐性、EARIE(産業組織)、MannheimTaxation(税)、Health Economics、EU Budget Talks(財政・汎題)、Innovation/Patente、Financial Education/Inclusion(金融教育・当該テーマ外)、Sachverständigenrat年次報告(報告書公表)。新規なし。"
- },
- {
-  "name": "CESifo (München) – Veranstaltungen",
-  "url": "https://www.ifo.de/en/cesifo/events",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://www.ifo.de/en/cesifo/events (cesifo.orgはifo.deへ)。Junior Workshop Intl Economics(7/17-18)とEconPol Annual Conference(11/9)はexisting.txtに既載。Michèle Belot訪問は非イベントで除外、CESifo-TransforM AI Workshop(12/3-4)はテーマ外(AI労働・生産性・競争)で除外。新規なし。"
- },
- {
-  "name": "SAFE Frankfurt – Events",
-  "url": "https://safe-frankfurt.de/news-latest/events.html",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。掲載イベント(Lovisa Reiche BrownBag, 1st Real Estate Finance Workshop, 3rd CEPR-SAFE Hub, 10th Market Microstructure, 13th Asset Pricing Workshop)は全てexisting.txtに既載。Frankfurt Summer School 2026とScience Festival Frankfurtは研修/一般公開イベントのため除外。新規なし。"
- },
- {
-  "name": "IMFS Frankfurt – 全ての今後のイベント",
-  "url": "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功(curl)。『Alle kommenden Veranstaltungen』ページはナビゲーションとニュースレター登録案内のみで、現時点で登録済みの今後の予定イベントは掲載されていない。代替の/en/events/upcoming-eventsも同様。新規なし。"
- },
- {
-  "name": "House of Finance (Goethe大) – Veranstaltungen",
-  "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。掲載イベントはSAFE系(1st Real Estate Finance, 3rd CEPR-SAFE Hub, Market Microstructure, Asset Pricing)およびefl Annual Conference 2026で全てexisting.txt既載。Science Festival Frankfurtは一般公開のため除外。新規なし。"
- },
- {
-  "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
-  "url": "https://gfk-cfs.de/en/events/",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://gfk-cfs.de/en/events/(旧ifk-cfs.deは失効しカジノ系スパムドメイン化)。RSSフィード確認。掲載イベントは全てevent-archive配下の過去分(最新でも2026-06-30)で、2026-07-16以降の今後イベントは未掲載。新規なし。"
- },
- {
-  "name": "Frankfurt School of Finance & Management – Events",
-  "url": "https://forum.frankfurt-school.de/konferenzen/",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://forum.frankfurt-school.de/konferenzen/(本体/en/home/about-us/eventsは404)。掲載会議のうちテーマ該当分(M&A und Private Equity 26, Nachhaltige Geldanlagen 26, Sustainable Finance Gipfel 26, Risiko Geldwäsche 26, BAI Workshop, Capital Markets Day 27, NPL Forum 27等)は全てexisting.txt既載。Frankfurt Venture Hub/Turkish Banking Evening/Fokus Aufsichtsrat/Future of Work/Digital Society等は3テーマ非該当または対象外地域のため除外。新規なし。"
- },
- {
-  "name": "SUERF – Events",
-  "url": "https://www.suerf.org/events/",
-  "ok": true,
-  "found": 2,
-  "error": "取得成功(curl。WebFetchは403)。Upcoming Events 5件のうち3件(37th SUERF Colloquium@Bank of Italy, OeNB/SUERF/JVI/Yale, SUERF BAFFI Bocconi Meet-the-Author)はexisting.txt既載。新規2件を収載:(1)Simplifying Europe's financial services regulation(9/24 Brussels, NBB共催)、(2)Housing markets squaring supply and demand(11/17 Bratislava, NBS共催)。両者とも中央銀行共催のため開催国不問で収載。 Brussels回(9/24)はベルギー国立銀行(中銀)共催のため開催国不問ルールで収載。Bratislava回(11/17)はスロバキアが対象地域内のため収載。"
- },
- {
-  "name": "Hertie School (Berlin) – Events",
-  "url": "https://www.hertie-school.org/en/events",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。掲載は人口統計・ジェンダー・家族・移動性など社会科学系イベントのみで、中央銀行・実体経済・金融規制の3テーマに該当するものなし。"
- },
- {
-  "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
-  "url": "https://www.iwh-halle.de/veranstaltungen/",
-  "ok": true,
-  "found": 0,
-  "error": "WebFetchが503のためcurlで取得。主要ワークショップ(12th IWH-FIN-FIRE 8/24、27th Macroeconometric 12/8)は既載。IWH Research Seminar複数(Sadun 9/1, Sterk 9/29, Morazzoni 10/20, Cantore 10/27等)は題目tba/tbaでテーマ判定不能のため除外。21. IWH/IAB労働市場ワークショップ(10/5, Nürnberg)およびLerner大学商業化セミナー(11/17)はテーマ非該当で除外。"
- },
- {
-  "name": "BaFin – Veranstaltungen",
-  "url": "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html を使用(元URLは404)。新規2件(22. Praxisforum Wirtschaftskriminalität 9/29、Praktikerdialog WpHG-Compliance 11/20、いずれも招待制)を抽出。gamescom(8/26)・Ausbildungsmesse(9/19)・Börsentag Berlin/Hamburg(10/10,11/21、投資家見本市)は種別外で除外。Proportionalität(9/16)・Versicherungsaufsicht(12/1)・IT-Aufsicht(12/8)・Geldwäsche Fachtagung(12/10)は既載につきスキップ。 【編集判断】Praxisforum Wirtschaftskriminalität(司法・捜査機関向け)とWpHG実務対話(限定閉鎖)は種別・対象外のため不採用(前回踏襲)。"
- },
- {
-  "name": "EIOPA (Frankfurt) – Events",
-  "url": "https://www.eiopa.europa.eu/media/events_en",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。掲載は7/16のpublic hearing(Taxonomy規則Art.8保険開示レビュー)のみで、公聴会=セミナー種別外のため除外。他に該当予定イベントなし。"
- },
- {
-  "name": "SRB – Single Resolution Board – Events",
-  "url": "https://www.srb.europa.eu/en/events",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。2026-07-16以降の予定イベントなし(直近はStockholm International Banking Crisis Management Conference 6/10-11で既に過去扱い)。"
- },
- {
-  "name": "Deutsche Börse Group – Veranstaltungen",
-  "url": "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen を使用(元URLは404)。決算アナリスト会議(7/23、記者/IR向け)およびOpen Day 2026(9/24、オープンハウス)は種別外で除外。Global Fund Summit 2026(10/28 Luxembourg)は既載につきスキップ。"
- },
- {
-  "name": "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen",
-  "url": "https://www.swp-berlin.org/forum-ebenhausen/veranstaltungen",
-  "ok": false,
-  "found": 0,
-  "error": "元URL(/veranstaltungen)および/en/events は404。代替UR: https://www.swp-berlin.org/forum-ebenhausen/veranstaltungen を確認したがフォーラムのテーマ紹介のみで日付付きイベント一覧なし。SWPは外交・安全保障政策系で経済テーマの抽出可能な日付付きイベントを発見できず。"
- },
- {
-  "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
-  "url": "https://dgap.org/de/veranstaltungen",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。2026-07-16以降は『Zeitenwende in der europäischen Sicherheit』(07-20 Essen)のみだが、社会的結束・ハイブリッド脅威がテーマで経済3テーマに非該当のため除外。他は開催済み。"
- },
- {
-  "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
-  "url": "https://www.ewi.uni-koeln.de/en/dates-overview/",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。掲載は2026年6月までの開催済みイベント中心。唯一の将来枠『4th Scientific Workshop on Productivity』はCall for Papersで開催日未記載のため除外(推測日付を作らない)。エネルギー系の該当新規イベントなし。"
- },
- {
-  "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
-  "url": "https://www.iwkoeln.de/veranstaltungen.html",
-  "ok": false,
-  "found": 0,
-  "error": "WebFetchは401、curlはJSベースのbotチェック(『Bot check』/crypto-js challenge)を返し本文取得不可。英語版・RSS等の代替も内容取得できず、イベント抽出不能。"
- },
- {
-  "name": "Bruegel (Brussels) – Events",
-  "url": "https://www.bruegel.org/events",
-  "ok": true,
-  "found": 0,
-  "error": "取得成功。掲載イベントは全て既載(07-16 Assessing emerging risks in the US financial system)または07-16より前。新規該当イベントなし。"
- },
- {
-  "name": "OMFIF – Events/Meetings",
-  "url": "https://www.omfif.org/meetings/",
-  "ok": true,
-  "found": 0,
-  "error": "代替URL: https://www.omfif.org/meetings/ で取得成功。オンライン配信(OMFIF Live)の該当回は既載(07-20,07-21,07-27,09-24等)。新規は海外オンサイト専用(London/Helsinki/Luxembourg/Barcelona/Mexico)またはEuropean digital sovereignty forum(12-03 Frankfurt)等の招待制(invitation-only)で、OMFIFルールに従い除外。"
+  "found": 5,
+  "error": "Historical/museum coin talks and an AI-hype lecture excluded as off-theme; kept payments/digital-euro/pension public lectures."
  },
  {
   "name": "BIS – Bank for International Settlements – Events",
   "url": "https://www.bis.org/ifc/events.htm",
   "ok": true,
   "found": 1,
-  "error": "元/events/index.htm・/conferences/index.htm は来訪者案内/JSナビのみで一覧取得不可。代替URL: https://www.bis.org/ifc/events.htm を使用。13th IFC Biennial Conference(08-20〜21 Basel, BIS主催)を採用。25th BIS Annual Conf(06月)は開催済み。他のIFC関連(CIRET南ア/Lisbon/Seoul/Ankara)は非BIS主催かつ対象外地域で除外。"
+  "error": "IFC events page read fine (13th Biennial IFC Conference, Basel). bis.org/events and bis.org/conferences are JS-rendered / visitor-info only; CIRET (South Africa), SDMX (Seoul/Ankara) and Lisbon data-security workshop excluded as out-of-region/off-theme."
+ },
+ {
+  "name": "ifo Institut – Veranstaltungen",
+  "url": "https://www.ifo.de/veranstaltungen",
+  "ok": true,
+  "found": 1,
+  "error": "代替URL: web search site:ifo.de — main /veranstaltungen and /en/events are fully JS-rendered (empty raw HTML); recovered ifo Wirtschaftsdialog via search. CESifo/EconPol events attributed to CESifo source."
+ },
+ {
+  "name": "DIW Berlin – Veranstaltungen",
+  "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
+  "ok": true,
+  "found": 2,
+  "error": "Many listed events (public finance, media/migration, crime, well-being, SOEP training) did not match themes and were excluded."
+ },
+ {
+  "name": "IfW Kiel – Veranstaltungen",
+  "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
+  "ok": true,
+  "found": 3,
+  "error": "Advanced Studies Program courses (Math Camp, RBC, etc.) and off-theme seminars (taxation, housing) excluded."
+ },
+ {
+  "name": "RWI Essen – Veranstaltungen",
+  "url": "https://www.rwi-essen.de/veranstaltungen",
+  "ok": true,
+  "found": 0,
+  "error": "代替URL: /rwi/neus-aus-dem-institut/termine and /veranstaltungen/fuer-forschende/rwi-research-seminar — main page is JS overview; termine lists only a past youth event; research seminars all pre-2026-07-16. No upcoming qualifying events."
+ },
+ {
+  "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+  "url": "https://www.iwh-halle.de/veranstaltungen/",
+  "ok": true,
+  "found": 2,
+  "error": "代替URL: http://www.iwh-halle.de/veranstaltungen (301). 'tba' research seminars (no readable title/theme) and labor/innovation events excluded."
+ },
+ {
+  "name": "CESifo (München) – Veranstaltungen",
+  "url": "https://www.ifo.de/en/cesifo/events",
+  "ok": true,
+  "found": 3,
+  "error": "Off-theme conferences (Education, Behavioral, Migration, Political Economy) and training masterclasses excluded; area conferences before 2026-07-16 already past."
+ },
+ {
+  "name": "SAFE Frankfurt – Events",
+  "url": "https://safe-frankfurt.de/news-latest/events.html",
+  "ok": true,
+  "found": 4,
+  "error": "Excluded Frankfurt Summer School (education), Science Festival (public festival), and a brown-bag seminar with an ambiguous/likely-past date."
+ },
+ {
+  "name": "IMFS Frankfurt – 全ての今後のイベント",
+  "url": "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen",
+  "ok": true,
+  "found": 0,
+  "error": "JS-rendered; raw HTML only shows nav. Checked upcoming-events, Policy Webinars 2026, ECB Watchers XXVI (2026-03-25), Independence conf (2026-02-12/13) — all before 2026-07-16. No upcoming events."
+ },
+ {
+  "name": "House of Finance (Goethe大) – Veranstaltungen",
+  "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
+  "ok": true,
+  "found": 5,
+  "error": "Four events overlap with SAFE listing (dedupe downstream); efl Annual Conference 2026 is unique. Excluded Science Festival."
+ },
+ {
+  "name": "SUERF – Events",
+  "url": "https://www.suerf.org/events/",
+  "ok": true,
+  "found": 5,
+  "error": "WebFetch returned 403; recovered via curl on same URL. Detail URLs not exposed, used listing URL as fallback."
+ },
+ {
+  "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
+  "url": "https://gfk-cfs.de/en/events/",
+  "ok": true,
+  "found": 0,
+  "error": "JS-rendered; upcoming-events section empty in HTML. RSS feed (/events/feed/) returns only past 2026 archive events. No upcoming events listed."
+ },
+ {
+  "name": "Frankfurt School of Finance & Management – Events",
+  "url": "https://forum.frankfurt-school.de/konferenzen/",
+  "ok": true,
+  "found": 9,
+  "error": "Excluded off-theme items (Venture Hub, Fokus Aufsichtsrat, Future of Work, Indo-German Business Hub, Digital Society). Detail URLs not exposed, used listing URL."
+ },
+ {
+  "name": "ZEW Mannheim – Veranstaltungen",
+  "url": "https://www.zew.de/veranstaltungen",
+  "ok": true,
+  "found": 2,
+  "error": "Excluded off-theme events (EARIE/IO, MannheimTaxation, health economics, innovation/patents, financial-education conf, pollution seminar)."
+ },
+ {
+  "name": "BaFin – Veranstaltungen",
+  "url": "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html",
+  "ok": true,
+  "found": 6,
+  "error": "Extracted 6 on-theme (fin_markets) events; excluded gamescom, two Börsentag investor fairs, and a Jobmesse as off-theme/non-seminar. City/format often not stated — left null."
+ },
+ {
+  "name": "EIOPA (Frankfurt) – Events",
+  "url": "https://www.eiopa.europa.eu/media/events_en",
+  "ok": true,
+  "found": 0,
+  "error": "Only one listing (public hearing on Taxonomy insurance disclosures, 2026-07-16, online) — excluded as a public hearing/consultation, not a seminar/conference."
+ },
+ {
+  "name": "SRB – Single Resolution Board – Events",
+  "url": "https://www.srb.europa.eu/en/events",
+  "ok": true,
+  "found": 0,
+  "error": "No upcoming events; page states 'no upcoming events' and only past 2026 entries (March/June) shown."
+ },
+ {
+  "name": "Deutsche Börse Group – Veranstaltungen",
+  "url": "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen",
+  "ok": true,
+  "found": 1,
+  "error": "Included Global Fund Summit 2026 (Luxembourg, kept as registered institution). Excluded Q2 analyst call (earnings) and Open Day (non-seminar)."
+ },
+ {
+  "name": "Hertie School (Berlin) – Events",
+  "url": "https://www.hertie-school.org/en/events",
+  "ok": true,
+  "found": 0,
+  "error": "Upcoming events are demography/gender/conflict research seminars — none match central_bank/real_economy/fin_markets themes."
+ },
+ {
+  "name": "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen",
+  "url": "https://www.swp-berlin.org/veranstaltungen",
+  "ok": false,
+  "found": 0,
+  "error": "JS SPA — WebFetch returned 404, curl returns only the SPA shell (155KB, 3 hrefs, no server-rendered event data); no API/feed found. Content is also predominantly foreign/security policy (off-theme)."
+ },
+ {
+  "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
+  "url": "https://dgap.org/de/veranstaltungen",
+  "ok": true,
+  "found": 0,
+  "error": "JS-rendered listing; WebFetch snapshot showed only past (late-June/early-July) foreign & security policy events, none upcoming (>=2026-07-16) matching econ-finance themes."
+ },
+ {
+  "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
+  "url": "https://www.ewi.uni-koeln.de/de/veranstaltungen/",
+  "ok": true,
+  "found": 0,
+  "error": "代替URL: individual /de/termine/ pages checked — all listed events are past (Jan–Mar/Jun 2026, incl. KIM 2026 26.03 and Strommarktdesign 24.03). No upcoming events."
+ },
+ {
+  "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
+  "url": "https://www.iwkoeln.de/veranstaltungen.html",
+  "ok": false,
+  "found": 0,
+  "error": "Blocked HTTP 401 on both WebFetch and curl (JS-heavy); /en/events.html also 401. site:iwkoeln.de search surfaced no upcoming on-theme events (only a past 2026-07-07 virtual talk)."
+ },
+ {
+  "name": "Bruegel (Brussels) – Events",
+  "url": "https://www.bruegel.org/events",
+  "ok": true,
+  "found": 2,
+  "error": "Several July events (14 Jul, 9 Jul) excluded as past-dated (< 2026-07-16); foreign-policy/clean-tech events excluded as off-theme"
+ },
+ {
+  "name": "OMFIF – Events/Meetings",
+  "url": "https://www.omfif.org/meetings/",
+  "ok": true,
+  "found": 12,
+  "error": "2 off-theme events (climate insurance, Americas transition finance) excluded"
  },
  {
   "name": "SNB – Swiss National Bank – Events",
   "url": "https://www.snb.ch/en/services-events/digital-services/event-schedule",
   "ok": true,
   "found": 2,
-  "error": "トップの/events はカテゴリ目次のためevent-schedule（代替URL: https://www.snb.ch/en/services-events/digital-services/event-schedule）を参照。大半が統計公表・金融政策評価・記者会見で除外。Antoine Martinバーゼル大講演(8/26)とMoney Market Event Geneva(10/29)のみ抽出。"
+  "error": "Monetary policy assessments/press conferences and data releases excluded per rules; kept 2 speech/lecture events"
  },
  {
   "name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
   "url": "https://www.oenb.at/en/Calendar.html",
   "ok": true,
-  "found": 1,
-  "error": "指定URL(/en/Termine.html)は404。代替URL: https://www.oenb.at/en/Calendar.html。7/16以降はOeNB|SUERF|JVI|Yale会議(10/5、既載のため除外)とCEEI 2026(11/23-24)のみ。CEEIを抽出。"
+  "found": 3
  },
  {
   "name": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
   "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/",
   "ok": true,
-  "found": 5,
-  "error": "指定URL(seminars-workshops)は404。代替URL: https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/。会議2件(10/6 New Challenges、12/7-8 Financial Stability WS)とリサーチセミナー4件(9/15,10/5,11/5,11/25、演題未掲載)を抽出。7/16以前のセミナーは除外。"
+  "found": 0,
+  "error": "No events listed for 2026-07-16 or later; schedule ends June 2026"
  },
  {
   "name": "NBP – Narodowy Bank Polski – Conferences",
-  "url": "https://nbp.pl/en/about-nbp/research-conferences/nbp-conferences/",
+  "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": false,
   "found": 0,
-  "error": "指定URL(/en/research-and-publications/conferences/)は403。代替URL(/en/about-nbp/research-conferences/nbp-conferences/ 及び /nbp-seminars/)はImperva bot保護(Pardon Our Interruption)でWebFetch・curlとも取得不可。NBP共催の第10回年次リサーチ会議(9/21-22 Kyiv)はNBUソース側で抽出済み。"
+  "error": "Bot-blocked (Incapsula 'Pardon Our Interruption') via WebFetch and curl. site:nbp.pl search only surfaced External Statistics Conference (28-29 May 2026, past). Note: NBP co-hosts the NBU 10th Annual Research Conference 21-22 Sep 2026 Kyiv, captured under NBU source."
  },
  {
   "name": "NBU – National Bank of Ukraine – Research Events",
   "url": "https://bank.gov.ua/en/research/events",
   "ok": true,
   "found": 1,
-  "error": "指定URL(/en/news/events)は403/404。代替URL: https://bank.gov.ua/en/research/events(curl+ブラウザUAで取得)。7/16以降はNBU・NBP共催第10回年次リサーチ会議(9/21-22 Kyiv、Simon Johnson基調講演)を抽出。Forum(6/4)・workshop(5/14)等は終了済みで除外。"
+  "error": "WebFetch 403; recovered via curl raw HTML + event detail page. 代替URL: https://bank.gov.ua/en/research/events/330"
  },
  {
   "name": "NBS – Národná banka Slovenska – Events",
   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
   "ok": true,
   "found": 0,
-  "error": "指定URL(/en/events/)は404。代替URL: https://nbs.sk/en/research-at-nbs/seminars-and-conferences/ 及び /en/about-the-bank/upcoming-events-calendar/。リサーチセミナーは最新でも6/30で全て7/16以前、該当なし。イベントカレンダーは理事会・統計公表のみで除外。"
+  "error": "Only seminars through 30 Jun 2026 listed; none on/after 2026-07-16"
+ },
+ {
+  "name": "Study Center Gerzensee – Events",
+  "url": "https://www.szgerzensee.ch/programs/conferences-events",
+  "ok": true,
+  "found": 8,
+  "error": "Excluded 3 off-theme/unclear (Economic Theory Symposium, Climate/Environment Symposium, Alumni Conference)"
+ },
+ {
+  "name": "CEBRA – Central Bank Research Association – Events",
+  "url": "https://www.cebra.org/events",
+  "ok": true,
+  "found": 0,
+  "error": "Only listed event (2026 Annual Meeting, Copenhagen) is 22-24 Jun 2026, past-dated"
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflareチャレンジ(403)によりWebFetch・curlとも本文取得不可。WebSearchで代替探索したが2026-07-16以降の確定日付イベントを信頼できる形で確認できず(過去回の年次経済会議・国際金融市場会議は検出したが2026後半の日付は不確実)。捏造回避のため0件。"
+  "error": "Cloudflare-blocked (HTTP 403 on /en/events, /en/news, /lt/renginiai via WebFetch and curl); unreadable"
  },
  {
   "name": "Latvijas Banka – Research/Events",
-  "url": "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026",
+  "url": "https://www.macroeconomics.lv/events",
   "ok": true,
   "found": 0,
-  "error": "研究セミナー一覧を取得。2026-07-16以降は7/23『Saving Responses to Mandatory and Voluntary Pension Contributions』(年金・貯蓄行動=3テーマ非該当)と8/31『Skills intelligence…curriculum renewal』(大学教育=非該当)のみで、いずれも対象テーマ外のため除外。conferences一覧(macroeconomics.lv/conferences-latvijas-banka)は2024年の過去会議のみ。"
+  "error": "代替URL: https://www.macroeconomics.lv/conferences and /seminars (given /events returns 404). No conferences or research seminars scheduled after 2026-07-16."
  },
  {
-  "name": "Study Center Gerzensee – Events",
-  "url": "https://www.szgerzensee.ch/programs/conferences-events",
+  "name": "Eesti Pank (エストニア) – Events",
+  "url": "https://www.eestipank.ee/en/events",
   "ok": true,
-  "found": 5,
-  "error": "代替URL: https://www.szgerzensee.ch/programs/conferences-events(/eventsは404)。研究会議のみ収載。ESSFM(金融市場)・金融経済景気変動シンポ・家計金融・国際マクロ金融・フィンテック/デジタル通貨の5件を採用。除外: 経済理論サマーシンポ(テーマ外)、気候・環境シンポ(テーマ外)、Alumni Conference(PhD修了者招待制)、および題名非掲載の3枠(30.09-01.10/30.10-31.10/12.11-13.11、日付のみで題名不明のため採用せず)。"
+  "found": 0,
+  "error": "Calendar shows only board/ECB governance meetings and statistical release schedules (excluded); no seminars/conferences."
  },
  {
-  "name": "CEBRA – Central Bank Research Association – Events",
-  "url": "https://cebra.org/events/upcoming/",
+  "name": "MNB – Magyar Nemzeti Bank (ハンガリー) – Events",
+  "url": "https://www.mnb.hu/en/events",
   "ok": true,
-  "found": 2,
-  "error": "upcoming/CFPページから抽出。第6回マクロ経済政策隔年会議(NBP/リトアニア中銀/CEBRA共催, ワルシャワ9/24-25, ポーランド域内)と第8回ECONDAT秋季会合(日銀/CEBRA共催, 東京10/5-6, 中銀主催のため開催国不問で収載)を採用。CEBRA Annual Meeting(コペンハーゲン6/22-24)は実行日前終了のため除外。学術セッション(ASSA/ABFER)は確定日付なしで除外。"
+  "found": 0,
+  "error": "代替URL: /en/the-central-bank/conferences (events page is JS SPA / returns 404). Lámfalussy Conference (May 2026) and other series are past; no upcoming events after 2026-07-16 found."
+ },
+ {
+  "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
+  "url": "https://www.bnr.ro/Conferences-and-seminars-6864.aspx",
+  "ok": true,
+  "found": 0,
+  "error": "BEARS economic research seminar page referenced but no upcoming dated seminars listed."
+ },
+ {
+  "name": "HNB – Croatian National Bank – Conferences",
+  "url": "https://www.hnb.hr/en/core-functions/research/conferences",
+  "ok": true,
+  "found": 0,
+  "error": "代替URL: https://www.hnb.hr/en/about-us/events (given URL 404). Event list is JS/AJAX-rendered (Liferay /o/hnb-content/v1/search) and could not be enumerated; flagship 32nd Dubrovnik Economic Conference was 29-31 May 2026 (past). No upcoming event confirmed."
+ },
+ {
+  "name": "BNB – Bulgarian National Bank – Events",
+  "url": "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm",
+  "ok": false,
+  "found": 0,
+  "error": "Event/conference URLs return site 'system error / non-existent address' page (index.htm, AboutUs/AUEvents, ResearchAndPublications/wwwConferences); could not read any event listing."
+ },
+ {
+  "name": "National Bank of Serbia – Events",
+  "url": "https://www.nbs.rs/en/events/",
+  "ok": true,
+  "found": 0,
+  "error": "代替URL: /en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/ (given /en/events/ 404). Conferences page lists only past events; nothing upcoming."
+ },
+ {
+  "name": "Banka Slovenije – Events",
+  "url": "https://www.bsi.si/en/events",
+  "ok": true,
+  "found": 0,
+  "error": "代替URL: https://www.bsi.si/en/about-us/conferences-and-seminars and /en/upcoming-events (given /en/events 404). BS|EF seminars and roundtables are all Feb-May 2026 (past); only museum visits/report releases after July 2026 (excluded)."
+ },
+ {
+  "name": "CBBH – Central Bank of Bosnia and Herzegovina – Events",
+  "url": "https://www.cbbh.ba/en/Events",
+  "ok": false,
+  "found": 0,
+  "error": "HTTP 500 on /en/Events and /press/Events across www and apex host; events page unreadable."
+ },
+ {
+  "name": "Bank of Albania – Events",
+  "url": "https://www.bankofalbania.org/Events/",
+  "ok": true,
+  "found": 1,
+  "error": "Page served in Albanian; 20th SE-European Economic Research Workshop, Tirana, 24-25 Nov 2026 (call for applications)."
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 5,
-  "error": "英独9クエリで金融政策/防衛/銀行規制/省庁/CEE中銀/CEEフォーラムを検索。採用: 経済フォーラム・カルパチ(9/8-10)、Bled戦略フォーラム(8/31-9/1)、Warsaw Security Forum(10/12-13)、Zukunft.DEFENCE(12/2 Düsseldorf)、12.Symposium Bankenaufsicht(9/10 Bonn)。除外: The ECB and Its Watchers(3/25・終了)、Intl Research Forum on Mon.Pol.(5/18-19・終了)、Bundesbank-Symposium(5/7・終了)、Handelsblatt Sicherheit&Verteidigung(1/21-23・終了)、CNB第3回年次会議(6/22-23・終了)、CEBRA(6/22-24・北欧かつ終了)、IJCB@SNB(7/2-3・終了)、Banka Slovenije第11回ワークショップ(2025/9・終了)/財務リテラシー円卓(5/22・終了)、Dena Jahreskonferenz(再エネ市場・テーマ外)、Finance Summit Düsseldorf(CFO財務変革・テーマ外)。既載(Wirtschaftsfaktor Rüstung9/14、Handelsblatt Banking Summit9/2、EBC11/20、ECB Mon.Pol.10/5等)は除外。"
+  "found": 4,
+  "error": "~8 EN/DE searches: monetary policy Frankfurt, financial stability/Bankenaufsicht, defence/Rüstung, Energiepreise/Sondervermögen, CEE central-bank research, GLOBSEC/Bled/Warsaw forums, Bankenverband/BMF, MNB/HNB/BNR, OeNB/SUERF, ECB/Kiel geoeconomics. New confirmed upcoming: ECB Financial Stability & Macroprudential Policy (2-3 Dec 2026 Frankfurt), NBP/BoL/CEBRA 6th Biennial Macro Policy (24-25 Sep 2026 Warsaw), 5th Kiel-CEPR Geoeconomics (3-4 Nov 2026 Berlin), dena 6. Jahreskonferenz Marktoffensive EE (15-16 Oct 2026 Berlin). Many strong hits were PAST (ECB Watchers 25 Mar, IRFMP 18-19 May, OeNB 18-19 Jun, CEBRA Copenhagen 22-24 Jun, CNB Prague 22-23 Jun, GLOBSEC Prague 21-23 May) or already-listed (Bled, EBC Frankfurt 20 Nov, Banking Summit). Excluded trade-fair/military-tech events (EUDEX/EURO DEFENCE EXPO)."
+ },
+ {
+  "name": "手動取込",
+  "url": "",
+  "ok": true,
+  "found": 0
  }
 ]
