@@ -31,7 +31,7 @@
   /* ---------- ヘッダー(圧縮したステータスバー風) ---------- */
   header{border:1px solid var(--line2);background:var(--panel);
     border-radius:6px;padding:8px 14px;margin-bottom:14px}
-  .statusbar{display:flex;align-items:baseline;gap:5px 15px;flex-wrap:wrap}
+  .statusbar{display:flex;align-items:center;gap:5px 15px;flex-wrap:wrap}
   h1{margin:0;font-size:28px;letter-spacing:.055em;font-family:var(--mono);
     font-weight:700;color:var(--ink);line-height:1.05}
   h1::before{content:"▸ ";color:var(--amber)}
@@ -48,15 +48,36 @@
   .tagline{flex-basis:100%;font-size:11.5px;color:var(--sub);margin-top:2px;
     line-height:1.4}
 
+  /* ---------- ヘッダー右端ツール(調査対象ボタン + 検索) ---------- */
+  .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .srcwrap{position:relative}
+  .srcbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
+    padding:6px 11px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
+    letter-spacing:.08em;color:var(--sub);white-space:nowrap;
+    transition:border-color .12s,color .12s,background .12s}
+  .srcbtn:hover{border-color:var(--amber);color:var(--amber)}
+  .srcwrap.open .srcbtn{border-color:var(--amber);color:var(--amber);background:var(--cell2)}
+  .srcpanel{display:none;position:absolute;top:100%;right:0;left:auto;margin-top:8px;
+    width:min(440px,88vw);max-height:min(70vh,540px);overflow-y:auto;z-index:60;
+    background:var(--panel);border:1px solid var(--line2);border-radius:6px;
+    padding:13px 15px;box-shadow:0 8px 26px rgba(0,0,0,.55);text-align:left;
+    line-height:1.55}
+  @media(hover:hover){ .srcwrap:hover .srcpanel{display:block} }
+  .srcwrap.open .srcpanel{display:block}
+  .srcsec{margin:0 0 13px}
+  .srcsec:last-child{margin-bottom:0}
+  .srcsec h3{margin:0 0 5px;font-size:10.5px;font-family:var(--mono);
+    letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .srcsec p{margin:0;font-size:12px;color:#c2c8d0;line-height:1.65}
+  .srclist{columns:2;column-gap:16px;font-size:11.5px;line-height:1.5}
+  .srclist a,.srclist span{display:inline-block;width:100%;
+    break-inside:avoid;margin-bottom:5px;color:var(--cb-tx);text-decoration:none;
+    border-bottom:1px dotted var(--line2);overflow-wrap:anywhere}
+  .srclist a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+  .srclist span{color:var(--sub);border-bottom:none}
+
   /* ---------- フィルタ ---------- */
   .filters{margin:14px 0 18px}
-  .chiprow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:11px}
-  .chip{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
-    padding:6px 12px;cursor:pointer;font-size:12.5px;user-select:none;display:flex;
-    align-items:center;gap:7px;font-family:var(--mono);letter-spacing:.02em;
-    color:var(--sub);transition:opacity .12s,border-color .12s,color .12s,background .12s}
-  .chip[data-on="1"]{color:var(--ink);border-color:var(--sub);background:var(--cell2)}
-  .chip[data-on="0"]{opacity:.5;color:var(--dim);border-style:dashed}
   .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
   .fld{display:flex;flex-direction:column;gap:3px}
   .fld .cap{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
@@ -68,6 +89,23 @@
   input[type=search]{min-width:200px}
   select:focus,input:focus{outline:none;border-color:var(--amber);
     box-shadow:0 0 0 1px var(--amber)}
+  /* ヘッダー内の検索欄 */
+  .hdtools input[type=search]{min-width:0;flex:1 1 170px;max-width:230px;
+    padding:6px 10px;font-size:13px}
+  /* オンライン開催チェックボックス */
+  .cbfld{justify-content:flex-end}
+  .cbrow{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none;
+    min-height:37px;padding:0 2px;font-family:var(--mono);font-size:12.5px;
+    letter-spacing:.02em;color:var(--sub)}
+  .cbrow input{appearance:none;-webkit-appearance:none;width:16px;height:16px;
+    margin:0;border:1px solid var(--line2);border-radius:3px;background:var(--cell);
+    cursor:pointer;position:relative;flex:0 0 auto}
+  .cbrow input:checked{background:var(--amber);border-color:var(--amber)}
+  .cbrow input:checked::after{content:"";position:absolute;left:4.5px;top:1px;
+    width:4px;height:9px;border:solid #10161f;border-width:0 2px 2px 0;
+    transform:rotate(45deg)}
+  .cbrow input:focus-visible{outline:none;box-shadow:0 0 0 2px var(--amber)}
+  .cbrow input:checked + .cblbl{color:var(--ink)}
 
   /* ---------- カレンダー ---------- */
   .calhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
@@ -192,11 +230,16 @@
   @media(max-width:640px){
     .wrap{padding:12px 10px 48px}
     h1{font-size:15px}
+    .hdtools{flex-basis:100%;margin-left:0;margin-top:6px}
+    .hdtools input[type=search]{max-width:none;flex:1 1 auto}
+    .srcpanel{left:0;right:auto;width:min(360px,86vw)}
+    .srclist{columns:1}
     .controls{gap:8px}
     .fld{flex:1 1 42%;min-width:0}
     .fld select{width:100%}
     input[type=search]{min-width:0;width:100%}
-    .fld.search{flex:1 1 100%}
+    .cbfld{flex:1 1 100%}
+    .cbrow{min-height:0;padding:4px 2px}
     .calhead h2{font-size:12px;min-width:0;letter-spacing:.04em}
     /* モバイルでは月グリッドを隠し、週ビューを表示 */
     table.cal{display:none}
@@ -234,21 +277,31 @@
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
     <span class="updated">LAST UPDATE: <b>__UPDATED__</b></span>
+    <div class="hdtools">
+      <div class="srcwrap" id="srcwrap">
+        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
+        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象"></div>
+      </div>
+      <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索">
+    </div>
     <div class="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
 
 <div class="filters">
-  <div class="chiprow">
-    <span class="chip" data-th="central_bank" data-on="1">① 中央銀行・金融政策</span>
-    <span class="chip" data-th="real_economy" data-on="1">② 実体経済(エネルギー・防衛・インフラ)</span>
-    <span class="chip" data-th="fin_markets" data-on="1">③ 金融規制・金融市場</span>
-  </div>
   <div class="controls">
+    <label class="fld"><span class="cap">Area</span>
+      <select id="area">
+        <option value="">すべて</option>
+        <option value="DE">ドイツ</option>
+        <option value="nonDE">ドイツ以外</option>
+      </select></label>
     <label class="fld"><span class="cap">Country</span>
       <select id="country"></select></label>
     <label class="fld"><span class="cap">City</span>
       <select id="city"></select></label>
+    <label class="fld"><span class="cap">Organizer</span>
+      <select id="org"></select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
         <option value="">全部(低・中・高)</option>
@@ -268,8 +321,8 @@
         <option value="paid">有料</option>
         <option value="all">すべて</option>
       </select></label>
-    <label class="fld search"><span class="cap">Search</span>
-      <input type="search" id="q" placeholder="キーワード"></label>
+    <label class="fld cbfld"><span class="cbrow">
+      <input type="checkbox" id="online"><span class="cblbl">オンライン開催を含む</span></span></label>
   </div>
 </div>
 
@@ -313,9 +366,10 @@
 <button id="totop" title="トップへ" aria-label="Scroll to top">&#8593;</button>
 
 <script>
-const EVENTS = __EVENTS_JSON__;
-const STATUS = __STATUS_JSON__;
-const TODAY  = "__TODAY__";
+const EVENTS  = __EVENTS_JSON__;
+const STATUS  = __STATUS_JSON__;
+const SOURCES = __SOURCES_JSON__;
+const TODAY   = "__TODAY__";
 
 const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場"};
 const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm"};
@@ -324,13 +378,20 @@ const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau
                     "Eltville am Rhein":"Eltville"};
 const LANG_SHORT = {en:"英", de:"独", "en+de":"英独"};
 const LANG_JA    = {en:"英語", de:"独語", "en+de":"英語・独語"};
-const COUNTRY_JA = {DE:"ドイツ", AT:"オーストリア", IT:"イタリア", CH:"スイス",
-                    FR:"フランス", NL:"オランダ",
-                    PL:"ポーランド", CZ:"チェコ", SK:"スロバキア", HU:"ハンガリー",
-                    SI:"スロベニア", HR:"クロアチア", BA:"ボスニア", RS:"セルビア",
-                    AL:"アルバニア", RO:"ルーマニア", BG:"ブルガリア", LT:"リトアニア",
-                    LV:"ラトビア", EE:"エストニア", UA:"ウクライナ", PT:"ポルトガル",
-                    DK:"デンマーク"};
+const COUNTRY_JA = {
+  DE:"ドイツ", AT:"オーストリア", CH:"スイス", IT:"イタリア", FR:"フランス",
+  NL:"オランダ", BE:"ベルギー", LU:"ルクセンブルク", GB:"英国", IE:"アイルランド",
+  ES:"スペイン", PT:"ポルトガル", GR:"ギリシャ", MT:"マルタ", CY:"キプロス",
+  DK:"デンマーク", FI:"フィンランド", SE:"スウェーデン", NO:"ノルウェー",
+  IS:"アイスランド", PL:"ポーランド", CZ:"チェコ", SK:"スロバキア", HU:"ハンガリー",
+  SI:"スロベニア", HR:"クロアチア", RO:"ルーマニア", BG:"ブルガリア",
+  BA:"ボスニア", RS:"セルビア", AL:"アルバニア", MK:"北マケドニア",
+  ME:"モンテネグロ", XK:"コソボ", LT:"リトアニア", LV:"ラトビア", EE:"エストニア",
+  UA:"ウクライナ", MD:"モルドバ", TR:"トルコ",
+  MC:"モナコ", LI:"リヒテンシュタイン",
+  US:"米国", CA:"カナダ", JP:"日本", CN:"中国", KR:"韓国",
+  AU:"オーストラリア", SG:"シンガポール"
+};
 
 /* ---------- ラベル生成 ---------- */
 function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
@@ -352,6 +413,10 @@ function orgShort(ev){
   if(org.length<=12) return org || "?";
   return org.slice(0,12)+"…";
 }
+/* 主催者を "+" で分解したトークン集合(例 "SAFE+CEPR" → ["SAFE","CEPR"]) */
+function orgTokens(ev){
+  return String(orgShort(ev)||"").split("+").map(s=>s.trim()).filter(Boolean);
+}
 function evLabel(ev){
   const lang = ev.language ? LANG_SHORT[ev.language] : null;
   const mid = lang ? `${lang}・${orgShort(ev)}` : orgShort(ev);
@@ -372,92 +437,146 @@ function mondayOf(iso){
 }
 
 /* ---------- 状態 ---------- */
-const dataCountries = [...new Set(EVENTS.map(e=>e.country).filter(Boolean))].sort();
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
-const state = {themes:new Set(["central_bank","real_economy","fin_markets"]),
-               lang:"", fee:"free_unknown",
-               country: dataCountries.includes("DE") ? "DE" : "",
-               city:"", imp:"", q:"", sort:"date",
+const state = {area:"", country:"", city:"", org:"", imp:"", lang:"",
+               fee:"free_unknown", online:true, q:"", sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
-const LS_KEY = "sr_filters_v3";
+const LS_KEY = "sr_filters_v4";
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
   if(!s || typeof s!=="object") return;
-  if(Array.isArray(s.themes)){
-    const t = s.themes.filter(x=>THCLS[x]);
-    if(t.length) state.themes = new Set(t);
-    else state.themes = new Set();  /* 全部オフの保存も尊重 */
-  }
+  if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
   if(["free_unknown","free_only","paid","all"].includes(s.fee)) state.fee = s.fee;
   if(["","2","3"].includes(s.imp)) state.imp = s.imp;
+  if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.q==="string") state.q = s.q;
   if(["date","imp"].includes(s.sort)) state.sort = s.sort;
-  if(s.country==="" || dataCountries.includes(s.country)) state.country = s.country;
-  if(typeof s.city==="string") state.city = s.city; /* 都市は候補構築時に検証 */
+  /* country/city/org は候補構築時に検証(候補に無ければ黙って空に戻す) */
+  if(typeof s.country==="string") state.country = s.country;
+  if(typeof s.city==="string")    state.city    = s.city;
+  if(typeof s.org==="string")     state.org     = s.org;
 }
 function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
-      themes:[...state.themes], lang:state.lang, fee:state.fee,
-      country:state.country, city:state.city, imp:state.imp, q:state.q,
-      sort:state.sort
+      area:state.area, country:state.country, city:state.city, org:state.org,
+      imp:state.imp, lang:state.lang, fee:state.fee, online:state.online,
+      q:state.q, sort:state.sort
     }));
   }catch(e){}
 }
 
-/* ---------- フィルタ判定 ---------- */
+/* ---------- 個別フィルタ判定 ---------- */
+function passArea(ev){
+  if(state.area==="") return true;
+  if(ev.format==="online") return true;               /* 完全オンラインは所在地なし→常に表示 */
+  if(state.area==="DE")    return ev.country==="DE";
+  if(state.area==="nonDE") return ev.country!=null && ev.country!=="DE";
+  return true;
+}
 function passCountry(ev){
   if(state.country==="") return true;
-  if(ev.format==="online" || ev.format==="hybrid") return true; /* オンライン参加可は素通し */
-  if(ev.country==null) return true;                              /* 欠損は除外しない */
-  return ev.country===state.country;
+  if(ev.format==="online") return true;               /* 完全オンラインは国を問わず(CBはonline判定で別途制御) */
+  return ev.country===state.country;                  /* 厳密一致(country===null は除外) */
 }
-function visible(ev){
-  if(!ev.themes.some(t=>state.themes.has(t))) return false;
+function passCity(ev){
+  if(state.city==="") return true;
+  return ev.city===state.city;                        /* 物理都市の明示選択→オンラインは外れる */
+}
+function passOrg(ev){
+  if(state.org==="") return true;
+  return orgTokens(ev).includes(state.org);
+}
+function passImp(ev){
+  if(state.imp==="2" && imp(ev)<2) return false;
+  if(state.imp==="3" && imp(ev)<3) return false;
+  return true;
+}
+function passLang(ev){
   if(state.lang==="en" && !(ev.language==="en"||ev.language==="en+de"||ev.language==null)) return false;
   if(state.lang==="de" && !(ev.language==="de"||ev.language==="en+de"||ev.language==null)) return false;
+  return true;
+}
+function passFee(ev){
   if(state.fee==="free_unknown" && ev.fee==="paid") return false;
   if(state.fee==="free_only" && ev.fee!=="free") return false;
   if(state.fee==="paid" && ev.fee!=="paid") return false;
-  if(state.imp==="2" && imp(ev)<2) return false;
-  if(state.imp==="3" && imp(ev)<3) return false;
-  if(!passCountry(ev)) return false;
-  if(state.city && ev.city!==state.city) return false;
-  if(state.q){
-    const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
-               ev.city,ev.summary_ja].join(" ").toLowerCase();
-    if(!hay.includes(state.q.toLowerCase())) return false;
-  }
   return true;
 }
-const fEvents=()=>EVENTS.filter(visible);
-const inRange=(ev,iso)=>iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
-
-/* ---------- 動的セレクト構築 ---------- */
-function buildCountry(){
-  const sel=document.getElementById("country");
-  let opts=`<option value="">すべて</option>`;
-  for(const c of dataCountries)
-    opts+=`<option value="${esc(c)}">${esc(COUNTRY_JA[c]||c)}</option>`;
-  sel.innerHTML=opts;
-  sel.value=state.country;
+function passOnline(ev){
+  if(state.online) return true;                       /* オン: 完全オンラインも含める */
+  return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
 }
-function cityCandidates(){
-  return [...new Set(EVENTS.filter(passCountry)
+function passQ(ev){
+  if(!state.q) return true;
+  const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
+             ev.city,ev.summary_ja].join(" ").toLowerCase();
+  return hay.includes(state.q.toLowerCase());
+}
+
+/* ---------- ファセット合成(自分以外の全フィルタを通過するか) ---------- */
+function passExcept(ev, ex){
+  if(ex!=="area"    && !passArea(ev))    return false;
+  if(ex!=="country" && !passCountry(ev)) return false;
+  if(ex!=="city"    && !passCity(ev))    return false;
+  if(ex!=="org"     && !passOrg(ev))     return false;
+  if(ex!=="imp"     && !passImp(ev))     return false;
+  if(ex!=="lang"    && !passLang(ev))    return false;
+  if(ex!=="fee"     && !passFee(ev))     return false;
+  if(ex!=="online"  && !passOnline(ev))  return false;
+  if(ex!=="q"       && !passQ(ev))       return false;
+  return true;
+}
+const visible = ev => passExcept(ev, null);
+const fEvents = () => EVENTS.filter(visible);
+const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
+
+/* ---------- 候補値(ファセット) ---------- */
+function facetCountry(){
+  return [...new Set(EVENTS.filter(e=>passExcept(e,"country"))
+            .map(e=>e.country).filter(Boolean))].sort();
+}
+function facetCity(){
+  return [...new Set(EVENTS.filter(e=>passExcept(e,"city"))
             .map(e=>e.city).filter(c=>c && c!=="Online"))].sort();
 }
-function buildCity(){
-  const cand=cityCandidates();
-  if(state.city && !cand.includes(state.city)) state.city="";
-  const sel=document.getElementById("city");
+function facetOrg(){
+  const set=new Set();
+  EVENTS.filter(e=>passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(t=>set.add(t)));
+  return [...set].sort((a,b)=>a.localeCompare(b));
+}
+
+/* ---------- 動的セレクト構築(全連動) ---------- */
+function fillSelect(id, cand, labelFn){
+  const sel=document.getElementById(id);
   let opts=`<option value="">すべて</option>`;
-  for(const c of cand) opts+=`<option value="${esc(c)}">${esc(c)}</option>`;
+  for(const v of cand) opts+=`<option value="${esc(v)}">${esc(labelFn?labelFn(v):v)}</option>`;
   sel.innerHTML=opts;
-  sel.value=state.city;
+  sel.value=state[id];
+}
+function rebuildSelects(){
+  /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大3回で安定させる */
+  for(let i=0;i<3;i++){
+    let changed=false;
+    if(state.country && !facetCountry().includes(state.country)){state.country="";changed=true;}
+    if(state.city    && !facetCity().includes(state.city))      {state.city="";   changed=true;}
+    if(state.org     && !facetOrg().includes(state.org))        {state.org="";    changed=true;}
+    if(!changed) break;
+  }
+  fillSelect("country", facetCountry(), c=>COUNTRY_JA[c]||c);
+  fillSelect("city",    facetCity());
+  fillSelect("org",     facetOrg());
+  document.getElementById("area").value   = state.area;
+  document.getElementById("imp").value    = state.imp;
+  document.getElementById("lang").value   = state.lang;
+  document.getElementById("fee").value    = state.fee;
+  document.getElementById("q").value      = state.q;
+  document.getElementById("sort").value   = state.sort;
+  document.getElementById("online").checked = state.online;
 }
 
 /* ---------- カレンダー(描画モード分岐) ---------- */
@@ -473,14 +592,12 @@ function shiftWeek(days){
   state.weekStart=isoOf(d);
 }
 function syncToMobile(){
-  /* 現在表示中の月に基づいて週を決める(今日を含む月なら今日の週) */
   const rep = (state.y===TODAY_Y && state.m===TODAY_M)
     ? TODAY
     : `${state.y}-${String(state.m+1).padStart(2,"0")}-01`;
   state.weekStart = isoOf(mondayOf(rep));
 }
 function syncToDesktop(){
-  /* 週が属する月(週の中日=木曜で判定)を表示 */
   const d=new Date(state.weekStart+"T00:00:00Z");
   d.setUTCDate(d.getUTCDate()+3);
   state.y=d.getUTCFullYear(); state.m=d.getUTCMonth();
@@ -619,37 +736,43 @@ function drawStatus(){
   }).join("");
 }
 
+/* ---------- 調査対象パネル ---------- */
+function drawSources(){
+  const src = (SOURCES && Array.isArray(SOURCES.sources)) ? SOURCES.sources : [];
+  const n = src.length;
+  const links = src.map(s=>{
+    const u=safeUrl(s.url), nm=esc(s.name||"");
+    return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${nm}</a>`
+             : `<span>${nm}</span>`;
+  }).join("");
+  document.getElementById("srcpanel").innerHTML=
+    `<div class="srcsec"><h3>対象地域</h3>`+
+    `<p>ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。`+
+    `中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。</p></div>`+
+    `<div class="srcsec"><h3>定点観測先(${n}件)</h3>`+
+    `<div class="srclist">${links}</div></div>`+
+    `<div class="srcsec"><h3>広域検索</h3>`+
+    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制のテーマ、`+
+    `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
+}
+
 /* ---------- 再描画 ---------- */
-function redraw(){drawCal();drawList();saveState();}
+function redraw(){rebuildSelects();drawCal();drawList();saveState();}
 
 /* ---------- 初期化 ---------- */
 loadState();
-buildCountry();
-buildCity();
-/* チップ状態を復元 */
-document.querySelectorAll(".chip").forEach(c=>{
-  c.dataset.on = state.themes.has(c.dataset.th) ? "1" : "0";
-});
-document.getElementById("lang").value = state.lang;
-document.getElementById("fee").value  = state.fee;
-document.getElementById("imp").value  = state.imp;
-document.getElementById("q").value    = state.q;
-document.getElementById("sort").value = state.sort;
+rebuildSelects();
+drawSources();
 
 /* ---------- イベントハンドラ ---------- */
-document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
-  const t=c.dataset.th, on=c.dataset.on==="1";
-  c.dataset.on=on?"0":"1";
-  on?state.themes.delete(t):state.themes.add(t);
-  redraw();
-}));
+document.getElementById("area").addEventListener("change",e=>{state.area=e.target.value;redraw();});
+document.getElementById("country").addEventListener("change",e=>{state.country=e.target.value;redraw();});
+document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
+document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
+document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
 document.getElementById("fee").addEventListener("change",e=>{state.fee=e.target.value;redraw();});
-document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
-document.getElementById("country").addEventListener("change",e=>{
-  state.country=e.target.value; buildCity(); redraw();
-});
-document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
+document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
 document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
 document.getElementById("prev").addEventListener("click",()=>{
@@ -671,6 +794,21 @@ document.addEventListener("click",e=>{
   const a=e.target.closest("a.ev"); if(!a)return;
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
+});
+
+/* ---------- 調査対象ボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
+const srcwrap=document.getElementById("srcwrap");
+const srcbtn=document.getElementById("srcbtn");
+srcbtn.addEventListener("click",e=>{
+  e.stopPropagation();
+  const open=srcwrap.classList.toggle("open");
+  srcbtn.setAttribute("aria-expanded", open?"true":"false");
+});
+document.addEventListener("click",e=>{
+  if(!srcwrap.contains(e.target) && srcwrap.classList.contains("open")){
+    srcwrap.classList.remove("open");
+    srcbtn.setAttribute("aria-expanded","false");
+  }
 });
 
 /* ---------- スクロールトップボタン ---------- */
