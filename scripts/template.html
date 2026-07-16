@@ -115,6 +115,8 @@
     width:30px;height:30px;cursor:pointer;font-size:15px;color:var(--ink);
     font-family:var(--mono);line-height:1}
   .navbtn:hover{border-color:var(--amber);color:var(--amber)}
+  .navbtn.today{width:auto;height:30px;padding:0 10px;font-size:12.5px;
+    letter-spacing:.04em}
   table.cal{width:100%;border-collapse:collapse;background:var(--cal);
     border:1px solid var(--line2);table-layout:fixed}
   table.cal th{border:1px solid var(--line2);padding:6px 4px;font-size:10px;
@@ -141,8 +143,6 @@
     border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
   .ev.foreign{border-left-style:dashed;border-left-width:3px}
   .ev:hover{filter:brightness(1.25)}
-  .more{font-size:9.5px;color:var(--sub);font-family:var(--mono);display:block;
-    padding-left:6px;margin-top:1px}
 
   /* ---------- カレンダー凡例 ---------- */
   .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
@@ -263,7 +263,6 @@
     .wevs .ev.i1,.wevs .ev.i2{font-size:12px}
     .wevs .ev.i3{font-size:12.5px;font-weight:700}
     .wevs .ev.foreign{border-left-style:dashed}
-    .more{font-size:9px}
     .row{flex-direction:column;gap:4px}
     .when{min-width:0}
     #totop{right:12px;bottom:12px;width:38px;height:38px;font-size:17px}
@@ -327,6 +326,7 @@
 </div>
 
 <div class="calhead">
+  <button class="navbtn today" id="todaybtn" type="button">今日</button>
   <button class="navbtn" id="prev">&#8249;</button>
   <h2 id="callabel"></h2>
   <button class="navbtn" id="next">&#8250;</button>
@@ -619,10 +619,9 @@ function drawMonth(){
       const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
       const day=evs.filter(e=>inRange(e,iso))
                    .sort((a,b)=>imp(b)-imp(a));
-      let chips=day.slice(0,4).map(e=>
+      let chips=day.map(e=>
         `<a class="ev i${imp(e)}${isForeign(e)?' foreign':''}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
       ).join("");
-      if(day.length>4) chips+=`<span class="more">+${day.length-4}</span>`;
       html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${chips}</td>`;
     }
     html+="</tr>";
@@ -783,6 +782,11 @@ document.getElementById("prev").addEventListener("click",()=>{
 document.getElementById("next").addEventListener("click",()=>{
   if(mqMobile.matches) shiftWeek(7);
   else if(++state.m>11){state.m=0;state.y++;}
+  drawCal();
+});
+document.getElementById("todaybtn").addEventListener("click",()=>{
+  if(mqMobile.matches) state.weekStart=isoOf(mondayOf(TODAY));
+  else{state.y=TODAY_Y;state.m=TODAY_M;}
   drawCal();
 });
 /* 月表示 ⇄ 週表示 の切替(リサイズ・回転に追従) */
