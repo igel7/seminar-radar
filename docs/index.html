@@ -31,7 +31,7 @@
   /* ---------- ヘッダー(圧縮したステータスバー風) ---------- */
   header{border:1px solid var(--line2);background:var(--panel);
     border-radius:6px;padding:8px 14px;margin-bottom:14px}
-  .statusbar{display:flex;align-items:baseline;gap:5px 15px;flex-wrap:wrap}
+  .statusbar{display:flex;align-items:center;gap:5px 15px;flex-wrap:wrap}
   h1{margin:0;font-size:28px;letter-spacing:.055em;font-family:var(--mono);
     font-weight:700;color:var(--ink);line-height:1.05}
   h1::before{content:"▸ ";color:var(--amber)}
@@ -48,15 +48,36 @@
   .tagline{flex-basis:100%;font-size:11.5px;color:var(--sub);margin-top:2px;
     line-height:1.4}
 
+  /* ---------- ヘッダー右端ツール(調査対象ボタン + 検索) ---------- */
+  .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .srcwrap{position:relative}
+  .srcbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
+    padding:6px 11px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
+    letter-spacing:.08em;color:var(--sub);white-space:nowrap;
+    transition:border-color .12s,color .12s,background .12s}
+  .srcbtn:hover{border-color:var(--amber);color:var(--amber)}
+  .srcwrap.open .srcbtn{border-color:var(--amber);color:var(--amber);background:var(--cell2)}
+  .srcpanel{display:none;position:absolute;top:100%;right:0;left:auto;margin-top:8px;
+    width:min(440px,88vw);max-height:min(70vh,540px);overflow-y:auto;z-index:60;
+    background:var(--panel);border:1px solid var(--line2);border-radius:6px;
+    padding:13px 15px;box-shadow:0 8px 26px rgba(0,0,0,.55);text-align:left;
+    line-height:1.55}
+  @media(hover:hover){ .srcwrap:hover .srcpanel{display:block} }
+  .srcwrap.open .srcpanel{display:block}
+  .srcsec{margin:0 0 13px}
+  .srcsec:last-child{margin-bottom:0}
+  .srcsec h3{margin:0 0 5px;font-size:10.5px;font-family:var(--mono);
+    letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .srcsec p{margin:0;font-size:12px;color:#c2c8d0;line-height:1.65}
+  .srclist{columns:2;column-gap:16px;font-size:11.5px;line-height:1.5}
+  .srclist a,.srclist span{display:inline-block;width:100%;
+    break-inside:avoid;margin-bottom:5px;color:var(--cb-tx);text-decoration:none;
+    border-bottom:1px dotted var(--line2);overflow-wrap:anywhere}
+  .srclist a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+  .srclist span{color:var(--sub);border-bottom:none}
+
   /* ---------- フィルタ ---------- */
   .filters{margin:14px 0 18px}
-  .chiprow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:11px}
-  .chip{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
-    padding:6px 12px;cursor:pointer;font-size:12.5px;user-select:none;display:flex;
-    align-items:center;gap:7px;font-family:var(--mono);letter-spacing:.02em;
-    color:var(--sub);transition:opacity .12s,border-color .12s,color .12s,background .12s}
-  .chip[data-on="1"]{color:var(--ink);border-color:var(--sub);background:var(--cell2)}
-  .chip[data-on="0"]{opacity:.5;color:var(--dim);border-style:dashed}
   .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
   .fld{display:flex;flex-direction:column;gap:3px}
   .fld .cap{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
@@ -68,6 +89,23 @@
   input[type=search]{min-width:200px}
   select:focus,input:focus{outline:none;border-color:var(--amber);
     box-shadow:0 0 0 1px var(--amber)}
+  /* ヘッダー内の検索欄 */
+  .hdtools input[type=search]{min-width:0;flex:1 1 170px;max-width:230px;
+    padding:6px 10px;font-size:13px}
+  /* オンライン開催チェックボックス */
+  .cbfld{justify-content:flex-end}
+  .cbrow{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none;
+    min-height:37px;padding:0 2px;font-family:var(--mono);font-size:12.5px;
+    letter-spacing:.02em;color:var(--sub)}
+  .cbrow input{appearance:none;-webkit-appearance:none;width:16px;height:16px;
+    margin:0;border:1px solid var(--line2);border-radius:3px;background:var(--cell);
+    cursor:pointer;position:relative;flex:0 0 auto}
+  .cbrow input:checked{background:var(--amber);border-color:var(--amber)}
+  .cbrow input:checked::after{content:"";position:absolute;left:4.5px;top:1px;
+    width:4px;height:9px;border:solid #10161f;border-width:0 2px 2px 0;
+    transform:rotate(45deg)}
+  .cbrow input:focus-visible{outline:none;box-shadow:0 0 0 2px var(--amber)}
+  .cbrow input:checked + .cblbl{color:var(--ink)}
 
   /* ---------- カレンダー ---------- */
   .calhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
@@ -192,11 +230,16 @@
   @media(max-width:640px){
     .wrap{padding:12px 10px 48px}
     h1{font-size:15px}
+    .hdtools{flex-basis:100%;margin-left:0;margin-top:6px}
+    .hdtools input[type=search]{max-width:none;flex:1 1 auto}
+    .srcpanel{left:0;right:auto;width:min(360px,86vw)}
+    .srclist{columns:1}
     .controls{gap:8px}
     .fld{flex:1 1 42%;min-width:0}
     .fld select{width:100%}
     input[type=search]{min-width:0;width:100%}
-    .fld.search{flex:1 1 100%}
+    .cbfld{flex:1 1 100%}
+    .cbrow{min-height:0;padding:4px 2px}
     .calhead h2{font-size:12px;min-width:0;letter-spacing:.04em}
     /* モバイルでは月グリッドを隠し、週ビューを表示 */
     table.cal{display:none}
@@ -233,22 +276,32 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-16 10:42 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-16 11:13 (CEST)</b></span>
+    <div class="hdtools">
+      <div class="srcwrap" id="srcwrap">
+        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
+        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象"></div>
+      </div>
+      <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索">
+    </div>
     <div class="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
 
 <div class="filters">
-  <div class="chiprow">
-    <span class="chip" data-th="central_bank" data-on="1">① 中央銀行・金融政策</span>
-    <span class="chip" data-th="real_economy" data-on="1">② 実体経済(エネルギー・防衛・インフラ)</span>
-    <span class="chip" data-th="fin_markets" data-on="1">③ 金融規制・金融市場</span>
-  </div>
   <div class="controls">
+    <label class="fld"><span class="cap">Area</span>
+      <select id="area">
+        <option value="">すべて</option>
+        <option value="DE">ドイツ</option>
+        <option value="nonDE">ドイツ以外</option>
+      </select></label>
     <label class="fld"><span class="cap">Country</span>
       <select id="country"></select></label>
     <label class="fld"><span class="cap">City</span>
       <select id="city"></select></label>
+    <label class="fld"><span class="cap">Organizer</span>
+      <select id="org"></select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
         <option value="">全部(低・中・高)</option>
@@ -268,8 +321,8 @@
         <option value="paid">有料</option>
         <option value="all">すべて</option>
       </select></label>
-    <label class="fld search"><span class="cap">Search</span>
-      <input type="search" id="q" placeholder="キーワード"></label>
+    <label class="fld cbfld"><span class="cbrow">
+      <input type="checkbox" id="online"><span class="cblbl">オンライン開催を含む</span></span></label>
   </div>
 </div>
 
@@ -313,9 +366,10 @@
 <button id="totop" title="トップへ" aria-label="Scroll to top">&#8593;</button>
 
 <script>
-const EVENTS = [{"title": "Media Pioneer Live: Aktuelle Fragen der Finanzstabilität und Lage deutscher und europäischer Banken", "title_ja": "金融安定と独欧銀行の現状(討論)", "organizer": "Media Pioneer / Deutsche Bundesbank", "date_start": "2026-07-14", "date_end": null, "time": "15:00", "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "ブンデスバンク理事Michael Theurerが登壇し、金融安定と独・欧州の銀行の状況を議論する公開討論(Media Pioneer Live)。", "language": "de", "country": "DE", "organizer_short": "Bundesbank", "title_short": "German and European Bank Stability", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "0ee7272e5c5b3f27", "first_seen": "2026-07-14"}, {"title": "Research Seminar: Cascading Disconnections – The Dynamics of Building Electrification When Gas Network Costs are Fixed (Matthias Paustian)", "title_ja": "建物電化とガス網費用の研究セミナー", "organizer": "Kiel Institute for the World Economy (IfW Kiel)", "date_start": "2026-07-14", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "onsite", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/cascading-disconnections-the-dynamics-of-building-electrification-when-gas-network-costs-are-fixed-matthias-paustian/", "summary_ja": "ガス網の固定費が建物の電化に与える動学的影響を分析する研究セミナー(エネルギー経済)。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel", "title_short": "Cascading Disconnections in Building Electrification", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "39af69be1835c9db", "first_seen": "2026-07-14"}, {"title": "SAFE Finance Seminar: Falko Fecht (Deutsche Bundesbank)", "title_ja": "SAFEファイナンス・セミナー", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-07-14", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/finance-seminar-falko-fecht-deutsche-bundesbank.html", "summary_ja": "ブンデスバンクのFalko Fecht氏によるSAFEのファイナンス研究セミナー。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Finance Seminar with Falko Fecht", "importance": 1, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "5471c0373cb44bcd", "first_seen": "2026-07-14"}, {"title": "Der Euro in einer fragmentierten Welt: Stabilität, Souveränität und globale Verantwortung", "title_ja": "分断世界におけるユーロ(講演)", "organizer": "Hohenheimer Kreis", "date_start": "2026-07-15", "date_end": null, "time": "18:00", "city": "Stuttgart", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "分断が進む世界におけるユーロの安定性・主権・世界的責任を論じる講演。ブンデスバンク総裁Joachim Nagelが登壇。", "language": "de", "country": "DE", "organizer_short": "Hohenheimer Kreis", "title_short": "Euro in a Fragmented World", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "bb6706357367fcdb", "first_seen": "2026-07-14"}, {"title": "Der digitale Euro: Das Geld der Zukunft? (Ulm)", "title_ja": "デジタルユーロ:未来の通貨?(ウルム)", "organizer": "Deutsche Bundesbank", "date_start": "2026-07-15", "date_end": null, "time": "17:00", "city": "Ulm", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": true, "registration_note": null, "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/der-digitale-euro-das-geld-der-zukunft--881818", "summary_ja": "デジタルユーロ(中央銀行デジタル通貨)の意義と将来を解説する一般向け公開講演。", "language": "de", "country": "DE", "organizer_short": "Bundesbank", "title_short": "Digital Euro", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "id": "085341a89a94f09b", "first_seen": "2026-07-14"}, {"title": "SAFE Brown Bag Seminar: Maximilian Muhn & Matthias Breuer (Goethe University Frankfurt)", "title_ja": "SAFEブラウンバッグ・セミナー", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-07-15", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-brown-bag-seminar-maximilian-muhn-matthias-breuer-goethe-university-frankfurt.html", "summary_ja": "Goethe大学のMuhn氏・Breuer氏によるSAFEのブラウンバッグ研究セミナー。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Brown Bag Seminar", "importance": 1, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "6b42b895e81f214a", "first_seen": "2026-07-14"}, {"title": "ikf-impulse Podiumsdiskussion: Umbruch in der Bankenregulierung", "title_ja": "銀行規制の転換(パネル討論)", "organizer": "ikf – Institut für Kredit- und Finanzwirtschaft, Ruhr-Universität Bochum", "date_start": "2026-07-15", "date_end": null, "time": "17:00", "city": "Bochum", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "銀行規制の転換をテーマにしたパネル討論。ブンデスバンク理事Michael Theurerが参加。", "language": "de", "country": "DE", "organizer_short": "ikf Bochum", "title_short": "Banking Regulation in Transition", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "accec714ccfb8571", "first_seen": "2026-07-14"}, {"title": "Bayerischer Sparkassentag: Vertrauen in die Zukunft – Wie Finanzaufsicht Stabilität sichert", "title_ja": "バイエルン貯蓄銀行大会:金融監督と安定", "organizer": "Sparkassenverband Bayern", "date_start": "2026-07-16", "date_end": null, "time": "12:35", "city": "Lindau am Bodensee", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "金融監督が安定をどう確保するかをテーマにしたバイエルン貯蓄銀行大会の講演。ブンデスバンク理事Michael Theurerが登壇。", "language": "de", "country": "DE", "organizer_short": "Sparkassenverband Bayern", "title_short": "Financial Supervision Secures Stability", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "5e9fb2b83dc1b1e9", "first_seen": "2026-07-14"}, {"title": "Diverging Cycles, Distinct Constraints: The US, Europe and China", "title_ja": "米欧中の景気サイクルの乖離(会議)", "organizer": "Kiel Institute for the World Economy (IfW Kiel)", "date_start": "2026-07-16", "date_end": null, "time": null, "city": "Online", "venue": null, "format": "online", "themes": ["real_economy"], "fee": "unknown", "open_to_public": true, "registration_note": "要事前登録", "url": "https://www.kielinstitut.de/de/veranstaltungen/konferenzen/diverging-cycles-distinct-constraints-the-us-europe-and-china/", "summary_ja": "米国・欧州・中国の景気循環の乖離と各国固有の制約を論じるオンライン会議。", "language": "en", "country": null, "organizer_short": "IfW Kiel", "title_short": "US, Europe and China Divergence", "importance": 2, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "30417877c7f4c641", "first_seen": "2026-07-14"}, {"title": "SAFE Brown Bag Seminar: Lovisa Reiche (BI Norwegian Business School)", "title_ja": "SAFEブラウンバッグ・セミナー", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-07-22", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-brown-bag-seminar-lovisa-reiche-bi-norwegian-business-school.html", "summary_ja": "BIノルウェー経営大学院のLovisa Reiche氏によるSAFEのブラウンバッグ研究セミナー。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Brown Bag Seminar", "importance": 1, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "ba65a45050c49c95", "first_seen": "2026-07-14"}, {"title": "Kiel-CEPR International Economics Seminar: Economic Analysis of Extraterritorial Taxation (Mathieu Parenti)", "title_ja": "域外課税の経済分析(Kiel-CEPRセミナー)", "organizer": "Kiel Institute for the World Economy / CEPR", "date_start": "2026-07-23", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "hybrid", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/kiel-cepr-international-economics-seminar-mathieu-parenti/", "summary_ja": "多国籍企業への域外課税の経済的影響を分析するKiel-CEPR国際経済学セミナー(貿易・国際経済)。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel+CEPR", "title_short": "Extraterritorial Taxation", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "e4cc3146bb092308", "first_seen": "2026-07-14"}, {"title": "Research Seminar: Real-Time AI-Powered GDP Tracking – Lessons from Eight Years of GDPLive (Christoph Schumacher)", "title_ja": "AIによるリアルタイムGDP推計セミナー", "organizer": "Kiel Institute for the World Economy (IfW Kiel)", "date_start": "2026-08-18", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "onsite", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/real-time-ai-powered-gdp-tracking-lessons-from-eight-years-of-gdplive-christoph-schumacher/", "summary_ja": "AIを用いたリアルタイムGDP推計(GDPLive)の8年間の知見を報告する研究セミナー。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel", "title_short": "AI-Powered Real-Time GDP Tracking", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "8984da7c8746957d", "first_seen": "2026-07-14"}, {"title": "1st Annual Workshop in Real Estate Finance: Housing Market Frictions and Access to Homeownership", "title_ja": "不動産金融ワークショップ(第1回)", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-08-24", "date_end": "2026-08-25", "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/1st-annual-workshop-in-real-estate-finance-housing-market-frictions-and-access-to-homeownership-1.html", "summary_ja": "住宅市場の摩擦と持ち家取得をテーマにした不動産金融の年次ワークショップ(第1回)。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Housing Market Frictions", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "34f76e3e4f7be91d", "first_seen": "2026-07-14"}, {"title": "Handelsblatt Banking Summit 2026", "title_ja": "ハンデルスブラット銀行サミット2026", "organizer": "Euroforum Deutschland / Handelsblatt Live", "date_start": "2026-09-02", "date_end": "2026-09-03", "time": null, "city": "Frankfurt am Main", "venue": "Kap Europa (Cape Europe), Messe Frankfurt", "format": "onsite", "themes": ["fin_markets", "real_economy"], "fee": "paid", "open_to_public": true, "registration_note": "有料・要事前登録(€650〜、税別)", "url": "https://live.handelsblatt.com/en/event/handelsblatt-banks-summit/", "summary_ja": "銀行業界の経営層・政策担当者が集うハンデルスブラット主催の年次サミット。金融規制の簡素化、ステーブルコイン、AI活用、防衛産業投資、景気減速下のリスク管理などを議論する。", "language": "en", "country": "DE", "organizer_short": "Handelsblatt", "title_short": "Banking Summit", "importance": 2, "registration_url": null, "time_end": null, "source": "web検索(discovery)", "id": "2504c4ba5a955028", "first_seen": "2026-07-15"}, {"title": "SUERF BAFFI Bocconi – Meet the Author Series: The unanchored central banker", "title_ja": "SUERF著者対談(オンライン)", "organizer": "SUERF / BAFFI (Bocconi University)", "date_start": "2026-09-02", "date_end": null, "time": null, "city": "Online", "venue": null, "format": "online", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.suerf.org/events/", "summary_ja": "『The unanchored central banker』を題材に、金融政策と中央銀行の課題を論じるSUERFのオンライン著者対談。", "language": "en", "country": null, "organizer_short": "SUERF+BAFFI", "title_short": "The Unanchored Central Banker", "importance": 1, "registration_url": null, "time_end": null, "source": "SUERF – Events", "id": "b8af9cc5cba3d5d5", "first_seen": "2026-07-14"}, {"title": "21st Central Bank Conference on the Microstructure of Financial Markets", "title_ja": "第21回金融市場ミクロ構造会議", "organizer": "Deutsche Bundesbank", "date_start": "2026-09-10", "date_end": "2026-09-11", "time": null, "city": "Eltville am Rhein", "venue": null, "format": "onsite", "themes": ["fin_markets", "central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/21st-central-bank-conference-on-the-microstructure-of-financial-markets-854184", "summary_ja": "金融市場のミクロ構造(取引の仕組みと価格形成)に関する中央銀行会議(第21回)。", "language": "en", "country": "DE", "organizer_short": "Bundesbank", "title_short": "Microstructure of Financial Markets", "importance": 2, "registration_url": null, "time_end": null, "source": "Bundesbank – Forschungskonferenzen", "id": "0f45e63775f836f0", "first_seen": "2026-07-14"}, {"title": "3rd CEPR-SAFE Frankfurt Hub Conference of RPNs", "title_ja": "第3回CEPR-SAFEハブ会議", "organizer": "Leibniz Institute for Financial Research SAFE / CEPR", "date_start": "2026-09-10", "date_end": "2026-09-11", "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/3rd-cepr-safe-frankfurt-hub-conference-of-rpns.html", "summary_ja": "CEPRのリサーチ・ポリシー・ネットワーク(RPN)によるSAFEフランクフルト・ハブ会議(第3回)。", "language": "en", "country": "DE", "organizer_short": "SAFE+CEPR", "title_short": "Research Policy Network Hub Meeting", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "9e752632594a8615", "first_seen": "2026-07-14"}, {"title": "Kiel-CEPR International Economics Seminar: Matching People to Properties (Chenzi Xu)", "title_ja": "人と住宅のマッチング(Kiel-CEPRセミナー)", "organizer": "Kiel Institute for the World Economy / CEPR", "date_start": "2026-09-10", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "hybrid", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/kiel-cepr-international-economics-seminar-chenzi-xu-1/", "summary_ja": "住宅市場における人と物件のマッチングを分析するKiel-CEPR国際経済学セミナー。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel+CEPR", "title_short": "Matching People to Properties", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "15e5836287fd52d4", "first_seen": "2026-07-14"}, {"title": "Handelsblatt-Konferenz Wirtschaftsfaktor Rüstung 2026", "title_ja": "経済要因としての防衛産業会議", "organizer": "Euroforum Deutschland / Handelsblatt Live", "date_start": "2026-09-14", "date_end": "2026-09-15", "time": null, "city": "Düsseldorf", "venue": "Maritim Hotel Düsseldorf", "format": "hybrid", "themes": ["real_economy"], "fee": "paid", "open_to_public": true, "registration_note": "有料・要事前登録(早割€550〜)。ハイブリッド参加可", "url": "https://live.handelsblatt.com/event/handelsblatt-konferenz-wirtschaftsfaktor-ruestung/", "summary_ja": "防衛支出の拡大を背景に、ドイツ防衛産業の生産能力と構造転換を経済的観点から議論するハイブリッド会議。", "language": "de", "country": "DE", "organizer_short": "Handelsblatt", "title_short": "Germany's Defense Industry Economics", "importance": 2, "registration_url": null, "time_end": null, "source": "web検索(discovery)", "id": "131e519a0bb3e07a", "first_seen": "2026-07-14"}, {"title": "ECB Annual Research Conference 2026 – Geoeconomics and the International Trading System", "title_ja": "ECB年次研究会議:地経学と国際貿易", "organizer": "European Central Bank (ECB)", "date_start": "2026-09-16", "date_end": "2026-09-17", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank", "real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20260916_11th_ecb_annual_research_conference.en.html", "summary_ja": "ECBの年次研究会議。地経学と国際貿易体制をテーマに、貿易分断が世界経済・金融政策に及ぼす影響を議論する。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Geoeconomics and Global Trade", "importance": 3, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "83a62de47b68c53f", "first_seen": "2026-07-14"}, {"title": "10th SAFE Market Microstructure Conference", "title_ja": "第10回SAFE市場ミクロ構造会議", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-09-18", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/10th-safe-market-microstructure-conference.html", "summary_ja": "金融市場のミクロ構造に関するSAFEの会議(第10回)。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Market Microstructure Conference", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "9884a4a76208cdb1", "first_seen": "2026-07-14"}, {"title": "Der Digitale Euro: Das Geld der Zukunft? (Saarbrücken)", "title_ja": "デジタルユーロ:未来の通貨?(ザールブリュッケン)", "organizer": "Deutsche Bundesbank", "date_start": "2026-09-22", "date_end": null, "time": "17:30", "city": "Saarbrücken", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": true, "registration_note": null, "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/der-digitale-euro-das-geld-der-zukunft--814728", "summary_ja": "デジタルユーロ(中央銀行デジタル通貨)の意義と将来を解説する一般向け公開講演。", "language": "de", "country": "DE", "organizer_short": "Bundesbank", "title_short": "Digital Euro", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "id": "b2216992f550a9a4", "first_seen": "2026-07-14"}, {"title": "ECB/ESCB Legal Conference 2026 – Independence, not isolation: central banks and their connections with other authorities", "title_ja": "ECB/ESCB法務会議:中銀の独立性", "organizer": "European Central Bank (ECB) / ESCB", "date_start": "2026-09-28", "date_end": "2026-09-29", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank", "fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20260928_ECB_ESCB_legal_conference.en.html", "summary_ja": "中央銀行の独立性と他機関との関係を法的観点から議論するECB/ESCBの法務会議。", "language": "en", "country": "DE", "organizer_short": "ECB+ESCB", "title_short": "Independence, Not Isolation", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "8c7c140caa60b913", "first_seen": "2026-07-14"}, {"title": "13th SAFE Asset Pricing Workshop", "title_ja": "第13回SAFE資産価格ワークショップ", "organizer": "Leibniz Institute for Financial Research SAFE / Deutsche Bundesbank", "date_start": "2026-09-29", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/13th-safe-asset-pricing-workshop.html", "summary_ja": "資産価格の理論・実証をテーマにしたSAFEのワークショップ(第13回)。ブンデスバンク等が共催。", "language": "en", "country": "DE", "organizer_short": "SAFE+Bundesbank", "title_short": "Asset Pricing Workshop", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "eaf721d650667ca8", "first_seen": "2026-07-14"}, {"title": "Tenth Annual Conference of the European Systemic Risk Board (ESRB)", "title_ja": "ESRB第10回年次会議", "organizer": "European Systemic Risk Board (ESRB)", "date_start": "2026-10-01", "date_end": "2026-10-02", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "summary_ja": "欧州システミックリスク理事会(ESRB)の年次会議。マクロプルーデンス政策と金融安定を議論する。", "language": "en", "country": "DE", "organizer_short": "ESRB", "title_short": "ESRB Annual Conference", "importance": 3, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "708e1da248a1a1ff", "first_seen": "2026-07-14"}, {"title": "ECB Conference on Monetary Policy 2026: bridging science and practice", "title_ja": "ECB金融政策会議2026", "organizer": "European Central Bank (ECB)", "date_start": "2026-10-05", "date_end": "2026-10-06", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20261005_monetary_policy_conf.en.html", "summary_ja": "「科学と実務の橋渡し」をテーマにしたECBの金融政策会議。招待講演と若手経済学者の報告セッションを含む。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Monetary Policy Science and Practice", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "76d8f59d74e6d263", "first_seen": "2026-07-14"}, {"title": "OeNB | SUERF | Joint Vienna Institute | Yale PFS Conference: New challenges in safeguarding financial stability and managing financial crises in a world of digital finance and AI", "title_ja": "金融安定と危機管理の新課題会議(ウィーン)", "organizer": "OeNB / SUERF / Joint Vienna Institute / Yale Program on Financial Stability", "date_start": "2026-10-05", "date_end": null, "time": null, "city": "Vienna", "venue": null, "format": "hybrid", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.suerf.org/events/", "summary_ja": "デジタル金融とAIの時代における金融安定の確保と金融危機管理の新たな課題を議論する会議(ハイブリッド)。", "language": "en", "country": "AT", "organizer_short": "OeNB+SUERF", "title_short": "Financial Stability, Crises and AI", "importance": 2, "registration_url": null, "time_end": null, "source": "SUERF – Events", "id": "517e4ef74daec274", "first_seen": "2026-07-14"}, {"title": "5th Kiel-CEPR Conference on Geoeconomics", "title_ja": "第5回キール-CEPR地経学会議", "organizer": "Kiel Institute for the World Economy / CEPR", "date_start": "2026-11-03", "date_end": "2026-11-04", "time": null, "city": "Berlin", "venue": null, "format": "onsite", "themes": ["real_economy"], "fee": "unknown", "open_to_public": false, "registration_note": "招待制", "url": "https://www.kielinstitut.de/de/veranstaltungen/konferenzen/geoeconomics-conferences/5th-kiel-cepr-conference-on-geoeconomics/", "summary_ja": "地経学(貿易・地政学と経済の相互作用)をテーマにしたキール研究所とCEPRの会議(招待制)。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel+CEPR", "title_short": "Geoeconomics", "importance": 2, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "ccd3b57687dfd27b", "first_seen": "2026-07-14"}, {"title": "ECB Conference on Money Markets 2026", "title_ja": "ECBマネーマーケット会議2026", "organizer": "European Central Bank (ECB)", "date_start": "2026-11-05", "date_end": "2026-11-06", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets", "central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "summary_ja": "短期金融市場(マネーマーケット)の機能と金融政策の波及をテーマにしたECBの会議。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Money Markets", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "101c02b611f5c100", "first_seen": "2026-07-14"}, {"title": "Fall 2026 Frankfurt Macro Seminar", "title_ja": "フランクフルト・マクロセミナー(2026秋)", "organizer": "Deutsche Bundesbank / ECB / Frankfurt School / Goethe University Frankfurt", "date_start": "2026-11-05", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank", "real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798", "summary_ja": "ブンデスバンク・ECB等が共催するマクロ経済・金融政策の研究セミナー(午後のワークショップ)。", "language": "en", "country": "DE", "organizer_short": "Bundesbank+ECB", "title_short": "Frankfurt Macro Seminar", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Forschungskonferenzen", "id": "0367f964c35433c3", "first_seen": "2026-07-14"}, {"title": "Bank of Italy | 37th SUERF Colloquium: Inflation, inflation expectations, and monetary policy", "title_ja": "第37回SUERFコロキウム(ローマ)", "organizer": "SUERF / Banca d'Italia", "date_start": "2026-11-19", "date_end": "2026-11-20", "time": null, "city": "Rome", "venue": null, "format": "hybrid", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.suerf.org/events/", "summary_ja": "インフレ・インフレ期待と金融政策をテーマにしたSUERF第37回コロキウム(イタリア銀行共催、ハイブリッド開催)。", "language": "en", "country": "IT", "organizer_short": "SUERF+BdI", "title_short": "Inflation, Expectations and Monetary Policy", "importance": 2, "registration_url": null, "time_end": null, "source": "SUERF – Events", "id": "e5316499ffd260f7", "first_seen": "2026-07-14"}, {"title": "efl Annual Conference 2026", "title_ja": "efl年次会議2026", "organizer": "E-Finance Lab (efl) / Deutsche Börse AG", "date_start": "2026-11-26", "date_end": null, "time": null, "city": null, "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.eflab.de/events/detail/efl-annual-conference-2026", "summary_ja": "E-Finance Lab(efl)とドイツ取引所による年次会議。金融市場・金融サービスのデジタル化等を扱う。", "language": "en", "country": null, "organizer_short": "efl", "title_short": "Digitalization of Finance and Markets", "importance": 2, "registration_url": null, "time_end": null, "source": "House of Finance (Goethe大) – Veranstaltungen", "id": "4eddd806e9227c6e", "first_seen": "2026-07-14"}, {"title": "ECB Conference on Financial Stability and Macroprudential Policy 2026", "title_ja": "ECB金融安定・マクロプルーデンス会議", "organizer": "European Central Bank (ECB)", "date_start": "2026-12-02", "date_end": "2026-12-03", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20261202_financial_stability.en.html", "summary_ja": "金融安定とマクロプルーデンス政策に関するECBの会議。規制の複雑性・銀行の競争力・AIの役割が焦点。基調講演はAnil Kashyap。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Macroprudential Policy and Stability", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "91f6f1f3ec824d02", "first_seen": "2026-07-14"}];
-const STATUS = [{"name": "ECB – Conferences & seminars", "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "ok": true, "found": 0, "error": "今後の会議6件(年次研究・法務・ESRB・金融政策・マネーマーケット・金融安定)は全て既掲載。新規なし。"}, {"name": "Bundesbank – Termine", "url": "https://www.bundesbank.de/de/service/termine", "ok": true, "found": 0, "error": "掲載は既掲載イベントおよび決済行動・貨幣史・見学ツアー等で、3テーマに該当する新規イベントなし。"}, {"name": "Bundesbank – Forschungskonferenzen", "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656", "ok": true, "found": 0, "error": "Microstructure(09-10)・Asset Pricing(09-29)・Macro Seminar(11-05)は既掲載。Frankfurt Summer School(07-26)は研修のため除外。"}, {"name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen", "ok": true, "found": 0, "error": "デジタルユーロ等は既掲載。決済行動調査の公表・貨幣史・KI一般講演・年金財政は3テーマ外のため除外。"}, {"name": "ifo Institut – Veranstaltungen", "url": "https://www.ifo.de/veranstaltungen", "ok": true, "found": 0, "error": "一覧がJS描画で日付確定イベントを静的HTMLから取得できず。"}, {"name": "DIW Berlin – Veranstaltungen", "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html", "ok": true, "found": 0, "error": "掲載はマクロ/労働/IO/競争政策/犯罪経済等のセミナーで、3テーマに明確に該当する新規イベントなし。"}, {"name": "IfW Kiel – Veranstaltungen", "url": "https://www.ifw-kiel.de/de/institut/veranstaltungen/", "ok": true, "found": 0, "error": "URLは www.kielinstitut.de へリダイレクト。今後のセミナー・会議は全て既掲載。ASP courses/Math Campは研修のため除外。"}, {"name": "RWI Essen – Veranstaltungen", "url": "https://www.rwi-essen.de/veranstaltungen", "ok": true, "found": 0, "error": "WebFetchが取得不可。curlで取得したが当該ページは案内(ランディング)のみで日付付きイベントの掲載なし。"}, {"name": "SAFE Frankfurt – Events", "url": "https://safe-frankfurt.de/news-latest/events.html", "ok": true, "found": 0, "error": "Brown Bag・不動産金融WS・Hub会議・ミクロ構造・Asset Pricing等は全て既掲載。Summer School/Science Festivalは除外。"}, {"name": "IMFS Frankfurt – 全ての今後のイベント", "url": "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen", "ok": true, "found": 0, "error": "一覧のイベント明細がJS描画のため静的HTMLから取得できず。日付確定分なし。"}, {"name": "House of Finance (Goethe大) – Veranstaltungen", "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen", "ok": true, "found": 0, "error": "SAFE/efl系イベントはいずれも既掲載。Science Festivalは除外。新規なし。"}, {"name": "SUERF – Events", "url": "https://www.suerf.org/events/", "ok": true, "found": 0, "error": "WebFetchが403。curlで取得成功。Colloquium Rome(11-19)・Vienna(10-05)・Meet the Author(09-02)は既掲載。Bratislava(Call for Papers)・Brussels(対面のみ・非独機関)は対象外。"}, {"name": "ZEW Mannheim – Veranstaltungen", "url": "https://www.zew.de/veranstaltungen", "ok": true, "found": 0, "error": "掲載は環境/産業組織/税/健康/イノベーション/教育の会議で、3テーマに該当する新規イベントなし。Jahresgutachtenは報告書公表のため除外。"}, {"name": "web検索(discovery)", "url": "", "ok": true, "found": 1, "error": "英独7クエリを実施。新規1件(Handelsblatt Banking Summit 2026, 09-02〜03 Frankfurt)を追加。Bundeskongress Infrastruktur(01月・開催済)・INVESTMENTexpo(05月・開催済)・Bankenaufsicht/Bankenverbank turning point(開催済または日付未確定)は除外。"}];
-const TODAY  = "2026-07-16";
+const EVENTS  = [{"title": "Media Pioneer Live: Aktuelle Fragen der Finanzstabilität und Lage deutscher und europäischer Banken", "title_ja": "金融安定と独欧銀行の現状(討論)", "organizer": "Media Pioneer / Deutsche Bundesbank", "date_start": "2026-07-14", "date_end": null, "time": "15:00", "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "ブンデスバンク理事Michael Theurerが登壇し、金融安定と独・欧州の銀行の状況を議論する公開討論(Media Pioneer Live)。", "language": "de", "country": "DE", "organizer_short": "Bundesbank", "title_short": "German and European Bank Stability", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "0ee7272e5c5b3f27", "first_seen": "2026-07-14"}, {"title": "Research Seminar: Cascading Disconnections – The Dynamics of Building Electrification When Gas Network Costs are Fixed (Matthias Paustian)", "title_ja": "建物電化とガス網費用の研究セミナー", "organizer": "Kiel Institute for the World Economy (IfW Kiel)", "date_start": "2026-07-14", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "onsite", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/cascading-disconnections-the-dynamics-of-building-electrification-when-gas-network-costs-are-fixed-matthias-paustian/", "summary_ja": "ガス網の固定費が建物の電化に与える動学的影響を分析する研究セミナー(エネルギー経済)。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel", "title_short": "Cascading Disconnections in Building Electrification", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "39af69be1835c9db", "first_seen": "2026-07-14"}, {"title": "SAFE Finance Seminar: Falko Fecht (Deutsche Bundesbank)", "title_ja": "SAFEファイナンス・セミナー", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-07-14", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/finance-seminar-falko-fecht-deutsche-bundesbank.html", "summary_ja": "ブンデスバンクのFalko Fecht氏によるSAFEのファイナンス研究セミナー。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Finance Seminar with Falko Fecht", "importance": 1, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "5471c0373cb44bcd", "first_seen": "2026-07-14"}, {"title": "Der Euro in einer fragmentierten Welt: Stabilität, Souveränität und globale Verantwortung", "title_ja": "分断世界におけるユーロ(講演)", "organizer": "Hohenheimer Kreis", "date_start": "2026-07-15", "date_end": null, "time": "18:00", "city": "Stuttgart", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "分断が進む世界におけるユーロの安定性・主権・世界的責任を論じる講演。ブンデスバンク総裁Joachim Nagelが登壇。", "language": "de", "country": "DE", "organizer_short": "Hohenheimer Kreis", "title_short": "Euro in a Fragmented World", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "bb6706357367fcdb", "first_seen": "2026-07-14"}, {"title": "Der digitale Euro: Das Geld der Zukunft? (Ulm)", "title_ja": "デジタルユーロ:未来の通貨?(ウルム)", "organizer": "Deutsche Bundesbank", "date_start": "2026-07-15", "date_end": null, "time": "17:00", "city": "Ulm", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": true, "registration_note": null, "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/der-digitale-euro-das-geld-der-zukunft--881818", "summary_ja": "デジタルユーロ(中央銀行デジタル通貨)の意義と将来を解説する一般向け公開講演。", "language": "de", "country": "DE", "organizer_short": "Bundesbank", "title_short": "Digital Euro", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "id": "085341a89a94f09b", "first_seen": "2026-07-14"}, {"title": "SAFE Brown Bag Seminar: Maximilian Muhn & Matthias Breuer (Goethe University Frankfurt)", "title_ja": "SAFEブラウンバッグ・セミナー", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-07-15", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-brown-bag-seminar-maximilian-muhn-matthias-breuer-goethe-university-frankfurt.html", "summary_ja": "Goethe大学のMuhn氏・Breuer氏によるSAFEのブラウンバッグ研究セミナー。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Brown Bag Seminar", "importance": 1, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "6b42b895e81f214a", "first_seen": "2026-07-14"}, {"title": "ikf-impulse Podiumsdiskussion: Umbruch in der Bankenregulierung", "title_ja": "銀行規制の転換(パネル討論)", "organizer": "ikf – Institut für Kredit- und Finanzwirtschaft, Ruhr-Universität Bochum", "date_start": "2026-07-15", "date_end": null, "time": "17:00", "city": "Bochum", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "銀行規制の転換をテーマにしたパネル討論。ブンデスバンク理事Michael Theurerが参加。", "language": "de", "country": "DE", "organizer_short": "ikf Bochum", "title_short": "Banking Regulation in Transition", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "accec714ccfb8571", "first_seen": "2026-07-14"}, {"title": "Bayerischer Sparkassentag: Vertrauen in die Zukunft – Wie Finanzaufsicht Stabilität sichert", "title_ja": "バイエルン貯蓄銀行大会:金融監督と安定", "organizer": "Sparkassenverband Bayern", "date_start": "2026-07-16", "date_end": null, "time": "12:35", "city": "Lindau am Bodensee", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/de/service/termine", "summary_ja": "金融監督が安定をどう確保するかをテーマにしたバイエルン貯蓄銀行大会の講演。ブンデスバンク理事Michael Theurerが登壇。", "language": "de", "country": "DE", "organizer_short": "Sparkassenverband Bayern", "title_short": "Financial Supervision Secures Stability", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Termine", "id": "5e9fb2b83dc1b1e9", "first_seen": "2026-07-14"}, {"title": "Diverging Cycles, Distinct Constraints: The US, Europe and China", "title_ja": "米欧中の景気サイクルの乖離(会議)", "organizer": "Kiel Institute for the World Economy (IfW Kiel)", "date_start": "2026-07-16", "date_end": null, "time": null, "city": "Online", "venue": null, "format": "online", "themes": ["real_economy"], "fee": "unknown", "open_to_public": true, "registration_note": "要事前登録", "url": "https://www.kielinstitut.de/de/veranstaltungen/konferenzen/diverging-cycles-distinct-constraints-the-us-europe-and-china/", "summary_ja": "米国・欧州・中国の景気循環の乖離と各国固有の制約を論じるオンライン会議。", "language": "en", "country": null, "organizer_short": "IfW Kiel", "title_short": "US, Europe and China Divergence", "importance": 2, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "30417877c7f4c641", "first_seen": "2026-07-14"}, {"title": "SAFE Brown Bag Seminar: Lovisa Reiche (BI Norwegian Business School)", "title_ja": "SAFEブラウンバッグ・セミナー", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-07-22", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-brown-bag-seminar-lovisa-reiche-bi-norwegian-business-school.html", "summary_ja": "BIノルウェー経営大学院のLovisa Reiche氏によるSAFEのブラウンバッグ研究セミナー。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Brown Bag Seminar", "importance": 1, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "ba65a45050c49c95", "first_seen": "2026-07-14"}, {"title": "Kiel-CEPR International Economics Seminar: Economic Analysis of Extraterritorial Taxation (Mathieu Parenti)", "title_ja": "域外課税の経済分析(Kiel-CEPRセミナー)", "organizer": "Kiel Institute for the World Economy / CEPR", "date_start": "2026-07-23", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "hybrid", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/kiel-cepr-international-economics-seminar-mathieu-parenti/", "summary_ja": "多国籍企業への域外課税の経済的影響を分析するKiel-CEPR国際経済学セミナー(貿易・国際経済)。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel+CEPR", "title_short": "Extraterritorial Taxation", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "e4cc3146bb092308", "first_seen": "2026-07-14"}, {"title": "Research Seminar: Real-Time AI-Powered GDP Tracking – Lessons from Eight Years of GDPLive (Christoph Schumacher)", "title_ja": "AIによるリアルタイムGDP推計セミナー", "organizer": "Kiel Institute for the World Economy (IfW Kiel)", "date_start": "2026-08-18", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "onsite", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/real-time-ai-powered-gdp-tracking-lessons-from-eight-years-of-gdplive-christoph-schumacher/", "summary_ja": "AIを用いたリアルタイムGDP推計(GDPLive)の8年間の知見を報告する研究セミナー。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel", "title_short": "AI-Powered Real-Time GDP Tracking", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "8984da7c8746957d", "first_seen": "2026-07-14"}, {"title": "1st Annual Workshop in Real Estate Finance: Housing Market Frictions and Access to Homeownership", "title_ja": "不動産金融ワークショップ(第1回)", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-08-24", "date_end": "2026-08-25", "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/1st-annual-workshop-in-real-estate-finance-housing-market-frictions-and-access-to-homeownership-1.html", "summary_ja": "住宅市場の摩擦と持ち家取得をテーマにした不動産金融の年次ワークショップ(第1回)。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Housing Market Frictions", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "34f76e3e4f7be91d", "first_seen": "2026-07-14"}, {"title": "Handelsblatt Banking Summit 2026", "title_ja": "ハンデルスブラット銀行サミット2026", "organizer": "Euroforum Deutschland / Handelsblatt Live", "date_start": "2026-09-02", "date_end": "2026-09-03", "time": null, "city": "Frankfurt am Main", "venue": "Kap Europa (Cape Europe), Messe Frankfurt", "format": "onsite", "themes": ["fin_markets", "real_economy"], "fee": "paid", "open_to_public": true, "registration_note": "有料・要事前登録(€650〜、税別)", "url": "https://live.handelsblatt.com/en/event/handelsblatt-banks-summit/", "summary_ja": "銀行業界の経営層・政策担当者が集うハンデルスブラット主催の年次サミット。金融規制の簡素化、ステーブルコイン、AI活用、防衛産業投資、景気減速下のリスク管理などを議論する。", "language": "en", "country": "DE", "organizer_short": "Handelsblatt", "title_short": "Banking Summit", "importance": 2, "registration_url": null, "time_end": null, "source": "web検索(discovery)", "id": "2504c4ba5a955028", "first_seen": "2026-07-15"}, {"title": "SUERF BAFFI Bocconi – Meet the Author Series: The unanchored central banker", "title_ja": "SUERF著者対談(オンライン)", "organizer": "SUERF / BAFFI (Bocconi University)", "date_start": "2026-09-02", "date_end": null, "time": null, "city": "Online", "venue": null, "format": "online", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.suerf.org/events/", "summary_ja": "『The unanchored central banker』を題材に、金融政策と中央銀行の課題を論じるSUERFのオンライン著者対談。", "language": "en", "country": null, "organizer_short": "SUERF+BAFFI", "title_short": "The Unanchored Central Banker", "importance": 1, "registration_url": null, "time_end": null, "source": "SUERF – Events", "id": "b8af9cc5cba3d5d5", "first_seen": "2026-07-14"}, {"title": "21st Central Bank Conference on the Microstructure of Financial Markets", "title_ja": "第21回金融市場ミクロ構造会議", "organizer": "Deutsche Bundesbank", "date_start": "2026-09-10", "date_end": "2026-09-11", "time": null, "city": "Eltville am Rhein", "venue": null, "format": "onsite", "themes": ["fin_markets", "central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/21st-central-bank-conference-on-the-microstructure-of-financial-markets-854184", "summary_ja": "金融市場のミクロ構造(取引の仕組みと価格形成)に関する中央銀行会議(第21回)。", "language": "en", "country": "DE", "organizer_short": "Bundesbank", "title_short": "Microstructure of Financial Markets", "importance": 2, "registration_url": null, "time_end": null, "source": "Bundesbank – Forschungskonferenzen", "id": "0f45e63775f836f0", "first_seen": "2026-07-14"}, {"title": "3rd CEPR-SAFE Frankfurt Hub Conference of RPNs", "title_ja": "第3回CEPR-SAFEハブ会議", "organizer": "Leibniz Institute for Financial Research SAFE / CEPR", "date_start": "2026-09-10", "date_end": "2026-09-11", "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/3rd-cepr-safe-frankfurt-hub-conference-of-rpns.html", "summary_ja": "CEPRのリサーチ・ポリシー・ネットワーク(RPN)によるSAFEフランクフルト・ハブ会議(第3回)。", "language": "en", "country": "DE", "organizer_short": "SAFE+CEPR", "title_short": "Research Policy Network Hub Meeting", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "9e752632594a8615", "first_seen": "2026-07-14"}, {"title": "Kiel-CEPR International Economics Seminar: Matching People to Properties (Chenzi Xu)", "title_ja": "人と住宅のマッチング(Kiel-CEPRセミナー)", "organizer": "Kiel Institute for the World Economy / CEPR", "date_start": "2026-09-10", "date_end": null, "time": null, "city": "Kiel", "venue": null, "format": "hybrid", "themes": ["real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/kiel-cepr-international-economics-seminar-chenzi-xu-1/", "summary_ja": "住宅市場における人と物件のマッチングを分析するKiel-CEPR国際経済学セミナー。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel+CEPR", "title_short": "Matching People to Properties", "importance": 1, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "15e5836287fd52d4", "first_seen": "2026-07-14"}, {"title": "Handelsblatt-Konferenz Wirtschaftsfaktor Rüstung 2026", "title_ja": "経済要因としての防衛産業会議", "organizer": "Euroforum Deutschland / Handelsblatt Live", "date_start": "2026-09-14", "date_end": "2026-09-15", "time": null, "city": "Düsseldorf", "venue": "Maritim Hotel Düsseldorf", "format": "hybrid", "themes": ["real_economy"], "fee": "paid", "open_to_public": true, "registration_note": "有料・要事前登録(早割€550〜)。ハイブリッド参加可", "url": "https://live.handelsblatt.com/event/handelsblatt-konferenz-wirtschaftsfaktor-ruestung/", "summary_ja": "防衛支出の拡大を背景に、ドイツ防衛産業の生産能力と構造転換を経済的観点から議論するハイブリッド会議。", "language": "de", "country": "DE", "organizer_short": "Handelsblatt", "title_short": "Germany's Defense Industry Economics", "importance": 2, "registration_url": null, "time_end": null, "source": "web検索(discovery)", "id": "131e519a0bb3e07a", "first_seen": "2026-07-14"}, {"title": "ECB Annual Research Conference 2026 – Geoeconomics and the International Trading System", "title_ja": "ECB年次研究会議:地経学と国際貿易", "organizer": "European Central Bank (ECB)", "date_start": "2026-09-16", "date_end": "2026-09-17", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank", "real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20260916_11th_ecb_annual_research_conference.en.html", "summary_ja": "ECBの年次研究会議。地経学と国際貿易体制をテーマに、貿易分断が世界経済・金融政策に及ぼす影響を議論する。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Geoeconomics and Global Trade", "importance": 3, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "83a62de47b68c53f", "first_seen": "2026-07-14"}, {"title": "10th SAFE Market Microstructure Conference", "title_ja": "第10回SAFE市場ミクロ構造会議", "organizer": "Leibniz Institute for Financial Research SAFE", "date_start": "2026-09-18", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/10th-safe-market-microstructure-conference.html", "summary_ja": "金融市場のミクロ構造に関するSAFEの会議(第10回)。", "language": "en", "country": "DE", "organizer_short": "SAFE", "title_short": "Market Microstructure Conference", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "9884a4a76208cdb1", "first_seen": "2026-07-14"}, {"title": "Der Digitale Euro: Das Geld der Zukunft? (Saarbrücken)", "title_ja": "デジタルユーロ:未来の通貨?(ザールブリュッケン)", "organizer": "Deutsche Bundesbank", "date_start": "2026-09-22", "date_end": null, "time": "17:30", "city": "Saarbrücken", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": true, "registration_note": null, "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/der-digitale-euro-das-geld-der-zukunft--814728", "summary_ja": "デジタルユーロ(中央銀行デジタル通貨)の意義と将来を解説する一般向け公開講演。", "language": "de", "country": "DE", "organizer_short": "Bundesbank", "title_short": "Digital Euro", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "id": "b2216992f550a9a4", "first_seen": "2026-07-14"}, {"title": "ECB/ESCB Legal Conference 2026 – Independence, not isolation: central banks and their connections with other authorities", "title_ja": "ECB/ESCB法務会議:中銀の独立性", "organizer": "European Central Bank (ECB) / ESCB", "date_start": "2026-09-28", "date_end": "2026-09-29", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank", "fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20260928_ECB_ESCB_legal_conference.en.html", "summary_ja": "中央銀行の独立性と他機関との関係を法的観点から議論するECB/ESCBの法務会議。", "language": "en", "country": "DE", "organizer_short": "ECB+ESCB", "title_short": "Independence, Not Isolation", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "8c7c140caa60b913", "first_seen": "2026-07-14"}, {"title": "13th SAFE Asset Pricing Workshop", "title_ja": "第13回SAFE資産価格ワークショップ", "organizer": "Leibniz Institute for Financial Research SAFE / Deutsche Bundesbank", "date_start": "2026-09-29", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://safe-frankfurt.de/news-media/events/event-view/13th-safe-asset-pricing-workshop.html", "summary_ja": "資産価格の理論・実証をテーマにしたSAFEのワークショップ(第13回)。ブンデスバンク等が共催。", "language": "en", "country": "DE", "organizer_short": "SAFE+Bundesbank", "title_short": "Asset Pricing Workshop", "importance": 2, "registration_url": null, "time_end": null, "source": "SAFE Frankfurt – Events", "id": "eaf721d650667ca8", "first_seen": "2026-07-14"}, {"title": "Tenth Annual Conference of the European Systemic Risk Board (ESRB)", "title_ja": "ESRB第10回年次会議", "organizer": "European Systemic Risk Board (ESRB)", "date_start": "2026-10-01", "date_end": "2026-10-02", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "summary_ja": "欧州システミックリスク理事会(ESRB)の年次会議。マクロプルーデンス政策と金融安定を議論する。", "language": "en", "country": "DE", "organizer_short": "ESRB", "title_short": "ESRB Annual Conference", "importance": 3, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "708e1da248a1a1ff", "first_seen": "2026-07-14"}, {"title": "ECB Conference on Monetary Policy 2026: bridging science and practice", "title_ja": "ECB金融政策会議2026", "organizer": "European Central Bank (ECB)", "date_start": "2026-10-05", "date_end": "2026-10-06", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20261005_monetary_policy_conf.en.html", "summary_ja": "「科学と実務の橋渡し」をテーマにしたECBの金融政策会議。招待講演と若手経済学者の報告セッションを含む。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Monetary Policy Science and Practice", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "76d8f59d74e6d263", "first_seen": "2026-07-14"}, {"title": "OeNB | SUERF | Joint Vienna Institute | Yale PFS Conference: New challenges in safeguarding financial stability and managing financial crises in a world of digital finance and AI", "title_ja": "金融安定と危機管理の新課題会議(ウィーン)", "organizer": "OeNB / SUERF / Joint Vienna Institute / Yale Program on Financial Stability", "date_start": "2026-10-05", "date_end": null, "time": null, "city": "Vienna", "venue": null, "format": "hybrid", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.suerf.org/events/", "summary_ja": "デジタル金融とAIの時代における金融安定の確保と金融危機管理の新たな課題を議論する会議(ハイブリッド)。", "language": "en", "country": "AT", "organizer_short": "OeNB+SUERF", "title_short": "Financial Stability, Crises and AI", "importance": 2, "registration_url": null, "time_end": null, "source": "SUERF – Events", "id": "517e4ef74daec274", "first_seen": "2026-07-14"}, {"title": "5th Kiel-CEPR Conference on Geoeconomics", "title_ja": "第5回キール-CEPR地経学会議", "organizer": "Kiel Institute for the World Economy / CEPR", "date_start": "2026-11-03", "date_end": "2026-11-04", "time": null, "city": "Berlin", "venue": null, "format": "onsite", "themes": ["real_economy"], "fee": "unknown", "open_to_public": false, "registration_note": "招待制", "url": "https://www.kielinstitut.de/de/veranstaltungen/konferenzen/geoeconomics-conferences/5th-kiel-cepr-conference-on-geoeconomics/", "summary_ja": "地経学(貿易・地政学と経済の相互作用)をテーマにしたキール研究所とCEPRの会議(招待制)。", "language": "en", "country": "DE", "organizer_short": "IfW Kiel+CEPR", "title_short": "Geoeconomics", "importance": 2, "registration_url": null, "time_end": null, "source": "IfW Kiel – Veranstaltungen", "id": "ccd3b57687dfd27b", "first_seen": "2026-07-14"}, {"title": "ECB Conference on Money Markets 2026", "title_ja": "ECBマネーマーケット会議2026", "organizer": "European Central Bank (ECB)", "date_start": "2026-11-05", "date_end": "2026-11-06", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets", "central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "summary_ja": "短期金融市場(マネーマーケット)の機能と金融政策の波及をテーマにしたECBの会議。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Money Markets", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "101c02b611f5c100", "first_seen": "2026-07-14"}, {"title": "Fall 2026 Frankfurt Macro Seminar", "title_ja": "フランクフルト・マクロセミナー(2026秋)", "organizer": "Deutsche Bundesbank / ECB / Frankfurt School / Goethe University Frankfurt", "date_start": "2026-11-05", "date_end": null, "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["central_bank", "real_economy"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798", "summary_ja": "ブンデスバンク・ECB等が共催するマクロ経済・金融政策の研究セミナー(午後のワークショップ)。", "language": "en", "country": "DE", "organizer_short": "Bundesbank+ECB", "title_short": "Frankfurt Macro Seminar", "importance": 1, "registration_url": null, "time_end": null, "source": "Bundesbank – Forschungskonferenzen", "id": "0367f964c35433c3", "first_seen": "2026-07-14"}, {"title": "Bank of Italy | 37th SUERF Colloquium: Inflation, inflation expectations, and monetary policy", "title_ja": "第37回SUERFコロキウム(ローマ)", "organizer": "SUERF / Banca d'Italia", "date_start": "2026-11-19", "date_end": "2026-11-20", "time": null, "city": "Rome", "venue": null, "format": "hybrid", "themes": ["central_bank"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.suerf.org/events/", "summary_ja": "インフレ・インフレ期待と金融政策をテーマにしたSUERF第37回コロキウム(イタリア銀行共催、ハイブリッド開催)。", "language": "en", "country": "IT", "organizer_short": "SUERF+BdI", "title_short": "Inflation, Expectations and Monetary Policy", "importance": 2, "registration_url": null, "time_end": null, "source": "SUERF – Events", "id": "e5316499ffd260f7", "first_seen": "2026-07-14"}, {"title": "efl Annual Conference 2026", "title_ja": "efl年次会議2026", "organizer": "E-Finance Lab (efl) / Deutsche Börse AG", "date_start": "2026-11-26", "date_end": null, "time": null, "city": null, "venue": null, "format": null, "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.eflab.de/events/detail/efl-annual-conference-2026", "summary_ja": "E-Finance Lab(efl)とドイツ取引所による年次会議。金融市場・金融サービスのデジタル化等を扱う。", "language": "en", "country": null, "organizer_short": "efl", "title_short": "Digitalization of Finance and Markets", "importance": 2, "registration_url": null, "time_end": null, "source": "House of Finance (Goethe大) – Veranstaltungen", "id": "4eddd806e9227c6e", "first_seen": "2026-07-14"}, {"title": "ECB Conference on Financial Stability and Macroprudential Policy 2026", "title_ja": "ECB金融安定・マクロプルーデンス会議", "organizer": "European Central Bank (ECB)", "date_start": "2026-12-02", "date_end": "2026-12-03", "time": null, "city": "Frankfurt am Main", "venue": null, "format": "onsite", "themes": ["fin_markets"], "fee": "unknown", "open_to_public": null, "registration_note": null, "url": "https://www.ecb.europa.eu/press/conferences/html/20261202_financial_stability.en.html", "summary_ja": "金融安定とマクロプルーデンス政策に関するECBの会議。規制の複雑性・銀行の競争力・AIの役割が焦点。基調講演はAnil Kashyap。", "language": "en", "country": "DE", "organizer_short": "ECB", "title_short": "Macroprudential Policy and Stability", "importance": 2, "registration_url": null, "time_end": null, "source": "ECB – Conferences & seminars", "id": "91f6f1f3ec824d02", "first_seen": "2026-07-14"}];
+const STATUS  = [{"name": "ECB – Conferences & seminars", "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html", "ok": true, "found": 0, "error": "今後の会議6件(年次研究・法務・ESRB・金融政策・マネーマーケット・金融安定)は全て既掲載。新規なし。"}, {"name": "Bundesbank – Termine", "url": "https://www.bundesbank.de/de/service/termine", "ok": true, "found": 0, "error": "掲載は既掲載イベントおよび決済行動・貨幣史・見学ツアー等で、3テーマに該当する新規イベントなし。"}, {"name": "Bundesbank – Forschungskonferenzen", "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656", "ok": true, "found": 0, "error": "Microstructure(09-10)・Asset Pricing(09-29)・Macro Seminar(11-05)は既掲載。Frankfurt Summer School(07-26)は研修のため除外。"}, {"name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen", "ok": true, "found": 0, "error": "デジタルユーロ等は既掲載。決済行動調査の公表・貨幣史・KI一般講演・年金財政は3テーマ外のため除外。"}, {"name": "ifo Institut – Veranstaltungen", "url": "https://www.ifo.de/veranstaltungen", "ok": true, "found": 0, "error": "一覧がJS描画で日付確定イベントを静的HTMLから取得できず。"}, {"name": "DIW Berlin – Veranstaltungen", "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html", "ok": true, "found": 0, "error": "掲載はマクロ/労働/IO/競争政策/犯罪経済等のセミナーで、3テーマに明確に該当する新規イベントなし。"}, {"name": "IfW Kiel – Veranstaltungen", "url": "https://www.ifw-kiel.de/de/institut/veranstaltungen/", "ok": true, "found": 0, "error": "URLは www.kielinstitut.de へリダイレクト。今後のセミナー・会議は全て既掲載。ASP courses/Math Campは研修のため除外。"}, {"name": "RWI Essen – Veranstaltungen", "url": "https://www.rwi-essen.de/veranstaltungen", "ok": true, "found": 0, "error": "WebFetchが取得不可。curlで取得したが当該ページは案内(ランディング)のみで日付付きイベントの掲載なし。"}, {"name": "SAFE Frankfurt – Events", "url": "https://safe-frankfurt.de/news-latest/events.html", "ok": true, "found": 0, "error": "Brown Bag・不動産金融WS・Hub会議・ミクロ構造・Asset Pricing等は全て既掲載。Summer School/Science Festivalは除外。"}, {"name": "IMFS Frankfurt – 全ての今後のイベント", "url": "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen", "ok": true, "found": 0, "error": "一覧のイベント明細がJS描画のため静的HTMLから取得できず。日付確定分なし。"}, {"name": "House of Finance (Goethe大) – Veranstaltungen", "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen", "ok": true, "found": 0, "error": "SAFE/efl系イベントはいずれも既掲載。Science Festivalは除外。新規なし。"}, {"name": "SUERF – Events", "url": "https://www.suerf.org/events/", "ok": true, "found": 0, "error": "WebFetchが403。curlで取得成功。Colloquium Rome(11-19)・Vienna(10-05)・Meet the Author(09-02)は既掲載。Bratislava(Call for Papers)・Brussels(対面のみ・非独機関)は対象外。"}, {"name": "ZEW Mannheim – Veranstaltungen", "url": "https://www.zew.de/veranstaltungen", "ok": true, "found": 0, "error": "掲載は環境/産業組織/税/健康/イノベーション/教育の会議で、3テーマに該当する新規イベントなし。Jahresgutachtenは報告書公表のため除外。"}, {"name": "web検索(discovery)", "url": "", "ok": true, "found": 1, "error": "英独7クエリを実施。新規1件(Handelsblatt Banking Summit 2026, 09-02〜03 Frankfurt)を追加。Bundeskongress Infrastruktur(01月・開催済)・INVESTMENTexpo(05月・開催済)・Bankenaufsicht/Bankenverbank turning point(開催済または日付未確定)は除外。"}];
+const SOURCES = {"sources": [{"name": "ECB – Conferences & seminars", "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html"}, {"name": "Bundesbank – Termine", "url": "https://www.bundesbank.de/de/service/termine"}, {"name": "Bundesbank – Forschungskonferenzen", "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656"}, {"name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)", "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen"}, {"name": "ifo Institut – Veranstaltungen", "url": "https://www.ifo.de/veranstaltungen"}, {"name": "DIW Berlin – Veranstaltungen", "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"}, {"name": "IfW Kiel – Veranstaltungen", "url": "https://www.ifw-kiel.de/de/institut/veranstaltungen/"}, {"name": "RWI Essen – Veranstaltungen", "url": "https://www.rwi-essen.de/veranstaltungen"}, {"name": "SAFE Frankfurt – Events", "url": "https://safe-frankfurt.de/news-latest/events.html"}, {"name": "IMFS Frankfurt – 全ての今後のイベント", "url": "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen"}, {"name": "House of Finance (Goethe大) – Veranstaltungen", "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen"}, {"name": "SUERF – Events", "url": "https://www.suerf.org/events/"}, {"name": "ZEW Mannheim – Veranstaltungen", "url": "https://www.zew.de/veranstaltungen"}, {"name": "CFS – Center for Financial Studies (Frankfurt) – Events", "url": "https://www.ifk-cfs.de/events.html"}, {"name": "Frankfurt School of Finance & Management – Events", "url": "https://www.frankfurt-school.de/en/home/about-us/events"}, {"name": "CESifo (München) – Veranstaltungen", "url": "https://www.cesifo.org/de/veranstaltungen"}, {"name": "Hertie School (Berlin) – Events", "url": "https://www.hertie-school.org/en/events"}, {"name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen", "url": "https://www.iwh-halle.de/veranstaltungen/"}, {"name": "BaFin – Veranstaltungen", "url": "https://www.bafin.de/DE/Service/Veranstaltungen/veranstaltungen_node.html"}, {"name": "EIOPA (Frankfurt) – Events", "url": "https://www.eiopa.europa.eu/media/events_en"}, {"name": "SRB – Single Resolution Board – Events", "url": "https://www.srb.europa.eu/en/events"}, {"name": "Deutsche Börse Group – Veranstaltungen", "url": "https://www.deutsche-boerse.com/dbg-de/media/veranstaltungen"}, {"name": "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen", "url": "https://www.swp-berlin.org/veranstaltungen"}, {"name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen", "url": "https://dgap.org/de/veranstaltungen"}, {"name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen", "url": "https://www.ewi.uni-koeln.de/de/veranstaltungen/"}, {"name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen", "url": "https://www.iwkoeln.de/veranstaltungen.html"}, {"name": "Bruegel (Brussels) – Events", "url": "https://www.bruegel.org/events"}, {"name": "OMFIF – Events/Meetings", "url": "https://www.omfif.org/events/"}, {"name": "BIS – Bank for International Settlements – Events", "url": "https://www.bis.org/events/index.htm"}, {"name": "SNB – Swiss National Bank – Events", "url": "https://www.snb.ch/en/services-events/events"}, {"name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen", "url": "https://www.oenb.at/en/Termine.html"}, {"name": "CNB – Czech National Bank – Conferences, Seminars, Workshops", "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-workshops/"}, {"name": "NBP – Narodowy Bank Polski – Conferences", "url": "https://nbp.pl/en/research-and-publications/conferences/"}, {"name": "NBU – National Bank of Ukraine – Research Events", "url": "https://bank.gov.ua/en/news/events"}, {"name": "NBS – Národná banka Slovenska – Events", "url": "https://nbs.sk/en/events/"}, {"name": "Bank of Lithuania – Events", "url": "https://www.lb.lt/en/events"}, {"name": "Latvijas Banka – Research/Events", "url": "https://www.macroeconomics.lv/events"}, {"name": "Study Center Gerzensee – Events", "url": "https://www.szgerzensee.ch/events"}, {"name": "CEBRA – Central Bank Research Association – Events", "url": "https://www.cebra.org/events"}, {"name": "ECB – Calls for Papers", "url": "https://www.ecb.europa.eu/press/calls/html/index.en.html"}], "topics": ["中央銀行・金融政策に関する会議やセミナー(ドイツ国内またはオンライン)。例: monetary policy conference Frankfurt, Geldpolitik Konferenz", "ドイツ実体経済に関するセミナー。特にエネルギー価格・オイルショック、防衛支出拡大、インフラ投資(Sondervermögen)関連。例: defence industry conference Germany, Energiepreise Konferenz, Infrastruktur Investitionen Veranstaltung", "金融規制・金融市場に関する会議。例: banking regulation conference Frankfurt, financial stability conference Germany, Bankenaufsicht Symposium", "省庁・規制当局・業界団体・メディア主催の単発イベント(サミット、年次会議、パネル討論)。例: BMF BMWK Konferenz, Bankenverband Veranstaltung, finance summit Germany 2026", "中東欧・バルカン・バルトの中央銀行の研究セミナー・年次会議(例: NBR BEARS seminar, Eesti Pank research seminar, Banka Slovenije seminar, CBBH research seminar, National Bank of Serbia seminar, central bank research conference CEE)", "中東欧の大型政策・安全保障・経済フォーラム(例: Economic Forum Karpacz, Bled Strategic Forum, Warsaw Security Forum, GLOBSEC, IISS Prague Defence Summit, MSPO defence exhibition)。防衛・地経学はテーマ②に直結"]};
+const TODAY   = "2026-07-16";
 
 const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場"};
 const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm"};
@@ -324,13 +378,20 @@ const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau
                     "Eltville am Rhein":"Eltville"};
 const LANG_SHORT = {en:"英", de:"独", "en+de":"英独"};
 const LANG_JA    = {en:"英語", de:"独語", "en+de":"英語・独語"};
-const COUNTRY_JA = {DE:"ドイツ", AT:"オーストリア", IT:"イタリア", CH:"スイス",
-                    FR:"フランス", NL:"オランダ",
-                    PL:"ポーランド", CZ:"チェコ", SK:"スロバキア", HU:"ハンガリー",
-                    SI:"スロベニア", HR:"クロアチア", BA:"ボスニア", RS:"セルビア",
-                    AL:"アルバニア", RO:"ルーマニア", BG:"ブルガリア", LT:"リトアニア",
-                    LV:"ラトビア", EE:"エストニア", UA:"ウクライナ", PT:"ポルトガル",
-                    DK:"デンマーク"};
+const COUNTRY_JA = {
+  DE:"ドイツ", AT:"オーストリア", CH:"スイス", IT:"イタリア", FR:"フランス",
+  NL:"オランダ", BE:"ベルギー", LU:"ルクセンブルク", GB:"英国", IE:"アイルランド",
+  ES:"スペイン", PT:"ポルトガル", GR:"ギリシャ", MT:"マルタ", CY:"キプロス",
+  DK:"デンマーク", FI:"フィンランド", SE:"スウェーデン", NO:"ノルウェー",
+  IS:"アイスランド", PL:"ポーランド", CZ:"チェコ", SK:"スロバキア", HU:"ハンガリー",
+  SI:"スロベニア", HR:"クロアチア", RO:"ルーマニア", BG:"ブルガリア",
+  BA:"ボスニア", RS:"セルビア", AL:"アルバニア", MK:"北マケドニア",
+  ME:"モンテネグロ", XK:"コソボ", LT:"リトアニア", LV:"ラトビア", EE:"エストニア",
+  UA:"ウクライナ", MD:"モルドバ", TR:"トルコ",
+  MC:"モナコ", LI:"リヒテンシュタイン",
+  US:"米国", CA:"カナダ", JP:"日本", CN:"中国", KR:"韓国",
+  AU:"オーストラリア", SG:"シンガポール"
+};
 
 /* ---------- ラベル生成 ---------- */
 function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
@@ -352,6 +413,10 @@ function orgShort(ev){
   if(org.length<=12) return org || "?";
   return org.slice(0,12)+"…";
 }
+/* 主催者を "+" で分解したトークン集合(例 "SAFE+CEPR" → ["SAFE","CEPR"]) */
+function orgTokens(ev){
+  return String(orgShort(ev)||"").split("+").map(s=>s.trim()).filter(Boolean);
+}
 function evLabel(ev){
   const lang = ev.language ? LANG_SHORT[ev.language] : null;
   const mid = lang ? `${lang}・${orgShort(ev)}` : orgShort(ev);
@@ -372,92 +437,146 @@ function mondayOf(iso){
 }
 
 /* ---------- 状態 ---------- */
-const dataCountries = [...new Set(EVENTS.map(e=>e.country).filter(Boolean))].sort();
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
-const state = {themes:new Set(["central_bank","real_economy","fin_markets"]),
-               lang:"", fee:"free_unknown",
-               country: dataCountries.includes("DE") ? "DE" : "",
-               city:"", imp:"", q:"", sort:"date",
+const state = {area:"", country:"", city:"", org:"", imp:"", lang:"",
+               fee:"free_unknown", online:true, q:"", sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
-const LS_KEY = "sr_filters_v3";
+const LS_KEY = "sr_filters_v4";
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
   if(!s || typeof s!=="object") return;
-  if(Array.isArray(s.themes)){
-    const t = s.themes.filter(x=>THCLS[x]);
-    if(t.length) state.themes = new Set(t);
-    else state.themes = new Set();  /* 全部オフの保存も尊重 */
-  }
+  if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
   if(["free_unknown","free_only","paid","all"].includes(s.fee)) state.fee = s.fee;
   if(["","2","3"].includes(s.imp)) state.imp = s.imp;
+  if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.q==="string") state.q = s.q;
   if(["date","imp"].includes(s.sort)) state.sort = s.sort;
-  if(s.country==="" || dataCountries.includes(s.country)) state.country = s.country;
-  if(typeof s.city==="string") state.city = s.city; /* 都市は候補構築時に検証 */
+  /* country/city/org は候補構築時に検証(候補に無ければ黙って空に戻す) */
+  if(typeof s.country==="string") state.country = s.country;
+  if(typeof s.city==="string")    state.city    = s.city;
+  if(typeof s.org==="string")     state.org     = s.org;
 }
 function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
-      themes:[...state.themes], lang:state.lang, fee:state.fee,
-      country:state.country, city:state.city, imp:state.imp, q:state.q,
-      sort:state.sort
+      area:state.area, country:state.country, city:state.city, org:state.org,
+      imp:state.imp, lang:state.lang, fee:state.fee, online:state.online,
+      q:state.q, sort:state.sort
     }));
   }catch(e){}
 }
 
-/* ---------- フィルタ判定 ---------- */
+/* ---------- 個別フィルタ判定 ---------- */
+function passArea(ev){
+  if(state.area==="") return true;
+  if(ev.format==="online") return true;               /* 完全オンラインは所在地なし→常に表示 */
+  if(state.area==="DE")    return ev.country==="DE";
+  if(state.area==="nonDE") return ev.country!=null && ev.country!=="DE";
+  return true;
+}
 function passCountry(ev){
   if(state.country==="") return true;
-  if(ev.format==="online" || ev.format==="hybrid") return true; /* オンライン参加可は素通し */
-  if(ev.country==null) return true;                              /* 欠損は除外しない */
-  return ev.country===state.country;
+  if(ev.format==="online") return true;               /* 完全オンラインは国を問わず(CBはonline判定で別途制御) */
+  return ev.country===state.country;                  /* 厳密一致(country===null は除外) */
 }
-function visible(ev){
-  if(!ev.themes.some(t=>state.themes.has(t))) return false;
+function passCity(ev){
+  if(state.city==="") return true;
+  return ev.city===state.city;                        /* 物理都市の明示選択→オンラインは外れる */
+}
+function passOrg(ev){
+  if(state.org==="") return true;
+  return orgTokens(ev).includes(state.org);
+}
+function passImp(ev){
+  if(state.imp==="2" && imp(ev)<2) return false;
+  if(state.imp==="3" && imp(ev)<3) return false;
+  return true;
+}
+function passLang(ev){
   if(state.lang==="en" && !(ev.language==="en"||ev.language==="en+de"||ev.language==null)) return false;
   if(state.lang==="de" && !(ev.language==="de"||ev.language==="en+de"||ev.language==null)) return false;
+  return true;
+}
+function passFee(ev){
   if(state.fee==="free_unknown" && ev.fee==="paid") return false;
   if(state.fee==="free_only" && ev.fee!=="free") return false;
   if(state.fee==="paid" && ev.fee!=="paid") return false;
-  if(state.imp==="2" && imp(ev)<2) return false;
-  if(state.imp==="3" && imp(ev)<3) return false;
-  if(!passCountry(ev)) return false;
-  if(state.city && ev.city!==state.city) return false;
-  if(state.q){
-    const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
-               ev.city,ev.summary_ja].join(" ").toLowerCase();
-    if(!hay.includes(state.q.toLowerCase())) return false;
-  }
   return true;
 }
-const fEvents=()=>EVENTS.filter(visible);
-const inRange=(ev,iso)=>iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
-
-/* ---------- 動的セレクト構築 ---------- */
-function buildCountry(){
-  const sel=document.getElementById("country");
-  let opts=`<option value="">すべて</option>`;
-  for(const c of dataCountries)
-    opts+=`<option value="${esc(c)}">${esc(COUNTRY_JA[c]||c)}</option>`;
-  sel.innerHTML=opts;
-  sel.value=state.country;
+function passOnline(ev){
+  if(state.online) return true;                       /* オン: 完全オンラインも含める */
+  return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
 }
-function cityCandidates(){
-  return [...new Set(EVENTS.filter(passCountry)
+function passQ(ev){
+  if(!state.q) return true;
+  const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
+             ev.city,ev.summary_ja].join(" ").toLowerCase();
+  return hay.includes(state.q.toLowerCase());
+}
+
+/* ---------- ファセット合成(自分以外の全フィルタを通過するか) ---------- */
+function passExcept(ev, ex){
+  if(ex!=="area"    && !passArea(ev))    return false;
+  if(ex!=="country" && !passCountry(ev)) return false;
+  if(ex!=="city"    && !passCity(ev))    return false;
+  if(ex!=="org"     && !passOrg(ev))     return false;
+  if(ex!=="imp"     && !passImp(ev))     return false;
+  if(ex!=="lang"    && !passLang(ev))    return false;
+  if(ex!=="fee"     && !passFee(ev))     return false;
+  if(ex!=="online"  && !passOnline(ev))  return false;
+  if(ex!=="q"       && !passQ(ev))       return false;
+  return true;
+}
+const visible = ev => passExcept(ev, null);
+const fEvents = () => EVENTS.filter(visible);
+const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
+
+/* ---------- 候補値(ファセット) ---------- */
+function facetCountry(){
+  return [...new Set(EVENTS.filter(e=>passExcept(e,"country"))
+            .map(e=>e.country).filter(Boolean))].sort();
+}
+function facetCity(){
+  return [...new Set(EVENTS.filter(e=>passExcept(e,"city"))
             .map(e=>e.city).filter(c=>c && c!=="Online"))].sort();
 }
-function buildCity(){
-  const cand=cityCandidates();
-  if(state.city && !cand.includes(state.city)) state.city="";
-  const sel=document.getElementById("city");
+function facetOrg(){
+  const set=new Set();
+  EVENTS.filter(e=>passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(t=>set.add(t)));
+  return [...set].sort((a,b)=>a.localeCompare(b));
+}
+
+/* ---------- 動的セレクト構築(全連動) ---------- */
+function fillSelect(id, cand, labelFn){
+  const sel=document.getElementById(id);
   let opts=`<option value="">すべて</option>`;
-  for(const c of cand) opts+=`<option value="${esc(c)}">${esc(c)}</option>`;
+  for(const v of cand) opts+=`<option value="${esc(v)}">${esc(labelFn?labelFn(v):v)}</option>`;
   sel.innerHTML=opts;
-  sel.value=state.city;
+  sel.value=state[id];
+}
+function rebuildSelects(){
+  /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大3回で安定させる */
+  for(let i=0;i<3;i++){
+    let changed=false;
+    if(state.country && !facetCountry().includes(state.country)){state.country="";changed=true;}
+    if(state.city    && !facetCity().includes(state.city))      {state.city="";   changed=true;}
+    if(state.org     && !facetOrg().includes(state.org))        {state.org="";    changed=true;}
+    if(!changed) break;
+  }
+  fillSelect("country", facetCountry(), c=>COUNTRY_JA[c]||c);
+  fillSelect("city",    facetCity());
+  fillSelect("org",     facetOrg());
+  document.getElementById("area").value   = state.area;
+  document.getElementById("imp").value    = state.imp;
+  document.getElementById("lang").value   = state.lang;
+  document.getElementById("fee").value    = state.fee;
+  document.getElementById("q").value      = state.q;
+  document.getElementById("sort").value   = state.sort;
+  document.getElementById("online").checked = state.online;
 }
 
 /* ---------- カレンダー(描画モード分岐) ---------- */
@@ -473,14 +592,12 @@ function shiftWeek(days){
   state.weekStart=isoOf(d);
 }
 function syncToMobile(){
-  /* 現在表示中の月に基づいて週を決める(今日を含む月なら今日の週) */
   const rep = (state.y===TODAY_Y && state.m===TODAY_M)
     ? TODAY
     : `${state.y}-${String(state.m+1).padStart(2,"0")}-01`;
   state.weekStart = isoOf(mondayOf(rep));
 }
 function syncToDesktop(){
-  /* 週が属する月(週の中日=木曜で判定)を表示 */
   const d=new Date(state.weekStart+"T00:00:00Z");
   d.setUTCDate(d.getUTCDate()+3);
   state.y=d.getUTCFullYear(); state.m=d.getUTCMonth();
@@ -619,37 +736,43 @@ function drawStatus(){
   }).join("");
 }
 
+/* ---------- 調査対象パネル ---------- */
+function drawSources(){
+  const src = (SOURCES && Array.isArray(SOURCES.sources)) ? SOURCES.sources : [];
+  const n = src.length;
+  const links = src.map(s=>{
+    const u=safeUrl(s.url), nm=esc(s.name||"");
+    return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${nm}</a>`
+             : `<span>${nm}</span>`;
+  }).join("");
+  document.getElementById("srcpanel").innerHTML=
+    `<div class="srcsec"><h3>対象地域</h3>`+
+    `<p>ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。`+
+    `中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。</p></div>`+
+    `<div class="srcsec"><h3>定点観測先(${n}件)</h3>`+
+    `<div class="srclist">${links}</div></div>`+
+    `<div class="srcsec"><h3>広域検索</h3>`+
+    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制のテーマ、`+
+    `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
+}
+
 /* ---------- 再描画 ---------- */
-function redraw(){drawCal();drawList();saveState();}
+function redraw(){rebuildSelects();drawCal();drawList();saveState();}
 
 /* ---------- 初期化 ---------- */
 loadState();
-buildCountry();
-buildCity();
-/* チップ状態を復元 */
-document.querySelectorAll(".chip").forEach(c=>{
-  c.dataset.on = state.themes.has(c.dataset.th) ? "1" : "0";
-});
-document.getElementById("lang").value = state.lang;
-document.getElementById("fee").value  = state.fee;
-document.getElementById("imp").value  = state.imp;
-document.getElementById("q").value    = state.q;
-document.getElementById("sort").value = state.sort;
+rebuildSelects();
+drawSources();
 
 /* ---------- イベントハンドラ ---------- */
-document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
-  const t=c.dataset.th, on=c.dataset.on==="1";
-  c.dataset.on=on?"0":"1";
-  on?state.themes.delete(t):state.themes.add(t);
-  redraw();
-}));
+document.getElementById("area").addEventListener("change",e=>{state.area=e.target.value;redraw();});
+document.getElementById("country").addEventListener("change",e=>{state.country=e.target.value;redraw();});
+document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
+document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
+document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
 document.getElementById("fee").addEventListener("change",e=>{state.fee=e.target.value;redraw();});
-document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
-document.getElementById("country").addEventListener("change",e=>{
-  state.country=e.target.value; buildCity(); redraw();
-});
-document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
+document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
 document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
 document.getElementById("prev").addEventListener("click",()=>{
@@ -671,6 +794,21 @@ document.addEventListener("click",e=>{
   const a=e.target.closest("a.ev"); if(!a)return;
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
+});
+
+/* ---------- 調査対象ボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
+const srcwrap=document.getElementById("srcwrap");
+const srcbtn=document.getElementById("srcbtn");
+srcbtn.addEventListener("click",e=>{
+  e.stopPropagation();
+  const open=srcwrap.classList.toggle("open");
+  srcbtn.setAttribute("aria-expanded", open?"true":"false");
+});
+document.addEventListener("click",e=>{
+  if(!srcwrap.contains(e.target) && srcwrap.classList.contains("open")){
+    srcwrap.classList.remove("open");
+    srcbtn.setAttribute("aria-expanded","false");
+  }
 });
 
 /* ---------- スクロールトップボタン ---------- */

@@ -21,6 +21,7 @@ ARCHIVE_FILE = ROOT / "data" / "archive.json"
 HTML_FILE = ROOT / "docs" / "index.html"
 ICS_FILE = ROOT / "docs" / "calendar.ics"
 TEMPLATE_FILE = ROOT / "scripts" / "template.html"
+SOURCES_FILE = ROOT / "sources.yaml"
 
 TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
@@ -175,6 +176,42 @@ def sanitize_statuses(statuses):
     return out
 
 
+def parse_sources():
+    """sources.yaml を行ベースで解析する(このファイルは自前管理でフォーマットが
+    安定しているため、PyYAML の無い環境でも動くよう汎用YAMLパーサは使わない)。
+    戻り値: {"sources": [{"name", "url"}, ...], "topics": [str, ...]}。
+    ファイルが無い/解析に失敗しても例外を投げず空の結果を返す(巡回を止めない)。"""
+    empty = {"sources": [], "topics": []}
+    try:
+        text = SOURCES_FILE.read_text(encoding="utf-8")
+    except OSError:
+        return empty
+
+    try:
+        src_marker = re.search(r'^sources:\s*$', text, re.MULTILINE)
+        topics_marker = re.search(r'^discovery_topics:\s*$', text, re.MULTILINE)
+        sources_section = (text[src_marker.end():topics_marker.start()]
+                            if src_marker and topics_marker else "")
+        topics_section = text[topics_marker.end():] if topics_marker else ""
+
+        sources = []
+        for m in re.finditer(
+                r'-\s*name:\s*"([^"]*)"\s*\n\s*url:\s*"([^"]*)"', sources_section):
+            name, url = m.group(1).strip(), m.group(2).strip()
+            if name and url:
+                sources.append({"name": name, "url": url})
+
+        topics = []
+        for m in re.finditer(r'^\s*-\s*"([^"]*)"\s*$', topics_section, re.MULTILINE):
+            topic = m.group(1).strip()
+            if topic:
+                topics.append(topic)
+
+        return {"sources": sources, "topics": topics}
+    except Exception:
+        return empty
+
+
 def render_html(events, statuses):
     template = TEMPLATE_FILE.read_text(encoding="utf-8")
     events_sorted = [dict(e, url=safe_url(e.get("url"))) for e in
@@ -184,6 +221,7 @@ def render_html(events, statuses):
     mapping = {
         "__EVENTS_JSON__": script_json(events_sorted),
         "__STATUS_JSON__": script_json(sanitize_statuses(statuses)),
+        "__SOURCES_JSON__": script_json(parse_sources()),
         "__UPDATED__": updated,
         "__TODAY__": TODAY.isoformat(),
     }
