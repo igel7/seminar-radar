@@ -50,6 +50,55 @@ def event_key(ev):
     ).hexdigest()[:16]
 
 
+# ----------------------------------------------------------------------
+# \u30d5\u30a1\u30b8\u30fc\u91cd\u8907\u5224\u5b9a(\u8a00\u3044\u56de\u3057\u9055\u3044\u3067\u4e8c\u91cd\u767b\u9332\u3055\u308c\u305f\u30a4\u30d9\u30f3\u30c8\u306e\u691c\u51fa)
+# ----------------------------------------------------------------------
+_STOPWORDS = {
+    "the", "of", "and", "in", "on", "for", "a", "an", "at", "to", "with",
+    "und", "der", "die", "das", "f\u00fcr", "im", "zu", "ein", "eine",
+}
+_ORDINAL_RE = re.compile(r"^\d+(st|nd|rd|th)$")
+_GENERIC_TOKENS = {
+    "conference", "seminar", "workshop", "symposium", "annual", "event",
+    "events", "meeting", "lecture", "konferenz", "tagung", "veranstaltung",
+    "forum", "summit",
+}
+
+
+def sig_tokens(title):
+    """\u30bf\u30a4\u30c8\u30eb\u3092\u6b63\u898f\u5316\u3057\u3001\u30b9\u30c8\u30c3\u30d7\u30ef\u30fc\u30c9\u30fb\u6570\u5b57\u30fb\u5e8f\u6570\u3092\u9664\u3044\u305f\u5358\u8a9e\u96c6\u5408\u3092\u8fd4\u3059\u3002"""
+    t = unicodedata.normalize("NFKC", str(title or "")).lower()
+    words = re.findall(r"\w+", t)
+    return {
+        w for w in words
+        if w not in _STOPWORDS and not w.isdigit() and not _ORDINAL_RE.match(w)
+    }
+
+
+def similar_event(a, b):
+    """\u540c\u4e00\u30a4\u30d9\u30f3\u30c8\u304c\u8a00\u3044\u56de\u3057\u9055\u3044\u306e\u30bf\u30a4\u30c8\u30eb\u3067\u5225\u767b\u9332\u3055\u308c\u3066\u3044\u306a\u3044\u304b\u3092\u5224\u5b9a\u3059\u308b\u3002
+    \u5b9a\u70b9\u89b3\u6e2c\u30bd\u30fc\u30b9\u540c\u58eb(discovery/\u624b\u52d5\u53d6\u8fbc\u3092\u542b\u307e\u306a\u3044\u7d44\u307f\u5408\u308f\u305b)\u306f\u5bfe\u8c61\u5916\u3068\u3059\u308b
+    (\u540c\u3058\u5b9a\u70b9\u30da\u30fc\u30b8\u306b\u8f09\u308b\u5225\u30a4\u30d9\u30f3\u30c8\u3092\u8aa4\u3063\u3066\u7d71\u5408\u3057\u306a\u3044\u305f\u3081\u306e\u5b89\u5168\u5f01)\u3002"""
+    if a.get("date_start") != b.get("date_start"):
+        return False
+    city_a, city_b = a.get("city"), b.get("city")
+    if not city_a or not city_b or str(city_a).casefold() != str(city_b).casefold():
+        return False
+    src_a, src_b = str(a.get("source") or ""), str(b.get("source") or "")
+    if not any(("web\u691c\u7d22" in s or "\u624b\u52d5\u53d6\u8fbc" in s) for s in (src_a, src_b)):
+        return False
+    org_a, org_b = a.get("organizer_short"), b.get("organizer_short")
+    org_tokens = set()
+    if org_a:
+        org_tokens |= sig_tokens(org_a)
+    if org_b:
+        org_tokens |= sig_tokens(org_b)
+    ov = len((sig_tokens(a.get("title")) & sig_tokens(b.get("title")))
+             - _GENERIC_TOKENS - org_tokens)
+    org_match = bool(org_a) and bool(org_b) and str(org_a).casefold() == str(org_b).casefold()
+    return (org_match and ov >= 2) or (ov >= 3)
+
+
 def valid_date(s):
     try:
         return bool(s) and bool(date.fromisoformat(str(s)))
@@ -117,7 +166,10 @@ def load_json(path, default):
 
 
 def merge(existing, new_events):
-    """既存 + 新規 をマージ。first_seen は最初の値を維持。戻り値 (events, 追加件数)。"""
+    """既存 + 新規 をマージ。first_seen は最初の値を維持。戻り値 (events, 追加件数)。
+    ハッシュキーが一致しない場合でも、ファジー判定(similar_event)で同一と
+    見なせる既存イベントがあれば、そちらへフィールドマージし新規追加しない
+    (言い回し違いでの二重登録を未然に防ぐ)。"""
     by_key = {e["id"]: e for e in existing}
     added = 0
     for ev in new_events:
@@ -131,11 +183,38 @@ def merge(existing, new_events):
                 if val not in (None, "", "unknown", []) and field != "source":
                     old[field] = val
         else:
-            ev["id"] = k
-            ev["first_seen"] = TODAY.isoformat()
-            by_key[k] = ev
-            added += 1
+            match = next((old for old in by_key.values() if similar_event(old, ev)), None)
+            if match is not None:
+                for field, val in ev.items():
+                    if val not in (None, "", "unknown", []) and field != "source":
+                        match[field] = val
+            else:
+                ev["id"] = k
+                ev["first_seen"] = TODAY.isoformat()
+                by_key[k] = ev
+                added += 1
     return list(by_key.values()), added
+
+
+def dedupe_events(events):
+    """既に data/events.json 内に残ってしまった言い回し違いの重複を、
+    first_seen 昇順(同値は id)で走査しながら統合する。
+    戻り値: (残ったイベントのリスト, 除去件数)。"""
+    ordered = sorted(events, key=lambda e: (e.get("first_seen") or "", e.get("id") or ""))
+    kept = []
+    removed = 0
+    for ev in ordered:
+        match = next((k for k in kept if similar_event(k, ev)), None)
+        if match is not None:
+            for field, val in ev.items():
+                if field in ("first_seen", "id", "source"):
+                    continue
+                if val not in (None, "", "unknown", []):
+                    match[field] = val
+            removed += 1
+        else:
+            kept.append(ev)
+    return kept, removed
 
 
 def split_archive(events, archive_days=30):
