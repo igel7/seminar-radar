@@ -28,6 +28,8 @@
 - curl/WebFetch で取れない・JS描画が疑われるソースは `python3 scripts/fetch_page.py <URL>`
   で再取得してから抽出する(初回は pip install playwright が必要な場合がある)。
   それでも取れないもの(Cloudflare等)は失敗として記録する。
+- sources.yaml で `# JS描画` の注記があるソースは、curl/WebFetch を試さず最初から
+  `python3 scripts/fetch_page.py <URL>` で取得する。
 
 ### 2.5 手動取込ファイルの処理
 `data/manual/` 直下に `.html` / `.txt` / `.md` ファイルがあれば、それぞれを読み、

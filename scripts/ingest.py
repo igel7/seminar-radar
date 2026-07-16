@@ -15,7 +15,8 @@ import json
 import sys
 
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
-                       load_json, merge, render_html, render_ics, split_archive)
+                       dedupe_events, load_json, merge, render_html, render_ics,
+                       split_archive)
 
 
 def main():
@@ -26,6 +27,7 @@ def main():
 
     store = load_json(DATA_FILE, {"events": []})
     events, added = merge(store.get("events", []), new_events)
+    events, removed = dedupe_events(events)
     events, to_archive = split_archive(events)
 
     if to_archive:
@@ -43,7 +45,7 @@ def main():
     NEW_FILE.write_text("[]", encoding="utf-8")
 
     print(f"完了: 新規 {added} 件 / 掲載中 {len(events)} 件 / "
-          f"アーカイブ移動 {len(to_archive)} 件")
+          f"アーカイブ移動 {len(to_archive)} 件 / 重複除去 {removed} 件")
 
 
 if __name__ == "__main__":
