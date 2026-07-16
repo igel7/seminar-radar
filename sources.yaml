@@ -11,7 +11,7 @@ settings:
   # 1ページから抽出するテキストの最大文字数
   max_page_chars: 30000
   # discovery(ネット検索)での最大検索回数/日
-  max_searches_per_day: 8
+  max_searches_per_day: 12
   # 何日前より古い終了イベントをアーカイブに落とすか
   archive_after_days: 30
 
@@ -140,6 +140,53 @@ sources:
     url: "https://www.bis.org/events/index.htm"
     verified: false
 
+  # --- 追加: 欧州の中央銀行(定点) ---
+  - name: "SNB – Swiss National Bank – Events"
+    url: "https://www.snb.ch/en/services-events/events"
+    verified: false
+
+  - name: "OeNB – Oesterreichische Nationalbank – Veranstaltungen"
+    url: "https://www.oenb.at/en/Termine.html"
+    verified: false
+
+  - name: "CNB – Czech National Bank – Conferences, Seminars, Workshops"
+    url: "https://www.cnb.cz/en/economic-research/conferences-seminars-workshops/"
+    verified: false
+
+  - name: "NBP – Narodowy Bank Polski – Conferences"
+    url: "https://nbp.pl/en/research-and-publications/conferences/"
+    verified: false
+
+  - name: "NBU – National Bank of Ukraine – Research Events"
+    url: "https://bank.gov.ua/en/news/events"
+    verified: false
+
+  - name: "NBS – Národná banka Slovenska – Events"
+    url: "https://nbs.sk/en/events/"
+    verified: false
+
+  - name: "Bank of Lithuania – Events"
+    url: "https://www.lb.lt/en/events"
+    verified: false
+
+  - name: "Latvijas Banka – Research/Events"
+    url: "https://www.macroeconomics.lv/events"
+    verified: false
+
+  # --- 追加: 中銀系研究機関・研究ネットワーク ---
+  - name: "Study Center Gerzensee – Events"
+    url: "https://www.szgerzensee.ch/events"
+    verified: false
+
+  - name: "CEBRA – Central Bank Research Association – Events"
+    url: "https://www.cebra.org/events"
+    verified: false
+
+  # --- 追加: ECBの見落とし対策 ---
+  - name: "ECB – Calls for Papers"
+    url: "https://www.ecb.europa.eu/press/calls/html/index.en.html"
+    verified: false
+
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)
 # 毎日この観点で web 検索を行い、新規イベントを追加する
@@ -149,3 +196,5 @@ discovery_topics:
   - "ドイツ実体経済に関するセミナー。特にエネルギー価格・オイルショック、防衛支出拡大、インフラ投資(Sondervermögen)関連。例: defence industry conference Germany, Energiepreise Konferenz, Infrastruktur Investitionen Veranstaltung"
   - "金融規制・金融市場に関する会議。例: banking regulation conference Frankfurt, financial stability conference Germany, Bankenaufsicht Symposium"
   - "省庁・規制当局・業界団体・メディア主催の単発イベント(サミット、年次会議、パネル討論)。例: BMF BMWK Konferenz, Bankenverband Veranstaltung, finance summit Germany 2026"
+  - "中東欧・バルカン・バルトの中央銀行の研究セミナー・年次会議(例: NBR BEARS seminar, Eesti Pank research seminar, Banka Slovenije seminar, CBBH research seminar, National Bank of Serbia seminar, central bank research conference CEE)"
+  - "中東欧の大型政策・安全保障・経済フォーラム(例: Economic Forum Karpacz, Bled Strategic Forum, Warsaw Security Forum, GLOBSEC, IISS Prague Defence Summit, MSPO defence exhibition)。防衛・地経学はテーマ②に直結"

@@ -234,7 +234,7 @@
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
     <span class="updated">LAST UPDATE: <b>__UPDATED__</b></span>
-    <div class="tagline">ドイツ(順次欧州へ拡大予定)の経済・金融セミナーを毎日自動収集して掲載しています。</div>
+    <div class="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
 
@@ -325,7 +325,12 @@ const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau
 const LANG_SHORT = {en:"英", de:"独", "en+de":"英独"};
 const LANG_JA    = {en:"英語", de:"独語", "en+de":"英語・独語"};
 const COUNTRY_JA = {DE:"ドイツ", AT:"オーストリア", IT:"イタリア", CH:"スイス",
-                    FR:"フランス", NL:"オランダ"};
+                    FR:"フランス", NL:"オランダ",
+                    PL:"ポーランド", CZ:"チェコ", SK:"スロバキア", HU:"ハンガリー",
+                    SI:"スロベニア", HR:"クロアチア", BA:"ボスニア", RS:"セルビア",
+                    AL:"アルバニア", RO:"ルーマニア", BG:"ブルガリア", LT:"リトアニア",
+                    LV:"ラトビア", EE:"エストニア", UA:"ウクライナ", PT:"ポルトガル",
+                    DK:"デンマーク"};
 
 /* ---------- ラベル生成 ---------- */
 function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
