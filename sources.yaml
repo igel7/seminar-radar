@@ -57,7 +57,7 @@ sources:
     verified: true
 
   - name: "IMFS Frankfurt – 全ての今後のイベント"
-    url: "https://www.imfs-frankfurt.de/veranstaltungen/alle-kommenden-veranstaltungen"
+    url: "https://www.imfs-frankfurt.de/en/events/upcoming-events"
     verified: true   # JS描画: fetch_page.pyを必ず使用
 
   - name: "House of Finance (Goethe大) – Veranstaltungen"
@@ -74,8 +74,8 @@ sources:
 
   # --- 追加: 中央銀行・金融政策系 ---
   - name: "CFS – Center for Financial Studies (Frankfurt) – Events"
-    url: "https://gfk-cfs.de/en/events/"
-    verified: true   # JS描画: fetch_page.pyを必ず使用
+    url: "https://gfk-cfs.de/en/events/feed/"
+    verified: true   # RSSフィード(静的に読める)
 
   - name: "Frankfurt School of Finance & Management – Events"
     url: "https://forum.frankfurt-school.de/konferenzen/"
@@ -111,10 +111,6 @@ sources:
     verified: true
 
   # --- 追加: 実体経済(エネルギー・防衛・インフラ)系 ---
-  - name: "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen"
-    url: "https://www.swp-berlin.org/veranstaltungen"
-    verified: false
-
   - name: "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen"
     url: "https://dgap.org/de/veranstaltungen"
     verified: true
@@ -182,31 +178,26 @@ sources:
     url: "https://www.cebra.org/events"
     verified: true
 
-  # --- 追加: ECBの見落とし対策 ---
-  - name: "ECB – Calls for Papers"
-    url: "https://www.ecb.europa.eu/press/calls/html/index.en.html"
-    verified: true
-
   # --- 追加: 東欧・バルカン・バルトの中央銀行 ---
   - name: "Eesti Pank (エストニア) – Events"
     url: "https://www.eestipank.ee/en/events"
     verified: false
 
   - name: "MNB – Magyar Nemzeti Bank (ハンガリー) – Events"
-    url: "https://www.mnb.hu/en/events"
-    verified: false   # JS描画: fetch_page.pyを必ず使用
+    url: "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026"
+    verified: true   # 公開イベント一覧なし: 個別会議ページ+web検索で補完
 
   - name: "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars"
-    url: "https://www.bnr.ro/Conferences-and-seminars-6864.aspx"
-    verified: false
+    url: "https://www.bnr.ro/en/24077-bears"
+    verified: true   # JS描画: fetch_page.pyを必ず使用
 
   - name: "HNB – Croatian National Bank – Conferences"
-    url: "https://www.hnb.hr/en/core-functions/research/conferences"
-    verified: false   # JS描画: fetch_page.pyを必ず使用
+    url: "https://www.hnb.hr/en/about-us/events"
+    verified: true   # JS描画(Liferay): fetch_page.py --wait 6000 で取得
 
   - name: "BNB – Bulgarian National Bank – Events"
     url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
-    verified: false
+    verified: true   # JS描画: fetch_page.pyを必ず使用
 
   - name: "National Bank of Serbia – Events"
     url: "https://www.nbs.rs/en/events/"
