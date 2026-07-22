@@ -80,10 +80,10 @@
   .filters{margin:14px 0 18px}
   .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
   .fld{display:flex;flex-direction:column;gap:3px}
-  .fld .cap{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
+  .fld .cap{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--dim)}
   select,input[type=search]{border:1px solid var(--line2);border-radius:4px;
-    padding:8px 11px;font-size:14px;background:var(--cell);color:var(--ink);
+    padding:8px 11px;font-size:15px;background:var(--cell);color:var(--ink);
     font-family:var(--mono)}
   select{cursor:pointer}
   select option:disabled{color:var(--dim)}
@@ -92,11 +92,11 @@
     box-shadow:0 0 0 1px var(--amber)}
   /* ヘッダー内の検索欄 */
   .hdtools input[type=search]{min-width:0;flex:1 1 170px;max-width:230px;
-    padding:6px 10px;font-size:13px}
+    padding:6px 10px;font-size:14px}
   /* オンライン開催チェックボックス */
   .cbfld{justify-content:flex-end}
   .cbrow{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none;
-    min-height:37px;padding:0 2px;font-family:var(--mono);font-size:12.5px;
+    min-height:37px;padding:0 2px;font-family:var(--mono);font-size:13.5px;
     letter-spacing:.02em;color:var(--sub)}
   .cbrow input{appearance:none;-webkit-appearance:none;width:16px;height:16px;
     margin:0;border:1px solid var(--line2);border-radius:3px;background:var(--cell);
@@ -115,12 +115,12 @@
   #filterbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
     margin:0 0 10px;padding:6px 12px;border:1px solid var(--amber-dim);
     border-radius:4px;background:rgba(245,166,35,.08);
-    font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--imp3-tx)}
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--imp3-tx)}
   #filterbar[hidden]{display:none}
   #filterbar b{color:var(--amber);font-weight:700}
   #filterbar .fbreset{border:1px solid var(--amber-dim);background:transparent;
     color:var(--amber-dim);border-radius:3px;padding:3px 11px;font-family:var(--mono);
-    font-size:11px;letter-spacing:.04em;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+    font-size:12px;letter-spacing:.04em;cursor:pointer;white-space:nowrap;flex:0 0 auto}
   #filterbar .fbreset:hover{border-color:var(--amber);color:var(--amber)}
 
   /* ---------- カレンダー ---------- */
@@ -135,13 +135,13 @@
     letter-spacing:.04em}
   table.cal{width:100%;border-collapse:collapse;background:var(--cal);
     border:1px solid var(--line2);table-layout:fixed}
-  table.cal th{border:1px solid var(--line2);padding:6px 4px;font-size:10px;
+  table.cal th{border:1px solid var(--line2);padding:6px 4px;font-size:11.5px;
     font-weight:700;color:var(--sub);background:var(--cell2);font-family:var(--mono);
     letter-spacing:.12em;text-transform:uppercase;width:14.285%;
     border-bottom:2px solid var(--amber-dim)}
   table.cal td{border:1px solid var(--line);vertical-align:top;height:96px;
     padding:3px 4px;width:14.285%;background:var(--cal)}
-  td .dnum{font-family:var(--mono);font-size:11.5px;color:var(--ink);display:block;
+  td .dnum{font-family:var(--mono);font-size:12.5px;color:var(--ink);display:block;
     font-weight:600;margin-bottom:1px}
   td.out{background:var(--bg)} td.out .dnum{color:var(--dim);font-weight:400}
   td.today{outline:2px solid var(--amber);outline-offset:-2px}
@@ -151,11 +151,11 @@
   .ev{display:block;line-height:1.32;margin:2px 0;
     padding:1px 4px 2px 6px;border-left:3px solid;border-radius:2px;cursor:pointer;
     text-decoration:none;overflow-wrap:anywhere;word-break:normal}
-  .ev.i3{font-size:13px;font-weight:700;line-height:1.28;
+  .ev.i3{font-size:14px;font-weight:700;line-height:1.28;
     border-color:var(--imp3);background:var(--imp3-bg);color:var(--imp3-tx)}
-  .ev.i2{font-size:12px;font-weight:500;
+  .ev.i2{font-size:13px;font-weight:500;
     border-color:var(--imp2);background:var(--imp2-bg);color:var(--imp2-tx)}
-  .ev.i1{font-size:11px;font-weight:400;
+  .ev.i1{font-size:12px;font-weight:400;
     border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
   .ev.foreign{border-left-style:dashed;border-left-width:3px}
   .ev:hover{filter:brightness(1.25)}
@@ -168,7 +168,9 @@
   /* .lanes: セル上部のレーンコンテナ。全レーン分のスロット(セグメント or 透明スペーサー)
      を縦に積み、隣接セルとバーがつながって見えるようにする。 */
   .lanes{margin:2px 0 1px}
-  .seg,.segsp{display:block;height:15px;margin-bottom:2px}
+  /* スロット高は2行ラベル分の固定高(13px × line-height1.25 × 2行 + 上下padding ≒ 37px)。
+     セグメントもスペーサーも同一固定高にして、セル間で1本のバーに見える整合を保つ。 */
+  .seg,.segsp{display:block;height:37px;margin-bottom:2px}
   .segsp{visibility:hidden}                    /* 透明スペーサー(縦位置を全セルで揃える) */
   .seg{position:relative;border-radius:3px;cursor:pointer;text-decoration:none;
     overflow:visible;background:var(--imp1-bg)}
@@ -187,11 +189,12 @@
   .seg.bridgeL{margin-left:-5px}
   .seg.bridgeR{margin-right:-5px}
   .seg:hover{filter:brightness(1.3)}
-  /* ラベルは週内の最初のカバー日に1回だけ。nowrap でバー上を右へ流し、
-     --n(週内カバー日数)ぶんの幅で overflow:hidden クリップしてカレンダー外へ漏らさない。 */
-  .seglbl{position:absolute;left:6px;top:0;height:15px;line-height:15px;
-    white-space:nowrap;overflow:hidden;pointer-events:none;z-index:3;
-    font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+  /* ラベルは週内の最初のカバー日に1回だけ。--n(週内カバー日数)ぶんのバー全幅で
+     2行まで折り返し(-webkit-line-clamp)、3行目以降は省略してカレンダー外へ漏らさない。 */
+  .seglbl{position:absolute;left:6px;top:2px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    pointer-events:none;z-index:3;
+    font-family:var(--mono);font-size:13px;line-height:1.25;font-weight:600;letter-spacing:.01em;
     text-shadow:0 1px 2px rgba(8,11,16,.92),0 0 3px rgba(8,11,16,.8);
     width:calc(var(--n) * 100% + (var(--n) - 1) * 4px - 10px)}
   .seglbl.i3{color:var(--imp3-tx)}
@@ -201,7 +204,7 @@
 
   /* ---------- カレンダー凡例 ---------- */
   .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
-    margin:9px 0 2px;font-family:var(--mono);font-size:10.5px;color:var(--sub);
+    margin:9px 0 2px;font-family:var(--mono);font-size:12px;color:var(--sub);
     letter-spacing:.02em}
   .callegend .lgset{display:flex;align-items:center;gap:6px}
   .callegend .lg{border-left:3px solid;padding:1px 8px;border-radius:2px}
@@ -310,22 +313,22 @@
       box-shadow:inset 0 0 0 2px var(--amber)}
     .wday.empty{padding:3px 9px;opacity:.5}
     .wdhead{display:flex;gap:7px;align-items:baseline;font-family:var(--mono)}
-    .wdate{font-size:12px;font-weight:600;color:var(--ink)}
+    .wdate{font-size:13px;font-weight:600;color:var(--ink)}
     .wday.today .wdate{color:var(--amber);font-weight:700}
     .wday.empty .wdate{font-weight:400;color:var(--dim)}
-    .wdow{font-size:10.5px;color:var(--sub)}
+    .wdow{font-size:11.5px;color:var(--sub)}
     .wevs{display:flex;flex-direction:column;gap:3px;margin-top:5px}
-    .wevs .ev{display:block;font-size:12px;line-height:1.35;font-weight:500;
+    .wevs .ev{display:block;font-size:13px;line-height:1.35;font-weight:500;
       padding:3px 7px 4px 8px;border-left-width:3px;border-radius:2px;margin:0;
       height:auto;opacity:1}
-    .wevs .ev.i1,.wevs .ev.i2{font-size:12px}
-    .wevs .ev.i3{font-size:12.5px;font-weight:700}
+    .wevs .ev.i1,.wevs .ev.i2{font-size:13px}
+    .wevs .ev.i3{font-size:13.5px;font-weight:700}
     .wevs .ev.foreign{border-left-style:dashed}
     /* 継続日: 縮小・減光した1行(高さ約6割) */
-    .wevs .ev.wcont{font-size:10.5px;font-weight:400;padding:2px 7px 2px 8px;
+    .wevs .ev.wcont{font-size:11.5px;font-weight:400;padding:2px 7px 2px 8px;
       opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
       line-height:1.25}
-    .wevs .ev.wcont.i3{font-size:10.5px;font-weight:600}
+    .wevs .ev.wcont.i3{font-size:11.5px;font-weight:600}
     .row{flex-direction:column;gap:4px}
     .when{min-width:0}
     #totop{right:12px;bottom:12px;width:38px;height:38px;font-size:17px}
