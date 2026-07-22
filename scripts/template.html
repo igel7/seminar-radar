@@ -159,6 +159,8 @@
     border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
   .ev.foreign{border-left-style:dashed;border-left-width:3px}
   .ev:hover{filter:brightness(1.25)}
+  /* 登録参加可(招待制・CfP型でない)イベント: ラベルに下線 */
+  .ev.openreg{text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:2px}
   /* 複数日イベント(モバイル週ビュー)の期間サフィックス */
   .ev .evsp{font-size:.8em;font-weight:400;color:var(--sub);margin-left:2px;
     white-space:nowrap}
@@ -195,6 +197,7 @@
   .seglbl.i3{color:var(--imp3-tx)}
   .seglbl.i2{color:var(--imp2-tx)}
   .seglbl.i1{color:var(--imp1-tx)}
+  .seglbl.openreg{text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:2px}
 
   /* ---------- カレンダー凡例 ---------- */
   .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
@@ -246,6 +249,7 @@
     color:var(--sub);font-family:var(--mono);letter-spacing:.02em}
   .badge.free{color:var(--fm-tx);border-color:var(--fm-tx)}
   .badge.paid{color:var(--re-tx);border-color:var(--re-tx)}
+  .badge.open{color:var(--ok);border-color:var(--ok)}
   .badge.closed{color:var(--fail);border-color:var(--fail)}
   .sum{font-size:13px;margin-top:7px;color:#c7ccd3}
   .reg{font-size:12.5px;color:var(--sub);margin-top:3px}
@@ -397,6 +401,7 @@
   <span class="cap">色=重要度:</span>
   <span class="lgset"><span class="lg i3">高</span><span class="lg i2">中</span><span class="lg i1">低</span></span>
   <span class="fg">◇ ドイツ国外での開催</span>
+  <span class="lgset"><u style="text-underline-offset:2px">下線</u><span class="cap">= 登録参加可(招待制・CfP型でない)</span></span>
 </div>
 
 <div class="listhead">
@@ -416,6 +421,7 @@
   カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
   ◇ が付くイベントはドイツ国外での開催。一覧の①②③はイベントの主テーマ(モノクロ表示)。
+  下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
   情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
   日付・参加費等は必ずリンク先の原文で確認すること。
 </footer>
@@ -465,6 +471,22 @@ const COUNTRY_JA = {
 /* ---------- ラベル生成 ---------- */
 function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
 function isForeign(ev){ return ev.country!=null && ev.country!=="DE"; }
+/* 「Call for Papers・招待制ではなく、登録すれば参加できる」イベントか判定する。
+   カレンダー上の下線表示・一覧の「登録参加可」バッジで使う。 */
+function isOpenReg(ev){
+  if(ev.open_to_public===false) return false;                 /* 明示的に招待制 */
+  const cfpRe=/call for paper|cfp/i;
+  if(cfpRe.test(ev.title||"") || cfpRe.test(ev.registration_note||"")) return false; /* CfP型 */
+  if(ev.open_to_public===true) return true;
+  if(ev.open_to_public==null){                                 /* 不明: 周辺情報から推定 */
+    const note=ev.registration_note||"";
+    const regRe=/登録|registration|register|anmeld/i;
+    const invRe=/招待|invitation/i;
+    if(safeUrl(ev.registration_url)) return true;
+    if(regRe.test(note) && !invRe.test(note)) return true;
+  }
+  return false;                                                 /* それ以外(不明含む)は下線なし */
+}
 function stars(ev){ const n=imp(ev); return "★".repeat(n)+"☆".repeat(3-n); }
 function cityShort(ev){
   if(ev.city) return CITY_SHORT[ev.city] || ev.city;
@@ -780,7 +802,8 @@ function drawMonth(){
         if(iso===s.segStart){                      /* 週内の最初のカバー日にだけラベルを1回 */
           const n=daysBetween(s.segStart,s.segEnd)+1;
           const text=`${evLabel(e)} ${endSuffix(e)}`;
-          lbl=`<span class="seglbl i${imp(e)}" style="--n:${n}">${esc(text)}</span>`;
+          const lblCls=`seglbl i${imp(e)}${isOpenReg(e)?' openreg':''}`;
+          lbl=`<span class="${lblCls}" style="--n:${n}">${esc(text)}</span>`;
         }
         lanesHtml+=`<a class="seg ${cc}" href="#ev-${esc(e.id)}" title="${esc(spanTitle(e))}">${lbl}</a>`;
       }
@@ -789,7 +812,7 @@ function drawMonth(){
       const singles=evs.filter(e=>!isMulti(e) && inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
       let singleHtml="";
       for(const e of singles){
-        const ic=`i${imp(e)}${isForeign(e)?' foreign':''}`;
+        const ic=`i${imp(e)}${isForeign(e)?' foreign':''}${isOpenReg(e)?' openreg':''}`;
         singleHtml+=`<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`;
       }
       html+=`<td class="${cls}"><span class="dnum">${dnum}</span>${lanesBox}${singleHtml}</td>`;
@@ -819,7 +842,7 @@ function drawWeek(){
     const empty=day.length===0;
     const cls=["wday", isToday?"today":"", isWend?"wend":"", empty?"empty":""].join(" ");
     const evHtml=day.map(e=>{
-      const ic=`i${imp(e)}${isForeign(e)?' foreign':''}`;
+      const ic=`i${imp(e)}${isForeign(e)?' foreign':''}${isOpenReg(e)?' openreg':''}`;
       if(!isMulti(e) || iso===e.date_start){
         /* 初日 or 単日: フル+期間サフィックス */
         const suf=isMulti(e)?`<span class="evsp">${esc(endSuffix(e))}</span>`:"";
@@ -871,6 +894,7 @@ function drawList(){
       }
     }
     const badges=[];
+    if(isOpenReg(ev)) badges.push('<span class="badge open">登録参加可</span>');
     ev.themes.forEach(t=>badges.push(`<span class="badge th-${t}">${THLBL[t]}</span>`));
     if(ev.language) badges.push(`<span class="badge">${LANG_JA[ev.language]||ev.language}</span>`);
     if(ev.format==="online") badges.push('<span class="badge">オンライン</span>');

@@ -224,6 +224,23 @@ sources:
     url: "https://www.europeanpaymentscouncil.eu/news-insights/events"
     verified: false
 
+  # --- 追加: 大学の公開セミナー・講演 ---
+  - name: "ECONtribute (Bonn/Köln) – Events"
+    url: "https://www.econtribute.de/events"
+    verified: false   # 経済学クラスター。公開講演(Reinhard Selten Lecture等)を含む
+
+  - name: "Berlin School of Economics – Events"
+    url: "https://www.berlinschoolofeconomics.de/events"
+    verified: false
+
+  - name: "Universität Mannheim – 経済学部イベント/セミナー"
+    url: "https://www.vwl.uni-mannheim.de/en/seminars/"
+    verified: false
+
+  - name: "WU Wien (Wirtschaftsuniversität) – Events"
+    url: "https://www.wu.ac.at/en/events"
+    verified: false
+
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)
 # 毎日この観点で web 検索を行い、新規イベントを追加する
