@@ -111,6 +111,18 @@
   .cbrow.dis{opacity:.38;cursor:not-allowed}
   .cbrow.dis input,.cbrow.dis .cblbl{cursor:not-allowed}
 
+  /* ---------- フィルタ適用中バー ---------- */
+  #filterbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin:0 0 10px;padding:6px 12px;border:1px solid var(--amber-dim);
+    border-radius:4px;background:rgba(245,166,35,.08);
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--imp3-tx)}
+  #filterbar[hidden]{display:none}
+  #filterbar b{color:var(--amber);font-weight:700}
+  #filterbar .fbreset{border:1px solid var(--amber-dim);background:transparent;
+    color:var(--amber-dim);border-radius:3px;padding:3px 11px;font-family:var(--mono);
+    font-size:11px;letter-spacing:.04em;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+  #filterbar .fbreset:hover{border-color:var(--amber);color:var(--amber)}
+
   /* ---------- カレンダー ---------- */
   .calhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
   .calhead h2{font-size:15px;margin:0;font-family:var(--mono);letter-spacing:.1em;
@@ -245,6 +257,8 @@
     .cbfld{flex:1 1 100%}
     .cbrow{min-height:0;padding:4px 2px}
     .calhead h2{font-size:12px;min-width:0;letter-spacing:.04em}
+    #filterbar{flex-wrap:wrap;padding:6px 10px}
+    #filterbar span{flex:1 1 auto}
     /* モバイルでは月グリッドを隠し、週ビューを表示 */
     table.cal{display:none}
     #weekbody{display:block;border:1px solid var(--line2);border-radius:4px;
@@ -336,6 +350,10 @@
   <button class="navbtn" id="prev">&#8249;</button>
   <h2 id="callabel"></h2>
   <button class="navbtn" id="next">&#8250;</button>
+</div>
+<div id="filterbar" hidden>
+  <span>&#9888; フィルタ適用中 — 非表示: <b id="fbcount">0</b>件</span>
+  <button class="fbreset" id="fbreset" type="button">リセット</button>
 </div>
 <table class="cal"><thead><tr>
   <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
@@ -455,8 +473,10 @@ function mondayOf(iso){
 
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
-const state = {area:"", country:"", city:"", org:"", imp:"", lang:"",
-               fee:"free_unknown", online:true, daytrip:false, q:"", sort:"date",
+/* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
+const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"", lang:"",
+                   fee:"free_unknown", online:true, daytrip:false, q:""};
+const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
@@ -815,8 +835,21 @@ function drawSources(){
     `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
 }
 
+/* ---------- フィルタ適用中バー ---------- */
+/* 現在の state が DEFAULTS と1項目でも異なるか(sort/y/m/weekStart は比較対象外)。 */
+function isDefaultState(){
+  return Object.keys(DEFAULTS).every(k=>state[k]===DEFAULTS[k]);
+}
+function updateFilterBar(){
+  const bar=document.getElementById("filterbar");
+  if(isDefaultState()){ bar.hidden=true; return; }
+  const hidden = EVENTS.length - EVENTS.filter(visible).length;
+  document.getElementById("fbcount").textContent = hidden;
+  bar.hidden=false;
+}
+
 /* ---------- 再描画 ---------- */
-function redraw(){rebuildSelects();drawCal();drawList();saveState();}
+function redraw(){rebuildSelects();drawCal();drawList();updateFilterBar();saveState();}
 
 /* ---------- 初期化 ---------- */
 loadState();
@@ -842,6 +875,10 @@ document.getElementById("online").addEventListener("change",e=>{state.online=e.t
 document.getElementById("daytrip").addEventListener("change",e=>{state.daytrip=e.target.checked;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
 document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
+document.getElementById("fbreset").addEventListener("click",()=>{
+  Object.assign(state, DEFAULTS);
+  redraw();
+});
 document.getElementById("prev").addEventListener("click",()=>{
   if(mqMobile.matches) shiftWeek(-7);
   else if(--state.m<0){state.m=11;state.y--;}
