@@ -787,7 +787,6 @@ function drawMonth(){
       s.lane=li; laneEnd[li]=s.segEnd;
       laneImp[li]=Math.max(laneImp[li]||0, imp(s.ev));
     }
-    const laneCount=laneEnd.length;
 
     html+="<tr>";
     for(let d=0;d<7;d++){
@@ -795,10 +794,13 @@ function drawMonth(){
       const dnum=+iso.slice(8,10);
       const out=iso.slice(0,7)!==`${state.y}-${String(state.m+1).padStart(2,"0")}`;
       const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
-      /* --- レーンコンテナ(全レーン分のスロットを縦積み。カバー日=セグメント、非カバー日=透明スペーサー) --- */
+      /* --- レーンコンテナ(セグメントのある最大レーンまでスロットを縦積み。
+             途中の非カバーレーンは透明スペーサーで縦位置を揃え、それより下の
+             未使用レーンは描かない=バーが通らない日は単日イベントが上に詰まる) --- */
+      const cellMax=spans.reduce((m,x)=>
+        (iso>=x.segStart && iso<=x.segEnd && x.lane>m) ? x.lane : m, -1);
       let lanesHtml="";
-      for(let li=0; li<laneCount; li++){
-        const lhCls=`lh${laneImp[li]}`;              /* レーン内は全セルで同じ高さクラス */
+      for(let li=0; li<=cellMax; li++){
         const s=spans.find(x=>x.lane===li && iso>=x.segStart && iso<=x.segEnd);
         if(!s){ lanesHtml+=`<div class="segsp ${lhCls}"></div>`; continue; }
         const e=s.ev;
@@ -819,7 +821,7 @@ function drawMonth(){
         }
         lanesHtml+=`<a class="seg ${cc}" href="#ev-${esc(e.id)}" title="${esc(spanTitle(e))}">${lbl}</a>`;
       }
-      const lanesBox = laneCount ? `<div class="lanes">${lanesHtml}</div>` : "";
+      const lanesBox = cellMax>=0 ? `<div class="lanes">${lanesHtml}</div>` : "";
       /* --- 単日イベント(レーンの下) --- */
       const singles=evs.filter(e=>!isMulti(e) && inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
       let singleHtml="";
