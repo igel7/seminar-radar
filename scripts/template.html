@@ -106,6 +106,9 @@
     transform:rotate(45deg)}
   .cbrow input:focus-visible{outline:none;box-shadow:0 0 0 2px var(--amber)}
   .cbrow input:checked + .cblbl{color:var(--ink)}
+  /* 減光(グレーアウト)状態: AREA/COUNTRY がドイツ以外に固定されている間 */
+  .cbrow.dis{opacity:.38;cursor:not-allowed}
+  .cbrow.dis input,.cbrow.dis .cblbl{cursor:not-allowed}
 
   /* ---------- カレンダー ---------- */
   .calhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
@@ -322,6 +325,8 @@
       </select></label>
     <label class="fld cbfld"><span class="cbrow">
       <input type="checkbox" id="online"><span class="cblbl">オンライン開催を含む</span></span></label>
+    <label class="fld cbfld"><span class="cbrow" id="daytriprow">
+      <input type="checkbox" id="daytrip"><span class="cblbl">Frankfurt日帰り圏のみ</span></span></label>
   </div>
 </div>
 
@@ -373,6 +378,17 @@ const TODAY   = "__TODAY__";
 
 const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場"};
 const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm"};
+
+/* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
+   基準: DB の標準的なICE所要時間で片道約4時間以内。
+   Kiel(FRA発 約5時間超)・Dresden(約4.5時間)は基準超のため対象外。 */
+const DAYTRIP_CITIES = new Set([
+  "Frankfurt am Main","Mainz","Wiesbaden","Darmstadt","Eltville am Rhein",
+  "Bonn","Cologne","Düsseldorf","Essen","Bochum","Dortmund",
+  "Mannheim","Heidelberg","Karlsruhe","Stuttgart","Ulm","Würzburg",
+  "Nürnberg","Munich","Berlin","Hamburg","Hannover","Leipzig",
+  "Halle (Saale)","Kassel","Göttingen","Saarbrücken"
+]);
 
 const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau",
                     "Eltville am Rhein":"Eltville"};
@@ -439,7 +455,7 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 const state = {area:"", country:"", city:"", org:"", imp:"", lang:"",
-               fee:"free_unknown", online:true, q:"", sort:"date",
+               fee:"free_unknown", online:true, daytrip:false, q:"", sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
@@ -453,6 +469,7 @@ function loadState(){
   if(["free_unknown","free_only","paid","all"].includes(s.fee)) state.fee = s.fee;
   if(["","2","3"].includes(s.imp)) state.imp = s.imp;
   if(typeof s.online==="boolean") state.online = s.online;
+  if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
   if(typeof s.q==="string") state.q = s.q;
   if(["date","imp"].includes(s.sort)) state.sort = s.sort;
   /* country/city/org は候補構築時に検証(候補に無ければ黙って空に戻す) */
@@ -465,7 +482,7 @@ function saveState(){
     localStorage.setItem(LS_KEY, JSON.stringify({
       area:state.area, country:state.country, city:state.city, org:state.org,
       imp:state.imp, lang:state.lang, fee:state.fee, online:state.online,
-      q:state.q, sort:state.sort
+      daytrip:state.daytrip, q:state.q, sort:state.sort
     }));
   }catch(e){}
 }
@@ -511,6 +528,17 @@ function passOnline(ev){
   if(state.online) return true;                       /* オン: 完全オンラインも含める */
   return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
 }
+/* 日帰り圏チェックが無効(=グレーアウト)になる条件。
+   AREA=ドイツ以外、または COUNTRY がドイツ以外に固定されているとき、
+   物理参加を前提とする日帰り圏フィルタは意味を持たないため無効化する。 */
+function daytripDisabled(){
+  return state.area==="nonDE" || (state.country!=="" && state.country!=="DE");
+}
+function passDaytrip(ev){
+  if(!state.daytrip || daytripDisabled()) return true; /* OFF または無効中は素通し */
+  /* ON: ドイツ国内かつ日帰り圏都市のみ(完全オンライン=city/country null も false=非表示) */
+  return ev.country==="DE" && DAYTRIP_CITIES.has(ev.city);
+}
 function passQ(ev){
   if(!state.q) return true;
   const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
@@ -528,6 +556,7 @@ function passExcept(ev, ex){
   if(ex!=="lang"    && !passLang(ev))    return false;
   if(ex!=="fee"     && !passFee(ev))     return false;
   if(ex!=="online"  && !passOnline(ev))  return false;
+  if(ex!=="daytrip" && !passDaytrip(ev)) return false;
   if(ex!=="q"       && !passQ(ev))       return false;
   return true;
 }
@@ -536,12 +565,16 @@ const fEvents = () => EVENTS.filter(visible);
 const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
 
 /* ---------- 候補値(ファセット) ---------- */
+/* format==="online" は場所情報を持たない(city/country が null)ため、
+   COUNTRY/CITY のファセット母集合から構造的に除外する。将来データが汚れて
+   online イベントに国が付いても「ドイツ以外を選んだのに DE が出る」型のバグを防ぐ。
+   ORG は online 主催者も ORGANIZER フィルタ対象なので除外しない。 */
 function facetCountry(){
-  return [...new Set(EVENTS.filter(e=>passExcept(e,"country"))
+  return [...new Set(EVENTS.filter(e=>e.format!=="online" && passExcept(e,"country"))
             .map(e=>e.country).filter(Boolean))].sort();
 }
 function facetCity(){
-  return [...new Set(EVENTS.filter(e=>passExcept(e,"city"))
+  return [...new Set(EVENTS.filter(e=>e.format!=="online" && passExcept(e,"city"))
             .map(e=>e.city).filter(c=>c && c!=="Online"))].sort();
 }
 function facetOrg(){
@@ -577,6 +610,15 @@ function rebuildSelects(){
   document.getElementById("q").value      = state.q;
   document.getElementById("sort").value   = state.sort;
   document.getElementById("online").checked = state.online;
+  document.getElementById("daytrip").checked = state.daytrip;
+  updateDaytripUI();
+}
+/* 日帰り圏チェックボックスの disabled + 減光を現在の AREA/COUNTRY に合わせて更新。
+   チェック状態(state.daytrip)自体は保持し、条件が解ければ復活する。 */
+function updateDaytripUI(){
+  const dis = daytripDisabled();
+  document.getElementById("daytrip").disabled = dis;
+  document.getElementById("daytriprow").classList.toggle("dis", dis);
 }
 
 /* ---------- カレンダー(描画モード分岐) ---------- */
@@ -697,7 +739,7 @@ function drawList(){
     ev.themes.forEach(t=>badges.push(`<span class="badge th-${t}">${THLBL[t]}</span>`));
     if(ev.language) badges.push(`<span class="badge">${LANG_JA[ev.language]||ev.language}</span>`);
     if(ev.format==="online") badges.push('<span class="badge">オンライン</span>');
-    if(ev.format==="hybrid") badges.push('<span class="badge">ハイブリッド</span>');
+    if(ev.format==="hybrid") badges.push('<span class="badge">オンラインも可</span>');
     if(ev.format==="onsite") badges.push('<span class="badge">現地開催</span>');
     if(ev.fee==="free") badges.push('<span class="badge free">無料</span>');
     if(ev.fee==="paid") badges.push('<span class="badge paid">有料</span>');
@@ -772,6 +814,7 @@ document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
 document.getElementById("fee").addEventListener("change",e=>{state.fee=e.target.value;redraw();});
 document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
+document.getElementById("daytrip").addEventListener("change",e=>{state.daytrip=e.target.checked;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
 document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
 document.getElementById("prev").addEventListener("click",()=>{
