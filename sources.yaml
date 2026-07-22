@@ -234,16 +234,16 @@ sources:
     verified: false   # 経済学クラスター。公開講演(Reinhard Selten Lecture等)を含む
 
   - name: "Berlin School of Economics – Events"
-    url: "https://www.berlinschoolofeconomics.de/events"
-    verified: false
+    url: "https://berlinschoolofeconomics.de/home"
+    verified: false   # /events は404。イベントは /event-details/ 配下に個別ページ。トップ掲載分+site:検索で補完
 
   - name: "Universität Mannheim – 経済学部イベント/セミナー"
-    url: "https://www.vwl.uni-mannheim.de/en/seminars/"
-    verified: false
+    url: "https://www.vwl.uni-mannheim.de/en/research/research-seminars/"
+    verified: false   # 旧 /en/seminars/ は404。各シリーズ(Departmental/Macro CRC等)の下位ページも確認
 
   - name: "WU Wien (Wirtschaftsuniversität) – Events"
-    url: "https://www.wu.ac.at/en/events"
-    verified: false
+    url: "https://www.wu.ac.at/en/the-university/events"
+    verified: false   # 旧 /en/events は404だったため大学イベント一覧に差し替え
 
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)

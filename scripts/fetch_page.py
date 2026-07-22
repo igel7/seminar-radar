@@ -23,6 +23,8 @@ curl/WebFetch では取得できない(ボット対策・JSでイベント一覧
 
 import argparse
 import os
+import shutil
+import subprocess
 import sys
 
 try:
@@ -56,12 +58,34 @@ def parse_args():
     return parser.parse_args()
 
 
-def launch_browser(p):
-    # クラウド実行環境では外向きHTTPSが環境プロキシ(HTTPS_PROXY)経由に限られる。
-    # Chromiumは環境変数のプロキシ設定を確実には拾わないため、明示的に渡す。
-    # プロキシのTLS再終端CAはOS側のNSSストアに登録済みなので追加設定は不要。
+def ensure_proxy_ca_in_nss():
+    """クラウド実行環境の外向きプロキシはTLSを再終端するため、Chromiumが
+    そのCAを信用できないと接続に失敗する。curl等はCA環境変数で対応済みだが
+    ChromiumはNSSストア($HOME/.pki/nssdb)しか見ないので、プロキシCAの登録を
+    試みる。certutilが無い等で失敗しても続行する(best effort)。"""
+    for ca in ("/root/.ccr/agent-proxy-ca.crt", os.environ.get("NODE_EXTRA_CA_CERTS")):
+        if ca and os.path.isfile(ca):
+            break
+    else:
+        return
+    if not shutil.which("certutil"):
+        return
+    nssdb = os.path.join(os.path.expanduser("~"), ".pki", "nssdb")
+    try:
+        os.makedirs(nssdb, exist_ok=True)
+        db = "sql:" + nssdb
+        if not os.path.exists(os.path.join(nssdb, "cert9.db")):
+            subprocess.run(["certutil", "-d", db, "-N", "--empty-password"],
+                           check=False, capture_output=True, timeout=30)
+        subprocess.run(["certutil", "-d", db, "-A", "-t", "C,,",
+                        "-n", "agent-proxy-ca", "-i", ca],
+                       check=False, capture_output=True, timeout=30)
+    except Exception:
+        pass
+
+
+def launch_browser(p, proxy_url):
     kwargs = {"headless": True}
-    proxy_url = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
     if proxy_url:
         kwargs["proxy"] = {"server": proxy_url}
     try:
@@ -70,30 +94,56 @@ def launch_browser(p):
         return p.chromium.launch(executable_path=FALLBACK_EXECUTABLE_PATH, **kwargs)
 
 
+def try_fetch(p, args, proxy_url, ignore_tls):
+    browser = launch_browser(p, proxy_url)
+    try:
+        context = browser.new_context(user_agent=DEFAULT_UA,
+                                      ignore_https_errors=ignore_tls)
+        page = context.new_page()
+        page.goto(args.url, wait_until="domcontentloaded", timeout=30000)
+        page.wait_for_timeout(args.wait)
+        if args.html:
+            return page.content()
+        text = page.evaluate("document.body.innerText")
+        return text if text is not None else ""
+    finally:
+        browser.close()
+
+
 def main():
     args = parse_args()
+    ensure_proxy_ca_in_nss()
 
-    try:
-        with sync_playwright() as p:
-            browser = launch_browser(p)
+    # Chromiumは環境変数のプロキシ設定を確実には拾わないため明示的に渡す。
+    # それでも環境によりプロキシとの相性問題(TLS再終端の信用不可、透過
+    # プロキシ等)があるので、駄目なら順にフォールバックする:
+    #   1. 明示プロキシ + TLS検証あり
+    #   2. 明示プロキシ + TLS検証なし(プロキシCAを信用できない場合の最終手段。
+    #      経路上のMITMはサンドボックス自身のプロキシのみで、用途は公開ページの
+    #      読み取り専用のため許容する)
+    #   3. プロキシ指定なし(透過プロキシ環境向け)+ TLS検証あり
+    #   4. プロキシ指定なし + TLS検証なし
+    proxy_url = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    attempts = [(proxy_url, False), (proxy_url, True)] if proxy_url else []
+    attempts += [(None, False), (None, True)]
+
+    content = None
+    errors = []
+    with sync_playwright() as p:
+        for purl, ignore_tls in attempts:
             try:
-                context = browser.new_context(user_agent=DEFAULT_UA)
-                page = context.new_page()
-                page.goto(args.url, wait_until="domcontentloaded", timeout=30000)
-                page.wait_for_timeout(args.wait)
-
-                if args.html:
-                    content = page.content()
-                else:
-                    content = page.evaluate("document.body.innerText")
-            finally:
-                browser.close()
-    except Exception as e:
-        print(f"ページの取得に失敗しました: {e}", file=sys.stderr)
-        sys.exit(1)
+                content = try_fetch(p, args, purl, ignore_tls)
+                break
+            except Exception as e:
+                errors.append(
+                    f"[proxy={'明示' if purl else 'なし'}, "
+                    f"TLS検証={'なし' if ignore_tls else 'あり'}] {e}")
 
     if content is None:
-        content = ""
+        print("ページの取得に失敗しました:\n  " + "\n  ".join(errors),
+              file=sys.stderr)
+        sys.exit(1)
+
     if len(content) > args.max_chars:
         content = content[: args.max_chars]
 
