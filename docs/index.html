@@ -86,6 +86,7 @@
     padding:8px 11px;font-size:14px;background:var(--cell);color:var(--ink);
     font-family:var(--mono)}
   select{cursor:pointer}
+  select option:disabled{color:var(--dim)}
   input[type=search]{min-width:200px}
   select:focus,input:focus{outline:none;border-color:var(--amber);
     box-shadow:0 0 0 1px var(--amber)}
@@ -278,7 +279,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-22 11:03 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-22 11:59 (CEST)</b></span>
     <div class="hdtools">
       <div class="srcwrap" id="srcwrap">
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
@@ -488,11 +489,11 @@ function saveState(){
 }
 
 /* ---------- 個別フィルタ判定 ---------- */
-function passArea(ev){
-  if(state.area==="") return true;
+function passArea(ev, area=state.area){
+  if(area==="") return true;
   if(ev.format==="online") return true;               /* 完全オンラインは所在地なし→常に表示 */
-  if(state.area==="DE")    return ev.country==="DE";
-  if(state.area==="nonDE") return ev.country!=null && ev.country!=="DE";
+  if(area==="DE")    return ev.country==="DE";
+  if(area==="nonDE") return ev.country!=null && ev.country!=="DE";
   return true;
 }
 function passCountry(ev){
@@ -582,6 +583,11 @@ function facetOrg(){
   EVENTS.filter(e=>passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(t=>set.add(t)));
   return [...set].sort((a,b)=>a.localeCompare(b));
 }
+/* AREA の特定選択肢(DE/nonDE)を選んだと仮定した場合に1件以上ヒットするか。
+   他の全ファセット(daytrip含む)は現在の状態のまま、area だけ差し替えて判定する。 */
+function areaOptionEnabled(area){
+  return EVENTS.some(e=>passExcept(e,"area") && passArea(e,area));
+}
 
 /* ---------- 動的セレクト構築(全連動) ---------- */
 function fillSelect(id, cand, labelFn){
@@ -592,9 +598,14 @@ function fillSelect(id, cand, labelFn){
   sel.value=state[id];
 }
 function rebuildSelects(){
-  /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大3回で安定させる */
-  for(let i=0;i<3;i++){
+  /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大4回で安定させる
+     (area も含める: 例えば country=AT が選ばれた状態で area=DE が localStorage 等から
+     復元されるなど、area 自体が他の現行フィルタと矛盾して0件になる場合に "" へ戻し、
+     他ファセットの再計算ループに載せる。なお area と daytrip 自体が矛盾するケースは
+     daytripDisabled()/updateDaytripUI() 側の既存ルールで area 優先のまま解決される) */
+  for(let i=0;i<4;i++){
     let changed=false;
+    if(state.area    && !areaOptionEnabled(state.area))          {state.area="";   changed=true;}
     if(state.country && !facetCountry().includes(state.country)){state.country="";changed=true;}
     if(state.city    && !facetCity().includes(state.city))      {state.city="";   changed=true;}
     if(state.org     && !facetOrg().includes(state.org))        {state.org="";    changed=true;}
@@ -604,6 +615,7 @@ function rebuildSelects(){
   fillSelect("city",    facetCity());
   fillSelect("org",     facetOrg());
   document.getElementById("area").value   = state.area;
+  updateAreaOptions();
   document.getElementById("imp").value    = state.imp;
   document.getElementById("lang").value   = state.lang;
   document.getElementById("fee").value    = state.fee;
@@ -612,6 +624,12 @@ function rebuildSelects(){
   document.getElementById("online").checked = state.online;
   document.getElementById("daytrip").checked = state.daytrip;
   updateDaytripUI();
+}
+/* AREA セレクトの DE/nonDE option を、選んでも0件になる場合は disabled にする(「すべて」は常に有効)。 */
+function updateAreaOptions(){
+  const areaSel = document.getElementById("area");
+  areaSel.querySelector('option[value="DE"]').disabled    = !areaOptionEnabled("DE");
+  areaSel.querySelector('option[value="nonDE"]').disabled = !areaOptionEnabled("nonDE");
 }
 /* 日帰り圏チェックボックスの disabled + 減光を現在の AREA/COUNTRY に合わせて更新。
    チェック状態(state.daytrip)自体は保持し、条件が解ければ復活する。 */
@@ -806,7 +824,14 @@ rebuildSelects();
 drawSources();
 
 /* ---------- イベントハンドラ ---------- */
-document.getElementById("area").addEventListener("change",e=>{state.area=e.target.value;redraw();});
+document.getElementById("area").addEventListener("change",e=>{
+  /* <select>.value の仕様上、option の disabled は「UIでのユーザー選択」しか防げず、
+     スクリプト等からの値代入は素通りしてしまう。disabled な選択肢が実際に選ばれて
+     しまった場合は表示を元の state.area に戻し、変更を無視する(選択拒否)。 */
+  const picked = e.target.selectedOptions[0];
+  if(picked && picked.disabled){ e.target.value = state.area; return; }
+  state.area=e.target.value;redraw();
+});
 document.getElementById("country").addEventListener("change",e=>{state.country=e.target.value;redraw();});
 document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
 document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
