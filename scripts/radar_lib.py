@@ -183,6 +183,18 @@ def sig_tokens(title):
     }
 
 
+def _same_place(a, b):
+    """同一会場判定: 両方cityが実値ならcasefold一致、両方が完全オンライン
+    (format=='online'でcityがnull)なら同一とみなす。片方だけcityがない/onlineでない場合はFalse。
+    """
+    city_a, city_b = a.get("city"), b.get("city")
+    if city_a and city_b:
+        return str(city_a).casefold() == str(city_b).casefold()
+    if a.get("format") == "online" and b.get("format") == "online":
+        return True
+    return False
+
+
 def _similar_by_date_and_title(a, b):
     """\u7d4c\u8def1(\u65e5\u4ed8\u5b8c\u5168\u4e00\u81f4 + \u30bf\u30a4\u30c8\u30eb\u8a9e\u91cd\u8907\u3001\u5b9a\u70b9\u30bd\u30fc\u30b9\u540c\u58eb\u306f\u5bfe\u8c61\u5916\u306e\u5b89\u5168\u5f01\u3064\u304d):
     \u958b\u50ac\u65e5\u304c\u5b8c\u5168\u4e00\u81f4\u3057\u3001\u540c\u4e00\u90fd\u5e02\u3067\u3001\u30bf\u30a4\u30c8\u30eb\u306e\u6709\u610f\u8a9e\u91cd\u8907\u5ea6\u304c\u4e00\u5b9a\u4ee5\u4e0a\u3042\u308b\u5834\u5408\u306b\u540c\u4e00\u3068\u307f\u306a\u3059\u3002
@@ -190,8 +202,7 @@ def _similar_by_date_and_title(a, b):
     (\u540c\u3058\u5b9a\u70b9\u30da\u30fc\u30b8\u306b\u8f09\u308b\u5225\u30a4\u30d9\u30f3\u30c8\u3092\u8aa4\u3063\u3066\u7d71\u5408\u3057\u306a\u3044\u305f\u3081\u306e\u5b89\u5168\u5f01)\u3002"""
     if a.get("date_start") != b.get("date_start"):
         return False
-    city_a, city_b = a.get("city"), b.get("city")
-    if not city_a or not city_b or str(city_a).casefold() != str(city_b).casefold():
+    if not _same_place(a, b):
         return False
     src_a, src_b = str(a.get("source") or ""), str(b.get("source") or "")
     if not any(("web\u691c\u7d22" in s or "\u624b\u52d5\u53d6\u8fbc" in s) for s in (src_a, src_b)):
@@ -221,8 +232,7 @@ def _similar_by_period_and_title_containment(a, b):
     b_e = b.get("date_end") or b_s
     if not (a_s <= b_e and b_s <= a_e):
         return False
-    city_a, city_b = a.get("city"), b.get("city")
-    if not city_a or not city_b or str(city_a).casefold() != str(city_b).casefold():
+    if not _same_place(a, b):
         return False
     # _GENERIC_TOKENS(conference/programme等の一般語)を除いた集合同士で包含を見る。
     # "OeNB|SUERF|...Yale PFS Conference" と "...Yale Program on Financial Stability
