@@ -220,6 +220,8 @@
   .callegend .lg.i1{border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
   .callegend .cap{color:var(--dim)}
   .callegend .fg{border-left:3px dashed var(--sub);padding-left:8px;color:var(--sub)}
+  /* 凡例の詳細説明(旧footer記載。一覧が長く埋もれるためカレンダー直下に置く) */
+  .legnote{margin:6px 0 0;font-size:11.5px;color:var(--sub);line-height:1.65}
 
   /* ---------- 週ビュー(モバイル専用・デスクトップでは非表示) ---------- */
   #weekbody{display:none}
@@ -347,7 +349,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-22 19:49 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-22 19:56 (CEST)</b></span>
     <div class="hdtools">
       <div class="srcwrap" id="srcwrap">
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
@@ -412,6 +414,12 @@
   <span class="fg">◇ ドイツ国外での開催</span>
   <span class="lgset"><u style="text-underline-offset:2px">下線</u><span class="cap">= 登録参加可(招待制・CfP型でない)</span></span>
 </div>
+<p class="legnote">
+  カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
+  シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
+  ◇ が付くイベントはドイツ国外での開催。一覧の①②③はイベントの主テーマ(モノクロ表示)。
+  下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
+</p>
 
 <div class="listhead">
   <h2 class="sect">今後のイベント一覧</h2>
@@ -427,10 +435,6 @@
 <table class="st"><tbody id="status"></tbody></table>
 
 <footer>
-  カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
-  シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
-  ◇ が付くイベントはドイツ国外での開催。一覧の①②③はイベントの主テーマ(モノクロ表示)。
-  下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
   情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
   日付・参加費等は必ずリンク先の原文で確認すること。
 </footer>
