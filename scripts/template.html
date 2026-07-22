@@ -801,6 +801,7 @@ function drawMonth(){
         (iso>=x.segStart && iso<=x.segEnd && x.lane>m) ? x.lane : m, -1);
       let lanesHtml="";
       for(let li=0; li<=cellMax; li++){
+        const lhCls=`lh${laneImp[li]}`;              /* レーン内は全セルで同じ高さクラス */
         const s=spans.find(x=>x.lane===li && iso>=x.segStart && iso<=x.segEnd);
         if(!s){ lanesHtml+=`<div class="segsp ${lhCls}"></div>`; continue; }
         const e=s.ev;
