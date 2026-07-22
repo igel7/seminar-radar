@@ -83,7 +83,7 @@ python3 scripts/ingest.py
 | `date_start` | `"YYYY-MM-DD"` |
 | `date_end` | `"YYYY-MM-DD"`。1日開催なら `null` |
 | `time` | 開始時刻 `"HH:MM"`(現地時間)。不明なら `null` |
-| `city` | 開催都市(例 `"Frankfurt am Main"`)。オンラインのみなら `"Online"` |
+| `city` | 開催都市。**正式名で統一**(例 `"Frankfurt am Main"`。`Frankfurt` 等の略記は不可)。**完全オンライン開催なら `null`**(format を `"online"` にする) |
 | `venue` | 会場名。不明なら `null` |
 | `format` | `"onsite"` / `"online"` / `"hybrid"`。不明なら `null` |
 | `themes` | 該当する全てを配列で: `"central_bank"`(中央銀行・金融政策。通貨・決済=デジタルユーロ・CBDC・決済インフラ・現金流通を含む) / `"real_economy"`(実体経済。特にエネルギー・オイルショック、防衛支出、インフラ投資、景気・貿易) / `"fin_markets"`(金融規制・監督・金融市場・金融安定) |
@@ -113,6 +113,7 @@ python3 scripts/ingest.py
 - セミナー/会議/講演/シンポジウム/ワークショップ/**ウェビナー・オンライン説明会・タウンホール**のみ。以下は除外:
   統計・報告書の公表予定、記者会見、美術展・博物館ツアー、学校向けワークショップ、
   教員研修、採用イベント、開催日未定のCall for Papers。
+- 完全オンライン開催は format:"online" とし、city/country は null(スクリプト側でも強制される)。現地会場がありオンラインでも参加できるものは "hybrid"。
 - 日付が読み取れないイベントは含めない。**推測で日付を作らない。**
 - ページに書かれていない情報は `null` / `"unknown"` とする。**捏造しない。**
 - 開催言語はページの記載・告知文の言語から判断する。推測が難しければ `null`。

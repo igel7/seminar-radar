@@ -29,6 +29,40 @@ THEMES = ["central_bank", "real_economy", "fin_markets"]
 
 _URL_RE = re.compile(r"^https?://", re.IGNORECASE)
 
+# 都市名の表記ゆれ正規化(casefoldキー → 正式名)。
+# 値は現データの多数派表記(英語exonym優先、Frankfurtのみドイツ語正式名)。
+_CITY_CANON = {
+    "frankfurt": "Frankfurt am Main",
+    "frankfurt/main": "Frankfurt am Main",
+    "frankfurt am main": "Frankfurt am Main",
+    "frankfurt a.m.": "Frankfurt am Main",
+    "frankfurt (main)": "Frankfurt am Main",
+    "münchen": "Munich",
+    "muenchen": "Munich",
+    "wien": "Vienna",
+    "köln": "Cologne",
+    "koeln": "Cologne",
+    "cologne": "Cologne",
+    "praha": "Prague",
+    "prag": "Prague",
+    "warszawa": "Warsaw",
+    "warschau": "Warsaw",
+    "kiew": "Kyiv",
+    "kiev": "Kyiv",
+    "brüssel": "Brussels",
+    "bruxelles": "Brussels",
+    "brussel": "Brussels",
+    "roma": "Rome",
+    "rom": "Rome",
+    "zürich": "Zurich",
+    "zuerich": "Zurich",
+    "genève": "Geneva",
+    "genf": "Geneva",
+    "geneve": "Geneva",
+    "halle": "Halle (Saale)",
+    "halle saale": "Halle (Saale)",
+}
+
 
 def safe_url(u):
     """http(s)以外のスキーム(javascript:等)のURLを除去する。"""
@@ -168,6 +202,16 @@ def sanitize(ev):
     if not (isinstance(country, str) and re.fullmatch(r"[A-Z]{2}", country)):
         country = None
     ev["country"] = country
+    city = ev.get("city")
+    if city:
+        city = str(city).strip()
+        city = _CITY_CANON.get(city.casefold(), city)
+        if city.casefold() == "online":
+            ev["format"] = "online"
+        ev["city"] = city
+    if ev.get("format") == "online":
+        ev["city"] = None
+        ev["country"] = None
     for key in ("organizer_short", "title_short"):
         val = ev.get(key)
         ev[key] = val if isinstance(val, str) and val else None
