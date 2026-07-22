@@ -168,9 +168,14 @@
   /* .lanes: セル上部のレーンコンテナ。全レーン分のスロット(セグメント or 透明スペーサー)
      を縦に積み、隣接セルとバーがつながって見えるようにする。 */
   .lanes{margin:2px 0 1px}
-  /* スロット高は2行ラベル分の固定高(13px × line-height1.25 × 2行 + 上下padding ≒ 37px)。
-     セグメントもスペーサーも同一固定高にして、セル間で1本のバーに見える整合を保つ。 */
-  .seg,.segsp{display:block;height:37px;margin-bottom:2px}
+  /* スロット高はレーンに載る週内イベントの最大重要度で決まる(.lh3/.lh2/.lh1)。
+     2行ラベル分の高さ(フォントサイズ×line-height×2行 + 上下padding)にほぼ合わせてある。
+     セグメントもスペーサーも同一レーン内では常に同じ高さクラスを持ち、セル間で1本の
+     バーに見える縦位置の整合を保つ(高さがズレるとバーの位置が崩れるため)。 */
+  .seg,.segsp{display:block;margin-bottom:2px}
+  .seg.lh3,.segsp.lh3{height:40px}
+  .seg.lh2,.segsp.lh2{height:37px}
+  .seg.lh1,.segsp.lh1{height:34px}
   .segsp{visibility:hidden}                    /* 透明スペーサー(縦位置を全セルで揃える) */
   .seg{position:relative;border-radius:3px;cursor:pointer;text-decoration:none;
     overflow:visible;background:var(--imp1-bg)}
@@ -194,10 +199,11 @@
   .seglbl{position:absolute;left:6px;top:2px;
     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
     pointer-events:none;z-index:3;
-    font-family:var(--mono);font-size:13px;line-height:1.25;font-weight:600;letter-spacing:.01em;
+    font-family:var(--mono);line-height:1.25;letter-spacing:.01em;
     text-shadow:0 1px 2px rgba(8,11,16,.92),0 0 3px rgba(8,11,16,.8);
     width:calc(var(--n) * 100% + (var(--n) - 1) * 4px - 10px)}
-  .seglbl.i3{color:var(--imp3-tx);font-size:14px;font-weight:700}
+  /* 単日イベント(.ev.i3/.i2/.i1)と同じサイズ・太さの体系に揃える */
+  .seglbl.i3{color:var(--imp3-tx);font-size:14px;font-weight:700;line-height:1.28}
   .seglbl.i2{color:var(--imp2-tx);font-size:13px;font-weight:500}
   .seglbl.i1{color:var(--imp1-tx);font-size:12px;font-weight:400}
   .seglbl.openreg{text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:2px}
@@ -341,7 +347,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-22 19:39 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-22 19:42 (CEST)</b></span>
     <div class="hdtools">
       <div class="srcwrap" id="srcwrap">
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
@@ -774,10 +780,12 @@ function drawMonth(){
                     a.segEnd<b.segEnd?-1   : a.segEnd>b.segEnd?1   :
                     (a.ev.id<b.ev.id?-1:1));
     const laneEnd=[];                              /* laneEnd[i] = レーン i に置いた最後の segEnd */
+    const laneImp=[];                              /* laneImp[i] = レーン i に載る週内イベントの最大重要度 */
     for(const s of spans){
       let li=0;
       for(; li<laneEnd.length; li++){ if(laneEnd[li]<s.segStart) break; }
       s.lane=li; laneEnd[li]=s.segEnd;
+      laneImp[li]=Math.max(laneImp[li]||0, imp(s.ev));
     }
     const laneCount=laneEnd.length;
 
@@ -790,15 +798,16 @@ function drawMonth(){
       /* --- レーンコンテナ(全レーン分のスロットを縦積み。カバー日=セグメント、非カバー日=透明スペーサー) --- */
       let lanesHtml="";
       for(let li=0; li<laneCount; li++){
+        const lhCls=`lh${laneImp[li]}`;              /* レーン内は全セルで同じ高さクラス */
         const s=spans.find(x=>x.lane===li && iso>=x.segStart && iso<=x.segEnd);
-        if(!s){ lanesHtml+=`<div class="segsp"></div>`; continue; }
+        if(!s){ lanesHtml+=`<div class="segsp ${lhCls}"></div>`; continue; }
         const e=s.ev;
         const isStart = iso===e.date_start;        /* 真の開始日(左キャップを出す) */
         const flatL   = iso>e.date_start;          /* 左へ継続(前週含む)→左角を落とす */
         const flatR   = iso<e.date_end;            /* 右へ継続(翌週含む)→右角を落とす */
         const bridgeL = iso>s.segStart;            /* 同一週内に左隣がある→負マージンで跨ぐ */
         const bridgeR = iso<s.segEnd;              /* 同一週内に右隣がある→負マージンで跨ぐ */
-        const cc=[`i${imp(e)}`, isForeign(e)?"foreign":"",
+        const cc=[`i${imp(e)}`, lhCls, isForeign(e)?"foreign":"",
                   isStart?"startcap":"", flatL?"flatL":"", flatR?"flatR":"",
                   bridgeL?"bridgeL":"", bridgeR?"bridgeR":""].filter(Boolean).join(" ");
         let lbl="";
