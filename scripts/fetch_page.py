@@ -22,6 +22,7 @@ curl/WebFetch では取得できない(ボット対策・JSでイベント一覧
 """
 
 import argparse
+import os
 import sys
 
 try:
@@ -56,10 +57,17 @@ def parse_args():
 
 
 def launch_browser(p):
+    # クラウド実行環境では外向きHTTPSが環境プロキシ(HTTPS_PROXY)経由に限られる。
+    # Chromiumは環境変数のプロキシ設定を確実には拾わないため、明示的に渡す。
+    # プロキシのTLS再終端CAはOS側のNSSストアに登録済みなので追加設定は不要。
+    kwargs = {"headless": True}
+    proxy_url = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    if proxy_url:
+        kwargs["proxy"] = {"server": proxy_url}
     try:
-        return p.chromium.launch(headless=True)
+        return p.chromium.launch(**kwargs)
     except Exception:
-        return p.chromium.launch(headless=True, executable_path=FALLBACK_EXECUTABLE_PATH)
+        return p.chromium.launch(executable_path=FALLBACK_EXECUTABLE_PATH, **kwargs)
 
 
 def main():

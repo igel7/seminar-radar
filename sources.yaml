@@ -66,7 +66,7 @@ sources:
 
   - name: "SUERF – Events"
     url: "https://www.suerf.org/events/"
-    verified: true
+    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
 
   - name: "ZEW Mannheim – Veranstaltungen"
     url: "https://www.zew.de/veranstaltungen"
@@ -79,7 +79,7 @@ sources:
 
   - name: "Frankfurt School of Finance & Management – Events"
     url: "https://forum.frankfurt-school.de/konferenzen/"
-    verified: true
+    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
 
   - name: "CESifo (München) – Veranstaltungen"
     url: "https://www.ifo.de/en/cesifo/events"
@@ -87,7 +87,7 @@ sources:
 
   - name: "Hertie School (Berlin) – Events"
     url: "https://www.hertie-school.org/en/events"
-    verified: true
+    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
 
   - name: "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen"
     url: "https://www.iwh-halle.de/veranstaltungen/"
@@ -151,7 +151,7 @@ sources:
 
   - name: "NBP – Narodowy Bank Polski – Conferences"
     url: "https://nbp.pl/en/economic-education/conferences/"
-    verified: false   # 403継続時は site:nbp.pl 検索で補完
+    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら site:nbp.pl 検索で補完
 
   - name: "NBU – National Bank of Ukraine – Research Events"
     url: "https://bank.gov.ua/en/research/events"
@@ -166,8 +166,8 @@ sources:
     verified: false   # Cloudflareブロック: data/manual/ の手動取込で補完
 
   - name: "Latvijas Banka – Research/Events"
-    url: "https://www.macroeconomics.lv/events"
-    verified: true
+    url: "https://www.macroeconomics.lv/research-seminars"
+    verified: false   # 旧 /events は404。年別一覧(例: /research-seminars/research-seminars-latvijas-banka-2026)も確認する。WebFetchが403の場合は fetch_page.py で再試行
 
   # --- 追加: 中銀系研究機関・研究ネットワーク ---
   - name: "Study Center Gerzensee – Events"
@@ -199,13 +199,17 @@ sources:
     url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
     verified: true   # JS描画: fetch_page.pyを必ず使用
 
-  - name: "National Bank of Serbia – Events"
-    url: "https://www.nbs.rs/en/events/"
+  - name: "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)"
+    url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/"
+    verified: false   # 旧 /en/events/ は404だったため一覧URLを差し替え
+
+  - name: "National Bank of Serbia – Conferences"
+    url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/"
     verified: false
 
   - name: "Banka Slovenije – Events"
-    url: "https://www.bsi.si/en/events"
-    verified: false
+    url: "https://www.bsi.si/en/about-us/conferences-and-seminars"
+    verified: false   # 旧 /en/events は404。「Upcoming events」一覧ページに差し替え
 
   - name: "CBBH – Central Bank of Bosnia and Herzegovina – Events"
     url: "https://www.cbbh.ba/en/Events"
@@ -213,7 +217,7 @@ sources:
 
   - name: "Bank of Albania – Events"
     url: "https://www.bankofalbania.org/Events/"
-    verified: false
+    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
 
   # --- 追加: 決済・デジタルユーロ ---
   - name: "ECB – Payments & Markets / Digital Euro events"
@@ -222,7 +226,7 @@ sources:
 
   - name: "EPC – European Payments Council – Events"
     url: "https://www.europeanpaymentscouncil.eu/news-insights/events"
-    verified: false
+    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
 
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)
@@ -236,3 +240,4 @@ discovery_topics:
   - "中東欧・バルカン・バルトの中央銀行の研究セミナー・年次会議(例: NBR BEARS seminar, Eesti Pank research seminar, Banka Slovenije seminar, CBBH research seminar, National Bank of Serbia seminar, central bank research conference CEE)"
   - "中東欧の大型政策・安全保障・経済フォーラム(例: Economic Forum Karpacz, Bled Strategic Forum, Warsaw Security Forum, GLOBSEC, IISS Prague Defence Summit, MSPO defence exhibition)。防衛・地経学はテーマ②に直結"
   - "デジタルユーロ・CBDC・決済インフラに関するイベントやウェビナー(例: digital euro webinar, CBDC conference, Zahlungsverkehr Veranstaltung, ECB digital euro information session)"
+  - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: SUERF conference 2026, Frankfurt School Konferenz, Hertie School event, site:nbp.pl conference seminar, Bank of Lithuania conference, site:lb.lt events, European Payments Council event, Bank of Albania conference)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
