@@ -127,6 +127,9 @@ sources:
   - name: "Bruegel (Brussels) – Events"
     url: "https://www.bruegel.org/events"
     verified: true
+    # anywhere: true = 開催地不問の定点。Bruegel はブリュッセル拠点のシンクタンクで、
+    # 域外(ベルギー)開催が前提のため、地域外除去の対象から除外する。
+    anywhere: true
 
   - name: "OMFIF – Events/Meetings"
     url: "https://www.omfif.org/meetings/"

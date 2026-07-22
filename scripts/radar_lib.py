@@ -26,8 +26,42 @@ SOURCES_FILE = ROOT / "sources.yaml"
 TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
 THEMES = ["central_bank", "real_economy", "fin_markets"]
+OVERRIDES_FILE = ROOT / "data" / "overrides.json"
 
 _URL_RE = re.compile(r"^https?://", re.IGNORECASE)
+
+# 対象地域(開催国ISO 3166-1 alpha-2)。
+# 対象=ドイツ・スイス・オーストリア・中東欧・バルカン・バルト・ウクライナ。
+# 英仏・ベネルクス(ルクセンブルク含む)・北欧・南欧・トルコは対象外。
+REGION = {
+    "DE", "CH", "AT",              # ドイツ・スイス・オーストリア
+    "PL", "CZ", "SK", "HU", "SI",  # 中東欧
+    "HR", "RS", "BA", "AL", "RO", "BG",  # バルカン
+    "LT", "LV", "EE",              # バルト三国
+    "UA",                          # ウクライナ
+}
+
+# ECB・BIS 主催かどうかの判定(単語境界。大文字小文字・全半角ゆれを吸収するため
+# casefold済みの文字列に対して使う)。
+_ANYWHERE_ORG_RE = re.compile(r"\becb\b|\bbis\b")
+
+# フラッグシップ(旗艦)会議のタイトル部分一致パターン(casefold)。
+# 該当すれば importance の下限を3に強制する(格下げ防止)。
+# 根拠: いずれも中銀総裁・理事級の登壇が慣例の、機関の看板年次会議シリーズ。
+FLAGSHIP_PATTERNS = [
+    "european economic integration",       # CEEI (OeNB)
+    "lamfalussy",                          # MNB Lámfalussy Lectures
+    "lámfalussy",
+    "european banking congress",           # Frankfurt EBC
+    "ecb and its watchers",                # ECB and its Watchers
+    "ecb watchers",
+    "ecb forum on central banking",        # ECB Forum on Central Banking (Sintra)
+    "ecb annual research conference",      # ECB Annual Research Conference
+    "conference of the european systemic risk board",  # ESRB年次会議
+    "snb research conference",             # SNB Research Conference
+    "national bank of ukraine",            # NBU/NBP 年次研究会議
+    "cebra biennial",                      # NBP/BoL/CEBRA Biennial Conference
+]
 
 # 都市名の表記ゆれ正規化(casefoldキー → 正式名)。
 # 値は現データの多数派表記(英語exonym優先、Frankfurtのみドイツ語正式名)。
@@ -68,6 +102,46 @@ def safe_url(u):
     """http(s)以外のスキーム(javascript:等)のURLを除去する。"""
     u = str(u or "").strip()
     return u if _URL_RE.match(u) else None
+
+
+def region_ok(ev, anywhere_sources):
+    """開催地域が対象かどうかを決定論的に判定する。次のいずれかでTrue:
+    (1) country が None(オンライン)または REGION 内
+    (2) organizer_short/organizer に ECB・BIS が単語として含まれる(開催国不問)
+    (3) event の source が anywhere_sources(sources.yaml で anywhere: true の定点)に含まれる"""
+    country = ev.get("country")
+    if country is None or country in REGION:
+        return True
+    for key in ("organizer_short", "organizer"):
+        val = ev.get(key)
+        if val and _ANYWHERE_ORG_RE.search(str(val).casefold()):
+            return True
+    if ev.get("source") in anywhere_sources:
+        return True
+    return False
+
+
+def apply_flagship(ev):
+    """タイトルが FLAGSHIP_PATTERNS のいずれかに部分一致すれば importance の下限を
+    3に強制する(既存の3を下回る値での格下げは発生しない: maxを取るだけ)。"""
+    title = unicodedata.normalize("NFKC", str(ev.get("title") or "")).casefold()
+    if any(pat in title for pat in FLAGSHIP_PATTERNS):
+        ev["importance"] = max(ev.get("importance") or 0, 3)
+    return ev
+
+
+def apply_overrides(events):
+    """data/overrides.json (ユーザー管理の手動上書きファイル)を適用する。
+    形式: {"<event_id>": {"フィールド": 値, ...}}。存在しないidは無視。
+    ファイルが無い/壊れている場合も例外を投げず、無変更で継続する。"""
+    overrides = load_json(OVERRIDES_FILE, {})
+    if not isinstance(overrides, dict):
+        return events
+    for ev in events:
+        patch = overrides.get(ev.get("id"))
+        if isinstance(patch, dict):
+            ev.update(patch)
+    return events
 
 
 # ----------------------------------------------------------------------
@@ -234,6 +308,15 @@ def sanitize(ev):
     return ev
 
 
+def _merge_importance(old_val, new_val):
+    """フィールドマージ時の importance 専用ルール: 両者が非Nullなら max を維持
+    (新値での格下げ・上書きによる意図しない低下を防ぐ)。片方のみ非Nullなら
+    その非Null側を採用。両方Nullなら None。"""
+    if old_val is not None and new_val is not None:
+        return max(old_val, new_val)
+    return old_val if old_val is not None else new_val
+
+
 def _merge_date_range(old_start, old_end, new_start, new_end):
     """重複統合時の date_start/date_end 専用マージ。他フィールドは「非nullなら新値で
     上書き」だが、日付だけはこれに委ねる: 統合後の開始日は両者のmin、終了日
@@ -278,8 +361,11 @@ def merge(existing, new_events):
                 old.get("date_start"), old.get("date_end"),
                 ev.get("date_start"), ev.get("date_end"))
             for field, val in ev.items():
-                if val not in (None, "", "unknown", []) and field != "source":
+                if field in ("source", "importance"):
+                    continue
+                if val not in (None, "", "unknown", []):
                     old[field] = val
+            old["importance"] = _merge_importance(old.get("importance"), ev.get("importance"))
             old["date_start"], old["date_end"] = new_start, new_end
         else:
             match = next((old for old in by_key.values() if similar_event(old, ev)), None)
@@ -288,8 +374,11 @@ def merge(existing, new_events):
                     match.get("date_start"), match.get("date_end"),
                     ev.get("date_start"), ev.get("date_end"))
                 for field, val in ev.items():
-                    if val not in (None, "", "unknown", []) and field != "source":
+                    if field in ("source", "importance"):
+                        continue
+                    if val not in (None, "", "unknown", []):
                         match[field] = val
+                match["importance"] = _merge_importance(match.get("importance"), ev.get("importance"))
                 match["date_start"], match["date_end"] = new_start, new_end
             else:
                 ev["id"] = k
@@ -313,10 +402,11 @@ def dedupe_events(events):
                 match.get("date_start"), match.get("date_end"),
                 ev.get("date_start"), ev.get("date_end"))
             for field, val in ev.items():
-                if field in ("first_seen", "id", "source"):
+                if field in ("first_seen", "id", "source", "importance"):
                     continue
                 if val not in (None, "", "unknown", []):
                     match[field] = val
+            match["importance"] = _merge_importance(match.get("importance"), ev.get("importance"))
             match["date_start"], match["date_end"] = new_start, new_end
             removed += 1
         else:
@@ -381,11 +471,17 @@ def parse_sources():
         topics_section = text[topics_marker.end():] if topics_marker else ""
 
         sources = []
-        for m in re.finditer(
-                r'-\s*name:\s*"([^"]*)"\s*\n\s*url:\s*"([^"]*)"', sources_section):
+        # 各エントリの "name: ... \n url: ..." の直後、次の "- name:" (または末尾) までを
+        # そのエントリのブロックとして anywhere: true の有無を調べる。
+        entry_re = re.compile(
+            r'-\s*name:\s*"([^"]*)"\s*\n\s*url:\s*"([^"]*)"(?P<rest>.*?)(?=\n\s*-\s*name:|\Z)',
+            re.DOTALL)
+        for m in entry_re.finditer(sources_section):
             name, url = m.group(1).strip(), m.group(2).strip()
             if name and url:
-                sources.append({"name": name, "url": url})
+                anywhere = bool(re.search(r'^\s*anywhere:\s*true\s*$', m.group("rest"),
+                                           re.MULTILINE | re.IGNORECASE))
+                sources.append({"name": name, "url": url, "anywhere": anywhere})
 
         topics = []
         for m in re.finditer(r'^\s*-\s*"([^"]*)"\s*$', topics_section, re.MULTILINE):
