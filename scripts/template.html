@@ -159,18 +159,42 @@
     border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
   .ev.foreign{border-left-style:dashed;border-left-width:3px}
   .ev:hover{filter:brightness(1.25)}
-  /* 複数日イベント: 期間サフィックス / 継続ラベル / 継続バー */
+  /* 複数日イベント(モバイル週ビュー)の期間サフィックス */
   .ev .evsp{font-size:.8em;font-weight:400;color:var(--sub);margin-left:2px;
     white-space:nowrap}
-  .ev.cont{opacity:.92}
-  .evbar{display:block;height:6px;width:100%;margin:2px 0 1px;
-    border-left:3px solid;border-radius:2px;cursor:pointer;text-decoration:none;
-    overflow:hidden}
-  .evbar.i3{border-color:var(--imp3);background:rgba(245,166,35,.30)}
-  .evbar.i2{border-color:var(--imp2);background:rgba(53,196,220,.26)}
-  .evbar.i1{border-color:var(--imp1);background:rgba(120,135,152,.28)}
-  .evbar.foreign{border-left-style:dashed}
-  .evbar:hover{filter:brightness(1.4)}
+  /* ---------- 複数日スパン(デスクトップ月グリッド・Googleカレンダー式レーン) ---------- */
+  /* .lanes: セル上部のレーンコンテナ。全レーン分のスロット(セグメント or 透明スペーサー)
+     を縦に積み、隣接セルとバーがつながって見えるようにする。 */
+  .lanes{margin:2px 0 1px}
+  .seg,.segsp{display:block;height:15px;margin-bottom:2px}
+  .segsp{visibility:hidden}                    /* 透明スペーサー(縦位置を全セルで揃える) */
+  .seg{position:relative;border-radius:3px;cursor:pointer;text-decoration:none;
+    overflow:visible;background:var(--imp1-bg)}
+  .seg.i3{background:rgba(245,166,35,.34)}
+  .seg.i2{background:rgba(53,196,220,.30)}
+  .seg.i1{background:rgba(120,135,152,.34)}
+  /* 真の開始日(date_start)セルにだけ重要度色の左キャップ(◇国外は破線) */
+  .seg.startcap{border-left:3px solid}
+  .seg.i3.startcap{border-left-color:var(--imp3)}
+  .seg.i2.startcap{border-left-color:var(--imp2)}
+  .seg.i1.startcap{border-left-color:var(--imp1)}
+  .seg.foreign.startcap{border-left-style:dashed}
+  /* 継続(前日/翌日へ続く)側は角を落とし、同一週内の隣接セル側は負マージンで境界を跨ぐ */
+  .seg.flatL{border-top-left-radius:0;border-bottom-left-radius:0}
+  .seg.flatR{border-top-right-radius:0;border-bottom-right-radius:0}
+  .seg.bridgeL{margin-left:-5px}
+  .seg.bridgeR{margin-right:-5px}
+  .seg:hover{filter:brightness(1.3)}
+  /* ラベルは週内の最初のカバー日に1回だけ。nowrap でバー上を右へ流し、
+     --n(週内カバー日数)ぶんの幅で overflow:hidden クリップしてカレンダー外へ漏らさない。 */
+  .seglbl{position:absolute;left:6px;top:0;height:15px;line-height:15px;
+    white-space:nowrap;overflow:hidden;pointer-events:none;z-index:3;
+    font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+    text-shadow:0 1px 2px rgba(8,11,16,.92),0 0 3px rgba(8,11,16,.8);
+    width:calc(var(--n) * 100% + (var(--n) - 1) * 4px - 10px)}
+  .seglbl.i3{color:var(--imp3-tx)}
+  .seglbl.i2{color:var(--imp2-tx)}
+  .seglbl.i1{color:var(--imp1-tx)}
 
   /* ---------- カレンダー凡例 ---------- */
   .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
@@ -348,13 +372,6 @@
         <option value="en">英語</option>
         <option value="de">ドイツ語</option>
       </select></label>
-    <label class="fld"><span class="cap">Fee</span>
-      <select id="fee">
-        <option value="free_unknown">無料(不明含む)</option>
-        <option value="free_only">無料のみ</option>
-        <option value="paid">有料</option>
-        <option value="all">すべて</option>
-      </select></label>
     <label class="fld cbfld"><span class="cbrow">
       <input type="checkbox" id="online"><span class="cblbl">オンライン開催を含む</span></span></label>
     <label class="fld cbfld"><span class="cbrow" id="daytriprow">
@@ -483,6 +500,8 @@ function isMulti(ev){ return !!(ev.date_end && ev.date_end!==ev.date_start); }
 function md(iso){ return `${+iso.slice(5,7)}/${+iso.slice(8,10)}`; }
 function endSuffix(ev){ return `〜${md(ev.date_end)}`; }                 /* ラベル末尾に付ける期間サフィックス */
 function contTitle(ev){ return `(続き)${ev.title} / ${md(ev.date_start)}〜${md(ev.date_end)}`; }
+function spanTitle(ev){ return `${evFull(ev)} / ${md(ev.date_start)}〜${md(ev.date_end)}`; }
+function daysBetween(a,b){ return Math.round((Date.parse(b)-Date.parse(a))/86400000); }
 
 /* ---------- 週ビュー用の日付ヘルパー ---------- */
 const mqMobile = window.matchMedia("(max-width:640px)");
@@ -497,19 +516,18 @@ function mondayOf(iso){
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
 const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"", lang:"",
-                   fee:"free_unknown", online:true, daytrip:false, q:""};
+                   online:true, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
-const LS_KEY = "sr_filters_v4";
+const LS_KEY = "sr_filters_v5";
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
   if(!s || typeof s!=="object") return;
   if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
-  if(["free_unknown","free_only","paid","all"].includes(s.fee)) state.fee = s.fee;
   if(["","2","3"].includes(s.imp)) state.imp = s.imp;
   if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
@@ -524,7 +542,7 @@ function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
       area:state.area, country:state.country, city:state.city, org:state.org,
-      imp:state.imp, lang:state.lang, fee:state.fee, online:state.online,
+      imp:state.imp, lang:state.lang, online:state.online,
       daytrip:state.daytrip, q:state.q, sort:state.sort
     }));
   }catch(e){}
@@ -561,12 +579,6 @@ function passLang(ev){
   if(state.lang==="de" && !(ev.language==="de"||ev.language==="en+de"||ev.language==null)) return false;
   return true;
 }
-function passFee(ev){
-  if(state.fee==="free_unknown" && ev.fee==="paid") return false;
-  if(state.fee==="free_only" && ev.fee!=="free") return false;
-  if(state.fee==="paid" && ev.fee!=="paid") return false;
-  return true;
-}
 function passOnline(ev){
   if(state.online) return true;                       /* オン: 完全オンラインも含める */
   return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
@@ -599,7 +611,6 @@ function passExcept(ev, ex){
   if(!s.has("org")     && !passOrg(ev))     return false;
   if(!s.has("imp")     && !passImp(ev))     return false;
   if(!s.has("lang")    && !passLang(ev))    return false;
-  if(!s.has("fee")     && !passFee(ev))     return false;
   if(!s.has("online")  && !passOnline(ev))  return false;
   if(!s.has("daytrip") && !passDaytrip(ev)) return false;
   if(!s.has("q")       && !passQ(ev))       return false;
@@ -666,7 +677,6 @@ function rebuildSelects(){
   updateAreaOptions();
   document.getElementById("imp").value    = state.imp;
   document.getElementById("lang").value   = state.lang;
-  document.getElementById("fee").value    = state.fee;
   document.getElementById("q").value      = state.q;
   document.getElementById("sort").value   = state.sort;
   document.getElementById("online").checked = state.online;
@@ -717,34 +727,72 @@ function drawMonth(){
     state.y+" / "+String(state.m+1).padStart(2,"0");
   const first=new Date(Date.UTC(state.y,state.m,1));
   let start=new Date(first); start.setUTCDate(1-((first.getUTCDay()+6)%7));
-  const evs=fEvents(); let html="";
+  const evs=fEvents();
+  const multiAll=evs.filter(isMulti);
+  let html="";
   for(let w=0;w<6;w++){
-    html+="<tr>";
+    /* --- この週の7日 --- */
+    const weekIso=[];
     for(let d=0;d<7;d++){
       const cur=new Date(start); cur.setUTCDate(start.getUTCDate()+w*7+d);
-      const iso=cur.toISOString().slice(0,10);
-      const out=cur.getUTCMonth()!==state.m;
+      weekIso.push(cur.toISOString().slice(0,10));
+    }
+    const wMon=weekIso[0], wSun=weekIso[6];
+    /* --- 週に重なる複数日イベントを集め、週内カバー範囲(segStart..segEnd)を出し、
+           開始日順に貪欲レーン割当(空いている最小レーン) --- */
+    const spans=multiAll
+      .filter(e=> e.date_start<=wSun && e.date_end>=wMon)
+      .map(e=>({ev:e,
+                segStart: e.date_start>wMon ? e.date_start : wMon,
+                segEnd:   e.date_end   <wSun ? e.date_end   : wSun}))
+      .sort((a,b)=> a.segStart<b.segStart?-1 : a.segStart>b.segStart?1 :
+                    a.segEnd<b.segEnd?-1   : a.segEnd>b.segEnd?1   :
+                    (a.ev.id<b.ev.id?-1:1));
+    const laneEnd=[];                              /* laneEnd[i] = レーン i に置いた最後の segEnd */
+    for(const s of spans){
+      let li=0;
+      for(; li<laneEnd.length; li++){ if(laneEnd[li]<s.segStart) break; }
+      s.lane=li; laneEnd[li]=s.segEnd;
+    }
+    const laneCount=laneEnd.length;
+
+    html+="<tr>";
+    for(let d=0;d<7;d++){
+      const iso=weekIso[d];
+      const dnum=+iso.slice(8,10);
+      const out=iso.slice(0,7)!==`${state.y}-${String(state.m+1).padStart(2,"0")}`;
       const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
-      const day=evs.filter(e=>inRange(e,iso))
-                   .sort((a,b)=>imp(b)-imp(a));
-      const isMon=cur.getUTCDay()===1;             /* 週の頭(月曜) */
-      let labels="", bars="";                      /* 通常/継続ラベルは上、継続バーは下にまとめる */
-      for(const e of day){
-        const ic=`i${imp(e)}${isForeign(e)?' foreign':''}`;
-        if(!isMulti(e) || iso===e.date_start){
-          /* 単日 or 複数日の初日: フルラベル(複数日なら期間サフィックス付き) */
-          const suf=isMulti(e)?`<span class="evsp">${esc(endSuffix(e))}</span>`:"";
-          labels+=`<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}${suf}</a>`;
-        }else if(isMon){
-          /* 週マタギで継続中の月曜: ⤷ 短縮ラベル(title_short + 期間サフィックス) */
-          const t=e.title_short||e.title||"";
-          labels+=`<a class="ev ${ic} cont" href="#ev-${esc(e.id)}" title="${esc(contTitle(e))}">⤷ ${esc(t)}<span class="evsp">${esc(endSuffix(e))}</span></a>`;
-        }else{
-          /* 2日目以降(同一週内): テキストなしの細い継続バー */
-          bars+=`<a class="evbar ${ic}" href="#ev-${esc(e.id)}" title="${esc(contTitle(e))}" aria-label="${esc(contTitle(e))}"></a>`;
+      /* --- レーンコンテナ(全レーン分のスロットを縦積み。カバー日=セグメント、非カバー日=透明スペーサー) --- */
+      let lanesHtml="";
+      for(let li=0; li<laneCount; li++){
+        const s=spans.find(x=>x.lane===li && iso>=x.segStart && iso<=x.segEnd);
+        if(!s){ lanesHtml+=`<div class="segsp"></div>`; continue; }
+        const e=s.ev;
+        const isStart = iso===e.date_start;        /* 真の開始日(左キャップを出す) */
+        const flatL   = iso>e.date_start;          /* 左へ継続(前週含む)→左角を落とす */
+        const flatR   = iso<e.date_end;            /* 右へ継続(翌週含む)→右角を落とす */
+        const bridgeL = iso>s.segStart;            /* 同一週内に左隣がある→負マージンで跨ぐ */
+        const bridgeR = iso<s.segEnd;              /* 同一週内に右隣がある→負マージンで跨ぐ */
+        const cc=[`i${imp(e)}`, isForeign(e)?"foreign":"",
+                  isStart?"startcap":"", flatL?"flatL":"", flatR?"flatR":"",
+                  bridgeL?"bridgeL":"", bridgeR?"bridgeR":""].filter(Boolean).join(" ");
+        let lbl="";
+        if(iso===s.segStart){                      /* 週内の最初のカバー日にだけラベルを1回 */
+          const n=daysBetween(s.segStart,s.segEnd)+1;
+          const text=`${evLabel(e)} ${endSuffix(e)}`;
+          lbl=`<span class="seglbl i${imp(e)}" style="--n:${n}">${esc(text)}</span>`;
         }
+        lanesHtml+=`<a class="seg ${cc}" href="#ev-${esc(e.id)}" title="${esc(spanTitle(e))}">${lbl}</a>`;
       }
-      html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${labels}${bars}</td>`;
+      const lanesBox = laneCount ? `<div class="lanes">${lanesHtml}</div>` : "";
+      /* --- 単日イベント(レーンの下) --- */
+      const singles=evs.filter(e=>!isMulti(e) && inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
+      let singleHtml="";
+      for(const e of singles){
+        const ic=`i${imp(e)}${isForeign(e)?' foreign':''}`;
+        singleHtml+=`<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`;
+      }
+      html+=`<td class="${cls}"><span class="dnum">${dnum}</span>${lanesBox}${singleHtml}</td>`;
     }
     html+="</tr>";
   }
@@ -919,7 +967,6 @@ document.getElementById("city").addEventListener("change",e=>{state.city=e.targe
 document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
 document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
-document.getElementById("fee").addEventListener("change",e=>{state.fee=e.target.value;redraw();});
 document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
 document.getElementById("daytrip").addEventListener("change",e=>{state.daytrip=e.target.checked;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
@@ -949,7 +996,7 @@ mqMobile.addEventListener("change",e=>{
   drawCal();
 });
 document.addEventListener("click",e=>{
-  const a=e.target.closest("a.ev, a.evbar"); if(!a)return;
+  const a=e.target.closest("a.ev, a.seg"); if(!a)return;
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
 });
