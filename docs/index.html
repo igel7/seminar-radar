@@ -159,6 +159,18 @@
     border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
   .ev.foreign{border-left-style:dashed;border-left-width:3px}
   .ev:hover{filter:brightness(1.25)}
+  /* 複数日イベント: 期間サフィックス / 継続ラベル / 継続バー */
+  .ev .evsp{font-size:.8em;font-weight:400;color:var(--sub);margin-left:2px;
+    white-space:nowrap}
+  .ev.cont{opacity:.92}
+  .evbar{display:block;height:6px;width:100%;margin:2px 0 1px;
+    border-left:3px solid;border-radius:2px;cursor:pointer;text-decoration:none;
+    overflow:hidden}
+  .evbar.i3{border-color:var(--imp3);background:rgba(245,166,35,.30)}
+  .evbar.i2{border-color:var(--imp2);background:rgba(53,196,220,.26)}
+  .evbar.i1{border-color:var(--imp1);background:rgba(120,135,152,.28)}
+  .evbar.foreign{border-left-style:dashed}
+  .evbar:hover{filter:brightness(1.4)}
 
   /* ---------- カレンダー凡例 ---------- */
   .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
@@ -281,6 +293,11 @@
     .wevs .ev.i1,.wevs .ev.i2{font-size:12px}
     .wevs .ev.i3{font-size:12.5px;font-weight:700}
     .wevs .ev.foreign{border-left-style:dashed}
+    /* 継続日: 縮小・減光した1行(高さ約6割) */
+    .wevs .ev.wcont{font-size:10.5px;font-weight:400;padding:2px 7px 2px 8px;
+      opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      line-height:1.25}
+    .wevs .ev.wcont.i3{font-size:10.5px;font-weight:600}
     .row{flex-direction:column;gap:4px}
     .when{min-width:0}
     #totop{right:12px;bottom:12px;width:38px;height:38px;font-size:17px}
@@ -293,7 +310,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-22 18:04 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-22 18:09 (CEST)</b></span>
     <div class="hdtools">
       <div class="srcwrap" id="srcwrap">
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
@@ -461,6 +478,11 @@ function evLabel(ev){
 function evFull(ev){
   return [ev.title, ev.organizer, ev.city].filter(Boolean).join(" / ");
 }
+/* ---------- 複数日イベント用ヘルパー ---------- */
+function isMulti(ev){ return !!(ev.date_end && ev.date_end!==ev.date_start); }
+function md(iso){ return `${+iso.slice(5,7)}/${+iso.slice(8,10)}`; }
+function endSuffix(ev){ return `〜${md(ev.date_end)}`; }                 /* ラベル末尾に付ける期間サフィックス */
+function contTitle(ev){ return `(続き)${ev.title} / ${md(ev.date_start)}〜${md(ev.date_end)}`; }
 
 /* ---------- 週ビュー用の日付ヘルパー ---------- */
 const mqMobile = window.matchMedia("(max-width:640px)");
@@ -567,18 +589,20 @@ function passQ(ev){
   return hay.includes(state.q.toLowerCase());
 }
 
-/* ---------- ファセット合成(自分以外の全フィルタを通過するか) ---------- */
+/* ---------- ファセット合成(指定した軸以外の全フィルタを通過するか) ----------
+   ex は文字列(1軸)でも配列(複数軸)でも可。渡された軸のフィルタは無視する。 */
 function passExcept(ev, ex){
-  if(ex!=="area"    && !passArea(ev))    return false;
-  if(ex!=="country" && !passCountry(ev)) return false;
-  if(ex!=="city"    && !passCity(ev))    return false;
-  if(ex!=="org"     && !passOrg(ev))     return false;
-  if(ex!=="imp"     && !passImp(ev))     return false;
-  if(ex!=="lang"    && !passLang(ev))    return false;
-  if(ex!=="fee"     && !passFee(ev))     return false;
-  if(ex!=="online"  && !passOnline(ev))  return false;
-  if(ex!=="daytrip" && !passDaytrip(ev)) return false;
-  if(ex!=="q"       && !passQ(ev))       return false;
+  const s = Array.isArray(ex) ? new Set(ex) : new Set([ex]);
+  if(!s.has("area")    && !passArea(ev))    return false;
+  if(!s.has("country") && !passCountry(ev)) return false;
+  if(!s.has("city")    && !passCity(ev))    return false;
+  if(!s.has("org")     && !passOrg(ev))     return false;
+  if(!s.has("imp")     && !passImp(ev))     return false;
+  if(!s.has("lang")    && !passLang(ev))    return false;
+  if(!s.has("fee")     && !passFee(ev))     return false;
+  if(!s.has("online")  && !passOnline(ev))  return false;
+  if(!s.has("daytrip") && !passDaytrip(ev)) return false;
+  if(!s.has("q")       && !passQ(ev))       return false;
   return true;
 }
 const visible = ev => passExcept(ev, null);
@@ -591,7 +615,9 @@ const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_sta
    online イベントに国が付いても「ドイツ以外を選んだのに DE が出る」型のバグを防ぐ。
    ORG は online 主催者も ORGANIZER フィルタ対象なので除外しない。 */
 function facetCountry(){
-  return [...new Set(EVENTS.filter(e=>e.format!=="online" && passExcept(e,"country"))
+  /* 地理階層 AREA > COUNTRY > CITY。COUNTRY の候補は下位の CITY 選択に従属させない
+     ため city も判定から除外する(area には従属してよい)。 */
+  return [...new Set(EVENTS.filter(e=>e.format!=="online" && passExcept(e,["country","city"]))
             .map(e=>e.country).filter(Boolean))].sort();
 }
 function facetCity(){
@@ -604,9 +630,11 @@ function facetOrg(){
   return [...set].sort((a,b)=>a.localeCompare(b));
 }
 /* AREA の特定選択肢(DE/nonDE)を選んだと仮定した場合に1件以上ヒットするか。
-   他の全ファセット(daytrip含む)は現在の状態のまま、area だけ差し替えて判定する。 */
+   AREA は地理階層の最上位なので、下位の country・city 選択には従属させない
+   (= area/country/city の3軸を無視して評価)。daytrip 等その他ファセットは
+   現状のまま効かせる(日帰り圏ONのとき nonDE がグレーアウトする挙動を維持)。 */
 function areaOptionEnabled(area){
-  return EVENTS.some(e=>passExcept(e,"area") && passArea(e,area));
+  return EVENTS.some(e=>passExcept(e,["area","country","city"]) && passArea(e,area));
 }
 
 /* ---------- 動的セレクト構築(全連動) ---------- */
@@ -699,10 +727,24 @@ function drawMonth(){
       const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
       const day=evs.filter(e=>inRange(e,iso))
                    .sort((a,b)=>imp(b)-imp(a));
-      let chips=day.map(e=>
-        `<a class="ev i${imp(e)}${isForeign(e)?' foreign':''}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
-      ).join("");
-      html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${chips}</td>`;
+      const isMon=cur.getUTCDay()===1;             /* 週の頭(月曜) */
+      let labels="", bars="";                      /* 通常/継続ラベルは上、継続バーは下にまとめる */
+      for(const e of day){
+        const ic=`i${imp(e)}${isForeign(e)?' foreign':''}`;
+        if(!isMulti(e) || iso===e.date_start){
+          /* 単日 or 複数日の初日: フルラベル(複数日なら期間サフィックス付き) */
+          const suf=isMulti(e)?`<span class="evsp">${esc(endSuffix(e))}</span>`:"";
+          labels+=`<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}${suf}</a>`;
+        }else if(isMon){
+          /* 週マタギで継続中の月曜: ⤷ 短縮ラベル(title_short + 期間サフィックス) */
+          const t=e.title_short||e.title||"";
+          labels+=`<a class="ev ${ic} cont" href="#ev-${esc(e.id)}" title="${esc(contTitle(e))}">⤷ ${esc(t)}<span class="evsp">${esc(endSuffix(e))}</span></a>`;
+        }else{
+          /* 2日目以降(同一週内): テキストなしの細い継続バー */
+          bars+=`<a class="evbar ${ic}" href="#ev-${esc(e.id)}" title="${esc(contTitle(e))}" aria-label="${esc(contTitle(e))}"></a>`;
+        }
+      }
+      html+=`<td class="${cls}"><span class="dnum">${cur.getUTCDate()}</span>${labels}${bars}</td>`;
     }
     html+="</tr>";
   }
@@ -728,9 +770,16 @@ function drawWeek(){
     if(isWend && day.length===0 && !isToday) continue;
     const empty=day.length===0;
     const cls=["wday", isToday?"today":"", isWend?"wend":"", empty?"empty":""].join(" ");
-    const evHtml=day.map(e=>
-      `<a class="ev i${imp(e)}${isForeign(e)?' foreign':''}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`
-    ).join("");
+    const evHtml=day.map(e=>{
+      const ic=`i${imp(e)}${isForeign(e)?' foreign':''}`;
+      if(!isMulti(e) || iso===e.date_start){
+        /* 初日 or 単日: フル+期間サフィックス */
+        const suf=isMulti(e)?`<span class="evsp">${esc(endSuffix(e))}</span>`:"";
+        return `<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}${suf}</a>`;
+      }
+      /* 継続日: ⤷ プレフィックス + 縮小・減光した1行ラベル */
+      return `<a class="ev ${ic} wcont" href="#ev-${esc(e.id)}" title="${esc(contTitle(e))}">⤷ ${esc(evLabel(e))}</a>`;
+    }).join("");
     html+=`<div class="${cls}">`+
       `<div class="wdhead"><span class="wdate">${d.getUTCMonth()+1}/${d.getUTCDate()}</span>`+
       `<span class="wdow">(${WD_WEEK[i]})</span></div>`+
@@ -900,7 +949,7 @@ mqMobile.addEventListener("change",e=>{
   drawCal();
 });
 document.addEventListener("click",e=>{
-  const a=e.target.closest("a.ev"); if(!a)return;
+  const a=e.target.closest("a.ev, a.evbar"); if(!a)return;
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
 });
