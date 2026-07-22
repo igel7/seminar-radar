@@ -87,9 +87,10 @@
     font-family:var(--mono)}
   select{cursor:pointer}
   select option:disabled{color:var(--dim)}
-  /* Organizerプルダウンのグループ見出し: 選択肢と紛れないよう灰色・非太字 */
+  /* Organizerプルダウンのグループ見出し: 選択肢と紛れないよう灰色・非太字。
+     選択肢側はインデント(padding非対応ブラウザ向けにラベル先頭のNBSPでも二重に確保) */
   select optgroup{color:var(--sub);font-weight:400;font-style:normal}
-  select optgroup option{color:var(--ink)}
+  select optgroup option{color:var(--ink);padding-left:18px}
   input[type=search]{min-width:200px}
   select:focus,input:focus{outline:none;border-color:var(--amber);
     box-shadow:0 0 0 1px var(--amber)}
@@ -759,7 +760,7 @@ function fillOrgSelect(cand){
     if(!items.length) continue;
     html+=`<optgroup label="【${esc(ORG_GROUP_LABEL[g])}】">`;
     for(const t of items)
-      html+=`<option value="${esc(t)}">${esc(orgOptionLabel(t))}</option>`;
+      html+=`<option value="${esc(t)}">\u00A0\u00A0${esc(orgOptionLabel(t))}</option>`;
     html+=`</optgroup>`;
   }
   sel.innerHTML=html;
