@@ -349,7 +349,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-22 21:11 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-22 21:23 (CEST)</b></span>
     <div class="hdtools">
       <div class="srcwrap" id="srcwrap">
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
@@ -480,6 +480,49 @@ const COUNTRY_JA = {
   US:"米国", CA:"カナダ", JP:"日本", CN:"中国", KR:"韓国",
   AU:"オーストラリア", SG:"シンガポール"
 };
+
+/* ---------- Organizerプルダウンのグループ分け ---------- */
+/* 括弧表示用の半角カタカナ国名 */
+const COUNTRY_KANA = {
+  AT:"ｵｰｽﾄﾘｱ", CH:"ｽｲｽ", PL:"ﾎﾟｰﾗﾝﾄﾞ", CZ:"ﾁｪｺ", SK:"ｽﾛﾊﾞｷｱ", HU:"ﾊﾝｶﾞﾘｰ",
+  SI:"ｽﾛﾍﾞﾆｱ", HR:"ｸﾛｱﾁｱ", RS:"ｾﾙﾋﾞｱ", BA:"ﾎﾞｽﾆｱ", AL:"ｱﾙﾊﾞﾆｱ", RO:"ﾙｰﾏﾆｱ",
+  BG:"ﾌﾞﾙｶﾞﾘｱ", LT:"ﾘﾄｱﾆｱ", LV:"ﾗﾄﾋﾞｱ", EE:"ｴｽﾄﾆｱ", UA:"ｳｸﾗｲﾅ", BE:"ﾍﾞﾙｷﾞｰ",
+  GB:"ｲｷﾞﾘｽ", FR:"ﾌﾗﾝｽ", IT:"ｲﾀﾘｱ", NL:"ｵﾗﾝﾀﾞ", LU:"ﾙｸｾﾝﾌﾞﾙｸ", ES:"ｽﾍﾟｲﾝ",
+  GR:"ｷﾞﾘｼｬ", DK:"ﾃﾞﾝﾏｰｸ", SE:"ｽｳｪｰﾃﾞﾝ", FI:"ﾌｨﾝﾗﾝﾄﾞ", NO:"ﾉﾙｳｪｰ",
+  TR:"ﾄﾙｺ", US:"ｱﾒﾘｶ", EU:"EU"
+};
+/* 主催者トークン → グループ(g: cb=中銀・規制当局 / tt=シンクタンク・研究機関 /
+   uni=大学 / 無指定=その他)と、必要な場合のみ本拠国(c)。
+   exempt: ECB等の超有名組織は国名括弧を付けない。
+   c の無い組織は「その組織のイベントの開催国が全て同一かつドイツ以外」の場合だけ
+   自動で括弧が付く(独組織・多国開催・オンラインのみは付かない)。 */
+const ORG_META = {
+  /* 中銀・規制当局 */
+  "ECB":{g:"cb",exempt:true}, "EZB":{g:"cb",exempt:true}, "BIS":{g:"cb",exempt:true},
+  "Bundesbank":{g:"cb"}, "SNB":{g:"cb",c:"CH"}, "OeNB":{g:"cb",c:"AT"},
+  "CNB":{g:"cb",c:"CZ"}, "NBP":{g:"cb",c:"PL"}, "NBU":{g:"cb",c:"UA"},
+  "NBS":{g:"cb",c:"SK"}, "MNB":{g:"cb",c:"HU"}, "NBR":{g:"cb",c:"RO"},
+  "HNB":{g:"cb",c:"HR"}, "BNB":{g:"cb",c:"BG"}, "Banka Slovenije":{g:"cb",c:"SI"},
+  "Bank of Lithuania":{g:"cb",c:"LT"}, "Latvijas Banka":{g:"cb",c:"LV"},
+  "Eesti Pank":{g:"cb",c:"EE"}, "CBBH":{g:"cb",c:"BA"}, "Bank of Albania":{g:"cb",c:"AL"},
+  "BaFin":{g:"cb"}, "EIOPA":{g:"cb"}, "ESRB":{g:"cb"}, "SRB":{g:"cb",c:"EU"},
+  /* シンクタンク・研究機関 */
+  "ifo":{g:"tt"}, "CESifo":{g:"tt"}, "EconPol":{g:"tt"}, "DIW Berlin":{g:"tt"},
+  "IfW Kiel":{g:"tt"}, "RWI":{g:"tt"}, "ZEW":{g:"tt"}, "IWH":{g:"tt"},
+  "IW Köln":{g:"tt"}, "SAFE":{g:"tt"}, "IMFS":{g:"tt"}, "CFS":{g:"tt"},
+  "efl":{g:"tt"}, "DGAP":{g:"tt"}, "EWI":{g:"tt"}, "Gerzensee":{g:"tt",c:"CH"},
+  "SUERF":{g:"tt",c:"AT"}, "Bruegel":{g:"tt",c:"BE"}, "OMFIF":{g:"tt",c:"GB"},
+  "CEBRA":{g:"tt"}, "CEPR":{g:"tt",c:"GB"}, "ikf Bochum":{g:"tt"},
+  "Hohenheimer Kreis":{g:"tt"},
+  /* 大学・ビジネススクール */
+  "Frankfurt School":{g:"uni"}, "FS Forum":{g:"uni"}, "Hertie School":{g:"uni"},
+  "House of Finance":{g:"uni"}, "HFM":{g:"uni"}, "Goethe Uni":{g:"uni"},
+  "ECONtribute":{g:"uni"}, "Berlin School of Economics":{g:"uni"},
+  "Uni Mannheim":{g:"uni"}, "WU Wien":{g:"uni",c:"AT"}
+};
+const ORG_GROUP_ORDER = ["cb","tt","uni","other"];
+const ORG_GROUP_LABEL = {cb:"中銀・規制当局", tt:"シンクタンク・研究機関",
+                         uni:"大学", other:"その他"};
 
 /* ---------- ラベル生成 ---------- */
 function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
@@ -691,6 +734,34 @@ function fillSelect(id, cand, labelFn){
   sel.innerHTML=opts;
   sel.value=state[id];
 }
+/* Organizer専用: optgroupでカテゴリ分けして構築 */
+function orgGroupOf(t){ return (ORG_META[t]&&ORG_META[t].g)||"other"; }
+function orgCountryOf(t){
+  const m=ORG_META[t]||{};
+  if(m.exempt) return null;
+  if(m.c) return m.c==="DE"?null:m.c;
+  const cs=[...new Set(EVENTS.filter(e=>orgTokens(e).includes(t))
+              .map(e=>e.country).filter(Boolean))];
+  return (cs.length===1 && cs[0]!=="DE") ? cs[0] : null;
+}
+function orgOptionLabel(t){
+  const c=orgCountryOf(t);
+  return c ? `${t} (${COUNTRY_KANA[c]||c})` : t;
+}
+function fillOrgSelect(cand){
+  const sel=document.getElementById("org");
+  let html=`<option value="">すべて</option>`;
+  for(const g of ORG_GROUP_ORDER){
+    const items=cand.filter(t=>orgGroupOf(t)===g);
+    if(!items.length) continue;
+    html+=`<optgroup label="${esc(ORG_GROUP_LABEL[g])}">`;
+    for(const t of items)
+      html+=`<option value="${esc(t)}">${esc(orgOptionLabel(t))}</option>`;
+    html+=`</optgroup>`;
+  }
+  sel.innerHTML=html;
+  sel.value=state.org;
+}
 function rebuildSelects(){
   /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大4回で安定させる
      (area も含める: 例えば country=AT が選ばれた状態で area=DE が localStorage 等から
@@ -707,7 +778,7 @@ function rebuildSelects(){
   }
   fillSelect("country", facetCountry(), c=>COUNTRY_JA[c]||c);
   fillSelect("city",    facetCity());
-  fillSelect("org",     facetOrg());
+  fillOrgSelect(facetOrg());
   document.getElementById("area").value   = state.area;
   updateAreaOptions();
   document.getElementById("imp").value    = state.imp;
