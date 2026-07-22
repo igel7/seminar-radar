@@ -61,7 +61,7 @@ _ORDINAL_RE = re.compile(r"^\d+(st|nd|rd|th)$")
 _GENERIC_TOKENS = {
     "conference", "seminar", "workshop", "symposium", "annual", "event",
     "events", "meeting", "lecture", "konferenz", "tagung", "veranstaltung",
-    "forum", "summit",
+    "forum", "summit", "program", "programme",
 }
 
 
@@ -75,8 +75,9 @@ def sig_tokens(title):
     }
 
 
-def similar_event(a, b):
-    """\u540c\u4e00\u30a4\u30d9\u30f3\u30c8\u304c\u8a00\u3044\u56de\u3057\u9055\u3044\u306e\u30bf\u30a4\u30c8\u30eb\u3067\u5225\u767b\u9332\u3055\u308c\u3066\u3044\u306a\u3044\u304b\u3092\u5224\u5b9a\u3059\u308b\u3002
+def _similar_by_date_and_title(a, b):
+    """\u7d4c\u8def1(\u65e5\u4ed8\u5b8c\u5168\u4e00\u81f4 + \u30bf\u30a4\u30c8\u30eb\u8a9e\u91cd\u8907\u3001\u5b9a\u70b9\u30bd\u30fc\u30b9\u540c\u58eb\u306f\u5bfe\u8c61\u5916\u306e\u5b89\u5168\u5f01\u3064\u304d):
+    \u958b\u50ac\u65e5\u304c\u5b8c\u5168\u4e00\u81f4\u3057\u3001\u540c\u4e00\u90fd\u5e02\u3067\u3001\u30bf\u30a4\u30c8\u30eb\u306e\u6709\u610f\u8a9e\u91cd\u8907\u5ea6\u304c\u4e00\u5b9a\u4ee5\u4e0a\u3042\u308b\u5834\u5408\u306b\u540c\u4e00\u3068\u307f\u306a\u3059\u3002
     \u5b9a\u70b9\u89b3\u6e2c\u30bd\u30fc\u30b9\u540c\u58eb(discovery/\u624b\u52d5\u53d6\u8fbc\u3092\u542b\u307e\u306a\u3044\u7d44\u307f\u5408\u308f\u305b)\u306f\u5bfe\u8c61\u5916\u3068\u3059\u308b
     (\u540c\u3058\u5b9a\u70b9\u30da\u30fc\u30b8\u306b\u8f09\u308b\u5225\u30a4\u30d9\u30f3\u30c8\u3092\u8aa4\u3063\u3066\u7d71\u5408\u3057\u306a\u3044\u305f\u3081\u306e\u5b89\u5168\u5f01)\u3002"""
     if a.get("date_start") != b.get("date_start"):
@@ -97,6 +98,39 @@ def similar_event(a, b):
              - _GENERIC_TOKENS - org_tokens)
     org_match = bool(org_a) and bool(org_b) and str(org_a).casefold() == str(org_b).casefold()
     return (org_match and ov >= 2) or (ov >= 3)
+
+
+def _similar_by_period_and_title_containment(a, b):
+    """\u7d4c\u8def2(\u958b\u50ac\u671f\u9593\u306e\u91cd\u306a\u308a + \u30bf\u30a4\u30c8\u30eb\u306e\u5305\u542b\u95a2\u4fc2\u3001\u5b89\u5168\u5f01\u306a\u3057):
+    \u958b\u50ac\u671f\u9593(date_start\u301cdate_end)\u304c\u4ea4\u5dee\u3057\u3001\u540c\u4e00\u90fd\u5e02\u3067\u3001\u30bf\u30a4\u30c8\u30eb\u306e\u6709\u610f\u8a9e\u96c6\u5408\u304c
+    \u3069\u3061\u3089\u304b\u3092\u90e8\u5206\u96c6\u5408\u3068\u3059\u308b\u5305\u542b\u95a2\u4fc2\u306b\u3042\u308c\u3070\u540c\u4e00\u3068\u307f\u306a\u3059\u3002
+    \u5305\u542b + \u540c\u90fd\u5e02 + \u671f\u9593\u4ea4\u5dee\u306f\u8aa4\u308a\u306b\u304f\u3044\u5f37\u3044\u30b7\u30b0\u30ca\u30eb\u306a\u306e\u3067\u3001\u5b9a\u70b9\u30bd\u30fc\u30b9\u540c\u58eb\u3067\u3082
+    \u5b89\u5168\u5f01\u306a\u3057\u3067\u30de\u30fc\u30b8\u5bfe\u8c61\u3068\u3059\u308b\u3002"""
+    a_s, b_s = a.get("date_start"), b.get("date_start")
+    if not a_s or not b_s:
+        return False
+    a_e = a.get("date_end") or a_s
+    b_e = b.get("date_end") or b_s
+    if not (a_s <= b_e and b_s <= a_e):
+        return False
+    city_a, city_b = a.get("city"), b.get("city")
+    if not city_a or not city_b or str(city_a).casefold() != str(city_b).casefold():
+        return False
+    # _GENERIC_TOKENS(conference/programme等の一般語)を除いた集合同士で包含を見る。
+    # "OeNB|SUERF|...Yale PFS Conference" と "...Yale Program on Financial Stability
+    # Conference" のように、"program"のような一般語の有無だけで包含が壊れるのを防ぐ。
+    ta = sig_tokens(a.get("title")) - _GENERIC_TOKENS
+    tb = sig_tokens(b.get("title")) - _GENERIC_TOKENS
+    if min(len(ta), len(tb)) < 3:
+        return False
+    return ta <= tb or tb <= ta
+
+
+def similar_event(a, b):
+    """\u540c\u4e00\u30a4\u30d9\u30f3\u30c8\u304c\u8a00\u3044\u56de\u3057\u9055\u3044\u306e\u30bf\u30a4\u30c8\u30eb\u3067\u5225\u767b\u9332\u3055\u308c\u3066\u3044\u306a\u3044\u304b\u3092\u5224\u5b9a\u3059\u308b\u3002
+    \u7d4c\u8def1\u30fb\u7d4c\u8def2\u306e\u3044\u305a\u308c\u304b\u304cTrue\u306a\u3089True\u3002\u5404\u7d4c\u8def\u306e\u8da3\u65e8\u306f\u5404\u95a2\u6570\u306e docstring \u3092\u53c2\u7167\u3002"""
+    return (_similar_by_date_and_title(a, b)
+            or _similar_by_period_and_title_containment(a, b))
 
 
 def valid_date(s):
@@ -156,6 +190,23 @@ def sanitize(ev):
     return ev
 
 
+def _merge_date_range(old_start, old_end, new_start, new_end):
+    """重複統合時の date_start/date_end 専用マージ。他フィールドは「非nullなら新値で
+    上書き」だが、日付だけはこれに委ねる: 統合後の開始日は両者のmin、終了日
+    (date_end未設定ならdate_start扱い)は両者のmaxを採用し、末日が開始日より後なら
+    date_end に設定、同日なら None とする(1日開催扱い)。
+    (後着レコードの date_start でそのまま上書きすると会期初日を喪失するための対策)"""
+    old_e = old_end or old_start
+    new_e = new_end or new_start
+    starts = [s for s in (old_start, new_start) if s]
+    if not starts:
+        return old_start, old_end
+    start = min(starts)
+    ends = [e for e in (old_e, new_e) if e]
+    end = max(ends) if ends else start
+    return start, (end if end > start else None)
+
+
 def load_json(path, default):
     if Path(path).exists():
         try:
@@ -179,15 +230,23 @@ def merge(existing, new_events):
         k = event_key(ev)
         if k in by_key:
             old = by_key[k]
+            new_start, new_end = _merge_date_range(
+                old.get("date_start"), old.get("date_end"),
+                ev.get("date_start"), ev.get("date_end"))
             for field, val in ev.items():
                 if val not in (None, "", "unknown", []) and field != "source":
                     old[field] = val
+            old["date_start"], old["date_end"] = new_start, new_end
         else:
             match = next((old for old in by_key.values() if similar_event(old, ev)), None)
             if match is not None:
+                new_start, new_end = _merge_date_range(
+                    match.get("date_start"), match.get("date_end"),
+                    ev.get("date_start"), ev.get("date_end"))
                 for field, val in ev.items():
                     if val not in (None, "", "unknown", []) and field != "source":
                         match[field] = val
+                match["date_start"], match["date_end"] = new_start, new_end
             else:
                 ev["id"] = k
                 ev["first_seen"] = TODAY.isoformat()
@@ -206,11 +265,15 @@ def dedupe_events(events):
     for ev in ordered:
         match = next((k for k in kept if similar_event(k, ev)), None)
         if match is not None:
+            new_start, new_end = _merge_date_range(
+                match.get("date_start"), match.get("date_end"),
+                ev.get("date_start"), ev.get("date_end"))
             for field, val in ev.items():
                 if field in ("first_seen", "id", "source"):
                     continue
                 if val not in (None, "", "unknown", []):
                     match[field] = val
+            match["date_start"], match["date_end"] = new_start, new_end
             removed += 1
         else:
             kept.append(ev)
