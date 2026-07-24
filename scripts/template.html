@@ -421,7 +421,7 @@
 <p class="legnote">
   カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
-  ◇ が付くイベントはドイツ国外での開催。一覧の①②③はイベントの主テーマ(モノクロ表示)。
+  ◇ が付くイベントはドイツ国外での開催。一覧の①②③④はイベントの主テーマ(モノクロ表示)。
   下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
 </p>
 
@@ -452,8 +452,8 @@ const STATUS  = __STATUS_JSON__;
 const SOURCES = __SOURCES_JSON__;
 const TODAY   = "__TODAY__";
 
-const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場"};
-const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm"};
+const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場", geopolitics:"④地政学"};
+const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp"};
 
 /* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
    基準: DB の標準的なICE所要時間で片道約4時間以内。
@@ -701,6 +701,9 @@ function passExcept(ev, ex){
 const visible = ev => passExcept(ev, null);
 const fEvents = () => EVENTS.filter(visible);
 const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
+/* 終了済み(実行日より前に終わった)イベントかどうか。一覧・各ファセット候補で
+   共通して使い、「プルダウンには出るのに一覧には出ない」不整合を防ぐ。 */
+const notEnded = e => (e.date_end||e.date_start) >= TODAY;
 
 /* ---------- 候補値(ファセット) ---------- */
 /* format==="online" は場所情報を持たない(city/country が null)ため、
@@ -710,16 +713,16 @@ const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_sta
 function facetCountry(){
   /* 地理階層 AREA > COUNTRY > CITY。COUNTRY の候補は下位の CITY 選択に従属させない
      ため city も判定から除外する(area には従属してよい)。 */
-  return [...new Set(EVENTS.filter(e=>e.format!=="online" && passExcept(e,["country","city"]))
+  return [...new Set(EVENTS.filter(e=>notEnded(e) && e.format!=="online" && passExcept(e,["country","city"]))
             .map(e=>e.country).filter(Boolean))].sort();
 }
 function facetCity(){
-  return [...new Set(EVENTS.filter(e=>e.format!=="online" && passExcept(e,"city"))
+  return [...new Set(EVENTS.filter(e=>notEnded(e) && e.format!=="online" && passExcept(e,"city"))
             .map(e=>e.city).filter(c=>c && c!=="Online"))].sort();
 }
 function facetOrg(){
   const set=new Set();
-  EVENTS.filter(e=>passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(t=>set.add(t)));
+  EVENTS.filter(e=>notEnded(e) && passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(t=>set.add(t)));
   return [...set].sort((a,b)=>a.localeCompare(b));
 }
 /* AREA の特定選択肢(DE/nonDE)を選んだと仮定した場合に1件以上ヒットするか。
@@ -727,7 +730,7 @@ function facetOrg(){
    (= area/country/city の3軸を無視して評価)。daytrip 等その他ファセットは
    現状のまま効かせる(日帰り圏ONのとき nonDE がグレーアウトする挙動を維持)。 */
 function areaOptionEnabled(area){
-  return EVENTS.some(e=>passExcept(e,["area","country","city"]) && passArea(e,area));
+  return EVENTS.some(e=>notEnded(e) && passExcept(e,["area","country","city"]) && passArea(e,area));
 }
 
 /* ---------- 動的セレクト構築(全連動) ---------- */
@@ -970,7 +973,7 @@ function fmtWhen(ev){
   return `${t}<span class="wd">${wd}</span><span class="imp">${stars(ev)}</span>`;
 }
 function drawList(){
-  let evs=fEvents().filter(e=>(e.date_end||e.date_start)>=TODAY);
+  let evs=fEvents().filter(notEnded);
   const box=document.getElementById("list");
   if(!evs.length){box.innerHTML='<div class="empty">条件に合うイベントはありません。</div>';return;}
   const byImp = state.sort==="imp";
@@ -1046,7 +1049,7 @@ function drawSources(){
     `<div class="srcsec"><h3>定点観測先(${n}件)</h3>`+
     `<div class="srclist">${links}</div></div>`+
     `<div class="srcsec"><h3>広域検索</h3>`+
-    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制のテーマ、`+
+    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学のテーマ、`+
     `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
 }
 
