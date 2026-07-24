@@ -85,9 +85,11 @@ sources:
     url: "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences"
     verified: true   # 2026-07: /en/cesifo/events より会議一覧が充実しているためこちらに変更
 
-  - name: "Hertie School (Berlin) – Events"
-    url: "https://www.hertie-school.org/en/events"
-    verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
+  - name: "Jacques Delors Centre (Hertie School, Berlin) – Events"
+    url: "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre"
+    verified: true    # Hertie本体(hertie-school.org)はCloudflare 403で取得不能のため、
+                      # 経済・EU政策系イベントを載せる傘下センターの別ドメインに切り替え(2026-07-24)。
+                      # Hertie本体の大型カンファレンスはweb検索(discovery)で補完する
 
   - name: "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen"
     url: "https://www.iwh-halle.de/veranstaltungen/"
