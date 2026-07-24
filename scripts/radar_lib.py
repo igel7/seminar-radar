@@ -95,6 +95,8 @@ _CITY_CANON = {
     "geneve": "Geneva",
     "halle": "Halle (Saale)",
     "halle saale": "Halle (Saale)",
+    "nürnberg": "Nuremberg",
+    "nuernberg": "Nuremberg",
 }
 
 
@@ -183,6 +185,52 @@ def sig_tokens(title):
     }
 
 
+def _norm_url_key(u):
+    """重複判定用のURL正規化キー。フラグメント除去・末尾スラッシュ除去・
+    スキームとホストの小文字化を行う(パスとクエリは大文字小文字を保持)。"""
+    u = safe_url(u)
+    if not u:
+        return None
+    u = u.split("#", 1)[0].rstrip("/")
+    m = re.match(r"^(https?)://([^/]*)(.*)$", u, re.IGNORECASE)
+    return m.group(1).lower() + "://" + m.group(2).lower() + m.group(3)
+
+
+def _period_overlap(a, b):
+    """開催期間(date_start〜date_end、end未設定はstart扱い)が交差するか。"""
+    a_s, b_s = a.get("date_start"), b.get("date_start")
+    if not a_s or not b_s:
+        return False
+    a_e = a.get("date_end") or a_s
+    b_e = b.get("date_end") or b_s
+    return a_s <= b_e and b_s <= a_e
+
+
+def _sig_title_tokens(ev):
+    return sig_tokens(ev.get("title")) - _GENERIC_TOKENS
+
+
+def _title_overlap_ratio(a, b):
+    """タイトル有意語(一般語除去後)の重複率 = 交差 / 小さい方の集合サイズ。
+    片方に副題や言語違いの語が付いても、短い側が長い側にほぼ含まれていれば
+    1.0に近づく。どちらかが空集合なら0.0。"""
+    ta, tb = _sig_title_tokens(a), _sig_title_tokens(b)
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / min(len(ta), len(tb))
+
+
+def _org_compatible(a, b):
+    """主催者情報(organizer + organizer_short)の語が1つでも重なるか。
+    片方でも主催者情報が無ければ判定不能としてTrue(棄却しない)。
+    共催イベント(『EWI, SVR, DIW Berlin』等)でも部分一致で通る。"""
+    oa = sig_tokens(a.get("organizer")) | sig_tokens(a.get("organizer_short"))
+    ob = sig_tokens(b.get("organizer")) | sig_tokens(b.get("organizer_short"))
+    if not oa or not ob:
+        return True
+    return bool(oa & ob)
+
+
 def _same_place(a, b):
     """同一会場判定: 両方cityが実値ならcasefold一致、両方が完全オンライン
     (format=='online'でcityがnull)なら同一とみなす。片方だけcityがない/onlineでない場合はFalse。
@@ -204,8 +252,13 @@ def _similar_by_date_and_title(a, b):
         return False
     if not _same_place(a, b):
         return False
+    # \u5b89\u5168\u5f01: \u540c\u4e00\u306e\u5b9a\u70b9\u30bd\u30fc\u30b9\u540c\u58eb\u306f\u5bfe\u8c61\u5916(\u540c\u3058\u5b9a\u70b9\u30da\u30fc\u30b8\u306b\u8f09\u308b\u540c\u30b7\u30ea\u30fc\u30ba\u306e
+    # \u5225\u30a4\u30d9\u30f3\u30c8(\u8b1b\u6f14\u8005\u9055\u3044\u7b49)\u3092\u8aa4\u3063\u3066\u7d71\u5408\u3057\u306a\u3044\u305f\u3081)\u3002\u7570\u306a\u308b\u5b9a\u70b9\u540c\u58eb\u3084
+    # web\u691c\u7d22/\u624b\u52d5\u53d6\u8fbc\u304c\u7d61\u3080\u30da\u30a2\u306f\u5224\u5b9a\u5bfe\u8c61\u3068\u3059\u308b\u3002
     src_a, src_b = str(a.get("source") or ""), str(b.get("source") or "")
-    if not any(("web\u691c\u7d22" in s or "\u624b\u52d5\u53d6\u8fbc" in s) for s in (src_a, src_b)):
+    watch_only = not any(("web\u691c\u7d22" in s or "\u624b\u52d5\u53d6\u8fbc" in s)
+                         for s in (src_a, src_b))
+    if watch_only and src_a == src_b:
         return False
     org_a, org_b = a.get("organizer_short"), b.get("organizer_short")
     org_tokens = set()
@@ -225,30 +278,64 @@ def _similar_by_period_and_title_containment(a, b):
     \u3069\u3061\u3089\u304b\u3092\u90e8\u5206\u96c6\u5408\u3068\u3059\u308b\u5305\u542b\u95a2\u4fc2\u306b\u3042\u308c\u3070\u540c\u4e00\u3068\u307f\u306a\u3059\u3002
     \u5305\u542b + \u540c\u90fd\u5e02 + \u671f\u9593\u4ea4\u5dee\u306f\u8aa4\u308a\u306b\u304f\u3044\u5f37\u3044\u30b7\u30b0\u30ca\u30eb\u306a\u306e\u3067\u3001\u5b9a\u70b9\u30bd\u30fc\u30b9\u540c\u58eb\u3067\u3082
     \u5b89\u5168\u5f01\u306a\u3057\u3067\u30de\u30fc\u30b8\u5bfe\u8c61\u3068\u3059\u308b\u3002"""
-    a_s, b_s = a.get("date_start"), b.get("date_start")
-    if not a_s or not b_s:
-        return False
-    a_e = a.get("date_end") or a_s
-    b_e = b.get("date_end") or b_s
-    if not (a_s <= b_e and b_s <= a_e):
+    if not _period_overlap(a, b):
         return False
     if not _same_place(a, b):
         return False
     # _GENERIC_TOKENS(conference/programme等の一般語)を除いた集合同士で包含を見る。
     # "OeNB|SUERF|...Yale PFS Conference" と "...Yale Program on Financial Stability
     # Conference" のように、"program"のような一般語の有無だけで包含が壊れるのを防ぐ。
-    ta = sig_tokens(a.get("title")) - _GENERIC_TOKENS
-    tb = sig_tokens(b.get("title")) - _GENERIC_TOKENS
-    if min(len(ta), len(tb)) < 3:
+    ta, tb = _sig_title_tokens(a), _sig_title_tokens(b)
+    n = min(len(ta), len(tb))
+    if n < 2:
         return False
-    return ta <= tb or tb <= ta
+    if not (ta <= tb or tb <= ta):
+        return False
+    # 有意語2語だけの包含("Scientific Workshop on Productivity"等)は単独では
+    # 弱いシグナルなので、主催者の語が重なることを追加で要求する。
+    return n >= 3 or _org_compatible(a, b)
+
+
+def _similar_by_url(a, b):
+    """経路3(URL一致 + 期間交差 + タイトル語の重複率):
+    同一URLを指し開催期間が交差する2件は、タイトルが言語違い(英/独)や
+    副題の有無で食い違っていても同一イベントである可能性が極めて高い。
+    ただし一覧ページのURL(1つのURLを複数イベントが共有)経由の誤統合を防ぐため、
+    タイトル有意語の重複率 >= 0.5 を要求する。
+    都市の一致は要求しない(片方の抽出ミスや表記ゆれで都市が割れたケースを救う)。"""
+    ua, ub = _norm_url_key(a.get("url")), _norm_url_key(b.get("url"))
+    if not ua or ua != ub:
+        return False
+    if not _period_overlap(a, b):
+        return False
+    return _title_overlap_ratio(a, b) >= 0.5
+
+
+def _similar_by_high_overlap(a, b):
+    """経路4(期間交差 + 同一都市 + タイトル有意語の高重複率):
+    URLも情報源も異なるが、タイトルの有意語がほぼ一致する場合
+    (例: "Money Market Event – Geneva (Tschudin & Moser)" と
+    "SNB Money Market Event: Speeches by Petra Tschudin and Thomas Moser")。
+    同一シリーズの別回(講演者違い)は重複率が0.5前後に留まるため閾値0.8で弾ける。
+    有意語2語だけの一致は経路2と同様に主催者の語の重なりを追加要求する。"""
+    if not _period_overlap(a, b) or not _same_place(a, b):
+        return False
+    ta, tb = _sig_title_tokens(a), _sig_title_tokens(b)
+    n = min(len(ta), len(tb))
+    if n < 2:
+        return False
+    if len(ta & tb) / n < 0.8:
+        return False
+    return n >= 3 or _org_compatible(a, b)
 
 
 def similar_event(a, b):
-    """\u540c\u4e00\u30a4\u30d9\u30f3\u30c8\u304c\u8a00\u3044\u56de\u3057\u9055\u3044\u306e\u30bf\u30a4\u30c8\u30eb\u3067\u5225\u767b\u9332\u3055\u308c\u3066\u3044\u306a\u3044\u304b\u3092\u5224\u5b9a\u3059\u308b\u3002
-    \u7d4c\u8def1\u30fb\u7d4c\u8def2\u306e\u3044\u305a\u308c\u304b\u304cTrue\u306a\u3089True\u3002\u5404\u7d4c\u8def\u306e\u8da3\u65e8\u306f\u5404\u95a2\u6570\u306e docstring \u3092\u53c2\u7167\u3002"""
+    """同一イベントが言い回し違いのタイトルで別登録されていないかを判定する。
+    経路1〜4のいずれかがTrueならTrue。各経路の趣旨は各関数の docstring を参照。"""
     return (_similar_by_date_and_title(a, b)
-            or _similar_by_period_and_title_containment(a, b))
+            or _similar_by_period_and_title_containment(a, b)
+            or _similar_by_url(a, b)
+            or _similar_by_high_overlap(a, b))
 
 
 def valid_date(s):
