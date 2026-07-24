@@ -38,7 +38,7 @@ sources:
 
   - name: "ifo Institut – Veranstaltungen"
     url: "https://www.ifo.de/veranstaltungen"
-    verified: false   # JS描画: fetch_page.pyを使用
+    verified: false   # 一覧はJS描画で直接取得不可。site:ifo.de veranstaltung 検索とCESifo会議一覧で補完
 
   - name: "DIW Berlin – Veranstaltungen"
     url: "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"
@@ -58,7 +58,7 @@ sources:
 
   - name: "IMFS Frankfurt – 全ての今後のイベント"
     url: "https://www.imfs-frankfurt.de/en/events/upcoming-events"
-    verified: true   # JS描画: fetch_page.pyを必ず使用
+    verified: true   # 一覧はJS描画。curl(実ブラウザUA)でカテゴリ別サブページ(/en/events/imfs-conferences/ 等)を辿って抽出
 
   - name: "House of Finance (Goethe大) – Veranstaltungen"
     url: "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen"
@@ -66,7 +66,7 @@ sources:
 
   - name: "SUERF – Events"
     url: "https://www.suerf.org/events/"
-    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
+    verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   - name: "ZEW Mannheim – Veranstaltungen"
     url: "https://www.zew.de/veranstaltungen"
@@ -79,17 +79,15 @@ sources:
 
   - name: "Frankfurt School of Finance & Management – Events"
     url: "https://forum.frankfurt-school.de/konferenzen/"
-    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
+    verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   - name: "CESifo (München) – Veranstaltungen"
-    url: "https://www.ifo.de/en/cesifo/events"
-    verified: true
+    url: "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences"
+    verified: true   # 2026-07: /en/cesifo/events より会議一覧が充実しているためこちらに変更
 
-  - name: "Jacques Delors Centre (Hertie School, Berlin) – Events"
-    url: "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre"
-    verified: true    # Hertie本体(hertie-school.org)はCloudflare 403で取得不能のため、
-                      # 経済・EU政策系イベントを載せる傘下センターの別ドメインに切り替え(2026-07-24)。
-                      # Hertie本体の大型カンファレンスはweb検索(discovery)で補完する
+  - name: "Hertie School (Berlin) – Events"
+    url: "https://www.hertie-school.org/en/events"
+    verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   - name: "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen"
     url: "https://www.iwh-halle.de/veranstaltungen/"
@@ -123,7 +121,7 @@ sources:
 
   - name: "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen"
     url: "https://www.iwkoeln.de/veranstaltungen.html"
-    verified: false   # JS描画: fetch_page.pyを使用
+    verified: false   # 401+ボット対策で自動取得不可: 検索補完かINBOXの手動取込で対応
 
   # --- 追加: 欧州(将来拡大の布石) ---
   - name: "Bruegel (Brussels) – Events"
@@ -153,7 +151,7 @@ sources:
 
   - name: "NBP – Narodowy Bank Polski – Conferences"
     url: "https://nbp.pl/en/economic-education/conferences/"
-    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら site:nbp.pl 検索で補完
+    verified: false   # Imperva系ボット対策で直接取得不可: site:nbp.pl 検索と共催先(CEBRA等)で補完、またはINBOX
 
   - name: "NBU – National Bank of Ukraine – Research Events"
     url: "https://bank.gov.ua/en/research/events"
@@ -165,11 +163,11 @@ sources:
 
   - name: "Bank of Lithuania – Events"
     url: "https://www.lb.lt/en/events"
-    verified: false   # Cloudflareブロック: data/manual/ の手動取込で補完
+    verified: false   # Cloudflareブロック: INBOX/data-manualの手動取込で補完
 
   - name: "Latvijas Banka – Research/Events"
-    url: "https://www.macroeconomics.lv/research-seminars"
-    verified: false   # 旧 /events は404。年別一覧(例: /research-seminars/research-seminars-latvijas-banka-2026)も確認する。WebFetchが403の場合は fetch_page.py で再試行
+    url: "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026"
+    verified: true   # 年別一覧ページ(親ページ /research-seminars は404)。年が変わったらURLの年号を更新するか、新しい年の一覧をsite:検索で探す
 
   # --- 追加: 中銀系研究機関・研究ネットワーク ---
   - name: "Study Center Gerzensee – Events"
@@ -177,8 +175,8 @@ sources:
     verified: true
 
   - name: "CEBRA – Central Bank Research Association – Events"
-    url: "https://www.cebra.org/events"
-    verified: true
+    url: "https://cebra.org/events/upcoming/"
+    verified: true   # 2026-07: /events はJS描画のため今後イベント一覧の静的ページに変更
 
   # --- 追加: 東欧・バルカン・バルトの中央銀行 ---
   - name: "Eesti Pank (エストニア) – Events"
@@ -191,15 +189,15 @@ sources:
 
   - name: "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars"
     url: "https://www.bnr.ro/en/24077-bears"
-    verified: true   # JS描画: fetch_page.pyを必ず使用
+    verified: true   # 一覧はJS描画で自動取得不可。BEARSは原則毎月最終木曜15:00開催: 検索補完かINBOXで対応
 
   - name: "HNB – Croatian National Bank – Conferences"
     url: "https://www.hnb.hr/en/about-us/events"
-    verified: true   # JS描画(Liferay): fetch_page.py --wait 6000 で取得
+    verified: true   # 一覧はJS描画(Liferay)で自動取得不可。旗艦のDubrovnik Economic Conference(毎年5月末)は検索で補完
 
   - name: "BNB – Bulgarian National Bank – Events"
     url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
-    verified: true   # JS描画: fetch_page.pyを必ず使用
+    verified: true   # JS描画+古いTLSで自動取得不可: 検索補完かINBOXで対応(イベント自体が稀)
 
   - name: "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)"
     url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/"
@@ -219,7 +217,7 @@ sources:
 
   - name: "Bank of Albania – Events"
     url: "https://www.bankofalbania.org/Events/"
-    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
+    verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   # --- 追加: 決済・デジタルユーロ ---
   - name: "ECB – Payments & Markets / Digital Euro events"
@@ -228,7 +226,7 @@ sources:
 
   - name: "EPC – European Payments Council – Events"
     url: "https://www.europeanpaymentscouncil.eu/news-insights/events"
-    verified: false   # 403(ボット対策): fetch_page.py(実ブラウザUA)で再試行、駄目なら検索補完
+    verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   # --- 追加: 大学の公開セミナー・講演 ---
   - name: "ECONtribute (Bonn/Köln) – Events"

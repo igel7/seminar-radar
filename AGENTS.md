@@ -30,25 +30,23 @@
   該当ソースの `error` 欄に `代替URL: <URL>` と記録する。
 - `verified: false` のソースでURLが死んでいる場合も同様にweb検索でリカバリを試み、
   見つからなければ失敗として記録する。
-- curl/WebFetch で取れない・JS描画が疑われるソースは `python3 scripts/fetch_page.py <URL>`
-  で再取得してから抽出する(初回は pip install playwright が必要な場合がある)。
-  それでも取れないもの(Cloudflare等)は失敗として記録する。
-- sources.yaml で `# JS描画` の注記があるソースは、curl/WebFetch を試さず最初から
-  `python3 scripts/fetch_page.py <URL>` で取得する。
-- WebFetch/curl が **403 Forbidden** を返すソース(ボット対策WAF。sources.yaml に
-  `# 403` の注記があるものを含む)は、諦める前に `python3 scripts/fetch_page.py <URL>`
-  で再試行する(実ブラウザ相当のUAとJS実行でWAFを通過できる場合がある)。
-  それでも403・ブロックされる場合は `site:<ドメイン>` のweb検索で補完し、
-  駄目なら失敗として記録する。
-- fetch_page.py が終了コード2(playwright未インストール)を返した場合は、
-  `pip install playwright` を実行してから再試行する(`playwright install` は実行しない。
-  ブラウザは /opt/pw-browsers に既にある)。
+- **headless Chromium(scripts/fetch_page.py)はこの実行環境では使えない**
+  (外向き接続がプロキシに遮断されERR_CONNECTION_RESETになることを2026-07に
+  全パターンで確認済み)。**fetch_page.py は使わず、時間を浪費しないこと。**
+- WebFetch/curl が **403/401 を返すソース**(ボット対策WAF。sources.yaml に注記あり)は、
+  実ブラウザ相当のUser-Agentを付けた curl で再試行する:
+  `curl -sL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" <URL>`
+  (SUERF・Frankfurt School・NBU はこれで取得できる実績あり)。
+- **JS描画で一覧が空になるソース**(sources.yaml に注記あり)は、同ドメインの静的な
+  サブページ(カテゴリ別一覧・個別イベントページ・RSS)を curl で辿るか、
+  `site:<ドメイン>` のweb検索で個別イベントを探して補完する。
+  それでも取れないものは失敗として記録する(INBOX による手動取込の対象)。
 
 ### 2.5 手動取込(INBOX と data/manual/)の処理
 
 **(a) INBOX.md**: リポジトリ直下の `INBOX.md` を読み、`--- ここから下に貼り付け ---` の
 区切り線より下に内容があれば、次のとおり処理する:
-- **URLだけの行**: そのURLをWebFetch(駄目なら fetch_page.py)で取得し、通常の
+- **URLだけの行**: そのURLをWebFetch(駄目なら実ブラウザUA付きcurl)で取得し、通常の
   イベントスキーマに従ってイベントを抽出する。取得がブロックされた場合は、そのURLの
   ページタイトル・イベント名でweb検索して情報を補完してよい(日付が確認できたもののみ)。
 - **それ以外のテキスト**(ユーザーが貼り付けたページ本文など): そのテキスト自体を
