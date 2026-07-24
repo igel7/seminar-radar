@@ -25,7 +25,7 @@ SOURCES_FILE = ROOT / "sources.yaml"
 
 TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
-THEMES = ["central_bank", "real_economy", "fin_markets", "geopolitics"]
+THEMES = ["central_bank", "real_economy", "fin_markets", "geopolitics", "climate_esg"]
 OVERRIDES_FILE = ROOT / "data" / "overrides.json"
 
 _URL_RE = re.compile(r"^https?://", re.IGNORECASE)

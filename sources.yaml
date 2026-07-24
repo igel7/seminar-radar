@@ -247,6 +247,31 @@ sources:
     url: "https://www.wu.ac.at/en/the-university/events"
     verified: false   # 旧 /en/events は404だったため大学イベント一覧に差し替え
 
+  # --- 追加: 環境・ESG・エネルギー転換 ---
+  - name: "Green and Sustainable Finance Cluster Germany (Frankfurt)"
+    url: "https://gsfc-germany.com/en/"
+    verified: false   # URL未確認: 初回巡回で要検証(専用のイベント一覧ページが見つからず、トップページを暫定採用)
+
+  - name: "FNG – Forum Nachhaltige Geldanlagen (Berlin)"
+    url: "https://www.forum-ng.org/en/termine"
+    verified: false
+
+  - name: "PIK – Potsdam-Institut für Klimafolgenforschung"
+    url: "https://www.pik-potsdam.de/en/news/events/public-events"
+    verified: false
+
+  - name: "MCC – Mercator Research Institute on Global Commons and Climate Change (Berlin)"
+    url: "https://www.mcc-berlin.net/en/news/events/recent.html"
+    verified: false   # 2025年よりPIK傘下に統合済みだが、専用ドメインの一覧ページは存続
+
+  - name: "Agora Energiewende (Berlin)"
+    url: "https://www.agora-energiewende.org/news-events"
+    verified: false
+
+  - name: "dena – Deutsche Energie-Agentur (Berlin)"
+    url: "https://www.dena.de/infocenter/alle-veranstaltungen/"
+    verified: false
+
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)
 # 毎日この観点で web 検索を行い、新規イベントを追加する
@@ -261,3 +286,4 @@ discovery_topics:
   - "デジタルユーロ・CBDC・決済インフラに関するイベントやウェビナー(例: digital euro webinar, CBDC conference, Zahlungsverkehr Veranstaltung, ECB digital euro information session)"
   - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: SUERF conference 2026, Frankfurt School Konferenz, Hertie School event, site:nbp.pl conference seminar, Bank of Lithuania conference, site:lb.lt events, European Payments Council event, Bank of Albania conference)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
   - "地政学・安全保障・地経学に関するセミナーや講演(ドイツ・対象地域またはオンライン)。例: geopolitics seminar Germany, economic security conference, Sicherheitspolitik Konferenz, sanctions export controls seminar, defence economics workshop"
+  - "サステナブルファイナンス・ESG・気候関連の会議やセミナー(ドイツ・対象地域またはオンライン)。例: sustainable finance conference Germany, ESG Konferenz, Klimarisiken Bankenaufsicht, carbon market CBAM conference, NGFS conference, Energiewende Konferenz, climate economics workshop"
