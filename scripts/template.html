@@ -379,6 +379,15 @@
       <select id="city"></select></label>
     <label class="fld"><span class="cap">Organizer</span>
       <select id="org"></select></label>
+    <label class="fld"><span class="cap">Theme</span>
+      <select id="theme">
+        <option value="">すべて</option>
+        <option value="central_bank">①中銀</option>
+        <option value="real_economy">②実体経済</option>
+        <option value="fin_markets">③規制・市場</option>
+        <option value="geopolitics">④地政学</option>
+        <option value="climate_esg">⑤環境ESG</option>
+      </select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
         <option value="">全部(低・中・高)</option>
@@ -421,7 +430,7 @@
 <p class="legnote">
   カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
-  ◇ が付くイベントはドイツ国外での開催。一覧の①②③④はイベントの主テーマ(モノクロ表示)。
+  ◇ が付くイベントはドイツ国外での開催。一覧の①②③④⑤はイベントの主テーマ(モノクロ表示)。
   下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
 </p>
 
@@ -452,8 +461,8 @@ const STATUS  = __STATUS_JSON__;
 const SOURCES = __SOURCES_JSON__;
 const TODAY   = "__TODAY__";
 
-const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場", geopolitics:"④地政学"};
-const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp"};
+const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場", geopolitics:"④地政学", climate_esg:"⑤環境ESG"};
+const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp", climate_esg:"ce"};
 
 /* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
    基準: DB の標準的なICE所要時間で片道約4時間以内。
@@ -597,7 +606,7 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
-const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"", lang:"",
+const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"", theme:"", lang:"",
                    online:true, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
@@ -611,6 +620,7 @@ function loadState(){
   if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
   if(["","2","3"].includes(s.imp)) state.imp = s.imp;
+  if(["",...Object.keys(THLBL)].includes(s.theme)) state.theme = s.theme;
   if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
   if(typeof s.q==="string") state.q = s.q;
@@ -624,7 +634,7 @@ function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
       area:state.area, country:state.country, city:state.city, org:state.org,
-      imp:state.imp, lang:state.lang, online:state.online,
+      imp:state.imp, theme:state.theme, lang:state.lang, online:state.online,
       daytrip:state.daytrip, q:state.q, sort:state.sort
     }));
   }catch(e){}
@@ -655,6 +665,10 @@ function passImp(ev){
   if(state.imp==="2" && imp(ev)<2) return false;
   if(state.imp==="3" && imp(ev)<3) return false;
   return true;
+}
+function passTheme(ev){
+  if(state.theme==="") return true;
+  return (ev.themes||[]).includes(state.theme);
 }
 function passLang(ev){
   if(state.lang==="en" && !(ev.language==="en"||ev.language==="en+de"||ev.language==null)) return false;
@@ -692,6 +706,7 @@ function passExcept(ev, ex){
   if(!s.has("city")    && !passCity(ev))    return false;
   if(!s.has("org")     && !passOrg(ev))     return false;
   if(!s.has("imp")     && !passImp(ev))     return false;
+  if(!s.has("theme")   && !passTheme(ev))   return false;
   if(!s.has("lang")    && !passLang(ev))    return false;
   if(!s.has("online")  && !passOnline(ev))  return false;
   if(!s.has("daytrip") && !passDaytrip(ev)) return false;
@@ -789,6 +804,7 @@ function rebuildSelects(){
   document.getElementById("area").value   = state.area;
   updateAreaOptions();
   document.getElementById("imp").value    = state.imp;
+  document.getElementById("theme").value  = state.theme;
   document.getElementById("lang").value   = state.lang;
   document.getElementById("q").value      = state.q;
   document.getElementById("sort").value   = state.sort;
@@ -1049,7 +1065,7 @@ function drawSources(){
     `<div class="srcsec"><h3>定点観測先(${n}件)</h3>`+
     `<div class="srclist">${links}</div></div>`+
     `<div class="srcsec"><h3>広域検索</h3>`+
-    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学のテーマ、`+
+    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESGのテーマ、`+
     `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
 }
 
@@ -1087,6 +1103,7 @@ document.getElementById("country").addEventListener("change",e=>{state.country=e
 document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
 document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
 document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
+document.getElementById("theme").addEventListener("change",e=>{state.theme=e.target.value;redraw();});
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
 document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
 document.getElementById("daytrip").addEventListener("change",e=>{state.daytrip=e.target.checked;redraw();});
