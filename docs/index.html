@@ -353,7 +353,7 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>2026-07-27 06:20 (CEST)</b></span>
+    <span class="updated">LAST UPDATE: <b>2026-07-27 11:48 (CEST)</b></span>
     <div class="hdtools">
       <div class="srcwrap" id="srcwrap">
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
@@ -390,7 +390,8 @@
       </select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
-        <option value="">全部(低・中・高)</option>
+        <option value="1">標準(★1以上)</option>
+        <option value="0">すべて(定例セミナー含む)</option>
         <option value="2">中・高</option>
         <option value="3">高</option>
       </select></label>
@@ -432,6 +433,7 @@
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
   ◇ が付くイベントはドイツ国外での開催。一覧の①②③④⑤はイベントの主テーマ(モノクロ表示)。
   下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
+  ★0(毎週型の定例セミナー)は既定では非表示。Importanceで「すべて」を選ぶと表示される。
 </p>
 
 <div class="listhead">
@@ -538,7 +540,14 @@ const ORG_GROUP_LABEL = {cb:"中銀・規制当局", tt:"シンクタンク・�
                          uni:"大学", other:"その他"};
 
 /* ---------- ラベル生成 ---------- */
-function imp(ev){ const n=+ev.importance; return (n===1||n===2||n===3)?n:1; }
+/* importance の真値(0〜3)。0=毎週型の定例研究セミナー等のマイクロイベント。
+   null/未設定/不正値は1(定例セミナー相当)扱い。
+   注意: `+ev.importance` は使わない(+null===0 となり、未設定を誤って0=マイクロ
+   イベント扱いしてしまうため)。 */
+function imp(ev){ const n=ev.importance; return (n===0||n===1||n===2||n===3)?n:1; }
+/* CSS クラス用のバケツ(i1/i2/i3のみ既存)。importance 0 は新クラスを増やさず
+   1(グレー)と同じ見た目に丸める。imp()自体はフィルタ・★表示のため0を維持する。 */
+function impCls(ev){ return imp(ev)||1; }
 function isForeign(ev){ return ev.country!=null && ev.country!=="DE"; }
 /* 「Call for Papers・招待制ではなく、登録すれば参加できる」イベントか判定する。
    カレンダー上の下線表示・一覧の「登録参加可」バッジで使う。 */
@@ -606,7 +615,7 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
-const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"", theme:"", lang:"",
+const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"1", theme:"", lang:"",
                    online:true, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
@@ -619,7 +628,9 @@ function loadState(){
   if(!s || typeof s!=="object") return;
   if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
-  if(["","2","3"].includes(s.imp)) state.imp = s.imp;
+  /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★1以上(imp:"1")に移行する */
+  if(s.imp==="") state.imp = "1";
+  else if(["0","1","2","3"].includes(s.imp)) state.imp = s.imp;
   if(["",...Object.keys(THLBL)].includes(s.theme)) state.theme = s.theme;
   if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
@@ -662,9 +673,7 @@ function passOrg(ev){
   return orgTokens(ev).includes(state.org);
 }
 function passImp(ev){
-  if(state.imp==="2" && imp(ev)<2) return false;
-  if(state.imp==="3" && imp(ev)<3) return false;
-  return true;
+  return imp(ev) >= +state.imp;      /* state.imp="0"なら全部通る。既定"1"で★0(imp0)を隠す */
 }
 function passTheme(ev){
   if(state.theme==="") return true;
@@ -883,7 +892,7 @@ function drawMonth(){
       let li=0;
       for(; li<laneEnd.length; li++){ if(laneEnd[li]<s.segStart) break; }
       s.lane=li; laneEnd[li]=s.segEnd;
-      laneImp[li]=Math.max(laneImp[li]||0, imp(s.ev));
+      laneImp[li]=Math.max(laneImp[li]||0, impCls(s.ev));
     }
 
     html+="<tr>";
@@ -908,14 +917,14 @@ function drawMonth(){
         const flatR   = iso<e.date_end;            /* 右へ継続(翌週含む)→右角を落とす */
         const bridgeL = iso>s.segStart;            /* 同一週内に左隣がある→負マージンで跨ぐ */
         const bridgeR = iso<s.segEnd;              /* 同一週内に右隣がある→負マージンで跨ぐ */
-        const cc=[`i${imp(e)}`, lhCls, isForeign(e)?"foreign":"",
+        const cc=[`i${impCls(e)}`, lhCls, isForeign(e)?"foreign":"",
                   isStart?"startcap":"", flatL?"flatL":"", flatR?"flatR":"",
                   bridgeL?"bridgeL":"", bridgeR?"bridgeR":""].filter(Boolean).join(" ");
         let lbl="";
         if(iso===s.segStart){                      /* 週内の最初のカバー日にだけラベルを1回 */
           const n=daysBetween(s.segStart,s.segEnd)+1;
           const text=`${evLabel(e)} ${endSuffix(e)}`;
-          const lblCls=`seglbl i${imp(e)}${isOpenReg(e)?' openreg':''}`;
+          const lblCls=`seglbl i${impCls(e)}${isOpenReg(e)?' openreg':''}`;
           lbl=`<span class="${lblCls}" style="--n:${n}">${esc(text)}</span>`;
         }
         lanesHtml+=`<a class="seg ${cc}" href="#ev-${esc(e.id)}" title="${esc(spanTitle(e))}">${lbl}</a>`;
@@ -925,7 +934,7 @@ function drawMonth(){
       const singles=evs.filter(e=>!isMulti(e) && inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
       let singleHtml="";
       for(const e of singles){
-        const ic=`i${imp(e)}${isForeign(e)?' foreign':''}${isOpenReg(e)?' openreg':''}`;
+        const ic=`i${impCls(e)}${isForeign(e)?' foreign':''}${isOpenReg(e)?' openreg':''}`;
         singleHtml+=`<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(evLabel(e))}</a>`;
       }
       html+=`<td class="${cls}"><span class="dnum">${dnum}</span>${lanesBox}${singleHtml}</td>`;
@@ -955,7 +964,7 @@ function drawWeek(){
     const empty=day.length===0;
     const cls=["wday", isToday?"today":"", isWend?"wend":"", empty?"empty":""].join(" ");
     const evHtml=day.map(e=>{
-      const ic=`i${imp(e)}${isForeign(e)?' foreign':''}${isOpenReg(e)?' openreg':''}`;
+      const ic=`i${impCls(e)}${isForeign(e)?' foreign':''}${isOpenReg(e)?' openreg':''}`;
       if(!isMulti(e) || iso===e.date_start){
         /* 初日 or 単日: フル+期間サフィックス */
         const suf=isMulti(e)?`<span class="evsp">${esc(endSuffix(e))}</span>`:"";
@@ -1021,7 +1030,7 @@ function drawList(){
     const orig=u
       ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(ev.title)}</a>`
       : esc(ev.title);
-    const iv=imp(ev);
+    const iv=impCls(ev);
     const ru=safeUrl(ev.registration_url);
     html+=`<div class="row" id="ev-${esc(ev.id)}">
       <div class="when">${fmtWhen(ev)}</div>
