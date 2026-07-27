@@ -272,6 +272,38 @@ sources:
     url: "https://www.dena.de/infocenter/alle-veranstaltungen/"
     verified: false
 
+  # --- 追加: AI・デジタル政策 ---
+  - name: "appliedAI Institute (München) – Events"
+    url: "https://www.appliedai-institute.de/en/participate/events/"
+    verified: false   # 現時点でイベント掲載0件だがページ構造は確認済み(静的HTML、SPAではない)
+
+  - name: "Bitkom (Berlin) – Veranstaltungen"
+    url: "https://www.bitkom.org/events"
+    verified: false
+
+  # --- 追加: 中国・地政学 ---
+  - name: "MERICS – Mercator Institute for China Studies (Berlin) – Events"
+    url: "https://merics.org/en/events"
+    verified: false
+
+  - name: "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen"
+    url: "https://www.swp-berlin.org/en/swp/about-us/organization/research-and-information-infrastructure/events-and-distribution"
+    verified: false   # URL未確認: 初回巡回で要検証(サイト内に統一的なイベント一覧ページが見当たらず、
+                      # イベント部門の説明ページを暫定採用。site:swp-berlin.org events / Veranstaltungen で要確認)
+
+  # --- 追加: 日本・アジア経済関係 ---
+  - name: "JDZB – 日独センター (Berlin) – Veranstaltungen"
+    url: "https://jdzb.de/de/events"
+    verified: false
+
+  - name: "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen"
+    url: "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/"
+    verified: false
+
+  - name: "EU-Japan Centre for Industrial Cooperation – Events/Webinars"
+    url: "https://www.eu-japan.eu/tags/webinar"
+    verified: false   # ウェビナー中心の一覧。オンライン開催分が収載対象になる(現地開催の企業ミッション等は対象地域外の可能性が高い)
+
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)
 # 毎日この観点で web 検索を行い、新規イベントを追加する
@@ -287,3 +319,6 @@ discovery_topics:
   - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: SUERF conference 2026, Frankfurt School Konferenz, Hertie School event, site:nbp.pl conference seminar, Bank of Lithuania conference, site:lb.lt events, European Payments Council event, Bank of Albania conference)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
   - "地政学・安全保障・地経学に関するセミナーや講演(ドイツ・対象地域またはオンライン)。例: geopolitics seminar Germany, economic security conference, Sicherheitspolitik Konferenz, sanctions export controls seminar, defence economics workshop"
   - "サステナブルファイナンス・ESG・気候関連の会議やセミナー(ドイツ・対象地域またはオンライン)。例: sustainable finance conference Germany, ESG Konferenz, Klimarisiken Bankenaufsicht, carbon market CBAM conference, NGFS conference, Energiewende Konferenz, climate economics workshop"
+  - "AI・デジタル技術と経済・金融・規制に関する会議やセミナー(例: AI economy conference Germany, KI Konferenz Wirtschaft, AI Act Umsetzung Veranstaltung, AI banking supervision seminar, KI Arbeitsmarkt Produktivität)"
+  - "中国経済・欧中経済関係に関する会議やセミナー(例: China economic outlook Germany, China Konferenz Wirtschaft, de-risking China seminar, EU China trade investment conference, MERICS event)"
+  - "日本経済・日独/日欧経済関係に関する会議やセミナー(例: Japan Wirtschaft Konferenz Deutschland, Deutsch-Japanisches Wirtschaftsforum, Japan economy seminar, Bank of Japan lecture Europe, EU-Japan EPA event)"

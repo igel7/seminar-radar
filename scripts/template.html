@@ -387,6 +387,9 @@
         <option value="fin_markets">③規制・市場</option>
         <option value="geopolitics">④地政学</option>
         <option value="climate_esg">⑤環境ESG</option>
+        <option value="ai">⑥AI</option>
+        <option value="china">⑦中国</option>
+        <option value="japan">⑧日本</option>
       </select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
@@ -431,7 +434,7 @@
 <p class="legnote">
   カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
-  ◇ が付くイベントはドイツ国外での開催。一覧の①②③④⑤はイベントの主テーマ(モノクロ表示)。
+  ◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。
   下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
   ★0(毎週型の定例セミナー)は既定では非表示。Importanceで「★0以上」を選ぶと表示される。
 </p>
@@ -463,8 +466,8 @@ const STATUS  = __STATUS_JSON__;
 const SOURCES = __SOURCES_JSON__;
 const TODAY   = "__TODAY__";
 
-const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場", geopolitics:"④地政学", climate_esg:"⑤環境ESG"};
-const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp", climate_esg:"ce"};
+const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場", geopolitics:"④地政学", climate_esg:"⑤環境ESG", ai:"⑥AI", china:"⑦中国", japan:"⑧日本"};
+const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp", climate_esg:"ce", ai:"ai", china:"cn", japan:"jp"};
 
 /* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
    基準: DB の標準的なICE所要時間で片道約4時間以内。
@@ -1074,7 +1077,7 @@ function drawSources(){
     `<div class="srcsec"><h3>定点観測先(${n}件)</h3>`+
     `<div class="srclist">${links}</div></div>`+
     `<div class="srcsec"><h3>広域検索</h3>`+
-    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESGのテーマ、`+
+    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本のテーマ、`+
     `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
 }
 
