@@ -28,6 +28,7 @@ TODAY = datetime.now(TZ).date()
 THEMES = ["central_bank", "real_economy", "fin_markets", "geopolitics", "climate_esg",
           "ai", "china", "japan"]
 OVERRIDES_FILE = ROOT / "data" / "overrides.json"
+ALIASES_FILE = ROOT / "data" / "aliases.json"
 
 _URL_RE = re.compile(r"^https?://", re.IGNORECASE)
 
@@ -169,17 +170,54 @@ _STOPWORDS = {
     "und", "der", "die", "das", "f\u00fcr", "im", "zu", "ein", "eine",
 }
 _ORDINAL_RE = re.compile(r"^\d+(st|nd|rd|th)$")
+_ORDINAL_SUFFIX_RE = re.compile(r"^(\d+)(st|nd|rd|th)$", re.IGNORECASE)
 _GENERIC_TOKENS = {
     "conference", "seminar", "workshop", "symposium", "annual", "event",
     "events", "meeting", "lecture", "konferenz", "tagung", "veranstaltung",
     "forum", "summit", "program", "programme",
 }
 
+# \u30ed\u30fc\u30de\u6570\u5b57(\u5168\u5927\u6587\u5b57\u30c8\u30fc\u30af\u30f3\u306e\u307f\u5bfe\u8c61\u3002\u5c0f\u6587\u5b57\u306e\u82f1\u5358\u8a9e\u304c\u305f\u307e\u305f\u307e\u30ed\u30fc\u30de\u6570\u5b57\u306e
+# \u6587\u5b57\u3060\u3051\u3067\u69cb\u6210\u3055\u308c\u308b\u5834\u5408(\u4f8b "mix")\u306e\u8aa4\u5909\u63db\u3092\u907f\u3051\u308b\u305f\u3081\u306e\u5b89\u5168\u5f01)\u3002
+# I\u301cXLIX(1\u301c49)\u7a0b\u5ea6\u306b\u9650\u5b9a\u3057\u3066\u5909\u63db\u3059\u308b(\u4f1a\u8b70\u306e\u56de\u6570\u8868\u8a18\u3067\u4f7f\u308f\u308c\u308b\u7bc4\u56f2)\u3002
+_ROMAN_RE = re.compile(r"^(?=[MDCLXVI])M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$")
+_ROMAN_VALUES = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
+
+
+def _roman_to_int(s):
+    total, prev = 0, 0
+    for ch in reversed(s):
+        val = _ROMAN_VALUES[ch]
+        if val < prev:
+            total -= val
+        else:
+            total += val
+            prev = val
+    return total
+
+
+def _normalize_number_word(word, original):
+    """\u82f1\u8a9e\u5e8f\u6570\u306e\u63a5\u5c3e\u8f9e\u9664\u53bb(35th\u21923\u7b49)\u3068\u3001\u5168\u5927\u6587\u5b57\u30c8\u30fc\u30af\u30f3\u306b\u9650\u3063\u305f
+    \u30ed\u30fc\u30de\u6570\u5b57\u2192\u30a2\u30e9\u30d3\u30a2\u6570\u5b57\u5909\u63db(XXXV\u219235\u7b49\u30011\u301c49\u306e\u7bc4\u56f2\u306e\u307f)\u3092\u884c\u3046\u3002
+    \u3069\u3061\u3089\u306b\u3082\u8a72\u5f53\u3057\u306a\u3051\u308c\u3070\u5c0f\u6587\u5b57\u5316\u6e08\u307f\u306e word \u3092\u305d\u306e\u307e\u307e\u8fd4\u3059\u3002
+    (\u5909\u63db\u5f8c\u306e\u6570\u5b57\u30c8\u30fc\u30af\u30f3\u306f sig_tokens \u5074\u3067\u3044\u305a\u308c\u306b\u305b\u3088\u9664\u5916\u3055\u308c\u308b\u306e\u3067\u3001
+    \u30ed\u30fc\u30de\u6570\u5b57\u3068\u30a2\u30e9\u30d3\u30a2\u6570\u5b57\u8868\u8a18\u3092\u540c\u4e00\u6271\u3044\u306b\u3067\u304d\u308b)\u3002"""
+    m = _ORDINAL_SUFFIX_RE.match(word)
+    if m:
+        return m.group(1)
+    if original.isupper() and _ROMAN_RE.match(original):
+        val = _roman_to_int(original)
+        if 1 <= val <= 49:
+            return str(val)
+    return word
+
 
 def sig_tokens(title):
-    """\u30bf\u30a4\u30c8\u30eb\u3092\u6b63\u898f\u5316\u3057\u3001\u30b9\u30c8\u30c3\u30d7\u30ef\u30fc\u30c9\u30fb\u6570\u5b57\u30fb\u5e8f\u6570\u3092\u9664\u3044\u305f\u5358\u8a9e\u96c6\u5408\u3092\u8fd4\u3059\u3002"""
-    t = unicodedata.normalize("NFKC", str(title or "")).lower()
-    words = re.findall(r"\w+", t)
+    """\u30bf\u30a4\u30c8\u30eb\u3092\u6b63\u898f\u5316\u3057(\u30ed\u30fc\u30de\u6570\u5b57\u30fb\u5e8f\u6570\u63a5\u5c3e\u8f9e\u3092\u30a2\u30e9\u30d3\u30a2\u6570\u5b57\u5316\u3057\u3066\u304b\u3089)\u3001
+    \u30b9\u30c8\u30c3\u30d7\u30ef\u30fc\u30c9\u30fb\u6570\u5b57\u30fb\u5e8f\u6570\u3092\u9664\u3044\u305f\u5358\u8a9e\u96c6\u5408\u3092\u8fd4\u3059\u3002"""
+    t = unicodedata.normalize("NFKC", str(title or ""))
+    raw_words = re.findall(r"\w+", t)
+    words = [_normalize_number_word(w.lower(), w) for w in raw_words]
     return {
         w for w in words
         if w not in _STOPWORDS and not w.isdigit() and not _ORDINAL_RE.match(w)
@@ -241,6 +279,18 @@ def _same_place(a, b):
         return str(city_a).casefold() == str(city_b).casefold()
     if a.get("format") == "online" and b.get("format") == "online":
         return True
+    return False
+
+
+def _same_city_strict(a, b):
+    """都市の厳密一致判定(経路5専用): 両方 city が実値でcasefold一致、または
+    両方 city が null(オンライン/不明問わず)なら同一とみなす。_same_place と異なり
+    format=='online' かどうかは見ない(city=nullという事実だけで揃える)。"""
+    city_a, city_b = a.get("city"), b.get("city")
+    if city_a is None and city_b is None:
+        return True
+    if city_a and city_b:
+        return str(city_a).casefold() == str(city_b).casefold()
     return False
 
 
@@ -330,13 +380,36 @@ def _similar_by_high_overlap(a, b):
     return n >= 3 or _org_compatible(a, b)
 
 
+def _similar_by_exact_date_and_title_containment(a, b):
+    """経路5(開催開始日の完全一致 + 都市の厳密一致(両方nullも可) + タイトル正規化
+    トークンの包含関係): ローマ数字(XXXV等)・英語序数接尾辞(35th等)の表記ゆれや、
+    多言語タイトル(例 "35th Economic Forum..." と "XXXV Forum Ekonomiczne")で
+    経路1〜4の閾値をすり抜けた重複を拾うための最終防御線。
+    一般語(_GENERIC_TOKENS)を除いた有意語集合について、どちらか一方(2語以上)が
+    もう一方の部分集合なら同一とみなす。定点ソース同士の安全弁は付けない
+    (開催日+都市完全一致という強いシグナルのため)。"""
+    if a.get("date_start") != b.get("date_start"):
+        return False
+    if not _same_city_strict(a, b):
+        return False
+    ta, tb = _sig_title_tokens(a), _sig_title_tokens(b)
+    if not ta or not tb:
+        return False
+    if ta <= tb and len(ta) >= 2:
+        return True
+    if tb <= ta and len(tb) >= 2:
+        return True
+    return False
+
+
 def similar_event(a, b):
     """同一イベントが言い回し違いのタイトルで別登録されていないかを判定する。
-    経路1〜4のいずれかがTrueならTrue。各経路の趣旨は各関数の docstring を参照。"""
+    経路1〜5のいずれかがTrueならTrue。各経路の趣旨は各関数の docstring を参照。"""
     return (_similar_by_date_and_title(a, b)
             or _similar_by_period_and_title_containment(a, b)
             or _similar_by_url(a, b)
-            or _similar_by_high_overlap(a, b))
+            or _similar_by_high_overlap(a, b)
+            or _similar_by_exact_date_and_title_containment(a, b))
 
 
 def valid_date(s):
@@ -510,6 +583,72 @@ def dedupe_events(events):
         else:
             kept.append(ev)
     return kept, removed
+
+
+def apply_aliases(events):
+    """data/aliases.json (重複ID→正本IDの恒久台帳。人が手動でメンテナンスする)を
+    毎回適用する。similar_event のファジー判定をすり抜けた既知の重複(多言語タイトル・
+    ローマ数字/序数ゆれ等)は、一度台帳に載せれば巡回のたびに何度でも正本IDへ統合され、
+    次回の抽出で hash(タイトル+開催日)が再び重複IDと一致しても復活しない。
+    処理:
+      1) 各イベントの id が aliases のキーに一致すれば、値(正本ID)に書き換える
+         (チェーンは1段のみ辿る。台帳自体が正本IDを指すよう運用する前提)。
+      2) 書き換え後に同一 id が複数存在すれば、dedupe_events と同じ規則
+         (first_seen最古維持・None/""/"unknown"/[]でない値で上書き・
+         importanceは_merge_importance・日付は_merge_date_range)でフィールドマージし1件に統合する。
+    aliases.json が無い/JSONとして壊れている場合も例外を投げず、空の台帳として扱う
+    (巡回を止めない)。
+    戻り値: (events, 統合件数)"""
+    aliases = load_json(ALIASES_FILE, {})
+    if not isinstance(aliases, dict):
+        aliases = {}
+
+    for ev in events:
+        canon = aliases.get(ev.get("id"))
+        if isinstance(canon, str) and canon:
+            ev["id"] = canon
+            # 重複側だった印(タイトル系フィールドのマージ優先度の判定に使う。保存前に除去)
+            ev["_from_alias"] = True
+
+    by_id = {}
+    order = []
+    merged = 0
+    for ev in events:
+        eid = ev.get("id")
+        if eid in by_id:
+            match = by_id[eid]
+            new_start, new_end = _merge_date_range(
+                match.get("date_start"), match.get("date_end"),
+                ev.get("date_start"), ev.get("date_end"))
+            first_seens = [v for v in (match.get("first_seen"), ev.get("first_seen")) if v]
+            # タイトル系は正本(エイリアス書き換えを受けていない側)の表記を優先し、
+            # 重複側の簡素な表記(例 "XXXV Forum Ekonomiczne")で上書きしない
+            ev_is_alias = ev.pop("_from_alias", False)
+            match_is_alias = match.get("_from_alias", False)
+            for field, val in ev.items():
+                if field in ("first_seen", "id", "source", "importance",
+                             "date_start", "date_end"):
+                    continue
+                if (field in ("title", "title_ja", "title_short")
+                        and ev_is_alias and not match_is_alias
+                        and match.get(field) not in (None, "", "unknown")):
+                    continue
+                if val not in (None, "", "unknown", []):
+                    match[field] = val
+            if match_is_alias and not ev_is_alias:
+                match.pop("_from_alias", None)
+            match["importance"] = _merge_importance(match.get("importance"), ev.get("importance"))
+            match["date_start"], match["date_end"] = new_start, new_end
+            if first_seens:
+                match["first_seen"] = min(first_seens)
+            merged += 1
+        else:
+            by_id[eid] = ev
+            order.append(eid)
+    result = [by_id[i] for i in order]
+    for ev in result:
+        ev.pop("_from_alias", None)
+    return result, merged
 
 
 def split_archive(events, archive_days=30):

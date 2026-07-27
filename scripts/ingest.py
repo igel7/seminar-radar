@@ -15,9 +15,9 @@ import json
 import sys
 
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
-                       apply_flagship, apply_overrides, dedupe_events, load_json,
-                       merge, parse_sources, region_ok, render_html, render_ics,
-                       split_archive)
+                       apply_aliases, apply_flagship, apply_overrides, dedupe_events,
+                       load_json, merge, parse_sources, region_ok, render_html,
+                       render_ics, split_archive)
 
 
 def main():
@@ -32,6 +32,10 @@ def main():
     store = load_json(DATA_FILE, {"events": []})
     events, added = merge(store.get("events", []), new_events)
     events, removed = dedupe_events(events)
+
+    # 重複ID→正本IDの恒久台帳(data/aliases.json)を適用する。similar_event を
+    # すり抜けた既知の重複を毎回正本IDへ統合し、次回巡回での復活を防ぐ。
+    events, aliased = apply_aliases(events)
 
     # フラッグシップ(旗艦)会議は既存・新規を問わず毎回 importance の下限を強制する
     # (格下げ防止・既存データへの遡及適用の両方を兼ねる)。
@@ -65,7 +69,7 @@ def main():
 
     print(f"完了: 新規 {added} 件 / 掲載中 {len(events)} 件 / "
           f"アーカイブ移動 {len(to_archive)} 件 / 重複除去 {removed} 件 / "
-          f"地域外除去 {region_removed} 件")
+          f"エイリアス統合 {aliased} 件 / 地域外除去 {region_removed} 件")
 
 
 if __name__ == "__main__":
