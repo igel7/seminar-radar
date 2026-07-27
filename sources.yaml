@@ -108,6 +108,10 @@ sources:
     url: "https://www.srb.europa.eu/en/events"
     verified: true
 
+  - name: "dfv Euro Finance Group (Frankfurt) – Executive Events"
+    url: "https://www.dfv-eurofinance.com/executive-events/"
+    verified: false   # EURO FINANCE WEEK・China Day・Green Finance Forum・European Banking Congress等の主催元。イベント一覧ページ
+
   - name: "Deutsche Börse Group – Veranstaltungen"
     url: "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen"
     verified: true
@@ -292,6 +296,10 @@ sources:
                       # イベント部門の説明ページを暫定採用。site:swp-berlin.org events / Veranstaltungen で要確認)
 
   # --- 追加: 日本・アジア経済関係 ---
+  - name: "フランクフルト日本法人会 – 行事・活動"
+    url: "https://www.hojinkai.de/activities"
+    verified: false   # 日本語サイト。独日経済対話・講演会等が対象(テニス・ゴルフ等の親睦行事はテーマ除外に任せる)
+
   - name: "JDZB – 日独センター (Berlin) – Veranstaltungen"
     url: "https://jdzb.de/de/events"
     verified: false
@@ -320,5 +328,5 @@ discovery_topics:
   - "地政学・安全保障・地経学に関するセミナーや講演(ドイツ・対象地域またはオンライン)。例: geopolitics seminar Germany, economic security conference, Sicherheitspolitik Konferenz, sanctions export controls seminar, defence economics workshop"
   - "サステナブルファイナンス・ESG・気候関連の会議やセミナー(ドイツ・対象地域またはオンライン)。例: sustainable finance conference Germany, ESG Konferenz, Klimarisiken Bankenaufsicht, carbon market CBAM conference, NGFS conference, Energiewende Konferenz, climate economics workshop"
   - "AI・デジタル技術と経済・金融・規制に関する会議やセミナー(例: AI economy conference Germany, KI Konferenz Wirtschaft, AI Act Umsetzung Veranstaltung, AI banking supervision seminar, KI Arbeitsmarkt Produktivität)"
-  - "中国経済・欧中経済関係に関する会議やセミナー(例: China economic outlook Germany, China Konferenz Wirtschaft, de-risking China seminar, EU China trade investment conference, MERICS event)"
+  - "中国経済・欧中経済関係に関する会議やセミナー(例: China economic outlook Germany, China Konferenz Wirtschaft, de-risking China seminar, EU China trade investment conference, MERICS event, China Day Frankfurt, Chinesische Handelskammer CHKD Veranstaltung, Deutsch-Chinesische Wirtschaftskonferenz)"
   - "日本経済・日独/日欧経済関係に関する会議やセミナー(例: Japan Wirtschaft Konferenz Deutschland, Deutsch-Japanisches Wirtschaftsforum, Japan economy seminar, Bank of Japan lecture Europe, EU-Japan EPA event)"

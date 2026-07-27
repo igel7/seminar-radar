@@ -19,3 +19,5 @@
 - 開催日が確認できないものは取り込まれない(日付を捏造しない方針のため)
 
 --- ここから下に貼り付け ---
+
+https://www.dfv-eurofinance.com/events/12th-china-day/
