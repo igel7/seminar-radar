@@ -390,7 +390,7 @@ def sanitize(ev):
     if isinstance(importance, str) and importance.isdigit():
         importance = int(importance)
     if not (isinstance(importance, int) and not isinstance(importance, bool)
-            and importance in (1, 2, 3)):
+            and importance in (0, 1, 2, 3)):
         importance = None
     ev["importance"] = importance
     ev["registration_url"] = safe_url(ev.get("registration_url"))
@@ -619,6 +619,11 @@ def render_ics(events):
              "PRODID:-//seminar-radar//DE", "CALSCALE:GREGORIAN",
              "X-WR-CALNAME:Germany Econ/Fin Seminars"]
     for ev in events:
+        # importance 0(毎週型の定例研究セミナー等のマイクロイベント)は ICS に含めない。
+        # 購読カレンダーに週次セミナーが溢れてノイズになるのを防ぐため
+        # (Webの一覧では「すべて」フィルタで引き続き検索できる)。
+        if ev.get("importance") == 0:
+            continue
         start = ev["date_start"].replace("-", "")
         end_date = date.fromisoformat(ev.get("date_end") or ev["date_start"]) + timedelta(days=1)
         desc = (f"{ev.get('summary_ja') or ''} / 主催: {ev.get('organizer') or '?'}"
