@@ -20,4 +20,3 @@
 
 --- ここから下に貼り付け ---
 
-https://www.dfv-eurofinance.com/events/12th-china-day/
