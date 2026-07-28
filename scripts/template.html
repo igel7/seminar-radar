@@ -56,6 +56,18 @@
     letter-spacing:.08em;color:var(--sub);white-space:nowrap;
     transition:border-color .12s,color .12s,background .12s}
   .srcbtn:hover{border-color:var(--amber);color:var(--amber)}
+  /* UI言語切替(セグメントコントロール風。3ボタンを1つの枠に連結) */
+  .langsw{display:inline-flex;flex:0 0 auto;border:1px solid var(--line2);
+    border-radius:4px;overflow:hidden;background:var(--cell)}
+  .langsw button{border:0;border-left:1px solid var(--line2);background:transparent;
+    padding:6px 9px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
+    letter-spacing:.06em;color:var(--sub);white-space:nowrap;line-height:1.1;
+    transition:border-color .12s,color .12s,background .12s}
+  .langsw button:first-child{border-left:0}
+  .langsw button:hover{color:var(--amber)}
+  .langsw button.on{color:var(--amber);background:var(--cell2)}
+  .langsw:focus-within{border-color:var(--amber)}
+  .langsw button:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
   .srcwrap.open .srcbtn{border-color:var(--amber);color:var(--amber);background:var(--cell2)}
   .srcpanel{display:none;position:absolute;top:100%;right:0;left:auto;margin-top:8px;
     width:min(440px,88vw);max-height:min(70vh,540px);overflow-y:auto;z-index:60;
@@ -303,6 +315,7 @@
     h1{font-size:15px}
     .hdtools{flex-basis:100%;margin-left:0;margin-top:6px}
     .hdtools input[type=search]{max-width:none;flex:1 1 auto}
+    .langsw button{padding:6px 6px;font-size:10.5px;letter-spacing:.02em}
     .srcpanel{left:0;right:auto;width:min(360px,86vw)}
     .srclist{columns:1}
     .controls{gap:8px}
@@ -353,15 +366,20 @@
   <div class="statusbar">
     <h1>Seminar Radar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated">LAST UPDATE: <b>__UPDATED__</b></span>
+    <span class="updated"><span data-i18n="lastUpdate">LAST UPDATE:</span> <b>__UPDATED__</b></span>
     <div class="hdtools">
-      <div class="srcwrap" id="srcwrap">
-        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false">調査対象</button>
-        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象"></div>
+      <div class="langsw" id="langsw" role="group" aria-label="Language">
+        <button type="button" data-ui="ja">日本語</button>
+        <button type="button" data-ui="en">EN</button>
+        <button type="button" data-ui="de">DE</button>
       </div>
-      <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索">
+      <div class="srcwrap" id="srcwrap">
+        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="sources">調査対象</button>
+        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象" data-i18n-aria="sources"></div>
+      </div>
+      <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索" data-i18n-ph="qPlaceholder" data-i18n-aria="qAria">
     </div>
-    <div class="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
+    <div class="tagline" data-i18n="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
 
@@ -369,9 +387,9 @@
   <div class="controls">
     <label class="fld"><span class="cap">Area</span>
       <select id="area">
-        <option value="">すべて</option>
-        <option value="DE">ドイツ</option>
-        <option value="nonDE">ドイツ以外</option>
+        <option value="" data-i18n="all">すべて</option>
+        <option value="DE" data-i18n="areaDE">ドイツ</option>
+        <option value="nonDE" data-i18n="areaNonDE">ドイツ以外</option>
       </select></label>
     <label class="fld"><span class="cap">Country</span>
       <select id="country"></select></label>
@@ -381,57 +399,57 @@
       <select id="org"></select></label>
     <label class="fld"><span class="cap">Theme</span>
       <select id="theme">
-        <option value="">すべて</option>
-        <option value="central_bank">①中銀</option>
-        <option value="real_economy">②実体経済</option>
-        <option value="fin_markets">③規制・市場</option>
-        <option value="geopolitics">④地政学</option>
-        <option value="climate_esg">⑤環境ESG</option>
-        <option value="ai">⑥AI</option>
-        <option value="china">⑦中国</option>
-        <option value="japan">⑧日本</option>
+        <option value="" data-i18n="all">すべて</option>
+        <option value="central_bank" data-i18n="th_central_bank">①中銀</option>
+        <option value="real_economy" data-i18n="th_real_economy">②実体経済</option>
+        <option value="fin_markets" data-i18n="th_fin_markets">③規制・市場</option>
+        <option value="geopolitics" data-i18n="th_geopolitics">④地政学</option>
+        <option value="climate_esg" data-i18n="th_climate_esg">⑤環境ESG</option>
+        <option value="ai" data-i18n="th_ai">⑥AI</option>
+        <option value="china" data-i18n="th_china">⑦中国</option>
+        <option value="japan" data-i18n="th_japan">⑧日本</option>
       </select></label>
     <label class="fld"><span class="cap">Importance</span>
       <select id="imp">
-        <option value="0">★0以上 — すべて(定例セミナー含む)</option>
-        <option value="1">★1以上 — 標準</option>
-        <option value="2">★2以上 — 中規模会議から</option>
-        <option value="3">★3のみ — 旗艦・大型会議</option>
+        <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
+        <option value="1" data-i18n="imp1">★1以上 — 標準</option>
+        <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
+        <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
       </select></label>
     <label class="fld"><span class="cap">Lang</span>
       <select id="lang">
-        <option value="">すべて</option>
-        <option value="en">英語</option>
-        <option value="de">ドイツ語</option>
+        <option value="" data-i18n="all">すべて</option>
+        <option value="en" data-i18n="langEn">英語</option>
+        <option value="de" data-i18n="langDe">ドイツ語</option>
       </select></label>
     <label class="fld cbfld"><span class="cbrow">
-      <input type="checkbox" id="online"><span class="cblbl">オンライン開催を含む</span></span></label>
+      <input type="checkbox" id="online"><span class="cblbl" data-i18n="cbOnline">オンライン開催を含む</span></span></label>
     <label class="fld cbfld"><span class="cbrow" id="daytriprow">
-      <input type="checkbox" id="daytrip"><span class="cblbl">Frankfurt日帰り圏のみ</span></span></label>
+      <input type="checkbox" id="daytrip"><span class="cblbl" data-i18n="cbDaytrip">Frankfurt日帰り圏のみ</span></span></label>
   </div>
 </div>
 
 <div class="calhead">
-  <button class="navbtn today" id="todaybtn" type="button">今日</button>
+  <button class="navbtn today" id="todaybtn" type="button" data-i18n="today">今日</button>
   <button class="navbtn" id="prev">&#8249;</button>
   <h2 id="callabel"></h2>
   <button class="navbtn" id="next">&#8250;</button>
 </div>
 <div id="filterbar" hidden>
-  <span>&#9888; フィルタ適用中 — 非表示: <b id="fbcount">0</b>件</span>
-  <button class="fbreset" id="fbreset" type="button">リセット</button>
+  <span id="fbtext"></span>
+  <button class="fbreset" id="fbreset" type="button" data-i18n="reset">リセット</button>
 </div>
 <table class="cal"><thead><tr>
   <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
 </tr></thead><tbody id="calbody"></tbody></table>
 <div id="weekbody"></div>
 <div class="callegend">
-  <span class="cap">色=重要度:</span>
-  <span class="lgset"><span class="lg i3">高</span><span class="lg i2">中</span><span class="lg i1">低</span></span>
-  <span class="fg">◇ ドイツ国外での開催</span>
-  <span class="lgset"><u style="text-underline-offset:2px">下線</u><span class="cap">= 登録参加可(招待制・CfP型でない)</span></span>
+  <span class="cap" data-i18n="lgColorImp">色=重要度:</span>
+  <span class="lgset"><span class="lg i3" data-i18n="lgHigh">高</span><span class="lg i2" data-i18n="lgMid">中</span><span class="lg i1" data-i18n="lgLow">低</span></span>
+  <span class="fg" data-i18n="lgForeign">◇ ドイツ国外での開催</span>
+  <span class="lgset"><u style="text-underline-offset:2px" data-i18n="lgUnderline">下線</u><span class="cap" data-i18n="lgOpenReg">= 登録参加可(招待制・CfP型でない)</span></span>
 </div>
-<p class="legnote">
+<p class="legnote" data-i18n="legnote">
   カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
   ◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。
@@ -440,25 +458,25 @@
 </p>
 
 <div class="listhead">
-  <h2 class="sect">今後のイベント一覧</h2>
+  <h2 class="sect" data-i18n="upcoming">今後のイベント一覧</h2>
   <label class="fld"><span class="cap">Sort</span>
     <select id="sort">
-      <option value="date">日付順</option>
-      <option value="imp">重要度順</option>
+      <option value="date" data-i18n="sortDate">日付順</option>
+      <option value="imp" data-i18n="sortImp">重要度順</option>
     </select></label>
 </div>
 <div id="list"></div>
 
-<h2 class="sect">巡回ステータス</h2>
+<h2 class="sect" data-i18n="crawlStatus">巡回ステータス</h2>
 <table class="st"><tbody id="status"></tbody></table>
 
-<footer>
+<footer data-i18n="footer">
   情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
   日付・参加費等は必ずリンク先の原文で確認すること。
 </footer>
 </div>
 
-<button id="totop" title="トップへ" aria-label="Scroll to top">&#8593;</button>
+<button id="totop" title="トップへ" aria-label="Scroll to top" data-i18n-title="totop">&#8593;</button>
 
 <script>
 const EVENTS  = __EVENTS_JSON__;
@@ -466,7 +484,263 @@ const STATUS  = __STATUS_JSON__;
 const SOURCES = __SOURCES_JSON__;
 const TODAY   = "__TODAY__";
 
-const THLBL = {central_bank:"①中銀", real_economy:"②実体経済", fin_markets:"③規制・市場", geopolitics:"④地政学", climate_esg:"⑤環境ESG", ai:"⑥AI", china:"⑦中国", japan:"⑧日本"};
+/* ================= UI言語(uiLang)=================
+   注意: state.lang は「イベントの開催言語フィルタ(en/de)」であり、
+   ここで扱う uiLang(画面表示言語 ja/en/de)とは全くの別物。混同しないこと。 */
+const UI_LANGS  = ["ja","en","de"];
+const LS_UILANG = "sr_uilang";          /* フィルタ保存キー sr_filters_v5 とは別キー */
+
+const I18N = {
+ja:{
+  docTitle:"Seminar Radar — ドイツ経済・金融セミナー",
+  lastUpdate:"LAST UPDATE:",
+  tagline:"ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。",
+  sources:"調査対象",
+  qPlaceholder:"キーワード",
+  qAria:"キーワード検索",
+  all:"すべて",
+  areaDE:"ドイツ", areaNonDE:"ドイツ以外",
+  th_central_bank:"①中銀", th_real_economy:"②実体経済", th_fin_markets:"③規制・市場",
+  th_geopolitics:"④地政学", th_climate_esg:"⑤環境ESG", th_ai:"⑥AI",
+  th_china:"⑦中国", th_japan:"⑧日本",
+  imp0:"★0以上 — すべて(定例セミナー含む)", imp1:"★1以上 — 標準",
+  imp2:"★2以上 — 中規模会議から", imp3:"★3のみ — 旗艦・大型会議",
+  langEn:"英語", langDe:"ドイツ語",
+  cbOnline:"オンライン開催を含む", cbDaytrip:"Frankfurt日帰り圏のみ",
+  today:"今日",
+  fbHidden:"⚠ フィルタ適用中 — 非表示: {n}件", reset:"リセット",
+  lgColorImp:"色=重要度:", lgHigh:"高", lgMid:"中", lgLow:"低",
+  lgForeign:"◇ ドイツ国外での開催",
+  lgUnderline:"下線", lgOpenReg:"= 登録参加可(招待制・CfP型でない)",
+  legnote:"カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 / シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。★0(毎週型の定例セミナー)は既定では非表示。Importanceで「★0以上」を選ぶと表示される。",
+  upcoming:"今後のイベント一覧",
+  sortDate:"日付順", sortImp:"重要度順",
+  crawlStatus:"巡回ステータス",
+  footer:"情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、日付・参加費等は必ずリンク先の原文で確認すること。",
+  totop:"トップへ",
+  empty:"条件に合うイベントはありません。",
+  bOpenReg:"登録参加可", bFree:"無料", bPaid:"有料", bInvite:"招待制",
+  bOnline:"オンライン", bHybrid:"オンラインも可", bOnsite:"現地開催",
+  lb_en:"英語", lb_de:"独語", lb_ende:"英語・独語",
+  ls_en:"英", ls_de:"独", ls_ende:"英独",
+  sep:"・", dash:"〜", contPrefix:"(続き)",
+  regNote:"申込:", regPage:"申込ページ →",
+  srcInfo:"情報源:", firstSeen:"／ 初検出:",
+  stFound:"[OK] {n}件",
+  spCoverage:"対象地域",
+  spCoverageText:"ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。",
+  spMonitored:"定点観測先({n}件)",
+  spDiscovery:"広域検索",
+  spDiscoveryText:"上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本のテーマ、中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。",
+  og_cb:"中銀・規制当局", og_tt:"シンクタンク・研究機関", og_uni:"大学", og_other:"その他",
+  monthFmt:"{y}年{m}月",
+  months:["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+  wd:["日","月","火","水","木","金","土"],          /* 0=日曜始まり */
+  wdWeek:["月","火","水","木","金","土","日"]        /* 0=月曜始まり */
+},
+en:{
+  docTitle:"Seminar Radar — German Economics & Finance Seminars",
+  lastUpdate:"LAST UPDATE:",
+  tagline:"Economics and finance seminars across Germany, Switzerland, Central & Eastern Europe and beyond — collected automatically every day.",
+  sources:"Sources",
+  qPlaceholder:"Keyword",
+  qAria:"Keyword search",
+  all:"All",
+  areaDE:"Germany", areaNonDE:"Outside Germany",
+  th_central_bank:"① Central banks", th_real_economy:"② Real economy",
+  th_fin_markets:"③ Regulation & markets", th_geopolitics:"④ Geopolitics",
+  th_climate_esg:"⑤ Climate & ESG", th_ai:"⑥ AI",
+  th_china:"⑦ China", th_japan:"⑧ Japan",
+  imp0:"★0+ — all (incl. weekly seminars)", imp1:"★1+ — standard",
+  imp2:"★2+ — mid-size conferences and up", imp3:"★3 only — flagship & major events",
+  langEn:"English", langDe:"German",
+  cbOnline:"Include online events", cbDaytrip:"Frankfurt day-trip range only",
+  today:"Today",
+  fbHidden:"⚠ Filters active — hidden: {n}", reset:"Reset",
+  lgColorImp:"Color = importance:", lgHigh:"High", lgMid:"Mid", lgLow:"Low",
+  lgForeign:"◇ held outside Germany",
+  lgUnderline:"underline", lgOpenReg:"= open registration (not invite-only/CfP)",
+  legnote:"Colour and text size in the calendar indicate importance (amber = high: ★★★ large international conferences with central bank governor-level speakers / cyan = mid: ★★☆ mid-size conferences / grey = low: ★☆☆ regular seminars). Events marked ◇ are held outside Germany. The numbers ①–⑧ in the list show the main theme of each event (displayed in monochrome). Underlined events are open to general registration, i.e. not invitation-only or call-for-papers events. ★0 events (weekly seminar series) are hidden by default; choose “★0+” under Importance to show them.",
+  upcoming:"Upcoming events",
+  sortDate:"By date", sortImp:"By importance",
+  crawlStatus:"Crawl status",
+  footer:"Event data is extracted automatically from organizers' public pages and web search. Always confirm dates, fees etc. on the linked original page.",
+  totop:"Back to top",
+  empty:"No events match the current filters.",
+  bOpenReg:"Open registration", bFree:"Free", bPaid:"Paid", bInvite:"Invitation only",
+  bOnline:"Online", bHybrid:"Hybrid (online available)", bOnsite:"On-site",
+  lb_en:"English", lb_de:"German", lb_ende:"English & German",
+  ls_en:"EN", ls_de:"DE", ls_ende:"EN+DE",
+  sep:"·", dash:"–", contPrefix:"(cont.) ",
+  regNote:"Registration:", regPage:"Registration page →",
+  srcInfo:"Source:", firstSeen:"/ first seen:",
+  stFound:"[OK] {n} found",
+  spCoverage:"Coverage",
+  spCoverageText:"Germany, Switzerland, Austria, Central & Eastern Europe (PL/CZ/SK/HU/SI), the Balkans, the Baltic states and Ukraine. Events hosted by central banks, the ECB or the BIS are included regardless of the host country.",
+  spMonitored:"Monitored sources ({n})",
+  spDiscovery:"Web discovery",
+  spDiscoveryText:"In addition to the sources above, a daily web search covers monetary policy, the real economy (energy, defence, infrastructure), financial regulation, geopolitics, climate & ESG, AI, China and Japan, as well as central bank seminars in Central & Eastern Europe and major policy and security forums.",
+  og_cb:"Central banks & regulators", og_tt:"Think tanks & research",
+  og_uni:"Universities", og_other:"Other",
+  monthFmt:"{mon} {y}",
+  months:["January","February","March","April","May","June",
+          "July","August","September","October","November","December"],
+  wd:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+  wdWeek:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+},
+de:{
+  docTitle:"Seminar Radar — Wirtschafts- und Finanzseminare in Deutschland",
+  lastUpdate:"LETZTES UPDATE:",
+  tagline:"Wirtschafts- und Finanzseminare in Deutschland, der Schweiz, Mittel- und Osteuropa und darüber hinaus — täglich automatisch gesammelt.",
+  sources:"Quellen",
+  qPlaceholder:"Stichwort",
+  qAria:"Stichwortsuche",
+  all:"Alle",
+  areaDE:"Deutschland", areaNonDE:"Außerhalb Deutschlands",
+  th_central_bank:"① Zentralbanken", th_real_economy:"② Realwirtschaft",
+  th_fin_markets:"③ Regulierung & Märkte", th_geopolitics:"④ Geopolitik",
+  th_climate_esg:"⑤ Klima & ESG", th_ai:"⑥ KI",
+  th_china:"⑦ China", th_japan:"⑧ Japan",
+  imp0:"★0+ — alle (inkl. Forschungsseminare)", imp1:"★1+ — Standard",
+  imp2:"★2+ — ab mittelgroßen Konferenzen", imp3:"★3 — nur Flaggschiff-Konferenzen",
+  langEn:"Englisch", langDe:"Deutsch",
+  cbOnline:"Online-Veranstaltungen einbeziehen", cbDaytrip:"Nur Tagesausflüge ab Frankfurt",
+  today:"Heute",
+  fbHidden:"⚠ Filter aktiv — ausgeblendet: {n}", reset:"Zurücksetzen",
+  lgColorImp:"Farbe = Wichtigkeit:", lgHigh:"Hoch", lgMid:"Mittel", lgLow:"Niedrig",
+  lgForeign:"◇ Veranstaltung außerhalb Deutschlands",
+  lgUnderline:"Unterstrichen", lgOpenReg:"= Anmeldung offen (nicht nur auf Einladung/CfP)",
+  legnote:"Farbe und Schriftgröße im Kalender zeigen die Wichtigkeit an (Bernstein = hoch: ★★★ große internationale Konferenzen mit Rednern auf Notenbankchef-Ebene / Cyan = mittel: ★★☆ mittelgroße Konferenzen / Grau = niedrig: ★☆☆ Forschungsseminare). Mit ◇ markierte Veranstaltungen finden außerhalb Deutschlands statt. Die Ziffern ①–⑧ in der Liste stehen für das Hauptthema der Veranstaltung (monochrom dargestellt). Unterstrichene Veranstaltungen stehen der allgemeinen Anmeldung offen, sind also nicht nur auf Einladung oder als Call for Papers zugänglich. ★0 (wöchentliche Forschungsseminare) sind standardmäßig ausgeblendet; unter Importance „★0+“ wählen, um sie anzuzeigen.",
+  upcoming:"Kommende Veranstaltungen",
+  sortDate:"Nach Datum", sortImp:"Nach Wichtigkeit",
+  crawlStatus:"Abrufstatus",
+  footer:"Die Angaben werden automatisch aus öffentlichen Seiten der Veranstalter und Websuchen extrahiert. Termine, Gebühren usw. bitte stets auf der verlinkten Originalseite prüfen.",
+  totop:"Nach oben",
+  empty:"Keine Veranstaltungen entsprechen den Filtern.",
+  bOpenReg:"Anmeldung offen", bFree:"Kostenlos", bPaid:"Kostenpflichtig",
+  bInvite:"Nur auf Einladung",
+  bOnline:"Online", bHybrid:"Hybrid (auch online)", bOnsite:"Präsenz",
+  lb_en:"Englisch", lb_de:"Deutsch", lb_ende:"Englisch & Deutsch",
+  ls_en:"EN", ls_de:"DE", ls_ende:"EN+DE",
+  sep:"·", dash:"–", contPrefix:"(Forts.) ",
+  regNote:"Anmeldung:", regPage:"Anmeldeseite →",
+  srcInfo:"Quelle:", firstSeen:"/ erfasst am:",
+  stFound:"[OK] {n} gefunden",
+  spCoverage:"Erfasste Region",
+  spCoverageText:"Deutschland, Schweiz, Österreich, Mittel- und Osteuropa (PL/CZ/SK/HU/SI), Balkan, Baltikum und Ukraine. Veranstaltungen von Zentralbanken, der EZB oder der BIZ werden unabhängig vom Austragungsland erfasst.",
+  spMonitored:"Beobachtete Quellen ({n})",
+  spDiscovery:"Websuche",
+  spDiscoveryText:"Ergänzend zu den oben genannten Quellen wird täglich im Web nach Geldpolitik, Realwirtschaft (Energie, Verteidigung, Infrastruktur), Finanzregulierung, Geopolitik, Klima & ESG, KI, China und Japan sowie nach Zentralbankseminaren in Mittel- und Osteuropa und großen Politik- und Sicherheitsforen gesucht.",
+  og_cb:"Zentralbanken & Aufsicht", og_tt:"Think-Tanks & Forschung",
+  og_uni:"Universitäten", og_other:"Sonstige",
+  monthFmt:"{mon} {y}",
+  months:["Januar","Februar","März","April","Mai","Juni",
+          "Juli","August","September","Oktober","November","Dezember"],
+  wd:["So","Mo","Di","Mi","Do","Fr","Sa"],
+  wdWeek:["Mo","Di","Mi","Do","Fr","Sa","So"]
+}
+};
+
+/* ?lang= > localStorage > ブラウザ言語 > "ja" */
+function detectUiLang(){
+  try{
+    const p=new URLSearchParams(location.search).get("lang");
+    if(UI_LANGS.includes(p)){
+      try{ localStorage.setItem(LS_UILANG,p); }catch(e){}
+      return p;
+    }
+  }catch(e){}
+  try{
+    const s=localStorage.getItem(LS_UILANG);
+    if(UI_LANGS.includes(s)) return s;
+  }catch(e){}
+  try{
+    const navs=(navigator.languages && navigator.languages.length)
+      ? navigator.languages : [navigator.language||""];
+    for(const n of navs){
+      const s=String(n||"").toLowerCase();
+      if(s.startsWith("ja")) return "ja";
+      if(s.startsWith("de")) return "de";
+      if(s.startsWith("en")) return "en";
+    }
+  }catch(e){}
+  return "ja";
+}
+let uiLang = detectUiLang();
+
+/* 辞書引き(現在の uiLang → ja → キー名 の順にフォールバック) */
+function t(k){
+  const d=I18N[uiLang]||I18N.ja;
+  if(d && d[k]!=null) return d[k];
+  if(I18N.ja[k]!=null) return I18N.ja[k];
+  return k;
+}
+/* {n} 等のプレースホルダ差し込み(HTMLに入れる値は呼び出し側で esc 済みにすること) */
+function tf(k, vals){
+  let s=String(t(k));
+  for(const key in vals) s=s.split("{"+key+"}").join(vals[key]);
+  return s;
+}
+
+/* 国名: ja は既存辞書、en/de は Intl.DisplayNames(言語ごとにキャッシュ) */
+const DN_CACHE = {};
+function displayNames(){
+  if(!(uiLang in DN_CACHE)){
+    try{ DN_CACHE[uiLang]=new Intl.DisplayNames([uiLang],{type:"region"}); }
+    catch(e){ DN_CACHE[uiLang]=null; }
+  }
+  return DN_CACHE[uiLang];
+}
+function countryName(code){
+  if(uiLang==="ja") return COUNTRY_JA[code]||code;
+  try{ const dn=displayNames(); if(dn) return dn.of(code)||code; }catch(e){}
+  return code;
+}
+/* Organizer括弧内の国名(ja は半角カナ、en/de は DisplayNames) */
+function countryParen(code){
+  if(uiLang==="ja") return COUNTRY_KANA[code]||code;
+  return countryName(code);
+}
+/* organizer_short に混じる日本語「他」は en/de では "+" に置換して表示する。
+   ※ フィルタ/ファセットは orgShort() の生の値のまま扱い、表示だけを変える。 */
+function orgDisp(s){
+  const v=String(s??"");
+  return uiLang==="ja" ? v : v.replace(/他$/,"+");
+}
+
+const THEME_KEYS = ["central_bank","real_economy","fin_markets","geopolitics",
+                    "climate_esg","ai","china","japan"];
+const thLabel = k => t("th_"+k);
+const LANG_BADGE_KEY = {en:"lb_en", de:"lb_de", "en+de":"lb_ende"};
+const LANG_SHORT_KEY = {en:"ls_en", de:"ls_de", "en+de":"ls_ende"};
+function langBadge(l){ const k=LANG_BADGE_KEY[l]; return k?t(k):l; }
+function langShort(l){ const k=LANG_SHORT_KEY[l]; return k?t(k):""; }
+
+/* HTML静的部分(data-i18n 属性)の一括書き換え */
+function applyStaticText(){
+  document.documentElement.lang = uiLang;
+  document.title = t("docTitle");
+  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t(el.dataset.i18n);});
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
+  document.querySelectorAll("[data-i18n-aria]").forEach(el=>{el.setAttribute("aria-label",t(el.dataset.i18nAria));});
+  document.querySelectorAll("[data-i18n-title]").forEach(el=>{el.setAttribute("title",t(el.dataset.i18nTitle));});
+  document.querySelectorAll("#langsw button").forEach(b=>{
+    const on = b.dataset.ui===uiLang;
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-pressed", on?"true":"false");
+  });
+}
+/* UI言語の切替(state.lang=開催言語フィルタには一切触れない) */
+function setUiLang(l){
+  if(!UI_LANGS.includes(l)) return;
+  uiLang=l;
+  try{ localStorage.setItem(LS_UILANG,l); }catch(e){}
+  applyStaticText();
+  redraw();
+  drawStatus();
+  drawSources();
+}
+
 const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp", climate_esg:"ce", ai:"ai", china:"cn", japan:"jp"};
 
 /* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
@@ -482,8 +756,6 @@ const DAYTRIP_CITIES = new Set([
 
 const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau",
                     "Eltville am Rhein":"Eltville"};
-const LANG_SHORT = {en:"英", de:"独", "en+de":"英独"};
-const LANG_JA    = {en:"英語", de:"独語", "en+de":"英語・独語"};
 const COUNTRY_JA = {
   DE:"ドイツ", AT:"オーストリア", CH:"スイス", IT:"イタリア", FR:"フランス",
   NL:"オランダ", BE:"ベルギー", LU:"ルクセンブルク", GB:"英国", IE:"アイルランド",
@@ -539,8 +811,8 @@ const ORG_META = {
   "Uni Mannheim":{g:"uni"}, "WU Wien":{g:"uni",c:"AT"}
 };
 const ORG_GROUP_ORDER = ["cb","tt","uni","other"];
-const ORG_GROUP_LABEL = {cb:"中銀・規制当局", tt:"シンクタンク・研究機関",
-                         uni:"大学", other:"その他"};
+/* グループ見出しのラベルは I18N の og_cb / og_tt / og_uni / og_other を引く */
+const orgGroupLabel = g => t("og_"+g);
 
 /* ---------- ラベル生成 ---------- */
 /* importance の真値(0〜3)。0=毎週型の定例研究セミナー等のマイクロイベント。
@@ -590,8 +862,9 @@ function orgTokens(ev){
   return String(orgShort(ev)||"").split("+").map(s=>s.trim()).filter(Boolean);
 }
 function evLabel(ev){
-  const lang = ev.language ? LANG_SHORT[ev.language] : null;
-  const mid = lang ? `${lang}・${orgShort(ev)}` : orgShort(ev);
+  const lang = ev.language ? langShort(ev.language) : "";
+  const org  = orgDisp(orgShort(ev));
+  const mid = lang ? `${lang}${t("sep")}${org}` : org;
   const theme = ev.title_short || ev.title || "";
   return `${isForeign(ev)?"◇ ":""}[${cityShort(ev)}][${mid}]${theme}`;
 }
@@ -601,9 +874,9 @@ function evFull(ev){
 /* ---------- 複数日イベント用ヘルパー ---------- */
 function isMulti(ev){ return !!(ev.date_end && ev.date_end!==ev.date_start); }
 function md(iso){ return `${+iso.slice(5,7)}/${+iso.slice(8,10)}`; }
-function endSuffix(ev){ return `〜${md(ev.date_end)}`; }                 /* ラベル末尾に付ける期間サフィックス */
-function contTitle(ev){ return `(続き)${ev.title} / ${md(ev.date_start)}〜${md(ev.date_end)}`; }
-function spanTitle(ev){ return `${evFull(ev)} / ${md(ev.date_start)}〜${md(ev.date_end)}`; }
+function endSuffix(ev){ return `${t("dash")}${md(ev.date_end)}`; }       /* ラベル末尾に付ける期間サフィックス */
+function contTitle(ev){ return `${t("contPrefix")}${ev.title} / ${md(ev.date_start)}${t("dash")}${md(ev.date_end)}`; }
+function spanTitle(ev){ return `${evFull(ev)} / ${md(ev.date_start)}${t("dash")}${md(ev.date_end)}`; }
 function daysBetween(a,b){ return Math.round((Date.parse(b)-Date.parse(a))/86400000); }
 
 /* ---------- 週ビュー用の日付ヘルパー ---------- */
@@ -634,7 +907,7 @@ function loadState(){
   /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★1以上(imp:"1")に移行する */
   if(s.imp==="") state.imp = "1";
   else if(["0","1","2","3"].includes(s.imp)) state.imp = s.imp;
-  if(["",...Object.keys(THLBL)].includes(s.theme)) state.theme = s.theme;
+  if(["",...THEME_KEYS].includes(s.theme)) state.theme = s.theme;
   if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
   if(typeof s.q==="string") state.q = s.q;
@@ -704,8 +977,9 @@ function passDaytrip(ev){
 }
 function passQ(ev){
   if(!state.q) return true;
+  /* 検索対象は UI言語によらず全言語分(ja/en/de)の要約を含める */
   const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
-             ev.city,ev.summary_ja].join(" ").toLowerCase();
+             ev.city,ev.summary_ja,ev.summary_en,ev.summary_de].join(" ").toLowerCase();
   return hay.includes(state.q.toLowerCase());
 }
 
@@ -749,7 +1023,7 @@ function facetCity(){
 }
 function facetOrg(){
   const set=new Set();
-  EVENTS.filter(e=>notEnded(e) && passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(t=>set.add(t)));
+  EVENTS.filter(e=>notEnded(e) && passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(tok=>set.add(tok)));
   return [...set].sort((a,b)=>a.localeCompare(b));
 }
 /* AREA の特定選択肢(DE/nonDE)を選んだと仮定した場合に1件以上ヒットするか。
@@ -763,34 +1037,38 @@ function areaOptionEnabled(area){
 /* ---------- 動的セレクト構築(全連動) ---------- */
 function fillSelect(id, cand, labelFn){
   const sel=document.getElementById(id);
-  let opts=`<option value="">すべて</option>`;
+  let opts=`<option value="">${esc(t("all"))}</option>`;
   for(const v of cand) opts+=`<option value="${esc(v)}">${esc(labelFn?labelFn(v):v)}</option>`;
   sel.innerHTML=opts;
   sel.value=state[id];
 }
 /* Organizer専用: optgroupでカテゴリ分けして構築 */
-function orgGroupOf(t){ return (ORG_META[t]&&ORG_META[t].g)||"other"; }
-function orgCountryOf(t){
-  const m=ORG_META[t]||{};
+function orgGroupOf(tok){ return (ORG_META[tok]&&ORG_META[tok].g)||"other"; }
+function orgCountryOf(tok){
+  const m=ORG_META[tok]||{};
   if(m.exempt) return null;
   if(m.c) return m.c==="DE"?null:m.c;
-  const cs=[...new Set(EVENTS.filter(e=>orgTokens(e).includes(t))
+  const cs=[...new Set(EVENTS.filter(e=>orgTokens(e).includes(tok))
               .map(e=>e.country).filter(Boolean))];
   return (cs.length===1 && cs[0]!=="DE") ? cs[0] : null;
 }
-function orgOptionLabel(t){
-  const c=orgCountryOf(t);
-  return c ? `${t} (${COUNTRY_KANA[c]||c})` : t;
+/* 注意: 以下2関数では引数名に t を使わない(辞書引き関数 t() を隠してしまうため) */
+function orgOptionLabel(tok){
+  const c=orgCountryOf(tok);
+  const nm=orgDisp(tok);
+  return c ? `${nm} (${countryParen(c)})` : nm;
 }
 function fillOrgSelect(cand){
   const sel=document.getElementById("org");
-  let html=`<option value="">すべて</option>`;
+  let html=`<option value="">${esc(t("all"))}</option>`;
   for(const g of ORG_GROUP_ORDER){
-    const items=cand.filter(t=>orgGroupOf(t)===g);
+    const items=cand.filter(tok=>orgGroupOf(tok)===g);
     if(!items.length) continue;
-    html+=`<optgroup label="【${esc(ORG_GROUP_LABEL[g])}】">`;
-    for(const t of items)
-      html+=`<option value="${esc(t)}">\u00A0\u00A0${esc(orgOptionLabel(t))}</option>`;
+    /* ja は既存どおり【】付き、en/de は括弧を外した素のラベル */
+    const glbl = uiLang==="ja" ? `【${orgGroupLabel(g)}】` : orgGroupLabel(g);
+    html+=`<optgroup label="${esc(glbl)}">`;
+    for(const tok of items)
+      html+=`<option value="${esc(tok)}">\u00A0\u00A0${esc(orgOptionLabel(tok))}</option>`;
     html+=`</optgroup>`;
   }
   sel.innerHTML=html;
@@ -810,7 +1088,7 @@ function rebuildSelects(){
     if(state.org     && !facetOrg().includes(state.org))        {state.org="";    changed=true;}
     if(!changed) break;
   }
-  fillSelect("country", facetCountry(), c=>COUNTRY_JA[c]||c);
+  fillSelect("country", facetCountry(), c=>countryName(c));
   fillSelect("city",    facetCity());
   fillOrgSelect(facetOrg());
   document.getElementById("area").value   = state.area;
@@ -948,7 +1226,7 @@ function drawMonth(){
 }
 
 /* ---------- 週ビュー(モバイル) ---------- */
-const WD_WEEK=["月","火","水","木","金","土","日"]; /* index 0=月 */
+/* 曜日名は I18N の wdWeek(index 0=月曜)を言語別に引く */
 function drawWeek(){
   const start=new Date(state.weekStart+"T00:00:00Z"); /* 月曜 */
   const days=[];
@@ -978,7 +1256,7 @@ function drawWeek(){
     }).join("");
     html+=`<div class="${cls}">`+
       `<div class="wdhead"><span class="wdate">${d.getUTCMonth()+1}/${d.getUTCDate()}</span>`+
-      `<span class="wdow">(${WD_WEEK[i]})</span></div>`+
+      `<span class="wdow">(${esc(t("wdWeek")[i])})</span></div>`+
       (empty?"":`<div class="wevs">${evHtml}</div>`)+
     `</div>`;
   }
@@ -988,22 +1266,42 @@ function drawWeek(){
 /* ---------- 一覧 ---------- */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const safeUrl=u=>{u=String(u??"").trim();return /^https?:\/\//i.test(u)?u:null;};
-const WD=["日","月","火","水","木","金","土"];
+/* 曜日名は I18N の wd(index 0=日曜)を言語別に引く */
 function fmtWhen(ev){
   const s=new Date(ev.date_start+"T00:00:00");
-  let t=ev.date_start.slice(5).replace("-","/");
+  /* 変数名 t は辞書引き関数 t() を隠すため使わない(dt にリネーム) */
+  let dt=ev.date_start.slice(5).replace("-","/");
   if(ev.date_end && ev.date_end!==ev.date_start)
-    t+="–"+ev.date_end.slice(5).replace("-","/");
+    dt+="–"+ev.date_end.slice(5).replace("-","/");
   let tm="";
   if(ev.time && ev.time_end) tm=" "+ev.time+"–"+ev.time_end;
   else if(ev.time) tm=" "+ev.time;
-  const wd="("+WD[s.getDay()]+")"+tm;
-  return `${t}<span class="wd">${wd}</span><span class="imp">${stars(ev)}</span>`;
+  const wd="("+esc(t("wd")[s.getDay()])+")"+tm;
+  return `${dt}<span class="wd">${wd}</span><span class="imp">${stars(ev)}</span>`;
+}
+/* 一覧の月見出し: ja「2026年7月」/ en「July 2026」/ de「Juli 2026」 */
+function monthHeading(mo){
+  const y=mo.slice(0,4), mi=+mo.slice(5);
+  return tf("monthFmt", {y:y, m:mi, mon:(t("months")[mi-1]||mi)});
+}
+/* 要約: ja→summary_ja / en→summary_en / de→summary_de(無ければ summary_en)。
+   いずれも無ければ空文字(=非表示)。 */
+function summaryOf(ev){
+  if(uiLang==="ja") return ev.summary_ja || "";
+  if(uiLang==="en") return ev.summary_en || "";
+  return ev.summary_de || ev.summary_en || "";
+}
+/* 申込メモ: ja→registration_note / en→registration_note_en /
+   de→registration_note_de(無ければ registration_note_en)。 */
+function regNoteOf(ev){
+  if(uiLang==="ja") return ev.registration_note || "";
+  if(uiLang==="en") return ev.registration_note_en || "";
+  return ev.registration_note_de || ev.registration_note_en || "";
 }
 function drawList(){
   let evs=fEvents().filter(notEnded);
   const box=document.getElementById("list");
-  if(!evs.length){box.innerHTML='<div class="empty">条件に合うイベントはありません。</div>';return;}
+  if(!evs.length){box.innerHTML=`<div class="empty">${esc(t("empty"))}</div>`;return;}
   const byImp = state.sort==="imp";
   if(byImp){
     /* 重要度降順、同重要度内は日付昇順(元配列は日付順のため安定ソートで維持) */
@@ -1014,20 +1312,20 @@ function drawList(){
     if(!byImp){
       const mo=ev.date_start.slice(0,7);
       if(mo!==lastMonth){
-        html+=`<div class="month-h">${mo.slice(0,4)}年${+mo.slice(5)}月</div>`;
+        html+=`<div class="month-h">${esc(monthHeading(mo))}</div>`;
         lastMonth=mo;
       }
     }
     const badges=[];
-    if(isOpenReg(ev)) badges.push('<span class="badge open">登録参加可</span>');
-    ev.themes.forEach(t=>badges.push(`<span class="badge th-${t}">${THLBL[t]}</span>`));
-    if(ev.language) badges.push(`<span class="badge">${LANG_JA[ev.language]||ev.language}</span>`);
-    if(ev.format==="online") badges.push('<span class="badge">オンライン</span>');
-    if(ev.format==="hybrid") badges.push('<span class="badge">オンラインも可</span>');
-    if(ev.format==="onsite") badges.push('<span class="badge">現地開催</span>');
-    if(ev.fee==="free") badges.push('<span class="badge free">無料</span>');
-    if(ev.fee==="paid") badges.push('<span class="badge paid">有料</span>');
-    if(ev.open_to_public===false) badges.push('<span class="badge closed">招待制</span>');
+    if(isOpenReg(ev)) badges.push(`<span class="badge open">${esc(t("bOpenReg"))}</span>`);
+    ev.themes.forEach(th=>badges.push(`<span class="badge th-${th}">${esc(thLabel(th))}</span>`));
+    if(ev.language) badges.push(`<span class="badge">${esc(langBadge(ev.language))}</span>`);
+    if(ev.format==="online") badges.push(`<span class="badge">${esc(t("bOnline"))}</span>`);
+    if(ev.format==="hybrid") badges.push(`<span class="badge">${esc(t("bHybrid"))}</span>`);
+    if(ev.format==="onsite") badges.push(`<span class="badge">${esc(t("bOnsite"))}</span>`);
+    if(ev.fee==="free") badges.push(`<span class="badge free">${esc(t("bFree"))}</span>`);
+    if(ev.fee==="paid") badges.push(`<span class="badge paid">${esc(t("bPaid"))}</span>`);
+    if(ev.open_to_public===false) badges.push(`<span class="badge closed">${esc(t("bInvite"))}</span>`);
     const label=evLabel(ev);
     const u=safeUrl(ev.url);
     const orig=u
@@ -1035,17 +1333,19 @@ function drawList(){
       : esc(ev.title);
     const iv=impCls(ev);
     const ru=safeUrl(ev.registration_url);
+    const sum=summaryOf(ev);          /* UI言語に応じた要約(無ければ非表示) */
+    const rnote=regNoteOf(ev);        /* UI言語に応じた申込メモ(無ければ非表示) */
     html+=`<div class="row" id="ev-${esc(ev.id)}">
       <div class="when">${fmtWhen(ev)}</div>
       <div class="body">
         <div class="title i${iv}">${esc(label)}</div>
         <div class="orig">${orig}</div>
-        ${ev.title_ja?`<div class="ja">${esc(ev.title_ja)}</div>`:""}
+        ${(uiLang==="ja"&&ev.title_ja)?`<div class="ja">${esc(ev.title_ja)}</div>`:""}
         <div class="meta">${badges.join("")}</div>
-        ${ev.summary_ja?`<div class="sum">${esc(ev.summary_ja)}</div>`:""}
-        ${ev.registration_note?`<div class="reg">申込: ${esc(ev.registration_note)}</div>`:""}
-        ${ru?`<div class="reglink"><a href="${esc(ru)}" target="_blank" rel="noopener">申込ページ →</a></div>`:""}
-        <div class="src">情報源: ${esc(ev.source||"")} ／ 初検出: ${esc(ev.first_seen||"")}</div>
+        ${sum?`<div class="sum">${esc(sum)}</div>`:""}
+        ${rnote?`<div class="reg">${esc(t("regNote"))} ${esc(rnote)}</div>`:""}
+        ${ru?`<div class="reglink"><a href="${esc(ru)}" target="_blank" rel="noopener">${esc(t("regPage"))}</a></div>`:""}
+        <div class="src">${esc(t("srcInfo"))} ${esc(ev.source||"")} ${esc(t("firstSeen"))} ${esc(ev.first_seen||"")}</div>
       </div></div>`;
   }
   box.innerHTML=html;
@@ -1056,7 +1356,7 @@ function drawStatus(){
   document.getElementById("status").innerHTML=STATUS.map(s=>{
     const u=safeUrl(s.url);
     return `<tr><td>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
-     <td>${s.ok?`<span class="ok">[OK] ${esc(s.found)}件</span>`
+     <td>${s.ok?`<span class="ok">${tf("stFound",{n:esc(s.found)})}</span>`
               :`<span class="ng">[FAIL]</span> <small>${esc(s.error||"")}</small>`}</td></tr>`;
   }).join("");
 }
@@ -1071,14 +1371,12 @@ function drawSources(){
              : `<span>${nm}</span>`;
   }).join("");
   document.getElementById("srcpanel").innerHTML=
-    `<div class="srcsec"><h3>対象地域</h3>`+
-    `<p>ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。`+
-    `中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。</p></div>`+
-    `<div class="srcsec"><h3>定点観測先(${n}件)</h3>`+
+    `<div class="srcsec"><h3>${esc(t("spCoverage"))}</h3>`+
+    `<p>${esc(t("spCoverageText"))}</p></div>`+
+    `<div class="srcsec"><h3>${esc(tf("spMonitored",{n:n}))}</h3>`+
     `<div class="srclist">${links}</div></div>`+
-    `<div class="srcsec"><h3>広域検索</h3>`+
-    `<p>上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本のテーマ、`+
-    `中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</p></div>`;
+    `<div class="srcsec"><h3>${esc(t("spDiscovery"))}</h3>`+
+    `<p>${esc(t("spDiscoveryText"))}</p></div>`;
 }
 
 /* ---------- フィルタ適用中バー ---------- */
@@ -1090,7 +1388,7 @@ function updateFilterBar(){
   const bar=document.getElementById("filterbar");
   if(isDefaultState()){ bar.hidden=true; return; }
   const hidden = EVENTS.length - EVENTS.filter(visible).length;
-  document.getElementById("fbcount").textContent = hidden;
+  document.getElementById("fbtext").innerHTML = tf("fbHidden", {n:`<b>${hidden}</b>`});
   bar.hidden=false;
 }
 
@@ -1099,6 +1397,7 @@ function redraw(){rebuildSelects();drawCal();drawList();updateFilterBar();saveSt
 
 /* ---------- 初期化 ---------- */
 loadState();
+applyStaticText();      /* <html lang>・<title>・静的UI文字列を uiLang に合わせる */
 rebuildSelects();
 drawSources();
 
@@ -1121,6 +1420,11 @@ document.getElementById("online").addEventListener("change",e=>{state.online=e.t
 document.getElementById("daytrip").addEventListener("change",e=>{state.daytrip=e.target.checked;redraw();});
 document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
 document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
+/* UI言語トグル(state.lang=開催言語フィルタとは無関係) */
+document.getElementById("langsw").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-ui]");
+  if(b) setUiLang(b.dataset.ui);
+});
 document.getElementById("fbreset").addEventListener("click",()=>{
   Object.assign(state, DEFAULTS);
   redraw();
