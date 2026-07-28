@@ -111,11 +111,15 @@ python3 scripts/ingest.py
 | `fee` | `"free"` / `"paid"` / `"unknown"` |
 | `open_to_public` | 一般が申込可なら `true`、招待制なら `false`、不明なら `null` |
 | `registration_note` | 申込に関する短い日本語メモ(例「要事前登録・無料」)。不明なら `null` |
+| `registration_note_en` | `registration_note` と同内容の英語版(例 "Advance registration required, free")。`registration_note` が `null` なら `null` |
+| `registration_note_de` | 同ドイツ語版(例 "Anmeldung erforderlich, kostenlos")。`registration_note` が `null` なら `null` |
 | `url` | イベント詳細ページのURL(なければ掲載元ページのURL) |
 | `summary_ja` | 内容の日本語要約(1〜2文) |
+| `summary_en` | 同内容の英語要約(1〜2文)。イベント告知として自然な英文にする |
+| `summary_de` | 同内容のドイツ語要約(1〜2文)。経済・金融の独語用語を正しく使う |
 | `language` | 開催言語。`"en"` / `"de"` / `"en+de"`。不明なら `null` |
 | `country` | 開催国のISO 3166-1 alpha-2コード(例 `"DE"`, `"AT"`)。オンラインのみ開催なら `null` |
-| `organizer_short` | 主催者の一般的な略称(例 `"ECB"`, `"Bundesbank"`, `"IfW Kiel"`, `"SAFE"`)。定着した略称がなければ組織名の短い形 |
+| `organizer_short` | 主催者の一般的な略称(例 `"ECB"`, `"Bundesbank"`, `"IfW Kiel"`, `"SAFE"`)。定着した略称がなければ組織名の短い形。**ラテン文字のみ・日本語を含めない**(共催多数の省略は「他」でなく `+` を付ける。例 `"Bundesbank/ECB+"`) |
 | `title_short` | カレンダーセル表示用の英語一言テーマ。**最大5単語**(冠詞・前置詞含む)。原題を写すのではなく、イベントの中核テーマを自分で考えて要約する(例: "Geoeconomics and Global Trade", "Digital Euro", "Housing Market Frictions")。年号・回数・シリーズ名・主催者名は入れない。ドイツ語イベントもtitle_shortは英語でよい。 |
 | `importance` | イベントの重要度。`3`=機関の年次旗艦会議(総裁・理事級の登壇が慣例のもの。登壇者未公表でも3)や大規模国際会議 / `2`=中規模の研究会議・政策カンファレンス / `1`=定例セミナー・小規模講演 / `0`=毎週型の定例研究セミナー・小規模研究発表(マイクロイベント) |
 | `registration_url` | 参加申込ページのURL(イベント詳細ページと別に申込窓口がある場合)。不明なら `null` |
@@ -141,6 +145,9 @@ python3 scripts/ingest.py
 - 日付が読み取れないイベントは含めない。**推測で日付を作らない。**
 - ページに書かれていない情報は `null` / `"unknown"` とする。**捏造しない。**
 - 開催言語はページの記載・告知文の言語から判断する。推測が難しければ `null`。
+- 要約(`summary_ja`/`summary_en`/`summary_de`)と申込メモ(`registration_note`/`_en`/`_de`)は
+  **必ず3言語セットで**作成する(サイトが日英独の表示切替に対応しているため)。
+  3言語は同内容とし、翻訳ではなく各言語で自然な文にする。
 - `open_to_public` と `registration_note`・`registration_url` は参加可否表示に使うため、可能な限り埋める。一般の聴講登録が可能なら true、招待制・CfP採択者のみなら false。
 - 重要度は主催機関の格・登壇者の地位・規模(日数・国際性)から総合判断する。迷ったら低い方に倒す
   (ただし旗艦シリーズには適用しない。旗艦はスクリプト側でも下限3が強制される)。
