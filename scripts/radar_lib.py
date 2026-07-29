@@ -682,6 +682,25 @@ def script_json(obj):
             .replace(" ", "\\u2029"))
 
 
+_ID16_RE = re.compile(r"^[0-9a-f]{16}$")
+
+
+def load_aliases_for_embed():
+    """ページに埋め込む「重複ID→正本ID」の対応表。ブラウザ側は共有リンクや
+    localStorage に残った旧IDを正本IDへ引き直すためだけに使うので、キー・値とも
+    16桁hexの str に一致するエントリだけを通す(それ以外は黙って捨てる)。
+    キーを16桁hexに限ることで、埋め込んだオブジェクトリテラルに __proto__ 等の
+    特殊キーが混入しないことも保証する。"""
+    raw = load_json(ALIASES_FILE, {})
+    out = {}
+    if isinstance(raw, dict):
+        for k, v in raw.items():
+            if (isinstance(k, str) and isinstance(v, str)
+                    and _ID16_RE.match(k) and _ID16_RE.match(v)):
+                out[k] = v
+    return out
+
+
 def sanitize_statuses(statuses):
     """status.json はLLMが直接書くため、描画前に型とURLスキームを強制する。"""
     out = []
@@ -749,6 +768,7 @@ def render_html(events, statuses):
     # 置換はシングルパスで行う(データ内にプレースホルダ文字列を仕込む注入への対策)
     mapping = {
         "__EVENTS_JSON__": script_json(events_sorted),
+        "__ALIASES_JSON__": script_json(load_aliases_for_embed()),
         "__STATUS_JSON__": script_json(sanitize_statuses(statuses)),
         "__SOURCES_JSON__": script_json(parse_sources()),
         "__UPDATED__": updated,
