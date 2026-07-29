@@ -24,6 +24,14 @@ sources:
     url: "https://www.ecb.europa.eu/press/conferences/html/index.en.html"
     verified: true
 
+  # ECB銀行監督(SSM)は本体と別ドメインでイベントを公開している。
+  # 2026-07に Supervision Innovators Conference の検出漏れが発覚し追加。
+  # 注意: Routine実行環境のネットワーク許可リストに
+  # bankingsupervision.europa.eu の追加が必要な場合がある。
+  - name: "ECB Banking Supervision (SSM) – Conferences & seminars"
+    url: "https://www.bankingsupervision.europa.eu/press/conferences/html/index.en.html"
+    verified: true
+
   - name: "Bundesbank – Termine"
     url: "https://www.bundesbank.de/de/service/termine"
     verified: true
