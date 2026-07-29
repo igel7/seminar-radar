@@ -433,6 +433,16 @@ def sanitize(ev):
     ev["themes"] = themes
     if ev.get("fee") not in ("free", "paid", "unknown"):
         ev["fee"] = "unknown"
+    fee_amount = ev.get("fee_amount")
+    if isinstance(fee_amount, str):
+        try:
+            fee_amount = float(fee_amount.replace(",", "").replace("€", "").strip())
+        except ValueError:
+            fee_amount = None
+    if not (isinstance(fee_amount, (int, float)) and not isinstance(fee_amount, bool)
+            and fee_amount >= 0):
+        fee_amount = None
+    ev["fee_amount"] = fee_amount
     if ev.get("format") not in ("onsite", "online", "hybrid"):
         ev["format"] = None
     lang = ev.get("language")
