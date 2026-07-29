@@ -284,6 +284,30 @@ sources:
     url: "https://www.dena.de/infocenter/alle-veranstaltungen/"
     verified: false
 
+  # --- 追加: 無料・一般参加可のESG/サステナブルファイナンス系(2026-07-29) ---
+  # 経緯: 収載済みのESG系イベントが有料会議(€180〜2,500)やCfP・会員限定に偏り、
+  # 「無料で気軽に参加できるESG金融系イベントがない」との利用者フィードバックに対応。
+  # 無料ウェビナー・公聴会を定常的に開催する機関を定点に追加した。
+  # 域外所在の機関(パリ・ロンドン等)はオンライン開催分のみ収載される(既存ルール通り)。
+  - name: "EBA – European Banking Authority – Events"
+    url: "https://www.eba.europa.eu/publications-and-media/events"
+    verified: true   # 公聴会・ウェビナーは無料・オンライン参加可が多い。一覧はJS描画で静的HTMLに出ない: site:eba.europa.eu 検索で補完
+  - name: "ESMA – Public Hearings"
+    url: "https://www.esma.europa.eu/press-news/hearings"
+    verified: true   # 規制コンサルテーションの公聴会(オンライン・無料・要登録)。静的HTMLで取得可
+  - name: "Swiss Sustainable Finance (SSF) – Upcoming Events"
+    url: "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html"
+    verified: true   # 無料ウェビナー中心(ZHAW共催のImpact Investing Insightsシリーズ等)。チューリッヒ所在で対象地域内
+  - name: "CEP – Council on Economic Policies (Zürich) – Events"
+    url: "https://www.cepweb.org/events/"
+    verified: true   # 気候×中央銀行・サステナブルファイナンスの無料ウェビナーを不定期開催
+  - name: "PRI – Principles for Responsible Investment – Events"
+    url: "https://www.unpri.org/events"
+    verified: true   # 無料ウェビナー多数。ロンドン所在のためオンライン開催分のみ収載対象。一覧はJS描画の可能性: site:unpri.org 検索で補完
+  - name: "UNEP FI – Events"
+    url: "https://www.unepfi.org/events/"
+    verified: false  # 503(ボット対策)で自動取得不可: site:unepfi.org 検索補完かINBOX。無料ウェビナー多数(ジュネーブ所在=対象地域内)
+
   # --- 追加: AI・デジタル政策 ---
   - name: "appliedAI Institute (München) – Events"
     url: "https://www.appliedai-institute.de/en/participate/events/"
@@ -335,6 +359,7 @@ discovery_topics:
   - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: SUERF conference 2026, Frankfurt School Konferenz, Hertie School event, site:nbp.pl conference seminar, Bank of Lithuania conference, site:lb.lt events, European Payments Council event, Bank of Albania conference)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
   - "地政学・安全保障・地経学に関するセミナーや講演(ドイツ・対象地域またはオンライン)。例: geopolitics seminar Germany, economic security conference, Sicherheitspolitik Konferenz, sanctions export controls seminar, defence economics workshop"
   - "サステナブルファイナンス・ESG・気候関連の会議やセミナー(ドイツ・対象地域またはオンライン)。例: sustainable finance conference Germany, ESG Konferenz, Klimarisiken Bankenaufsicht, carbon market CBAM conference, NGFS conference, Energiewende Konferenz, climate economics workshop"
+  - "無料で一般参加できるESG・サステナブルファイナンスのウェビナー・公聴会・オンライン説明会を優先的に探す(例: sustainable finance webinar free registration, climate risk webinar, EBA ESMA EIOPA public hearing sustainability, NGFS webinar, UNEP FI webinar, PRI webinar, E-axes Forum webinar, OMFIF sustainable policy institute panel, Nachhaltigkeit Webinar kostenlos Anmeldung)。有料の大型カンファレンスではなく、無料・要登録のオンライン参加可能なものを重点的に拾う"
   - "AI・デジタル技術と経済・金融・規制に関する会議やセミナー(例: AI economy conference Germany, KI Konferenz Wirtschaft, AI Act Umsetzung Veranstaltung, AI banking supervision seminar, KI Arbeitsmarkt Produktivität)"
   - "中国経済・欧中経済関係に関する会議やセミナー(例: China economic outlook Germany, China Konferenz Wirtschaft, de-risking China seminar, EU China trade investment conference, MERICS event, China Day Frankfurt, Chinesische Handelskammer CHKD Veranstaltung, Deutsch-Chinesische Wirtschaftskonferenz)"
   - "日本経済・日独/日欧経済関係に関する会議やセミナー(例: Japan Wirtschaft Konferenz Deutschland, Deutsch-Japanisches Wirtschaftsforum, Japan economy seminar, Bank of Japan lecture Europe, EU-Japan EPA event)"
