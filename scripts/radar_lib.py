@@ -18,6 +18,7 @@ DATA_FILE = ROOT / "data" / "events.json"
 NEW_FILE = ROOT / "data" / "new_events.json"
 STATUS_FILE = ROOT / "data" / "status.json"
 ARCHIVE_FILE = ROOT / "data" / "archive.json"
+CHANGELOG_FILE = ROOT / "data" / "changelog.json"
 HTML_FILE = ROOT / "docs" / "index.html"
 ICS_FILE = ROOT / "docs" / "calendar.ics"
 TEMPLATE_FILE = ROOT / "scripts" / "template.html"
@@ -29,6 +30,15 @@ THEMES = ["central_bank", "real_economy", "fin_markets", "geopolitics", "climate
           "ai", "china", "japan"]
 OVERRIDES_FILE = ROOT / "data" / "overrides.json"
 ALIASES_FILE = ROOT / "data" / "aliases.json"
+
+# 更新履歴(data/changelog.json)に「変更」として記録するフィールドのホワイトリスト。
+# summary_ja・title_ja 等はLLMが毎日再抽出するたびに言い回しが変わりがちで、
+# これを対象に含めると実質的な変化が無い日でも全イベントが更新扱いになってしまう。
+# そのため、値が変わればユーザーにとって意味のある「実質的な変更」だけに絞る。
+CHANGELOG_WATCHED_FIELDS = ("date_start", "date_end", "time", "time_end", "venue", "city",
+                            "format", "fee", "fee_amount", "registration_url", "open_to_public")
+CHANGELOG_KEEP_DAYS = 90    # data/changelog.json にファイルとして保持する日数
+CHANGELOG_EMBED_DAYS = 30   # HTMLに埋め込み・表示する日数(ファイル保持より短い窓)
 
 _URL_RE = re.compile(r"^https?://", re.IGNORECASE)
 
@@ -525,12 +535,34 @@ def load_json(path, default):
 
 
 def merge(existing, new_events):
-    """既存 + 新規 をマージ。first_seen は最初の値を維持。戻り値 (events, 追加件数)。
+    """既存 + 新規 をマージ。first_seen は最初の値を維持。戻り値 (events, 追加件数, changes)。
     ハッシュキーが一致しない場合でも、ファジー判定(similar_event)で同一と
     見なせる既存イベントがあれば、そちらへフィールドマージし新規追加しない
-    (言い回し違いでの二重登録を未然に防ぐ)。"""
+    (言い回し違いでの二重登録を未然に防ぐ)。
+    changes は data/changelog.json 更新用(update_changelog)の差分情報:
+      {"added": [新規追加イベントへの参照, ...],
+       "updated": {id: (イベントへの参照, 変更フィールド名のset), ...}}
+    updated は CHANGELOG_WATCHED_FIELDS のうち実際に値が変わったフィールドのみを持つ
+    (同値上書きは記録しない)。同一イベントが同一実行内で複数回マッチした場合は
+    フィールドsetを和集合にする。"""
     by_key = {e["id"]: e for e in existing}
     added = 0
+    changes = {"added": [], "updated": {}}
+
+    def record_update(ev_ref, before):
+        # 当日追加分(first_seen==TODAY)は、追加直後の2回目実行等で誤って
+        # 「更新」扱いされないよう記録しない。
+        if ev_ref.get("first_seen") == TODAY.isoformat():
+            return
+        changed = {f for f in CHANGELOG_WATCHED_FIELDS if before.get(f) != ev_ref.get(f)}
+        if not changed:
+            return
+        eid = ev_ref.get("id")
+        if eid in changes["updated"]:
+            changes["updated"][eid][1].update(changed)
+        else:
+            changes["updated"][eid] = (ev_ref, changed)
+
     for ev in new_events:
         ev = sanitize(dict(ev) if isinstance(ev, dict) else {})
         if not ev:
@@ -538,6 +570,7 @@ def merge(existing, new_events):
         k = event_key(ev)
         if k in by_key:
             old = by_key[k]
+            before = {f: old.get(f) for f in CHANGELOG_WATCHED_FIELDS}
             new_start, new_end = _merge_date_range(
                 old.get("date_start"), old.get("date_end"),
                 ev.get("date_start"), ev.get("date_end"))
@@ -548,9 +581,11 @@ def merge(existing, new_events):
                     old[field] = val
             old["importance"] = _merge_importance(old.get("importance"), ev.get("importance"))
             old["date_start"], old["date_end"] = new_start, new_end
+            record_update(old, before)
         else:
             match = next((old for old in by_key.values() if similar_event(old, ev)), None)
             if match is not None:
+                before = {f: match.get(f) for f in CHANGELOG_WATCHED_FIELDS}
                 new_start, new_end = _merge_date_range(
                     match.get("date_start"), match.get("date_end"),
                     ev.get("date_start"), ev.get("date_end"))
@@ -561,12 +596,98 @@ def merge(existing, new_events):
                         match[field] = val
                 match["importance"] = _merge_importance(match.get("importance"), ev.get("importance"))
                 match["date_start"], match["date_end"] = new_start, new_end
+                record_update(match, before)
             else:
                 ev["id"] = k
                 ev["first_seen"] = TODAY.isoformat()
                 by_key[k] = ev
                 added += 1
-    return list(by_key.values()), added
+                changes["added"].append(ev)
+    return list(by_key.values()), added, changes
+
+
+def _changelog_snap(ev):
+    """イベントから更新履歴の表示用スナップショット(dict)を作る。
+    イベントは開催終了から30日で split_archive により data/events.json から
+    アーカイブへ移されて消えるため、履歴側にタイトル等の表示に必要な情報を
+    その時点の値として焼き込んでおく(idの参照だけでは後から描画できなくなるため)。"""
+    return {
+        "id": ev.get("id"),
+        "title": ev.get("title"),
+        "title_ja": ev.get("title_ja"),
+        "organizer_short": ev.get("organizer_short"),
+        "date_start": ev.get("date_start"),
+        "date_end": ev.get("date_end"),
+        "city": ev.get("city"),
+        "url": safe_url(ev.get("url")),
+    }
+
+
+def update_changelog(changes):
+    """data/changelog.json (追加・実質更新の日次履歴)を更新する。
+    changes は merge() が返す差分情報 {"added": [...], "updated": {id: (ev, fields), ...}}。
+    added・updated が両方空でも呼んでよく、その場合は保持期限切れエントリの掃除だけが走る。
+
+    ファイル形式: 日付降順の配列。各要素は
+      {"date": "YYYY-MM-DD",
+       "added": [スナップショット, ...],
+       "updated": [スナップショット + "fields": [変更フィールド名, ...(ソート済み)], ...]}
+
+    戻り値: TODAY - CHANGELOG_EMBED_DAYS 以降のエントリ(日付降順、HTML埋め込み用)。"""
+    log = load_json(CHANGELOG_FILE, [])
+    if not isinstance(log, list):
+        log = []
+
+    today_str = TODAY.isoformat()
+    entry = next((e for e in log if isinstance(e, dict) and e.get("date") == today_str), None)
+    if entry is None:
+        entry = {"date": today_str, "added": [], "updated": []}
+        log.append(entry)
+
+    # added: 既存(当日分、同日2回目実行など)を id 順を保ったまま引き継ぎ、
+    # 新規 id のみスナップショットを追記する。
+    added_map, added_order = {}, []
+    for a in entry.get("added") or []:
+        if isinstance(a, dict) and a.get("id"):
+            added_map[a["id"]] = a
+            added_order.append(a["id"])
+    for ev in changes.get("added", []):
+        eid = ev.get("id")
+        if not eid or eid in added_map:
+            continue
+        added_map[eid] = _changelog_snap(ev)
+        added_order.append(eid)
+    entry["added"] = [added_map[eid] for eid in added_order]
+
+    # updated: 当日 added に載っているidは対象外(追加当日の変更はニュースにしない)。
+    # 既存の updated があればフィールドを和集合にしスナップショットを最新化する。
+    updated_map, updated_order = {}, []
+    for u in entry.get("updated") or []:
+        if isinstance(u, dict) and u.get("id"):
+            updated_map[u["id"]] = u
+            updated_order.append(u["id"])
+    for eid, (ev, fields) in changes.get("updated", {}).items():
+        if not eid or eid in added_map:
+            continue
+        if eid in updated_map:
+            fields = set(updated_map[eid].get("fields") or []) | set(fields)
+        else:
+            updated_order.append(eid)
+        snap = _changelog_snap(ev)
+        snap["fields"] = sorted(fields)
+        updated_map[eid] = snap
+    entry["updated"] = [updated_map[eid] for eid in updated_order]
+
+    # 保持期限切れ(CHANGELOG_KEEP_DAYS より古い)・日付が不正なエントリを除去する。
+    cutoff = (TODAY - timedelta(days=CHANGELOG_KEEP_DAYS)).isoformat()
+    log = [e for e in log if isinstance(e, dict) and valid_date(e.get("date"))
+           and e["date"] >= cutoff]
+    log.sort(key=lambda e: e["date"], reverse=True)
+
+    CHANGELOG_FILE.write_text(json.dumps(log, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    embed_cutoff = (TODAY - timedelta(days=CHANGELOG_EMBED_DAYS)).isoformat()
+    return [e for e in log if e["date"] >= embed_cutoff]
 
 
 def dedupe_events(events):
@@ -760,17 +881,30 @@ def parse_sources():
         return empty
 
 
-def render_html(events, statuses):
+def render_html(events, statuses, changelog=None):
     template = TEMPLATE_FILE.read_text(encoding="utf-8")
     events_sorted = [dict(e, url=safe_url(e.get("url"))) for e in
                      sorted(events, key=lambda e: (e["date_start"], e.get("title") or ""))]
     updated = datetime.now(TZ).strftime("%Y-%m-%d %H:%M (%Z)")
+    if changelog is None:
+        # 呼び出し元が update_changelog() を呼ばずに render_html() だけ叩いた場合の保険。
+        # ファイルを読むだけで、プルーニング(古いエントリの削除)は行わない
+        # (それは巡回時に update_changelog() 側の責務とする)。
+        log = load_json(CHANGELOG_FILE, [])
+        if not isinstance(log, list):
+            log = []
+        embed_cutoff = (TODAY - timedelta(days=CHANGELOG_EMBED_DAYS)).isoformat()
+        changelog = sorted(
+            (e for e in log if isinstance(e, dict) and valid_date(e.get("date"))
+             and e["date"] >= embed_cutoff),
+            key=lambda e: e["date"], reverse=True)
     # 置換はシングルパスで行う(データ内にプレースホルダ文字列を仕込む注入への対策)
     mapping = {
         "__EVENTS_JSON__": script_json(events_sorted),
         "__ALIASES_JSON__": script_json(load_aliases_for_embed()),
         "__STATUS_JSON__": script_json(sanitize_statuses(statuses)),
         "__SOURCES_JSON__": script_json(parse_sources()),
+        "__CHANGELOG_JSON__": script_json(changelog),
         "__UPDATED__": updated,
         "__TODAY__": TODAY.isoformat(),
     }

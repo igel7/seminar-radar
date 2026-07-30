@@ -17,7 +17,7 @@ import sys
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
                        apply_aliases, apply_flagship, apply_overrides, dedupe_events,
                        load_json, merge, parse_sources, region_ok, render_html,
-                       render_ics, split_archive)
+                       render_ics, split_archive, update_changelog)
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
     anywhere_sources = {s["name"] for s in parse_sources()["sources"] if s.get("anywhere")}
 
     store = load_json(DATA_FILE, {"events": []})
-    events, added = merge(store.get("events", []), new_events)
+    events, added, changes = merge(store.get("events", []), new_events)
     events, removed = dedupe_events(events)
 
     # 重複ID→正本IDの恒久台帳(data/aliases.json)を適用する。similar_event を
@@ -58,10 +58,13 @@ def main():
     DATA_FILE.write_text(json.dumps({"events": events}, ensure_ascii=False, indent=1),
                          encoding="utf-8")
 
+    # 追加・実質更新の履歴(data/changelog.json)を更新し、HTML埋め込み用の窓を得る。
+    changelog = update_changelog(changes)
+
     # レンダリング直前にユーザー管理の手動上書き(data/overrides.json)を適用する。
     # events (data/events.json への保存分)には反映しない = オーバーライドは表示専用。
     render_events = apply_overrides([dict(ev) for ev in events])
-    render_html(render_events, statuses)
+    render_html(render_events, statuses, changelog=changelog)
     render_ics(render_events)
 
     # 取込済みの入力ファイルは空に戻す(次回実行の取り違え防止)
@@ -69,7 +72,8 @@ def main():
 
     print(f"完了: 新規 {added} 件 / 掲載中 {len(events)} 件 / "
           f"アーカイブ移動 {len(to_archive)} 件 / 重複除去 {removed} 件 / "
-          f"エイリアス統合 {aliased} 件 / 地域外除去 {region_removed} 件")
+          f"エイリアス統合 {aliased} 件 / 地域外除去 {region_removed} 件 / "
+          f"履歴記録 追加{len(changes['added'])}件・更新{len(changes['updated'])}件")
 
 
 if __name__ == "__main__":

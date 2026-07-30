@@ -21,7 +21,7 @@ import yaml
 from bs4 import BeautifulSoup
 
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, ROOT, TODAY, load_json, merge,
-                       render_html, render_ics, split_archive)
+                       render_html, render_ics, split_archive, update_changelog)
 
 API_URL = "https://api.anthropic.com/v1/messages"
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -201,7 +201,7 @@ def main():
         statuses.append({"name": "web検索(discovery)", "url": "",
                          "ok": False, "error": str(e)[:200]})
 
-    events, added = merge(events, collected)
+    events, added, changes = merge(events, collected)
     events, to_archive = split_archive(events, cfg["archive_after_days"])
 
     if to_archive:
@@ -212,9 +212,14 @@ def main():
 
     DATA_FILE.write_text(json.dumps({"events": events}, ensure_ascii=False, indent=1),
                          encoding="utf-8")
-    render_html(events, statuses)
+
+    # 追加・実質更新の履歴(data/changelog.json)を更新し、HTML埋め込み用の窓を得る。
+    changelog = update_changelog(changes)
+
+    render_html(events, statuses, changelog=changelog)
     render_ics(events)
-    print(f"完了: 新規 {added} 件 / 掲載中 {len(events)} 件 / アーカイブ {len(to_archive)} 件")
+    print(f"完了: 新規 {added} 件 / 掲載中 {len(events)} 件 / アーカイブ {len(to_archive)} 件 / "
+          f"履歴記録 追加{len(changes['added'])}件・更新{len(changes['updated'])}件")
 
 
 if __name__ == "__main__":
