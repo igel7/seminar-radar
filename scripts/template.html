@@ -674,6 +674,7 @@ ja:{
   stFound:"[OK] {n}件",
   /* 更新履歴(News) */
   nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
+  nwPinned:"フィルタで非表示のイベントを一時的に表示しています(フィルタ操作で解除)",
   nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
   nwf_fee:"参加費", nwf_reg:"申込",
   spCoverage:"対象地域",
@@ -746,6 +747,7 @@ en:{
   /* Change log (News) */
   nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
   nwNone:"no changes",
+  nwPinned:"Temporarily showing an event hidden by your filters (cleared on any filter change)",
   nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
   nwf_fee:"Fee", nwf_reg:"Registration",
   spCoverage:"Coverage",
@@ -823,6 +825,7 @@ de:{
   /* Änderungen (News) */
   nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
   nwNone:"keine Änderungen",
+  nwPinned:"Ein durch Filter verborgenes Event wird vorübergehend angezeigt (Filteränderung hebt dies auf)",
   nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
   nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
   spCoverage:"Erfasste Region",
@@ -1533,8 +1536,10 @@ function regNoteOf(ev){
   return ev.registration_note_de || ev.registration_note_en || "";
 }
 function drawList(){
-  /* 共有ビュー(v1)は復号したイベントを全件出す(終了済みも隠さない) */
-  let evs=isShareList() ? fEvents() : fEvents().filter(notEnded);
+  /* 共有ビュー(v1)は復号したイベントを全件出す(終了済みも隠さない)。
+     通常ビューでは、更新履歴からのピン(newsPin)だけは全フィルタを素通しで含める */
+  let evs=isShareList() ? fEvents()
+          : EVENTS.filter(e=>(visible(e)&&notEnded(e)) || e.id===newsPin);
   const box=document.getElementById("list");
   if(!evs.length){box.innerHTML=`<div class="empty">${esc(t("empty"))}</div>`;return;}
   const byImp = state.sort==="imp";
@@ -1624,6 +1629,14 @@ const NW_BUCKET = {
 };
 const NW_BUCKET_ORDER = ["date","time","venue","format","fee","reg"];
 
+/* 掲載中イベントのID集合(EVENTSは静的なので一度だけ作る)。履歴リンクの内部/外部の
+   振り分けに使う: 掲載中なら一覧の該当行へ、掲載終了なら原文URLへ。 */
+const NW_EV_IDS = new Set(EVENTS.map(e=>String(e.id||"")));
+/* フィルタで隠れているイベントを履歴クリックで一時的に一覧へ再表示するためのピン。
+   drawList() が全フィルタを素通しで通す唯一の例外。フィルタ操作(変更・リセット)で解除。 */
+let newsPin=null;
+function clearNewsPin(){ newsPin=null; }
+
 /* CHANGELOG は生成側で日付降順・直近30日に整えてあるが、壊れた値でも例外を出さない。
    日付が不正な要素・追加も更新も無い日は落とす。 */
 function newsDays(){
@@ -1679,7 +1692,9 @@ function newsLink(it){
   const tip=newsTip(it);
   const tipAttr=tip?` title="${esc(tip)}"`:"";
   const id=canonId(it.id);
-  if(id && document.getElementById("ev-"+id))
+  /* 掲載中(EVENTSに存在)なら内部リンク。一覧行がフィルタで無くても、クリック時に
+     ピンで一時再表示するので描画時点の行の有無は見ない。 */
+  if(id && NW_EV_IDS.has(id))
     return `<a class="nwev" data-id="${esc(id)}" href="#ev-${esc(id)}"${tipAttr}>${nm}</a>`;
   const u=safeUrl(it.url);
   if(u) return `<a class="nwev" data-id="${esc(id||"")}" href="${esc(u)}" target="_blank" rel="noopener"${tipAttr}>${nm}</a>`;
@@ -2304,14 +2319,21 @@ document.addEventListener("click",e=>{
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
 });
-/* 更新履歴の行タイトル: クリック時に ALIASES で引き直し、一覧に行があればそこへ
-   スクロール+一時ハイライト。行が無ければ別タブで原文を開く(=既定動作)。 */
+/* 更新履歴の行タイトル: クリック時に ALIASES で引き直し、一覧の該当行へスクロール+
+   一時ハイライト。行がフィルタで隠れている場合はピン(newsPin)を立てて一覧を描き直し、
+   そのイベントだけ一時的に再表示してから飛ぶ。掲載終了分は別タブで原文(=既定動作)。 */
 document.getElementById("newsbody").addEventListener("click",e=>{
   const a=e.target.closest("a.nwev"); if(!a) return;
   const id=canonId(a.getAttribute("data-id"));
-  const el=id?document.getElementById("ev-"+id):null;
+  let el=id?document.getElementById("ev-"+id):null;
+  if(!el && id && NW_EV_IDS.has(id)){
+    newsPin=id;
+    drawList();
+    el=document.getElementById("ev-"+id);
+    if(el) toast(t("nwPinned"));
+  }
   if(!el){
-    /* 一覧側がフィルタで消えている場合、宛先のないフラグメント遷移はしない */
+    /* 掲載中なのに行を作れなかった異常時のみ。宛先のないフラグメント遷移はしない */
     if((a.getAttribute("href")||"").charAt(0)==="#") e.preventDefault();
     return;
   }
@@ -2320,6 +2342,13 @@ document.getElementById("newsbody").addEventListener("click",e=>{
   el.classList.add("hl");
   setTimeout(()=>el.classList.remove("hl"),2500);
 });
+/* フィルタ操作(変更・キーワード入力・リセット)でピンを解除する。capture段階で
+   先に外しておけば、各コントロール自身のハンドラが行う redraw() でピン無しの
+   一覧が描かれる(リセットボタンも同様)。 */
+document.querySelector(".filters").addEventListener("change",clearNewsPin,true);
+document.querySelector(".filters").addEventListener("input",clearNewsPin,true);
+document.getElementById("fbreset").addEventListener("click",clearNewsPin,true);
+document.getElementById("listonly").addEventListener("change",clearNewsPin,true);
 
 /* ---------- 調査対象ボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
 const srcwrap=document.getElementById("srcwrap");
