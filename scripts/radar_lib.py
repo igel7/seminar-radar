@@ -615,6 +615,8 @@ def _changelog_snap(ev):
         "id": ev.get("id"),
         "title": ev.get("title"),
         "title_ja": ev.get("title_ja"),
+        "title_short": ev.get("title_short"),
+        "importance": ev.get("importance"),
         "organizer_short": ev.get("organizer_short"),
         "date_start": ev.get("date_start"),
         "date_end": ev.get("date_end"),
