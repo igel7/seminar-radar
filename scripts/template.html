@@ -116,6 +116,7 @@
   .nwtx a:hover{color:var(--amber);border-bottom-color:var(--amber)}
   .nwmeta{color:var(--sub);margin-left:3px}
   .nwfld{color:var(--imp2-tx)}
+  .nwst{color:var(--amber-dim);letter-spacing:.05em}
 
   /* ---------- フィルタ ---------- */
   .filters{margin:14px 0 18px}
@@ -1635,10 +1636,21 @@ function newsDays(){
     return (a+u)>0;
   });
 }
-/* 表示タイトル: ja は title_ja を優先(無ければ原題) */
+/* 表示タイトル: カレンダーセルと同じ表記(evLabel のテーマ部 = title_short 優先)。
+   旧履歴エントリ(title_short 未収録)は原題にフォールバックする。 */
 function newsTitle(it){
-  if(uiLang==="ja" && it.title_ja) return it.title_ja;
-  return it.title || it.title_ja || "";
+  return it.title_short || it.title || it.title_ja || "";
+}
+/* ホバー時に正式名を出す(ja は訳題も併記)。title_short 表示の補完。 */
+function newsTip(it){
+  const full=(uiLang==="ja" && it.title_ja && it.title) ? `${it.title_ja} / ${it.title}`
+             : (it.title || it.title_ja || "");
+  return full!==newsTitle(it) ? full : "";
+}
+/* 重要度の★表記(凡例と同じ3桁: 3=★★★ … 0=☆☆☆)。値が無い旧エントリは空 */
+function newsStars(it){
+  const n=it.importance;
+  return (Number.isInteger(n) && n>=0 && n<=3) ? "★".repeat(n)+"☆".repeat(3-n) : "";
 }
 /* 括弧内のメタ情報: 日付(複数日は範囲)・主催者・都市 */
 function newsMeta(it){
@@ -1664,19 +1676,24 @@ function newsFields(fields){
    無ければ原文URLを別タブで開く。どちらも無ければプレーンテキスト。 */
 function newsLink(it){
   const nm=esc(newsTitle(it));
+  const tip=newsTip(it);
+  const tipAttr=tip?` title="${esc(tip)}"`:"";
   const id=canonId(it.id);
   if(id && document.getElementById("ev-"+id))
-    return `<a class="nwev" data-id="${esc(id)}" href="#ev-${esc(id)}">${nm}</a>`;
+    return `<a class="nwev" data-id="${esc(id)}" href="#ev-${esc(id)}"${tipAttr}>${nm}</a>`;
   const u=safeUrl(it.url);
-  if(u) return `<a class="nwev" data-id="${esc(id||"")}" href="${esc(u)}" target="_blank" rel="noopener">${nm}</a>`;
-  return nm;
+  if(u) return `<a class="nwev" data-id="${esc(id||"")}" href="${esc(u)}" target="_blank" rel="noopener"${tipAttr}>${nm}</a>`;
+  return tip?`<span${tipAttr}>${nm}</span>`:nm;
 }
 function newsRow(it, kind){
   if(!it || typeof it!=="object") return "";
   const meta=newsMeta(it);
+  const st=newsStars(it);
   const fl=(kind==="upd") ? newsFields(it.fields) : "";
   return `<div class="nwrow"><span class="nwmk ${kind}">${kind==="add"?"＋":"↻"}</span>`+
-    `<span class="nwtx">${newsLink(it)}`+
+    `<span class="nwtx">`+
+    (st?`<span class="nwst">${st}</span> `:"")+
+    `${newsLink(it)}`+
     (meta?`<span class="nwmeta">(${esc(meta)})</span>`:"")+
     (fl?`<span class="nwfld"> — ${esc(fl)}</span>`:"")+
     `</span></div>`;
