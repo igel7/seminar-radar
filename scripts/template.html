@@ -88,6 +88,35 @@
   .srclist a:hover{color:var(--amber);border-bottom-color:var(--amber)}
   .srclist span{color:var(--sub);border-bottom:none}
 
+  /* ---------- 更新履歴(News・折りたたみ) ---------- */
+  /* 巡回ステータス(ターミナルログ調)と同系統の控えめな見た目。閉じている間は
+     summary の1行だけが見える(既定=閉。open属性は付けない)。 */
+  #news{border:1px solid var(--line2);background:var(--panel);border-radius:5px;
+    margin:0 0 14px;font-family:var(--mono)}
+  #news[hidden]{display:none}
+  #newssum{display:block;cursor:pointer;padding:6px 12px;font-size:12px;
+    letter-spacing:.02em;color:var(--sub);white-space:nowrap;overflow:hidden;
+    text-overflow:ellipsis;list-style:none;transition:color .12s}
+  #newssum::-webkit-details-marker{display:none}
+  #newssum::before{content:"▸ ";color:var(--amber-dim)}
+  #news[open] #newssum::before{content:"▾ "}
+  #newssum:hover{color:var(--amber)}
+  #newssum:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
+  #news[open] #newssum{border-bottom:1px solid var(--line);color:var(--ink)}
+  #newsbody{padding:7px 12px 9px;font-size:12.5px;line-height:1.55}
+  .nwday{margin:8px 0 3px;font-size:11px;letter-spacing:.14em;color:var(--amber);
+    border-bottom:1px solid var(--line);padding-bottom:2px}
+  .nwday:first-child{margin-top:0}
+  .nwrow{display:flex;gap:6px;padding:1px 0}
+  .nwmk{flex:0 0 auto;width:1.15em;text-align:center;font-weight:700}
+  .nwmk.add{color:var(--fm-tx)}
+  .nwmk.upd{color:var(--imp2-tx)}
+  .nwtx{min-width:0;overflow-wrap:anywhere}
+  .nwtx a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2)}
+  .nwtx a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+  .nwmeta{color:var(--sub);margin-left:3px}
+  .nwfld{color:var(--imp2-tx)}
+
   /* ---------- フィルタ ---------- */
   .filters{margin:14px 0 18px}
   .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
@@ -379,6 +408,9 @@
     .langsw button{padding:6px 6px;font-size:10.5px;letter-spacing:.02em}
     .srcpanel{left:0;right:auto;width:min(360px,86vw)}
     .srclist{columns:1}
+    /* 更新履歴: 狭い画面では見出し行を折り返して全文見せる(省略記号を出さない) */
+    #newssum{white-space:normal;text-overflow:clip;padding:6px 10px;font-size:11.5px}
+    #newsbody{padding:6px 10px 8px;font-size:12px}
     .controls{gap:8px}
     .fld{flex:1 1 42%;min-width:0}
     .fld select{width:100%}
@@ -448,6 +480,12 @@
     <div class="tagline" data-i18n="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
+
+<!-- 更新履歴(News): 既定は閉。中身は drawNews() が組み立て、空なら hidden のまま。 -->
+<details id="news" hidden>
+  <summary id="newssum"></summary>
+  <div id="newsbody"></div>
+</details>
 
 <div class="filters">
   <div class="controls">
@@ -586,6 +624,8 @@ const EVENTS  = __EVENTS_JSON__;
 const ALIASES = __ALIASES_JSON__;
 const STATUS  = __STATUS_JSON__;
 const SOURCES = __SOURCES_JSON__;
+/* 更新履歴(News)。日付降順・直近30日分のみが埋め込まれる。空配列のこともある。 */
+const CHANGELOG = __CHANGELOG_JSON__;
 const TODAY   = "__TODAY__";
 
 /* ================= UI言語(uiLang)=================
@@ -631,6 +671,10 @@ ja:{
   regNote:"申込:", regPage:"申込ページ →",
   srcInfo:"情報源:", firstSeen:"／ 初検出:",
   stFound:"[OK] {n}件",
+  /* 更新履歴(News) */
+  nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
+  nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
+  nwf_fee:"参加費", nwf_reg:"申込",
   spCoverage:"対象地域",
   spCoverageText:"ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。",
   spMonitored:"定点観測先({n}件)",
@@ -698,6 +742,11 @@ en:{
   regNote:"Registration:", regPage:"Registration page →",
   srcInfo:"Source:", firstSeen:"/ first seen:",
   stFound:"[OK] {n} found",
+  /* Change log (News) */
+  nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
+  nwNone:"no changes",
+  nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
+  nwf_fee:"Fee", nwf_reg:"Registration",
   spCoverage:"Coverage",
   spCoverageText:"Germany, Switzerland, Austria, Central & Eastern Europe (PL/CZ/SK/HU/SI), the Balkans, the Baltic states and Ukraine. Events hosted by central banks, the ECB or the BIS are included regardless of the host country.",
   spMonitored:"Monitored sources ({n})",
@@ -770,6 +819,11 @@ de:{
   regNote:"Anmeldung:", regPage:"Anmeldeseite →",
   srcInfo:"Quelle:", firstSeen:"/ erfasst am:",
   stFound:"[OK] {n} gefunden",
+  /* Änderungen (News) */
+  nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
+  nwNone:"keine Änderungen",
+  nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
+  nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
   spCoverage:"Erfasste Region",
   spCoverageText:"Deutschland, Schweiz, Österreich, Mittel- und Osteuropa (PL/CZ/SK/HU/SI), Balkan, Baltikum und Ukraine. Veranstaltungen von Zentralbanken, der EZB oder der BIZ werden unabhängig vom Austragungsland erfasst.",
   spMonitored:"Beobachtete Quellen ({n})",
@@ -905,6 +959,7 @@ function setUiLang(l){
   redraw();
   drawStatus();
   drawSources();
+  drawNews();            /* redraw() の後(一覧行 #ev-<id> の有無を見てリンクを決める) */
 }
 
 const THCLS = {central_bank:"cb", real_economy:"re", fin_markets:"fm", geopolitics:"gp", climate_esg:"ce", ai:"ai", china:"cn", japan:"jp"};
@@ -1558,6 +1613,98 @@ function drawSources(){
     `<p>${esc(t("spDiscoveryText"))}</p></div>`;
 }
 
+/* ---------- 更新履歴(News) ---------- */
+/* 変更フィールド → 表示ラベルのバケツ。同じバケツに落ちる複数フィールド
+   (例 date_start と date_end)はまとめて1回だけ表示する。 */
+const NW_BUCKET = {
+  date_start:"date", date_end:"date", time:"time", time_end:"time",
+  venue:"venue", city:"venue", format:"format", fee:"fee", fee_amount:"fee",
+  registration_url:"reg", open_to_public:"reg"
+};
+const NW_BUCKET_ORDER = ["date","time","venue","format","fee","reg"];
+
+/* CHANGELOG は生成側で日付降順・直近30日に整えてあるが、壊れた値でも例外を出さない。
+   日付が不正な要素・追加も更新も無い日は落とす。 */
+function newsDays(){
+  let src;
+  try{ src = Array.isArray(CHANGELOG) ? CHANGELOG : []; }catch(e){ return []; }
+  return src.filter(d=>{
+    if(!d || typeof d!=="object" || !DATE_RE.test(String(d.date??""))) return false;
+    const a=Array.isArray(d.added)?d.added.length:0;
+    const u=Array.isArray(d.updated)?d.updated.length:0;
+    return (a+u)>0;
+  });
+}
+/* 表示タイトル: ja は title_ja を優先(無ければ原題) */
+function newsTitle(it){
+  if(uiLang==="ja" && it.title_ja) return it.title_ja;
+  return it.title || it.title_ja || "";
+}
+/* 括弧内のメタ情報: 日付(複数日は範囲)・主催者・都市 */
+function newsMeta(it){
+  const parts=[];
+  if(DATE_RE.test(String(it.date_start??""))){
+    let d=md(it.date_start);
+    if(DATE_RE.test(String(it.date_end??"")) && it.date_end!==it.date_start)
+      d+=t("dash")+md(it.date_end);
+    parts.push(d);
+  }
+  if(it.organizer_short) parts.push(orgDisp(it.organizer_short));
+  if(it.city) parts.push(CITY_SHORT[it.city]||it.city);
+  return parts.join(t("sep"));
+}
+/* 更新行に付ける「何が変わったか」の短いラベル(重複バケツは1回だけ) */
+function newsFields(fields){
+  if(!Array.isArray(fields)) return "";
+  const set=new Set();
+  for(const f of fields){ const b=NW_BUCKET[String(f)]; if(b) set.add(b); }
+  return NW_BUCKET_ORDER.filter(b=>set.has(b)).map(b=>t("nwf_"+b)).join(t("sep"));
+}
+/* タイトルのリンク先: 一覧に該当行があればそこへ(クリックでスクロール+一時ハイライト)、
+   無ければ原文URLを別タブで開く。どちらも無ければプレーンテキスト。 */
+function newsLink(it){
+  const nm=esc(newsTitle(it));
+  const id=canonId(it.id);
+  if(id && document.getElementById("ev-"+id))
+    return `<a class="nwev" data-id="${esc(id)}" href="#ev-${esc(id)}">${nm}</a>`;
+  const u=safeUrl(it.url);
+  if(u) return `<a class="nwev" data-id="${esc(id||"")}" href="${esc(u)}" target="_blank" rel="noopener">${nm}</a>`;
+  return nm;
+}
+function newsRow(it, kind){
+  if(!it || typeof it!=="object") return "";
+  const meta=newsMeta(it);
+  const fl=(kind==="upd") ? newsFields(it.fields) : "";
+  return `<div class="nwrow"><span class="nwmk ${kind}">${kind==="add"?"＋":"↻"}</span>`+
+    `<span class="nwtx">${newsLink(it)}`+
+    (meta?`<span class="nwmeta">(${esc(meta)})</span>`:"")+
+    (fl?`<span class="nwfld"> — ${esc(fl)}</span>`:"")+
+    `</span></div>`;
+}
+/* 一覧行の有無を見るため、必ず drawList()(=redraw())より後に呼ぶこと。 */
+function drawNews(){
+  const box=document.getElementById("news");
+  const days=newsDays();
+  if(!days.length){ box.hidden=true; return; }
+  /* summary(閉じている間に見える1行)の件数は最新日のもの */
+  const top=days[0];
+  const nA=Array.isArray(top.added)?top.added.length:0;
+  const nU=Array.isArray(top.updated)?top.updated.length:0;
+  const cnt=[];
+  if(nA) cnt.push(tf("nwAdded",{n:nA}));
+  if(nU) cnt.push(tf("nwUpdated",{n:nU}));
+  document.getElementById("newssum").textContent =
+    `${t("nwTitle")} — ${md(top.date)}: ${cnt.length?cnt.join(t("sep")):t("nwNone")}`;
+  let html="";
+  for(const d of days){
+    html+=`<div class="nwday">${esc(md(d.date))}</div>`;
+    if(Array.isArray(d.added))   for(const it of d.added)   html+=newsRow(it,"add");
+    if(Array.isArray(d.updated)) for(const it of d.updated) html+=newsRow(it,"upd");
+  }
+  document.getElementById("newsbody").innerHTML=html;
+  box.hidden=false;
+}
+
 /* ---------- フィルタ適用中バー ---------- */
 /* 現在の state が DEFAULTS と1項目でも異なるか(sort/y/m/weekStart は比較対象外)。 */
 function isDefaultState(){
@@ -2140,6 +2287,22 @@ document.addEventListener("click",e=>{
   let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
   if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
 });
+/* 更新履歴の行タイトル: クリック時に ALIASES で引き直し、一覧に行があればそこへ
+   スクロール+一時ハイライト。行が無ければ別タブで原文を開く(=既定動作)。 */
+document.getElementById("newsbody").addEventListener("click",e=>{
+  const a=e.target.closest("a.nwev"); if(!a) return;
+  const id=canonId(a.getAttribute("data-id"));
+  const el=id?document.getElementById("ev-"+id):null;
+  if(!el){
+    /* 一覧側がフィルタで消えている場合、宛先のないフラグメント遷移はしない */
+    if((a.getAttribute("href")||"").charAt(0)==="#") e.preventDefault();
+    return;
+  }
+  e.preventDefault();
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+  el.classList.add("hl");
+  setTimeout(()=>el.classList.remove("hl"),2500);
+});
 
 /* ---------- 調査対象ボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
 const srcwrap=document.getElementById("srcwrap");
@@ -2166,7 +2329,7 @@ window.addEventListener("scroll",onScroll,{passive:true});
 totop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 onScroll();
 
-redraw();drawStatus();
+redraw();drawStatus();drawNews();   /* drawNews は一覧描画(redraw)より後 */
 </script>
 </body>
 </html>
