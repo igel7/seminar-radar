@@ -180,4 +180,5 @@ python3 scripts/ingest.py
 - `data/events.json` を直接編集しないこと(必ず new_events.json 経由)。
 - `data/overrides.json` を書き換えないこと(ユーザー管理ファイル)。
 - `data/aliases.json` を書き換えないこと(重複統合の台帳。メンテナンス時のみ人が更新する)。
+- `data/changelog.json` を直接編集しないこと(更新履歴の台帳。ingest.py が自動生成・更新する)。
 - 外部への通知・イシュー作成・PR作成をしないこと。
