@@ -3,7 +3,7 @@
   "name": "ECB – Conferences & seminars",
   "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
   "ok": true,
-  "found": 9
+  "found": 6
  },
  {
   "name": "ECB Banking Supervision (SSM) – Conferences & seminars",
@@ -15,33 +15,33 @@
   "name": "Bundesbank – Termine",
   "url": "https://www.bundesbank.de/de/service/termine",
   "ok": true,
-  "found": 0,
-  "error": "一覧はJS描画で静的取得不可(curlでは0件)。研究会議・Forum Bundesbank講演は別ソースで収載済み。"
+  "found": 1
  },
  {
   "name": "Bundesbank – Forschungskonferenzen",
   "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656",
   "ok": true,
-  "found": 4
+  "found": 2
  },
  {
   "name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
   "ok": true,
-  "found": 9
+  "found": 8
  },
  {
   "name": "ifo Institut – Veranstaltungen",
   "url": "https://www.ifo.de/veranstaltungen",
   "ok": true,
-  "found": 2,
-  "error": "元URLはボット対策でcurl/WebFetchとも本文取得不可。Web検索と個別イベントページで代替収集。"
+  "found": 1,
+  "error": "代替URL: https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences (直接ページはJS描画で空、WebSearch補完も併用)"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
-  "ok": true,
-  "found": 7
+  "ok": false,
+  "found": 0,
+  "error": "WebFetchで503、curl(UA偽装含む)で403(WAFブロック)。/en/版も503。WebSearchでも2026-08-01以降の対象イベント一覧を特定できず"
  },
  {
   "name": "IfW Kiel – Veranstaltungen",
@@ -53,137 +53,132 @@
   "name": "RWI Essen – Veranstaltungen",
   "url": "https://www.rwi-essen.de/veranstaltungen",
   "ok": true,
-  "found": 3,
-  "error": "トップページはハブページで日程なし。サブページから演題未記載・登壇者確定の定例セミナー3件を収載。"
+  "found": 3
  },
  {
   "name": "SAFE Frankfurt – Events",
   "url": "https://safe-frankfurt.de/news-latest/events.html",
   "ok": true,
-  "found": 5,
-  "error": "WebFetchは503だったが、curl(実ブラウザUA)で200取得に成功。"
+  "found": 4
  },
  {
   "name": "IMFS Frankfurt – 全ての今後のイベント",
   "url": "https://www.imfs-frankfurt.de/en/events/upcoming-events",
-  "ok": true,
-  "found": 1,
-  "error": "一覧ページ自体はメニューのみ。カテゴリ別サブページをcurlで辿って抽出。"
+  "ok": false,
+  "found": 0,
+  "error": "一覧ページ・カテゴリ別サブページ(IMFS Conferences/Policy Webinars/ECB and Its Watchers等)は全てJS描画で本文が取得できず。WebSearchで補完したが、判明した2026年開催イベント(ECB and Its Watchers XXVI=3/25開催、Independence of Central Banks会議=2/12-13開催)はいずれも実行日(8/1)より前に開催済みで、それ以降の確定イベントは確認できず"
  },
  {
   "name": "House of Finance (Goethe大) – Veranstaltungen",
   "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
   "ok": true,
-  "found": 6
+  "found": 1
  },
  {
   "name": "SUERF – Events",
   "url": "https://www.suerf.org/events/",
   "ok": true,
-  "found": 3,
-  "error": "curl(実ブラウザUA)で200取得に成功。ルクセンブルク・ローマ・ブリュッセル開催の3件は対象地域外のため除外。"
+  "found": 3
  },
  {
   "name": "ZEW Mannheim – Veranstaltungen",
   "url": "https://www.zew.de/veranstaltungen",
   "ok": true,
-  "found": 2
+  "found": 7
  },
  {
   "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
   "url": "https://gfk-cfs.de/en/events/feed/",
   "ok": true,
   "found": 0,
-  "error": "RSSフィード・イベント一覧ページとも今日以降の予定イベント掲載なし(過去開催分の要約のみ)"
+  "error": "RSSフィード・イベント一覧ページとも、掲載されているのは全て過去開催済みの記事のみで、実行日(2026-08-01)以降開催の確定イベントは見当たらず"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "https://forum.frankfurt-school.de/konferenzen/",
   "ok": true,
-  "found": 7,
-  "error": "WebFetchは503。実ブラウザUA付きcurlで同URLから200取得成功"
+  "found": 8
  },
  {
   "name": "CESifo (München) – Veranstaltungen",
   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
   "ok": true,
-  "found": 3
+  "found": 2
  },
  {
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre",
   "ok": true,
   "found": 0,
-  "error": "掲載イベントは学生向け説明会のみで対象テーマ・形式基準に該当せず"
+  "error": "掲載イベントは学生向け説明会1件のみでテーマ非該当のため0件。詳細カレンダーはCloudflareタイムアウト(524)で取得不能"
  },
  {
   "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
   "url": "https://www.iwh-halle.de/veranstaltungen/",
   "ok": true,
-  "found": 4,
-  "error": "代替URL: http://www.iwh-halle.de/veranstaltungen(301リダイレクト先)"
+  "found": 8
  },
  {
   "name": "BaFin – Veranstaltungen",
   "url": "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html",
   "ok": true,
-  "found": 6
+  "found": 5
  },
  {
   "name": "EIOPA (Frankfurt) – Events",
   "url": "https://www.eiopa.europa.eu/media/events_en",
   "ok": true,
   "found": 0,
-  "error": "掲載イベントはローマ(イタリア)開催で対象地域外のため除外(EIOPAはECB/BIS特例対象外)"
+  "error": "掲載イベント(13th Joint ESAs Consumer Protection Day, Rome, 2026-11-04)は開催地がイタリアで対象地域外・EIOPA主催のため対象外(ECB/BIS主催のみ例外)"
  },
  {
   "name": "SRB – Single Resolution Board – Events",
   "url": "https://www.srb.europa.eu/en/events",
   "ok": true,
   "found": 0,
-  "error": "掲載イベントはストックホルム開催(対象地域外)かつ実行日以前のため除外"
+  "error": "掲載イベント(Stockholm International Banking Crisis Management Conference, 2026-06-10)は開催地がスウェーデンで対象地域外・SRB主催のため対象外(ECB/BIS主催のみ例外)"
  },
  {
   "name": "dfv Euro Finance Group (Frankfurt) – Executive Events",
   "url": "https://www.dfv-eurofinance.com/executive-events/",
   "ok": true,
   "found": 5,
-  "error": "個別イベント日程はWeb検索・サブイベントページから補完取得"
+  "error": "主要ページに具体的日付がなかったため、tickets.dfv-eurofinance.com/EFW26/ 及び frankfurt-ebc.com を補完的に参照して日付を確定"
  },
  {
   "name": "Deutsche Börse Group – Veranstaltungen",
   "url": "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen",
   "ok": true,
-  "found": 0,
-  "error": "Global Fund Summitはルクセンブルク開催(対象地域外)、Open Dayはテーマ非該当のため除外"
+  "found": 1,
+  "error": "掲載されたGlobal Fund Summit 2026(ルクセンブルク開催)は対象地域外のため除外"
  },
  {
   "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
   "url": "https://dgap.org/de/veranstaltungen",
   "ok": true,
   "found": 0,
-  "error": "掲載イベントは実行日以前のもののみで、7/31以降の新規イベント未掲載(サイトは近日開催分のみ順次公開の模様)"
+  "error": "取得成功。ページは過去開催順の一覧で、2026-08-01以降の未来イベントは掲載なし(全件2026年7月以前)"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
   "url": "https://www.ewi.uni-koeln.de/de/veranstaltungen/",
   "ok": true,
-  "found": 1,
-  "error": "代替URL: https://www.ewi.uni-koeln.de/de/ewi-energietagung/(元ページは過去分アーカイブのみのため旗艦会議専用ページを参照)"
+  "found": 0,
+  "error": "代替URL: https://www.ewi.uni-koeln.de/de/termine-uebersicht/ (指定URLは過去イベント archiv。今後イベント一覧は上記代替URLに掲載されていたが、唯一の掲載イベントは開催日未定のCall for Papersのため対象外)"
  },
  {
   "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
   "url": "https://www.iwkoeln.de/veranstaltungen.html",
   "ok": false,
   "found": 0,
-  "error": "401 Unauthorized (ボット対策)。代替パスも401、検索でも将来イベント一覧を特定できず"
+  "error": "401 Unauthorized(ボット対策、UA変更後も同様)。WebSearch(site:iwkoeln.de)でも対象地域・日程が確定できるイベント一覧ページを特定できず"
  },
  {
   "name": "Bruegel (Brussels) – Events",
   "url": "https://www.bruegel.org/events",
   "ok": true,
   "found": 0,
-  "error": "今後の掲載イベントはブリュッセル現地開催のみで完全オンライン開催なし"
+  "error": "取得成功。2026-08-01以降の掲載イベントはBruegel Annual Meetings(9/2-3、ブリュッセル現地開催)のみで、完全オンライン開催ではないため対象外(注記の通り域外開催)"
  },
  {
   "name": "OMFIF – Events/Meetings",
@@ -195,13 +190,14 @@
   "name": "BIS – Bank for International Settlements – Events",
   "url": "https://www.bis.org/ifc/events.htm",
   "ok": true,
-  "found": 4
+  "found": 0,
+  "error": "取得成功。掲載イベントはIFC(統計委員会)の統計・データサイエンス関連ワークショップが中心で、対象8テーマ(中銀・金融政策、金融市場、地政学等)に明確に該当するものなし"
  },
  {
   "name": "SNB – Swiss National Bank – Events",
   "url": "https://www.snb.ch/en/services-events/digital-services/event-schedule",
   "ok": true,
-  "found": 3
+  "found": 2
  },
  {
   "name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
@@ -213,52 +209,53 @@
   "name": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
   "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/",
   "ok": true,
-  "found": 2
+  "found": 6
  },
  {
   "name": "NBP – Narodowy Bank Polski – Conferences",
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": true,
   "found": 1,
-  "error": "代替URL: https://conferencemonkey.org/post/1552560 (nbp.plはImperva保護で直接取得不可)"
+  "error": "代替URL: https://conferencemonkey.org/post/1552560 (NBP公式ページはImperva系WAFで直接取得不可・curl+UAも失敗。WebSearchとCEBRA/conferencemonkeyの情報で共催会議の日程を補完)"
  },
  {
   "name": "NBU – National Bank of Ukraine – Research Events",
   "url": "https://bank.gov.ua/en/research/events",
   "ok": true,
-  "found": 1
+  "found": 1,
+  "error": "代替URL: https://bank.gov.ua/en/research/events/330 (WebFetchは403だがcurl+UAで取得成功)"
  },
  {
   "name": "NBS – Národná banka Slovenska – Events",
   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
   "ok": true,
-  "found": 0,
-  "error": "掲載セミナーは実行日以前開催のため対象外"
+  "found": 0
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
-  "ok": true,
-  "found": 1,
-  "error": "代替URL: Web検索補完(Cloudflareで直接取得不可)"
+  "ok": false,
+  "found": 0,
+  "error": "Cloudflareブロックにより取得不可(WebFetch/curl+UA/ヘッダー変更いずれも403)。WebSearchでも確定日程を得られず。手動補完(INBOX)が必要"
  },
  {
   "name": "Latvijas Banka – Research/Events",
   "url": "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026",
   "ok": true,
-  "found": 1
+  "found": 0
  },
  {
   "name": "Study Center Gerzensee – Events",
   "url": "https://www.szgerzensee.ch/programs/conferences-events",
   "ok": true,
-  "found": 8
+  "found": 7
  },
  {
   "name": "CEBRA – Central Bank Research Association – Events",
   "url": "https://cebra.org/events/upcoming/",
   "ok": true,
-  "found": 1
+  "found": 0,
+  "error": "掲載3件中、6th Biennial Conference on Macroeconomic PolicyはNBPソース側に日程確定の上収載(重複回避のためこちらではカウントせず)。ECONDAT Fall Meeting 2026は日付未確定、Future of Inflation and Currency Risks Conference(Santiago)は対象地域外のため除外"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
@@ -275,72 +272,67 @@
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
   "url": "https://www.bnr.ro/en/24077-bears",
-  "ok": true,
+  "ok": false,
   "found": 0,
-  "error": "JS描画で一覧取得不可。今後の開催回は演題・登壇者未公表のため除外。"
+  "error": "ページはJS描画で開催予定情報が取得不可。web検索でも2026-08-01以降の具体的な開催日を確認できず(BEARSは毎月最終木曜開催との情報のみで個別日程・演題は不明)"
  },
  {
   "name": "HNB – Croatian National Bank – Conferences",
   "url": "https://www.hnb.hr/en/about-us/events",
-  "ok": true,
+  "ok": false,
   "found": 0,
-  "error": "一覧はLiferayのJS描画で取得不可。Dubrovnik Economic Conference(2026-05-28開催)は実行日以前のため除外。"
+  "error": "一覧はLiferayのJS描画(83件)で自動取得不可。web検索でもDubrovnik Economic Conference等の2026年8月以降の具体的日程は確認できず(同会議は例年5月開催で対象期間外)"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
   "url": "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm",
   "ok": false,
   "found": 0,
-  "error": "ページがシステムエラーを返す。代替パス・UA再試行・検索でも情報取得不可。"
+  "error": "取得ページはシステムエラー(存在しないアドレス)を返す。代替パス(/NewsAndEvents/index.htm, /AboutUs/EventsAndConferences/index.htm)も同様に有効なイベント一覧が得られず、web検索でも該当イベントを確認できず"
  },
  {
   "name": "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)",
   "url": "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/",
   "ok": true,
-  "found": 0,
-  "error": "現時点で予定されているセミナーなしと明記。"
+  "found": 0
  },
  {
   "name": "National Bank of Serbia – Conferences",
   "url": "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/",
   "ok": true,
-  "found": 0,
-  "error": "掲載は過去会議のみ、今後の予定なし。"
+  "found": 0
  },
  {
   "name": "Banka Slovenije – Events",
   "url": "https://www.bsi.si/en/about-us/conferences-and-seminars",
   "ok": true,
-  "found": 0,
-  "error": "一覧は博物館見学・統計公表予定のみ。検索で見つかった開催分は実行日以前のため除外。"
+  "found": 0
  },
  {
   "name": "CBBH – Central Bank of Bosnia and Herzegovina – Events",
   "url": "https://www.cbbh.ba/en/Events",
   "ok": false,
   "found": 0,
-  "error": "対象URLおよび代替パスが500エラー。検索でも情報取得不可。"
+  "error": "500 Internal Server Error(ASP.NETランタイムエラー)。トップページを確認したが専用のイベント/カレンダーページ自体が見当たらない"
  },
  {
   "name": "Bank of Albania – Events",
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
-  "found": 0,
-  "error": "UA付きcurlでもアルバニア語トップへリダイレクトされ一覧取得不可。検索で見つかったイベントは過去回または未公表。"
+  "found": 1
  },
  {
   "name": "ECB – Payments & Markets / Digital Euro events",
   "url": "https://www.ecb.europa.eu/paym/intro/events/html/index.en.html",
   "ok": true,
-  "found": 0,
-  "error": "\"There are no upcoming events.\"と明記。検索でも実行日以降の新規イベントなし。"
+  "found": 0
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/news-insights/events",
-  "ok": true,
-  "found": 1,
-  "error": "直接アクセス403のため検索で個別ウェビナーページを補完。"
+  "ok": false,
+  "found": 0,
+  "error": "403(Cloudflareボット対策チャレンジ)。実ブラウザUA付きcurlでも突破不可。検索補完でも該当イベント一覧を発見できず"
  },
  {
   "name": "ECONtribute (Bonn/Köln) – Events",
@@ -352,95 +344,98 @@
   "name": "Berlin School of Economics – Events",
   "url": "https://berlinschoolofeconomics.de/home",
   "ok": true,
-  "found": 0,
-  "error": "代替URL: https://berlinschoolofeconomics.de/event/all-events (週別カレンダーを9週分確認。テーマ適合イベントなし)"
+  "found": 0
  },
  {
   "name": "Universität Mannheim – 経済学部イベント/セミナー",
   "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/",
   "ok": true,
-  "found": 13,
-  "error": "Macro CRC TR 224 Seminarの下位ページから抽出"
+  "found": 13
  },
  {
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "https://www.wu.ac.at/en/the-university/events",
   "ok": true,
-  "found": 2,
-  "error": "site:wu.ac.at検索で経済学部イベントページを発見し補完"
+  "found": 1
  },
  {
   "name": "Green and Sustainable Finance Cluster Germany (Frankfurt)",
   "url": "https://gsfc-germany.com/en/",
-  "ok": true,
-  "found": 2,
-  "error": "代替URL: https://sustainablefinancecluster.com/en/events/ (元URLは423 Locked、団体名はSustainable Finance Cluster e.V.に改称)"
+  "ok": false,
+  "found": 0,
+  "error": "全ページで HTTP 423 Locked(WebFetch・curl両方失敗、WAF等によるブロックとみられる)"
  },
  {
   "name": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
   "url": "https://www.forum-ng.org/en/termine",
   "ok": true,
-  "found": 12
+  "found": 14
  },
  {
   "name": "PIK – Potsdam-Institut für Klimafolgenforschung",
   "url": "https://www.pik-potsdam.de/en/news/events/public-events",
   "ok": true,
   "found": 1,
-  "error": "元URLはログイン要求にリダイレクトされ非公開。site:検索で個別イベントページを発見し補完"
+  "error": "代替URL: https://www.pik-potsdam.de/en/institute/departments/activities/gcet27 (public-eventsページに一覧なし、WebSearch経由でGCET27ページを発見)"
  },
  {
   "name": "MCC – Mercator Research Institute on Global Commons and Climate Change (Berlin)",
   "url": "https://www.mcc-berlin.net/en/news/events/recent.html",
   "ok": false,
   "found": 0,
-  "error": "mcc-berlin.netはPIKサイトへ全面リダイレクト(組織はPIKに統合済み)。独自のイベント一覧は見つからず"
+  "error": "元URLは pik-potsdam.de のMCCアーカイブページへ302リダイレクト。現行イベント一覧なし。WebSearchでも2026年の独自イベントは確認できず(2025年にPIKへ統合済み)"
  },
  {
   "name": "Agora Energiewende (Berlin)",
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
   "found": 1,
-  "error": "代替URL: https://www.agora-energiewende.org/news-events/filter/tab-3"
+  "error": "代替URL: https://www.agora-energiewende.de/aktuelles/klimaneutral-und-zukunftsfaehig (元の.orgドメインは503、.deドメインのニュースページ経由で発見)"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
   "url": "https://www.dena.de/infocenter/alle-veranstaltungen/",
   "ok": true,
   "found": 2,
-  "error": "元URLはJS描画のため一覧取得不可。site:検索で個別イベントページを発見し補完"
+  "error": "代替URL: https://veranstaltungen.dena.de/ , https://www.dena.de/dena-kongress/ (元URLはイベント一覧が確認できず)"
  },
  {
   "name": "EBA – European Banking Authority – Events",
   "url": "https://www.eba.europa.eu/publications-and-media/events",
   "ok": true,
-  "found": 2
+  "found": 1
+ },
+ {
+  "name": "ESMA – Public Hearings",
+  "url": "https://www.esma.europa.eu/press-news/hearings",
+  "ok": true,
+  "found": 0
  },
  {
   "name": "Swiss Sustainable Finance (SSF) – Upcoming Events",
   "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
   "ok": true,
-  "found": 7
+  "found": 6
  },
  {
   "name": "CEP – Council on Economic Policies (Zürich) – Events",
   "url": "https://www.cepweb.org/events/",
   "ok": true,
   "found": 0,
-  "error": "現在掲載中の今後のイベントなし(アーカイブのみ)"
+  "error": "現時点でUpcoming Eventsは空(archiveページ・upcoming-events/サブページともに『Updates coming up shortly』表示のみ)"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
-  "ok": false,
+  "ok": true,
   "found": 0,
-  "error": "AWS WAFのCAPTCHA認証により自動取得不可。site:検索で見つかったイベントは対象地域外開催または実行日以前のため収載なし"
+  "error": "主要ページはJS描画で一覧取得不可。WebSearchで確認できたPRI in Person 2026(アムステルダム)・PRI Investor Day 2026(ロンドン)は対象地域外または開催日が2026-08-01より前のため収載対象イベントなし"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 3,
+  "found": 4,
   "error": "代替URL: http://www.unepfi.org/category/events"
  },
  {
@@ -453,61 +448,51 @@
   "name": "Bitkom (Berlin) – Veranstaltungen",
   "url": "https://www.bitkom.org/events",
   "ok": true,
-  "found": 2
+  "found": 1
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
   "url": "https://merics.org/en/events",
   "ok": true,
-  "found": 1
+  "found": 2
  },
  {
   "name": "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen",
   "url": "https://www.swp-berlin.org/en/swp/about-us/organization/research-and-information-infrastructure/events-and-distribution",
   "ok": false,
   "found": 0,
-  "error": "指定ページ・代替パスとも日付確定の今後のイベント情報を発見できず"
+  "error": "統一的なイベント一覧ページが見当たらず。指定URL・Forum Ebenhausen/Veranstaltungen・Brussels Events・WebSearch(site:swp-berlin.org Veranstaltungen)を試したが今後開催の具体的な日付付きイベントは見つからず(SWPイベントは招待制で個別ページに掲載されない模様)"
  },
  {
   "name": "フランクフルト日本法人会 – 行事・活動",
   "url": "https://www.hojinkai.de/activities",
   "ok": true,
-  "found": 0,
-  "error": "経済関連イベントは実行日以前に終了済み。今後の行事は親睦行事のみでテーマ非該当"
+  "found": 0
  },
  {
   "name": "JDZB – 日独センター (Berlin) – Veranstaltungen",
   "url": "https://jdzb.de/de/events",
   "ok": true,
-  "found": 0,
-  "error": "掲載イベントはテーマ非該当、または内容未確定"
+  "found": 1
  },
  {
   "name": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
   "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/",
   "ok": true,
-  "found": 0,
-  "error": "掲載イベントは交流会・総会・映画上映等でテーマ非該当"
+  "found": 3
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "https://www.eu-japan.eu/tags/webinar",
   "ok": true,
-  "found": 0,
-  "error": "今後のウェビナーなし。ビジネスミッション等は日本現地開催で対象地域外"
+  "found": 2,
+  "error": "代替URL: https://www.eu-japan.eu/events"
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 8
- },
- {
-  "name": "ESMA – Public Hearings",
-  "url": "https://www.esma.europa.eu/press-news/hearings",
-  "ok": true,
-  "found": 0,
-  "error": "直近の公聴会(2026-07-22開催分)は実行日より前のため対象外。以降の予定なし。"
+  "found": 5
  },
  {
   "name": "手動取込",
