@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex">
-<title>Seminar Radar — ドイツ経済・金融セミナー</title>
+<title>Seminar Calendar — ドイツ経済・金融セミナー</title>
 <style>
   :root{
     --bg:#080b10; --panel:#10161f; --cal:#141b26; --cell:#0c121b; --cell2:#111925;
@@ -45,10 +45,7 @@
   .updated{font-family:var(--mono);font-size:10.5px;color:var(--sub);
     letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .updated b{color:var(--amber-dim);font-weight:600}
-  .tagline{flex-basis:100%;font-size:11.5px;color:var(--sub);margin-top:2px;
-    line-height:1.4}
-
-  /* ---------- ヘッダー右端ツール(調査対象ボタン + 検索) ---------- */
+  /* ---------- ヘッダー右端ツール(仕組み・調査対象ボタン + 検索) ---------- */
   .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto}
   .srcwrap{position:relative}
   .srcbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
@@ -87,6 +84,16 @@
     border-bottom:1px dotted var(--line2);overflow-wrap:anywhere}
   .srclist a:hover{color:var(--amber);border-bottom-color:var(--amber)}
   .srclist span{color:var(--sub);border-bottom:none}
+  /* 仕組みパネル内のフロー図(CSSボックス+矢印。SVGにしないのは3言語切替のため) */
+  .mflow{display:flex;flex-direction:column;gap:3px;margin:0 0 13px}
+  .mrow{display:flex;gap:6px}
+  .mnode{flex:1 1 0;border:1px solid var(--line2);background:var(--cell);
+    border-radius:4px;padding:6px 9px;font-size:11.5px;line-height:1.4;
+    text-align:center;color:#c2c8d0}
+  .mnode small{display:block;font-size:10px;color:var(--sub);margin-top:1px}
+  .mnode.agent{border-color:var(--amber-dim)}
+  .marrow{text-align:center;color:var(--amber-dim);font-size:11px;line-height:1;
+    user-select:none}
 
   /* ---------- 更新履歴(News・折りたたみ) ---------- */
   /* 巡回ステータス(ターミナルログ調)と同系統の控えめな見た目。閉じている間は
@@ -463,7 +470,7 @@
 <div class="wrap">
 <header>
   <div class="statusbar">
-    <h1>Seminar Radar</h1>
+    <h1>Seminar Calendar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
     <span class="updated"><span data-i18n="lastUpdate">LAST UPDATE:</span> <b>__UPDATED__</b></span>
     <div class="hdtools">
@@ -476,9 +483,12 @@
         <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="sources">調査対象</button>
         <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象" data-i18n-aria="sources"></div>
       </div>
+      <div class="srcwrap" id="mechwrap">
+        <button class="srcbtn" id="mechbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="mech">仕組み</button>
+        <div class="srcpanel" id="mechpanel" role="dialog" aria-label="仕組み" data-i18n-aria="mech"></div>
+      </div>
       <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索" data-i18n-ph="qPlaceholder" data-i18n-aria="qAria">
     </div>
-    <div class="tagline" data-i18n="tagline">ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。</div>
   </div>
 </header>
 
@@ -637,10 +647,19 @@ const LS_UILANG = "sr_uilang";          /* フィルタ保存キー sr_filters_v
 
 const I18N = {
 ja:{
-  docTitle:"Seminar Radar — ドイツ経済・金融セミナー",
+  docTitle:"Seminar Calendar — ドイツ経済・金融セミナー",
   lastUpdate:"LAST UPDATE:",
-  tagline:"ドイツ・スイス・中東欧など欧州の経済・金融セミナーを毎日自動収集して掲載しています。",
   sources:"調査対象",
+  mech:"仕組み",
+  mpIntro:"ドイツ語圏と中東欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
+  mpAgentT:"AIエージェント",
+  mpAgentText:"収集は Claude Code または Codex のAIエージェントが毎日1回自動実行します。作業の一部はサブエージェントに分担させ、抽出結果の検証は主エージェントが行います。更新は GitHub リポジトリへのコミットとして反映され、自動マージ後にこのページが再生成されます。",
+  mpFlowSrc:"定点観測先の巡回",
+  mpFlowSearch:"テーマ別Web検索",
+  mpFlowAgent:"AIエージェントが抽出・検証",
+  mpFlowAgentSub:"Claude Code / Codex・毎日1回",
+  mpFlowGit:"GitHub に自動コミット・自動マージ",
+  mpFlowSite:"このページを自動再生成",
   qPlaceholder:"キーワード",
   qAria:"キーワード検索",
   all:"すべて",
@@ -708,10 +727,19 @@ ja:{
   wdWeek:["月","火","水","木","金","土","日"]        /* 0=月曜始まり */
 },
 en:{
-  docTitle:"Seminar Radar — German Economics & Finance Seminars",
+  docTitle:"Seminar Calendar — German Economics & Finance Seminars",
   lastUpdate:"LAST UPDATE:",
-  tagline:"Economics and finance seminars across Germany, Switzerland, Central & Eastern Europe and beyond — collected automatically every day.",
   sources:"Sources",
+  mech:"How it works",
+  mpIntro:"Economics and finance seminars across the German-speaking region and Central & Eastern Europe, collected automatically once a day by AI agents.",
+  mpAgentT:"AI agents",
+  mpAgentText:"Collection runs automatically once a day, performed by an AI agent (Claude Code or Codex). Part of the work is delegated to sub-agents, while the main agent verifies the extracted results. Updates are pushed as commits to the GitHub repository, and this page is regenerated after the auto-merge.",
+  mpFlowSrc:"Monitored sources",
+  mpFlowSearch:"Topic-based web search",
+  mpFlowAgent:"AI agent extracts & verifies",
+  mpFlowAgentSub:"Claude Code / Codex · once a day",
+  mpFlowGit:"Auto-commit & merge on GitHub",
+  mpFlowSite:"This page is regenerated",
   qPlaceholder:"Keyword",
   qAria:"Keyword search",
   all:"All",
@@ -785,10 +813,19 @@ en:{
   wdWeek:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 },
 de:{
-  docTitle:"Seminar Radar — Wirtschafts- und Finanzseminare in Deutschland",
+  docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Deutschland",
   lastUpdate:"LETZTES UPDATE:",
-  tagline:"Wirtschafts- und Finanzseminare in Deutschland, der Schweiz, Mittel- und Osteuropa und darüber hinaus — täglich automatisch gesammelt.",
   sources:"Quellen",
+  mech:"Funktionsweise",
+  mpIntro:"Wirtschafts- und Finanzseminare im deutschsprachigen Raum und in Mittel- und Osteuropa, täglich einmal automatisch von KI-Agenten erfasst.",
+  mpAgentT:"KI-Agenten",
+  mpAgentText:"Die Erfassung erfolgt täglich einmal automatisch durch einen KI-Agenten (Claude Code oder Codex). Ein Teil der Arbeit wird an Subagenten delegiert; die extrahierten Ergebnisse prüft der Hauptagent. Aktualisierungen werden als Commits in das GitHub-Repository übernommen; nach dem automatischen Merge wird diese Seite neu generiert.",
+  mpFlowSrc:"Beobachtete Quellen",
+  mpFlowSearch:"Themenbasierte Websuche",
+  mpFlowAgent:"KI-Agent extrahiert & prüft",
+  mpFlowAgentSub:"Claude Code / Codex · täglich einmal",
+  mpFlowGit:"Auto-Commit & Merge auf GitHub",
+  mpFlowSite:"Diese Seite wird neu generiert",
   qPlaceholder:"Stichwort",
   qAria:"Stichwortsuche",
   all:"Alle",
@@ -963,6 +1000,7 @@ function setUiLang(l){
   redraw();
   drawStatus();
   drawSources();
+  drawMech();
   drawNews();            /* redraw() の後(一覧行 #ev-<id> の有無を見てリンクを決める) */
 }
 
@@ -1619,6 +1657,24 @@ function drawSources(){
     `<p>${esc(t("spDiscoveryText"))}</p></div>`;
 }
 
+/* ---------- 仕組みパネル ---------- */
+function drawMech(){
+  const node=(k,cls)=>`<div class="mnode${cls?" "+cls:""}">${esc(t(k))}</div>`;
+  document.getElementById("mechpanel").innerHTML=
+    `<div class="srcsec"><p>${esc(t("mpIntro"))}</p></div>`+
+    `<div class="mflow" aria-hidden="true">`+
+      `<div class="mrow">${node("mpFlowSrc")}${node("mpFlowSearch")}</div>`+
+      `<div class="marrow">▼</div>`+
+      `<div class="mnode agent">${esc(t("mpFlowAgent"))}<small>${esc(t("mpFlowAgentSub"))}</small></div>`+
+      `<div class="marrow">▼</div>`+
+      node("mpFlowGit")+
+      `<div class="marrow">▼</div>`+
+      node("mpFlowSite")+
+    `</div>`+
+    `<div class="srcsec"><h3>${esc(t("mpAgentT"))}</h3>`+
+    `<p>${esc(t("mpAgentText"))}</p></div>`;
+}
+
 /* ---------- 更新履歴(News) ---------- */
 /* 変更フィールド → 表示ラベルのバケツ。同じバケツに落ちる複数フィールド
    (例 date_start と date_end)はまとめて1回だけ表示する。 */
@@ -2265,6 +2321,7 @@ rebuildSelects();
 renderShare();
 renderListBar();
 drawSources();
+drawMech();
 
 /* ---------- イベントハンドラ ---------- */
 document.getElementById("area").addEventListener("change",e=>{
@@ -2350,19 +2407,27 @@ document.querySelector(".filters").addEventListener("input",clearNewsPin,true);
 document.getElementById("fbreset").addEventListener("click",clearNewsPin,true);
 document.getElementById("listonly").addEventListener("change",clearNewsPin,true);
 
-/* ---------- 調査対象ボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
-const srcwrap=document.getElementById("srcwrap");
-const srcbtn=document.getElementById("srcbtn");
-srcbtn.addEventListener("click",e=>{
-  e.stopPropagation();
-  const open=srcwrap.classList.toggle("open");
-  srcbtn.setAttribute("aria-expanded", open?"true":"false");
+/* ---------- 調査対象・仕組みボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
+const HDR_PANELS=[["srcwrap","srcbtn"],["mechwrap","mechbtn"]]
+  .map(([w,b])=>({wrap:document.getElementById(w),btn:document.getElementById(b)}));
+HDR_PANELS.forEach(({wrap,btn})=>{
+  btn.addEventListener("click",e=>{
+    e.stopPropagation();
+    /* 片方を開いたらもう片方は閉じる */
+    HDR_PANELS.forEach(p=>{ if(p.wrap!==wrap){
+      p.wrap.classList.remove("open"); p.btn.setAttribute("aria-expanded","false");
+    }});
+    const open=wrap.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open?"true":"false");
+  });
 });
 document.addEventListener("click",e=>{
-  if(!srcwrap.contains(e.target) && srcwrap.classList.contains("open")){
-    srcwrap.classList.remove("open");
-    srcbtn.setAttribute("aria-expanded","false");
-  }
+  HDR_PANELS.forEach(({wrap,btn})=>{
+    if(!wrap.contains(e.target) && wrap.classList.contains("open")){
+      wrap.classList.remove("open");
+      btn.setAttribute("aria-expanded","false");
+    }
+  });
 });
 
 /* ---------- スクロールトップボタン ---------- */
