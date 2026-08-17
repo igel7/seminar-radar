@@ -627,6 +627,18 @@ def _changelog_snap(ev):
     }
 
 
+def mark_crawl_start():
+    """日次巡回の開始時刻を data/meta.json に記録する(`ingest.py --mark-start`)。
+    AGENTS.md の日次更新ジョブが手順1の冒頭で実行し、update_changelog() が
+    当日エントリの start として取り込む。"""
+    meta = load_json(META_FILE, {})
+    if not isinstance(meta, dict):
+        meta = {}
+    meta["crawl_started"] = datetime.now(TZ).isoformat(timespec="seconds")
+    META_FILE.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"巡回開始時刻を記録: {meta['crawl_started']}")
+
+
 def update_changelog(changes):
     """data/changelog.json (追加・実質更新の日次履歴)を更新する。
     changes は merge() が返す差分情報 {"added": [...], "updated": {id: (ev, fields), ...}}。
@@ -634,6 +646,8 @@ def update_changelog(changes):
 
     ファイル形式: 日付降順の配列。各要素は
       {"date": "YYYY-MM-DD",
+       "start": 巡回開始時刻のISO文字列(記録がある場合のみ),
+       "end":   巡回終了時刻のISO文字列(記録がある場合のみ),
        "added": [スナップショット, ...],
        "updated": [スナップショット + "fields": [変更フィールド名, ...(ソート済み)], ...]}
 
@@ -647,6 +661,23 @@ def update_changelog(changes):
     if entry is None:
         entry = {"date": today_str, "added": [], "updated": []}
         log.append(entry)
+
+    # 巡回時刻の記録。実際に追加・更新があった実行(=巡回)でのみ書く。
+    # 保守作業での再生成(--maintenance)は changes が空なのでここを通らない。
+    # start は --mark-start が残した crawl_started を採用する(24時間以内のもののみ。
+    # 前日の消し忘れを誤って当日の開始時刻にしないため)。同日2回目の実行では
+    # 最初の start を保持し、end だけ最新に更新する。
+    if changes.get("added") or changes.get("updated"):
+        now = datetime.now(TZ)
+        entry["end"] = now.isoformat(timespec="seconds")
+        if not entry.get("start"):
+            meta = load_json(META_FILE, {})
+            try:
+                started = datetime.fromisoformat(str(meta.get("crawl_started")))
+                if timedelta(0) <= now - started <= timedelta(hours=24):
+                    entry["start"] = started.astimezone(TZ).isoformat(timespec="seconds")
+            except (TypeError, ValueError):
+                pass
 
     # added: 既存(当日分、同日2回目実行など)を id 順を保ったまま引き継ぎ、
     # 新規 id のみスナップショットを追記する。
@@ -901,10 +932,12 @@ def render_html(events, statuses, changelog=None, maintenance=False):
         except (TypeError, ValueError):
             last_crawl = now
     else:
-        META_FILE.write_text(
-            json.dumps({"last_crawl": now.isoformat(timespec="seconds")},
-                       ensure_ascii=False, indent=1),
-            encoding="utf-8")
+        meta = load_json(META_FILE, {})
+        if not isinstance(meta, dict):
+            meta = {}
+        meta["last_crawl"] = now.isoformat(timespec="seconds")   # 他のキー(crawl_started)は保持
+        META_FILE.write_text(json.dumps(meta, ensure_ascii=False, indent=1),
+                             encoding="utf-8")
     updated = last_crawl.strftime("%Y-%m-%d %H:%M (%Z)")
     updated_iso = last_crawl.isoformat(timespec="seconds")  # 相対時刻表示(◯分前)用
     if changelog is None:

@@ -16,11 +16,15 @@ import sys
 
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
                        apply_aliases, apply_flagship, apply_overrides, dedupe_events,
-                       load_json, merge, parse_sources, region_ok, render_html,
-                       render_ics, split_archive, update_changelog)
+                       load_json, mark_crawl_start, merge, parse_sources, region_ok,
+                       render_html, render_ics, split_archive, update_changelog)
 
 
 def main():
+    # --mark-start: 日次巡回の開始時刻だけを記録して終了する(AGENTS.md 手順1の冒頭)。
+    if "--mark-start" in sys.argv[1:]:
+        mark_crawl_start()
+        return
     # --maintenance: 巡回を伴わない保守作業(UI改修など)での再生成。
     # サイトの LAST UPDATE(最終巡回時刻)を進めない。日次更新ではフラグなしで実行する。
     maintenance = "--maintenance" in sys.argv[1:]

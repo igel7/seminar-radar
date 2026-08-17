@@ -731,6 +731,7 @@ ja:{
   stFound:"[OK] {n}件",
   /* 更新履歴(News) */
   nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
+  nwRange:"〜",
   nwPinned:"フィルタで非表示のイベントを一時的に表示しています(フィルタ操作で解除)",
   nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
   nwf_fee:"参加費", nwf_reg:"申込",
@@ -819,7 +820,7 @@ en:{
   stFound:"[OK] {n} found",
   /* Change log (News) */
   nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
-  nwNone:"no changes",
+  nwNone:"no changes", nwRange:"–",
   nwPinned:"Temporarily showing an event hidden by your filters (cleared on any filter change)",
   nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
   nwf_fee:"Fee", nwf_reg:"Registration",
@@ -913,7 +914,7 @@ de:{
   stFound:"[OK] {n} gefunden",
   /* Änderungen (News) */
   nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
-  nwNone:"keine Änderungen",
+  nwNone:"keine Änderungen", nwRange:"–",
   nwPinned:"Ein durch Filter verborgenes Event wird vorübergehend angezeigt (Filteränderung hebt dies auf)",
   nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
   nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
@@ -1848,6 +1849,15 @@ function newsRow(it, kind){
     `</span></div>`;
 }
 /* 一覧行の有無を見るため、必ず drawList()(=redraw())より後に呼ぶこと。 */
+/* 巡回の開始・終了時刻(ISO文字列、Europe/Berlin ローカル)を「 17:05〜17:09」の形に。
+   記録がある日のみ表示し、開始が無ければ「 〜17:09」、両方無ければ空文字。 */
+const NWT_RE=/^\d{4}-\d{2}-\d{2}T(\d{2}:\d{2})/;
+function nwTimes(d){
+  const s=NWT_RE.exec(String(d.start||"")), e=NWT_RE.exec(String(d.end||""));
+  if(s&&e) return ` ${s[1]}${t("nwRange")}${e[1]}`;
+  if(e)    return ` ${t("nwRange")}${e[1]}`;
+  return "";
+}
 function drawNews(){
   const box=document.getElementById("news");
   const days=newsDays();
@@ -1860,10 +1870,10 @@ function drawNews(){
   if(nA) cnt.push(tf("nwAdded",{n:nA}));
   if(nU) cnt.push(tf("nwUpdated",{n:nU}));
   document.getElementById("newssum").textContent =
-    `${t("nwTitle")} — ${md(top.date)}: ${cnt.length?cnt.join(t("sep")):t("nwNone")}`;
+    `${t("nwTitle")} — ${md(top.date)}${nwTimes(top)}: ${cnt.length?cnt.join(t("sep")):t("nwNone")}`;
   let html="";
   for(const d of days){
-    html+=`<div class="nwday">${esc(md(d.date))}</div>`;
+    html+=`<div class="nwday">${esc(md(d.date)+nwTimes(d))}</div>`;
     if(Array.isArray(d.added))   for(const it of d.added)   html+=newsRow(it,"add");
     if(Array.isArray(d.updated)) for(const it of d.updated) html+=newsRow(it,"upd");
   }
