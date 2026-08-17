@@ -888,7 +888,9 @@ def render_html(events, statuses, changelog=None):
     template = TEMPLATE_FILE.read_text(encoding="utf-8")
     events_sorted = [dict(e, url=safe_url(e.get("url"))) for e in
                      sorted(events, key=lambda e: (e["date_start"], e.get("title") or ""))]
-    updated = datetime.now(TZ).strftime("%Y-%m-%d %H:%M (%Z)")
+    now = datetime.now(TZ)
+    updated = now.strftime("%Y-%m-%d %H:%M (%Z)")
+    updated_iso = now.isoformat(timespec="seconds")  # 相対時刻表示(◯分前)用
     if changelog is None:
         # 呼び出し元が update_changelog() を呼ばずに render_html() だけ叩いた場合の保険。
         # ファイルを読むだけで、プルーニング(古いエントリの削除)は行わない
@@ -909,6 +911,7 @@ def render_html(events, statuses, changelog=None):
         "__SOURCES_JSON__": script_json(parse_sources()),
         "__CHANGELOG_JSON__": script_json(changelog),
         "__UPDATED__": updated,
+        "__UPDATED_ISO__": updated_iso,
         "__TODAY__": TODAY.isoformat(),
     }
     pattern = re.compile("|".join(map(re.escape, mapping)))

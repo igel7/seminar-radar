@@ -31,9 +31,11 @@
   /* ---------- ヘッダー(圧縮したステータスバー風) ---------- */
   header{border:1px solid var(--line2);background:var(--panel);
     border-radius:6px;padding:8px 14px;margin-bottom:14px}
-  .statusbar{display:flex;align-items:center;gap:5px 15px;flex-wrap:wrap}
-  h1{margin:0;font-size:28px;letter-spacing:.055em;font-family:var(--mono);
-    font-weight:700;color:var(--ink);line-height:1.05}
+  .statusbar{display:flex;align-items:center;gap:5px 14px;flex-wrap:wrap}
+  /* デスクトップ幅ではタイトル・LIVE・更新時刻・右端ツールを1行に収める */
+  @media(min-width:1140px){ .statusbar{flex-wrap:nowrap} }
+  h1{margin:0;font-size:25px;letter-spacing:.055em;font-family:var(--mono);
+    font-weight:700;color:var(--ink);line-height:1.05;white-space:nowrap}
   h1::before{content:"▸ ";color:var(--amber)}
   .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);
     font-size:10.5px;font-weight:700;letter-spacing:.2em;color:var(--ok);
@@ -46,7 +48,7 @@
     letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .updated b{color:var(--amber-dim);font-weight:600}
   /* ---------- ヘッダー右端ツール(仕組み・調査対象ボタン + 検索) ---------- */
-  .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto;min-width:0}
   .srcwrap{position:relative}
   .srcbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
     padding:6px 11px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
@@ -135,15 +137,21 @@
   .controls .fld select{width:100%;min-width:0;font-size:13px;padding:7px 8px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   /* min-width は既定選択値(「ドイツ」「Deutschland」「すべて」等)が切れない下限。
-     候補の長い City/Organizer は強めに縮み、選択時のみ省略表示になる。 */
-  .fld-area{flex:0 1 128px;min-width:126px}
-  .fld-country{flex:0 1 108px;min-width:80px}
-  .fld-city{flex:0 1 150px;min-width:90px}
-  .fld-org{flex:0 1 190px;min-width:100px}
-  .fld-theme{flex:0 1 118px;min-width:80px}
-  .fld-imp{flex:0 1 190px;min-width:116px}
-  .fld-lang{flex:0 1 96px;min-width:80px}
+     候補の長い City/Organizer は縮んだときに省略表示になる。 */
+  .fld-area{flex:0 1 132px;min-width:126px}
+  .fld-country{flex:0 1 150px;min-width:110px}
+  .fld-org{flex:0 1 260px;min-width:140px}
+  .fld-imp{flex:0 1 300px;min-width:200px}
+  .fld-city{flex:0 1 170px;min-width:110px}
+  .fld-theme{flex:0 1 150px;min-width:100px}
+  .fld-lang{flex:0 1 110px;min-width:90px}
   .controls .cbrow{font-size:12.5px;min-height:33px}
+  /* 「その他」ボタンと折りたたみ行 */
+  .morebtn{flex:0 0 auto;align-self:flex-end;padding:8px 12px;font-size:12px}
+  .marr{color:var(--amber-dim)}
+  .morebadge{margin-left:6px;color:var(--amber);font-weight:700}
+  .morerow{margin-top:9px}
+  .controls[hidden]{display:none}
   /* デスクトップ幅(=.wrapが上限幅で表示される環境)ではフィルタを1行に固定 */
   @media(min-width:1140px){ .controls{flex-wrap:nowrap;gap:8px} }
   .fld .cap{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
@@ -489,20 +497,20 @@
   <div class="statusbar">
     <h1>Seminar Calendar</h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated"><span data-i18n="lastUpdate">LAST UPDATE:</span> <b>2026-08-17 17:52 (CEST)</b></span>
+    <span class="updated"><span data-i18n="lastUpdate">LAST UPDATE:</span> <b id="updrel" data-iso="2026-08-17T19:25:48+02:00" title="2026-08-17 19:25 (CEST)">2026-08-17 19:25 (CEST)</b></span>
     <div class="hdtools">
       <div class="langsw" id="langsw" role="group" aria-label="Language">
         <button type="button" data-ui="ja">日本語</button>
         <button type="button" data-ui="en">EN</button>
         <button type="button" data-ui="de">DE</button>
       </div>
-      <div class="srcwrap" id="srcwrap">
-        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="sources">調査対象</button>
-        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象" data-i18n-aria="sources"></div>
-      </div>
       <div class="srcwrap" id="mechwrap">
         <button class="srcbtn" id="mechbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="mech">仕組み</button>
         <div class="srcpanel" id="mechpanel" role="dialog" aria-label="仕組み" data-i18n-aria="mech"></div>
+      </div>
+      <div class="srcwrap" id="srcwrap">
+        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="sources">調査対象</button>
+        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象" data-i18n-aria="sources"></div>
       </div>
       <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索" data-i18n-ph="qPlaceholder" data-i18n-aria="qAria">
     </div>
@@ -525,10 +533,20 @@
       </select></label>
     <label class="fld fld-country"><span class="cap">Country</span>
       <select id="country"></select></label>
-    <label class="fld fld-city"><span class="cap">City</span>
-      <select id="city"></select></label>
     <label class="fld fld-org"><span class="cap">Organizer</span>
       <select id="org"></select></label>
+    <label class="fld fld-imp"><span class="cap">Importance</span>
+      <select id="imp">
+        <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
+        <option value="1" data-i18n="imp1">★1以上 — 標準</option>
+        <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
+        <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
+      </select></label>
+    <button type="button" id="morebtn" class="srcbtn morebtn" aria-expanded="false" aria-controls="morerow"><span data-i18n="more">その他</span> <span class="marr" aria-hidden="true">▾</span><span id="morebadge" class="morebadge" hidden></span></button>
+  </div>
+  <div class="controls morerow" id="morerow" hidden>
+    <label class="fld fld-city"><span class="cap">City</span>
+      <select id="city"></select></label>
     <label class="fld fld-theme"><span class="cap">Theme</span>
       <select id="theme">
         <option value="" data-i18n="all">すべて</option>
@@ -540,13 +558,6 @@
         <option value="ai" data-i18n="th_ai">⑥AI</option>
         <option value="china" data-i18n="th_china">⑦中国</option>
         <option value="japan" data-i18n="th_japan">⑧日本</option>
-      </select></label>
-    <label class="fld fld-imp"><span class="cap">Importance</span>
-      <select id="imp">
-        <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
-        <option value="1" data-i18n="imp1">★1以上 — 標準</option>
-        <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
-        <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
       </select></label>
     <label class="fld fld-lang"><span class="cap">Lang</span>
       <select id="lang">
@@ -677,6 +688,11 @@ ja:{
   mpFlowAgentSub:"Claude Code / Codex・毎日1回",
   mpFlowGit:"GitHub に自動コミット・自動マージ",
   mpFlowSite:"このページを自動再生成",
+  mpListT:"ウォッチリスト",
+  mpListText:"URLの末尾に #lists を付けて開くと有効になる隠し機能です。一覧の ☆ でイベントをリストに登録し、「共有リンク」でリスト全体を1つのURLにして共有できます(データはブラウザ内にのみ保存)。",
+  more:"その他",
+  relNow:"たった今", relMin:"{n}分前", relHour:"{n}時間前",
+  relDay:"{n}日前", relDay1:"1日前",
   qPlaceholder:"キーワード",
   qAria:"キーワード検索",
   all:"すべて",
@@ -757,6 +773,11 @@ en:{
   mpFlowAgentSub:"Claude Code / Codex · once a day",
   mpFlowGit:"Auto-commit & merge on GitHub",
   mpFlowSite:"This page is regenerated",
+  mpListT:"Watchlist",
+  mpListText:"A hidden feature — enable it by opening the page with #lists appended to the URL. Click ☆ in the list view to add events, and the share-link button turns a list into a single URL (data is stored only in your browser).",
+  more:"More",
+  relNow:"just now", relMin:"{n} min ago", relHour:"{n} h ago",
+  relDay:"{n} d ago", relDay1:"1 d ago",
   qPlaceholder:"Keyword",
   qAria:"Keyword search",
   all:"All",
@@ -843,6 +864,11 @@ de:{
   mpFlowAgentSub:"Claude Code / Codex · täglich einmal",
   mpFlowGit:"Auto-Commit & Merge auf GitHub",
   mpFlowSite:"Diese Seite wird neu generiert",
+  mpListT:"Merkliste",
+  mpListText:"Verstecktes Feature — zum Aktivieren die Seite mit angehängtem #lists öffnen. In der Listenansicht ☆ anklicken, um Termine zu merken; der Freigabelink macht aus der Liste eine einzelne URL (Daten bleiben nur im Browser).",
+  more:"Mehr",
+  relNow:"gerade eben", relMin:"vor {n} Min.", relHour:"vor {n} Std.",
+  relDay:"vor {n} Tagen", relDay1:"vor 1 Tag",
   qPlaceholder:"Stichwort",
   qAria:"Stichwortsuche",
   all:"Alle",
@@ -994,6 +1020,26 @@ const LANG_SHORT_KEY = {en:"ls_en", de:"ls_de", "en+de":"ls_ende"};
 function langBadge(l){ const k=LANG_BADGE_KEY[l]; return k?t(k):l; }
 function langShort(l){ const k=LANG_SHORT_KEY[l]; return k?t(k):""; }
 
+/* 最終更新の相対時刻表示(「32分前」等)。data-iso が読めなければ絶対時刻のまま。
+   正確な日時は <b> の title 属性(ホバー)で見られる。 */
+function drawUpdated(){
+  const el=document.getElementById("updrel");
+  if(!el) return;
+  const ts=Date.parse(el.dataset.iso||"");
+  if(!isFinite(ts)) return;
+  const m=Math.max(0, Math.floor((Date.now()-ts)/60000));
+  let txt;
+  if(m<1) txt=t("relNow");
+  else if(m<60) txt=tf("relMin",{n:m});
+  else if(m<1440) txt=tf("relHour",{n:Math.floor(m/60)});
+  else{
+    const d=Math.floor(m/1440);
+    txt = d===1 ? t("relDay1") : tf("relDay",{n:d});
+  }
+  el.textContent=txt;
+}
+setInterval(drawUpdated, 60000);
+
 /* HTML静的部分(data-i18n 属性)の一括書き換え */
 function applyStaticText(){
   document.documentElement.lang = uiLang;
@@ -1007,6 +1053,7 @@ function applyStaticText(){
     b.classList.toggle("on", on);
     b.setAttribute("aria-pressed", on?"true":"false");
   });
+  drawUpdated();   /* 相対時刻もUI言語に追随させる */
 }
 /* UI言語の切替(state.lang=開催言語フィルタには一切触れない) */
 function setUiLang(l){
@@ -1692,7 +1739,9 @@ function drawMech(){
       node("mpFlowSite")+
     `</div>`+
     `<div class="srcsec"><h3>${esc(t("mpAgentT"))}</h3>`+
-    `<p>${esc(t("mpAgentText"))}</p></div>`;
+    `<p>${esc(t("mpAgentText"))}</p></div>`+
+    `<div class="srcsec"><h3>${esc(t("mpListT"))}</h3>`+
+    `<p>${esc(t("mpListText"))}</p></div>`;
 }
 
 /* ---------- 更新履歴(News) ---------- */
@@ -2330,8 +2379,27 @@ document.getElementById("list").addEventListener("click",e=>{
 document.getElementById("shareall").addEventListener("click",()=>{ stripHash(); location.reload(); });
 document.getElementById("shareimport").addEventListener("click",importShare);
 
+/* ---------- 「その他」フィルタ(折りたたみ)---------- */
+/* 折りたたみ側に入っているフィルタが既定値から変わっている間は、
+   閉じていても気づけるようボタンに件数バッジを出す */
+const MORE_KEYS=["city","theme","lang","online","daytrip"];
+function updateMoreBadge(){
+  const n=MORE_KEYS.filter(k=>state[k]!==DEFAULTS[k]).length;
+  const b=document.getElementById("morebadge");
+  b.hidden = n===0;
+  b.textContent = n ? "•"+n : "";
+}
+const morebtn=document.getElementById("morebtn");
+const morerow=document.getElementById("morerow");
+morebtn.addEventListener("click",()=>{
+  const open = morerow.hidden;             /* これから開くか */
+  morerow.hidden = !open;
+  morebtn.setAttribute("aria-expanded", open?"true":"false");
+  morebtn.querySelector(".marr").textContent = open?"▴":"▾";
+});
+
 /* ---------- 再描画 ---------- */
-function redraw(){rebuildSelects();renderShare();renderListBar();drawCal();drawList();updateFilterBar();saveState();}
+function redraw(){rebuildSelects();renderShare();renderListBar();drawCal();drawList();updateFilterBar();updateMoreBadge();saveState();}
 
 /* ---------- 初期化 ---------- */
 loadState();
