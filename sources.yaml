@@ -215,8 +215,10 @@ sources:
     verified: true   # 一覧はJS描画(Liferay)で自動取得不可。旗艦のDubrovnik Economic Conference(毎年5月末)は検索で補完
 
   - name: "BNB – Bulgarian National Bank – Events"
-    url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
-    verified: true   # JS描画+古いTLSで自動取得不可: 検索補完かINBOXで対応(イベント自体が稀)
+    url: "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
+    verified: true   # 2026-08-17差し替え。旧: /NewsAndEvents/NEEvents/index.htm(サイト内エラーページ化)。
+                     # 専用イベント一覧はEN/BGとも消滅しており、プレス発表一覧(年別)が唯一の告知面。
+                     # ?toLang=_EN で英語版。イベント自体が稀(会議告知はプレス発表に出る)
 
   - name: "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)"
     url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/"
@@ -231,8 +233,9 @@ sources:
     verified: false   # 旧 /en/events は404。「Upcoming events」一覧ページに差し替え
 
   - name: "CBBH – Central Bank of Bosnia and Herzegovina – Events"
-    url: "https://www.cbbh.ba/en/Events"
-    verified: false
+    url: "https://www.cbbh.ba/press/AllNews"
+    verified: true   # 2026-08-17差し替え。旧: /en/Events(恒常的にHTTP 500)。
+                     # 専用イベント一覧は消滅しており、ニュース一覧が唯一の告知面(英語表示あり)
 
   - name: "Bank of Albania – Events"
     url: "https://www.bankofalbania.org/Events/"
@@ -279,7 +282,9 @@ sources:
 
   - name: "MCC – Mercator Research Institute on Global Commons and Climate Change (Berlin)"
     url: "https://www.mcc-berlin.net/en/news/events/recent.html"
-    verified: false   # 2025年よりPIK傘下に統合済みだが、専用ドメインの一覧ページは存続
+    verified: false   # 要整理: 2025年にPIKへ統合され、mcc-berlin.netは全面的にPIKのアーカイブへ
+                      # リダイレクト。独立の一覧ページも後継の公開一覧も存在しないことを2026-08-17に
+                      # 確認済み(PIK本体の一覧はログイン要求)→ 削除提案中(ユーザー判断待ち)
 
   - name: "Agora Energiewende (Berlin)"
     url: "https://www.agora-energiewende.org/news-events"
@@ -328,9 +333,11 @@ sources:
     verified: false
 
   - name: "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen"
-    url: "https://www.swp-berlin.org/en/swp/about-us/organization/research-and-information-infrastructure/events-and-distribution"
-    verified: false   # URL未確認: 初回巡回で要検証(サイト内に統一的なイベント一覧ページが見当たらず、
-                      # イベント部門の説明ページを暫定採用。site:swp-berlin.org events / Veranstaltungen で要確認)
+    url: "https://www.swp-berlin.org/forum-ebenhausen/veranstaltungen"
+    verified: true   # 2026-08-17差し替え。旧: /en/swp/about-us/...(部署紹介ページで一覧性なし)。
+                     # SWP本体には公開イベントカレンダーが存在しないことを検索・巡回12回分で確認済み。
+                     # Forum Ebenhausen(支援団体)のVeranstaltungenページが唯一の実在ページだが
+                     # 日付付き一覧はなく、収穫は期待薄 → 整理候補(削除はユーザー判断)
 
   # --- 追加: 日本・アジア経済関係 ---
   - name: "フランクフルト日本法人会 – 行事・活動"
