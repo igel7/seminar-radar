@@ -80,12 +80,6 @@
   .srcsec h3{margin:0 0 5px;font-size:10.5px;font-family:var(--mono);
     letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
   .srcsec p{margin:0;font-size:12px;color:#c2c8d0;line-height:1.65}
-  .srclist{columns:2;column-gap:16px;font-size:11.5px;line-height:1.5}
-  .srclist a,.srclist span{display:inline-block;width:100%;
-    break-inside:avoid;margin-bottom:5px;color:var(--cb-tx);text-decoration:none;
-    border-bottom:1px dotted var(--line2);overflow-wrap:anywhere}
-  .srclist a:hover{color:var(--amber);border-bottom-color:var(--amber)}
-  .srclist span{color:var(--sub);border-bottom:none}
   /* 仕組みパネル内のフロー図(CSSボックス+矢印。SVGにしないのは3言語切替のため) */
   .mflow{display:flex;flex-direction:column;gap:3px;margin:0 0 13px}
   .mrow{display:flex;gap:6px}
@@ -420,6 +414,13 @@
     border:1px solid var(--line2);font-family:var(--mono)}
   table.st td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
   table.st td:first-child{color:var(--sub)}
+  /* カテゴリ見出し行(主催フィルタと同じ4分類で巡回先をグループ分け) */
+  table.st tr.stgrp td{color:var(--amber-dim);background:var(--cell);
+    font-size:11px;letter-spacing:.1em;padding:4px 10px}
+  /* 対象地域・広域検索の補記(ステータス表の直上) */
+  .covnote{margin:6px 0 8px;font-size:11.5px;color:var(--sub);line-height:1.65}
+  .covnote p{margin:0 0 4px}
+  .covnote b{color:var(--ink);font-weight:600}
   table.st a{color:var(--cb-tx);text-decoration:none}
   table.st a:hover{text-decoration:underline}
   .ok{color:var(--ok)} .ng{color:var(--fail);font-weight:700}
@@ -444,7 +445,6 @@
     .hdtools input[type=search]{max-width:none;flex:1 1 auto}
     .langsw button{padding:6px 6px;font-size:10.5px;letter-spacing:.02em}
     .srcpanel{left:0;right:auto;width:min(360px,86vw)}
-    .srclist{columns:1}
     /* 更新履歴: 狭い画面では見出し行を折り返して全文見せる(省略記号を出さない) */
     #newssum{white-space:normal;text-overflow:clip;padding:6px 10px;font-size:11.5px}
     #newsbody{padding:6px 10px 8px;font-size:12px}
@@ -512,10 +512,7 @@
         <button class="srcbtn" id="mechbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="mech">仕組み</button>
         <div class="srcpanel" id="mechpanel" role="dialog" aria-label="仕組み" data-i18n-aria="mech"></div>
       </div>
-      <div class="srcwrap" id="srcwrap">
-        <button class="srcbtn" id="srcbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="sources">調査対象</button>
-        <div class="srcpanel" id="srcpanel" role="dialog" aria-label="調査対象" data-i18n-aria="sources"></div>
-      </div>
+      <button class="srcbtn" id="srcbtn" type="button" data-i18n="sources">調査対象</button>
       <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索" data-i18n-ph="qPlaceholder" data-i18n-aria="qAria">
     </div>
   </div>
@@ -647,7 +644,12 @@
 </div>
 <div id="list"></div>
 
-<h2 class="sect" data-i18n="crawlStatus">巡回ステータス</h2>
+<h2 class="sect" id="crawlsec" data-i18n="crawlStatus">巡回ステータス</h2>
+<!-- 対象地域・広域検索の補記(旧・調査対象パネルから移設。ヘッダーの調査対象ボタンはここへ飛ぶ) -->
+<div class="covnote">
+  <p><b data-i18n="spCoverage">対象地域</b>: <span data-i18n="spCoverageText">ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。</span></p>
+  <p><b data-i18n="spDiscovery">広域検索</b>: <span data-i18n="spDiscoveryText">上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本のテーマ、中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。</span></p>
+</div>
 <table class="st"><tbody id="status"></tbody></table>
 
 <footer data-i18n="footer">
@@ -737,7 +739,6 @@ ja:{
   nwf_fee:"参加費", nwf_reg:"申込",
   spCoverage:"対象地域",
   spCoverageText:"ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。",
-  spMonitored:"定点観測先({n}件)",
   spDiscovery:"広域検索",
   spDiscoveryText:"上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本のテーマ、中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。",
   og_cb:"中銀・規制当局", og_tt:"シンクタンク・研究機関", og_uni:"大学", og_other:"その他",
@@ -826,7 +827,6 @@ en:{
   nwf_fee:"Fee", nwf_reg:"Registration",
   spCoverage:"Coverage",
   spCoverageText:"Germany, Switzerland, Austria, Central & Eastern Europe (PL/CZ/SK/HU/SI), the Balkans, the Baltic states and Ukraine. Events hosted by central banks, the ECB or the BIS are included regardless of the host country.",
-  spMonitored:"Monitored sources ({n})",
   spDiscovery:"Web discovery",
   spDiscoveryText:"In addition to the sources above, a daily web search covers monetary policy, the real economy (energy, defence, infrastructure), financial regulation, geopolitics, climate & ESG, AI, China and Japan, as well as central bank seminars in Central & Eastern Europe and major policy and security forums.",
   og_cb:"Central banks & regulators", og_tt:"Think tanks & research",
@@ -920,7 +920,6 @@ de:{
   nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
   spCoverage:"Erfasste Region",
   spCoverageText:"Deutschland, Schweiz, Österreich, Mittel- und Osteuropa (PL/CZ/SK/HU/SI), Balkan, Baltikum und Ukraine. Veranstaltungen von Zentralbanken, der EZB oder der BIZ werden unabhängig vom Austragungsland erfasst.",
-  spMonitored:"Beobachtete Quellen ({n})",
   spDiscovery:"Websuche",
   spDiscoveryText:"Ergänzend zu den oben genannten Quellen wird täglich im Web nach Geldpolitik, Realwirtschaft (Energie, Verteidigung, Infrastruktur), Finanzregulierung, Geopolitik, Klima & ESG, KI, China und Japan sowie nach Zentralbankseminaren in Mittel- und Osteuropa und großen Politik- und Sicherheitsforen gesucht.",
   og_cb:"Zentralbanken & Aufsicht", og_tt:"Think-Tanks & Forschung",
@@ -1073,7 +1072,6 @@ function setUiLang(l){
   applyStaticText();
   redraw();
   drawStatus();
-  drawSources();
   drawMech();
   drawNews();            /* redraw() の後(一覧行 #ev-<id> の有無を見てリンクを決める) */
 }
@@ -1707,31 +1705,27 @@ function drawList(){
 }
 
 /* ---------- ステータス ---------- */
+/* 巡回先を主催フィルタと同じ4分類(ORG_GROUP_ORDER / og_* ラベル)で見出し付きに
+   グループ分けして表示する。分類は sources.yaml の category(SOURCES 埋め込み)を
+   name で引く。web検索・手動取込など定点リストに無い行は「その他」に落とす。
+   各グループ内の並び順は STATUS(=巡回順)のまま。 */
 function drawStatus(){
-  document.getElementById("status").innerHTML=STATUS.map(s=>{
+  const cat={};
+  ((SOURCES && Array.isArray(SOURCES.sources)) ? SOURCES.sources : [])
+    .forEach(s=>{ if(s.name) cat[s.name]=s.category; });
+  const groups={cb:[],tt:[],uni:[],other:[]};
+  STATUS.forEach(s=>{ (groups[cat[s.name]]||groups.other).push(s); });
+  const row=s=>{
     const u=safeUrl(s.url);
     return `<tr><td>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
      <td>${s.ok?`<span class="ok">${tf("stFound",{n:esc(s.found)})}</span>`
               :`<span class="ng">[FAIL]</span> <small>${esc(s.error||"")}</small>`}</td></tr>`;
+  };
+  document.getElementById("status").innerHTML=ORG_GROUP_ORDER.map(g=>{
+    if(!groups[g].length) return "";
+    const lbl = uiLang==="ja" ? `【${orgGroupLabel(g)}】` : orgGroupLabel(g);
+    return `<tr class="stgrp"><td colspan="2">${esc(lbl)}</td></tr>`+groups[g].map(row).join("");
   }).join("");
-}
-
-/* ---------- 調査対象パネル ---------- */
-function drawSources(){
-  const src = (SOURCES && Array.isArray(SOURCES.sources)) ? SOURCES.sources : [];
-  const n = src.length;
-  const links = src.map(s=>{
-    const u=safeUrl(s.url), nm=esc(s.name||"");
-    return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${nm}</a>`
-             : `<span>${nm}</span>`;
-  }).join("");
-  document.getElementById("srcpanel").innerHTML=
-    `<div class="srcsec"><h3>${esc(t("spCoverage"))}</h3>`+
-    `<p>${esc(t("spCoverageText"))}</p></div>`+
-    `<div class="srcsec"><h3>${esc(tf("spMonitored",{n:n}))}</h3>`+
-    `<div class="srclist">${links}</div></div>`+
-    `<div class="srcsec"><h3>${esc(t("spDiscovery"))}</h3>`+
-    `<p>${esc(t("spDiscoveryText"))}</p></div>`;
 }
 
 /* ---------- 仕組みパネル ---------- */
@@ -2428,7 +2422,6 @@ applyStaticText();      /* <html lang>・<title>・静的UI文字列を uiLang �
 rebuildSelects();
 renderShare();
 renderListBar();
-drawSources();
 drawMech();
 
 /* ---------- イベントハンドラ ---------- */
@@ -2521,27 +2514,23 @@ document.querySelector(".filters").addEventListener("input",clearNewsPin,true);
 document.getElementById("fbreset").addEventListener("click",clearNewsPin,true);
 document.getElementById("listonly").addEventListener("change",clearNewsPin,true);
 
-/* ---------- 調査対象・仕組みボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
-const HDR_PANELS=[["srcwrap","srcbtn"],["mechwrap","mechbtn"]]
-  .map(([w,b])=>({wrap:document.getElementById(w),btn:document.getElementById(b)}));
-HDR_PANELS.forEach(({wrap,btn})=>{
-  btn.addEventListener("click",e=>{
-    e.stopPropagation();
-    /* 片方を開いたらもう片方は閉じる */
-    HDR_PANELS.forEach(p=>{ if(p.wrap!==wrap){
-      p.wrap.classList.remove("open"); p.btn.setAttribute("aria-expanded","false");
-    }});
-    const open=wrap.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open?"true":"false");
-  });
+/* ---------- 仕組みボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
+const mechwrap=document.getElementById("mechwrap"), mechbtn=document.getElementById("mechbtn");
+mechbtn.addEventListener("click",e=>{
+  e.stopPropagation();
+  const open=mechwrap.classList.toggle("open");
+  mechbtn.setAttribute("aria-expanded", open?"true":"false");
 });
 document.addEventListener("click",e=>{
-  HDR_PANELS.forEach(({wrap,btn})=>{
-    if(!wrap.contains(e.target) && wrap.classList.contains("open")){
-      wrap.classList.remove("open");
-      btn.setAttribute("aria-expanded","false");
-    }
-  });
+  if(!mechwrap.contains(e.target) && mechwrap.classList.contains("open")){
+    mechwrap.classList.remove("open");
+    mechbtn.setAttribute("aria-expanded","false");
+  }
+});
+
+/* ---------- 調査対象ボタン(パネルは持たず、巡回ステータスへスクロールするだけ) ---------- */
+document.getElementById("srcbtn").addEventListener("click",()=>{
+  document.getElementById("crawlsec").scrollIntoView({behavior:"smooth",block:"start"});
 });
 
 /* ---------- スクロールトップボタン ---------- */

@@ -877,7 +877,8 @@ def sanitize_statuses(statuses):
 def parse_sources():
     """sources.yaml を行ベースで解析する(このファイルは自前管理でフォーマットが
     安定しているため、PyYAML の無い環境でも動くよう汎用YAMLパーサは使わない)。
-    戻り値: {"sources": [{"name", "url"}, ...], "topics": [str, ...]}。
+    戻り値: {"sources": [{"name", "url", "anywhere", "category"}, ...], "topics": [str, ...]}。
+    category は巡回ステータスのグループ表示用(cb/tt/uni/other。未記載は other)。
     ファイルが無い/解析に失敗しても例外を投げず空の結果を返す(巡回を止めない)。"""
     empty = {"sources": [], "topics": []}
     try:
@@ -901,9 +902,14 @@ def parse_sources():
         for m in entry_re.finditer(sources_section):
             name, url = m.group(1).strip(), m.group(2).strip()
             if name and url:
-                anywhere = bool(re.search(r'^\s*anywhere:\s*true\s*$', m.group("rest"),
+                rest = m.group("rest")
+                anywhere = bool(re.search(r'^\s*anywhere:\s*true\s*$', rest,
                                            re.MULTILINE | re.IGNORECASE))
-                sources.append({"name": name, "url": url, "anywhere": anywhere})
+                mcat = re.search(r'^\s*category:\s*"?([a-z]+)"?\s*(?:#.*)?$', rest,
+                                 re.MULTILINE)
+                category = mcat.group(1) if mcat else "other"
+                sources.append({"name": name, "url": url, "anywhere": anywhere,
+                                "category": category})
 
         topics = []
         for m in re.finditer(r'^\s*-\s*"([^"]*)"\s*$', topics_section, re.MULTILINE):

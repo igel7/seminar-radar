@@ -27,6 +27,7 @@ settings:
 sources:
   - name: "ECB – Conferences & seminars"
     url: "https://www.ecb.europa.eu/press/conferences/html/index.en.html"
+    category: cb
     verified: true
 
   # ECB銀行監督(SSM)は本体と別ドメインでイベントを公開している。
@@ -35,263 +36,319 @@ sources:
   # bankingsupervision.europa.eu の追加が必要な場合がある。
   - name: "ECB Banking Supervision (SSM) – Conferences & seminars"
     url: "https://www.bankingsupervision.europa.eu/press/conferences/html/index.en.html"
+    category: cb
     verified: true
 
   - name: "Bundesbank – Termine"
     url: "https://www.bundesbank.de/de/service/termine"
+    category: cb
     verified: true
 
   - name: "Bundesbank – Forschungskonferenzen"
     url: "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656"
+    category: cb
     verified: true
 
   - name: "Bundesbank – Forum Bundesbank (Hauptverwaltungen)"
     url: "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen"
+    category: cb
     verified: true
 
   - name: "ifo Institut – Veranstaltungen"
     url: "https://www.ifo.de/veranstaltungen"
+    category: tt
     verified: false   # 一覧はJS描画で直接取得不可。site:ifo.de veranstaltung 検索とCESifo会議一覧で補完
 
   - name: "DIW Berlin – Veranstaltungen"
     url: "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"
+    category: tt
     verified: true
 
   - name: "IfW Kiel – Veranstaltungen"
     url: "https://www.kielinstitut.de/de/institut/veranstaltungen/"
+    category: tt
     verified: true
 
   - name: "RWI Essen – Veranstaltungen"
     url: "https://www.rwi-essen.de/veranstaltungen"
+    category: tt
     verified: true
 
   - name: "SAFE Frankfurt – Events"
     url: "https://safe-frankfurt.de/news-latest/events.html"
+    category: tt
     verified: true
 
   - name: "IMFS Frankfurt – 全ての今後のイベント"
     url: "https://www.imfs-frankfurt.de/en/events/upcoming-events"
+    category: tt
     verified: true   # 一覧はJS描画。curl(実ブラウザUA)でカテゴリ別サブページ(/en/events/imfs-conferences/ 等)を辿って抽出
 
   - name: "House of Finance (Goethe大) – Veranstaltungen"
     url: "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen"
+    category: uni
     verified: true
 
   - name: "SUERF – Events"
     url: "https://www.suerf.org/events/"
+    category: tt
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   - name: "ZEW Mannheim – Veranstaltungen"
     url: "https://www.zew.de/veranstaltungen"
+    category: tt
     verified: true
 
   # --- 追加: 中央銀行・金融政策系 ---
   - name: "CFS – Center for Financial Studies (Frankfurt) – Events"
     url: "https://gfk-cfs.de/en/events/feed/"
+    category: tt
     verified: true   # RSSフィード(静的に読める)
 
   - name: "Frankfurt School of Finance & Management – Events"
     url: "https://forum.frankfurt-school.de/konferenzen/"
+    category: uni
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   - name: "CESifo (München) – Veranstaltungen"
     url: "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences"
+    category: tt
     verified: true   # 2026-07: /en/cesifo/events より会議一覧が充実しているためこちらに変更
 
   - name: "Jacques Delors Centre (Hertie School, Berlin) – Events"
     url: "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre"
+    category: uni
     verified: true    # Hertie本体(hertie-school.org)はCloudflare 403で取得不能のため、
                       # 経済・EU政策系イベントを載せる傘下センターの別ドメインに切り替え(2026-07-24)。
                       # Hertie本体の大型カンファレンスはweb検索(discovery)で補完する
 
   - name: "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen"
     url: "https://www.iwh-halle.de/veranstaltungen/"
+    category: tt
     verified: true
 
   # --- 追加: 金融規制・市場系 ---
   - name: "BaFin – Veranstaltungen"
     url: "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html"
+    category: cb
     verified: true
 
   - name: "EIOPA (Frankfurt) – Events"
     url: "https://www.eiopa.europa.eu/media/events_en"
+    category: cb
     verified: true
 
   - name: "SRB – Single Resolution Board – Events"
     url: "https://www.srb.europa.eu/en/events"
+    category: cb
     verified: true
 
   - name: "dfv Euro Finance Group (Frankfurt) – Executive Events"
     url: "https://www.dfv-eurofinance.com/executive-events/"
+    category: other
     verified: false   # EURO FINANCE WEEK・China Day・Green Finance Forum・European Banking Congress等の主催元。イベント一覧ページ
 
   - name: "Deutsche Börse Group – Veranstaltungen"
     url: "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen"
+    category: other
     verified: true
 
   # --- 追加: 実体経済(エネルギー・防衛・インフラ)系 ---
   - name: "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen"
     url: "https://dgap.org/de/veranstaltungen"
+    category: tt
     verified: true
 
   - name: "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen"
     url: "https://www.ewi.uni-koeln.de/de/veranstaltungen/"
+    category: tt
     verified: true
 
   - name: "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen"
     url: "https://www.iwkoeln.de/veranstaltungen.html"
+    category: tt
     verified: false   # 401+ボット対策で自動取得不可: 検索補完かINBOXの手動取込で対応
 
   # --- 追加: 欧州(将来拡大の布石) ---
   - name: "Bruegel (Brussels) – Events"
     url: "https://www.bruegel.org/events"
+    category: tt
     verified: true   # 開催地は域外(ブリュッセル)のため、完全オンライン開催のみ収載される
 
   - name: "OMFIF – Events/Meetings"
     url: "https://www.omfif.org/meetings/"
+    category: tt
     verified: true
 
   - name: "BIS – Bank for International Settlements – Events"
     url: "https://www.bis.org/ifc/events.htm"
+    category: cb
     verified: true
 
   # --- 追加: 欧州の中央銀行(定点) ---
   - name: "SNB – Swiss National Bank – Events"
     url: "https://www.snb.ch/en/services-events/digital-services/event-schedule"
+    category: cb
     verified: true
 
   - name: "OeNB – Oesterreichische Nationalbank – Veranstaltungen"
     url: "https://www.oenb.at/en/Calendar.html"
+    category: cb
     verified: true
 
   - name: "CNB – Czech National Bank – Conferences, Seminars, Workshops"
     url: "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/"
+    category: cb
     verified: true
 
   - name: "NBP – Narodowy Bank Polski – Conferences"
     url: "https://nbp.pl/en/economic-education/conferences/"
+    category: cb
     verified: false   # Imperva系ボット対策で直接取得不可: site:nbp.pl 検索と共催先(CEBRA等)で補完、またはINBOX
 
   - name: "NBU – National Bank of Ukraine – Research Events"
     url: "https://bank.gov.ua/en/research/events"
+    category: cb
     verified: true
 
   - name: "NBS – Národná banka Slovenska – Events"
     url: "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/"
+    category: cb
     verified: true
 
   - name: "Bank of Lithuania – Events"
     url: "https://www.lb.lt/en/events"
+    category: cb
     verified: false   # Cloudflareブロック: INBOX/data-manualの手動取込で補完
 
   - name: "Latvijas Banka – Research/Events"
     url: "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026"
+    category: cb
     verified: true   # 年別一覧ページ(親ページ /research-seminars は404)。年が変わったらURLの年号を更新するか、新しい年の一覧をsite:検索で探す
 
   # --- 追加: 中銀系研究機関・研究ネットワーク ---
   - name: "Study Center Gerzensee – Events"
     url: "https://www.szgerzensee.ch/programs/conferences-events"
+    category: tt
     verified: true
 
   - name: "CEBRA – Central Bank Research Association – Events"
     url: "https://cebra.org/events/upcoming/"
+    category: tt
     verified: true   # 2026-07: /events はJS描画のため今後イベント一覧の静的ページに変更
 
   # --- 追加: 東欧・バルカン・バルトの中央銀行 ---
   - name: "Eesti Pank (エストニア) – Events"
     url: "https://www.eestipank.ee/en/events"
+    category: cb
     verified: false
 
   - name: "MNB – Magyar Nemzeti Bank (ハンガリー) – Events"
     url: "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026"
+    category: cb
     verified: true   # 公開イベント一覧なし: 個別会議ページ+web検索で補完
 
   - name: "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars"
     url: "https://www.bnr.ro/en/24077-bears"
+    category: cb
     verified: true   # 一覧はJS描画で自動取得不可。BEARSは原則毎月最終木曜15:00開催: 検索補完かINBOXで対応
 
   - name: "HNB – Croatian National Bank – Conferences"
     url: "https://www.hnb.hr/en/about-us/events"
+    category: cb
     verified: true   # 一覧はJS描画(Liferay)で自動取得不可。旗艦のDubrovnik Economic Conference(毎年5月末)は検索で補完
 
   - name: "BNB – Bulgarian National Bank – Events"
-    url: "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
-    verified: true   # 2026-08-17差し替え。旧: /NewsAndEvents/NEEvents/index.htm(サイト内エラーページ化)。
-                     # 専用イベント一覧はEN/BGとも消滅しており、プレス発表一覧(年別)が唯一の告知面。
-                     # ?toLang=_EN で英語版。イベント自体が稀(会議告知はプレス発表に出る)
+    url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
+    category: cb
+    verified: true   # JS描画+古いTLSで自動取得不可: 検索補完かINBOXで対応(イベント自体が稀)
 
   - name: "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)"
     url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/"
+    category: cb
     verified: false   # 旧 /en/events/ は404だったため一覧URLを差し替え
 
   - name: "National Bank of Serbia – Conferences"
     url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/"
+    category: cb
     verified: false
 
   - name: "Banka Slovenije – Events"
     url: "https://www.bsi.si/en/about-us/conferences-and-seminars"
+    category: cb
     verified: false   # 旧 /en/events は404。「Upcoming events」一覧ページに差し替え
 
   - name: "CBBH – Central Bank of Bosnia and Herzegovina – Events"
-    url: "https://www.cbbh.ba/press/AllNews"
-    verified: true   # 2026-08-17差し替え。旧: /en/Events(恒常的にHTTP 500)。
-                     # 専用イベント一覧は消滅しており、ニュース一覧が唯一の告知面(英語表示あり)
+    url: "https://www.cbbh.ba/en/Events"
+    category: cb
+    verified: false
 
   - name: "Bank of Albania – Events"
     url: "https://www.bankofalbania.org/Events/"
+    category: cb
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   # --- 追加: 決済・デジタルユーロ ---
   - name: "ECB – Payments & Markets / Digital Euro events"
     url: "https://www.ecb.europa.eu/paym/intro/events/html/index.en.html"
+    category: cb
     verified: false   # デジタルユーロ説明会・ウェビナー含む
 
   - name: "EPC – European Payments Council – Events"
     url: "https://www.europeanpaymentscouncil.eu/news-insights/events"
+    category: other
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
   # --- 追加: 大学の公開セミナー・講演 ---
   - name: "ECONtribute (Bonn/Köln) – Events"
     url: "https://www.econtribute.de/events"
+    category: uni
     verified: false   # 経済学クラスター。公開講演(Reinhard Selten Lecture等)を含む
 
   - name: "Berlin School of Economics – Events"
     url: "https://berlinschoolofeconomics.de/home"
+    category: uni
     verified: false   # /events は404。イベントは /event-details/ 配下に個別ページ。トップ掲載分+site:検索で補完
 
   - name: "Universität Mannheim – 経済学部イベント/セミナー"
     url: "https://www.vwl.uni-mannheim.de/en/research/research-seminars/"
+    category: uni
     verified: false   # 旧 /en/seminars/ は404。各シリーズ(Departmental/Macro CRC等)の下位ページも確認
 
   - name: "WU Wien (Wirtschaftsuniversität) – Events"
     url: "https://www.wu.ac.at/en/the-university/events"
+    category: uni
     verified: false   # 旧 /en/events は404だったため大学イベント一覧に差し替え
 
   # --- 追加: 環境・ESG・エネルギー転換 ---
   - name: "Green and Sustainable Finance Cluster Germany (Frankfurt)"
     url: "https://gsfc-germany.com/en/"
+    category: other
     verified: false   # URL未確認: 初回巡回で要検証(専用のイベント一覧ページが見つからず、トップページを暫定採用)
 
   - name: "FNG – Forum Nachhaltige Geldanlagen (Berlin)"
     url: "https://www.forum-ng.org/en/termine"
+    category: other
     verified: false
 
   - name: "PIK – Potsdam-Institut für Klimafolgenforschung"
     url: "https://www.pik-potsdam.de/en/news/events/public-events"
+    category: tt
     verified: false
 
   - name: "MCC – Mercator Research Institute on Global Commons and Climate Change (Berlin)"
     url: "https://www.mcc-berlin.net/en/news/events/recent.html"
-    verified: false   # 要整理: 2025年にPIKへ統合され、mcc-berlin.netは全面的にPIKのアーカイブへ
-                      # リダイレクト。独立の一覧ページも後継の公開一覧も存在しないことを2026-08-17に
-                      # 確認済み(PIK本体の一覧はログイン要求)→ 削除提案中(ユーザー判断待ち)
+    category: tt
+    verified: false   # 2025年よりPIK傘下に統合済みだが、専用ドメインの一覧ページは存続
 
   - name: "Agora Energiewende (Berlin)"
     url: "https://www.agora-energiewende.org/news-events"
+    category: tt
     verified: false
 
   - name: "dena – Deutsche Energie-Agentur (Berlin)"
     url: "https://www.dena.de/infocenter/alle-veranstaltungen/"
+    category: other
     verified: false
 
   # --- 追加: 無料・一般参加可のESG/サステナブルファイナンス系(2026-07-29) ---
@@ -301,59 +358,71 @@ sources:
   # 域外所在の機関(パリ・ロンドン等)はオンライン開催分のみ収載される(既存ルール通り)。
   - name: "EBA – European Banking Authority – Events"
     url: "https://www.eba.europa.eu/publications-and-media/events"
+    category: cb
     verified: true   # 公聴会・ウェビナーは無料・オンライン参加可が多い。一覧はJS描画で静的HTMLに出ない: site:eba.europa.eu 検索で補完
   - name: "ESMA – Public Hearings"
     url: "https://www.esma.europa.eu/press-news/hearings"
+    category: cb
     verified: true   # 規制コンサルテーションの公聴会(オンライン・無料・要登録)。静的HTMLで取得可
   - name: "Swiss Sustainable Finance (SSF) – Upcoming Events"
     url: "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html"
+    category: other
     verified: true   # 無料ウェビナー中心(ZHAW共催のImpact Investing Insightsシリーズ等)。チューリッヒ所在で対象地域内
   - name: "CEP – Council on Economic Policies (Zürich) – Events"
     url: "https://www.cepweb.org/events/"
+    category: tt
     verified: true   # 気候×中央銀行・サステナブルファイナンスの無料ウェビナーを不定期開催
   - name: "PRI – Principles for Responsible Investment – Events"
     url: "https://www.unpri.org/events"
+    category: other
     verified: true   # 無料ウェビナー多数。ロンドン所在のためオンライン開催分のみ収載対象。一覧はJS描画の可能性: site:unpri.org 検索で補完
   - name: "UNEP FI – Events"
     url: "https://www.unepfi.org/events/"
+    category: other
     verified: false  # 503(ボット対策)で自動取得不可: site:unepfi.org 検索補完かINBOX。無料ウェビナー多数(ジュネーブ所在=対象地域内)
 
   # --- 追加: AI・デジタル政策 ---
   - name: "appliedAI Institute (München) – Events"
     url: "https://www.appliedai-institute.de/en/participate/events/"
+    category: tt
     verified: false   # 現時点でイベント掲載0件だがページ構造は確認済み(静的HTML、SPAではない)
 
   - name: "Bitkom (Berlin) – Veranstaltungen"
     url: "https://www.bitkom.org/events"
+    category: other
     verified: false
 
   # --- 追加: 中国・地政学 ---
   - name: "MERICS – Mercator Institute for China Studies (Berlin) – Events"
     url: "https://merics.org/en/events"
+    category: tt
     verified: false
 
   - name: "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen"
-    url: "https://www.swp-berlin.org/forum-ebenhausen/veranstaltungen"
-    verified: true   # 2026-08-17差し替え。旧: /en/swp/about-us/...(部署紹介ページで一覧性なし)。
-                     # SWP本体には公開イベントカレンダーが存在しないことを検索・巡回12回分で確認済み。
-                     # Forum Ebenhausen(支援団体)のVeranstaltungenページが唯一の実在ページだが
-                     # 日付付き一覧はなく、収穫は期待薄 → 整理候補(削除はユーザー判断)
+    url: "https://www.swp-berlin.org/en/swp/about-us/organization/research-and-information-infrastructure/events-and-distribution"
+    category: tt
+    verified: false   # URL未確認: 初回巡回で要検証(サイト内に統一的なイベント一覧ページが見当たらず、
+                      # イベント部門の説明ページを暫定採用。site:swp-berlin.org events / Veranstaltungen で要確認)
 
   # --- 追加: 日本・アジア経済関係 ---
   - name: "フランクフルト日本法人会 – 行事・活動"
     url: "https://www.hojinkai.de/activities"
+    category: other
     verified: false   # 日本語サイト。独日経済対話・講演会等が対象(テニス・ゴルフ等の親睦行事はテーマ除外に任せる)
 
   - name: "JDZB – 日独センター (Berlin) – Veranstaltungen"
     url: "https://jdzb.de/de/events"
+    category: other
     verified: false
 
   - name: "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen"
     url: "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/"
+    category: other
     verified: false
 
   - name: "EU-Japan Centre for Industrial Cooperation – Events/Webinars"
     url: "https://www.eu-japan.eu/tags/webinar"
+    category: other
     verified: false   # ウェビナー中心の一覧。オンライン開催分が収載対象になる(現地開催の企業ミッション等は対象地域外の可能性が高い)
 
 # ------------------------------------------------------------
