@@ -128,7 +128,24 @@
   /* ---------- フィルタ ---------- */
   .filters{margin:14px 0 18px}
   .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
-  .fld{display:flex;flex-direction:column;gap:3px}
+  .fld{display:flex;flex-direction:column;gap:3px;min-width:0}
+  /* プルダウンの幅は最長の選択肢で決まり、放置するとフィルタ行が折り返す。
+     各フィールドに標準幅(flex-basis)を与え、収まらない分は比率を保って縮める。
+     閉じたセレクトは省略記号(…)で切り詰め、開いたリスト内は全文表示される。 */
+  .controls .fld select{width:100%;min-width:0;font-size:13px;padding:7px 8px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* min-width は既定選択値(「ドイツ」「Deutschland」「すべて」等)が切れない下限。
+     候補の長い City/Organizer は強めに縮み、選択時のみ省略表示になる。 */
+  .fld-area{flex:0 1 128px;min-width:126px}
+  .fld-country{flex:0 1 108px;min-width:80px}
+  .fld-city{flex:0 1 150px;min-width:90px}
+  .fld-org{flex:0 1 190px;min-width:100px}
+  .fld-theme{flex:0 1 118px;min-width:80px}
+  .fld-imp{flex:0 1 190px;min-width:116px}
+  .fld-lang{flex:0 1 96px;min-width:80px}
+  .controls .cbrow{font-size:12.5px;min-height:33px}
+  /* デスクトップ幅(=.wrapが上限幅で表示される環境)ではフィルタを1行に固定 */
+  @media(min-width:1140px){ .controls{flex-wrap:nowrap;gap:8px} }
   .fld .cap{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--dim)}
   select,input[type=search]{border:1px solid var(--line2);border-radius:4px;
@@ -147,7 +164,7 @@
   .hdtools input[type=search]{min-width:0;flex:1 1 170px;max-width:230px;
     padding:6px 10px;font-size:14px}
   /* オンライン開催チェックボックス */
-  .cbfld{justify-content:flex-end}
+  .cbfld{justify-content:flex-end;flex:0 0 auto}
   .cbrow{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none;
     min-height:37px;padding:0 2px;font-family:var(--mono);font-size:13.5px;
     letter-spacing:.02em;color:var(--sub)}
@@ -421,7 +438,7 @@
     #newsbody{padding:6px 10px 8px;font-size:12px}
     .controls{gap:8px}
     .fld{flex:1 1 42%;min-width:0}
-    .fld select{width:100%}
+    .fld select{width:100%;max-width:none}
     input[type=search]{min-width:0;width:100%}
     .cbfld{flex:1 1 100%}
     .cbrow{min-height:0;padding:4px 2px}
@@ -500,19 +517,19 @@
 
 <div class="filters">
   <div class="controls">
-    <label class="fld"><span class="cap">Area</span>
+    <label class="fld fld-area"><span class="cap">Area</span>
       <select id="area">
         <option value="" data-i18n="all">すべて</option>
         <option value="DE" data-i18n="areaDE">ドイツ</option>
         <option value="nonDE" data-i18n="areaNonDE">ドイツ以外</option>
       </select></label>
-    <label class="fld"><span class="cap">Country</span>
+    <label class="fld fld-country"><span class="cap">Country</span>
       <select id="country"></select></label>
-    <label class="fld"><span class="cap">City</span>
+    <label class="fld fld-city"><span class="cap">City</span>
       <select id="city"></select></label>
-    <label class="fld"><span class="cap">Organizer</span>
+    <label class="fld fld-org"><span class="cap">Organizer</span>
       <select id="org"></select></label>
-    <label class="fld"><span class="cap">Theme</span>
+    <label class="fld fld-theme"><span class="cap">Theme</span>
       <select id="theme">
         <option value="" data-i18n="all">すべて</option>
         <option value="central_bank" data-i18n="th_central_bank">①中銀</option>
@@ -524,14 +541,14 @@
         <option value="china" data-i18n="th_china">⑦中国</option>
         <option value="japan" data-i18n="th_japan">⑧日本</option>
       </select></label>
-    <label class="fld"><span class="cap">Importance</span>
+    <label class="fld fld-imp"><span class="cap">Importance</span>
       <select id="imp">
         <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
         <option value="1" data-i18n="imp1">★1以上 — 標準</option>
         <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
         <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
       </select></label>
-    <label class="fld"><span class="cap">Lang</span>
+    <label class="fld fld-lang"><span class="cap">Lang</span>
       <select id="lang">
         <option value="" data-i18n="all">すべて</option>
         <option value="en" data-i18n="langEn">英語</option>
@@ -751,7 +768,7 @@ en:{
   imp0:"★0+ — all (incl. weekly seminars)", imp1:"★1+ — standard",
   imp2:"★2+ — mid-size conferences and up", imp3:"★3 only — flagship & major events",
   langEn:"English", langDe:"German",
-  cbOnline:"Include online events", cbDaytrip:"Frankfurt day-trip range only",
+  cbOnline:"Incl. online events", cbDaytrip:"Frankfurt day-trip only",
   today:"Today",
   fbHidden:"⚠ Filters active — hidden: {n}", reset:"Reset",
   lgColorImp:"Color = importance:", lgHigh:"High", lgMid:"Mid", lgLow:"Low",
@@ -837,7 +854,7 @@ de:{
   imp0:"★0+ — alle (inkl. Forschungsseminare)", imp1:"★1+ — Standard",
   imp2:"★2+ — ab mittelgroßen Konferenzen", imp3:"★3 — nur Flaggschiff-Konferenzen",
   langEn:"Englisch", langDe:"Deutsch",
-  cbOnline:"Online-Veranstaltungen einbeziehen", cbDaytrip:"Nur Tagesausflüge ab Frankfurt",
+  cbOnline:"Inkl. Online-Events", cbDaytrip:"Nur Umkreis Frankfurt",
   today:"Heute",
   fbHidden:"⚠ Filter aktiv — ausgeblendet: {n}", reset:"Zurücksetzen",
   lgColorImp:"Farbe = Wichtigkeit:", lgHigh:"Hoch", lgMid:"Mittel", lgLow:"Niedrig",
@@ -1163,21 +1180,24 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
-const DEFAULTS = {area:"", country:"DE", city:"", org:"", imp:"1", theme:"", lang:"",
-                   online:true, daytrip:false, q:""};
+/* Area=DE が既定なので country の既定は ""(すべて)でよい(結果は同じ)。 */
+const DEFAULTS = {area:"DE", country:"", city:"", org:"", imp:"2", theme:"", lang:"",
+                   online:false, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
-const LS_KEY = "sr_filters_v5";
+/* v6: 既定値変更(Area=DE・★2以上・オンライン除外)を全訪問者に行き渡らせるため
+   キーを更新。旧キーの保存値は読まない(一度だけ既定にリセットされる)。 */
+const LS_KEY = "sr_filters_v6";
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
   if(!s || typeof s!=="object") return;
   if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
-  /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★1以上(imp:"1")に移行する */
-  if(s.imp==="") state.imp = "1";
+  /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★2以上(imp:"2")に移行する */
+  if(s.imp==="") state.imp = "2";
   else if(["0","1","2","3"].includes(s.imp)) state.imp = s.imp;
   if(["",...THEME_KEYS].includes(s.theme)) state.theme = s.theme;
   if(typeof s.online==="boolean") state.online = s.online;
