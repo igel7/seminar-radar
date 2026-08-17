@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ingest.py: Claude(Routine)が書き出した data/new_events.json を取り込み、
+ingest.py: 実行エージェント(Claude Code / Codex)が書き出した data/new_events.json を取り込み、
 検証・重複排除して data/events.json を更新し、docs/ を再生成する。
 
 使い方:  python3 scripts/ingest.py

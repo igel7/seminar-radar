@@ -1,6 +1,7 @@
 # Seminar Radar — ドイツ経済・金融セミナー自動収集カレンダー
 
-毎日1回、Claude(Claude Code Routines)がAnthropicのクラウド上で自動実行され、
+毎日1回、AIエージェント(Claude Code Routines または Codex Cloud)がクラウド上で
+自動実行され、
 
 1. `sources.yaml` の定点観測リスト(ECB・ブンデスバンク・4大研究所ほか)を巡回
 2. web検索で定点リスト外のセミナーも発見
@@ -10,8 +11,10 @@
 する仕組み。GitHub Pages の固定URLをブラウザで開くだけで最新版が見られる。
 
 - **手元PCへのインストール不要**(設定は全てブラウザ)
-- **API従量課金なし**: RoutinesはClaude定額課金(Pro/Max)の利用枠内で動く
-- Claudeの役割は「読む・探す・抽出する」だけ。日付検証・重複排除・HTML生成は
+- **API従量課金なし**: Claude Code Routines / Codex Cloud いずれも各サービスの
+  定額課金の利用枠内で動く。トークン上限の都合に応じて、月ごとにどちらで回すかを
+  切り替えられる(実行手順は `AGENTS.md` に共通化されている)
+- エージェントの役割は「読む・探す・抽出する」だけ。日付検証・重複排除・HTML生成は
   決定論的なPythonコード(`scripts/`)が行うので出力が安定する
 
 ---
@@ -29,7 +32,12 @@
 Settings → Pages → Source「Deploy from a branch」/ Branch `main`・フォルダ `/docs` → Save。
 数分後 `https://<ユーザー名>.github.io/seminar-radar/` が固定URLになる。
 
-### 3. ClaudeにGitHubを接続してRoutineを作る
+### 3. 実行エージェントを設定する
+
+日次更新は Claude Code Routines と Codex Cloud のどちらでも回せる。手順書
+(`AGENTS.md`)は両者共通なので、渡すプロンプトは同じ1行でよい。
+
+#### 3-a. Claude Code Routines の場合
 1. ブラウザで **claude.ai/code** を開く(定額課金アカウントでログイン)
 2. 初回はGitHub連携を求められるので許可し、`seminar-radar` リポジトリへの
    アクセスを与える(全リポジトリではなくこのリポジトリだけに絞ってよい)
@@ -47,8 +55,26 @@ Settings → Pages → Source「Deploy from a branch」/ Branch `main`・フォ�
      Routinesは既定で `claude/` 接頭辞のブランチにしかプッシュできないため
 4. 保存したら「Run now」(即時実行)で初回を回す
 
+#### 3-b. Codex Cloud の場合
+1. Codex にこのリポジトリへのアクセスを与える
+2. スケジュール実行(または手動実行)のプロンプトは 3-a と同じ1行:
+   `リポジトリ直下の AGENTS.md を読み、その指示に従って本日の更新を実行せよ。`
+3. 成果物は **`codex/` 接頭辞のブランチに push** させる(PRは作らせない)。
+   `.github/workflows/automerge.yml` は `claude/**` と `codex/**` の push で発火し、
+   `data/` のみを取り込んで main 側の `scripts/` で `docs/` を再生成する
+4. **初回は必ず手動実行し**、(1) push先ブランチ名 (2) automerge ワークフローが
+   実際に発火したか (3) Pages が更新されたか を順に確認する
+   (Codex 環境のネットワーク許可範囲・headless Chromium の可否は未検証。
+   検証結果は `AGENTS.md` の A-1 の表に追記する)
+
+#### 3-c. 実行エンジンを切り替えるとき
+両方を同時に有効にせず、**旧エンジンのスケジュールを止めてから**新エンジンを
+有効化する。切替直後の初回は手動実行し、上記 3-b の4点を確認する。
+どちらが実行したかはコミットメッセージ末尾の `(claude)` / `(codex)` と
+ブランチ名の接頭辞で追跡できる。
+
 ### 4. 初回実行の確認
-1. 実行ログ(claude.ai/code のセッション一覧)で完了を確認
+1. 実行ログ(claude.ai/code のセッション一覧、またはCodex側の実行ログ)で完了を確認
 2. Pages のURLを開き、最下部「巡回ステータス」を見る
 3. 失敗しているソースがあれば対処:
    - **URLが古い場合**(特に `verified: false` の IfW/RWI/SUERF/ZEW):
@@ -105,12 +131,15 @@ Settings → Pages → Source「Deploy from a branch」/ Branch `main`・フォ�
 ## メンテナンス(全てブラウザで完結)
 
 - **巡回先の追加・削除・検索観点の変更**: GitHub上で `sources.yaml` を直接編集
-- **コードの修正や機能追加**: claude.ai/code でこのリポジトリを開き、
-  Claudeに日本語で指示すれば編集からコミットまでやってくれる
+- **コードの修正や機能追加**: claude.ai/code(またはCodex)でこのリポジトリを開き、
+  日本語で指示すれば編集からコミットまでやってくれる
   (VS CodeのClaude Code拡張でも同じことができるが、ローカルにgitが
   ない環境ではブラウザ版 claude.ai/code を使うのが簡単)
-- **利用枠**: Routinesの実行は定額課金の利用枠を消費する。使いすぎが
-  気になる場合は実行を週3回などに減らせばよい
+- **エージェントの動作ルール**: 日次更新の手順、ブランチ・コミット方針、
+  サブエージェント/下位モデルへの委譲(トークン節約)のルールは
+  すべて `AGENTS.md` にある。ルールを変えたいときはこのファイルを編集する
+- **利用枠**: 日次実行は各サービスの定額課金の利用枠を消費する。使いすぎが
+  気になる場合は実行を週3回などに減らすか、月ごとに実行エンジンを切り替える
 
 ## 予備手段: GitHub Actions + API従量課金版
 

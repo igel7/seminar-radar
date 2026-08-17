@@ -4,6 +4,11 @@
 # ============================================================
 
 settings:
+  # 注意: extraction_model / discovery_model は予備手段 scripts/update_api.py
+  # (Anthropic API従量課金版)専用の設定であり、通常運用の日次更新を実行する
+  # エージェント(Claude Code / Codex)には一切影響しない。
+  # エージェントのモデル選択・サブエージェント委譲のルールは AGENTS.md の A-3 を参照。
+  # 予備手段を実際に使う際は、モデルIDが現行のものか要確認。
   # ページ抽出に使うモデル(安価なモデルで十分)
   extraction_model: "claude-haiku-4-5"
   # ネット検索による新規発見に使うモデル
@@ -26,7 +31,7 @@ sources:
 
   # ECB銀行監督(SSM)は本体と別ドメインでイベントを公開している。
   # 2026-07に Supervision Innovators Conference の検出漏れが発覚し追加。
-  # 注意: Routine実行環境のネットワーク許可リストに
+  # 注意: 実行環境のネットワーク許可リストに
   # bankingsupervision.europa.eu の追加が必要な場合がある。
   - name: "ECB Banking Supervision (SSM) – Conferences & seminars"
     url: "https://www.bankingsupervision.europa.eu/press/conferences/html/index.en.html"

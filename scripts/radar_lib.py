@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 radar_lib.py: seminar-radar の決定論的な処理(検証・重複排除・HTML/ICS生成)。
-LLM(Claude)は抽出だけを担当し、データの整合性はこのコードが保証する。
+LLM(実行エージェント: Claude Code / Codex)は抽出だけを担当し、
+データの整合性はこのコードが保証する。
 """
 
 import hashlib

@@ -3,7 +3,7 @@
 """
 update.py: 【予備手段・API従量課金版】
 Claude API を直接呼んで巡回・抽出・検索・再生成まで一括で行う。
-通常運用(Claude Code Routines・定額課金枠)では使わない。
+通常運用(Claude Code Routines / Codex Cloud の定額課金枠)では使わない。
 GitHub Actions で回したくなった場合のみ、optional/daily.yml と併せて使う。
 
 依存: requests, beautifulsoup4, pyyaml / 環境変数 ANTHROPIC_API_KEY

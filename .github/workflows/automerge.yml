@@ -1,8 +1,9 @@
-name: automerge-claude-branch
+name: automerge-agent-branch
 on:
   push:
     branches:
       - 'claude/**'
+      - 'codex/**'
 permissions:
   contents: write
   issues: write
@@ -17,7 +18,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      # data/ と docs/ だけの変更(日次Routine)か、コードを含む変更かを判別する
+      # data/ と docs/ だけの変更(日次更新ジョブ)か、コードを含む変更かを判別する
       - name: Classify changes
         id: classify
         run: |
@@ -40,7 +41,8 @@ jobs:
         run: |
           git config user.name  "seminar-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-      # セキュリティ: 日次Routineは信頼できない外部ページを読むエージェントのため、
+      # セキュリティ: 日次更新ジョブは信頼できない外部ページを読むエージェント
+      # (Claude Code / Codex)のため、
       # pushされた docs/ は信用せず、data/ のみ取り込んで docs/ は main 側の
       # scripts/ で再生成する(改ざんHTMLの公開を防ぐ)
       - name: Data update — take data/ only and regenerate docs/
@@ -71,7 +73,7 @@ jobs:
           gh issue create --repo "${GITHUB_REPOSITORY}" \
             --title "コード変更を自動マージ: ${GITHUB_REF_NAME}" \
             --body "${BODY}" || true
-      - name: Delete routine branch
+      - name: Delete agent branch
         run: git push origin --delete "${GITHUB_REF_NAME}" || true
       - name: Request Pages rebuild
         run: |

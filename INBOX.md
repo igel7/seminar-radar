@@ -14,7 +14,8 @@
 2. 「Commit changes」を押す(mainに直接コミットでOK)
 
 - 取り込まれると、区切り線より下は自動で空に戻る
-- すぐ反映したいときは claude.ai/code/routines で該当Routineの「Run now」
+- すぐ反映したいときは日次更新を手動実行する
+  (claude.ai/code/routines で該当Routineの「Run now」、またはCodex側で手動実行)
 - 既にカレンダーにあるイベントと重複しても問題ない(自動で統合される)
 - 開催日が確認できないものは取り込まれない(日付を捏造しない方針のため)
 
