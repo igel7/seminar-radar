@@ -154,7 +154,7 @@
   .morebtn.open .marr{color:var(--amber)}
   .morebadge{margin-left:6px;color:var(--amber);font-weight:700}
   .morerow{margin-top:8px;border:1px solid var(--amber-dim);border-radius:6px;
-    background:var(--cell);padding:10px 12px}
+    background:rgba(245,166,35,.05);padding:10px 12px}
   .controls[hidden]{display:none}
   /* デスクトップ幅(=.wrapが上限幅で表示される環境)ではフィルタを1行に固定 */
   @media(min-width:1140px){ .controls{flex-wrap:nowrap;gap:8px} }
@@ -537,8 +537,6 @@
       </select></label>
     <label class="fld fld-country"><span class="cap" data-i18n="capCountry">国</span>
       <select id="country"></select></label>
-    <label class="fld fld-org"><span class="cap" data-i18n="capOrg">主催</span>
-      <select id="org"></select></label>
     <label class="fld fld-imp"><span class="cap" data-i18n="capImp">重要度</span>
       <select id="imp">
         <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
@@ -563,6 +561,8 @@
   <div class="controls morerow" id="morerow" hidden>
     <label class="fld fld-city"><span class="cap" data-i18n="capCity">都市</span>
       <select id="city"></select></label>
+    <label class="fld fld-org"><span class="cap" data-i18n="capOrg">主催</span>
+      <select id="org"></select></label>
     <label class="fld fld-lang"><span class="cap" data-i18n="capLang">言語</span>
       <select id="lang">
         <option value="" data-i18n="all">すべて</option>
@@ -2392,7 +2392,7 @@ document.getElementById("shareimport").addEventListener("click",importShare);
 /* ---------- 「その他」フィルタ(折りたたみ)---------- */
 /* 折りたたみ側に入っているフィルタが既定値から変わっている間は、
    閉じていても気づけるようボタンに件数バッジを出す */
-const MORE_KEYS=["city","lang","online","daytrip"];
+const MORE_KEYS=["city","org","lang","online","daytrip"];
 function updateMoreBadge(){
   const n=MORE_KEYS.filter(k=>state[k]!==DEFAULTS[k]).length;
   const b=document.getElementById("morebadge");
