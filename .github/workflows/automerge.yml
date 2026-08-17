@@ -45,11 +45,14 @@ jobs:
       # (Claude Code / Codex)のため、
       # pushされた docs/ は信用せず、data/ のみ取り込んで docs/ は main 側の
       # scripts/ で再生成する(改ざんHTMLの公開を防ぐ)
+      # --maintenance: サイトの LAST UPDATE(最終巡回時刻)は data/meta.json の値を使う。
+      # 巡回時刻は実行エージェント側の ingest.py が data/meta.json に記録済みであり、
+      # ここでの再生成はそれを進めてはならない(進めるのは巡回本体のみ)。
       - name: Data update — take data/ only and regenerate docs/
         if: steps.classify.outputs.mode == 'data'
         run: |
           git checkout "origin/${GITHUB_REF_NAME}" -- data/
-          python3 scripts/ingest.py
+          python3 scripts/ingest.py --maintenance
           git add data/ docs/
           git diff --cached --quiet || git commit -m "daily update (from ${GITHUB_REF_NAME})"
           git push origin main
@@ -59,7 +62,7 @@ jobs:
         if: steps.classify.outputs.mode == 'code'
         run: |
           git merge --no-edit -X theirs "origin/${GITHUB_REF_NAME}"
-          python3 scripts/ingest.py
+          python3 scripts/ingest.py --maintenance
           git add data/ docs/
           git diff --cached --quiet || git commit -m "regenerate docs/ after code merge"
           git push origin main
