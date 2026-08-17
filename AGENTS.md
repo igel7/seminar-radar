@@ -140,8 +140,10 @@ Claude Code では Task/Agent ツール(軽量モデルを指定)、Codex では
 追加指示として読み込み、優先的に実行すること。実行後は `FOCUS.md` を削除し、
 手順6のコミットに含める(次回に持ち越さない)。存在しなければ何もしない。
 
-### 1. 設定を読む
-`sources.yaml` を読み、`sources`(定点観測リスト)と `discovery_topics` を把握する。
+### 1. 巡回開始の記録と設定の読み込み
+まず **`python3 scripts/ingest.py --mark-start`** を実行して巡回開始時刻を記録する
+(サイトの更新履歴に「開始〜終了」時刻を表示するために使う。数秒で終わる)。
+続いて `sources.yaml` を読み、`sources`(定点観測リスト)と `discovery_topics` を把握する。
 
 ### 2. 定点観測リストの巡回
 `sources` の各URLについて、**利用可能なページ取得手段**(Claude Code の WebFetch ツール、
