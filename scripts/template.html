@@ -419,6 +419,8 @@
   table.st{width:100%;border-collapse:collapse;font-size:12px;background:var(--panel);
     border:1px solid var(--line2);font-family:var(--mono)}
   table.st td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
+  table.st th{border:1px solid var(--line);padding:5px 10px;text-align:left;
+    color:var(--amber-dim);font-weight:700;background:var(--bg)}
   table.st td:first-child{color:var(--sub)}
   table.st a{color:var(--cb-tx);text-decoration:none}
   table.st a:hover{text-decoration:underline}
@@ -648,7 +650,10 @@
 <div id="list"></div>
 
 <h2 class="sect" data-i18n="crawlStatus">巡回ステータス</h2>
-<table class="st"><tbody id="status"></tbody></table>
+<table class="st">
+  <thead><tr><th data-i18n="stHdrOrg">機関</th><th data-i18n="stHdrCount">本日以降のイベント数</th></tr></thead>
+  <tbody id="status"></tbody>
+</table>
 
 <footer data-i18n="footer">
   情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
@@ -728,7 +733,8 @@ ja:{
   sep:"・", dash:"〜", contPrefix:"(続き)",
   regNote:"申込:", regPage:"申込ページ →",
   srcInfo:"情報源:", firstSeen:"／ 初検出:",
-  stFound:"[OK] {n}件",
+  stUpcoming:"{n}件",
+  stHdrOrg:"機関", stHdrCount:"本日以降のイベント数",
   /* 更新履歴(News) */
   nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
   nwPinned:"フィルタで非表示のイベントを一時的に表示しています(フィルタ操作で解除)",
@@ -816,7 +822,8 @@ en:{
   sep:"·", dash:"–", contPrefix:"(cont.) ",
   regNote:"Registration:", regPage:"Registration page →",
   srcInfo:"Source:", firstSeen:"/ first seen:",
-  stFound:"[OK] {n} found",
+  stUpcoming:"{n}",
+  stHdrOrg:"Institution", stHdrCount:"Events from today onward",
   /* Change log (News) */
   nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
   nwNone:"no changes",
@@ -910,7 +917,8 @@ de:{
   sep:"·", dash:"–", contPrefix:"(Forts.) ",
   regNote:"Anmeldung:", regPage:"Anmeldeseite →",
   srcInfo:"Quelle:", firstSeen:"/ erfasst am:",
-  stFound:"[OK] {n} gefunden",
+  stUpcoming:"{n}",
+  stHdrOrg:"Institution", stHdrCount:"Veranstaltungen ab heute",
   /* Änderungen (News) */
   nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
   nwNone:"keine Änderungen",
@@ -1707,11 +1715,24 @@ function drawList(){
 
 /* ---------- ステータス ---------- */
 function drawStatus(){
+  /* 2列目は巡回時の発見数(status.jsonのfound)ではなく、カレンダー収載済みの
+     「本日以降のイベント数」をEVENTSから集計して表示する。
+     手動取込のsourceは「手動取込: INBOX」等の形式なのでプレフィックスで束ねる。 */
+  const upc={};
+  for(const ev of EVENTS){
+    const end=ev.date_end||ev.date_start;
+    if(!end||end<TODAY) continue;
+    let key=(ev.source||"").replace(/&amp;/g,"&");
+    if(key.startsWith("手動取込")) key="手動取込";
+    upc[key]=(upc[key]||0)+1;
+  }
   document.getElementById("status").innerHTML=STATUS.map(s=>{
     const u=safeUrl(s.url);
+    const n=upc[s.name]||0;
+    const cnt=tf("stUpcoming",{n:esc(n)});
     return `<tr><td>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
-     <td>${s.ok?`<span class="ok">${tf("stFound",{n:esc(s.found)})}</span>`
-              :`<span class="ng">[FAIL]</span> <small>${esc(s.error||"")}</small>`}</td></tr>`;
+     <td>${s.ok?`<span class="ok">[OK]</span> ${cnt}`
+              :`<span class="ng">[FAIL]</span> ${cnt} <small>${esc(s.error||"")}</small>`}</td></tr>`;
   }).join("");
 }
 
