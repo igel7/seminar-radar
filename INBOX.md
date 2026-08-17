@@ -20,7 +20,8 @@
 - 開催日が確認できないものは取り込まれない(日付を捏造しない方針のため)
 
 --- ここから下に貼り付け ---
-https://www.iwkoeln.de/institut/veranstaltungen.html
+
+https://www.bnr.ro/en/24077-bears
 Open visual assistant software. Accessible with the keyboard via ALT + 1
 NBR logo
 Open searchRO
