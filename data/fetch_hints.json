@@ -155,5 +155,21 @@
   ],
   "last_ok": null,
   "note": "正しい一覧URLは /institut/veranstaltungen.html(2026-08-17ユーザー提供)だが、実行環境からはUA偽装でも401継続。site:iwkoeln.de Veranstaltung 検索で個別ページを探すか、INBOXの手動取込で補完する"
+ },
+ "BNB – Bulgarian National Bank – Events": {
+  "method": "alt-url",
+  "alt_urls": [
+   "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
+  ],
+  "last_ok": "2026-08-17",
+  "note": "sources.yamlの英語版イベントURL(?toLang=_EN)はブラウザでは表示できるが、curl/WebFetchからはソフト404(本文が「Възникна системна грешка」)になる。巡回はプレス発表アーカイブ(年別一覧)を読む。会議告知はプレス発表に出る。イベント自体が稀で found:0 が正常"
+ },
+ "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
+  "method": "alt-url",
+  "alt_urls": [
+   "https://www.cbbh.ba/press/AllNews"
+  ],
+  "last_ok": "2026-08-17",
+  "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
  }
 }
