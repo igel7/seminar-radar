@@ -21,14 +21,27 @@
 実行環境によって使える手段が違う。**検証済みの事実のみ**を書くこと。
 新しく検証したらこの表を更新する(推測を書かない)。
 
-| 環境 | headless Chromium (`scripts/fetch_page.py`) | web検索 | 備考 |
-|---|---|---|---|
-| Claude Code Routines | **使用不可**。外向き接続がプロキシに遮断され ERR_CONNECTION_RESET になることを 2026-07 に全パターンで確認済み。**使わず時間を浪費しないこと** | WebSearch ツールで可 | ページ取得は WebFetch、無ければ `curl -sL` |
-| Codex Cloud | **未検証** | **未検証** | ネットワーク許可の範囲も未検証。検証後にこの表を更新する |
+| 環境 | headless Chromium (`scripts/fetch_page.py`) | web検索 | GitHubへのpush | 備考 |
+|---|---|---|---|---|
+| Claude Code Routines | **使用不可**。外向き接続がプロキシに遮断され ERR_CONNECTION_RESET になることを 2026-07 に全パターンで確認済み。**使わず時間を浪費しないこと** | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
+| Codex Cloud | 未検証 | 未検証 | **不可能**(2026-08-17 確認) | 外部サイトの取得は可。**巡回自体は正常に動く** |
 
 - 巡回対象ドメインへの外向き接続が環境側で制限されている場合がある。
   接続が全面的に落ちている場合は、無理に回さず `data/status.json` に失敗として記録する。
 - 本ジョブは外部サイトを多数取得するため、環境のネットワーク設定が最重要の前提条件である。
+
+### Codex Cloud で push できないことについて(重要)
+
+Codex Cloud のエージェントコンテナは MITM プロキシ経由で通信し、**GitHub 宛の書き込み
+(POST 等)が一律で遮断されている。** `git push` も GitHub API による書き込みも 403 になる。
+読み取り(GET)だけが通る。
+
+**この制約の回避を試みないこと。** 資格情報の設定、User-Agent の変更、プロトコル・HTTP
+バージョンの変更、GitHub API の利用は**すべて実測で否定済み**である。認証や設定の問題では
+ないため、何を調整しても通らない。検証の詳細と「試したが駄目だったこと」の一覧は
+**`CODEX_NOTES.md`** にある。作業前に必ず読むこと。
+
+Codex で日次更新を実行する場合の扱いは手順6(B の最後)に定めてある。
 
 ## A-2. ブランチ・コミット・PR
 
@@ -37,6 +50,10 @@
 - **プルリクエストは作らない。** main への反映は GitHub Actions
   (`.github/workflows/automerge.yml`)の自動マージが行う。
   同ワークフローは `claude/**` と `codex/**` の push で発火する。
+- **Codex Cloud ではコンテナから push できない**(A-1参照)。コミットまで済ませ、
+  push を試みて失敗しても回避策を探さず、**push できなかった旨を明示して報告し終了する。**
+  GitHub への反映は人が Codex のタスク画面から行う。**「push した」「PRを作った」と
+  報告しないこと。**
 - 日次更新のコミットメッセージは **`daily update YYYY-MM-DD (claude)`** または
   **`daily update YYYY-MM-DD (codex)`** とし、**どちらのエージェントが実行したかを必ず記録する**
   (Claude Code なら `claude`、Codex なら `codex`。判別できない場合はブランチ名の接頭辞に合わせる)。
@@ -195,12 +212,23 @@ python3 scripts/ingest.py
 `docs/index.html` が更新されたことを確認する。
 
 ### 6. コミットとプッシュ
-変更された `data/` と `docs/` をコミットし、実行環境が指定するブランチ
-(`claude/...` または `codex/...`)にプッシュする(A-2参照)。
+変更された `data/` と `docs/` をコミットする。
 コミットメッセージ: **`daily update YYYY-MM-DD (claude)`** または
 **`daily update YYYY-MM-DD (codex)`**(実行したエージェントを必ず記録する)。
-プルリクエストは作らない。mainへの反映はGitHub Actionsの自動マージが行うので、
-mainに直接プッシュできなくてよい。
+プルリクエストは作らない。
+
+**Claude Code Routines の場合**: 実行環境が指定するブランチ(`claude/...`)にプッシュする。
+mainへの反映はGitHub Actionsの自動マージが行うので、mainに直接プッシュできなくてよい。
+
+**Codex Cloud の場合**: **コンテナから GitHub へ push できない**(A-1 および
+`CODEX_NOTES.md` 参照)。コミットまでで作業を終え、次を報告して終了する。
+
+- ローカルコミットのハッシュとコミットメッセージ
+- 新規・更新イベントの件数、および `data/status.json` の失敗ソース数
+- **push は環境の制約により実行できていない**こと(GitHubへの反映は人がタスク画面から行う)
+
+回避策(資格情報の再設定、プロトコルやUser-Agentの変更、GitHub APIの利用など)を
+試さないこと。すべて実測で否定済みであり、時間とトークンを浪費するだけである。
 
 ## イベントのスキーマ
 
