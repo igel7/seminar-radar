@@ -21,6 +21,9 @@ from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
 
 
 def main():
+    # --maintenance: 巡回を伴わない保守作業(UI改修など)での再生成。
+    # サイトの LAST UPDATE(最終巡回時刻)を進めない。日次更新ではフラグなしで実行する。
+    maintenance = "--maintenance" in sys.argv[1:]
     new_events = load_json(NEW_FILE, [])
     if not isinstance(new_events, list):
         sys.exit("data/new_events.json はJSON配列である必要があります。")
@@ -64,7 +67,7 @@ def main():
     # レンダリング直前にユーザー管理の手動上書き(data/overrides.json)を適用する。
     # events (data/events.json への保存分)には反映しない = オーバーライドは表示専用。
     render_events = apply_overrides([dict(ev) for ev in events])
-    render_html(render_events, statuses, changelog=changelog)
+    render_html(render_events, statuses, changelog=changelog, maintenance=maintenance)
     render_ics(render_events)
 
     # 取込済みの入力ファイルは空に戻す(次回実行の取り違え防止)

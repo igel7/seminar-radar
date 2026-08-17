@@ -146,11 +146,15 @@
   .fld-theme{flex:0 1 150px;min-width:100px}
   .fld-lang{flex:0 1 110px;min-width:90px}
   .controls .cbrow{font-size:12.5px;min-height:33px}
-  /* 「その他」ボタンと折りたたみ行 */
+  /* 「その他」ボタンと折りたたみ行(開いている間はボタンを点灯させ、
+     展開行を枠付きパネルにして「ボタンから開いた」ことを視覚的につなぐ) */
   .morebtn{flex:0 0 auto;align-self:flex-end;padding:8px 12px;font-size:12px}
+  .morebtn.open{border-color:var(--amber);color:var(--amber);background:var(--cell2)}
   .marr{color:var(--amber-dim)}
+  .morebtn.open .marr{color:var(--amber)}
   .morebadge{margin-left:6px;color:var(--amber);font-weight:700}
-  .morerow{margin-top:9px}
+  .morerow{margin-top:8px;border:1px solid var(--amber-dim);border-radius:6px;
+    background:var(--cell);padding:10px 12px}
   .controls[hidden]{display:none}
   /* デスクトップ幅(=.wrapが上限幅で表示される環境)ではフィルタを1行に固定 */
   @media(min-width:1140px){ .controls{flex-wrap:nowrap;gap:8px} }
@@ -525,29 +529,24 @@
 
 <div class="filters">
   <div class="controls">
-    <label class="fld fld-area"><span class="cap">Area</span>
+    <label class="fld fld-area"><span class="cap" data-i18n="capArea">エリア</span>
       <select id="area">
         <option value="" data-i18n="all">すべて</option>
         <option value="DE" data-i18n="areaDE">ドイツ</option>
         <option value="nonDE" data-i18n="areaNonDE">ドイツ以外</option>
       </select></label>
-    <label class="fld fld-country"><span class="cap">Country</span>
+    <label class="fld fld-country"><span class="cap" data-i18n="capCountry">国</span>
       <select id="country"></select></label>
-    <label class="fld fld-org"><span class="cap">Organizer</span>
+    <label class="fld fld-org"><span class="cap" data-i18n="capOrg">主催</span>
       <select id="org"></select></label>
-    <label class="fld fld-imp"><span class="cap">Importance</span>
+    <label class="fld fld-imp"><span class="cap" data-i18n="capImp">重要度</span>
       <select id="imp">
         <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
         <option value="1" data-i18n="imp1">★1以上 — 標準</option>
         <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
         <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
       </select></label>
-    <button type="button" id="morebtn" class="srcbtn morebtn" aria-expanded="false" aria-controls="morerow"><span data-i18n="more">その他</span> <span class="marr" aria-hidden="true">▾</span><span id="morebadge" class="morebadge" hidden></span></button>
-  </div>
-  <div class="controls morerow" id="morerow" hidden>
-    <label class="fld fld-city"><span class="cap">City</span>
-      <select id="city"></select></label>
-    <label class="fld fld-theme"><span class="cap">Theme</span>
+    <label class="fld fld-theme"><span class="cap" data-i18n="capTheme">テーマ</span>
       <select id="theme">
         <option value="" data-i18n="all">すべて</option>
         <option value="central_bank" data-i18n="th_central_bank">①中銀</option>
@@ -559,7 +558,12 @@
         <option value="china" data-i18n="th_china">⑦中国</option>
         <option value="japan" data-i18n="th_japan">⑧日本</option>
       </select></label>
-    <label class="fld fld-lang"><span class="cap">Lang</span>
+    <button type="button" id="morebtn" class="srcbtn morebtn" aria-expanded="false" aria-controls="morerow"><span data-i18n="more">その他</span> <span class="marr" aria-hidden="true">▾</span><span id="morebadge" class="morebadge" hidden></span></button>
+  </div>
+  <div class="controls morerow" id="morerow" hidden>
+    <label class="fld fld-city"><span class="cap" data-i18n="capCity">都市</span>
+      <select id="city"></select></label>
+    <label class="fld fld-lang"><span class="cap" data-i18n="capLang">言語</span>
       <select id="lang">
         <option value="" data-i18n="all">すべて</option>
         <option value="en" data-i18n="langEn">英語</option>
@@ -678,6 +682,8 @@ ja:{
   docTitle:"Seminar Calendar — ドイツ経済・金融セミナー",
   lastUpdate:"LAST UPDATE:",
   sources:"調査対象",
+  capArea:"エリア", capCountry:"国", capCity:"都市", capOrg:"主催",
+  capTheme:"テーマ", capImp:"重要度", capLang:"言語",
   mech:"仕組み",
   mpIntro:"ドイツ語圏と中東欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
   mpAgentT:"AIエージェント",
@@ -763,6 +769,8 @@ en:{
   docTitle:"Seminar Calendar — German Economics & Finance Seminars",
   lastUpdate:"LAST UPDATE:",
   sources:"Sources",
+  capArea:"Area", capCountry:"Country", capCity:"City", capOrg:"Organizer",
+  capTheme:"Theme", capImp:"Importance", capLang:"Lang",
   mech:"How it works",
   mpIntro:"Economics and finance seminars across the German-speaking region and Central & Eastern Europe, collected automatically once a day by AI agents.",
   mpAgentT:"AI agents",
@@ -854,6 +862,8 @@ de:{
   docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Deutschland",
   lastUpdate:"LETZTES UPDATE:",
   sources:"Quellen",
+  capArea:"Region", capCountry:"Land", capCity:"Stadt", capOrg:"Veranstalter",
+  capTheme:"Thema", capImp:"Relevanz", capLang:"Sprache",
   mech:"Funktionsweise",
   mpIntro:"Wirtschafts- und Finanzseminare im deutschsprachigen Raum und in Mittel- und Osteuropa, täglich einmal automatisch von KI-Agenten erfasst.",
   mpAgentT:"KI-Agenten",
@@ -1227,16 +1237,16 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
-/* Area=DE が既定なので country の既定は ""(すべて)でよい(結果は同じ)。 */
-const DEFAULTS = {area:"DE", country:"", city:"", org:"", imp:"2", theme:"", lang:"",
+/* Area=DE のときは country も DE をセットで表示する(area変更ハンドラでも連動)。 */
+const DEFAULTS = {area:"DE", country:"DE", city:"", org:"", imp:"2", theme:"", lang:"",
                    online:false, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
-/* v6: 既定値変更(Area=DE・★2以上・オンライン除外)を全訪問者に行き渡らせるため
-   キーを更新。旧キーの保存値は読まない(一度だけ既定にリセットされる)。 */
-const LS_KEY = "sr_filters_v6";
+/* v7: 既定値変更(Area=DE・Country=DE・★2以上・オンライン除外)を全訪問者に
+   行き渡らせるためキーを更新。旧キーの保存値は読まない(一度だけ既定にリセットされる)。 */
+const LS_KEY = "sr_filters_v7";
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
@@ -2382,7 +2392,7 @@ document.getElementById("shareimport").addEventListener("click",importShare);
 /* ---------- 「その他」フィルタ(折りたたみ)---------- */
 /* 折りたたみ側に入っているフィルタが既定値から変わっている間は、
    閉じていても気づけるようボタンに件数バッジを出す */
-const MORE_KEYS=["city","theme","lang","online","daytrip"];
+const MORE_KEYS=["city","lang","online","daytrip"];
 function updateMoreBadge(){
   const n=MORE_KEYS.filter(k=>state[k]!==DEFAULTS[k]).length;
   const b=document.getElementById("morebadge");
@@ -2394,6 +2404,7 @@ const morerow=document.getElementById("morerow");
 morebtn.addEventListener("click",()=>{
   const open = morerow.hidden;             /* これから開くか */
   morerow.hidden = !open;
+  morebtn.classList.toggle("open", open);
   morebtn.setAttribute("aria-expanded", open?"true":"false");
   morebtn.querySelector(".marr").textContent = open?"▴":"▾";
 });
@@ -2418,7 +2429,13 @@ document.getElementById("area").addEventListener("change",e=>{
      しまった場合は表示を元の state.area に戻し、変更を無視する(選択拒否)。 */
   const picked = e.target.selectedOptions[0];
   if(picked && picked.disabled){ e.target.value = state.area; return; }
-  state.area=e.target.value;redraw();
+  const prev = state.area;
+  state.area = e.target.value;
+  /* エリアと国の連動: ドイツを選んだら国もドイツに。ドイツから離れたら、
+     連動でセットされていた国=ドイツだけを解除する(手動選択の他国は rebuildSelects が整合) */
+  if(state.area==="DE") state.country="DE";
+  else if(prev==="DE" && state.country==="DE") state.country="";
+  redraw();
 });
 document.getElementById("country").addEventListener("change",e=>{state.country=e.target.value;redraw();});
 document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
