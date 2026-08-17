@@ -427,6 +427,8 @@
   table.st a:hover{text-decoration:underline}
   .ok{color:var(--ok)} .ng{color:var(--fail);font-weight:700}
   .st small{color:var(--dim)}
+  .st a.stcnt{color:var(--amber-dim);text-decoration:underline;text-underline-offset:2px}
+  .st a.stcnt:hover{color:var(--amber)}
   footer{margin-top:40px;font-size:12px;color:var(--sub);
     border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
 
@@ -732,6 +734,7 @@ ja:{
   srcInfo:"情報源:", firstSeen:"／ 初検出:",
   stUpcoming:"{n}件",
   stHdrOrg:"機関", stHdrCount:"本日以降のイベント数",
+  stFilterTip:"この主催団体でカレンダーを絞り込む",
   /* 更新履歴(News) */
   nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
   nwRange:"〜",
@@ -821,6 +824,7 @@ en:{
   srcInfo:"Source:", firstSeen:"/ first seen:",
   stUpcoming:"{n}",
   stHdrOrg:"Institution", stHdrCount:"Events from today onward",
+  stFilterTip:"Filter the calendar by this organizer",
   /* Change log (News) */
   nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
   nwNone:"no changes", nwRange:"–",
@@ -915,6 +919,7 @@ de:{
   srcInfo:"Quelle:", firstSeen:"/ erfasst am:",
   stUpcoming:"{n}",
   stHdrOrg:"Institution", stHdrCount:"Veranstaltungen ab heute",
+  stFilterTip:"Kalender nach diesem Veranstalter filtern",
   /* Änderungen (News) */
   nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
   nwNone:"keine Änderungen", nwRange:"–",
@@ -1715,23 +1720,62 @@ function drawList(){
 function drawStatus(){
   /* 2列目は巡回時の発見数(status.jsonのfound)ではなく、カレンダー収載済みの
      「本日以降のイベント数」をEVENTSから集計して表示する。
-     手動取込のsourceは「手動取込: INBOX」等の形式なのでプレフィックスで束ねる。 */
-  const upc={};
+     手動取込のsourceは「手動取込: INBOX」等の形式なのでプレフィックスで束ねる。
+     あわせてソース別の organizer_short トークン頻度も集計する(件数クリックの
+     主催団体フィルタで最頻トークンを使うため)。 */
+  const upc={}, orgCnt={};
   for(const ev of EVENTS){
     const end=ev.date_end||ev.date_start;
     if(!end||end<TODAY) continue;
     let key=(ev.source||"").replace(/&amp;/g,"&");
     if(key.startsWith("手動取込")) key="手動取込";
     upc[key]=(upc[key]||0)+1;
+    const oc=(orgCnt[key]=orgCnt[key]||{});
+    for(const tk of orgTokens(ev)) oc[tk]=(oc[tk]||0)+1;
   }
-  document.getElementById("status").innerHTML=STATUS.map(s=>{
-    const u=safeUrl(s.url);
+  /* 機関名リンクは sources.yaml(SOURCES)の現行URLを優先する。status.json の url は
+     巡回時のスナップショットで、URL差し替え後も旧リンクが残ってしまうため。 */
+  const srcUrl={};
+  if(SOURCES && Array.isArray(SOURCES.sources))
+    for(const s of SOURCES.sources) if(s.name) srcUrl[s.name]=s.url||"";
+  /* 主催者が雑多な特殊行は件数クリックの対象外 */
+  const NOFILTER=new Set(["web検索(discovery)","手動取込"]);
+  const row=s=>{
+    const u=safeUrl(srcUrl[s.name]||s.url);
     const n=upc[s.name]||0;
-    const cnt=tf("stUpcoming",{n:esc(n)});
+    let cnt=tf("stUpcoming",{n:esc(n)});
+    if(n>0 && !NOFILTER.has(s.name))
+      cnt=`<a href="#" class="stcnt" data-src="${esc(s.name)}" title="${esc(t("stFilterTip"))}">${cnt}</a>`;
     return `<tr><td>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
      <td>${s.ok?`<span class="ok">[OK]</span> ${cnt}`
               :`<span class="ng">[FAIL]</span> ${cnt} <small>${esc(s.error||"")}</small>`}</td></tr>`;
+  };
+  /* 主催フィルタと同じ4分類(ORG_GROUP_ORDER / og_*)の見出し付きグループ表示。
+     分類は sources.yaml の category を name で引き、定点リストに無い行は「その他」へ。 */
+  const cat={};
+  if(SOURCES && Array.isArray(SOURCES.sources))
+    for(const s of SOURCES.sources) if(s.name) cat[s.name]=s.category;
+  const groups={cb:[],tt:[],uni:[],other:[]};
+  STATUS.forEach(s=>{ (groups[cat[s.name]]||groups.other).push(s); });
+  document.getElementById("status").innerHTML=ORG_GROUP_ORDER.map(g=>{
+    if(!groups[g].length) return "";
+    const lbl = uiLang==="ja" ? `【${orgGroupLabel(g)}】` : orgGroupLabel(g);
+    return `<tr class="stgrp"><td colspan="2">${esc(lbl)}</td></tr>`+groups[g].map(row).join("");
   }).join("");
+  /* 件数クリック: 全フィルタ解除 → 主催団体フィルタのみセット → カレンダーへ移動。
+     online:true が「完全オンラインも含める」= 全部表示側であることに注意。 */
+  document.querySelectorAll("#status a.stcnt").forEach(a=>{
+    a.addEventListener("click",e=>{
+      e.preventDefault();
+      const oc=orgCnt[a.dataset.src]||{};
+      const top=Object.keys(oc).sort((x,y)=>oc[y]-oc[x])[0]||"";
+      Object.assign(state,{area:"",country:"",city:"",org:top,imp:"0",theme:"",
+                           lang:"",online:true,daytrip:false,q:""});
+      redraw();
+      const cal=document.querySelector(".calhead");
+      if(cal) cal.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
 }
 
 /* ---------- 仕組みパネル ---------- */

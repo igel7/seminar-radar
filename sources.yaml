@@ -260,9 +260,11 @@ sources:
     verified: true   # 一覧はJS描画(Liferay)で自動取得不可。旗艦のDubrovnik Economic Conference(毎年5月末)は検索で補完
 
   - name: "BNB – Bulgarian National Bank – Events"
-    url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm"
+    url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm?toLang=_EN"
     category: cb
-    verified: true   # JS描画+古いTLSで自動取得不可: 検索補完かINBOXで対応(イベント自体が稀)
+    verified: true   # 2026-08-17差し替え(ユーザーがブラウザ表示を確認した英語版イベントページ)。
+                     # 注意: 実行環境からのcurlではソフト404(「システムエラー」ページ)が返る。
+                     # 巡回は fetch_hints の代替URL(プレス発表アーカイブ)を使うこと。イベント自体が稀
 
   - name: "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)"
     url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/"
@@ -280,9 +282,10 @@ sources:
     verified: false   # 旧 /en/events は404。「Upcoming events」一覧ページに差し替え
 
   - name: "CBBH – Central Bank of Bosnia and Herzegovina – Events"
-    url: "https://www.cbbh.ba/en/Events"
+    url: "https://www.cbbh.ba/press/AllNews"
     category: cb
-    verified: false
+    verified: true   # 2026-08-17差し替え(mainとのマージで一度巻き戻ったため再適用)。
+                     # 旧: /en/Events(恒常的にHTTP 500)。ニュース一覧が唯一の告知面(英語表示あり)
 
   - name: "Bank of Albania – Events"
     url: "https://www.bankofalbania.org/Events/"
