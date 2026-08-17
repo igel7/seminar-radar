@@ -165,9 +165,10 @@ sources:
     verified: true
 
   - name: "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen"
-    url: "https://www.iwkoeln.de/veranstaltungen.html"
+    url: "https://www.iwkoeln.de/institut/veranstaltungen.html"
     category: tt
-    verified: false   # 401+ボット対策で自動取得不可: 検索補完かINBOXの手動取込で対応
+    verified: false   # 2026-08-17差し替え(ユーザー提供の正URL)。旧: /veranstaltungen.html は誤り。
+                      # ただし正URLも実行環境からは401(ボット対策)継続: 検索補完かINBOXの手動取込で対応
 
   # --- 追加: 欧州(将来拡大の布石) ---
   - name: "Bruegel (Brussels) – Events"

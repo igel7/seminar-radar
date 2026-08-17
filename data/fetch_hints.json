@@ -147,5 +147,13 @@
   "alt_urls": [],
   "last_ok": "2026-08-08",
   "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
+ },
+ "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
+  "method": "search",
+  "alt_urls": [
+   "https://www.iwkoeln.de/institut/veranstaltungen.html"
+  ],
+  "last_ok": null,
+  "note": "正しい一覧URLは /institut/veranstaltungen.html(2026-08-17ユーザー提供)だが、実行環境からはUA偽装でも401継続。site:iwkoeln.de Veranstaltung 検索で個別ページを探すか、INBOXの手動取込で補完する"
  }
 }
