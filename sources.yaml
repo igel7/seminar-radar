@@ -336,10 +336,9 @@ sources:
     category: tt
     verified: false
 
-  - name: "MCC – Mercator Research Institute on Global Commons and Climate Change (Berlin)"
-    url: "https://www.mcc-berlin.net/en/news/events/recent.html"
-    category: tt
-    verified: false   # 2025年よりPIK傘下に統合済みだが、専用ドメインの一覧ページは存続
+  # MCC (Mercator Research Institute on Global Commons and Climate Change) は
+  # 2025年にPIKへ統合され独立機関として消滅(後継の公開イベント一覧なし)のため
+  # 2026-08-17にユーザー承認のうえ定点から削除。気候経済系はPIKとdiscoveryでカバー。
 
   - name: "Agora Energiewende (Berlin)"
     url: "https://www.agora-energiewende.org/news-events"
@@ -398,11 +397,9 @@ sources:
     category: tt
     verified: false
 
-  - name: "SWP – Stiftung Wissenschaft und Politik (Berlin) – Veranstaltungen"
-    url: "https://www.swp-berlin.org/en/swp/about-us/organization/research-and-information-infrastructure/events-and-distribution"
-    category: tt
-    verified: false   # URL未確認: 初回巡回で要検証(サイト内に統一的なイベント一覧ページが見当たらず、
-                      # イベント部門の説明ページを暫定採用。site:swp-berlin.org events / Veranstaltungen で要確認)
+  # SWP (Stiftung Wissenschaft und Politik) は公開イベントカレンダーを持たない
+  # (巡回12回+検索で確認済み)ため2026-08-17にユーザー承認のうえ定点から削除。
+  # 大型イベントはdiscoveryの地政学クエリ(SWP Veranstaltung)で補完する。
 
   # --- 追加: 日本・アジア経済関係 ---
   - name: "フランクフルト日本法人会 – 行事・活動"
@@ -438,7 +435,7 @@ discovery_topics:
   - "中東欧の大型政策・安全保障・経済フォーラム(例: Economic Forum Karpacz, Bled Strategic Forum, Warsaw Security Forum, GLOBSEC, IISS Prague Defence Summit, MSPO defence exhibition)。防衛・地経学はテーマ②・④に直結"
   - "デジタルユーロ・CBDC・決済インフラに関するイベントやウェビナー(例: digital euro webinar, CBDC conference, Zahlungsverkehr Veranstaltung, ECB digital euro information session)"
   - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: SUERF conference 2026, Frankfurt School Konferenz, Hertie School event, site:nbp.pl conference seminar, Bank of Lithuania conference, site:lb.lt events, European Payments Council event, Bank of Albania conference)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
-  - "地政学・安全保障・地経学に関するセミナーや講演(ドイツ・対象地域またはオンライン)。例: geopolitics seminar Germany, economic security conference, Sicherheitspolitik Konferenz, sanctions export controls seminar, defence economics workshop"
+  - "地政学・安全保障・地経学に関するセミナーや講演(ドイツ・対象地域またはオンライン)。例: geopolitics seminar Germany, economic security conference, Sicherheitspolitik Konferenz, sanctions export controls seminar, defence economics workshop, SWP Veranstaltung"
   - "サステナブルファイナンス・ESG・気候関連の会議やセミナー(ドイツ・対象地域またはオンライン)。例: sustainable finance conference Germany, ESG Konferenz, Klimarisiken Bankenaufsicht, carbon market CBAM conference, NGFS conference, Energiewende Konferenz, climate economics workshop"
   - "無料で一般参加できるESG・サステナブルファイナンスのウェビナー・公聴会・オンライン説明会を優先的に探す(例: sustainable finance webinar free registration, climate risk webinar, EBA ESMA EIOPA public hearing sustainability, NGFS webinar, UNEP FI webinar, PRI webinar, E-axes Forum webinar, OMFIF sustainable policy institute panel, Nachhaltigkeit Webinar kostenlos Anmeldung)。有料の大型カンファレンスではなく、無料・要登録のオンライン参加可能なものを重点的に拾う"
   - "AI・デジタル技術と経済・金融・規制に関する会議やセミナー(例: AI economy conference Germany, KI Konferenz Wirtschaft, AI Act Umsetzung Veranstaltung, AI banking supervision seminar, KI Arbeitsmarkt Produktivität)"
