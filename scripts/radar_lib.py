@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "events.json"
 NEW_FILE = ROOT / "data" / "new_events.json"
 STATUS_FILE = ROOT / "data" / "status.json"
+META_FILE = ROOT / "data" / "meta.json"     # 最終巡回時刻などのメタ情報
 ARCHIVE_FILE = ROOT / "data" / "archive.json"
 CHANGELOG_FILE = ROOT / "data" / "changelog.json"
 HTML_FILE = ROOT / "docs" / "index.html"
@@ -884,13 +885,28 @@ def parse_sources():
         return empty
 
 
-def render_html(events, statuses, changelog=None):
+def render_html(events, statuses, changelog=None, maintenance=False):
     template = TEMPLATE_FILE.read_text(encoding="utf-8")
     events_sorted = [dict(e, url=safe_url(e.get("url"))) for e in
                      sorted(events, key=lambda e: (e["date_start"], e.get("title") or ""))]
+    # サイトの LAST UPDATE は「最後にイベント情報を巡回した時刻」を指す。
+    # 通常実行(日次巡回)では現在時刻を data/meta.json に記録し、
+    # maintenance=True(保守作業での再生成)では記録済みの巡回時刻を据え置いて使う。
     now = datetime.now(TZ)
-    updated = now.strftime("%Y-%m-%d %H:%M (%Z)")
-    updated_iso = now.isoformat(timespec="seconds")  # 相対時刻表示(◯分前)用
+    last_crawl = now
+    if maintenance:
+        meta = load_json(META_FILE, {})
+        try:
+            last_crawl = datetime.fromisoformat(str(meta.get("last_crawl"))).astimezone(TZ)
+        except (TypeError, ValueError):
+            last_crawl = now
+    else:
+        META_FILE.write_text(
+            json.dumps({"last_crawl": now.isoformat(timespec="seconds")},
+                       ensure_ascii=False, indent=1),
+            encoding="utf-8")
+    updated = last_crawl.strftime("%Y-%m-%d %H:%M (%Z)")
+    updated_iso = last_crawl.isoformat(timespec="seconds")  # 相対時刻表示(◯分前)用
     if changelog is None:
         # 呼び出し元が update_changelog() を呼ばずに render_html() だけ叩いた場合の保険。
         # ファイルを読むだけで、プルーニング(古いエントリの削除)は行わない

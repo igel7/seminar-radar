@@ -120,6 +120,13 @@ Claude Code では Task/Agent ツール(軽量モデルを指定)、Codex では
 (このファイル `AGENTS.md` や `scripts/` の改修を明示的に依頼された場合を含む)。
 明示の指示がない限りは禁止側に倒す。
 
+### 保守作業での docs/ 再生成
+
+巡回を伴わない保守作業(コード・UI改修など)で `docs/` を再生成する場合は
+**`python3 scripts/ingest.py --maintenance`** を使うこと。サイトの LAST UPDATE は
+最終巡回時刻(`data/meta.json` の `last_crawl`)を表示しており、フラグなしで実行すると
+巡回していないのに時刻が進んでしまう。日次更新ジョブ(B)は従来どおりフラグなしで実行する。
+
 ---
 
 # B. 日次更新ジョブの作業指示
