@@ -40,6 +40,7 @@
 | `GET https://api.github.com/repos/igel7/seminar-radar` | 200 |
 | `git -c protocol.version=0 ls-remote --heads <URL>` | **成功**(main の SHA を取得できた) |
 | GitHub API による認証・権限確認(GET) | 200 / `permissions: push: True` を取得 |
+| `pip install <パッケージ>`(PyPI からのダウンロード) | 成功(playwright 1.62.0 を導入できた) |
 
 ### 通らないもの
 
@@ -48,6 +49,9 @@
 | `git ls-remote`(既定のプロトコル v2) | `RPC failed; HTTP 403 curl 22` |
 | `git push`(protocol v0 を明示しても) | `RPC failed; HTTP 403` + `send-pack: unexpected disconnect while reading sideband packet` |
 | `POST https://api.github.com/repos/.../git/refs`(ブランチ作成) | `HTTP 403` / 本文 `Method forbidden`(プレーンテキスト = プロキシ由来。GitHub API なら JSON で返る) |
+| `git clone --depth 1`(protocol v0 を明示しても) | `RPC failed; HTTP 403` / 終了コード 128。**fetch/clone も不可**(実際のオブジェクト転送は `POST /git-upload-pack` を使うため) |
+| **web検索**(`web__run` ツール) | ツールは存在するが実行すると `http 401 Unauthorized`。**検索は使えない** |
+| **headless Chromium**(`scripts/fetch_page.py`) | ブラウザ本体が存在しない。`/opt/pw-browsers` なし、`chromium`/`google-chrome` は PATH になし、`PLAYWRIGHT_BROWSERS_PATH` 未設定。`playwright` は pip で導入できたが `Failed to launch chromium because executable doesn't exist` |
 
 ### プロキシの規則(上記を統一的に説明する仮説)
 
@@ -60,6 +64,17 @@
   第2段階の `POST /git-receive-pack` で 403 になる。
   `send-pack: unexpected disconnect` はパック送信中に切断された痕跡である。
 - GitHub API の書き込み(POST)も同じく 403 で、本文がプレーンテキストの `Method forbidden`。
+
+### エージェントに提供されているツール(2026-08-17 時点)
+
+- **GitHub への PR 作成・push を行うツールは存在しない**(`make_pr` 等は提供されていない)。
+- **web検索**: `web__run` が存在するが、実行すると `http 401 Unauthorized` になり使えない。
+- **サブエージェントへの委譲機構は存在する**:
+  `collaboration.spawn_agent` / `collaboration.followup_task` / `collaboration.send_message` /
+  `collaboration.interrupt_agent` / `collaboration.list_agents` / `collaboration.wait_agent`。
+  AGENTS.md A-3(トークン節約のための委譲)は Codex でも実行可能である。
+- その他: `exec_command` / `apply_patch` / `update_plan` / `view_image` /
+  `list_mcp_resources` / `read_mcp_resource` など。
 
 ### 環境の性質(判明したこと)
 
@@ -97,38 +112,64 @@
 6. **GitHub API でのブランチ作成** — `Method forbidden` で 403。
 7. **`gh` CLI** — コンテナに認証は入っていない(そもそも上記の理由で通らない)。
 
-### 未検証・未確認
+8. **`playwright install` によるブラウザ本体の導入** — 未実施。`pip install` は通るので
+   ダウンロード自体は成功する可能性があるが、後述の理由により追求していない。
 
-- `git fetch` / `git clone`(v0 でも実際のパック取得は `POST /git-upload-pack` を使うため、
-  同様に 403 になる可能性が高い。`ls-remote` だけは GET のみで完結するため通った)。
-- **`.github/workflows/automerge.yml` の `codex/**` トリガーが実際に発火するか。**
-  ブランチを GitHub 上に作れていないため、一度も検証できていない。
-  Codex のタスク画面からブランチが push された時点で確認すること。
+### 未検証・未確認(残っているもの)
+
+- **Codex のタスク画面に push / PR 作成のボタンがあるか。** エージェント側にその手段が
+  無いことは確定したので、**これが Codex から成果物を出す唯一の可能性**である。
+  完了済みタスクの画面で確認すること。無ければ Codex はこのリポジトリの作業に使えない。
 - Codex Cloud に「スケジュール実行の結果を自動で PR にする」設定があるか
   (あれば無人運用の可能性が残る。プラットフォーム側の push はコンテナのプロキシ制限を
   受けないため、これが唯一の抜け道になりうる)。
-- headless Chromium(`scripts/fetch_page.py`)が Codex 環境で使えるか。
-- Codex 環境に web 検索手段があるか(無い場合の記録方法は AGENTS.md 手順3に定めてある)。
+- `web__run` の 401 が恒久的なものか、一時的・アカウント設定由来のものか。
+
+### 解決済み(記録として)
+
+- **`.github/workflows/automerge.yml` の `codex/**` トリガーは正しく発火する。**
+  2026-08-17 に Claude 側から `codex/automerge-trigger-test` ブランチを push して確認。
+  ワークフローが起動し、data モードとして処理され、ブランチは自動削除された。
+  つまり **Codex のブランチが GitHub 上に現れれば、以降の自動反映は問題なく動く。**
 
 ---
 
 ## 現時点の運用方針
 
-- **定期実行(無人)は Claude Code Routines で行う。**
-- **Codex は手動実行で使う。** 実行後、成果物は Codex のタスク画面から人が反映する。
-  エージェントは `python3 scripts/ingest.py` までとローカルコミットを済ませ、
-  **push できない旨を報告して終了する**(AGENTS.md 手順6を参照)。
-- Codex 環境の設定(参考。トークンの値は環境変数 `GH_TOKEN` にのみ存在する):
-  - シークレット欄は使わない(エージェントから参照できないため)
-  - セットアップスクリプトで git の identity を `--global` で設定しておくとコミットが通る
+**日次更新は Claude Code Routines で行う。Codex はこのリポジトリの日次更新には使わない。**
+
+Codex 側で判明した制約を合わせると、日次更新の主要機能が3つとも欠ける。
+
+| 必要な機能 | Codex での可否 |
+|---|---|
+| 定点観測リストの巡回(静的ページの取得) | **可**(これだけは正常に動く) |
+| web検索による新規発見(手順3)・死んだURLの検索リカバリ(手順2) | **不可**(`web__run` が 401) |
+| JS描画ソースの取得(`fetch_page.py`) | **不可**(ブラウザ本体が無い) |
+| 成果物の GitHub への反映(手順6) | **不可**(書き込みが全面遮断) |
+
+巡回はできても、新規発見が死に、取得できないソースが増え、しかも結果を人が手で
+運び出す必要がある。**トークン上限対策として Codex に日次更新を委ねる案は成立しない。**
+
+Codex を使う余地が残るのは、タスク画面に push / PR のボタンがあることが確認できた場合の
+**コード作業(人がその場で差分を確認して反映する用途)**に限られる。
+
+### トークンの後始末
+
+`GH_TOKEN`(fine-grained PAT)は git push と GitHub API 書き込みのために用意したが、
+**どちらも不可能と確定したため不要である。** 読み取りだけなら Public リポジトリなので
+認証は要らない。以下を実施して撤去する。
+
+1. GitHub: Settings → Developer settings → Fine-grained tokens → 該当トークンを削除(revoke)
+2. Codex 環境: 環境変数 `GH_TOKEN` を削除(シークレット欄にも残っていれば削除)
+3. Codex 環境のセットアップスクリプトから、資格情報を書き込む行を削除する
+   (`credential.helper` / `~/.git-credentials` / `remote.origin.url` / `protocol.version`)。
+   ローカルコミットに必要な identity だけ残せばよい:
 
 ```bash
 git config --global user.name  "seminar-radar-codex"
 git config --global user.email "codex@users.noreply.github.com"
-git config --global protocol.version 0
-git config --global remote.origin.url https://github.com/igel7/seminar-radar.git
-git config --global remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 ```
 
-`protocol.version 0` と `remote.origin.url` は push が通らない現状では実益がないが、
-読み取り(`ls-remote`)を行う場合に必要で、害もないため残している。
+4. キャッシュをリセットして、`~/.git-credentials` を含む古いスナップショットを破棄する
+
+**トークンの値はこのリポジトリのどこにも記録していない。** 今後も記録しないこと。
