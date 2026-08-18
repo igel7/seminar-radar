@@ -648,7 +648,7 @@
 </div>
 <div id="list"></div>
 
-<h2 class="sect" data-i18n="crawlStatus">巡回ステータス</h2>
+<h2 class="sect" id="crawlsec" data-i18n="crawlStatus">巡回ステータス</h2>
 <table class="st">
   <thead><tr><th data-i18n="stHdrOrg">機関</th><th data-i18n="stHdrCount">本日以降のイベント数</th></tr></thead>
   <tbody id="status"></tbody>
@@ -2580,7 +2580,8 @@ document.addEventListener("click",e=>{
 
 /* ---------- 調査対象ボタン(パネルは持たず、巡回ステータスへスクロールするだけ) ---------- */
 document.getElementById("srcbtn").addEventListener("click",()=>{
-  document.getElementById("crawlsec").scrollIntoView({behavior:"smooth",block:"start"});
+  const sec=document.getElementById("crawlsec");
+  if(sec) sec.scrollIntoView({behavior:"smooth",block:"start"});
 });
 
 /* ---------- スクロールトップボタン ---------- */
