@@ -908,8 +908,10 @@ def parse_sources():
                 mcat = re.search(r'^\s*category:\s*"?([a-z]+)"?\s*(?:#.*)?$', rest,
                                  re.MULTILINE)
                 category = mcat.group(1) if mcat else "other"
-                sources.append({"name": name, "url": url, "anywhere": anywhere,
-                                "category": category})
+                # ステータス表のリンクとしてそのまま href に入るため、ここで
+                # スキームを強制する(javascript: 等は空文字にしてリンクを張らせない)。
+                sources.append({"name": name, "url": safe_url(url) or "",
+                                "anywhere": anywhere, "category": category})
 
         topics = []
         for m in re.finditer(r'^\s*-\s*"([^"]*)"\s*$', topics_section, re.MULTILINE):
@@ -975,7 +977,12 @@ def render_html(events, statuses, changelog=None, maintenance=False):
 
 
 def ics_escape(s):
-    return (str(s or "").replace("\\", "\\\\").replace(";", "\\;")
+    # 改行は \n へ正規化してからエスケープする(生の CR が残ると ICS の行構造が
+    # 壊れ、寛容なパーサではプロパティ注入になりうる)。他の制御文字は RFC5545 で
+    # TEXT に置けないため除去する。
+    s = str(s or "").replace("\r\n", "\n").replace("\r", "\n")
+    s = "".join(c for c in s if c == "\n" or ord(c) >= 0x20)
+    return (s.replace("\\", "\\\\").replace(";", "\\;")
             .replace(",", "\\,").replace("\n", "\\n"))
 
 
