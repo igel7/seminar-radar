@@ -136,6 +136,10 @@ Codex で作業する前にこれを読むこと(同じ調査を繰り返さな�
   `CODEX_NOTES.md` にまとめてある。Codexで作業する前に読むと同じ調査を繰り返さずに済む
 - **利用枠**: 日次実行は定額課金の利用枠を消費する。使いすぎが気になる場合は
   実行を週3回などに減らす(`AGENTS.md` A-3 の委譲ルールも消費を抑えるためのもの)
+- **トークン消費量の記録**: 巡回1回ごとの消費トークン数は `data/token_usage.json` に
+  日次で追記される(`scripts/log_tokens.py` が Claude Code の発話ログから集計する)。
+  一覧を見るには `python3 scripts/log_tokens.py --summary`。コミット直前に集計する
+  都合上、コミット・プッシュ分は含まれない概算値
 
 ## 予備手段: GitHub Actions + API従量課金版
 
