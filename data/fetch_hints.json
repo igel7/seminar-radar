@@ -1,5 +1,13 @@
 {
  "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。",
+ "DIW Berlin – Veranstaltungen": {
+  "method": "alt-url",
+  "alt_urls": [
+   "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
+  ],
+  "last_ok": "2026-08-18",
+  "note": "元URL(diw.de)がWebFetchで503、UA付きcurlでも403のときは同一内容の代替ドメイン diw-berlin.de で取得できる(2026-08-18に確認)"
+ },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
   "alt_urls": [
