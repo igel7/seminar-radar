@@ -29,7 +29,7 @@ SOURCES_FILE = ROOT / "sources.yaml"
 TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
 THEMES = ["central_bank", "real_economy", "fin_markets", "geopolitics", "climate_esg",
-          "ai", "china", "japan"]
+          "ai", "china", "japan", "ukraine"]
 OVERRIDES_FILE = ROOT / "data" / "overrides.json"
 ALIASES_FILE = ROOT / "data" / "aliases.json"
 
