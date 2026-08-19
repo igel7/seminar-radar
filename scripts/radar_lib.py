@@ -630,7 +630,7 @@ def _changelog_snap(ev):
 def mark_crawl_start():
     """日次巡回の開始時刻を data/meta.json に記録する(`ingest.py --mark-start`)。
     AGENTS.md の日次更新ジョブが手順1の冒頭で実行し、update_changelog() が
-    当日エントリの start として取り込む。"""
+    当日エントリの start として取り込む(取り込み時にこのキーは削除される)。"""
     meta = load_json(META_FILE, {})
     if not isinstance(meta, dict):
         meta = {}
@@ -664,20 +664,30 @@ def update_changelog(changes):
 
     # 巡回時刻の記録。実際に追加・更新があった実行(=巡回)でのみ書く。
     # 保守作業での再生成(--maintenance)は changes が空なのでここを通らない。
-    # start は --mark-start が残した crawl_started を採用する(24時間以内のもののみ。
-    # 前日の消し忘れを誤って当日の開始時刻にしないため)。同日2回目の実行では
-    # 最初の start を保持し、end だけ最新に更新する。
+    # start は --mark-start が残した crawl_started を採用する。採用条件は
+    # 「当日(Europe/Berlin)に記録されたもので、かつ終了時刻より後でないこと」。
+    # 手順1の --mark-start を打ち忘れた日は start が空になるが(サイト側は
+    # 「〜終了時刻」と表示する)、前日の値を今日の開始時刻として誤って
+    # 書くことはない。同日2回目の実行では最初の start を保持し、end だけ更新する。
+    # 読んだ crawl_started は採否にかかわらず meta.json から消す(消費したら捨てる)。
+    # 残しておくと翌日以降に古い値が居座り、誤採用の余地を作るため。
     if changes.get("added") or changes.get("updated"):
         now = datetime.now(TZ)
         entry["end"] = now.isoformat(timespec="seconds")
         if not entry.get("start"):
             meta = load_json(META_FILE, {})
+            if not isinstance(meta, dict):
+                meta = {}
             try:
-                started = datetime.fromisoformat(str(meta.get("crawl_started")))
-                if timedelta(0) <= now - started <= timedelta(hours=24):
-                    entry["start"] = started.astimezone(TZ).isoformat(timespec="seconds")
+                started = datetime.fromisoformat(str(meta.get("crawl_started"))).astimezone(TZ)
             except (TypeError, ValueError):
-                pass
+                started = None
+            if started is not None and started.date() == TODAY and started <= now:
+                entry["start"] = started.isoformat(timespec="seconds")
+            if "crawl_started" in meta:
+                del meta["crawl_started"]
+                META_FILE.write_text(json.dumps(meta, ensure_ascii=False, indent=1),
+                                     encoding="utf-8")
 
     # added: 既存(当日分、同日2回目実行など)を id 順を保ったまま引き継ぎ、
     # 新規 id のみスナップショットを追記する。
@@ -943,7 +953,7 @@ def render_html(events, statuses, changelog=None, maintenance=False):
         meta = load_json(META_FILE, {})
         if not isinstance(meta, dict):
             meta = {}
-        meta["last_crawl"] = now.isoformat(timespec="seconds")   # 他のキー(crawl_started)は保持
+        meta["last_crawl"] = now.isoformat(timespec="seconds")   # 他のキーは保持
         META_FILE.write_text(json.dumps(meta, ensure_ascii=False, indent=1),
                              encoding="utf-8")
     updated = last_crawl.strftime("%Y-%m-%d %H:%M (%Z)")
