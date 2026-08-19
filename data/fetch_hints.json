@@ -22,7 +22,7 @@
    "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
    "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる"
  },
  "IMFS Frankfurt – 全ての今後のイベント": {
@@ -76,7 +76,7 @@
    "https://www.agora-energiewende.org/news-events/filter/tab-3",
    "https://www.agora-energiewende.de/aktuelles/filter/tab-3"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": ".org が503の時は .de ドメインで取れる。イベントは tab-3 フィルタのAJAX一覧に出る"
  },
  "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
@@ -84,7 +84,7 @@
   "alt_urls": [
    "https://sustainablefinancecluster.com/en/events/"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "gsfc-germany.com は恒常的に 423 Locked。団体は Sustainable Finance Cluster e.V. に改称しドメイン移転済み。移転先で毎回2件前後の実績"
  },
  "NBP – Narodowy Bank Polski – Conferences": {
@@ -92,13 +92,13 @@
   "alt_urls": [
    "https://cebra.org/cfp-6th-biennial-conference-on-macroeconomic-policy/"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "nbp.pl は Imperva WAF で直接取得不可(UA偽装でも不可)。共催機関(CEBRA等)のページと web 検索で回収する運用が確立している"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "Cloudflareで一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索で個別ウェビナーページ(例 /oct-inst-webinar)を探すと拾えることがある"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
@@ -106,7 +106,7 @@
   "alt_urls": [
    "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "イベント一覧ページはイントラのログイン画面へリダイレクトされることが多い。site:pik-potsdam.de 検索で個別イベントページ(GCET27等)を探す"
  },
  "dfv Euro Finance Group (Frankfurt) – Executive Events": {
@@ -115,7 +115,7 @@
    "https://tickets.dfv-eurofinance.com/EFW26/",
    "https://frankfurt-ebc.com"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "一覧ページに具体的日付が無いことがある。個別カンファレンスページ・チケットサイトを辿って日付を確定する(毎日3〜9件の実績)"
  },
  "Bank of Lithuania – Events": {
@@ -142,7 +142,7 @@
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
   "last_ok": "2026-08-17",
-  "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。ロンドン・アムステルダム等の域外開催が多いため、オンライン/対象地域分のみ収載"
+  "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。ロンドン・アムステルダム等の域外開催が多いため、オンライン/対象地域分のみ収載。2026-08-19: alt_urlのpublic.unpri.org経由がHTTP 405に変化(WebFetch不可)。要再検証、当面はsite:検索のみに依存"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
@@ -154,6 +154,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-08-08",
+  "note2": "2026-08-19: site:検索は実行できたが、見つかった公聴会・ワークショップはすべて過去日程だった(検索結果が古い場合あり、日付の確認を要する)",
   "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
  },
  "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
@@ -169,7 +170,7 @@
   "alt_urls": [
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "sources.yamlの英語版イベントURL(?toLang=_EN)はブラウザでは表示できるが、curl/WebFetchからはソフト404(本文が「Възникна системна грешка」)になる。巡回はプレス発表アーカイブ(年別一覧)を読む。会議告知はプレス発表に出る。イベント自体が稀で found:0 が正常"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
@@ -177,7 +178,7 @@
   "alt_urls": [
    "https://www.cbbh.ba/press/AllNews"
   ],
-  "last_ok": "2026-08-17",
+  "last_ok": "2026-08-19",
   "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
  }
 }
