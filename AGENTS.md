@@ -362,9 +362,14 @@ python3 scripts/log_tokens.py
 - Claude Code 以外の環境(Codex Cloud など)では発話ログが存在しないため、
   スクリプトは警告を出して何も記録せずに正常終了する。**回避策を探さないこと。**
 - 過去の記録を見るには `python3 scripts/log_tokens.py --summary` を使う。
+- 記録後、スクリプトは `docs/index.html` を組み直す(更新履歴欄にその日のトークン数を
+  載せるため。手順5の `ingest.py` の時点ではまだ記録が存在しない)。イベントデータには
+  触れず、LAST UPDATE も進めない。**再生成された `docs/index.html` も手順6のコミットに
+  含めること。**
 
 ### 6. コミットとプッシュ
-変更された `data/`(`data/token_usage.json` を含む)と `docs/` をコミットする。
+変更された `data/`(`data/token_usage.json` を含む)と `docs/`(手順5.5で組み直された
+`docs/index.html` を含む)をコミットする。
 コミットメッセージ: **`daily update YYYY-MM-DD (claude)`** または
 **`daily update YYYY-MM-DD (codex)`**(実行したエージェントを必ず記録する)。
 プルリクエストは作らない。

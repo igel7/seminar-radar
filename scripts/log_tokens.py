@@ -15,12 +15,18 @@ Claude Code は実行中のセッションの発話ログを
     python3 scripts/log_tokens.py --dry-run       # 記録せず内容だけ表示
     python3 scripts/log_tokens.py --summary       # 記録済みの直近20件を一覧表示
     python3 scripts/log_tokens.py --transcript PATH   # ログの場所を明示指定
+    python3 scripts/log_tokens.py --no-render     # docs/index.html を作り直さない
 
 注意(重要):
   このスクリプト自身がセッションの途中で動くため、**実行後のターン
   (コミット・プッシュ・実行報告)の消費分は記録に含まれない。**
   記録値は「その日の巡回のほぼ全量」であって厳密な総量ではない。
   レコードの `partial` フラグがこの意味を表す。
+
+  記録後、更新履歴(サイトの News 欄)に当日のトークン数を載せるため
+  `docs/index.html` を組み直す。ingest.py(手順5)の時点ではまだこの記録が
+  存在しないため、ここで組み直さないと当日分だけ数字が出ない。
+  イベントデータには一切触れず、LAST UPDATE も進めない(--no-render で抑止可)。
 
 標準ライブラリのみで動作する(pip install 不要)。
 """
@@ -219,6 +225,8 @@ def main() -> None:
     ap.add_argument("--date", help="記録する日付 YYYY-MM-DD(既定: 実行日)")
     ap.add_argument("--note", help="レコードに残す短いメモ")
     ap.add_argument("--dry-run", action="store_true", help="ファイルに書かずに内容を表示する")
+    ap.add_argument("--no-render", action="store_true",
+                    help="記録するだけで docs/index.html を作り直さない")
     ap.add_argument("--summary", nargs="?", type=int, const=20, metavar="N",
                     help="記録済みの直近N件(既定20)を表示して終了する")
     args = ap.parse_args()
@@ -257,6 +265,24 @@ def main() -> None:
           f"合計 {record['total_tokens']:,} tokens "
           f"(出力 {record['output_tokens']:,} / キャッシュ読取 {record['cache_read_tokens']:,} / "
           f"{record['turns']} ターン)")
+
+    if not args.no_render:
+        rerender()
+
+
+def rerender() -> None:
+    """更新履歴に当日のトークン数を反映させるため docs/index.html を組み直す。
+    再生成に失敗しても記録自体は済んでいるので、警告だけ出して終了コードは変えない
+    (数字が1日分載らないことより、日次更新が止まる方が損失が大きい)。"""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import radar_lib
+        radar_lib.rerender_html()
+    except Exception as e:      # noqa: BLE001 - 表示上のおまけなので握りつぶす
+        print(f"docs/index.html の再生成に失敗しました(記録は済んでいます): {e}",
+              file=sys.stderr)
+        return
+    print("docs/index.html を組み直しました(更新履歴にトークン数を反映)。")
 
 
 if __name__ == "__main__":

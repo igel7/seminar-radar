@@ -195,6 +195,8 @@
   .nwmeta{color:var(--sub);margin-left:3px}
   .nwfld{color:var(--imp2-tx)}
   .nwst{color:var(--amber-dim);letter-spacing:.05em}
+  /* 日付行の右に添える消費トークン数。日付より一段落とした色にする */
+  .nwtok{color:var(--sub);letter-spacing:.02em}
 
   /* ---------- フィルタ ---------- */
   .filters{margin:14px 0 18px}
@@ -826,7 +828,8 @@ ja:{
   stFilterTip:"この主催団体でカレンダーを絞り込む",
   /* 更新履歴(News) */
   nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
-  nwRange:"〜",
+  nwRange:"〜", nwTokens:"({n}トークン使用)",
+  nwTokensTip:"この日の巡回でAIエージェントが消費したトークン数(ほぼ全量)",
   nwPinned:"フィルタで非表示のイベントを一時的に表示しています(フィルタ操作で解除)",
   nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
   nwf_fee:"参加費", nwf_reg:"申込",
@@ -917,7 +920,8 @@ en:{
   stFilterTip:"Filter the calendar by this organizer",
   /* Change log (News) */
   nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
-  nwNone:"no changes", nwRange:"–",
+  nwNone:"no changes", nwRange:"–", nwTokens:"({n} tokens used)",
+  nwTokensTip:"Tokens consumed by the AI agent on this day's crawl (near-complete total)",
   nwPinned:"Temporarily showing an event hidden by your filters (cleared on any filter change)",
   nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
   nwf_fee:"Fee", nwf_reg:"Registration",
@@ -1013,7 +1017,8 @@ de:{
   stFilterTip:"Kalender nach diesem Veranstalter filtern",
   /* Änderungen (News) */
   nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
-  nwNone:"keine Änderungen", nwRange:"–",
+  nwNone:"keine Änderungen", nwRange:"–", nwTokens:"({n} Token verbraucht)",
+  nwTokensTip:"Vom KI-Agenten an diesem Tag verbrauchte Token (nahezu vollständig)",
   nwPinned:"Ein durch Filter verborgenes Event wird vorübergehend angezeigt (Filteränderung hebt dies auf)",
   nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
   nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
@@ -2020,6 +2025,26 @@ function nwTimes(d){
   if(e)    return ` ${t("nwRange")}${e[1]}`;
   return "";
 }
+/* その日の巡回でエージェントが消費したトークン数。日本語は「万」、en/de は M/k に
+   丸める(桁が大きく、正確な桁数に意味は無いため)。記録が無い日は空文字。
+   数値は生成側(radar_lib.render_html)が data/token_usage.json から合流させる。 */
+function nwTokenText(d){
+  const n=Number(d && d.tokens);
+  if(!Number.isFinite(n) || n<=0) return "";
+  const loc = uiLang==="de" ? "de-DE" : (uiLang==="en" ? "en-US" : "ja-JP");
+  const round1 = v => v.toLocaleString(loc,{maximumFractionDigits:1});
+  let s;
+  if(uiLang==="ja"){
+    s = n>=10000 ? Math.round(n/10000).toLocaleString(loc)+"万" : n.toLocaleString(loc);
+  }else if(n>=1e6){
+    s = round1(n/1e6)+(uiLang==="de"?" Mio.":"M");
+  }else if(n>=1e3){
+    s = round1(n/1e3)+(uiLang==="de"?" Tsd.":"k");
+  }else{
+    s = n.toLocaleString(loc);
+  }
+  return tf("nwTokens",{n:s});
+}
 function drawNews(){
   const box=document.getElementById("news");
   const days=newsDays();
@@ -2031,11 +2056,16 @@ function drawNews(){
   const cnt=[];
   if(nA) cnt.push(tf("nwAdded",{n:nA}));
   if(nU) cnt.push(tf("nwUpdated",{n:nU}));
+  const topTok=nwTokenText(top);
   document.getElementById("newssum").textContent =
-    `${t("nwTitle")} — ${md(top.date)}${nwTimes(top)}: ${cnt.length?cnt.join(t("sep")):t("nwNone")}`;
+    `${t("nwTitle")} — ${md(top.date)}${nwTimes(top)}: `+
+    `${cnt.length?cnt.join(t("sep")):t("nwNone")}${topTok?" "+topTok:""}`;
   let html="";
   for(const d of days){
-    html+=`<div class="nwday">${esc(md(d.date)+nwTimes(d))}</div>`;
+    const tok=nwTokenText(d);
+    html+=`<div class="nwday">${esc(md(d.date)+nwTimes(d))}`+
+      (tok?` <span class="nwtok" title="${esc(t("nwTokensTip"))}">${esc(tok)}</span>`:"")+
+      `</div>`;
     if(Array.isArray(d.added))   for(const it of d.added)   html+=newsRow(it,"add");
     if(Array.isArray(d.updated)) for(const it of d.updated) html+=newsRow(it,"upd");
   }

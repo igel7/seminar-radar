@@ -21,6 +21,7 @@ STATUS_FILE = ROOT / "data" / "status.json"
 META_FILE = ROOT / "data" / "meta.json"     # 最終巡回時刻などのメタ情報
 ARCHIVE_FILE = ROOT / "data" / "archive.json"
 CHANGELOG_FILE = ROOT / "data" / "changelog.json"
+TOKEN_USAGE_FILE = ROOT / "data" / "token_usage.json"   # 巡回1回ごとのトークン消費量
 HTML_FILE = ROOT / "docs" / "index.html"
 ICS_FILE = ROOT / "docs" / "calendar.ics"
 TEMPLATE_FILE = ROOT / "scripts" / "template.html"
@@ -934,6 +935,27 @@ def parse_sources():
         return empty
 
 
+def load_token_totals():
+    """data/token_usage.json を {"YYYY-MM-DD": その日の合計トークン数} に畳む。
+
+    log_tokens.py は1日1レコードを原則とするが、同じ日に別セッションの記録が
+    複数残ることもありうるので日付ごとに合算する。ファイルが無い・壊れている・
+    値が数値でない場合は、その分を黙って落とす(表示上のおまけであり、
+    ここで巡回や再生成を失敗させない)。"""
+    records = load_json(TOKEN_USAGE_FILE, [])
+    if not isinstance(records, list):
+        return {}
+    totals = {}
+    for r in records:
+        if not isinstance(r, dict) or not valid_date(r.get("date")):
+            continue
+        n = r.get("total_tokens")
+        if isinstance(n, bool) or not isinstance(n, (int, float)) or n <= 0:
+            continue
+        totals[r["date"]] = totals.get(r["date"], 0) + int(n)
+    return totals
+
+
 def render_html(events, statuses, changelog=None, maintenance=False):
     template = TEMPLATE_FILE.read_text(encoding="utf-8")
     events_sorted = [dict(e, url=safe_url(e.get("url"))) for e in
@@ -970,6 +992,15 @@ def render_html(events, statuses, changelog=None, maintenance=False):
             (e for e in log if isinstance(e, dict) and valid_date(e.get("date"))
              and e["date"] >= embed_cutoff),
             key=lambda e: e["date"], reverse=True)
+    # 更新履歴に、その日の巡回が消費したトークン数を合流させる(data/token_usage.json)。
+    # 台帳(data/changelog.json)には書かず、埋め込む配列にだけ足す。記録が無い日は
+    # キーごと省き、テンプレート側は tokens が無ければ何も出さない。
+    # 当日分の記録は ingest.py より後(手順5.5の log_tokens.py)に付くため、
+    # 当日の数字は log_tokens.py 側の再生成で入る。
+    token_totals = load_token_totals()
+    changelog = [dict(e, tokens=token_totals[e["date"]])
+                 if isinstance(e, dict) and e.get("date") in token_totals else e
+                 for e in changelog]
     # 置換はシングルパスで行う(データ内にプレースホルダ文字列を仕込む注入への対策)
     mapping = {
         "__EVENTS_JSON__": script_json(events_sorted),
@@ -984,6 +1015,19 @@ def render_html(events, statuses, changelog=None, maintenance=False):
     pattern = re.compile("|".join(map(re.escape, mapping)))
     html = pattern.sub(lambda m: mapping[m.group(0)], template)
     HTML_FILE.write_text(html, encoding="utf-8")
+
+
+def rerender_html():
+    """イベントデータを一切触らずに docs/index.html だけ作り直す。
+
+    log_tokens.py が使う。トークン消費量の記録は ingest.py(手順5)より後の
+    手順5.5で確定するため、当日の数字を更新履歴に載せるにはページを組み直す
+    必要がある。LAST UPDATE(最終巡回時刻)は maintenance と同じ扱いで進めない。
+    changelog は render_html 側がファイルから読み直す。"""
+    store = load_json(DATA_FILE, {"events": []})
+    events = store.get("events", []) if isinstance(store, dict) else []
+    statuses = load_json(STATUS_FILE, [])
+    render_html(apply_overrides([dict(ev) for ev in events]), statuses, maintenance=True)
 
 
 def ics_escape(s):
