@@ -1,8 +1,1339 @@
 [
  {
   "date": "2026-08-24",
-  "added": [],
-  "updated": []
+  "added": [
+   {
+    "id": "236cc729bd5eca4a",
+    "title": "Euro Finance Week 2026 (29th Edition)",
+    "title_ja": "ユーロ・ファイナンス・ウィーク2026（第29回）",
+    "title_short": "Euro Finance Week",
+    "importance": 3,
+    "organizer_short": "dfv",
+    "date_start": "2026-11-16",
+    "date_end": "2026-11-20",
+    "city": "Frankfurt am Main",
+    "url": "https://tickets.dfv-eurofinance.com/EFW26/"
+   },
+   {
+    "id": "7890b60f0f173dde",
+    "title": "DigiFin",
+    "title_ja": "デジファイン",
+    "title_short": "Digital Finance Conference",
+    "importance": 1,
+    "organizer_short": "Bitkom",
+    "date_start": "2026-11-10",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.bitkom.org/events"
+   },
+   {
+    "id": "d0e2dcc2fb9176e2",
+    "title": "Data Centre Summit",
+    "title_ja": "データセンター・サミット",
+    "title_short": "Data Centre Summit",
+    "importance": 1,
+    "organizer_short": "Bitkom",
+    "date_start": "2026-11-12",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.bitkom.org/events"
+   },
+   {
+    "id": "7bf66b856dd2946a",
+    "title": "ReBuild Ukraine Construction & Energy 2026",
+    "title_ja": "リビルド・ウクライナ 建設・エネルギー2026",
+    "title_short": "Ukraine Reconstruction Expo",
+    "importance": 2,
+    "organizer_short": "Premier Expo",
+    "date_start": "2026-11-12",
+    "date_end": "2026-11-13",
+    "city": "Warsaw",
+    "url": "https://rebuildukraine.in.ua/en/construction-energy"
+   }
+  ],
+  "updated": [
+   {
+    "id": "83a62de47b68c53f",
+    "title": "ECB Annual Research Conference 2026 – Geoeconomics and the International Trading System",
+    "title_ja": "ECB年次研究会議2026 地政学と国際貿易体制",
+    "title_short": "ECB Annual Research Conference",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-09-16",
+    "date_end": "2026-09-17",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "8c7c140caa60b913",
+    "title": "ECB/ESCB Legal Conference 2026 – Independence, Not Isolation: Central Banks and Their Connections with Other Authorities",
+    "title_ja": "ECB/ESCB法務会議2026 中央銀行の独立性と関係構築",
+    "title_short": "ECB/ESCB Legal Conference",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-09-28",
+    "date_end": "2026-09-29",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "format",
+     "venue"
+    ]
+   },
+   {
+    "id": "708e1da248a1a1ff",
+    "title": "Tenth Annual Conference of the European Systemic Risk Board",
+    "title_ja": "欧州システミックリスク委員会第10回年次会議",
+    "title_short": "ESRB Annual Conference",
+    "importance": 3,
+    "organizer_short": "ESRB",
+    "date_start": "2026-10-01",
+    "date_end": "2026-10-02",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "76d8f59d74e6d263",
+    "title": "ECB Conference on Monetary Policy 2026: Bridging Science and Practice",
+    "title_ja": "ECB金融政策会議2026 科学と実践の架け橋",
+    "title_short": "ECB Monetary Policy Conference",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-10-05",
+    "date_end": "2026-10-06",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "101c02b611f5c100",
+    "title": "ECB Conference on Money Markets 2026",
+    "title_ja": "ECB金銭市場会議2026",
+    "title_short": "ECB Money Markets Conference",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-11-05",
+    "date_end": "2026-11-06",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "format",
+     "venue"
+    ]
+   },
+   {
+    "id": "91f6f1f3ec824d02",
+    "title": "Conference on Financial Stability and Macroprudential Policy",
+    "title_ja": "金融安定とマクロプルーデンス政策会議",
+    "title_short": "Financial Stability Conference",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-12-02",
+    "date_end": "2026-12-03",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "0f45e63775f836f0",
+    "title": "21st Central Bank Conference on the Microstructure of Financial Markets",
+    "title_ja": "中央銀行金融市場ミクロ構造会議 第21回",
+    "title_short": "Financial Market Microstructure",
+    "importance": 3,
+    "organizer_short": "Bundesbank/SAFE",
+    "date_start": "2026-09-10",
+    "date_end": "2026-09-11",
+    "city": "Eltville am Rhein",
+    "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "eaf721d650667ca8",
+    "title": "13th SAFE Asset Pricing Workshop",
+    "title_ja": "SAFE資産価格決定ワークショップ 第13回",
+    "title_short": "Asset Pricing Workshop",
+    "importance": 2,
+    "organizer_short": "Bundesbank/SAFE",
+    "date_start": "2026-09-29",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "57cb841c1d0b1ee1",
+    "title": "20th Workshop on Political Economy",
+    "title_ja": "政治経済ワークショップ 第20回",
+    "title_short": "Political Economy Workshop",
+    "importance": 2,
+    "organizer_short": "ifo/CESifo",
+    "date_start": "2026-11-20",
+    "date_end": "2026-11-21",
+    "city": "Dresden",
+    "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "15e5836287fd52d4",
+    "title": "Kiel-CEPR International Economics Seminar: Matching People to Properties - A Matching Function for the Housing Market",
+    "title_ja": "Kiel-CEPR国際経済セミナー:住宅市場のマッチング関数",
+    "title_short": "Housing Market Matching",
+    "importance": 1,
+    "organizer_short": "IfW Kiel",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "city": "Kiel",
+    "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
+    "fields": [
+     "city",
+     "venue"
+    ]
+   },
+   {
+    "id": "ccd3b57687dfd27b",
+    "title": "5th Kiel-CEPR Conference on Geoeconomics",
+    "title_ja": "Kiel-CEPR地政学会議 第5回",
+    "title_short": "Geoeconomics Conference",
+    "importance": 3,
+    "organizer_short": "IfW Kiel",
+    "date_start": "2026-11-03",
+    "date_end": "2026-11-04",
+    "city": "Berlin",
+    "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "0f184fbb9bdf6425",
+    "title": "Jahrestagung des Vereins für Socialpolitik 2026",
+    "title_ja": "独社会政策学会年次会議2026",
+    "title_short": "Social Policy Association Meeting",
+    "importance": 3,
+    "organizer_short": "Verein für Socialpolitik",
+    "date_start": "2026-09-13",
+    "date_end": "2026-09-16",
+    "city": "Innsbruck",
+    "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
+    "fields": [
+     "fee"
+    ]
+   },
+   {
+    "id": "2511a56daf736adc",
+    "title": "The 21st Berlin IO Day",
+    "title_ja": "ベルリンIO Day第21回",
+    "title_short": "Industrial Organization Seminar",
+    "importance": 2,
+    "organizer_short": "DIW Berlin",
+    "date_start": "2026-09-18",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
+    "fields": [
+     "fee",
+     "venue"
+    ]
+   },
+   {
+    "id": "9ac4e5d9f9ea2463",
+    "title": "RWI Research Seminar",
+    "title_ja": "RWI研究セミナー",
+    "title_short": "RWI Research Seminar",
+    "importance": 0,
+    "organizer_short": "RWI",
+    "date_start": "2026-11-05",
+    "date_end": null,
+    "city": "Essen",
+    "url": "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
+    "fields": [
+     "fee",
+     "open_to_public",
+     "venue"
+    ]
+   },
+   {
+    "id": "b4185c508e0be014",
+    "title": "USA: K-Shaped Economy, KI und Trump",
+    "title_ja": "米経済のK字型回復とAI・トランプ政策",
+    "title_short": "US Economy and AI",
+    "importance": 1,
+    "organizer_short": "CFS",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://gfk-cfs.de/events/lectures/usa-k-shaped-economy-ki-und-trump/",
+    "fields": [
+     "format",
+     "time",
+     "time_end"
+    ]
+   },
+   {
+    "id": "81fe232dffe796de",
+    "title": "53rd EARIE Annual Conference 2026",
+    "title_ja": "第53回EARIE年次会議",
+    "title_short": "Industrial Economics Conference",
+    "importance": 3,
+    "organizer_short": "ZEW",
+    "date_start": "2026-08-26",
+    "date_end": "2026-08-28",
+    "city": "Mannheim",
+    "url": "https://www.zew.de/VA4852",
+    "fields": [
+     "registration_url"
+    ]
+   },
+   {
+    "id": "478bb5df39ada7c3",
+    "title": "Frankfurt School Real Estate Day 2026",
+    "title_ja": "フランクフルト・スクール不動産デー2026",
+    "title_short": "Real Estate Financing",
+    "importance": 2,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "9e752632594a8615",
+    "title": "3rd CEPR-SAFE Frankfurt Hub Conference of RPNs",
+    "title_ja": "第3回CEPR-SAFEフランクフルト・ハブRPN会議",
+    "title_short": "CEPR Research Networks",
+    "importance": 3,
+    "organizer_short": "CEPR/SAFE",
+    "date_start": "2026-09-10",
+    "date_end": "2026-09-11",
+    "city": "Frankfurt am Main",
+    "url": "https://safe-frankfurt.de/news-media/events/event-view/3rd-cepr-safe-frankfurt-hub-conference-of-rpns.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "8cb6750921939dd4",
+    "title": "13th MannheimTaxation Annual Conference",
+    "title_ja": "第13回マンハイム租税年次会議",
+    "title_short": "Taxation Research Conference",
+    "importance": 2,
+    "organizer_short": "ZEW",
+    "date_start": "2026-09-10",
+    "date_end": "2026-09-11",
+    "city": "Mannheim",
+    "url": "https://www.zew.de/VA4846",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "26b25087f99e8943",
+    "title": "Frankfurt Venture Hub 26",
+    "title_ja": "フランクフルト・ベンチャーハブ2026",
+    "title_short": "Venture Capital Markets",
+    "importance": 2,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-09-15",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "91657038400b8bcf",
+    "title": "1st Watching European Financial Market Regulation and Supervision Conference",
+    "title_ja": "欧州金融市場規制・監督会議",
+    "title_short": "European Financial Supervision",
+    "importance": 3,
+    "organizer_short": "SAFE",
+    "date_start": "2026-09-15",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://safe-frankfurt.de/news-media/events/event-view/1st-watching-european-financial-market-regulation-and-supervision-conference.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "30da7ef2278b6e6e",
+    "title": "M&A und Private Equity 26",
+    "title_ja": "M&A・プライベートエクイティ2026",
+    "title_short": "Mergers and Private Equity",
+    "importance": 2,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-09-16",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "d525cb556e019e4a",
+    "title": "Wirtschafts-, Finanz- und Geldpolitik für mehr Wachstum und stabile Preise",
+    "title_ja": "成長と物価安定のための経済・財政・金融政策",
+    "title_short": "Policy for Growth and Stability",
+    "importance": 3,
+    "organizer_short": "IMFS",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://www.imfs-frankfurt.de/veranstaltungen/imfs-konferenzen/",
+    "fields": [
+     "registration_url"
+    ]
+   },
+   {
+    "id": "cca10a48cc8add1e",
+    "title": "Nachhaltige Geldanlagen 26",
+    "title_ja": "持続可能な投資2026",
+    "title_short": "Sustainable Investments",
+    "importance": 3,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-09-23",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "444545753a27876c",
+    "title": "SAFE-IBF Lecture: Thirty Years of Utilising Financial History",
+    "title_ja": "金融史の活用30年",
+    "title_short": "Financial History Lecture",
+    "importance": 1,
+    "organizer_short": "SAFE",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-ibf-lecture-thirty-years-of-utilising-financial-history-to-forecast-the-future-the-good-the-bad-the-ugly.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "1fbda8887f8668e6",
+    "title": "Insight from Hindsight: Useful Financial History",
+    "title_ja": "後知恵からの洞察：金融史の活用",
+    "title_short": "Useful Financial History",
+    "importance": 1,
+    "organizer_short": "SAFE",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://safe-frankfurt.de/news-media/events/event-view/insight-from-hindsight-useful-financial-history.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "c23ab7f178d14037",
+    "title": "11th ZEW Conference on Economics of Innovation and Patents",
+    "title_ja": "第11回ZEWイノベーション・特許経済学会議",
+    "title_short": "Innovation and Patents",
+    "importance": 3,
+    "organizer_short": "ZEW",
+    "date_start": "2026-11-05",
+    "date_end": "2026-11-06",
+    "city": "Mannheim",
+    "url": "https://www.zew.de/VA4960",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "5c05d9bd0c82b013",
+    "title": "MIFE Conference: The Role of Financial Education",
+    "title_ja": "金融教育の役割に関する会議",
+    "title_short": "Financial Education",
+    "importance": 2,
+    "organizer_short": "ZEW",
+    "date_start": "2026-11-18",
+    "date_end": "2026-11-20",
+    "city": "Mannheim",
+    "url": "https://www.zew.de/VA4964",
+    "fields": [
+     "fee",
+     "venue"
+    ]
+   },
+   {
+    "id": "df1f72187f83ce49",
+    "title": "Fokus Aufsichtsrat 26",
+    "title_ja": "監査役フォーカス2026",
+    "title_short": "Board Governance",
+    "importance": 2,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-11-11",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "46d5d2f853655ae6",
+    "title": "Future of Work 26",
+    "title_ja": "仕事の未来2026",
+    "title_short": "Future of Work",
+    "importance": 2,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-11-17",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "4cfb3d2a77229b22",
+    "title": "Indo-German Business Hub 26",
+    "title_ja": "インド・ドイツビジネスハブ2026",
+    "title_short": "India Germany Business",
+    "importance": 1,
+    "organizer_short": "Frankfurt School",
+    "date_start": "2026-11-17",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "70ce992653fbc17f",
+    "title": "The Geopolitics of the New Information Reality",
+    "title_ja": "新情報の地政学",
+    "title_short": "Geopolitics Information",
+    "importance": 2,
+    "organizer_short": "DGAP",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://dgap.org/de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "37024264c5a3f240",
+    "title": "IWH Research Seminar - Vincent Sterk",
+    "title_ja": "IWH研究セミナー（Sterk講演）",
+    "title_short": "Economics Seminar",
+    "importance": 0,
+    "organizer_short": "IWH",
+    "date_start": "2026-09-29",
+    "date_end": null,
+    "city": "Halle (Saale)",
+    "url": "http://www.iwh-halle.de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "b415828d7d8ca6a7",
+    "title": "IWH Research Seminar - Marta Morazzoni",
+    "title_ja": "IWH研究セミナー（Morazzoni講演）",
+    "title_short": "Economics Seminar",
+    "importance": 0,
+    "organizer_short": "IWH",
+    "date_start": "2026-10-20",
+    "date_end": null,
+    "city": "Halle (Saale)",
+    "url": "http://www.iwh-halle.de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "57d1c7913694d821",
+    "title": "IWH Research Seminar - Cristiano Cantore",
+    "title_ja": "IWH研究セミナー（Cantore講演）",
+    "title_short": "Economics Seminar",
+    "importance": 0,
+    "organizer_short": "IWH",
+    "date_start": "2026-10-27",
+    "date_end": null,
+    "city": "Halle (Saale)",
+    "url": "http://www.iwh-halle.de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "875bd2ffd16e5bfa",
+    "title": "Deutsche Börse ETF-Forum 2026",
+    "title_ja": "ドイツ取引所ETFフォーラム2026",
+    "title_short": "ETF Forum",
+    "importance": 2,
+    "organizer_short": "Deutsche Börse",
+    "date_start": "2026-10-27",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen",
+    "fields": [
+     "open_to_public",
+     "registration_url",
+     "venue"
+    ]
+   },
+   {
+    "id": "3edeadb732b5d8a7",
+    "title": "The Wandering Scholars: Understanding the Heterogeneity of University Commercialization",
+    "title_ja": "大学の事業化の多様性と商業化戦略",
+    "title_short": "University Commercialization",
+    "importance": 1,
+    "organizer_short": "IWH",
+    "date_start": "2026-11-17",
+    "date_end": null,
+    "city": "Halle (Saale)",
+    "url": "http://www.iwh-halle.de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "a766f79afcc551ad",
+    "title": "IWH Research Seminar - Oliver Falck",
+    "title_ja": "IWH研究セミナー（Falck講演）",
+    "title_short": "Economics Seminar",
+    "importance": 0,
+    "organizer_short": "IWH",
+    "date_start": "2026-11-24",
+    "date_end": null,
+    "city": "Halle (Saale)",
+    "url": "http://www.iwh-halle.de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "2e25c0985c754df0",
+    "title": "Frankfurt European Banking Congress (36th Edition)",
+    "title_ja": "フランクフルト欧州銀行会議（第36回）",
+    "title_short": "European Banking Congress",
+    "importance": 3,
+    "organizer_short": "BNP+DB+HSBC+",
+    "date_start": "2026-11-20",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://frankfurt-ebc.com",
+    "fields": [
+     "registration_url"
+    ]
+   },
+   {
+    "id": "3ff54092f3827e37",
+    "title": "IWH Research Seminar - Jillian Grennan",
+    "title_ja": "IWH研究セミナー（Grennan講演）",
+    "title_short": "Finance Seminar",
+    "importance": 0,
+    "organizer_short": "IWH",
+    "date_start": "2026-12-01",
+    "date_end": null,
+    "city": "Halle (Saale)",
+    "url": "http://www.iwh-halle.de/veranstaltungen",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "2a4a90c130f82f5d",
+    "title": "OeNB Freitagsseminar: When Talk Isn't Cheap: Inflation Expectations Across the Political Cycle",
+    "title_ja": "OeNB金曜セミナー：政治サイクルとインフレ期待",
+    "title_short": "Inflation Expectations and Politics",
+    "importance": 1,
+    "organizer_short": "OeNB",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "city": "Vienna",
+    "url": "https://www.oenb.at/en/Calendar.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "63daf4a304065612",
+    "title": "Global Economy Lecture 2026: The International Monetary System: Current and Future Challenges",
+    "title_ja": "グローバル経済講演2026：国際通貨システムの課題",
+    "title_short": "International Monetary System",
+    "importance": 2,
+    "organizer_short": "OeNB",
+    "date_start": "2026-09-28",
+    "date_end": null,
+    "city": "Vienna",
+    "url": "https://www.oenb.at/en/Calendar.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "4924762c1daec7b3",
+    "title": "95th East Jour Fixe: From inflation dynamics to expectations: Bridging the gap between data and policy",
+    "title_ja": "第95回東部ジュール・フィックス：インフレ動学と期待",
+    "title_short": "Inflation Dynamics and Policy",
+    "importance": 2,
+    "organizer_short": "OeNB",
+    "date_start": "2026-09-29",
+    "date_end": null,
+    "city": "Vienna",
+    "url": "https://www.oenb.at/en/Calendar.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "a8d4a00fd04849eb",
+    "title": "Macroeconomic Policy in a Heterogeneous and Imperfectly Rational World - 6th Joint NBP-LB-CEBRA Biennial Conference",
+    "title_ja": "マクロ経済政策と不完全合理性：第6回共催会議",
+    "title_short": "Macroeconomic Policy and Heterogeneity",
+    "importance": 3,
+    "organizer_short": "NBP/Bank of Lithuania+",
+    "date_start": "2026-09-24",
+    "date_end": "2026-09-25",
+    "city": "Warsaw",
+    "url": "https://cebra.org/cfp-6th-biennial-conference-on-macroeconomic-policy/",
+    "fields": [
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "89115bb6ad89b377",
+    "title": "Financial Stability Conference: Prudently Catalysing Competitiveness",
+    "title_ja": "金融安定会議：競争力の賢明な促進",
+    "title_short": "Financial Stability and Competitiveness",
+    "importance": 3,
+    "organizer_short": "MNB",
+    "date_start": "2026-09-24",
+    "date_end": "2026-09-25",
+    "city": "Budapest",
+    "url": "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "10305222e9e537d7",
+    "title": "1st Women in International Trade (WIT) European Conference",
+    "title_ja": "第1回女性国際貿易ヨーロッパ会議",
+    "title_short": "Women in International Trade",
+    "importance": 2,
+    "organizer_short": "CEPR",
+    "date_start": "2026-09-30",
+    "date_end": "2026-10-02",
+    "city": "Gerzensee",
+    "url": "https://cepr.org/events/1st-women-international-trade-wit-european-conference",
+    "fields": [
+     "date_end",
+     "fee"
+    ]
+   },
+   {
+    "id": "6b02264d20b7eded",
+    "title": "CEPR Annual Monetary Economics and Fluctuations Symposium 2026",
+    "title_ja": "CEPR年次金融経済学・景気変動シンポジウム",
+    "title_short": "Monetary Economics and Fluctuations",
+    "importance": 3,
+    "organizer_short": "CEPR",
+    "date_start": "2026-10-05",
+    "date_end": "2026-10-07",
+    "city": "Gerzensee",
+    "url": "https://cepr.org/events/event-series/monetary-economics-and-fluctuations-programme-annual-meeting/cepr-annual-0",
+    "fields": [
+     "fee"
+    ]
+   },
+   {
+    "id": "923237479e9b30b8",
+    "title": "CEPR European Conference in Household Finance 2026",
+    "title_ja": "CEPR家計金融ヨーロッパ会議",
+    "title_short": "Household Finance Conference",
+    "importance": 3,
+    "organizer_short": "CEPR",
+    "date_start": "2026-10-07",
+    "date_end": "2026-10-09",
+    "city": "Gerzensee",
+    "url": "https://cepr.org/events/cepr-european-conference-household-finance-2026",
+    "fields": [
+     "fee"
+    ]
+   },
+   {
+    "id": "0b4bde8d041f7c74",
+    "title": "Macroeconomic Policy",
+    "title_ja": "マクロ経済政策セミナー",
+    "title_short": "Macroeconomic Policy Seminar",
+    "importance": 3,
+    "organizer_short": "SNB",
+    "date_start": "2026-10-29",
+    "date_end": "2026-10-31",
+    "city": "Gerzensee",
+    "url": "https://www.szgerzensee.ch/programs/conferences-events",
+    "fields": [
+     "fee",
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "ec547ad95d27f605",
+    "title": "International Macroeconomics and Finance Annual Meeting 2026",
+    "title_ja": "国際マクロ経済学・金融年次会議",
+    "title_short": "International Macro and Finance",
+    "importance": 3,
+    "organizer_short": "CEPR",
+    "date_start": "2026-11-02",
+    "date_end": "2026-11-03",
+    "city": "Gerzensee",
+    "url": "https://cepr.org/events/event-series/international-macroeconomics-and-finance-programme-annual-meeting/cepr-0",
+    "fields": [
+     "fee"
+    ]
+   },
+   {
+    "id": "0e1568aa6f8f5242",
+    "title": "The Economic Challenges of Demographic Change",
+    "title_ja": "人口動態変化の経済的課題",
+    "title_short": "Economics of Demographic Change",
+    "importance": 2,
+    "organizer_short": "SNB",
+    "date_start": "2026-11-12",
+    "date_end": "2026-11-13",
+    "city": "Gerzensee",
+    "url": "https://www.szgerzensee.ch/programs/conferences-events",
+    "fields": [
+     "fee"
+    ]
+   },
+   {
+    "id": "37b05fc670a1b268",
+    "title": "Fintech and Digital Currencies RPN Annual Meeting 2026",
+    "title_ja": "フィンテック・デジタル通貨RPN年次会議",
+    "title_short": "Fintech and Digital Currencies",
+    "importance": 3,
+    "organizer_short": "CEPR",
+    "date_start": "2026-11-26",
+    "date_end": "2026-11-27",
+    "city": "Gerzensee",
+    "url": "https://cepr.org/events/fintech-and-digital-currencies-rpn-annual-meeting-2026",
+    "fields": [
+     "fee"
+    ]
+   },
+   {
+    "id": "3696788de7c3d6ed",
+    "title": "International Conference: Why We Fall for Fraud and How to Beat It",
+    "title_ja": "国際会議：金融詐欺の仕組みと対策",
+    "title_short": "Financial Fraud Prevention",
+    "importance": 2,
+    "organizer_short": "Bank of Lithuania",
+    "date_start": "2026-11-19",
+    "date_end": null,
+    "city": "Vilnius",
+    "url": "https://www.lb.lt/en/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "6db29270b694f2ad",
+    "title": "FOMC In Silico: A Multi-Agent System for Monetary Policy Decision Modeling",
+    "title_ja": "FOMC多主体シミュレーション：金融政策決定モデリング",
+    "title_short": "Monetary Policy Decision Modeling",
+    "importance": 1,
+    "organizer_short": "Banka Slovenije",
+    "date_start": "2026-08-24",
+    "date_end": null,
+    "city": "Ljubljana",
+    "url": "https://www.bsi.si/en/upcoming-events/bs-ef-seminar-fomc-in-silico-a-multi-agent-system-for-monetary-policy-decision-modeling",
+    "fields": [
+     "open_to_public",
+     "venue"
+    ]
+   },
+   {
+    "id": "d7e07f4ba1277065",
+    "title": "10th Sustainable Finance Summit: Bridging the Gap Between Finance and the Real Economy",
+    "title_ja": "第10回サステナブルファイナンスサミット",
+    "title_short": "Sustainable Finance Summit",
+    "importance": 3,
+    "organizer_short": "SFCG",
+    "date_start": "2026-09-30",
+    "date_end": "2026-10-02",
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/sustainable-finance-gipfel-26/",
+    "fields": [
+     "format",
+     "time_end"
+    ]
+   },
+   {
+    "id": "04f4a44b27c09ec2",
+    "title": "3. Hamburger Sustainable Finance Summit – Transformationsfinanzierung für ein zukunftsfähiges Hamburg",
+    "title_ja": "第3回ハンブルク・サステナブルファイナンス・サミット",
+    "title_short": "Hamburg Sustainable Finance Summit",
+    "importance": 2,
+    "organizer_short": "Finance City Hamburg",
+    "date_start": "2026-10-05",
+    "date_end": null,
+    "city": "Hamburg",
+    "url": "https://www.forum-ng.org/en/termine",
+    "fields": [
+     "registration_url",
+     "venue"
+    ]
+   },
+   {
+    "id": "9bef1136af69e20d",
+    "title": "Im Triathlon an Klimaziel: Hamburg Training",
+    "title_ja": "気候目標へのトライアスロン：ハンブルク研修",
+    "title_short": "Climate Targets Training",
+    "importance": 1,
+    "organizer_short": "dena",
+    "date_start": "2026-10-08",
+    "date_end": null,
+    "city": "Hamburg",
+    "url": "https://veranstaltungen.dena.de/",
+    "fields": [
+     "city",
+     "format",
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "f176bbf60cc30849",
+    "title": "6. Jahreskonferenz Marktoffensive Erneuerbare Energien",
+    "title_ja": "第6回再生可能エネルギー市場推進年次会議",
+    "title_short": "Renewable Energy Conference",
+    "importance": 3,
+    "organizer_short": "dena",
+    "date_start": "2026-10-15",
+    "date_end": "2026-10-16",
+    "city": "Berlin",
+    "url": "https://veranstaltungen.dena.de/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "75582cf089fa5f33",
+    "title": "SET Academy 101: Energiemarkt und -regulatorik",
+    "title_ja": "SET Academy 101：エネルギー市場と規制",
+    "title_short": "Energy Market Training",
+    "importance": 1,
+    "organizer_short": "dena",
+    "date_start": "2026-11-03",
+    "date_end": null,
+    "city": "Darmstadt",
+    "url": "https://veranstaltungen.dena.de/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "7a2c1f092b6e9b97",
+    "title": "dena Kongress 2026",
+    "title_ja": "dena会議2026",
+    "title_short": "dena Congress 2026",
+    "importance": 3,
+    "organizer_short": "dena",
+    "date_start": "2026-11-09",
+    "date_end": "2026-11-10",
+    "city": "Berlin",
+    "url": "https://veranstaltungen.dena.de/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "c2d31ef1ee17b546",
+    "title": "Honorary Lecture \"Taxing Work in the 21st Century\" – Prof. Yariv Brauner",
+    "title_ja": "21世紀の労働課税・記念講演",
+    "title_short": "Taxing Work Honorary Lecture",
+    "importance": 2,
+    "organizer_short": "WU Wien",
+    "date_start": "2026-11-30",
+    "date_end": null,
+    "city": "Vienna",
+    "url": "https://www.wu.ac.at/en/the-university/events",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "1f684b4bd228f93d",
+    "title": "Nature and Climate Risks Shaping Investment Decisions",
+    "title_ja": "自然・気候リスクと投資決定",
+    "title_short": "Nature and Climate Risks",
+    "importance": 3,
+    "organizer_short": "SFI/SSF",
+    "date_start": "2026-09-24",
+    "date_end": null,
+    "city": "Zurich",
+    "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "efbe236e3cef0bc1",
+    "title": "Zero to AI Hero - Your Introduction to Generative AI",
+    "title_ja": "ゼロからAIヒーローへ：生成AI入門",
+    "title_short": "Generative AI Workshop",
+    "importance": 1,
+    "organizer_short": "appliedAI",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "city": "Munich",
+    "url": "https://www.appliedai-institute.de/en/participate/events/",
+    "fields": [
+     "format",
+     "registration_url"
+    ]
+   },
+   {
+    "id": "4df6eb6df620a715",
+    "title": "Central Banks Response to Future Challenges: Resilience, Credibility, and Innovation",
+    "title_ja": "中央銀行の将来課題への対応：耐性・信認・革新",
+    "title_short": "Central Bank Resilience",
+    "importance": 3,
+    "organizer_short": "NBU/NBP",
+    "date_start": "2026-09-21",
+    "date_end": "2026-09-22",
+    "city": "Kyiv",
+    "url": "https://bank.gov.ua/en/research/events/330",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "e29b8e4cb41a91cc",
+    "title": "12. Symposium Bankenaufsicht 2026",
+    "title_ja": "第12回銀行監督シンポジウム2026",
+    "title_short": "Banking Supervision Symposium",
+    "importance": 2,
+    "organizer_short": "HFM",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "city": "Bonn",
+    "url": "https://www.s-hochschule.de/weiterbildung/12-symposium-bankenaufsicht-2026",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "60b16817bc2b1505",
+    "title": "Supervision Innovators Conference 2026",
+    "title_ja": "銀行監督イノベーター会議2026",
+    "title_short": "Banking Supervision Innovation",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-09-23",
+    "date_end": "2026-09-24",
+    "city": "Frankfurt am Main",
+    "url": "https://www.bankingsupervision.europa.eu/press/conferences/html/index.en.html",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "76abbd4f27293681",
+    "title": "Eurosif Policy & Capacity Building Webinar",
+    "title_ja": "Eurosif政策・能力構築ウェビナー",
+    "title_short": "Sustainable Finance Policy Webinar",
+    "importance": 0,
+    "organizer_short": "Eurosif",
+    "date_start": "2026-09-22",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.forum-ng.org/en/termine",
+    "fields": [
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "2bc566d1d76b34b5",
+    "title": "Handelsblatt: ESG-Reporting und -Steuerung 2026",
+    "title_ja": "Handelsblatt ESG報告・管理会議2026",
+    "title_short": "ESG Reporting Conference",
+    "importance": 2,
+    "organizer_short": "Handelsblatt",
+    "date_start": "2026-09-24",
+    "date_end": "2026-09-25",
+    "city": "Düsseldorf",
+    "url": "https://www.forum-ng.org/en/termine",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "f259985e979cf51e",
+    "title": "Macro CRC TR 224 Seminar: Tom Holden",
+    "title_ja": "マクロ経済学セミナー:Tom Holden",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "dc47860fc55e21fc",
+    "title": "Macro CRC TR 224 Seminar: Annika Bacher",
+    "title_ja": "マクロ経済学セミナー:Annika Bacher",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "cfd1f4da7983f9eb",
+    "title": "Macro CRC TR 224 Seminar: Kyle Herkenhoff",
+    "title_ja": "マクロ経済学セミナー:Kyle Herkenhoff",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-09-21",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "21f58e91b6392cf2",
+    "title": "Macro CRC TR 224 Seminar: Andrea Lanteri",
+    "title_ja": "マクロ経済学セミナー:Andrea Lanteri",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-09-24",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "7cbf7fc8c277f59c",
+    "title": "Macro CRC TR 224 Seminar: Ben Moll",
+    "title_ja": "マクロ経済学セミナー:Ben Moll",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-10-01",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "e2b5d17c5d6769c1",
+    "title": "Macro CRC TR 224 Seminar: Shubhdeep Dep",
+    "title_ja": "マクロ経済学セミナー:Shubhdeep Dep",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-10-15",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "4a230ee3b3adc7c4",
+    "title": "Macro CRC TR 224 Seminar: Andres Kostol",
+    "title_ja": "マクロ経済学セミナー:Andres Kostol",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "b3c57932603454cc",
+    "title": "Macro CRC TR 224 Seminar: Xavier Jaravel",
+    "title_ja": "マクロ経済学セミナー:Xavier Jaravel",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-10-29",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "7185ede7197fc2db",
+    "title": "Macro CRC TR 224 Seminar: Andreas Fagereng",
+    "title_ja": "マクロ経済学セミナー:Andreas Fagereng",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-11-05",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "ff01f4ea01422e57",
+    "title": "Macro CRC TR 224 Seminar: Giulia Giupponi",
+    "title_ja": "マクロ経済学セミナー:Giulia Giupponi",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-11-12",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "72a0a7c451974ea2",
+    "title": "Macro CRC TR 224 Seminar: Thomas Drechsel",
+    "title_ja": "マクロ経済学セミナー:Thomas Drechsel",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-11-19",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "957f9b37312cd343",
+    "title": "Macro CRC TR 224 Seminar: Alessandro Riboni",
+    "title_ja": "マクロ経済学セミナー:Alessandro Riboni",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-11-26",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "be7c3fa217fdbe9b",
+    "title": "Macro CRC TR 224 Seminar: Leonard Bocquet",
+    "title_ja": "マクロ経済学セミナー:Leonard Bocquet",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-12-03",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "3cdb1703d8725911",
+    "title": "Macro CRC TR 224 Seminar: Isaac Baley",
+    "title_ja": "マクロ経済学セミナー:Isaac Baley",
+    "title_short": "Macro Seminar",
+    "importance": 0,
+    "organizer_short": "Mannheim",
+    "date_start": "2026-12-10",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "5e0481717fe96f26",
+    "title": "Money Disrupted – Will Warsh quell inflation and can the AI boom last?",
+    "title_ja": "マネー・ディスラプテッド:AIブームは続くか",
+    "title_short": "Inflation and AI Boom",
+    "importance": 2,
+    "organizer_short": "OMFIF",
+    "date_start": "2026-09-09",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.omfif.org/meetings/",
+    "fields": [
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "454b109d82ab96b4",
+    "title": "27th Global Conference on Environmental Taxation (GCET27)",
+    "title_ja": "第27回環境税制世界会議(GCET27)",
+    "title_short": "Environmental Taxation Conference",
+    "importance": 3,
+    "organizer_short": "PIK",
+    "date_start": "2026-09-14",
+    "date_end": "2026-09-16",
+    "city": "Berlin",
+    "url": "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27",
+    "fields": [
+     "venue"
+    ]
+   }
+  ],
+  "end": "2026-08-24T05:17:37+02:00",
+  "start": "2026-08-24T04:45:50+02:00"
  },
  {
   "date": "2026-08-23",
