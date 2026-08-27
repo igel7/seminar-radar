@@ -42,13 +42,8 @@
  "Frankfurt School of Finance & Management – Events": {
   "method": "ua-curl",
   "alt_urls": [],
-  "last_ok": "2026-08-08",
-  "note": "403ボット対策はua-curlで通っていたが2026-08中旬から200でもJS描画の空殻が恒常化。discoveryの検索クエリ(Frankfurt School Konferenz)で補完する",
-  "permanent_block": {
-   "since": "2026-08-27",
-   "recheck_days": 7,
-   "last_recheck": "2026-08-27"
-  }
+  "last_ok": "2026-08-27",
+  "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完"
  },
  "Bank of Albania – Events": {
   "method": "ua-curl",
@@ -138,8 +133,8 @@
  "Jacques Delors Centre (Hertie School, Berlin) – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-08-17",
-  "note": "2026-08上旬からCloudflare 403が恒常化。web検索で代替確認する。掲載は学生向け行事が多く、該当イベント0件(ok:true, found:0)が正常なことが多い",
+  "last_ok": "2026-08-27",
+  "note": "2026-08上旬からCloudflare 401/403が恒常化(hertie-school.org本体も同型のボットチェック)。web検索(site:delorscentre.eu event)で代替確認する運用が有効(2026-08-27にElderson講演を回収)。掲載は学生向け行事が多く、該当0件が正常なことが多い",
   "permanent_block": {
    "since": "2026-08-27",
    "recheck_days": 7,
@@ -151,8 +146,8 @@
   "alt_urls": [
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
-  "last_ok": "2026-08-17",
-  "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。ロンドン・アムステルダム等の域外開催が多いため、オンライン/対象地域分のみ収載。2026-08-19: alt_urlのpublic.unpri.org経由がHTTP 405に変化(WebFetch不可)。要再検証、当面はsite:検索のみに依存"
+  "last_ok": "2026-08-27",
+  "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。公開ミラーpublic.unpri.orgは2026-08-19からHTTP 405が継続(2026-08-27再確認)。年次会議の特設サイト(pip2026.unpri.org)は直接取得可。ロンドン・アムステルダム等の域外開催が多く、オンライン/対象地域分のみ収載"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
@@ -173,7 +168,7 @@
    "https://www.iwkoeln.de/institut/veranstaltungen.html"
   ],
   "last_ok": null,
-  "note": "正しい一覧URLは /institut/veranstaltungen.html(2026-08-17ユーザー提供)だが、実行環境からはUA偽装でも401継続。site:iwkoeln.de Veranstaltung 検索で個別ページを探すか、INBOXの手動取込で補完する"
+  "note": "正しい一覧URLは /institut/veranstaltungen.html(2026-08-17ユーザー提供)だが、実行環境からはUA偽装でも401継続(2026-08-27: RSS・sitemapも401、Waybackは2025-12断面で古い)。site:iwkoeln.de Veranstaltung 検索で個別ページを探すか、INBOXの手動取込で補完する"
  },
  "BNB – Bulgarian National Bank – Events": {
   "method": "alt-url",
@@ -192,14 +187,12 @@
   "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
  },
  "CEP – Council on Economic Policies (Zürich) – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": null,
-  "note": "Cloudflareチャレンジが恒常化(2026-08確認)。無料ウェビナー系はdiscoveryのESGクエリで補完する",
-  "permanent_block": {
-   "since": "2026-08-27",
-   "recheck_days": 7,
-   "last_recheck": "2026-08-27"
-  }
+  "method": "ua-curl",
+  "alt_urls": [
+   "https://www.cepweb.org/events/upcoming-events/",
+   "https://www.cepweb.org/feed/"
+  ],
+  "last_ok": "2026-08-27",
+  "note": "Cloudflareチャレンジは2026-08-27のリトライで解消を確認(ua-curlで/events/upcoming-events/が読める。RSS /feed/ も生きている)、恒常ブロック解除。再発時はdiscoveryのESGクエリで補完"
  }
 }
