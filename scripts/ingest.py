@@ -28,8 +28,11 @@ def write_known_digest(events):
     巡回時はこの台帳に照らして「新規または変更のあるイベントだけ」を
     data/new_events.json に出力する(既知で無変化のイベントは再出力しない)。
     events.json(774KB超)を直接読ませないための小さな写しであり、
-    ingest.py だけが生成する。1イベント1行のJSONで、grepでも照合できる。"""
-    keys = ("source", "title", "date_start", "date_end", "url")
+    ingest.py だけが生成する。1イベント1行のJSONで、grepでも照合できる。
+    キーには「変わったら再出力すべき観察可能フィールド」(日付・時刻・会場・
+    参加費・申込URL。changelog が監視するものとほぼ同じ)を含める。"""
+    keys = ("source", "title", "date_start", "date_end", "time", "city", "venue",
+            "fee", "fee_amount", "registration_url", "url")
     rows = sorted(
         ({k: ev.get(k) for k in keys} for ev in events),
         key=lambda r: (r.get("date_start") or "", r.get("title") or ""))

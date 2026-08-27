@@ -9,6 +9,9 @@ check_status.py: 巡回ステータスの品質ゲート(AGENTS.md B手順5)。
   (a) 失敗ソース数の急増(前回比 +5 以上)
   (b) `tried:` 記録のない失敗エントリ(フォールバック・ラダー不履行の疑い)
   (c) 総取得件数の急減(前回比 -40% 以上。前回が20件未満の場合は判定しない)
+  (d) 本日の fetch_all.py で NEW/CHANGED と判定されたのに status.json に記録がない
+      ソース(=抽出の取りこぼし。このままコミットすると fetch_state.json のハッシュ
+      更新により、次にページが変わるまでそのソースのイベントを拾えなくなる)
 
 警告が1件でもあれば終了コード1(なければ0)。警告が出た場合の対応は AGENTS.md B手順5を
 参照(該当ソースの巡回をやり直すか、やり直し不要と判断した理由を実行報告に書く)。
@@ -18,10 +21,14 @@ check_status.py: 巡回ステータスの品質ゲート(AGENTS.md B手順5)。
 import json
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 STATUS_FILE = ROOT / "data" / "status.json"
+FETCH_STATE_FILE = ROOT / "data" / "fetch_state.json"
+TODAY = datetime.now(ZoneInfo("Europe/Berlin")).date().isoformat()
 
 # 巡回ソースではない特殊行(比較・tried判定の対象外)
 SPECIAL_ROWS = {"web検索(discovery)", "手動取込"}
@@ -77,6 +84,23 @@ def main():
             "tried:(試行記録)のない失敗エントリが {} 件ある。フォールバック・ラダー"
             "(AGENTS.md B手順2a)を完遂したか確認し、未実施なら巡回をやり直すこと:\n    - "
             .format(len(missing_tried)) + "\n    - ".join(missing_tried))
+
+    # (d) fetch_all.py が本日 NEW/CHANGED と判定したのに status.json に記録がないソース
+    try:
+        fetch_state = json.loads(FETCH_STATE_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        fetch_state = {}
+    status_names = {e.get("name") for e in current}
+    unrecorded = [
+        name for name, s in fetch_state.items()
+        if isinstance(s, dict) and s.get("verdict") in ("NEW", "CHANGED")
+        and s.get("last_fetch") == TODAY and name not in status_names
+    ]
+    if unrecorded:
+        warnings.append(
+            "fetch_all.py が本日 NEW/CHANGED と判定したのに status.json に記録がない"
+            "ソースが {} 件ある。抽出を取りこぼしたまま commit しないこと:\n    - "
+            .format(len(unrecorded)) + "\n    - ".join(unrecorded))
 
     prev_raw = load_previous()
     if prev_raw is None:

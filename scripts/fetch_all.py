@@ -57,7 +57,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from radar_lib import ROOT, TODAY, load_json, parse_sources
+from radar_lib import ROOT, STATUS_FILE, TODAY, load_json, parse_sources
 
 STATE_FILE = ROOT / "data" / "fetch_state.json"
 HINTS_FILE = ROOT / "data" / "fetch_hints.json"
@@ -80,6 +80,16 @@ SOFT404_MARKERS = [
     "възникна системна грешка", "несъществуващ адрес",
     "stranica nije pronađena", "strona nie została znaleziona",
 ]
+
+# ボット対策のチャレンジページ兆候(HTTP 200 でも「取得成功」と誤認しないため。
+# 本文が短い場合のみ判定に使う — 正規ページの文中に紛れた語での誤爆を避ける)
+CHALLENGE_MARKERS = [
+    "just a moment", "checking your browser", "verify you are human",
+    "verifying you are human", "attention required! | cloudflare",
+    "ddos protection by", "please enable cookies", "captcha",
+    "enable javascript and cookies",
+]
+CHALLENGE_MAX_CHARS = 3000
 
 
 def max_page_chars():
@@ -132,7 +142,7 @@ def decode(body, charset):
     return body.decode("utf-8", "replace")
 
 
-def html_to_text(raw, base_url, limit):
+def html_to_text(raw, base_url):
     """HTML/XML → 読みやすいプレーンテキスト。リンクは「テキスト [絶対URL]」として保持する
     (イベント詳細ページのURLを抽出できるようにするため)。"""
     # コメント・不可視要素を除去
@@ -167,7 +177,7 @@ def html_to_text(raw, base_url, limit):
     text = re.sub(r"\n{3,}", "\n\n", text).strip()
     if title:
         text = f"{title}\n\n{text}"
-    return text[:limit]
+    return text
 
 
 def classify_failure(code, body_text):
@@ -178,6 +188,8 @@ def classify_failure(code, body_text):
     if code >= 400:
         return "FAIL-HTTP"
     low = body_text.lower()
+    if len(body_text) < CHALLENGE_MAX_CHARS and any(mk in low for mk in CHALLENGE_MARKERS):
+        return "FAIL-BLOCKED"
     if any(mk in low for mk in SOFT404_MARKERS):
         return "FAIL-SOFT404"
     if len(body_text) < MIN_TEXT_CHARS:
@@ -197,7 +209,7 @@ def recheck_due(block, today):
         return True
 
 
-def process_source(src, hints, prev_state, limit):
+def process_source(src, hints, prev_state, prev_status_ok, limit):
     """1ソースを取得・判定する。戻り値は state エントリ+表示用フィールドの辞書。"""
     name, main_url = src["name"], src["url"]
     hint = hints.get(name) if isinstance(hints.get(name), dict) else {}
@@ -231,19 +243,29 @@ def process_source(src, hints, prev_state, limit):
     for u in candidates:
         code, final_url, body, charset = fetch(u)
         if code is not None and code < 400:
-            text = html_to_text(decode(body, charset), final_url, limit)
+            text = html_to_text(decode(body, charset), final_url)
             failure = classify_failure(code, text)
             if failure is None:
-                # 取得成功: キャッシュ保存+ハッシュ比較
+                # 取得成功: キャッシュ保存+ハッシュ比較。
+                # ハッシュは切り詰め前の全文で計算する(キャッシュの max_page_chars 以降で
+                # 起きた変化も CHANGED として検知できるようにするため)。
                 digest = hashlib.sha256(text.encode("utf-8")).hexdigest()[:20]
                 slug = slug_of(name)
                 cache_file = CACHE_DIR / f"{slug}.txt"
+                trunc_note = (f"# note: 全{len(text):,}字のうち先頭{limit:,}字のみ保存\n"
+                              if len(text) > limit else "")
                 cache_file.write_text(
-                    f"# source: {name}\n# url: {final_url}\n\n{text}\n", encoding="utf-8")
+                    f"# source: {name}\n# url: {final_url}\n{trunc_note}\n{text[:limit]}\n",
+                    encoding="utf-8")
                 if prev.get("hash") is None:
                     verdict = "NEW"
                 elif prev.get("hash") != digest:
                     verdict = "CHANGED"
+                elif prev_status_ok.get(name) is False:
+                    # 前回の巡回が失敗だったソースは、内容が同一でも復旧分として取り直す
+                    # (前回の found が 0 のままなので、引き継ぎ対象にしない)
+                    verdict = "CHANGED"
+                    entry["note"] = "前回の巡回が失敗のため、内容は同一でも抽出対象(復旧)"
                 else:
                     verdict = "UNCHANGED"
                 entry.update(
@@ -286,13 +308,16 @@ def main():
     state = load_json(STATE_FILE, {})
     if not isinstance(state, dict):
         state = {}
+    # 前回の巡回ステータス(ok可否)。前回失敗したソースは UNCHANGED でも取り直す
+    prev_status_ok = {e.get("name"): bool(e.get("ok"))
+                      for e in load_json(STATUS_FILE, []) if isinstance(e, dict)}
     limit = max_page_chars()
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
     print(f"fetch_all: {len(sources)} sources を取得中...", file=sys.stderr)
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         results = dict(ex.map(
-            lambda s: process_source(s, hints, state, limit), sources))
+            lambda s: process_source(s, hints, state, prev_status_ok, limit), sources))
 
     # 状態台帳を更新(--only 時も該当ソースだけ上書き)
     state.setdefault("_readme",
