@@ -1,5 +1,516 @@
 [
  {
+  "date": "2026-08-27",
+  "added": [
+   {
+    "id": "8e10ccb23e6ae387",
+    "title": "10th Annual Workshop of the ESCB Research Cluster 3 on Financial Stability, Macroprudential Regulation and Microprudential Supervision",
+    "title_ja": "ESCBリサーチクラスター3 金融安定・マクロプルーデンス政策ワークショップ",
+    "title_short": "Financial Stability Research Workshop",
+    "importance": 1,
+    "organizer_short": "ESCB",
+    "date_start": "2026-11-23",
+    "date_end": "2026-11-24",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/20261123_escb_research_cluster3.en.html"
+   },
+   {
+    "id": "b2cc7f7f8f0fbf03",
+    "title": "The ECB at Sibos 2026",
+    "title_ja": "ECB、Sibos 2026に参加",
+    "title_short": "Payments Industry Conference",
+    "importance": 1,
+    "organizer_short": "ECB",
+    "date_start": "2026-09-28",
+    "date_end": "2026-10-01",
+    "city": "Miami",
+    "url": "https://www.ecb.europa.eu/paym/intro/events/html/20260928_sibos.en.html"
+   },
+   {
+    "id": "2e8197af8d0b283d",
+    "title": "Matching People to Properties: A Matching Function for the Housing Market",
+    "title_ja": "住宅市場のマッチング関数",
+    "title_short": "Housing Market Frictions",
+    "importance": 0,
+    "organizer_short": "IfW Kiel",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.ifw-kiel.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/matching-people-to-properties-a-matching-function-for-the-housing-market-rachel-ngai/"
+   },
+   {
+    "id": "92fcf5d2563596ac",
+    "title": "Insight from Hindsight: Useful Financial History / SAFE-IBF Lecture",
+    "title_ja": "金融史から学ぶ:SAFE-IBF講演",
+    "title_short": "Financial History Lecture",
+    "importance": 1,
+    "organizer_short": "SAFE",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://safe-frankfurt.de/news-media/events/event-view/insight-from-hindsight-useful-financial-history.html"
+   },
+   {
+    "id": "b68ebaad5c315186",
+    "title": "efl Annual Conference 2026",
+    "title_ja": "efl年次会議2026",
+    "title_short": "efl Annual Conference",
+    "importance": 1,
+    "organizer_short": "efl",
+    "date_start": "2026-11-26",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://www.eflab.de/events/detail/efl-annual-conference-2026"
+   },
+   {
+    "id": "f2a30630f6a0456a",
+    "title": "EconPol Annual Conference: Future of Work in Europe",
+    "title_ja": "EconPol年次会議:欧州の労働の未来",
+    "title_short": "Future of Work in Europe",
+    "importance": 1,
+    "organizer_short": "ifo",
+    "date_start": "2026-11-09",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.ifo.de/en/econpol/event/2026-11-09/annual-conference-future-of-work-in-europe"
+   },
+   {
+    "id": "317fde9251cee7a3",
+    "title": "Munich Lectures Workshop on Cities, Housing and Infrastructure",
+    "title_ja": "ミュンヘン講演ワークショップ:都市・住宅・インフラ",
+    "title_short": "Cities, Housing and Infrastructure",
+    "importance": 1,
+    "organizer_short": "CESifo",
+    "date_start": "2026-11-20",
+    "date_end": "2026-11-21",
+    "city": null,
+    "url": "https://www.ifo.de/en/cesifo/event/2026-11-20/munich-lectures-workshop-cities-housing-and-infrastructure"
+   },
+   {
+    "id": "32f23bc4c47ffa99",
+    "title": "CESifo-TransforM Workshop on the Economic and Societal Impacts of AI",
+    "title_ja": "CESifo-TransforMワークショップ:AIの経済・社会的影響",
+    "title_short": "Economic Impacts of AI",
+    "importance": 1,
+    "organizer_short": "CESifo",
+    "date_start": "2026-12-03",
+    "date_end": "2026-12-04",
+    "city": null,
+    "url": "https://www.ifo.de/en/cesifo/event/2026-12-03/cesifo-transform-workshop-economic-and-societal-impacts-ai-2026"
+   },
+   {
+    "id": "1366f7ec890fef4e",
+    "title": "Ostdeutschland, Außenpolitik und die (Anti)Zeitenwende",
+    "title_ja": "東ドイツ・外交政策と(反)時代の転換",
+    "title_short": "East Germany and Foreign Policy",
+    "importance": 0,
+    "organizer_short": "DGAP",
+    "date_start": "2026-09-08",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://dgap.org/de/veranstaltungen/ostdeutschland-aussenpolitik-und-die-antizeitenwende"
+   },
+   {
+    "id": "ae742e60e7c0680a",
+    "title": "In den Sturm: 5 Jahre Zentrum für Klima und Außenpolitik",
+    "title_ja": "嵐の中へ:気候・外交政策センター5周年",
+    "title_short": "Climate and Foreign Policy",
+    "importance": 0,
+    "organizer_short": "DGAP",
+    "date_start": "2026-09-09",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://dgap.org/de/veranstaltungen/den-sturm-5-jahre-zentrum-fuer-klima-und-aussenpolitik"
+   },
+   {
+    "id": "f3171e4eefd72a91",
+    "title": "Talks@Bruegel: Ukraine's political currents",
+    "title_ja": "Bruegel講演:ウクライナの政治潮流",
+    "title_short": "Ukraine Political Currents",
+    "importance": 1,
+    "organizer_short": "Bruegel",
+    "date_start": "2026-09-08",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.bruegel.org/event/talksbruegel-ukraines-political-currents-jakub-parusinski"
+   },
+   {
+    "id": "ac1f2a35324889df",
+    "title": "Money Market Event: Speech by Petra Tschudin and Thomas Moser",
+    "title_ja": "マネーマーケット・イベント講演",
+    "title_short": "SNB Money Market Speech",
+    "importance": 1,
+    "organizer_short": "SNB",
+    "date_start": "2026-10-29",
+    "date_end": null,
+    "city": "Geneva",
+    "url": null
+   },
+   {
+    "id": "d1341a60a06c1488",
+    "title": "New challenges in safeguarding financial stability and managing financial crises in a world of digital finance and AI",
+    "title_ja": "デジタル金融・AI時代の金融安定と危機管理の新課題",
+    "title_short": "Digital Finance and Financial Stability",
+    "importance": 2,
+    "organizer_short": "SUERF",
+    "date_start": "2026-10-05",
+    "date_end": null,
+    "city": "Vienna",
+    "url": "https://www.suerf.org/events/new-challenges-in-safeguarding-financial-stability-and-managing-financial-crises-in-a-world-of-digital-finance-and-artificial-intelligence-implications-for-central-banks/"
+   },
+   {
+    "id": "29b96e6fb0ed5565",
+    "title": "Inflation, inflation expectations, and monetary policy",
+    "title_ja": "インフレ・インフレ期待・金融政策",
+    "title_short": "Inflation Expectations Conference",
+    "importance": 2,
+    "organizer_short": "SUERF",
+    "date_start": "2026-11-19",
+    "date_end": "2026-11-20",
+    "city": "Rome",
+    "url": "https://www.suerf.org/events/inflation-inflation-expectations-and-monetary-policy/"
+   },
+   {
+    "id": "775611db634f2331",
+    "title": "Artificial Intelligence, Innovation, and Debt Sustainability in the Euro Area",
+    "title_ja": "AI・イノベーションとユーロ圏の債務持続可能性",
+    "title_short": "AI and Debt Sustainability",
+    "importance": 2,
+    "organizer_short": "SUERF",
+    "date_start": "2026-12-03",
+    "date_end": "2026-12-04",
+    "city": "Luxembourg",
+    "url": "https://www.suerf.org/events/artificial-intelligence-innovation-and-debt-sustainability-in-the-euro-area/"
+   },
+   {
+    "id": "076d3478a84ad97e",
+    "title": "New Challenges in Central Banking Conference",
+    "title_ja": "中央銀行業務の新課題会議",
+    "title_short": "New Challenges in Central Banking",
+    "importance": 2,
+    "organizer_short": "CNB",
+    "date_start": "2026-10-06",
+    "date_end": null,
+    "city": "Prague",
+    "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/new-challenges-in-central-banking-conference/"
+   },
+   {
+    "id": "ebc1b597978dbba0",
+    "title": "Public hearing on draft RTS on operational risk management framework",
+    "title_ja": "EBA公聴会:オペレーショナルリスク管理RTS",
+    "title_short": "Operational Risk RTS Hearing",
+    "importance": 1,
+    "organizer_short": "EBA",
+    "date_start": "2026-09-29",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.eba.europa.eu/publications-and-media/events/public-hearing-draft-regulatory-technical-standards-operational-risk-management-framework"
+   },
+   {
+    "id": "b1bee36ace943a35",
+    "title": "International FinTech Conference (Lithuania)",
+    "title_ja": "国際フィンテック会議(リトアニア)",
+    "title_short": "FinTech Conference",
+    "importance": 1,
+    "organizer_short": "Bank of Lithuania",
+    "date_start": "2026-11-30",
+    "date_end": null,
+    "city": "Vilnius",
+    "url": null
+   },
+   {
+    "id": "75f539752f9fb684",
+    "title": "XX Workshop of Economic Research for Southeastern Europe",
+    "title_ja": "第20回南東欧経済研究ワークショップ",
+    "title_short": "Southeastern Europe Economic Research",
+    "importance": 1,
+    "organizer_short": "Bank of Albania",
+    "date_start": "2026-11-24",
+    "date_end": "2026-11-25",
+    "city": "Tirana",
+    "url": "https://www.bankofalbania.org/Events/"
+   },
+   {
+    "id": "90703ff7b58661d9",
+    "title": "10th Sustainable Finance Summit: Sustainable Finance – Bridging the Gap Between Finance and the Real Economy",
+    "title_ja": "第10回サステナブルファイナンス・サミット",
+    "title_short": "Sustainable Finance Summit",
+    "importance": 2,
+    "organizer_short": "GSFC",
+    "date_start": "2026-09-30",
+    "date_end": "2026-10-02",
+    "city": "Frankfurt am Main",
+    "url": "https://forum.frankfurt-school.de/konferenzen/sustainable-finance-gipfel-26/"
+   },
+   {
+    "id": "57fc88366c01d086",
+    "title": "19. Jahreskonferenz Nachhaltige Geldanlagen",
+    "title_ja": "第19回サステナブル投資年次会議",
+    "title_short": "Sustainable Investment Conference",
+    "importance": 2,
+    "organizer_short": "FNG",
+    "date_start": "2026-09-23",
+    "date_end": null,
+    "city": null,
+    "url": null
+   },
+   {
+    "id": "d1666e5dd3e0eb06",
+    "title": "fair-finance-institute: Fachworkshop Gender-Lens Investing",
+    "title_ja": "ジェンダーレンズ投資に関する専門ワークショップ",
+    "title_short": "Gender-Lens Investing Workshop",
+    "importance": 0,
+    "organizer_short": "fair-finance-institute",
+    "date_start": "2026-09-29",
+    "date_end": null,
+    "city": null,
+    "url": null
+   },
+   {
+    "id": "cf2cd74f2ed0d624",
+    "title": "Designing the AI backbone for impact investing (Building Bridges)",
+    "title_ja": "インパクト投資のためのAI基盤設計",
+    "title_short": "AI for Impact Investing",
+    "importance": 1,
+    "organizer_short": "Building Bridges",
+    "date_start": "2026-10-08",
+    "date_end": null,
+    "city": "Geneva",
+    "url": "https://www.buildingbridges.org/2026-edition/building-bridges-2026-programme/"
+   }
+  ],
+  "updated": [
+   {
+    "id": "30ae5b5b8a576a88",
+    "title": "Inflation: Drivers and Dynamics 2026 Conference",
+    "title_ja": "インフレの要因と動学に関する会議",
+    "title_short": "Inflation Drivers and Dynamics",
+    "importance": 2,
+    "organizer_short": "ECB+",
+    "date_start": "2026-09-24",
+    "date_end": "2026-09-25",
+    "city": "Cleveland",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/20260924_inflation_conference.en.html",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "8c7c140caa60b913",
+    "title": "ECB/ESCB Legal Conference 2026 – Independence, not isolation: central banks and their connections with other authorities",
+    "title_ja": "ECB/ESCB法務会議:中央銀行の独立性と他機関との関係",
+    "title_short": "Central Bank Independence and Law",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-09-28",
+    "date_end": "2026-09-29",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/20260928_ECB_ESCB_legal_conference.en.html",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "101c02b611f5c100",
+    "title": "ECB Conference on Money Markets 2026",
+    "title_ja": "ECB マネーマーケット会議",
+    "title_short": "Money Markets Conference",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-11-05",
+    "date_end": "2026-11-06",
+    "city": "Frankfurt am Main",
+    "url": "https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "60b16817bc2b1505",
+    "title": "Supervision Innovators Conference 2026 – Digital banking, digital supervision: innovation, resilience and scale",
+    "title_ja": "監督イノベーター会議2026:デジタル銀行・デジタル監督",
+    "title_short": "Digital Banking Supervision",
+    "importance": 3,
+    "organizer_short": "ECB",
+    "date_start": "2026-09-23",
+    "date_end": "2026-09-24",
+    "city": "Frankfurt am Main",
+    "url": "https://www.bankingsupervision.europa.eu/press/conferences/html/20260923_Supervision_innovators_conference.en.html",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "50667575954ce30c",
+    "title": "DIW Konjunktur-Lunch – Vorstellung der Herbstprognose",
+    "title_ja": "DIW景気ランチ:秋季予測発表",
+    "title_short": "Autumn Economic Forecast",
+    "importance": 1,
+    "organizer_short": "DIW Berlin",
+    "date_start": "2026-08-31",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.diw.de/de/diw_01.c.1016551.de/veranstaltungen/vorstellung_der_sommerprognose.html",
+    "fields": [
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "0f0e1bab64048635",
+    "title": "Violent Conflict and Cross-Border Lending",
+    "title_ja": "武力紛争と国境を越える融資",
+    "title_short": "Conflict and Cross-Border Lending",
+    "importance": 1,
+    "organizer_short": "IfW Kiel",
+    "date_start": "2026-09-24",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.ifw-kiel.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/violent-conflict-and-cross-border-lending-mikhail-mamonov/",
+    "fields": [
+     "city"
+    ]
+   },
+   {
+    "id": "ccd3b57687dfd27b",
+    "title": "5th Kiel-CEPR Conference on Geoeconomics",
+    "title_ja": "第5回 Kiel-CEPR地経学会議",
+    "title_short": "Geoeconomics Conference",
+    "importance": 3,
+    "organizer_short": "IfW Kiel",
+    "date_start": "2026-11-03",
+    "date_end": "2026-11-04",
+    "city": "Berlin",
+    "url": "https://www.ifw-kiel.de/de/veranstaltungen/konferenzen/geoeconomics-conferences/5th-kiel-cepr-conference-on-geoeconomics/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "9884a4a76208cdb1",
+    "title": "10th SAFE Market Microstructure Conference",
+    "title_ja": "第10回 SAFE市場マイクロストラクチャー会議",
+    "title_short": "Market Microstructure Conference",
+    "importance": 3,
+    "organizer_short": "SAFE",
+    "date_start": "2026-09-18",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://safe-frankfurt.de/news-media/events/event-view/10th-safe-market-microstructure-conference.html",
+    "fields": [
+     "city"
+    ]
+   },
+   {
+    "id": "b4185c508e0be014",
+    "title": "USA: K-Shaped Economy, KI und Trump",
+    "title_ja": "米国:K字型経済・AI・トランプ",
+    "title_short": "US Economy under Trump",
+    "importance": 1,
+    "organizer_short": "CFS",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://gfk-cfs.de/events/lectures/usa-k-shaped-economy-ki-und-trump/",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "da21abcb69a516b7",
+    "title": "Rent and Surplus Value in the Data Economy",
+    "title_ja": "データ経済におけるレントと剰余価値",
+    "title_short": "Data Economy Seminar",
+    "importance": 0,
+    "organizer_short": "ZEW",
+    "date_start": "2026-11-26",
+    "date_end": null,
+    "city": "Mannheim",
+    "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/rent-and-surplus-value-in-the-data-economy/4966",
+    "fields": [
+     "city",
+     "format"
+    ]
+   },
+   {
+    "id": "517e4ef74daec274",
+    "title": "OeNB | SUERF | Joint Vienna Institute | Yale Program on Financial Stability Conference",
+    "title_ja": "OeNB・SUERF・JVI・イェール金融安定プログラム会議",
+    "title_short": "Digital Finance and Central Banks",
+    "importance": 3,
+    "organizer_short": "OeNB",
+    "date_start": "2026-10-05",
+    "date_end": null,
+    "city": "Vienna",
+    "url": "https://www.oenb.at/en/Calendar/2026/2026-10-05-oenb-suerf-jvi-yale-program-on-financial-stability-conference.html",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "4df6eb6df620a715",
+    "title": "NBU Annual Research Conference: Central Banks' Response to Future Challenges – Resilience, Credibility, and Innovation",
+    "title_ja": "NBU年次リサーチ会議:将来の課題への中央銀行の対応",
+    "title_short": "Central Bank Resilience Conference",
+    "importance": 3,
+    "organizer_short": "NBU",
+    "date_start": "2026-09-21",
+    "date_end": "2026-09-22",
+    "city": "Kyiv",
+    "url": "https://bank.gov.ua/en/research/events",
+    "fields": [
+     "format"
+    ]
+   },
+   {
+    "id": "2d173f63acea8db3",
+    "title": "Eurosif Policy & Capacity Building Webinar (December)",
+    "title_ja": "Eurosif政策・能力構築ウェビナー(12月)",
+    "title_short": "Sustainable Finance Policy Webinar",
+    "importance": 1,
+    "organizer_short": "Eurosif",
+    "date_start": "2026-09-22",
+    "date_end": "2026-12-03",
+    "city": null,
+    "url": "https://www.forum-ng.org/en/termine/veranstaltung/eurosif-policy-capacity-building-webinar-1-1",
+    "fields": [
+     "open_to_public"
+    ]
+   },
+   {
+    "id": "f176bbf60cc30849",
+    "title": "6. Jahreskonferenz der Marktoffensive Erneuerbare Energien",
+    "title_ja": "第6回再生可能エネルギー市場攻勢年次会議",
+    "title_short": "Renewable Energy Market Conference",
+    "importance": 3,
+    "organizer_short": "dena",
+    "date_start": "2026-10-15",
+    "date_end": "2026-10-16",
+    "city": "Berlin",
+    "url": "https://veranstaltungen.dena.de/",
+    "fields": [
+     "venue"
+    ]
+   },
+   {
+    "id": "7a2c1f092b6e9b97",
+    "title": "dena Kongress 2026",
+    "title_ja": "dena会議2026",
+    "title_short": "dena Energy Congress",
+    "importance": 3,
+    "organizer_short": "dena",
+    "date_start": "2026-11-09",
+    "date_end": "2026-11-10",
+    "city": "Berlin",
+    "url": "https://veranstaltungen.dena.de/",
+    "fields": [
+     "venue"
+    ]
+   }
+  ],
+  "end": "2026-08-27T05:08:50+02:00",
+  "start": "2026-08-27T04:45:57+02:00"
+ },
+ {
   "date": "2026-08-26",
   "added": [
    {
