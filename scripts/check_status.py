@@ -30,8 +30,9 @@ FAIL_JUMP_THRESHOLD = 5      # 失敗数がこれ以上増えたら警告
 FOUND_DROP_RATIO = 0.40      # 総取得件数がこの割合以上減ったら警告
 FOUND_DROP_MIN_PREV = 20     # 前回の総取得件数がこれ未満なら件数急減の判定をしない
 
-# 2b(死にURL)対応中のエントリは tried: が無くても手順不履行とはみなさない
-TRIED_EXEMPT_MARKERS = ("URL差し替え", "要整理")
+# 2b(死にURL)対応中、および恒常ブロック(fetch_hints の permanent_block。週次でのみ
+# 再確認する)のエントリは tried: が無くても手順不履行とはみなさない
+TRIED_EXEMPT_MARKERS = ("URL差し替え", "要整理", "恒常ブロック")
 
 
 def load_current():

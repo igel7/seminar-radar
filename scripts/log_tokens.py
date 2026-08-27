@@ -165,6 +165,12 @@ def collect(transcript: Path, session_id: str | None) -> dict:
         "total_input_tokens": totals["input_tokens"] + totals["cache_creation_tokens"]
                               + totals["cache_read_tokens"],
         "total_tokens": sum(totals.values()),
+        # 1ターンあたりの平均コンテキストサイズ。この値が肥大している(例: 10万超)場合、
+        # 文脈に大きなファイルや生HTMLを流し込んでいる兆候(AGENTS.md A-3/B の分業が
+        # 機能していない疑い)なので、日次の傾向監視に使う。
+        "avg_context_tokens": round(
+            (totals["input_tokens"] + totals["cache_creation_tokens"]
+             + totals["cache_read_tokens"]) / turns) if turns else 0,
         "web_search_requests": web_search,
         "web_fetch_requests": web_fetch,
         "first_message_at": first_ts,
@@ -209,11 +215,14 @@ def print_summary(limit: int) -> None:
         print("記録がまだありません。")
         return
     print(f"{'date':<12}{'agent':<8}{'turns':>6}{'output':>10}{'cache_read':>12}"
-          f"{'total':>12}")
+          f"{'total':>12}{'ctx/turn':>10}")
     for r in records[-limit:]:
-        print(f"{r.get('date',''):<12}{r.get('agent',''):<8}{r.get('turns',0):>6}"
+        turns = r.get("turns", 0)
+        ctx = r.get("avg_context_tokens") or (
+            round(r.get("total_input_tokens", 0) / turns) if turns else 0)
+        print(f"{r.get('date',''):<12}{r.get('agent',''):<8}{turns:>6}"
               f"{r.get('output_tokens',0):>10,}{r.get('cache_read_tokens',0):>12,}"
-              f"{r.get('total_tokens',0):>12,}")
+              f"{r.get('total_tokens',0):>12,}{ctx:>10,}")
     total = sum(r.get("total_tokens", 0) for r in records[-limit:])
     print(f"{'':<26}{'':>10}{'合計':>12}{total:>12,}")
 

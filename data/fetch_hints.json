@@ -1,5 +1,5 @@
 {
- "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。",
+ "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。 permanent_block: {since, recheck_days, last_recheck} が付いたソースは恒常ブロック扱いで、fetch_all.py が日次取得をスキップし recheck_days ごとに再確認する(運用ルールは AGENTS.md B手順1.5・2a)。",
  "DIW Berlin – Veranstaltungen": {
   "method": "alt-url",
   "alt_urls": [
@@ -43,7 +43,12 @@
   "method": "ua-curl",
   "alt_urls": [],
   "last_ok": "2026-08-08",
-  "note": "403ボット対策は実ブラウザUA付きcurlで通る(継続的な成功実績)"
+  "note": "403ボット対策はua-curlで通っていたが2026-08中旬から200でもJS描画の空殻が恒常化。discoveryの検索クエリ(Frankfurt School Konferenz)で補完する",
+  "permanent_block": {
+   "since": "2026-08-27",
+   "recheck_days": 7,
+   "last_recheck": "2026-08-27"
+  }
  },
  "Bank of Albania – Events": {
   "method": "ua-curl",
@@ -134,7 +139,12 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-08-17",
-  "note": "2026-08上旬からCloudflare 403が恒常化。web検索で代替確認する。掲載は学生向け行事が多く、該当イベント0件(ok:true, found:0)が正常なことが多い"
+  "note": "2026-08上旬からCloudflare 403が恒常化。web検索で代替確認する。掲載は学生向け行事が多く、該当イベント0件(ok:true, found:0)が正常なことが多い",
+  "permanent_block": {
+   "since": "2026-08-27",
+   "recheck_days": 7,
+   "last_recheck": "2026-08-27"
+  }
  },
  "PRI – Principles for Responsible Investment – Events": {
   "method": "search",
@@ -180,5 +190,16 @@
   ],
   "last_ok": "2026-08-19",
   "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
+ },
+ "CEP – Council on Economic Policies (Zürich) – Events": {
+  "method": "search",
+  "alt_urls": [],
+  "last_ok": null,
+  "note": "Cloudflareチャレンジが恒常化(2026-08確認)。無料ウェビナー系はdiscoveryのESGクエリで補完する",
+  "permanent_block": {
+   "since": "2026-08-27",
+   "recheck_days": 7,
+   "last_recheck": "2026-08-27"
+  }
  }
 }

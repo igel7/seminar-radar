@@ -19,6 +19,28 @@ from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
                        load_json, mark_crawl_start, merge, parse_sources, region_ok,
                        render_html, render_ics, split_archive, update_changelog)
 
+KNOWN_FILE = DATA_FILE.parent / "known_events.json"
+
+
+def write_known_digest(events):
+    """巡回エージェント照合用のコンパクトな既知イベント台帳(AGENTS.md B手順2参照)。
+
+    巡回時はこの台帳に照らして「新規または変更のあるイベントだけ」を
+    data/new_events.json に出力する(既知で無変化のイベントは再出力しない)。
+    events.json(774KB超)を直接読ませないための小さな写しであり、
+    ingest.py だけが生成する。1イベント1行のJSONで、grepでも照合できる。"""
+    keys = ("source", "title", "date_start", "date_end", "url")
+    rows = sorted(
+        ({k: ev.get(k) for k in keys} for ev in events),
+        key=lambda r: (r.get("date_start") or "", r.get("title") or ""))
+    body = ",\n  ".join(
+        json.dumps(r, ensure_ascii=False, separators=(", ", ": ")) for r in rows)
+    KNOWN_FILE.write_text(
+        '{\n "_readme": "既知イベントの照合用ダイジェスト。ingest.py が自動生成する。'
+        '直接編集しない。巡回時はここに載っているイベントを new_events.json に再出力しない'
+        '(日付・会場等が変わった場合を除く)。",\n'
+        f' "events": [\n  {body}\n ]\n}}\n', encoding="utf-8")
+
 
 def main():
     # --mark-start: 日次巡回の開始時刻だけを記録して終了する(AGENTS.md 手順1の冒頭)。
@@ -64,6 +86,7 @@ def main():
 
     DATA_FILE.write_text(json.dumps({"events": events}, ensure_ascii=False, indent=1),
                          encoding="utf-8")
+    write_known_digest(events)
 
     # 追加・実質更新の履歴(data/changelog.json)を更新し、HTML埋め込み用の窓を得る。
     changelog = update_changelog(changes)

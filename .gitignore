@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# fetch_all.py のローカル本文キャッシュ(差分検知の状態は data/fetch_state.json 側でコミットされる)
+data/cache/
