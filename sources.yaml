@@ -260,11 +260,15 @@ sources:
     verified: true   # 一覧はJS描画(Liferay)で自動取得不可。旗艦のDubrovnik Economic Conference(毎年5月末)は検索で補完
 
   - name: "BNB – Bulgarian National Bank – Events"
-    url: "https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm?toLang=_EN"
+    url: "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
     category: cb
-    verified: true   # 2026-08-17差し替え(ユーザーがブラウザ表示を確認した英語版イベントページ)。
-                     # 注意: 実行環境からのcurlではソフト404(「システムエラー」ページ)が返る。
-                     # 巡回は fetch_hints の代替URL(プレス発表アーカイブ)を使うこと。イベント自体が稀
+    verified: true   # 2026-08-28差し替え。旧: https://www.bnb.bg/NewsAndEvents/NEEvents/index.htm?toLang=_EN
+                     # (サイト再構築で NewsAndEvents セクション自体が廃止され、BG/ENともソフト404
+                     # 「Възникна системна грешка / System error! non-existing address」になった。
+                     # ブラウザでも同様なのを2026-08-28に確認)。イベント専用ページは新構造に存在せず、
+                     # 会議告知はプレス発表に出るため、プレス発表アーカイブ(年別一覧)を定点とする。
+                     # 英語版は ?toLang=_EN が無効化され、Cookie「userLanguage=EN」方式に変更された
+                     # (個別記事は末尾 _BG/_EN の対ページあり)。巡回はBG版で可。イベント自体が稀
 
   - name: "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)"
     url: "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/"

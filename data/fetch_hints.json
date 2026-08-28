@@ -175,8 +175,8 @@
   "alt_urls": [
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
   ],
-  "last_ok": "2026-08-19",
-  "note": "sources.yamlの英語版イベントURL(?toLang=_EN)はブラウザでは表示できるが、curl/WebFetchからはソフト404(本文が「Възникна системна грешка」)になる。巡回はプレス発表アーカイブ(年別一覧)を読む。会議告知はプレス発表に出る。イベント自体が稀で found:0 が正常"
+  "last_ok": "2026-08-28",
+  "note": "2026-08-28: サイト再構築で旧 NewsAndEvents/NEEvents はBG/ENともソフト404(廃止)を確認し、sources.yaml のURLをプレス発表アーカイブ(年別一覧)に差し替え済み(main URL=alt URLになったので直接取得で通る)。英語版は ?toLang=_EN が無効になり Cookie「userLanguage=EN」方式(個別記事は末尾 _BG/_EN の対ページ)。会議告知はプレス発表に出る。イベント自体が稀で found:0 が正常"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
   "method": "alt-url",
