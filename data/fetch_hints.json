@@ -10,28 +10,28 @@
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
-  "alt_urls": [
-   "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences"
-  ],
+  "alt_urls": [],
   "last_ok": "2026-08-17",
-  "note": "トップの一覧はJS描画で空。CESifo会議一覧ページと site:ifo.de 検索で個別イベントページ(/veranstaltung/... 形式)を拾う。毎日1〜9件の回収実績あり"
+  "note": "一覧はJS描画で直接取得不可。alt_urls の CESifo会議一覧は独立ソース『CESifo (München) – Veranstaltungen』と重複のため2026-08-28に削除。site:ifo.de veranstaltung 検索で補完する"
  },
  "RWI Essen – Veranstaltungen": {
   "method": "alt-url",
   "alt_urls": [
    "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
-   "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar"
+   "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar",
+   "https://www.rwi-essen.de/en/events/"
   ],
   "last_ok": "2026-08-19",
-  "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる"
+  "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる / 2026-08-28: 英語の全イベント一覧 /en/events/ を追加(研究セミナー系ページだけでは他イベントを取りこぼすため)"
  },
  "IMFS Frankfurt – 全ての今後のイベント": {
   "method": "ua-curl",
   "alt_urls": [
-   "https://www.imfs-frankfurt.de/en/events/imfs-conferences/"
+   "https://www.imfs-frankfurt.de/en/events/imfs-conferences/",
+   "https://www.imfs-frankfurt.de/en/events/imfs-distinguished-lectures/"
   ],
   "last_ok": "2026-08-08",
-  "note": "一覧はJS描画。カテゴリ別サブページを実ブラウザUA付きcurlで辿る"
+  "note": "一覧はJS描画。カテゴリ別サブページを実ブラウザUA付きcurlで辿る / 2026-08-28: distinguished-lectures のカテゴリページを追加(実在・イベント掲載を確認)"
  },
  "SUERF – Events": {
   "method": "ua-curl",
@@ -89,11 +89,9 @@
  },
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
-  "alt_urls": [
-   "https://cebra.org/cfp-6th-biennial-conference-on-macroeconomic-policy/"
-  ],
+  "alt_urls": [],
   "last_ok": "2026-08-19",
-  "note": "nbp.pl は Imperva WAF で直接取得不可(UA偽装でも不可)。共催機関(CEBRA等)のページと web 検索で回収する運用が確立している"
+  "note": "Imperva系ボット対策で直接取得不可。alt_urls に入っていた CEBRA の単一CfPページは2026-08-28に削除(一覧の代わりに固定化し新規検知を塞ぐため)。site:nbp.pl 検索と共催先(CEBRA等)の告知で補完する"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
