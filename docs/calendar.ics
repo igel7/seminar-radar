@@ -844,14 +844,6 @@ LOCATION:Frankfurt am Main
 DESCRIPTION:コーポレートベンチャーキャピタルや機関投資家によるベンチャー市場への関与をテーマとするフランクフルト・スクール主催の催し。 / 主催: Frankfurt School of Finance & Management / https://forum.frankfurt-school.de/konferenzen/
 END:VEVENT
 BEGIN:VEVENT
-UID:2d08fb7498200538@seminar-radar
-DTSTART;VALUE=DATE:20260729
-DTEND;VALUE=DATE:20260730
-SUMMARY:Cluster-Seminar Öffentliche Finanzen und Lebenslagen
-LOCATION:Berlin
-DESCRIPTION:公共財政と生活状況をテーマにしたDIWベルリンの内部研究セミナー。ミア・テシュナー=ホフマン氏が報告。 / 主催: DIW Berlin / https://www.diw.de/de/diw_01.c.1006521.de/veranstaltungen/cluster-seminar_oeffentliche_finanzen_und_lebenslagen.html
-END:VEVENT
-BEGIN:VEVENT
 UID:2d287d40a92b3398@seminar-radar
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261121
@@ -3210,5 +3202,13 @@ DTEND;VALUE=DATE:20261028
 SUMMARY:Bundeshaushalt und Schuldenbremse: Wohin geht die Reise?
 LOCATION:Nuremberg
 DESCRIPTION:ドイツ連邦銀行バイエルン本部が主催する市民向け講演会。連邦予算と憲法上の債務ブレーキ(Schuldenbremse)の今後の展望について、専門家が解説する。 / 主催: Deutsche Bundesbank\, Hauptverwaltung Bayern / https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen
+END:VEVENT
+BEGIN:VEVENT
+UID:1d036f2a355a6196@seminar-radar
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261107
+SUMMARY:Aktuelle Entwicklungen und Tendenzen im Zahlungsverkehr
+LOCATION:Frankfurt am Main
+DESCRIPTION:ドイツ銀行協会(BdB)傘下のBankenakademieが開催する決済分野の専門会議。決済インフラ・カード事業・ITの最新動向を扱う。 / 主催: Bankenakademie (Bundesverband deutscher Banken) / https://bankenakademie.de/de/services/zahlungsverkehr-2026/
 END:VEVENT
 END:VCALENDAR

@@ -5,8 +5,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-08-18",
-  "note": "元URL(diw.de)がWebFetchで503、UA付きcurlでも403のときは同一内容の代替ドメイン diw-berlin.de で取得できる(2026-08-18に確認)"
+  "last_ok": "2026-08-29",
+  "note": "元URL(diw.de)がWebFetchで503、UA付きcurlでも403のときは同一内容の代替ドメイン diw-berlin.de で取得できる(2026-08-18に確認)。2026-08-29: 逆にcurl/UA付きcurlが両URLとも403だった日にWebFetchツールでは元URL・代替URLとも取得成功。手段を1つに固定せず両方(curl系・WebFetch)を試す"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -90,13 +90,13 @@
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
   "alt_urls": [],
-  "last_ok": "2026-08-19",
+  "last_ok": "2026-08-29",
   "note": "Imperva系ボット対策で直接取得不可。alt_urls に入っていた CEBRA の単一CfPページは2026-08-28に削除(一覧の代わりに固定化し新規検知を塞ぐため)。site:nbp.pl 検索と共催先(CEBRA等)の告知で補完する"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-08-19",
+  "last_ok": "2026-08-29",
   "note": "Cloudflareで一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索で個別ウェビナーページ(例 /oct-inst-webinar)を探すと拾えることがある"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
@@ -119,7 +119,7 @@
  "Bank of Lithuania – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-08-06",
+  "last_ok": "2026-08-29",
   "note": "サイト全体がCloudflareで403(UA偽装でも不可)。site:lb.lt のweb検索で個別イベント(例 Baltic Digital Euro Conference)を回収した実績あり。駄目な日も多い(INBOX対象)"
  },
  "HNB – Croatian National Bank – Conferences": {
@@ -144,7 +144,7 @@
   "alt_urls": [
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
-  "last_ok": "2026-08-27",
+  "last_ok": "2026-08-29",
   "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。公開ミラーpublic.unpri.orgは2026-08-19からHTTP 405が継続(2026-08-27再確認)。年次会議の特設サイト(pip2026.unpri.org)は直接取得可。ロンドン・アムステルダム等の域外開催が多く、オンライン/対象地域分のみ収載"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
@@ -161,12 +161,12 @@
   "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
  },
  "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
-  "method": "search",
+  "method": "webfetch",
   "alt_urls": [
    "https://www.iwkoeln.de/institut/veranstaltungen.html"
   ],
-  "last_ok": null,
-  "note": "正しい一覧URLは /institut/veranstaltungen.html(2026-08-17ユーザー提供)だが、実行環境からはUA偽装でも401継続(2026-08-27: RSS・sitemapも401、Waybackは2025-12断面で古い)。site:iwkoeln.de Veranstaltung 検索で個別ページを探すか、INBOXの手動取込で補完する"
+  "last_ok": "2026-08-29",
+  "note": "正しい一覧URLは /institut/veranstaltungen.html(2026-08-17ユーザー提供)。curl・UA偽装curl・RSS・sitemapは401継続(2026-08-27確認)だが、2026-08-29にWebFetchツールで元URL・/en/institute/events.html とも取得成功(401解消)。ダメな日はsite:iwkoeln.de Veranstaltung 検索かINBOXの手動取込で補完する"
  },
  "BNB – Bulgarian National Bank – Events": {
   "method": "alt-url",
@@ -183,6 +183,14 @@
   ],
   "last_ok": "2026-08-19",
   "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
+ },
+ "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
+  "method": "search",
+  "alt_urls": [
+   "https://www.ewi.uni-koeln.de/de/ewi-energietagung/"
+  ],
+  "last_ok": "2026-08-29",
+  "note": "元URL(/de/veranstaltungen/)はサーバ側500エラーが出ることがある。site:ewi.uni-koeln.de 検索、または旗艦イベント EWI-Energietagung の専用ページで日程を確認する(2026-08-29に確認)"
  },
  "CEP – Council on Economic Policies (Zürich) – Events": {
   "method": "ua-curl",
