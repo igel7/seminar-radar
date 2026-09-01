@@ -428,14 +428,6 @@ LOCATION:Frankfurt am Main
 DESCRIPTION:「サステナブルファイナンス:金融と実体経済の架け橋」をテーマに、企業と金融業界の連携によるドイツ経済の変革を議論する旗艦サミット。 / 主催: Sustainable Finance Cluster / Frankfurt School / https://www.forum-ng.org/en/termine/veranstaltung/sustainable-finance-cluster-sustainable-finance-gipfel
 END:VEVENT
 BEGIN:VEVENT
-UID:db24579a0752dfed@seminar-radar
-DTSTART;VALUE=DATE:20260726
-DTEND;VALUE=DATE:20260801
-SUMMARY:European Summer Symposium in Financial Markets (ESSFM) 2026
-LOCATION:Gerzensee
-DESCRIPTION:CEPRが主催する金融市場研究者向けの夏季シンポジウムで、ゲルツェンゼー研究センターで毎年開催される。 / 主催: CEPR / https://www.szgerzensee.ch/programs/conferences-events/detail/european-summer-symposium-in-financial-markets-essfm
-END:VEVENT
-BEGIN:VEVENT
 UID:dfce49b089a780ff@seminar-radar
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
@@ -506,14 +498,6 @@ DTEND;VALUE=DATE:20261101
 SUMMARY:Macroeconomic Policy (Study Center Gerzensee)
 LOCATION:Gerzensee
 DESCRIPTION:マクロ経済政策をテーマとするゲルツェンゼー研究センターのイベント。 / 主催: Study Center Gerzensee / https://www.szgerzensee.ch/programs/conferences-events/detail/macroeconomic-policy
-END:VEVENT
-BEGIN:VEVENT
-UID:0d1734f32f70f4a0@seminar-radar
-DTSTART;VALUE=DATE:20260726
-DTEND;VALUE=DATE:20260801
-SUMMARY:3rd Frankfurt Summer School
-LOCATION:Eltville am Rhein
-DESCRIPTION:ファイナンスとマクロ経済学の2トラックで著名研究者が講義する、独ブンデスバンク・SAFE・IWH共催のサマースクール。 / 主催: Deutsche Bundesbank\, Leibniz Institute for Financial Research SAFE\, Halle Institute for Economic Research (IWH) / https://www.bundesbank.de/en/bundesbank/research/conferences/3rd-frankfurt-summer-school-993816
 END:VEVENT
 BEGIN:VEVENT
 UID:1512bfb06575d2bd@seminar-radar
@@ -769,7 +753,7 @@ DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260916
 SUMMARY:Webinar: OCT Inst in Action
 LOCATION:
-DESCRIPTION:SEPA域外の即時決済を広げるOCT Instスキームの実装事例を紹介するEPCのウェビナー。 / 主催: European Payments Council / https://www.europeanpaymentscouncil.eu/oct-inst-webinar
+DESCRIPTION:One-Leg Out Instant Credit Transfer(OCT Inst)スキームによる、SEPA域外を含む即時決済の拡大について解説するウェビナー。 / 主催: European Payments Council (EPC) / https://www.europeanpaymentscouncil.eu/oct-inst-webinar
 END:VEVENT
 BEGIN:VEVENT
 UID:7552b9bd644a7a4c@seminar-radar
@@ -799,9 +783,9 @@ BEGIN:VEVENT
 UID:fe3c19ea942cb2e2@seminar-radar
 DTSTART;VALUE=DATE:20260924
 DTEND;VALUE=DATE:20260926
-SUMMARY:6th International Research Conference
+SUMMARY:6th International Research Conference (Bank of Lithuania / Narodowy Bank Polski)
 LOCATION:Vilnius
-DESCRIPTION:リトアニア銀行とポーランド国立銀行共催、CEBRA後援で2年に一度開催される第6回国際研究会議。中央銀行・金融機関・学界の専門家が集う。 / 主催: Lietuvos bankas and Narodowy Bank Polski / https://www.lb.lt/en/events
+DESCRIPTION:リトアニア銀行とポーランド国立銀行が共催する国際リサーチ・カンファレンス第6回。 / 主催: Bank of Lithuania / Narodowy Bank Polski / CEBRA / https://www.lb.lt/en/events
 END:VEVENT
 BEGIN:VEVENT
 UID:0e70d0035a1f1098@seminar-radar
@@ -985,7 +969,7 @@ DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270116
 SUMMARY:EWI-Energietagung 2027
 LOCATION:Cologne
-DESCRIPTION:エネルギー経済分野の研究発表とパネル討論を行うEWIの旗艦カンファレンス。 / 主催: EWI – Energiewirtschaftliches Institut an der Universität zu Köln / https://www.ewi.uni-koeln.de/de/ewi-energietagung/
+DESCRIPTION:EWI(ケルン大学エネルギー経済研究所)が毎年開催するエネルギー産業カンファレンス。 / 主催: Energiewirtschaftliches Institut an der Universität zu Köln (EWI) / https://www.ewi.uni-koeln.de/de/ewi-energietagung/
 END:VEVENT
 BEGIN:VEVENT
 UID:d167bcfe5d2359fe@seminar-radar
@@ -1927,9 +1911,9 @@ BEGIN:VEVENT
 UID:75f99f8ac7dd1b26@seminar-radar
 DTSTART;VALUE=DATE:20271021
 DTEND;VALUE=DATE:20271022
-SUMMARY:Conference on the Use of Financial Statements for Compiling Official Statistics
+SUMMARY:Conference on Use of Financial Statements for Compiling Official Statistics
 LOCATION:
-DESCRIPTION:企業財務諸表を公式統計作成に活用する手法を議論する会議。 / 主催: Irving Fisher Committee on Central Bank Statistics (BIS) / ECCBSO / National Bank of Belgium / https://www.bis.org/ifc/events.htm
+DESCRIPTION:財務諸表データを公的統計の作成に活用する手法をテーマとする、BIS傘下の中央銀行統計委員会(IFC)主催の会議。 / 主催: Irving Fisher Committee on Central Bank Statistics (IFC)\, Bank for International Settlements / https://www.bis.org/events/20271021-conference-use-financial-statements-compiling-official-statistics
 END:VEVENT
 BEGIN:VEVENT
 UID:1faaef0c7f1b375a@seminar-radar
@@ -2943,9 +2927,9 @@ BEGIN:VEVENT
 UID:deb45d67cd96dcbc@seminar-radar
 DTSTART;VALUE=DATE:20260922
 DTEND;VALUE=DATE:20260924
-SUMMARY:AIDAQ – AI\, Data & Quantum
+SUMMARY:AiDAQ – AI\, Data and Quantum Summit Berlin
 LOCATION:Berlin
-DESCRIPTION:AI・データ・量子技術をテーマとするBitkom主催のカンファレンス。 / 主催: Bitkom / https://aidaq.berlin/
+DESCRIPTION:ベルリンで開催される「AiDAQ」は、AI・データ・量子コンピューティングの最新動向を扱う欧州主要サミット。産業界・政界・学界のトップリーダーが集い、appliedAI Instituteも参加予定。 / 主催: Bitkom / https://aidaq.berlin/
 END:VEVENT
 BEGIN:VEVENT
 UID:2004bee8800a6b3c@seminar-radar
@@ -3202,5 +3186,85 @@ DTEND;VALUE=DATE:20270205
 SUMMARY:Sanctions & Export Compliance in Europe Conference
 LOCATION:Düsseldorf
 DESCRIPTION:欧州における対ロシア制裁・輸出管理コンプライアンスの実務動向と執行トレンドを扱う専門家向け会議。デュッセルドルフで開催。 / 主催: Nielsonsmith / https://nielsonsmith.com/events/sanctions-export-compliance-in-europe-conference/
+END:VEVENT
+BEGIN:VEVENT
+UID:4cfd5e58bc5c00da@seminar-radar
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+SUMMARY:In conversation with Austan Goolsbee: Monetary policy in an uncertain world
+LOCATION:
+DESCRIPTION:OMFIFの「Conversations with the governor」シリーズとして、Austan Goolsbee氏を招き、インフレリスク下での金融政策運営について語り合う。 / 主催: OMFIF / https://www.omfif.org/meetings/in-conversation-with-austan-goolsbee-monetary-policy-in-an-uncertain-world/
+END:VEVENT
+BEGIN:VEVENT
+UID:716564e9073b00a4@seminar-radar
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:Japamburg Dialogue: Hamburg x Osaka No. 4
+LOCATION:Hamburg
+DESCRIPTION:ハンブルクと大阪を結ぶ日独都市間対話イベント。市場参入、都市間パートナーシップ、スタートアップ・エコシステムをテーマに経済交流を図る。 / 主催: Deutsch-Japanischer Wirtschaftskreis (DJW) / https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/japamburg-dialogue-hamburg-x-osaka-no-4
+END:VEVENT
+BEGIN:VEVENT
+UID:71c5694a6eac7994@seminar-radar
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:Affordable transition of industry and heating
+LOCATION:
+DESCRIPTION:産業部門と暖房分野の脱炭素化を、コストを抑えつつ進める方法をテーマにしたオンラインウェビナー。 / 主催: dena (Deutsche Energie-Agentur) / https://veranstaltungen.dena.de/
+END:VEVENT
+BEGIN:VEVENT
+UID:74c116615c677585@seminar-radar
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:Monetary policy and Europe's economic outlook
+LOCATION:
+DESCRIPTION:OMFIFのライブ配信企画で、フィンランド銀行総裁オッリ・レーン氏を招き、ECBの金融政策運営とユーロ圏経済の先行きについて議論する。 / 主催: OMFIF / https://www.omfif.org/meetings/monetary-policy-and-europes-economic-outlook/
+END:VEVENT
+BEGIN:VEVENT
+UID:c10e8049a63077a2@seminar-radar
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261003
+SUMMARY:TSI Congress 2026
+LOCATION:Berlin
+DESCRIPTION:証券化・資産担保金融をテーマとする20周年記念のTSI会議。資本市場政策、ABS市場動向、規制・トークナイゼーションを議論する。 / 主催: True Sale International GmbH / https://www.tsi-kongress.de/
+END:VEVENT
+BEGIN:VEVENT
+UID:cb19f29e3e199dcd@seminar-radar
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+SUMMARY:The path to tripling renewables: diagnosing barriers\, delivering solutions
+LOCATION:
+DESCRIPTION:再生可能エネルギー導入量を3倍にする上での障壁と解決策について議論するウェビナー。 / 主催: Agora Energiewende / https://www.inettt.org/training-events/the-path-to-tripling-renewables-diagnosing-barriers-delivering-solutions-1
+END:VEVENT
+BEGIN:VEVENT
+UID:cb28b312c3b6ec77@seminar-radar
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:Money Disrupted: AI\, capital markets and financial stability
+LOCATION:
+DESCRIPTION:OMFIFの月例ラウンドテーブル「Money Disrupted」の回として、AIが資本市場と金融安定に及ぼす影響を、経済の分断や地政学的変化という文脈の中で議論する。 / 主催: OMFIF / https://www.omfif.org/meetings/money-disrupted-ai-capital-markets-and-financial-stability/
+END:VEVENT
+BEGIN:VEVENT
+UID:de80afd69f923c24@seminar-radar
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:85. Deutsch-Japanische Wirtschaftsgespräche
+LOCATION:Frankfurt am Main
+DESCRIPTION:DJW、DJGフランクフルト、法人会フランクフルトの共催による第85回日独経済懇談会。日独間の経済交流を目的とする定例会合。 / 主催: DJW / DJG Frankfurt / Hojinkai Frankfurt / https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/85-deutsch-japanische-wirtschaftsgespraeche
+END:VEVENT
+BEGIN:VEVENT
+UID:f10c5d7f4133fdbd@seminar-radar
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+SUMMARY:Two Wars\, One Theater: Ukraine\, Iran\, and the United States
+LOCATION:
+DESCRIPTION:DGAPのモーニングブリーフィングで、ウクライナ戦争とイラン・中東情勢という『二つの戦争』が米国の外交政策に与える影響について議論する。 / 主催: Deutsche Gesellschaft für Auswärtige Politik (DGAP) / https://dgap.org/en/events/dgaps-morning-briefing-27
+END:VEVENT
+BEGIN:VEVENT
+UID:fcc6140f561738d6@seminar-radar
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:Nature-related Sustainable Finance Regulation in China and the EU
+LOCATION:
+DESCRIPTION:このウェビナーは、自然関連のプルーデンシャル規制をめぐる動向を、特に中国とEUの展開に焦点を当てて解説する。最近公表された政策ブリーフの知見を紹介し、両法域の規制アプローチの進展を検討する。 / 主催: UNEP FI / https://www.unepfi.org/regions/asia-pacific/nature-related-sustainable-finance-regulation-in-china-and-the-eu/
 END:VEVENT
 END:VCALENDAR
