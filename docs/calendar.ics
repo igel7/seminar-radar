@@ -167,9 +167,9 @@ BEGIN:VEVENT
 UID:2504c4ba5a955028@seminar-radar
 DTSTART;VALUE=DATE:20260902
 DTEND;VALUE=DATE:20260904
-SUMMARY:Handelsblatt Banken-Gipfel 2026
+SUMMARY:Handelsblatt Banking Summit 2026
 LOCATION:Frankfurt am Main
-DESCRIPTION:「新世界秩序の中での銀行業」をテーマに、政治・金融界の要人がフランクフルトで銀行業の将来と老後資産形成などを議論する会議。 / 主催: Handelsblatt / Bundesverband deutscher Banken / https://bankenverband.de/veranstaltungen/handelsblatt-banken-gipfel-2026
+DESCRIPTION:Handelsblatt主催の銀行業界サミット。構造変化、地政学リスク、与信リスクの高まり、デジタル破壊など銀行・フィンテック業界の課題を政界・規制当局・金融界のリーダーが議論する。 / 主催: Handelsblatt / Euroforum / https://live.handelsblatt.com/en/event/handelsblatt-banks-summit/
 END:VEVENT
 BEGIN:VEVENT
 UID:041792b240dc2997@seminar-radar
@@ -3266,5 +3266,21 @@ DTEND;VALUE=DATE:20261020
 SUMMARY:Nature-related Sustainable Finance Regulation in China and the EU
 LOCATION:
 DESCRIPTION:このウェビナーは、自然関連のプルーデンシャル規制をめぐる動向を、特に中国とEUの展開に焦点を当てて解説する。最近公表された政策ブリーフの知見を紹介し、両法域の規制アプローチの進展を検討する。 / 主催: UNEP FI / https://www.unepfi.org/regions/asia-pacific/nature-related-sustainable-finance-regulation-in-china-and-the-eu/
+END:VEVENT
+BEGIN:VEVENT
+UID:3f595568b3f33e5d@seminar-radar
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261003
+SUMMARY:Annual Conference on Sustainable Finance and Corporate Sustainability in the EU
+LOCATION:Trier
+DESCRIPTION:EUのサステナブルファイナンス規制と企業サステナビリティ報告に関する年次会議。トリーアのERA(欧州法アカデミー)で開催され、対面・オンライン双方で参加可能。 / 主催: ERA – Academy of European Law / https://www.era.int/event/annual-conference-on-sustainable-finance-and-corporate-sustainability-in-the-eu/
+END:VEVENT
+BEGIN:VEVENT
+UID:9586a4e2a6016fc3@seminar-radar
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+SUMMARY:6th Annual FinCrime Leaders Summit DACH
+LOCATION:Frankfurt am Main
+DESCRIPTION:ドイツ語圏(DACH)の銀行・フィンテック・規制当局の実務者が集うマネーロンダリング対策・金融犯罪対策のサミット。フランクフルトで開催。 / 主催: Transform Finance / https://infosec-conferences.com/event/20260903-annual-fincrime-leaders-summit-dach-2026/
 END:VEVENT
 END:VCALENDAR
