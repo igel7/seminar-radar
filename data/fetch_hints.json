@@ -129,15 +129,10 @@
     "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い"
   },
   "Jacques Delors Centre (Hertie School, Berlin) – Events": {
-    "method": "search",
+    "method": "webfetch",
     "alt_urls": [],
-    "last_ok": "2026-08-27",
-    "note": "2026-08上旬からCloudflare 401/403が恒常化(hertie-school.org本体も同型のボットチェック)。web検索(site:delorscentre.eu event)で代替確認する運用が有効(2026-08-27にElderson講演を回収)。掲載は学生向け行事が多く、該当0件が正常なことが多い",
-    "permanent_block": {
-      "since": "2026-08-27",
-      "recheck_days": 7,
-      "last_recheck": "2026-08-27"
-    }
+    "last_ok": "2026-09-03",
+    "note": "2026-09-03: 恒常ブロック解除。fetch_all.pyの通常取得(実ブラウザUA相当)でイベント一覧が実際に読める状態に復旧を確認(Fewer Rules or Fewer Borders 9/8、Meet the Jacques Delors Centre 9/30、いずれも既知)。再びブロックされた場合はsite:delorscentre.eu event検索で代替する。"
   },
   "PRI – Principles for Responsible Investment – Events": {
     "method": "search",

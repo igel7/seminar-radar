@@ -585,7 +585,7 @@ DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261126
 SUMMARY:20th South-Eastern European Economic Research Workshop
 LOCATION:Tirana
-DESCRIPTION:アルバニア銀行主催の地域研究ワークショップ。「不確実性が高まる世界における金融政策・金融安定・AI」をテーマに、南東欧の中央銀行や大学の研究者が報告を行う。 / 主催: Bank of Albania / https://cebra.org/call-for-papers-20th-south-eastern-european-economic-research-workshop-bank-of-albania/
+DESCRIPTION:アルバニア中央銀行主催の東南欧経済研究ワークショップ第20回。学術研究発表とネットワーキング。 / 主催: Bank of Albania / https://www.bankofalbania.org/Shtypi/Njoftimet_per_shtyp/Thirrje_p_e_r_aplikime_Workshop-i_XX_i_K_e_rkimeve_Ekonomike_p_e_r_Evrop_e_n_Juglindore_Tiran_e_24-25_n_e_ntor_2026.html
 END:VEVENT
 BEGIN:VEVENT
 UID:0a2c56acba318766@seminar-radar
@@ -593,7 +593,7 @@ DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261128
 SUMMARY:Firms\, Workers\, and Households in Times of Crisis and Digital Transformation
 LOCATION:Berlin
-DESCRIPTION:危機とデジタル変革下の企業・労働者・家計の行動を扱うDIWのワークショップ。 / 主催: DIW Berlin / https://www.diw.de/de/diw_01.c.1005030.de/veranstaltungen/firms__workers__and_households_in_times_of_crisis_and_digital_transformation.html
+DESCRIPTION:危機とデジタル化が企業・労働者・家計に与える影響を議論するSOEP-LEE2プロジェクトの国際ワークショップ。Christian Dustmann氏ら3名の基調講演を予定。 / 主催: DIW Berlin (SOEP) / Europa-Universität Flensburg / Helmut-Schmidt-Universität Hamburg / https://www.diw.de/de/diw_01.c.1005030.de/veranstaltungen/firms_workers_and_households_in_crisis.html
 END:VEVENT
 BEGIN:VEVENT
 UID:0c2b579ec75ee8d7@seminar-radar
@@ -3255,9 +3255,9 @@ BEGIN:VEVENT
 UID:f10c5d7f4133fdbd@seminar-radar
 DTSTART;VALUE=DATE:20260903
 DTEND;VALUE=DATE:20260904
-SUMMARY:Two Wars\, One Theater: Ukraine\, Iran\, and the United States
+SUMMARY:DGAP's Morning Briefing: Two Wars\, One Theater: Ukraine\, Iran\, and the United States
 LOCATION:
-DESCRIPTION:DGAPのモーニングブリーフィングで、ウクライナ戦争とイラン・中東情勢という『二つの戦争』が米国の外交政策に与える影響について議論する。 / 主催: Deutsche Gesellschaft für Auswärtige Politik (DGAP) / https://dgap.org/en/events/dgaps-morning-briefing-27
+DESCRIPTION:ウクライナとイランを巡る二つの戦争が米国の外交政策に与える影響を論じるDGAPのオンライン朝ブリーフィング。 / 主催: DGAP / https://dgap.org/en/events/dgaps-morning-briefing-27
 END:VEVENT
 BEGIN:VEVENT
 UID:fcc6140f561738d6@seminar-radar
@@ -3282,5 +3282,13 @@ DTEND;VALUE=DATE:20260904
 SUMMARY:6th Annual FinCrime Leaders Summit DACH
 LOCATION:Frankfurt am Main
 DESCRIPTION:ドイツ語圏(DACH)の銀行・フィンテック・規制当局の実務者が集うマネーロンダリング対策・金融犯罪対策のサミット。フランクフルトで開催。 / 主催: Transform Finance / https://infosec-conferences.com/event/20260903-annual-fincrime-leaders-summit-dach-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:3759b818a6192b71@seminar-radar
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+SUMMARY:Europas Weg zur finanziellen Souveränität – International Bankers Forum
+LOCATION:Hamburg
+DESCRIPTION:国際銀行家フォーラムでのブンデスバンク理事フリッツィ・ケーラー=ガイプ氏による講演「Future of Finance」。欧州の金融主権への道筋を論じる。 / 主催: International Bankers Forum / Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine
 END:VEVENT
 END:VCALENDAR
