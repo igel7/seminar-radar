@@ -438,5 +438,34 @@
     "turns": 99
    }
   }
+ },
+ {
+  "date": "2026-09-04",
+  "agent": "claude",
+  "recorded_at": "2026-09-04T04:58:22+02:00",
+  "partial": true,
+  "session_id": "21f5aec5-59c2-5631-9490-60634a4e213e",
+  "turns": 178,
+  "sidechain_turns": 0,
+  "input_tokens": 356,
+  "cache_creation_tokens": 497394,
+  "cache_read_tokens": 31535196,
+  "output_tokens": 207073,
+  "total_input_tokens": 32032946,
+  "total_tokens": 32240019,
+  "avg_context_tokens": 179960,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "first_message_at": "2026-09-04T02:45:21.893Z",
+  "last_message_at": "2026-09-04T02:58:20.939Z",
+  "models": {
+   "claude-sonnet-5": {
+    "input_tokens": 356,
+    "cache_creation_tokens": 497394,
+    "cache_read_tokens": 31535196,
+    "output_tokens": 207073,
+    "turns": 178
+   }
+  }
  }
 ]
