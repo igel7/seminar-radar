@@ -4,34 +4,36 @@
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
   "found": 0,
-  "note": "掲載ページはナビゲーションのみでイベント一覧なし"
+  "note": "Newsタブ(News/Press)は変化したがEventsタブ(alt_url)は変化なし。今回変化したページに収載対象イベントなし"
  },
  {
   "name": "Bank of Albania – Events",
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
-  "found": 1
+  "found": 1,
+  "note": "既知のみ(Workshop XX: Economic Research for Southeast Europe, Tirana)"
  },
  {
   "name": "CEP – Council on Economic Policies (Zürich) – Events",
   "url": "https://www.cepweb.org/events/",
   "ok": true,
-  "found": 1,
-  "note": "北京・香港・ブリュッセル開催分は対象地域外のため除外"
+  "found": 0,
+  "note": "北京・香港開催分は対象地域外のため除外。オンライン分(9/3開催)は実行日より前のため除外"
  },
  {
   "name": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
   "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/",
   "ok": true,
-  "found": 11,
-  "note": "既知が中心。東京開催分は対象地域外のため除外"
+  "found": 8,
+  "note": "既知のみ。Informal Exchange(社交行事)・Yoru no Kai(ポップカルチャー/ソフトパワー、経済テーマ非該当)は対象外",
+  "error": "代替手段: WebFetchで取得成功(fetch_allはNET-ERR)。tried: fetch, ua-curl, hints"
  },
  {
   "name": "Deutsche Börse Group – Veranstaltungen",
   "url": "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen",
   "ok": true,
-  "found": 0,
-  "note": "Global Fund Summit 2026はルクセンブルク開催のため対象地域外"
+  "found": 2,
+  "note": "既知のみ(Open Day 2026, ETF-Forum 2026)。Global Fund Summit 2026はルクセンブルク開催のため対象地域外"
  },
  {
   "name": "ESMA – Public Hearings",
@@ -44,7 +46,7 @@
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "https://www.eu-japan.eu/tags/webinar",
   "ok": true,
-  "found": 3,
+  "found": 1,
   "note": "既知のみ"
  },
  {
@@ -65,8 +67,8 @@
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "https://forum.frankfurt-school.de/konferenzen/",
   "ok": true,
-  "found": 19,
-  "note": "既知が中心"
+  "found": 14,
+  "note": "既知のみ"
  },
  {
   "name": "Green and Sustainable Finance Cluster Germany (Frankfurt)",
@@ -85,7 +87,8 @@
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre",
   "ok": true,
-  "found": 3
+  "found": 3,
+  "note": "既知のみ"
  },
  {
   "name": "Latvijas Banka – Research/Events",
@@ -132,7 +135,8 @@
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "https://www.wu.ac.at/en/the-university/events",
   "ok": true,
-  "found": 3
+  "found": 6,
+  "note": "既知のみ(経済学部関連分)"
  },
  {
   "name": "ZEW Mannheim – Veranstaltungen",
@@ -146,7 +150,7 @@
   "url": "https://veranstaltungen.dena.de/",
   "ok": true,
   "found": 3,
-  "note": "既知のみ"
+  "note": "変化があったのはapi/media/any(ニュース記事中心、切り詰めのためイベント種別は不可視)のみ。実績のあるveranstaltungen.dena.deページ側は変化なしのため前回のfoundを引き継ぎ"
  },
  {
   "name": "dfv Euro Finance Group (Frankfurt) – Executive Events",
@@ -166,17 +170,17 @@
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
   "ok": true,
-  "found": 2,
+  "found": 1,
   "error": "代替手段: web検索(site:lb.lt)。サイト本体はCloudflareで403(UA偽装でも不可)。tried: fetch, ua-curl, hints, search",
-  "note": "既知のみ(5th Annual Lithuanian Conference, 6th International Research Conference)"
+  "note": "既知のみ(5th Annual Lithuanian Conference on Economic Research)"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
-  "found": 18,
+  "found": 17,
   "error": "代替手段: WebFetchで元URL取得成功(403回避)。tried: fetch, ua-curl, hints",
-  "note": "既知が中心。Berlin Macro Seminar連続開催分含む"
+  "note": "既知のみ。Berlin Macro Seminar連続開催分等含む。Book a Scientist・IMF Economist Program Recruitment・Einführung in das SOEP・Job Market Interview Trainingは採用/研修イベントのため対象外"
  },
  {
   "name": "EPC – European Payments Council – Events",
@@ -184,7 +188,7 @@
   "ok": true,
   "found": 1,
   "error": "代替手段: web検索(site:europeanpaymentscouncil.eu)。元URLはCloudflareで404。tried: fetch, ua-curl, hints, search",
-  "note": "既知(Webinar: OCT Inst in Action)"
+  "note": "既知のみ(Webinar: OCT Inst in Action)"
  },
  {
   "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
@@ -192,23 +196,23 @@
   "ok": true,
   "found": 1,
   "error": "代替手段: WebFetchで取得成功(401解消)。tried: fetch, ua-curl, hints",
-  "note": "既知1件(Zeitenwende für die Infrastruktur)。他1件は職業訓練のメンタルヘルスがテーマで対象外"
+  "note": "既知1件(Zeitenwende für die Infrastruktur)。他1件(Mentale Gesundheit in der Ausbildung)は職業訓練テーマのため対象外"
  },
  {
   "name": "NBP – Narodowy Bank Polski – Conferences",
   "url": "https://nbp.pl/en/economic-education/conferences/",
-  "ok": false,
-  "found": 0,
-  "error": "Impervaボット対策のチャレンジページが継続。tried: fetch, ua-curl, hints, search",
-  "note": "既知(6th International Research Conference、Bank of Lithuania/CEBRAとの共催)はBank of Lithuania経由で収載済み"
+  "ok": true,
+  "found": 1,
+  "error": "元URLはImpervaボット対策のチャレンジページが継続。tried: fetch, ua-curl, hints, search",
+  "note": "co-host(CEBRA)経由でweb検索により6th Biennial Conference on Macroeconomic Policy(Warsaw, 9/24-25)を確認。CEBRAソースで既に登録済みのため新規追加なし"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
   "ok": true,
-  "found": 1,
+  "found": 0,
   "error": "直接ページは200だがJS描画+AWS WAFのCAPTCHAで本文取得不可。tried: fetch, ua-curl, hints, search",
-  "note": "既知(Getting started in nature, biodiversity and finance)。PRI in Person(Amsterdam)・Investor Day(New York)は対象地域外"
+  "note": "確認できた候補(PRI Investor Day, PRI in Person等)はいずれもニューヨーク開催で対象地域外"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
@@ -227,8 +231,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 2,
-  "note": "候補多数を確認したがほとんど既知。新規採用2件(Banca d'Italia/ECB workshop, Chatham House Berlin Conference)。Bled/GLOBSEC等の深掘りクエリでは新規候補なし"
+  "found": 12,
+  "note": "基本8件+深掘り(digital euro/CBDC 4件、Hertie/SUERF 2件)で候補12件確認。ECB系4件・Bankenaufsicht Symposium・German-Baltic Defence Industry Conference・Housing markets(NBS/SUERF)・Finflows e-lectureは既知。Rome(SUERF/BdI)・Luxembourg(ESM/SUERF)は対象地域外、EUDEX(Essen)は展示会主体のため除外、WORLDCMEは信頼性未確認のため除外。新規採用0件"
  },
  {
   "name": "BIS – Bank for International Settlements – Events",

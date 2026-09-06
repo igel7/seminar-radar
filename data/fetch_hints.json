@@ -5,8 +5,8 @@
     "alt_urls": [
       "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
     ],
-    "last_ok": "2026-09-04",
-    "note": "2026-09-02: WebFetchで元URL(diw.de)を直接取得成功(401/503を経由せず)。手段を1つに固定せず両方試す方針を継続。"
+    "last_ok": "2026-09-06",
+    "note": "2026-09-02: WebFetchで元URL(diw.de)を直接取得成功(401/503を経由せず)。手段を1つに固定せず両方試す方針を継続。2026-09-06: fetch_all.py(curl系)は403だがWebFetchは引き続き成功。"
   },
   "ifo Institut – Veranstaltungen": {
     "method": "alt-url+search",
@@ -90,14 +90,14 @@
   "NBP – Narodowy Bank Polski – Conferences": {
     "method": "co-host",
     "alt_urls": [],
-    "last_ok": "2026-08-29",
-    "note": "Imperva系ボット対策で直接取得不可。alt_urls に入っていた CEBRA の単一CfPページは2026-08-28に削除(一覧の代わりに固定化し新規検知を塞ぐため)。site:nbp.pl 検索と共催先(CEBRA等)の告知で補完する"
+    "last_ok": "2026-09-06",
+    "note": "Imperva系ボット対策で直接取得不可。alt_urls に入っていた CEBRA の単一CfPページは2026-08-28に削除(一覧の代わりに固定化し新規検知を塞ぐため)。site:nbp.pl 検索と共催先(CEBRA等)の告知で補完する。2026-09-06: site:cebra.org 検索で6th Biennial Conference on Macroeconomic Policy(Warsaw, 9/24-25)を確認(既知)。"
   },
   "EPC – European Payments Council – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-04",
-    "note": "Cloudflareで一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索で個別ウェビナーページを探すと拾えることがある。2026-09-02もOCT Instウェビナー(9/15、既知)を確認。"
+    "last_ok": "2026-09-06",
+    "note": "Cloudflareで一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索で個別ウェビナーページを探すと拾えることがある。2026-09-02もOCT Instウェビナー(9/15、既知)を確認。2026-09-06も同ウェビナーを再確認(既知)。"
   },
   "PIK – Potsdam-Institut für Klimafolgenforschung": {
     "method": "search",
@@ -119,8 +119,8 @@
   "Bank of Lithuania – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-04",
-    "note": "サイト全体がCloudflareで403(UA偽装でも不可)。site:lb.lt のweb検索で個別イベント回収。2026-09-02も5th Annual Lithuanian Conference・6th International Research Conferenceを確認(いずれも既知)。"
+    "last_ok": "2026-09-06",
+    "note": "サイト全体がCloudflareで403(UA偽装でも不可)。site:lb.lt のweb検索で個別イベント回収。2026-09-02も5th Annual Lithuanian Conference・6th International Research Conferenceを確認(いずれも既知)。2026-09-06は5th Annual Lithuanian Conferenceを再確認(既知)。"
   },
   "HNB – Croatian National Bank – Conferences": {
     "method": "search",
@@ -139,8 +139,8 @@
     "alt_urls": [
       "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
     ],
-    "last_ok": "2026-09-04",
-    "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。公開ミラーpublic.unpri.orgは405が継続。2026-09-02はGetting started in nature, biodiversity and financeウェビナー(既知)以外はロンドン/アムステルダム/ジュネーブ/NY開催で対象地域外。"
+    "last_ok": "2026-09-06",
+    "note": "JS描画+AWS WAFのCAPTCHA。site:unpri.org 検索で回収する。公開ミラーpublic.unpri.orgは405が継続。2026-09-02はGetting started in nature, biodiversity and financeウェビナー(既知)以外はロンドン/アムステルダム/ジュネーブ/NY開催で対象地域外。2026-09-06はPRI Investor Day/PRI in Personのみ確認、いずれもニューヨーク開催で対象地域外。"
   },
   "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
     "method": "search",
@@ -160,8 +160,8 @@
     "alt_urls": [
       "https://www.iwkoeln.de/institut/veranstaltungen.html"
     ],
-    "last_ok": "2026-09-04",
-    "note": "2026-09-02にもWebFetchで元URL取得成功(401解消)。ダメな日はsite:iwkoeln.de Veranstaltung 検索かINBOXの手動取込で補完する"
+    "last_ok": "2026-09-06",
+    "note": "2026-09-02にもWebFetchで元URL取得成功(401解消)。ダメな日はsite:iwkoeln.de Veranstaltung 検索かINBOXの手動取込で補完する。2026-09-06: fetch_all.py(curl系)は401だがWebFetchは引き続き成功。"
   },
   "BNB – Bulgarian National Bank – Events": {
     "method": "alt-url",
