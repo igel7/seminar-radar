@@ -558,29 +558,29 @@
  {
   "date": "2026-09-08",
   "agent": "claude",
-  "recorded_at": "2026-09-08T04:56:18+02:00",
+  "recorded_at": "2026-09-08T05:03:24+02:00",
   "partial": true,
   "session_id": "bffe7a89-404a-529f-a5d3-af7016a5db89",
-  "turns": 118,
+  "turns": 206,
   "sidechain_turns": 0,
-  "input_tokens": 236,
-  "cache_creation_tokens": 435593,
-  "cache_read_tokens": 18099932,
-  "output_tokens": 127116,
-  "total_input_tokens": 18535761,
-  "total_tokens": 18662877,
-  "avg_context_tokens": 157083,
+  "input_tokens": 412,
+  "cache_creation_tokens": 588503,
+  "cache_read_tokens": 42491089,
+  "output_tokens": 206722,
+  "total_input_tokens": 43080004,
+  "total_tokens": 43286726,
+  "avg_context_tokens": 209126,
   "web_search_requests": 0,
   "web_fetch_requests": 0,
   "first_message_at": "2026-09-08T02:45:41.483Z",
-  "last_message_at": "2026-09-08T02:56:16.736Z",
+  "last_message_at": "2026-09-08T03:03:24.580Z",
   "models": {
    "claude-sonnet-5": {
-    "input_tokens": 236,
-    "cache_creation_tokens": 435593,
-    "cache_read_tokens": 18099932,
-    "output_tokens": 127116,
-    "turns": 118
+    "input_tokens": 412,
+    "cache_creation_tokens": 588503,
+    "cache_read_tokens": 42491089,
+    "output_tokens": 206722,
+    "turns": 206
    }
   }
  }
