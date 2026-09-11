@@ -30,12 +30,23 @@ def write_known_digest(events):
     events.json(774KB超)を直接読ませないための小さな写しであり、
     ingest.py だけが生成する。1イベント1行のJSONで、grepでも照合できる。
     キーには「変わったら再出力すべき観察可能フィールド」(日付・時刻・会場・
-    参加費・申込URL。changelog が監視するものとほぼ同じ)を含める。"""
+    参加費・申込URL。changelog が監視するものとほぼ同じ)を含める。
+    speakers は名前だけの配列に潰し、記録がある行にだけ載せる(所属・役職まで載せたり
+    空配列を全行に付けたりすると台帳が太り、毎セッション・全サブエージェントの
+    入力トークンが増えるため。顔ぶれの変化を grep で判定できれば足りる)。"""
     keys = ("source", "title", "date_start", "date_end", "time", "city", "venue",
             "fee", "fee_amount", "registration_url", "url")
-    rows = sorted(
-        ({k: ev.get(k) for k in keys} for ev in events),
-        key=lambda r: (r.get("date_start") or "", r.get("title") or ""))
+
+    def row(ev):
+        r = {k: ev.get(k) for k in keys}
+        names = [s["name"] for s in (ev.get("speakers") or [])
+                 if isinstance(s, dict) and s.get("name")]
+        if names:
+            r["speakers"] = names
+        return r
+
+    rows = sorted((row(ev) for ev in events),
+                  key=lambda r: (r.get("date_start") or "", r.get("title") or ""))
     body = ",\n  ".join(
         json.dumps(r, ensure_ascii=False, separators=(", ", ": ")) for r in rows)
     KNOWN_FILE.write_text(

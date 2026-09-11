@@ -477,7 +477,7 @@
   .badge.open{color:var(--ok);border-color:var(--ok)}
   .badge.closed{color:var(--fail);border-color:var(--fail)}
   .sum{font-size:13px;margin-top:7px;color:var(--ink2)}
-  .reg{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .reg,.spk{font-size:12.5px;color:var(--sub);margin-top:3px}
   .reglink{font-size:12.5px;margin-top:3px}
   .reglink a{color:var(--cb-tx);text-decoration:none;font-family:var(--mono);
     border-bottom:1px solid var(--line2)}
@@ -821,7 +821,7 @@ ja:{
   lb_en:"英語", lb_de:"独語", lb_ende:"英語・独語",
   ls_en:"英", ls_de:"独", ls_ende:"英独",
   sep:"・", dash:"〜", contPrefix:"(続き)",
-  regNote:"申込:", regPage:"申込ページ →",
+  regNote:"申込:", regPage:"申込ページ →", speakersLbl:"登壇:",
   srcInfo:"情報源:", firstSeen:"／ 初検出:",
   stUpcoming:"{n}件",
   stHdrOrg:"機関", stHdrCount:"本日以降のイベント数",
@@ -913,7 +913,7 @@ en:{
   lb_en:"English", lb_de:"German", lb_ende:"English & German",
   ls_en:"EN", ls_de:"DE", ls_ende:"EN+DE",
   sep:"·", dash:"–", contPrefix:"(cont.) ",
-  regNote:"Registration:", regPage:"Registration page →",
+  regNote:"Registration:", regPage:"Registration page →", speakersLbl:"Speakers:",
   srcInfo:"Source:", firstSeen:"/ first seen:",
   stUpcoming:"{n}",
   stHdrOrg:"Institution", stHdrCount:"Events from today onward",
@@ -1010,7 +1010,7 @@ de:{
   lb_en:"Englisch", lb_de:"Deutsch", lb_ende:"Englisch & Deutsch",
   ls_en:"EN", ls_de:"DE", ls_ende:"EN+DE",
   sep:"·", dash:"–", contPrefix:"(Forts.) ",
-  regNote:"Anmeldung:", regPage:"Anmeldeseite →",
+  regNote:"Anmeldung:", regPage:"Anmeldeseite →", speakersLbl:"Referenten:",
   srcInfo:"Quelle:", firstSeen:"/ erfasst am:",
   stUpcoming:"{n}",
   stHdrOrg:"Institution", stHdrCount:"Veranstaltungen ab heute",
@@ -1455,9 +1455,9 @@ function passDaytrip(ev){
 }
 function passQ(ev){
   if(!state.q) return true;
-  /* 検索対象は UI言語によらず全言語分(ja/en/de)の要約を含める */
+  /* 検索対象は UI言語によらず全言語分(ja/en/de)の要約と登壇者(氏名/所属)を含める */
   const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
-             ev.city,ev.summary_ja,ev.summary_en,ev.summary_de].join(" ").toLowerCase();
+             ev.city,ev.summary_ja,ev.summary_en,ev.summary_de,speakersText(ev)].join(" ").toLowerCase();
   return hay.includes(state.q.toLowerCase());
 }
 
@@ -1779,6 +1779,15 @@ function regNoteOf(ev){
   if(uiLang==="en") return ev.registration_note_en || "";
   return ev.registration_note_de || ev.registration_note_en || "";
 }
+/* 登壇者: "氏名 (所属), 氏名, …"。所属(org)は organizer_short と同じ表記規則なので
+   表示だけ orgDisp() を通す。speakers が無い/空なら空文字(=非表示)。 */
+function speakersText(ev){
+  if(!Array.isArray(ev.speakers)) return "";
+  return ev.speakers
+    .filter(s=>s && typeof s==="object" && typeof s.name==="string" && s.name.trim())
+    .map(s=>s.org ? `${s.name.trim()} (${orgDisp(s.org)})` : s.name.trim())
+    .join(", ");
+}
 function drawList(){
   /* 共有ビュー(v1)は復号したイベントを全件出す(終了済みも隠さない)。
      通常ビューでは、更新履歴からのピン(newsPin)だけは全フィルタを素通しで含める */
@@ -1818,6 +1827,7 @@ function drawList(){
     const iv=impCls(ev);
     const ru=safeUrl(ev.registration_url);
     const sum=summaryOf(ev);          /* UI言語に応じた要約(無ければ非表示) */
+    const spk=speakersText(ev);       /* 登壇者(無ければ非表示) */
     const rnote=regNoteOf(ev);        /* UI言語に応じた申込メモ(無ければ非表示) */
     html+=`<div class="row" id="ev-${esc(ev.id)}">
       <div class="when">${fmtWhen(ev)}</div>
@@ -1827,6 +1837,7 @@ function drawList(){
         ${(uiLang==="ja"&&ev.title_ja)?`<div class="ja">${esc(ev.title_ja)}</div>`:""}
         <div class="meta">${badges.join("")}</div>
         ${sum?`<div class="sum">${esc(sum)}</div>`:""}
+        ${spk?`<div class="spk">${esc(t("speakersLbl"))} ${esc(spk)}</div>`:""}
         ${rnote?`<div class="reg">${esc(t("regNote"))} ${esc(rnote)}</div>`:""}
         ${ru?`<div class="reglink"><a href="${esc(ru)}" target="_blank" rel="noopener">${esc(t("regPage"))}</a></div>`:""}
         <div class="src">${esc(t("srcInfo"))} ${esc(ev.source||"")} ${esc(t("firstSeen"))} ${esc(ev.first_seen||"")}</div>

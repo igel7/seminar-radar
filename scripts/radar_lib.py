@@ -9,6 +9,7 @@ LLM(実行エージェント: Claude Code / Codex)は抽出だけを担当し、
 import hashlib
 import json
 import re
+import sys
 import unicodedata
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -432,6 +433,45 @@ def valid_date(s):
         return False
 
 
+SPEAKERS_MAX = 8    # 1イベントに保持する登壇者の上限(AGENTS.md のスキーマと揃える)
+
+
+def _clean_str(v):
+    v = v.strip() if isinstance(v, str) else ""
+    return v or None
+
+
+def sanitize_speakers(raw):
+    """speakers の正規化。常に [{"name", "org", "role"}, ...] を返す。
+    文字列要素は name だけのオブジェクトに変換し(サブエージェントが形を省いた場合の
+    受け皿)、name が空の要素・同名(大文字小文字無視)の重複は捨て、先頭 SPEAKERS_MAX 件で
+    打ち切る。配列でなければ []。"""
+    if not isinstance(raw, list):
+        return []
+    out, seen = [], set()
+    for item in raw:
+        if isinstance(item, str):
+            item = {"name": item}
+        if not isinstance(item, dict):
+            continue
+        name = _clean_str(item.get("name"))
+        if not name or name.casefold() in seen:
+            continue
+        seen.add(name.casefold())
+        out.append({"name": name, "org": _clean_str(item.get("org")),
+                    "role": _clean_str(item.get("role"))})
+        if len(out) >= SPEAKERS_MAX:
+            break
+    return out
+
+
+def is_thin_record(ev):
+    """登壇者などの部分更新だけを目的とした「薄いレコード」か(AGENTS.md 手順4)。
+    3言語要約がどれも無いものをそう見なす。既存イベントへのフィールドマージには使えるが、
+    要約のないイベントを新規に増やしてはならないので、merge() は新規追加を拒否する。"""
+    return not any(_clean_str(ev.get(k)) for k in ("summary_ja", "summary_en", "summary_de"))
+
+
 def sanitize(ev):
     """必須項目の検証と型の整形。無効なら None。"""
     if not isinstance(ev, dict):
@@ -495,6 +535,7 @@ def sanitize(ev):
     if not (isinstance(time_end, str) and re.fullmatch(r"\d{2}:\d{2}", time_end)):
         time_end = None
     ev["time_end"] = time_end
+    ev["speakers"] = sanitize_speakers(ev.get("speakers"))
     ev["url"] = safe_url(ev.get("url"))
     end = ev.get("date_end") or ev.get("date_start")
     if date.fromisoformat(end) < TODAY - timedelta(days=1):
@@ -600,6 +641,12 @@ def merge(existing, new_events):
                 match["importance"] = _merge_importance(match.get("importance"), ev.get("importance"))
                 match["date_start"], match["date_end"] = new_start, new_end
                 record_update(match, before)
+            elif is_thin_record(ev):
+                # 薄いレコード(登壇者だけの追記など)が既存イベントに当たらなかった。
+                # タイトルや日付の表記が既知台帳と食い違っている可能性が高く、
+                # このまま追加すると要約のないイベントが増えるので捨てて警告する。
+                print(f"警告: 要約のないレコードが既存イベントに一致しないため捨てました: "
+                      f"{ev.get('title')!r} {ev.get('date_start')}", file=sys.stderr)
             else:
                 ev["id"] = k
                 ev["first_seen"] = TODAY.isoformat()
@@ -1054,6 +1101,11 @@ def render_ics(events):
         end_date = date.fromisoformat(ev.get("date_end") or ev["date_start"]) + timedelta(days=1)
         desc = (f"{ev.get('summary_ja') or ''} / 主催: {ev.get('organizer') or '?'}"
                 f" / {ev.get('url') or ''}")
+        speakers = ", ".join(
+            s["name"] + (f" ({s['org']})" if s.get("org") else "")
+            for s in (ev.get("speakers") or []) if isinstance(s, dict) and s.get("name"))
+        if speakers:
+            desc += f" / 登壇: {speakers}"
         lines += ["BEGIN:VEVENT",
                   f"UID:{ev['id']}@seminar-radar",
                   f"DTSTART;VALUE=DATE:{start}",
