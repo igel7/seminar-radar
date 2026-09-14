@@ -5,8 +5,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-11",
-  "note": "2026-09-11: 再びWebFetchで元URL(diw.de)を直接取得成功。401/403は環境依存の間欠的挙動の可能性が高く、まずWebFetchを試す方針を継続。"
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14: 再びWebFetchで元URL(diw.de)を直接取得成功。403は環境依存の間欠的挙動。まずWebFetchを試す方針を継続。"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -90,14 +90,14 @@
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
   "alt_urls": [],
-  "last_ok": "2026-09-11",
-  "note": "2026-09-11: Imperva系チャレンジページが継続。CEBRA(cebra.org)のCfPページ検索で共催の大型会議(6th NBP-LB-CEBRA Biennial Conference, 2026-09-24/25 Warsaw)を回収できた。共催先の告知ページ確認を継続する。"
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14: Imperva系チャレンジページが継続。CEBRA/Bank of Lithuania経由で6th NBP-LB-CEBRA Biennial Conference(9/24-25, Warsaw)を確認済み(既存データセットに収載済み)。"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-04",
-  "note": "Cloudflareで一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索で個別ウェビナーページを探すと拾えることがある。2026-09-02もOCT Instウェビナー(9/15、既知)を確認。"
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14: Cloudflareで引き続き一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索でOCT Instウェビナー(9/15、既知)を再確認。新規なし。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -119,8 +119,8 @@
  "Bank of Lithuania – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-11",
-  "note": "2026-09-11: lb.ltは個別イベントページもWebFetchで403。web検索の結果、同一イベントでも検索クエリによって日程表記が食い違うことがあるため、採用前に複数ソースでの日程確認を推奨。"
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14: lb.ltは引き続き403。web検索で既知5件(5th Annual Lithuanian Conference 9/24, 6th NBP-LB-CEBRA共催 9/24-25, Baltic Digital Euro Conference 10/1, Breakthrough in Advanced Sectors 11/13, Why We Fall for Fraud 11/19)を再確認。Anti-Money Laundering関連イベントは日付未確認のため不採用。"
  },
  "HNB – Croatian National Bank – Conferences": {
   "method": "search",
@@ -139,14 +139,14 @@
   "alt_urls": [
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
-  "last_ok": "2026-09-11",
-  "note": "2026-09-11: 引き続きJS描画+CAPTCHA。site:unpri.org webinar 検索は機能するが、ヒットの大半はロンドン/NY/アムステルダム開催で対象地域外。オンライン開催(format=online)のものだけを拾う方針を継続。"
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14: 引き続きJS描画+CAPTCHA(altも405)。web検索でnature/biodiversityウェビナー(既知)を再確認。ASCORウェビナー(9/21)は検索結果のみで実ページ確認取れず(405)のため不採用(捏造回避)。"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-09-11",
-  "note": "2026-09-11: bnr.ro/en/24077-bearsはJS空殻のまま。web検索でBEARSセミナーの存在(毎月最終木曜15:00、12月除く)は確認できるが、9月の確定日程・演題は見つからず。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx も試すこと。"
+  "note": "2026-09-14: 主URLはJS空殻、bnr.ro/en/24077-bearsはナビゲーションのみ。bnro.ro Mobile版は302後503(一時的エラーの可能性)。BEARSセミナーは毎月最終木曜15:00開催が通例だが9月の確定日程は確認できず不採用。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx を再試行のこと。"
  },
  "EBA – European Banking Authority – Events": {
   "method": "search",
@@ -160,15 +160,15 @@
   "alt_urls": [
    "https://www.iwkoeln.de/institut/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-11",
-  "note": "2026-09-11: 今回はWebFetchで403(前回2026-09-02は成功)。間欠的にブロックされる模様。ダメな場合はsite:iwkoeln.de Veranstaltungen 検索で個別イベントページを回収可能(今回はオンラインウェビナー1件を回収)。"
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14: WebFetchで取得成功(fetch_all.pyのcurlは403だがWebFetchは通る)。ただし直近の掲載は9/9までで今後の予定が0件の状態が続く。site:検索でも新規は見当たらず。"
  },
  "BNB – Bulgarian National Bank – Events": {
   "method": "alt-url",
   "alt_urls": [
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
   ],
-  "last_ok": "2026-08-28",
+  "last_ok": "2026-09-14",
   "note": "2026-08-28: サイト再構築で旧 NewsAndEvents/NEEvents はBG/ENともソフト404(廃止)を確認し、sources.yaml のURLをプレス発表アーカイブ(年別一覧)に差し替え済み(main URL=alt URLになったので直接取得で通る)。英語版は ?toLang=_EN が無効になり Cookie「userLanguage=EN」方式(個別記事は末尾 _BG/_EN の対ページ)。会議告知はプレス発表に出る。イベント自体が稀で found:0 が正常"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {

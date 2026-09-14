@@ -3331,7 +3331,14 @@
    "summary_en": "A Kiel-CEPR research seminar on the effects of violent conflict on cross-border lending, presented by Mikhail Mamonov.",
    "summary_de": "Ein Kiel-CEPR-Forschungsseminar über die Auswirkungen gewaltsamer Konflikte auf grenzüberschreitende Kreditvergabe, vorgetragen von Mikhail Mamonov.",
    "registration_note_en": "Registration required.",
-   "registration_note_de": "Anmeldung erforderlich."
+   "registration_note_de": "Anmeldung erforderlich.",
+   "speakers": [
+    {
+     "name": "Mikhail Mamonov",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "The 21st Berlin IO Day",
@@ -9691,41 +9698,6 @@
    "first_seen": "2026-08-05"
   },
   {
-   "title": "KAI KÔ – Deutsch-Japanischer Wirtschaftsdialog 2026: Connecting Technology. Shaping the Future",
-   "title_ja": "日独経済対話 KAI KÔ 2026",
-   "organizer": "IHK Offenbach am Main / IHK Frankfurt am Main / IHK Darmstadt Rhein Main Neckar",
-   "date_start": "2026-08-14",
-   "date_end": null,
-   "time": "17:30",
-   "city": "Offenbach am Main",
-   "venue": "Bernardbau, Herrnstraße 63, Offenbach am Main",
-   "format": "onsite",
-   "themes": [
-    "japan",
-    "ai"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "要事前登録・参加無料",
-   "registration_note_en": "Registration required, free of charge",
-   "registration_note_de": "Anmeldung erforderlich, kostenlos",
-   "url": "https://www.offenbach.ihk.de/international/kai-ko/",
-   "summary_ja": "フランクフルト・オッフェンバッハ・ダルムシュタットの商工会議所が主催する日独経済交流レセプション。AI・自動化やEU・日本間の自由貿易協定がもたらす機会をテーマにした講演とネットワーキングを行う。「Main Matsuri」祭に合わせて毎年開催。",
-   "summary_en": "An annual German-Japanese business reception hosted by the Chambers of Commerce of Offenbach, Frankfurt and Darmstadt, featuring impulse talks on AI and automation and on opportunities under the EU-Japan trade agreement, combined with networking between German and Japanese companies, held alongside the Main Matsuri festival.",
-   "summary_de": "Jährlicher deutsch-japanischer Wirtschaftsempfang der IHKs Offenbach, Frankfurt und Darmstadt mit Impulsvorträgen zu KI und Automatisierung sowie zu den Chancen des EU-Japan-Freihandelsabkommens, verbunden mit Networking im Rahmen des Main Matsuri.",
-   "language": "en+de",
-   "country": "DE",
-   "organizer_short": "IHK Offenbach+",
-   "title_short": "AI and Japan-Germany Business Ties",
-   "importance": 1,
-   "registration_url": "https://www.offenbach.ihk.de/international/kai-ko/",
-   "time_end": "19:30",
-   "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
-   "id": "7375546ab270d111",
-   "first_seen": "2026-08-05"
-  },
-  {
    "title": "Berlin Macro Seminar – Sebastian Horn (University of Hamburg; Kiel Institute)",
    "title_ja": "ベルリン・マクロセミナー(Horn)",
    "title_short": "European Macroeconomics Seminar",
@@ -11840,7 +11812,6 @@
    "venue": "WU Vienna",
    "format": "onsite",
    "themes": [
-    "fin_markets",
     "real_economy"
    ],
    "fee": "free",
@@ -11861,7 +11832,14 @@
    "registration_url": null,
    "source": "WU Wien (Wirtschaftsuniversität) – Events",
    "id": "c2d31ef1ee17b546",
-   "first_seen": "2026-08-19"
+   "first_seen": "2026-08-19",
+   "speakers": [
+    {
+     "name": "Yariv Brauner",
+     "org": null,
+     "role": "Professor"
+    }
+   ]
   },
   {
    "title": "Performance Management & Controlling",
@@ -14512,7 +14490,14 @@
    "time_end": null,
    "source": "IfW Kiel",
    "id": "5b7850e6f5560a1e",
-   "first_seen": "2026-08-26"
+   "first_seen": "2026-08-26",
+   "speakers": [
+    {
+     "name": "Yonggeun Jung",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "Zahlungsverkehrssymposium 2026",
@@ -16960,7 +16945,14 @@
    "time_end": null,
    "source": "Latvijas Banka – Research/Events",
    "id": "a0a82d5af56f07d6",
-   "first_seen": "2026-09-04"
+   "first_seen": "2026-09-04",
+   "speakers": [
+    {
+     "name": "Diana Bonfim",
+     "org": "ECB",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Sustainable Finance Excellence: Risikomanagement und Praxislösungen",
@@ -17065,7 +17057,14 @@
    "time_end": null,
    "source": "Latvijas Banka – Research/Events",
    "id": "eda3e5e29815ad6a",
-   "first_seen": "2026-09-04"
+   "first_seen": "2026-09-04",
+   "speakers": [
+    {
+     "name": "Luigi Palumbo",
+     "org": "Banca d'Italia",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Ragnar Nurkse, Bretton Woods and the international economic order",
@@ -17286,8 +17285,8 @@
    "venue": "Hertie School",
    "format": "onsite",
    "themes": [
-    "geopolitics",
-    "real_economy"
+    "real_economy",
+    "central_bank"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -17307,7 +17306,14 @@
    "importance": 2,
    "source": "Jacques Delors Centre (Hertie School, Berlin) – Events",
    "id": "46e9df603b7c04d9",
-   "first_seen": "2026-09-10"
+   "first_seen": "2026-09-10",
+   "speakers": [
+    {
+     "name": "Kyriakos Pierrakakis",
+     "org": "Greek Ministry of Economy and Finance",
+     "role": "President of the Eurogroup"
+    }
+   ]
   },
   {
    "title": "Hansakai No. 7 - Hamburg Japan Business After Hours",
@@ -17494,9 +17500,8 @@
    "venue": "Kiel Institut für Weltwirtschaft",
    "format": "onsite",
    "themes": [
-    "real_economy",
     "geopolitics",
-    "ukraine"
+    "real_economy"
    ],
    "fee": "free",
    "fee_amount": null,
@@ -17516,7 +17521,14 @@
    "importance": 1,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "7bb65c101dbe5186",
-   "first_seen": "2026-09-10"
+   "first_seen": "2026-09-10",
+   "speakers": [
+    {
+     "name": "Marvin Amann",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "Hybride Bedrohungen: Cyberangriffe, Desinformation und Informationskontrolle",
@@ -18172,7 +18184,14 @@
    "time_end": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "2d2c0e3eec7c4884",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Victor Gimenez-Perales",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "Exploring Nature Data #1 | Nature Value at Risk",
@@ -18241,7 +18260,14 @@
    "time_end": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "396bb716cdd39f07",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Lidia Smitkova",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "Firm Heterogeneity and the Aggregate Effects of Innovation Policy",
@@ -18724,7 +18750,14 @@
    "time_end": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "b8477465981cc5ef",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Alina Mulyukova",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "The AI Act for Beginners: What, How, and Why Is Being Regulated?",
@@ -18827,7 +18860,14 @@
    "time_end": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "cdb5307e50ed6fd8",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Carsten Brockhaus",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "AI, Competition and Competitiveness // Insights from Policy Consulting",
@@ -19224,6 +19264,139 @@
    "source": "web検索(discovery)",
    "id": "fb8e5ebd93a2254d",
    "first_seen": "2026-09-13"
+  },
+  {
+   "title": "Berlin Macro Seminar – Anna Sznajderska (SGH Warsaw School of Economics)",
+   "title_ja": "ベルリン・マクロセミナー(Sznajderska氏)",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-11-03",
+   "date_end": null,
+   "time": "16:00",
+   "time_end": "18:00",
+   "city": "Berlin",
+   "venue": "Elinor Ostrom Hall, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1015522.de/veranstaltungen/berlin_macro_seminar.html",
+   "summary_ja": "DIWベルリンのマクロセミナーで、SGHワルシャワ経済大学のAnna Sznajderska氏が研究報告を行う。",
+   "summary_en": "DIW Berlin's Berlin Macro Seminar features a research talk by Anna Sznajderska of the SGH Warsaw School of Economics.",
+   "summary_de": "Im Rahmen des Berlin Macro Seminar am DIW Berlin haelt Anna Sznajderska (SGH Warsaw School of Economics) einen Forschungsvortrag.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Macroeconomics Research Seminar",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Anna Sznajderska",
+     "org": "SGH Warsaw School of Economics",
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "57385445771bcf98",
+   "first_seen": "2026-09-14"
+  },
+  {
+   "title": "Handelsblatt Jahrestagung Gas 2026",
+   "title_ja": "Handelsblattガス年次会議2026",
+   "organizer": "Handelsblatt / Euroforum",
+   "date_start": "2026-09-30",
+   "date_end": "2026-10-01",
+   "time": null,
+   "city": "Berlin",
+   "venue": "Hotel Palace Berlin",
+   "format": "onsite",
+   "themes": [
+    "real_economy",
+    "geopolitics"
+   ],
+   "fee": "paid",
+   "fee_amount": 2500,
+   "open_to_public": true,
+   "registration_note": "要事前登録・有料(標準2,500ユーロ+税)",
+   "registration_note_en": "Advance registration required, paid (from EUR 2,500 plus VAT)",
+   "registration_note_de": "Anmeldung erforderlich, kostenpflichtig (ab 2.500 Euro zzgl. MwSt.)",
+   "url": "https://live.handelsblatt.com/event/jahrestagung-gas/",
+   "summary_ja": "Handelsblattが主催するガス業界の年次会議。供給安定性と脱炭素化をテーマに、業界首脳が登壇するベルリンでの会議。",
+   "summary_en": "Handelsblatt's annual Gas conference in Berlin brings together German gas industry leaders to discuss supply security and decarbonization.",
+   "summary_de": "Die Handelsblatt Jahrestagung Gas in Berlin versammelt Spitzenvertreter der deutschen Gaswirtschaft zu den Themen Versorgungssicherheit und Dekarbonisierung.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Handelsblatt",
+   "title_short": "Gas Supply Security",
+   "importance": 2,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Barbara Fischer",
+     "org": "FNB Gas",
+     "role": "CEO"
+    },
+    {
+     "name": "Georg Friedrichs",
+     "org": "GASAG",
+     "role": "CEO"
+    },
+    {
+     "name": "Torsten Frank",
+     "org": "Trading Hub Europe",
+     "role": "CEO"
+    },
+    {
+     "name": "Kirsten Westphal",
+     "org": "BDEW",
+     "role": "Executive Board Member"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "d06844a7e9f25ceb",
+   "first_seen": "2026-09-14"
+  },
+  {
+   "title": "AI@HPI Conference 2026: Designing the Human-AI Economy",
+   "title_ja": "AI@HPIカンファレンス2026",
+   "organizer": "Hasso-Plattner-Institut (HPI)",
+   "date_start": "2026-12-02",
+   "date_end": "2026-12-03",
+   "time": null,
+   "city": "Potsdam",
+   "venue": "Hasso-Plattner-Institut",
+   "format": "onsite",
+   "themes": [
+    "ai"
+   ],
+   "fee": "paid",
+   "fee_amount": 290,
+   "open_to_public": true,
+   "registration_note": "要事前登録・有料(参加費290ユーロ)",
+   "registration_note_en": "Advance registration required, paid (EUR 290)",
+   "registration_note_de": "Anmeldung erforderlich, kostenpflichtig (290 Euro)",
+   "url": "https://hpi.de/en/ai-hpi-conference/",
+   "summary_ja": "AI@HPIカンファレンス2026は、AIがもたらす経済的価値創出をテーマに、産業界・学界・政界のリーダーが集うポツダムでの国際会議。",
+   "summary_en": "The AI@HPI Conference 2026 in Potsdam brings together leaders from academia, industry and politics to discuss how AI is reshaping value creation and Europe's economic model.",
+   "summary_de": "Die AI@HPI Conference 2026 in Potsdam versammelt Fuehrungskraefte aus Wissenschaft, Wirtschaft und Politik, um zu diskutieren, wie KI die Wertschoepfung und Europas Wirtschaftsmodell veraendert.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "HPI",
+   "title_short": "AI-Driven Value Creation",
+   "importance": 2,
+   "registration_url": "https://hpi.de/en/registration/2026/aihpi-conference-2026/",
+   "time_end": null,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "e1ddfb6cb97f8733",
+   "first_seen": "2026-09-14"
   }
  ]
 }
