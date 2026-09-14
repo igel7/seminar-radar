@@ -195,5 +195,14 @@
   ],
   "last_ok": "2026-08-27",
   "note": "Cloudflareチャレンジは2026-08-27のリトライで解消を確認(ua-curlで/events/upcoming-events/が読める。RSS /feed/ も生きている)、恒常ブロック解除。再発時はdiscoveryのESGクエリで補完"
+ },
+ "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
+  "method": "ua-curl",
+  "alt_urls": [
+   "https://www.bofit.fi/en/research/seminars/",
+   "https://www.bofit.fi/en/research/conferences-and-workshops/"
+  ],
+  "last_ok": "2026-09-14",
+  "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下"
  }
 }

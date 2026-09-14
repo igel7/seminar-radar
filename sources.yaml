@@ -296,6 +296,21 @@ sources:
     category: cb
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
+  # --- 追加: 北欧の中銀系研究機関(ロシア・中国・新興国経済)。2026-09-14 ユーザー指示で追加 ---
+  # BOFIT(フィンランド中銀 新興国経済研究所)はロシア・中国経済の予測・研究セミナーを
+  # 定常的に開催する(オンラインのBOFITセミナーは登録すれば誰でも参加可)。
+  # フィンランドは対象地域外(北欧)だが、ユーザーが定点として明示的に指定した機関の
+  # ため anywhere: true を付け、ヘルシンキ現地開催分も収載する。
+  # URLはフィンランド銀行のイベントカレンダーをBOFIT系カテゴリで絞ったもの
+  # (bofit.fi トップの「More events」リンク先。24=BOFIT seminars)。静的HTMLで取得可。
+  # bofit.fi 側の一覧(/en/research/seminars/、/en/research/conferences-and-workshops/)は
+  # fetch_hints.json の alt_urls として併せて取得する。
+  - name: "BOFIT – Bank of Finland Institute for Emerging Economies – Events"
+    url: "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/?c=26,24,25"
+    category: cb
+    anywhere: true
+    verified: true   # 2026-09-14 実在確認(今後の BOFIT seminars 2件が一覧に表示)
+
   # --- 追加: 決済・デジタルユーロ ---
   - name: "ECB – Payments & Markets / Digital Euro events"
     url: "https://www.ecb.europa.eu/paym/intro/events/html/index.en.html"

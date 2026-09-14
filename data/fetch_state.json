@@ -1139,5 +1139,33 @@
    }
   },
   "verdict": "CHANGED"
+ },
+ "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
+  "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/?c=26,24,25",
+  "last_fetch": "2026-09-14",
+  "pages": {
+   "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/?c=26,24,25": {
+    "hash": "52b45d70a68318d1e0d2",
+    "chars": 31246,
+    "http": 200,
+    "cache_file": "data/cache/bofit-bank-of-finland-institute-for-emerging-econo-2cc251--3c3409.txt",
+    "last_changed": "2026-09-14"
+   },
+   "https://www.bofit.fi/en/research/seminars/": {
+    "hash": "492a7d6ea9b594a6c566",
+    "chars": 7692,
+    "http": 200,
+    "cache_file": "data/cache/bofit-bank-of-finland-institute-for-emerging-econo-2cc251--fff4f5.txt",
+    "last_changed": "2026-09-14"
+   },
+   "https://www.bofit.fi/en/research/conferences-and-workshops/": {
+    "hash": "83dc61e5dfb9fc119954",
+    "chars": 6850,
+    "http": 200,
+    "cache_file": "data/cache/bofit-bank-of-finland-institute-for-emerging-econo-2cc251--ea957d.txt",
+    "last_changed": "2026-09-14"
+   }
+  },
+  "verdict": "NEW"
  }
 }
