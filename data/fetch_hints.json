@@ -5,8 +5,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-14: 再びWebFetchで元URL(diw.de)を直接取得成功。403は環境依存の間欠的挙動。まずWebFetchを試す方針を継続。"
+  "last_ok": "2026-09-15",
+  "note": "2026-09-15: 再びWebFetchで元URL(diw.de)を直接取得成功。403は環境依存の間欠的挙動。まずWebFetchを試す方針を継続。found=15は全既知。「Book a Scientist」「IMF Economist Program Recruitment」「Job Market Interview Training」「Einführung in das SOEP」は採用イベント/研修/個別面談のため対象外。"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -90,14 +90,14 @@
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
   "alt_urls": [],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-14: Imperva系チャレンジページが継続。CEBRA/Bank of Lithuania経由で6th NBP-LB-CEBRA Biennial Conference(9/24-25, Warsaw)を確認済み(既存データセットに収載済み)。"
+  "last_ok": "2026-09-15",
+  "note": "2026-09-15: Imperva系チャレンジページが継続。web検索で6th NBP-LB-CEBRA Biennial Conference(9/24-25, Warsaw)以外の新規会議は見当たらず(既存収載済み)。"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-14: Cloudflareで引き続き一覧・個別とも直接取得不可。site:europeanpaymentscouncil.eu 検索でOCT Instウェビナー(9/15、既知)を再確認。新規なし。"
+  "last_ok": "2026-09-15",
+  "note": "2026-09-15: 直接取得は403(Cloudflare)継続。web検索でOCTInstウェビナー(9/15、既知)を再確認。新規なし。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -119,8 +119,8 @@
  "Bank of Lithuania – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-14: lb.ltは引き続き403。web検索で既知5件(5th Annual Lithuanian Conference 9/24, 6th NBP-LB-CEBRA共催 9/24-25, Baltic Digital Euro Conference 10/1, Breakthrough in Advanced Sectors 11/13, Why We Fall for Fraud 11/19)を再確認。Anti-Money Laundering関連イベントは日付未確認のため不採用。"
+  "last_ok": "2026-09-15",
+  "note": "2026-09-15: lb.ltは引き続き403、/en/rssも403。web検索で既知5件の日程に変化なしを確認。検索スニペットに既知日程と矛盾する情報(6th conf 10/1-2、Baltic Digital Euro 11/11-13等)が出たが個別ページ未確認のため不採用、既存表記(9/24-25・10/1)を維持。「Labour Market in 21st Century」ヒットは2019年の過去イベントと判明し無関係。"
  },
  "HNB – Croatian National Bank – Conferences": {
   "method": "search",
@@ -132,7 +132,7 @@
   "method": "webfetch",
   "alt_urls": [],
   "last_ok": "2026-09-03",
-  "note": "2026-09-03: 恒常ブロック解除。fetch_all.pyの通常取得(実ブラウザUA相当)でイベント一覧が実際に読める状態に復旧を確認(Fewer Rules or Fewer Borders 9/8、Meet the Jacques Delors Centre 9/30、いずれも既知)。再びブロックされた場合はsite:delorscentre.eu event検索で代替する。"
+  "note": "2026-09-15: 主URL・個別イベント詳細ページとも401で再ブロック(9/3〜9/14の回復は途切れた)。search経由の候補3件(Future of Europe Lecture Series VI / Henrik Enderlein Fellowship lecture and discussion / A strategic agenda for the European Union – where do we want to stand in 2029)は日付未確認のためINBOX手動確認推奨。"
  },
  "PRI – Principles for Responsible Investment – Events": {
   "method": "search",
@@ -140,13 +140,13 @@
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
   "last_ok": "2026-09-14",
-  "note": "2026-09-14: 引き続きJS描画+CAPTCHA(altも405)。web検索でnature/biodiversityウェビナー(既知)を再確認。ASCORウェビナー(9/21)は検索結果のみで実ページ確認取れず(405)のため不採用(捏造回避)。"
+  "note": "2026-09-15: public.unpri.org は個別記事URLも含め405が継続(curl UA付きも同様、WebFetch限定の問題ではない)。web検索の要約文が実際の検索結果に無い日付を生成することがあるため、検索結果のリンク一覧に実在する記事かを必ず照合すること。既知のnature/biodiversityウェビナー以外の新規は確認できず。"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-09-11",
-  "note": "2026-09-14: 主URLはJS空殻、bnr.ro/en/24077-bearsはナビゲーションのみ。bnro.ro Mobile版は302後503(一時的エラーの可能性)。BEARSセミナーは毎月最終木曜15:00開催が通例だが9月の確定日程は確認できず不採用。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx を再試行のこと。"
+  "note": "2026-09-15: モバイル版は復旧しbnr.roへ302で正常応答するがナビゲーションのみで日程情報なし。参加申込はbears@bnro.ro宛メール(要所属メール)とページに明記、自動取得の代替経路にはならない。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx を再試行のこと。"
  },
  "EBA – European Banking Authority – Events": {
   "method": "search",
@@ -160,16 +160,16 @@
   "alt_urls": [
    "https://www.iwkoeln.de/institut/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-14: WebFetchで取得成功(fetch_all.pyのcurlは403だがWebFetchは通る)。ただし直近の掲載は9/9までで今後の予定が0件の状態が続く。site:検索でも新規は見当たらず。"
+  "last_ok": "2026-09-15",
+  "note": "2026-09-15: WebFetchで取得成功。直近の掲載は9/9までで今後の予定が0件の状態が継続。"
  },
  "BNB – Bulgarian National Bank – Events": {
   "method": "alt-url",
   "alt_urls": [
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
   ],
-  "last_ok": "2026-09-14",
-  "note": "2026-08-28: サイト再構築で旧 NewsAndEvents/NEEvents はBG/ENともソフト404(廃止)を確認し、sources.yaml のURLをプレス発表アーカイブ(年別一覧)に差し替え済み(main URL=alt URLになったので直接取得で通る)。英語版は ?toLang=_EN が無効になり Cookie「userLanguage=EN」方式(個別記事は末尾 _BG/_EN の対ページ)。会議告知はプレス発表に出る。イベント自体が稀で found:0 が正常"
+  "last_ok": "2026-09-15",
+  "note": "2026-09-15: WebFetch直接取得でプレス発表一覧(2026年分含む)が正常に読めることを再確認(fetch_all.pyのFAIL-THIN判定は誤検知)。イベント告知は引き続き0件(found:0が正常)。"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
   "method": "alt-url",
