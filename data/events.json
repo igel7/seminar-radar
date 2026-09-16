@@ -2,8 +2,8 @@
  "events": [
   {
    "title": "Fall 2026 Frankfurt Macro Seminar",
-   "title_ja": "フランクフルト・マクロセミナー(2026年秋)",
-   "organizer": "Deutsche Bundesbank",
+   "title_ja": "フランクフルト・マクロ・セミナー2026秋季",
+   "organizer": "Deutsche Bundesbank, European Central Bank, Frankfurt School of Finance and Management, Goethe University Frankfurt",
    "date_start": "2026-11-05",
    "date_end": null,
    "time": "14:00",
@@ -12,16 +12,16 @@
    "format": "onsite",
    "themes": [
     "central_bank",
-    "real_economy"
+    "fin_markets"
    ],
    "fee": "free",
    "open_to_public": false,
    "registration_note": "詳細・登録は開催ページを参照。半日開催の年2回セミナー。",
    "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798",
-   "summary_ja": "マクロ経済学の研究報告を行うフランクフルト・マクロセミナー。",
+   "summary_ja": "ドイツ連邦銀行、ECB、フランクフルト・スクール、ゲーテ大学が共催する半年に一度のマクロ経済半日ワークショップ。",
    "language": "en",
    "country": "DE",
-   "organizer_short": "Bundesbank",
+   "organizer_short": "Bundesbank/ECB+",
    "title_short": "Frankfurt Macro Seminar",
    "importance": 2,
    "registration_url": null,
@@ -29,8 +29,8 @@
    "source": "Bundesbank – Forschungskonferenzen",
    "id": "0367f964c35433c3",
    "first_seen": "2026-07-14",
-   "summary_en": "A macroeconomics research seminar hosted in Frankfurt.",
-   "summary_de": "Ein makroökonomisches Forschungsseminar in Frankfurt.",
+   "summary_en": "A biannual half-day macroeconomics workshop jointly organised by Deutsche Bundesbank, the European Central Bank, Frankfurt School of Finance and Management, and Goethe University Frankfurt.",
+   "summary_de": "Ein von der Deutschen Bundesbank, der EZB, der Frankfurt School of Finance and Management und der Goethe-Universität Frankfurt gemeinsam veranstalteter halbjährlicher makroökonomischer Halbtagsworkshop.",
    "registration_note_en": "See the event page for details and registration; a biannual half-day workshop.",
    "registration_note_de": "Details und Anmeldung siehe Veranstaltungsseite; halbtägiger, zweimal jährlich stattfindender Workshop."
   },
@@ -19726,6 +19726,405 @@
    "source": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
    "id": "ce8085e79e3ac73e",
    "first_seen": "2026-09-15"
+  },
+  {
+   "title": "Finance Forschung Fingerfood – Wettbewerbsfähigkeit europäische Banken",
+   "title_ja": "欧州銀行の競争力ワークショップ",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-14",
+   "date_end": null,
+   "time": "16:00",
+   "time_end": "18:00",
+   "city": "Berlin",
+   "venue": "Elinor-Ostrom-Saal, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "招待制(非公開)",
+   "registration_note_en": "Invitation only (not open to the public)",
+   "registration_note_de": "Nur auf Einladung (nicht öffentlich)",
+   "url": "https://www.diw.de/de/diw_01.c.1018953.de/veranstaltungen/finance_forschung_fingerfood.html",
+   "summary_ja": "DIW Berlinが欧州銀行の競争力をテーマに非公開のポリシーワークショップを開催する。",
+   "summary_en": "DIW Berlin hosts an invitation-only policy workshop on the competitiveness of European banks.",
+   "summary_de": "Das DIW Berlin veranstaltet einen nicht öffentlichen Policy-Workshop zur Wettbewerbsfähigkeit europäischer Banken.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "European Bank Competitiveness",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Florian Heider",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Michael Kötter",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Pia Hüttl",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "3a314851df70f8cd",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "Sorting into Entrepreneurial Teams",
+   "title_ja": "起業家チームへの選別",
+   "organizer": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle",
+   "date_start": "2026-10-20",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:45",
+   "city": "Halle (Saale)",
+   "venue": "IWH, conference room and via Zoom",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/sorting-into-entrepreneurial-teams",
+   "summary_ja": "IWHリサーチセミナー。起業家チームの構成メカニズムに関する研究報告。",
+   "summary_en": "IWH Research Seminar presenting research on how entrepreneurial teams form and sort.",
+   "summary_de": "IWH Research Seminar mit einem Forschungsvortrag zur Bildung und Zusammensetzung von Gründerteams.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IWH",
+   "title_short": "Entrepreneurial Team Sorting",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Marta Morazzoni",
+     "org": "UCL",
+     "role": null
+    }
+   ],
+   "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+   "id": "4d06e80fdcc04b86",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "Industrial Energy Summit 2026",
+   "title_ja": "インダストリアル・エナジー・サミット2026",
+   "organizer": "Vogel Communications Group",
+   "organizer_short": "Vogel Communications",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Würzburg",
+   "venue": "Vogel Convention Center Würzburg",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "paid",
+   "fee_amount": 430,
+   "open_to_public": true,
+   "registration_note": "要事前登録・有料(通常価格430ユーロ+税、参加者約150名規模)",
+   "registration_note_en": "Advance registration required, paid (regular ticket EUR 430 plus VAT; ~150 attendees)",
+   "registration_note_de": "Anmeldung erforderlich, kostenpflichtig (regulärer Preis 430 Euro zzgl. MwSt.; ca. 150 Teilnehmende)",
+   "url": "https://www.industrial-energy-summit.de/",
+   "registration_url": null,
+   "summary_ja": "ドイツ・ヴュルツブルクで開催されるエネルギー集約型企業向けの産業エネルギー会議。2035年に向けたエネルギー供給と産業競争力が主要議題。",
+   "summary_en": "An industry conference in Würzburg, Germany for energy-intensive companies, addressing Germany's industrial energy supply and competitiveness toward 2035.",
+   "summary_de": "Branchenkonferenz in Würzburg für energieintensive Unternehmen zu Energieversorgung und industrieller Wettbewerbsfähigkeit Deutschlands bis 2035.",
+   "language": "de",
+   "country": "DE",
+   "title_short": "Industrial Energy Prices",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Tim Meyer",
+     "org": "3EPunkt",
+     "role": "Owner"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "74bdf5a511c3bc4a",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "Focus session on the digital euro pilot (IV)",
+   "title_ja": "デジタルユーロ・パイロット説明会(第4回)",
+   "organizer": "European Central Bank",
+   "date_start": "2026-10-06",
+   "date_end": null,
+   "time": "15:00",
+   "time_end": "16:00",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録・無料(オンライン開催、対象は加盟店・決済サービス提供者等)",
+   "registration_note_en": "Advance registration required, free (online event for merchants and payment service providers)",
+   "registration_note_de": "Anmeldung erforderlich, kostenlos (Online-Veranstaltung für Händler und Zahlungsdienstleister)",
+   "url": "https://www.ecb.europa.eu/press/intro/events/html/fs_20261006.en.html",
+   "summary_ja": "ECBがオンラインで開催するデジタルユーロ・パイロットに関する説明会。オンライン加盟店や決済サービス提供者向けに参加要件や技術要件を解説する。",
+   "summary_en": "An ECB online focus session explaining participation requirements and technical steps for online and mobile merchants ahead of the digital euro pilot.",
+   "summary_de": "Von der EZB veranstaltete Online-Informationsveranstaltung zum Digitalen-Euro-Pilotprojekt, die Teilnahmebedingungen und technische Anforderungen für Online-Händler erläutert.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "ECB",
+   "title_short": "Digital Euro Pilot Briefing",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Björn Hoffmeyer",
+     "org": "ECB",
+     "role": "Head of Division, Market Roll Out"
+    },
+    {
+     "name": "Sebastian Siepen",
+     "org": "ECB",
+     "role": "Team Lead Market Infrastructure PM"
+    }
+   ],
+   "source": "ECB – Payments & Markets / Digital Euro events",
+   "id": "7ee7f0b31169f2dd",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "Will new live market data publication change Europe's capital markets?",
+   "title_ja": "欧州資本市場とライブ市場データ公開",
+   "organizer": "Bruegel",
+   "date_start": "2026-10-09",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(参加費不明)",
+   "registration_note_en": "Advance registration required (fee not specified)",
+   "registration_note_de": "Anmeldung erforderlich (Gebühr nicht angegeben)",
+   "url": "https://www.bruegel.org/event/will-new-live-market-data-publication-change-europes-capital-markets",
+   "summary_ja": "Bruegelの「Finance Focus」シリーズの一環。欧州資本市場向けの新しいライブ市場データ公開が市場慣行をどう変えるかを議論する。",
+   "summary_en": "A Bruegel Finance Focus series event discussing whether a new live market data publication could reshape Europe's capital markets.",
+   "summary_de": "Eine Veranstaltung der Bruegel-Reihe „Finance Focus“ zur Frage, ob eine neue Live-Marktdatenveröffentlichung Europas Kapitalmärkte verändern könnte.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Bruegel",
+   "title_short": "Live Market Data Capital Markets",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Nicolas Veron",
+     "org": "Bruegel",
+     "role": null
+    },
+    {
+     "name": "Eglantine Desautel",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "Bruegel (Brussels) – Events",
+   "id": "9639abafac81ea33",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "IWH Research Seminar - Xian Gu",
+   "title_ja": "IWHリサーチセミナー(Xian Gu)",
+   "organizer": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle",
+   "date_start": "2026-10-27",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:45",
+   "city": "Halle (Saale)",
+   "venue": "IWH, conference room and via Zoom",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/tba-47",
+   "summary_ja": "IWHリサーチセミナー。演題は未発表(TBA)。",
+   "summary_en": "IWH Research Seminar; topic to be announced.",
+   "summary_de": "IWH Research Seminar; Thema noch nicht bekannt gegeben (TBA).",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IWH",
+   "title_short": "IWH Research Seminar",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Xian Gu",
+     "org": "Durham University",
+     "role": null
+    }
+   ],
+   "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+   "id": "9a0fd10587ebc57d",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "European Defence Supply 2026",
+   "title_ja": "欧州防衛サプライチェーン会議2026",
+   "organizer": "Vogel Communications Group",
+   "organizer_short": "Vogel Communications",
+   "date_start": "2026-10-13",
+   "date_end": "2026-10-14",
+   "time": null,
+   "time_end": null,
+   "city": "Hamburg",
+   "venue": "Radisson Blu Hotel, Hamburg",
+   "format": "onsite",
+   "themes": [
+    "real_economy",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(業界関係者向け、参加費不明)",
+   "registration_note_en": "Registration required (industry event, fee not specified)",
+   "registration_note_de": "Anmeldung erforderlich (Branchenveranstaltung, Gebühr unbekannt)",
+   "url": "https://www.european-defence-supply.com/programme",
+   "registration_url": null,
+   "summary_ja": "ハンブルクで開催される防衛産業サプライチェーンに関する国際会議。欧州委員会や各国軍関係者が調達改革や産業協力について議論する。",
+   "summary_en": "A two-day conference in Hamburg bringing together European Commission officials, military leaders and industry on defence supply chain integration, procurement reform and industrial capability building.",
+   "summary_de": "Zweitägige Konferenz in Hamburg zu Verteidigungsindustrie-Lieferketten, mit Vertretern der Europäischen Kommission, Militär und Industrie zu Beschaffungsreform und industrieller Fähigkeitsentwicklung.",
+   "language": "en",
+   "country": "DE",
+   "title_short": "European Defence Supply Chains",
+   "importance": 2,
+   "speakers": [
+    {
+     "name": "Tomasz Husak",
+     "org": "European Commission",
+     "role": null
+    },
+    {
+     "name": "Chris Badia",
+     "org": "Five-Star Strategy and Defence LLC",
+     "role": "General (ret.)"
+    },
+    {
+     "name": "Michael Bender",
+     "org": "BAAINBw",
+     "role": "Brigadier General"
+    },
+    {
+     "name": "Jussi Järvinen",
+     "org": "Patria",
+     "role": null
+    },
+    {
+     "name": "Jörg Wissdorf",
+     "org": "GW Defense Invest",
+     "role": "Col (res.)"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "9f90f8010d20d5af",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "Buchvorstellung und Diskussion \"Das Gesetz des Kapitalismus und wie wir es überwinden können\"",
+   "title_ja": "書籍発表・討論会「資本主義の法則とその克服」",
+   "organizer": "SAFE / Institut für Bank- und Finanzgeschichte",
+   "date_start": "2026-10-20",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://safe-frankfurt.de/news-media/events/event-view/buchvorstellung-und-diskussion-das-gesetz-des-kapitalismus-und-wie-wir-es-ueberwinden-koennen.html",
+   "summary_ja": "SAFEと銀行金融史研究所による書籍発表・討論会。資本主義の構造的な法則とその克服策をテーマにした一冊を紹介する。",
+   "summary_en": "A book presentation and discussion hosted by SAFE and the Institute for Banking and Financial History on the structural laws of capitalism and how to overcome them.",
+   "summary_de": "Eine Buchvorstellung und Diskussion von SAFE und dem Institut für Bank- und Finanzgeschichte über die strukturellen Gesetze des Kapitalismus und Wege, sie zu überwinden.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "SAFE",
+   "title_short": "Laws of Capitalism Book Talk",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [],
+   "source": "House of Finance (Goethe大) – Veranstaltungen",
+   "id": "ca935bac89babb15",
+   "first_seen": "2026-09-16"
+  },
+  {
+   "title": "Readiness Europe 2026",
+   "title_ja": "欧州防衛製造展示会2026",
+   "organizer": "Accelerant Events Ltd",
+   "organizer_short": "Accelerant Events",
+   "date_start": "2026-11-04",
+   "date_end": "2026-11-05",
+   "time": null,
+   "time_end": null,
+   "city": "Ulm",
+   "venue": "Messe Ulm",
+   "format": "onsite",
+   "themes": [
+    "real_economy",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "来場登録可(詳細な参加費は不明)",
+   "registration_note_en": "Visitor registration available (fee details not specified)",
+   "registration_note_de": "Besucheranmeldung möglich (Gebühr nicht angegeben)",
+   "url": "https://www.readinesseurope.com/",
+   "registration_url": null,
+   "summary_ja": "ドイツ・ウルムで開催される欧州の防衛製造業に特化した展示会・カンファレンス。設計・開発・生産・即応性をテーマに、サプライチェーン各層の企業が集う。",
+   "summary_en": "A defence manufacturing expo and conference in Ulm, Germany, focused on design, development, production and industrial readiness across the European defence supply chain.",
+   "summary_de": "Messe und Konferenz für die europäische Verteidigungsfertigung in Ulm mit Fokus auf Design, Entwicklung, Produktion und industrielle Einsatzbereitschaft entlang der Lieferkette.",
+   "language": "en",
+   "country": "DE",
+   "title_short": "European Defence Manufacturing Expo",
+   "importance": 1,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "fc86211fd12a6408",
+   "first_seen": "2026-09-16"
   }
  ]
 }
