@@ -84,8 +84,8 @@
   "alt_urls": [
    "https://sustainablefinancecluster.com/en/events/"
   ],
-  "last_ok": "2026-08-19",
-  "note": "gsfc-germany.com は恒常的に 423 Locked。団体は Sustainable Finance Cluster e.V. に改称しドメイン移転済み。移転先で毎回2件前後の実績"
+  "last_ok": "2026-09-18",
+  "note": "gsfc-germany.com は恒常的に 423 Locked。団体は Sustainable Finance Cluster e.V. に改称しドメイン移転済み。移転先で毎回2件前後の実績 / 2026-09-18: fetch_all.py(alt-url)はsustainablefinancecluster.com/en/events/を取得できるがCSS/フォント宣言のみでイベント本文が入らない(JS描画)。WebFetchでは正常に今後のイベント(2件)を取得できた。fetch_allの本文が空/CSSのみの場合はWebFetchを試すこと。"
  },
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
@@ -202,7 +202,7 @@
    "https://www.bofit.fi/en/research/seminars/",
    "https://www.bofit.fi/en/research/conferences-and-workshops/"
   ],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下"
+  "last_ok": "2026-09-18",
+  "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下 / 2026-09-18: fetch_all.py(ua-curl)は元URL・alt_urlsとも info.suomenpankki.fi の通知ページへリダイレクトされ失敗。WebFetchでは正常にカレンダー内容(今後2件)を取得できた。ua-curlが失敗した場合はWebFetchを試すこと。"
  }
 }
