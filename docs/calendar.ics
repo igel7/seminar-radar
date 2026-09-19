@@ -831,9 +831,9 @@ BEGIN:VEVENT
 UID:4c00bf40c4a1c0c4@seminar-radar
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261030
-SUMMARY:German-Baltic Defence Industry Conference 2026
+SUMMARY:German-Baltic-Ukrainian Defence Industry Conference 2026
 LOCATION:Vilnius
-DESCRIPTION:ドイツ・バルト三国・ウクライナの防衛産業協力をテーマに、欧州の防衛製造能力拡大や無人システム開発、NATO東方防衛強化を議論する会議。 / 主催: German-Baltic Chamber of Commerce (AHK Baltic States) / https://www.bdc2026.com/
+DESCRIPTION:ドイツ・バルト三国・ウクライナの防衛産業協力をテーマにした会議。リトアニア大統領の後援下で開催。 / 主催: German-Baltic Chamber of Commerce (AHK Balt) / https://www.bdc2026.com/
 END:VEVENT
 BEGIN:VEVENT
 UID:4cfb3d2a77229b22@seminar-radar
@@ -1156,14 +1156,6 @@ LOCATION:
 DESCRIPTION:denaのKWWによる無料ウェビナーで、街区・自治体レベルでの建物改修が熱転換にどう貢献するかを事例とともに紹介する。 / 主催: dena – Kompetenzzentrum kommunale Wärmewende (KWW) / https://www.dena.de/infocenter/kww-praxisblick-sanierung-als-schluessel-fuer-die-waermewende/
 END:VEVENT
 BEGIN:VEVENT
-UID:9159f4d47fb5664a@seminar-radar
-DTSTART;VALUE=DATE:20260818
-DTEND;VALUE=DATE:20260820
-SUMMARY:KEDi Roadshow Mainz
-LOCATION:Mainz
-DESCRIPTION:中小企業向けにデジタル技術を活用した産業エネルギー効率化を紹介する、dena/KEDiのロードショーがマインツで2日間開催される。 / 主催: dena – Kompetenzzentrum Energieeffizienz durch Digitalisierung (KEDi) / https://www.dena.de/kedi-roadshow-mainz/
-END:VEVENT
-BEGIN:VEVENT
 UID:9c47623e011f5f4f@seminar-radar
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
@@ -1321,7 +1313,7 @@ DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:Latvijas Bankas tautsaimniecības konference 2026: From Policy to Impact – Europe's Economic Future
 LOCATION:Riga
-DESCRIPTION:地政学的環境下でのユーロ圏経済の課題と政策対応をテーマとするラトビア銀行の年次経済会議。EU金融サービス担当委員なども登壇。 / 主催: Latvijas Banka / https://conference.bank.lv/
+DESCRIPTION:地政学的環境下でのユーロ圏経済の課題と政策対応をテーマとするラトビア銀行の年次経済会議。EU金融サービス担当委員なども登壇。 / 主催: Latvijas Banka / https://conference.bank.lv/ / 登壇: Mārtiņš Kazāks (Latvijas Banka)\, Joachim Nagel (Bundesbank)\, Maria Luís Albuquerque (European Commission)\, Agnès Bénassy-Quéré (Banque de France)\, Jeromin Zettelmeyer (Bruegel)
 END:VEVENT
 BEGIN:VEVENT
 UID:703a998a84a60bd7@seminar-radar
@@ -3842,5 +3834,45 @@ DTEND;VALUE=DATE:20261001
 SUMMARY:IP-Livetalk: „Germany Rearmed" – Deutschlands Rolle als Militärmacht
 LOCATION:Berlin
 DESCRIPTION:ドイツが軍事大国へ転換する中での国防産業と軍事関与の拡大を検討。 / 主催: DGAP / https://dgap.org/de/veranstaltungen/ip-livetalk-germany-rearmed-deutschlands-rolle-als-militaermacht
+END:VEVENT
+BEGIN:VEVENT
+UID:3770332ca44afdf8@seminar-radar
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+SUMMARY:Executive Finance Summit 2026 Frankfurt
+LOCATION:Frankfurt am Main
+DESCRIPTION:CFO等の財務幹部向けに、プライベートエクイティにおけるAI活用による価値創造をテーマとした会議。 / 主催: Executive Finance Summit / https://www.executivefinancesummit.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:694ed90de5cbc316@seminar-radar
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:B.KWK-Kongress 2026
+LOCATION:Berlin
+DESCRIPTION:コージェネレーション(熱電併給)とエネルギー供給の安定性をテーマにした業界年次会議。 / 主催: Bundesverband Kraft-Wärme-Kopplung e.V. (B.KWK) / https://www.bkwk.de/veranstaltungen/b-kwk-kongress-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:a6ecfd8c8b944b89@seminar-radar
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261114
+SUMMARY:Annual Data and Reporting Workshops 2026
+LOCATION:
+DESCRIPTION:EBAが監督報告・データに関する年次ワークショップをオンラインで開催する。 / 主催: European Banking Authority / https://www.eba.europa.eu/publications-and-media/events/annual-data-and-reporting-workshops-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:d716b5c12c8ab4eb@seminar-radar
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:6th European China Conference
+LOCATION:Berlin
+DESCRIPTION:MERICS主催の欧中関係に関する年次会議で、対中経済・政策動向を議論する。 / 主催: MERICS – Mercator Institute for China Studies / https://merics.org/en/events/6th-european-china-conference
+END:VEVENT
+BEGIN:VEVENT
+UID:e2e8915639855d77@seminar-radar
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:Nachhaltige Geldanlagen 26 – Investing in Transformation | Next Generation ESG
+LOCATION:Frankfurt am Main
+DESCRIPTION:ESG投資・気候ファイナンスの最新動向を議論する年次カンファレンス。 / 主催: Frankfurt School of Finance & Management / https://forum.frankfurt-school.de/konferenzen/nachhaltige-geldanlagen/
 END:VEVENT
 END:VCALENDAR

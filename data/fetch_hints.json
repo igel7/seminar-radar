@@ -5,8 +5,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-15",
-  "note": "2026-09-15: 再びWebFetchで元URL(diw.de)を直接取得成功。403は環境依存の間欠的挙動。まずWebFetchを試す方針を継続。found=15は全既知。「Book a Scientist」「IMF Economist Program Recruitment」「Job Market Interview Training」「Einführung in das SOEP」は採用イベント/研修/個別面談のため対象外。"
+  "last_ok": "2026-09-19",
+  "note": "2026-09-19: curl(UA付き含む)は403継続だがWebFetchツールで元URL取得成功。今後開催予定23件中19件が収載条件に合致、うち新規なし(全て既知)。"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -96,8 +96,8 @@
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-15",
-  "note": "2026-09-15: 直接取得は403(Cloudflare)継続。web検索でOCTInstウェビナー(9/15、既知)を再確認。新規なし。"
+  "last_ok": "2026-09-19",
+  "note": "2026-09-19: 直接取得・WebFetchとも403継続。web検索でFRIDA Rulebookウェビナー(10/13、新規)を確認し採用。既知のOCTInstウェビナー(9/15)は開催済み。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -132,7 +132,7 @@
   "method": "webfetch",
   "alt_urls": [],
   "last_ok": "2026-09-03",
-  "note": "2026-09-15: 主URL・個別イベント詳細ページとも401で再ブロック(9/3〜9/14の回復は途切れた)。search経由の候補3件(Future of Europe Lecture Series VI / Henrik Enderlein Fellowship lecture and discussion / A strategic agenda for the European Union – where do we want to stand in 2029)は日付未確認のためINBOX手動確認推奨。"
+  "note": "2026-09-19: 主URL401/403継続。web検索でも今後の確定日程は確認できず(EU to go シリーズ等の一般的説明のみ)。"
  },
  "PRI – Principles for Responsible Investment – Events": {
   "method": "search",
@@ -160,8 +160,8 @@
   "alt_urls": [
    "https://www.iwkoeln.de/institut/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-15",
-  "note": "2026-09-15: WebFetchで取得成功。直近の掲載は9/9までで今後の予定が0件の状態が継続。"
+  "last_ok": "2026-09-19",
+  "note": "2026-09-19: curlは403継続だがWebFetchで取得成功。今後予定は9/22の1件のみ(既知)。"
  },
  "BNB – Bulgarian National Bank – Events": {
   "method": "alt-url",
@@ -204,5 +204,13 @@
   ],
   "last_ok": "2026-09-18",
   "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下 / 2026-09-18: fetch_all.py(ua-curl)は元URL・alt_urlsとも info.suomenpankki.fi の通知ページへリダイレクトされ失敗。WebFetchでは正常にカレンダー内容(今後2件)を取得できた。ua-curlが失敗した場合はWebFetchを試すこと。"
+ },
+ "Latvijas Banka – Research/Events": {
+  "method": "search",
+  "alt_urls": [
+   "https://conference.bank.lv/"
+  ],
+  "last_ok": "2026-09-19",
+  "note": "2026-09-19: 主URL(macroeconomics.lv)はfetch_all/WebFetchともFAIL-THIN(空白)。web検索で新設の会議専用サイト conference.bank.lv を発見、旗艦会議 'From Policy to Impact'(2026-11-11, Riga)を確認・採用。次回以降はこのURLもalt_urlsとして併せて確認する。"
  }
 }
