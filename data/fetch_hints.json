@@ -5,8 +5,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-09-19",
-  "note": "2026-09-19: curl(UA付き含む)は403継続だがWebFetchツールで元URL取得成功。今後開催予定23件中19件が収載条件に合致、うち新規なし(全て既知)。"
+  "last_ok": "2026-09-20",
+  "note": "2026-09-20: curl(UA付き含む)は403継続だがWebFetchツールでdiw-berlin.de版取得成功。今後開催予定18件中17件が既知、新規1件(Screening Trade Association Messaging for Collusion、11/4、Not public扱いのBrown Bagセミナーも収載対象になる点に注意)。"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -90,14 +90,14 @@
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
   "alt_urls": [],
-  "last_ok": "2026-09-15",
-  "note": "2026-09-15: Imperva系チャレンジページが継続。web検索で6th NBP-LB-CEBRA Biennial Conference(9/24-25, Warsaw)以外の新規会議は見当たらず(既存収載済み)。"
+  "last_ok": "2026-09-20",
+  "note": "2026-09-20: 直接取得・WebFetchともImperva系チャレンジページ継続。web検索で6th NBP-LB-CEBRA Biennial Conference(9/24-25, Warsaw)以外の新規会議は見当たらず(既存収載済み)。"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-19",
-  "note": "2026-09-19: 直接取得・WebFetchとも403継続。web検索でFRIDA Rulebookウェビナー(10/13、新規)を確認し採用。既知のOCTInstウェビナー(9/15)は開催済み。"
+  "last_ok": "2026-09-20",
+  "note": "2026-09-20: 直接取得・WebFetchとも403継続。web検索で既知のFRIDA Rulebookウェビナー(10/13)を再確認、新規なし。個別ページURLは特定できず(europeanpaymentscouncil.eu内の検索でも直接ヒットしない)。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -119,8 +119,8 @@
  "Bank of Lithuania – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-09-15",
-  "note": "2026-09-15: lb.ltは引き続き403、/en/rssも403。web検索で既知5件の日程に変化なしを確認。検索スニペットに既知日程と矛盾する情報(6th conf 10/1-2、Baltic Digital Euro 11/11-13等)が出たが個別ページ未確認のため不採用、既存表記(9/24-25・10/1)を維持。「Labour Market in 21st Century」ヒットは2019年の過去イベントと判明し無関係。"
+  "last_ok": "2026-09-20",
+  "note": "2026-09-20: lb.ltは引き続き403、WebFetchも403。web検索+第三者アグリゲータ(researchcal.com)でBaltic Digital Euro Conferenceの開催日をOct 1, 2026・Vilnius・Conference Hall S14で確認(既知の表記9/24-25・10/1と整合、検索結果に混在する11月表記は誤りと判断できる)。既知4件の日程に変化なし。"
  },
  "HNB – Croatian National Bank – Conferences": {
   "method": "search",
