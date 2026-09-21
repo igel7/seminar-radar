@@ -129,7 +129,7 @@ DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
 SUMMARY:efl Annual Conference 2026: Better Data\, Less Fragmentation & More Retail – Success Factors for European Financial Markets?
 LOCATION:Frankfurt am Main
-DESCRIPTION:金融サービスの実務と研究をつなぐeflの年次会議。 / 主催: efl – Institute for Financial Studies / https://www.eflab.de/events/detail/efl-annual-conference-2026
+DESCRIPTION:eflとドイツ証券取引所グループによる年次会議。「より良いデータ、少ない断片化、より多くのリテール」をテーマに欧州金融市場の成功要因を議論する。 / 主催: efl (Institute Center for Financial Services Innovation and Digitalization)\, Deutsche Börse AG / https://www.eflab.de/events/detail/efl-annual-conference-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:b8af9cc5cba3d5d5@seminar-radar
@@ -226,14 +226,6 @@ DTEND;VALUE=DATE:20260917
 SUMMARY:M&A und Private Equity 26
 LOCATION:Frankfurt am Main
 DESCRIPTION:M&A・プライベートエクイティ市場のトレンドや取引プロセスを扱うフランクフルト・スクールのカンファレンス。 / 主催: Frankfurt School of Finance & Management / https://forum.frankfurt-school.de/konferenzen/
-END:VEVENT
-BEGIN:VEVENT
-UID:377554c36754cfe5@seminar-radar
-DTSTART;VALUE=DATE:20260819
-DTEND;VALUE=DATE:20260822
-SUMMARY:13th Biennial IFC Conference
-LOCATION:Basel
-DESCRIPTION:Irving Fisher Committeeの隔年会議。中央銀行の統計と意思決定についての国際会議。 / 主催: Irving Fisher Committee (IFC) / https://www.bis.org/ifc/events.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:37b05fc670a1b268@seminar-radar
@@ -1305,7 +1297,7 @@ DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:Latvijas Bankas tautsaimniecības konference 2026: From Policy to Impact – Europe's Economic Future
 LOCATION:Riga
-DESCRIPTION:地政学的環境下でのユーロ圏経済の課題と政策対応をテーマとするラトビア銀行の年次経済会議。EU金融サービス担当委員なども登壇。 / 主催: Latvijas Banka / https://conference.bank.lv/ / 登壇: Mārtiņš Kazāks (Latvijas Banka)\, Joachim Nagel (Bundesbank)\, Maria Luís Albuquerque (European Commission)\, Agnès Bénassy-Quéré (Banque de France)\, Jeromin Zettelmeyer (Bruegel)
+DESCRIPTION:地政学的環境下でのユーロ圏経済の課題と政策対応をテーマとするラトビア銀行の年次経済会議。EU金融サービス担当委員なども登壇。 / 主催: Latvijas Banka / https://conference.bank.lv/ / 登壇: Mārtiņš Kazāks (Latvijas Banka)\, Joachim Nagel (Bundesbank)\, Maria Luís Albuquerque (European Commission)\, Agnès Bénassy-Quéré (Banque de France)\, Jeromin Zettelmeyer (Bruegel)\, Klaas Knot\, Alfred Kammer (IMF)\, Roberts Zīle (European Parliament)
 END:VEVENT
 BEGIN:VEVENT
 UID:703a998a84a60bd7@seminar-radar
@@ -2343,9 +2335,9 @@ BEGIN:VEVENT
 UID:1fbda8887f8668e6@seminar-radar
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
-SUMMARY:SAFE-IBF Lecture: Thirty Years of Utilising Financial History to Forecast the Future
+SUMMARY:SAFE-IBF Lecture: Thirty Years of Utilising Financial History To Forecast the Future - The Good\, The Bad & The Ugly
 LOCATION:Frankfurt am Main
-DESCRIPTION:金融史を将来予測に活用してきた30年間を振り返るオンライン講演。 / 主催: SAFE Frankfurt / IBF / https://safe-frankfurt.de/news-media/events/event-view/safe-ibf-lecture-thirty-years-of-utilising-financial-history-to-forecast-the-future-the-good-the-bad-the-ugly.html
+DESCRIPTION:SAFEとIBF(銀行・金融史研究所)によるオンライン講演。金融史を用いた将来予測の30年間の経験を振り返る。 / 主催: SAFE (Leibniz Institute for Financial Research)\, Institute for Banking and Financial History (IBF) / https://safe-frankfurt.de/news-media/events/event-view/safe-ibf-lecture-thirty-years-of-utilising-financial-history-to-forecast-the-future-the-good-the-bad-the-ugly.html
 END:VEVENT
 BEGIN:VEVENT
 UID:3ec80de8464fb78a@seminar-radar
@@ -3866,5 +3858,13 @@ DTEND;VALUE=DATE:20260922
 SUMMARY:Foreign bonds\, Territorial Change and Repudiation: The Silesian Bonds Saga
 LOCATION:Frankfurt am Main
 DESCRIPTION:領土紛争と国家債務の後継性に関する歴史的事例研究。シレジア債券の実例から国際金融の複雑な問題を分析する。 / 主催: CFS\, House of Finance / https://gfk-cfs.de/events/lectures/foreign-bonds-territorial-change-and-repudiation-the-silesian-bonds-saga/
+END:VEVENT
+BEGIN:VEVENT
+UID:22292ea36b21649e@seminar-radar
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261031
+SUMMARY:AI Week Frankfurt 2026
+LOCATION:Frankfurt am Main
+DESCRIPTION:フランクフルトで開催される5日間の産業横断型AIカンファレンス。10月29日は銀行・金融部門に特化したプログラムがあり、金融サービスにおけるAI活用が議論される。 / 主催: AI Hub Frankfurt (AI Hub GmbH) / https://ai-week-frankfurt.com/
 END:VEVENT
 END:VCALENDAR

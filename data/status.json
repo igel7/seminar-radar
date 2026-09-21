@@ -4,7 +4,7 @@
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
   "found": 0,
-  "note": "ニュース・コメンタリー欄のみでイベント一覧なし(0件が正常)"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "BIS – Bank for International Settlements – Events",
@@ -18,43 +18,42 @@
   "url": "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm",
   "ok": true,
   "found": 0,
-  "note": "fetch_all誤検知(THIN)。プレス発表一覧は正常に読める。イベント告知0件が正常"
+  "note": "WebFetchで正常取得(fetch_all.pyのFAIL-THIN判定は誤検知)。イベント告知は引き続き0件"
  },
  {
   "name": "BOFIT – Bank of Finland Institute for Emerging Economies – Events",
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/?c=26,24,25",
   "ok": true,
   "found": 2,
-  "note": "既知2件、新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "BaFin – Veranstaltungen",
   "url": "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html",
   "ok": true,
   "found": 7,
-  "note": "既知で新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bank of Albania – Events",
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
   "found": 0,
-  "note": "過去イベントの写真のみ掲載、今後のイベント告知なし"
+  "note": "変化検知(alt_url再取得)。今後のイベント告知なし"
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
-  "ok": false,
-  "found": 4,
-  "error": "直接取得403継続、WebFetchも403。tried: fetch, ua-curl, hints, webfetch, search",
-  "note": "web検索で既知4件(5th Annual Conf 9/24-25, Baltic Digital Euro 10/1 Vilnius, Breakthrough in Advanced Sectors 11/13, FinTech Conf 11/30)の日程を再確認、新規なし"
+  "ok": true,
+  "found": 3,
+  "note": "直接取得・WebFetchとも403継続。web検索で既知3件を再確認、新規なし。tried: fetch, ua-curl, hints, webfetch, search"
  },
  {
   "name": "Banka Slovenije – Events",
   "url": "https://www.bsi.si/en/about-us/conferences-and-seminars",
   "ok": true,
   "found": 3,
-  "note": "BS|EF research seminarシリーズから3件抽出。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Berlin School of Economics – Events",
@@ -68,14 +67,14 @@
   "url": "https://www.bitkom.org/events",
   "ok": true,
   "found": 0,
-  "note": "AIDAQ/Smart Country Convention等はいずれも技術者向け開発カンファレンスで対象外。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bruegel (Brussels) – Events",
   "url": "https://www.bruegel.org/events",
   "ok": true,
   "found": 5,
-  "note": "完全オンライン開催イベントのみ収載。5件抽出。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bundesbank – Forschungskonferenzen",
@@ -89,14 +88,14 @@
   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
   "ok": true,
   "found": 7,
-  "note": "既知で新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bundesbank – Termine",
   "url": "https://www.bundesbank.de/de/service/termine",
   "ok": true,
-  "found": 1,
-  "note": "既知で新規なし(ページ1のみキャッシュ。デジタルユーロフォーラム1件が該当)"
+  "found": 2,
+  "note": "ページ1のみキャッシュ。Digital Euro Forum(Saarbrücken)・住宅市場フォーラム(Hannover)は既知(Forum Bundesbank側と重複)、新規なし"
  },
  {
   "name": "CBBH – Central Bank of Bosnia and Herzegovina – Events",
@@ -116,8 +115,8 @@
   "name": "CEP – Council on Economic Policies (Zürich) – Events",
   "url": "https://www.cepweb.org/events/",
   "ok": true,
-  "found": 1,
-  "note": "Brussels roundtable(by invitation)は対象地域外のため対象外、オンライン会合1件は既知"
+  "found": 3,
+  "note": "Beijing/Hong Kong(実行日より前に終了)、Brussels(対象地域外)のため収載対象外、新規なし"
  },
  {
   "name": "CESifo (München) – Veranstaltungen",
@@ -137,21 +136,22 @@
   "name": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
   "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/",
   "ok": true,
-  "found": 5
+  "found": 5,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
   "url": "https://dgap.org/de/veranstaltungen",
   "ok": true,
-  "found": 5
+  "found": 5,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
   "found": 18,
-  "error": "直接curl(UA付き含む)403継続だがWebFetchで取得成功",
-  "note": "18件中17件既知、新規1件(Screening Trade Association Messaging for Collusion、11/4)"
+  "note": "curl(UA付き含む)403継続だがWebFetchでdiw-berlin.de版取得成功。今後予定は全て既知、新規なし"
  },
  {
   "name": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
@@ -172,7 +172,7 @@
   "url": "https://www.eba.europa.eu/publications-and-media/events",
   "ok": true,
   "found": 8,
-  "note": "Annual Data and Reporting Workshops 2026(11/11-13、オンライン)を新規採用"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ECB Banking Supervision (SSM) – Conferences & seminars",
@@ -185,7 +185,8 @@
   "name": "ECB – Conferences & seminars",
   "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
   "ok": true,
-  "found": 7
+  "found": 7,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ECB – Payments & Markets / Digital Euro events",
@@ -213,8 +214,7 @@
   "url": "https://www.europeanpaymentscouncil.eu/news-insights/events",
   "ok": true,
   "found": 1,
-  "error": "直接取得・WebFetchとも403継続",
-  "note": "既知のFRIDA Rulebookウェビナー(10/13)を再確認、新規なし"
+  "note": "直接取得・WebFetchとも403継続。web検索で既知のFRIDA Rulebookウェビナー(10/13)を再確認、新規なし。tried: fetch, webfetch, search"
  },
  {
   "name": "ESMA – Public Hearings",
@@ -228,43 +228,42 @@
   "url": "https://www.eu-japan.eu/tags/webinar",
   "ok": true,
   "found": 0,
-  "note": "対象期間内の該当イベントなし"
+  "note": "該当ウェビナーは全て実行日より前に終了"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
   "url": "https://www.ewi.uni-koeln.de/de/veranstaltungen/",
-  "ok": false,
-  "found": 0,
-  "error": "直接取得500継続(元URL・alt_urlとも)。WebFetchも失敗。tried: fetch, ua-curl, hints, webfetch, search",
-  "note": "web検索でEWI-Energietagung2026は2026年1月15-16日に開催済みと判明、今後の確定日程は確認できず"
+  "ok": true,
+  "found": 1,
+  "note": "直接取得500継続(元URL・alt_urlとも)。web検索で既知のEWI-Energietagung2027を再確認、新規なし。tried: fetch, ua-curl, hints, webfetch, search"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "https://www.eestipank.ee/en/events",
   "ok": true,
   "found": 0,
-  "note": "対象期間内の該当イベントなし"
+  "note": "理事会議事・統計発表のみ、公開イベント掲載なし"
  },
  {
   "name": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
   "url": "https://www.forum-ng.org/en/termine",
   "ok": true,
-  "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 7,
+  "note": "既知で新規なし"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "https://forum.frankfurt-school.de/konferenzen/",
   "ok": true,
-  "found": 8,
-  "note": "既知で新規なし"
+  "found": 6,
+  "note": "既知で新規なし(Turkish Banking Evening=レセプションのため対象外、Invest in Syria/Fokus Aufsichtsrat 26/Indo-German Business Hubはテーマ非該当)"
  },
  {
   "name": "Green and Sustainable Finance Cluster Germany (Frankfurt)",
   "url": "https://sustainablefinancecluster.com/en/events/",
   "ok": true,
   "found": 2,
-  "note": "変化なし(差分検知によりスキップ)。一部URL(423)は取得失敗のため成功ページのみで判定"
+  "note": "変化なし(差分検知によりスキップ)。一部URL(/en/)は423(ボット対策)だが主要ページは変化なしで判定済み"
  },
  {
   "name": "HNB – Croatian National Bank – Conferences",
@@ -277,37 +276,36 @@
   "name": "House of Finance (Goethe大) – Veranstaltungen",
   "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
   "ok": true,
-  "found": 2,
-  "note": "新規1件(Silesian Bonds講演、9/21)"
+  "found": 9,
+  "note": "新規3件(Free Lunch in Banking、SAFE-IBF Lecture、efl Annual Conference 2026)、他6件は既知"
  },
  {
   "name": "IMFS Frankfurt – 全ての今後のイベント",
   "url": "https://www.imfs-frankfurt.de/en/events/imfs-conferences/",
   "ok": true,
   "found": 2,
-  "note": "キャッシュはナビゲーションのみだったが、WebFetchでStablecoinsカンファレンス(11/5-6)の日程を再確認。既知2件、新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
   "url": "https://www.iwkoeln.de/institut/veranstaltungen.html",
   "ok": true,
   "found": 1,
-  "error": "直接curl 403継続だがWebFetchで取得成功",
-  "note": "今後予定は9/22の1件のみ(既知)"
+  "note": "curl 403継続だがWebFetchで取得成功。今後予定は9/22の1件のみ(既知)"
  },
  {
   "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
   "url": "https://www.iwh-halle.de/veranstaltungen/",
   "ok": true,
   "found": 10,
-  "note": "既知で新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "IfW Kiel – Veranstaltungen",
   "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
   "ok": true,
   "found": 4,
-  "note": "うち2件(9/7,9/10)は実行日より前のため除外。実際に収載対象となるのは4件"
+  "note": "既知で新規なし"
  },
  {
   "name": "JDZB – 日独センター (Berlin) – Veranstaltungen",
@@ -321,57 +319,56 @@
   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre",
   "ok": false,
   "found": 0,
-  "error": "直接取得403継続、WebFetchも403。tried: fetch, ua-curl, hints, webfetch, search",
-  "note": "web検索でも確定日程は確認できず"
+  "error": "主URL401/403継続(WebFetchも含め)。web検索でも今後の確定日程は確認できず。tried: fetch, ua-curl, hints, webfetch, search"
  },
  {
   "name": "Latvijas Banka – Research/Events",
   "url": "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026",
   "ok": true,
-  "found": 1,
-  "note": "既知で新規なし"
+  "found": 3,
+  "note": "既知イベント1件で登壇者3名(Klaas Knot・Alfred Kammer・Roberts Zīle)を新たに確認、他2件は変化なし"
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
   "url": "https://merics.org/en/events",
   "ok": true,
   "found": 1,
-  "note": "6th European China Conference(10/15)を新規採用"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "MNB – Magyar Nemzeti Bank (ハンガリー) – Events",
   "url": "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026",
   "ok": true,
   "found": 1,
-  "note": "既知で新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "NBP – Narodowy Bank Polski – Conferences",
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": true,
   "found": 1,
-  "error": "直接取得・WebFetchともImperva系チャレンジページ継続",
-  "note": "web検索で6th NBP-LB-CEBRA Biennial Conference(9/24-25)を再確認、既知で新規なし"
+  "note": "直接取得・WebFetchともImperva系チャレンジページ継続。web検索で6th NBP-LB-CEBRA Biennial Conference(9/24-25)を再確認、既知で新規なし(検索結果に開催地表記の不一致=Warsaw説あり、要確認として記録のみ)"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
   "url": "https://www.bnr.ro/en/24077-bears",
   "ok": false,
   "found": 0,
-  "error": "モバイル版・bnr.ro版とも日程情報なし(ナビゲーションのみ)。tried: fetch, ua-curl, hints, webfetch, search",
-  "note": "次回日程確認できず。参加申込はメール(bears@bnro.ro)のみ"
+  "error": "モバイル版・bnr.ro版とも次回日程情報なし(ナビゲーションのみ)。参加はメール登録制(bears@bnro.ro)のみでページ上に個別回の告知なし。tried: fetch, ua-curl, hints, webfetch, search"
  },
  {
   "name": "NBS – Národná banka Slovenska – Events",
   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
   "ok": true,
-  "found": 2
+  "found": 2,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "NBU – National Bank of Ukraine – Research Events",
   "url": "https://bank.gov.ua/en/research/events",
   "ok": true,
-  "found": 1
+  "found": 1,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "National Bank of Serbia – Conferences",
@@ -392,30 +389,28 @@
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
   "found": 0,
-  "note": "掲載イベントは全て対象地域外(ロンドン・NY・ワシントン等)"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
   "url": "https://www.oenb.at/en/Calendar.html",
   "ok": true,
   "found": 6,
-  "note": "Freitagsseminar with Catalina Martínez Hernández(10/9)を新規採用"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "PIK – Potsdam-Institut für Klimafolgenforschung",
   "url": "https://www.pik-potsdam.de/en/news/events/public-events",
   "ok": true,
   "found": 0,
-  "error": "接続不可(イントラログイン画面へのリダイレクト)継続、web検索でも新規イベント確認できず。tried: fetch, hints, search",
-  "note": "復旧(RECOVER)。ナビゲーションのみで日程情報なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
-  "ok": false,
+  "ok": true,
   "found": 0,
-  "error": "public.unpri.orgは405継続、WebFetchも失敗。tried: fetch, ua-curl, hints, webfetch, search",
-  "note": "PRI in Person 2026(Amsterdam、10/13-15)は対象地域外のため対象外。他に確認できる該当イベントなし"
+  "note": "public.unpri.orgは405継続。web検索で確認できたのは対象地域外の現地開催イベントのみ、新規の無料ウェビナーなし。tried: fetch, ua-curl, hints, webfetch, search"
  },
  {
   "name": "RWI Essen – Veranstaltungen",
@@ -429,7 +424,7 @@
   "url": "https://safe-frankfurt.de/news-latest/events.html",
   "ok": true,
   "found": 4,
-  "note": "既知で新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "SNB – Swiss National Bank – Events",
@@ -443,7 +438,7 @@
   "url": "https://www.srb.europa.eu/en/events",
   "ok": true,
   "found": 0,
-  "note": "今後の予定はキャッシュ上で日付未特定"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "SUERF – Events",
@@ -471,7 +466,7 @@
   "url": "https://www.unepfi.org/events/",
   "ok": true,
   "found": 1,
-  "note": "オンライン1件抽出。COP関連地域イベント(NYC/Yerevan/Antalya)は対象外地域のため除外"
+  "note": "既知で新規なし"
  },
  {
   "name": "Universität Mannheim – 経済学部イベント/セミナー",
@@ -484,15 +479,15 @@
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "https://www.wu.ac.at/en/the-university/events",
   "ok": true,
-  "found": 7,
-  "note": "既知で新規なし"
+  "found": 3,
+  "note": "既知で新規なし(WU x TUW mattersはテーマ該当性を確認できず対象外)"
  },
  {
   "name": "ZEW Mannheim – Veranstaltungen",
   "url": "https://www.zew.de/veranstaltungen",
   "ok": true,
   "found": 5,
-  "note": "既知で新規なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "appliedAI Institute (München) – Events",
@@ -506,7 +501,7 @@
   "url": "https://veranstaltungen.dena.de/",
   "ok": true,
   "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "定点のveranstaltungen.dena.deは変化なし(差分検知によりスキップ)。変化のあった/api/media/anyはプロジェクト/記事フィードでイベント情報なし"
  },
  {
   "name": "dfv Euro Finance Group (Frankfurt) – Executive Events",
@@ -526,8 +521,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 8,
-  "note": "18クエリ実行(基本8+観点深掘り6+確認4)。候補8件は全て収載済みの既知イベントと判明(新規採用0件)。"
+  "found": 55,
+  "note": "候補55件を確認。大半は既知(ECB/Bundesbank/BaFin等の銀行監督系、中東欧安全保障フォーラム各種、NBP-LB-CEBRA、Banka Slovenije BS|EF等)または実行日より前に終了。新規採用はAI Week Frankfurt 2026(10/26-30、フランクフルト)の1件のみ"
  },
  {
   "name": "フランクフルト日本法人会 – 行事・活動",
