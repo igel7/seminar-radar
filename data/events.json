@@ -2460,7 +2460,24 @@
    "summary_en": "International workshop under the SOEP-LEE2 project examining how firms, workers, and households navigate crisis and digital transformation, featuring keynotes by Christian Dustmann, Osea Giuntella, and David Peetz.",
    "summary_de": "Internationaler Workshop im Rahmen des SOEP-LEE2-Projekts zu den Auswirkungen von Krisen und digitalem Wandel auf Unternehmen, Beschäftigte und Haushalte, mit Keynotes von Christian Dustmann, Osea Giuntella und David Peetz.",
    "registration_note_en": "Speakers include Christian Dustmann (UCL), Osea Giuntella (University of Pittsburgh) and David Peetz (Griffith University).",
-   "registration_note_de": "Mit Beiträgen von Christian Dustmann (UCL), Osea Giuntella (University of Pittsburgh) und David Peetz (Griffith University)."
+   "registration_note_de": "Mit Beiträgen von Christian Dustmann (UCL), Osea Giuntella (University of Pittsburgh) und David Peetz (Griffith University).",
+   "speakers": [
+    {
+     "name": "Christian Dustmann",
+     "org": "University College London",
+     "role": null
+    },
+    {
+     "name": "Osea Giuntella",
+     "org": "University of Pittsburgh",
+     "role": null
+    },
+    {
+     "name": "David Peetz",
+     "org": "Griffith University",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Central Bank Digital Currency (CBDC) Retail component – IBFI Webinar",
@@ -5013,8 +5030,7 @@
    "venue": "DIW Berlin",
    "format": "onsite",
    "themes": [
-    "climate_esg",
-    "real_economy"
+    "climate_esg"
    ],
    "fee": "unknown",
    "open_to_public": true,
@@ -5034,7 +5050,29 @@
    "summary_en": "A PhD winter school on energy and environmental economics with instructors including Frank A. Wolak.",
    "summary_de": "Eine Winter School für Promovierende zur Energie- und Umweltökonomik mit Dozierenden wie Frank A. Wolak.",
    "registration_note_en": "Lecturers include Frank A. Wolak, Veronika Grimm, Philippe Quirion and Afzal Siddiqui. Aimed at PhD students.",
-   "registration_note_de": "Mit Frank A. Wolak, Veronika Grimm, Philippe Quirion und Afzal Siddiqui als Dozenten. Für Doktoranden."
+   "registration_note_de": "Mit Frank A. Wolak, Veronika Grimm, Philippe Quirion und Afzal Siddiqui als Dozenten. Für Doktoranden.",
+   "speakers": [
+    {
+     "name": "Frank A. Wolak",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Veronika Grimm",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Philippe Quirion",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Afzal Siddiqui",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "KWW-Spezial: Handlungsspielräume für dezentrale Gebiete",
@@ -13593,7 +13631,6 @@
    "venue": "DIW Berlin, Anton-Wilhelm-Amo-Straße 58",
    "format": "onsite",
    "themes": [
-    "real_economy",
     "central_bank"
    ],
    "fee": "free",
@@ -13615,7 +13652,14 @@
    "time_end": null,
    "source": "DIW Berlin – Veranstaltungen",
    "id": "39994b9eaccf0c48",
-   "first_seen": "2026-08-23"
+   "first_seen": "2026-08-23",
+   "speakers": [
+    {
+     "name": "Evi Pappa",
+     "org": "Universidad Carlos III de Madrid",
+     "role": null
+    }
+   ]
   },
   {
    "title": "JDZB SERIES \"THE FUTURE OF DEMOCRACY\"",
@@ -19666,6 +19710,11 @@
      "name": "Pia Hüttl",
      "org": null,
      "role": null
+    },
+    {
+     "name": "Alexander Kriwoluzky",
+     "org": null,
+     "role": null
     }
    ],
    "source": "DIW Berlin – Veranstaltungen",
@@ -21087,6 +21136,47 @@
    "first_seen": "2026-09-22"
   },
   {
+   "title": "Berlin Macro Seminar – Lorenzo Ranaldi (Banca d'Italia)",
+   "title_ja": "ベルリン・マクロセミナー:インフレの信用チャネル",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "16:15",
+   "city": "Berlin",
+   "venue": "Joan Robinson Room, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
+   "summary_ja": "イタリア銀行のロレンツォ・ラナルディ氏が、インフレの信用チャネルをテーマに報告するベルリン・マクロセミナー。",
+   "summary_en": "A Berlin Macro Seminar talk by Lorenzo Ranaldi (Banca d'Italia) on the credit channel of inflation.",
+   "summary_de": "Ein Berlin-Macro-Seminar-Vortrag von Lorenzo Ranaldi (Banca d'Italia) über den Kreditkanal der Inflation.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Credit Channel of Inflation",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": "17:30",
+   "speakers": [
+    {
+     "name": "Lorenzo Ranaldi",
+     "org": "Banca d'Italia",
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "28f1796d4efbfeda",
+   "first_seen": "2026-09-22"
+  },
+  {
    "title": "Growth and Search and Matching",
    "title_ja": "成長と探索・マッチング — 計量経済学コース",
    "organizer": "Kiel Institut für Weltwirtschaft",
@@ -21125,6 +21215,114 @@
    "registration_url": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "482097c9c05b7742",
+   "first_seen": "2026-09-22"
+  },
+  {
+   "title": "Priorities and trade-offs for the next round of EU banking reform",
+   "title_ja": "EU銀行制度改革の優先課題とトレードオフ",
+   "organizer": "Bruegel",
+   "date_start": "2026-10-13",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bruegel.org/event/priorities-and-trade-offs-next-round-eu-banking-reform",
+   "summary_ja": "銀行同盟の未完成、規制の複雑化、米国の規制緩和圧力、システミックリスクの高まりを背景に、EUの次期銀行制度改革の優先課題とトレードオフを議論する。",
+   "summary_en": "A discussion of the priorities and trade-offs facing the next round of EU banking reform, against a backdrop of an unfinished banking union, growing rulebook complexity, US deregulation pressure and rising systemic risk.",
+   "summary_de": "Eine Diskussion über die Prioritäten und Zielkonflikte der nächsten Runde der EU-Bankenreform vor dem Hintergrund einer unvollendeten Bankenunion, wachsender Regulierungskomplexität, US-Deregulierungsdrucks und steigender Systemrisiken.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Bruegel",
+   "title_short": "EU Banking Reform Trade-offs",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Rebecca Christie",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Paulina Dejmek-Hack",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Marloes van Schaik",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Nicolas Véron",
+     "org": "Bruegel",
+     "role": null
+    }
+   ],
+   "source": "Bruegel (Brussels) – Events",
+   "id": "4df778de5f6b83bf",
+   "first_seen": "2026-09-22"
+  },
+  {
+   "title": "Artificial intelligence, jobs and growth in developing economies",
+   "title_ja": "AIと途上国の雇用・成長",
+   "organizer": "Bruegel",
+   "date_start": "2026-10-06",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ai",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bruegel.org/event/artificial-intelligence-jobs-and-growth-developing-economies",
+   "summary_ja": "世界銀行の世界開発報告書を題材に、AIが途上国の雇用と経済成長に与える影響を議論するオンライン討論会。",
+   "summary_en": "An online discussion examining how artificial intelligence could affect jobs and economic growth in developing economies, drawing on the World Bank's World Development Report.",
+   "summary_de": "Eine Online-Diskussion darüber, wie künstliche Intelligenz Beschäftigung und Wirtschaftswachstum in Entwicklungsländern beeinflussen könnte, basierend auf dem World Development Report der Weltbank.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Bruegel",
+   "title_short": "AI, Jobs and Growth",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Jeromin Zettelmeyer",
+     "org": "Bruegel",
+     "role": null
+    },
+    {
+     "name": "Mario Mariniello",
+     "org": "Bruegel",
+     "role": null
+    },
+    {
+     "name": "Gaurav Nayyar",
+     "org": "World Bank",
+     "role": null
+    }
+   ],
+   "source": "Bruegel (Brussels) – Events",
+   "id": "5b6a7874cea5157f",
    "first_seen": "2026-09-22"
   },
   {
