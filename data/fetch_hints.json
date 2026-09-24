@@ -1,216 +1,216 @@
 {
- "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。 permanent_block: {since, recheck_days, last_recheck} が付いたソースは恒常ブロック扱いで、fetch_all.py が日次取得をスキップし recheck_days ごとに再確認する(運用ルールは AGENTS.md B手順1.5・2a)。",
- "DIW Berlin – Veranstaltungen": {
-  "method": "webfetch",
-  "alt_urls": [
-   "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
-  ],
-  "last_ok": "2026-09-20",
-  "note": "2026-09-20: curl(UA付き含む)は403継続だがWebFetchツールでdiw-berlin.de版取得成功。今後開催予定18件中17件が既知、新規1件(Screening Trade Association Messaging for Collusion、11/4、Not public扱いのBrown Bagセミナーも収載対象になる点に注意)。"
- },
- "ifo Institut – Veranstaltungen": {
-  "method": "alt-url+search",
-  "alt_urls": [],
-  "last_ok": "2026-08-17",
-  "note": "一覧はJS描画で直接取得不可。alt_urls の CESifo会議一覧は独立ソース『CESifo (München) – Veranstaltungen』と重複のため2026-08-28に削除。site:ifo.de veranstaltung 検索で補完する"
- },
- "RWI Essen – Veranstaltungen": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
-   "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar",
-   "https://www.rwi-essen.de/en/events/"
-  ],
-  "last_ok": "2026-08-19",
-  "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる / 2026-08-28: 英語の全イベント一覧 /en/events/ を追加(研究セミナー系ページだけでは他イベントを取りこぼすため)"
- },
- "IMFS Frankfurt – 全ての今後のイベント": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.imfs-frankfurt.de/en/events/imfs-conferences/",
-   "https://www.imfs-frankfurt.de/en/events/imfs-distinguished-lectures/"
-  ],
-  "last_ok": "2026-08-08",
-  "note": "一覧はJS描画。カテゴリ別サブページを実ブラウザUA付きcurlで辿る / 2026-08-28: distinguished-lectures のカテゴリページを追加(実在・イベント掲載を確認)"
- },
- "SUERF – Events": {
-  "method": "ua-curl",
-  "alt_urls": [],
-  "last_ok": "2026-08-08",
-  "note": "403ボット対策は実ブラウザUA付きcurlで通る(継続的な成功実績)"
- },
- "Frankfurt School of Finance & Management – Events": {
-  "method": "ua-curl",
-  "alt_urls": [],
-  "last_ok": "2026-08-27",
-  "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完"
- },
- "Bank of Albania – Events": {
-  "method": "ua-curl",
-  "alt_urls": [],
-  "last_ok": "2026-08-08",
-  "note": "403ボット対策は実ブラウザUA付きcurlで通る"
- },
- "NBU – National Bank of Ukraine – Research Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://bank.gov.ua/en/research/events"
-  ],
-  "last_ok": "2026-08-17",
-  "note": "WebFetchは403だが実ブラウザUA付きcurlでほぼ毎日成功していた(個別詳細ページ /en/research/events/330 等も同様)。「JS SPA」と即断しないこと"
- },
- "dena – Deutsche Energie-Agentur (Berlin)": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://veranstaltungen.dena.de/",
-   "https://www.dena.de/dena-kongress/",
-   "https://www.dena.de/api/media/any"
-  ],
-  "last_ok": "2026-08-17",
-  "note": "本体の一覧はJS描画。専用イベントサイト veranstaltungen.dena.de が確実(毎日2〜9件の実績)。/api/media/any はバックエンドAPI直叩きの成功実績あり"
- },
- "Agora Energiewende (Berlin)": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.agora-energiewende.de/veranstaltungen",
-   "https://www.agora-energiewende.org/news-events/filter/tab-3",
-   "https://www.agora-energiewende.de/aktuelles/filter/tab-3"
-  ],
-  "last_ok": "2026-08-19",
-  "note": ".org が503の時は .de ドメインで取れる。イベントは tab-3 フィルタのAJAX一覧に出る"
- },
- "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://sustainablefinancecluster.com/en/events/"
-  ],
-  "last_ok": "2026-09-18",
-  "note": "gsfc-germany.com は恒常的に 423 Locked。団体は Sustainable Finance Cluster e.V. に改称しドメイン移転済み。移転先で毎回2件前後の実績 / 2026-09-18: fetch_all.py(alt-url)はsustainablefinancecluster.com/en/events/を取得できるがCSS/フォント宣言のみでイベント本文が入らない(JS描画)。WebFetchでは正常に今後のイベント(2件)を取得できた。fetch_allの本文が空/CSSのみの場合はWebFetchを試すこと。"
- },
- "NBP – Narodowy Bank Polski – Conferences": {
-  "method": "co-host",
-  "alt_urls": [],
-  "last_ok": "2026-09-20",
-  "note": "2026-09-20: 直接取得・WebFetchともImperva系チャレンジページ継続。web検索で6th NBP-LB-CEBRA Biennial Conference(9/24-25, Warsaw)以外の新規会議は見当たらず(既存収載済み)。"
- },
- "EPC – European Payments Council – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-09-20",
-  "note": "2026-09-20: 直接取得・WebFetchとも403継続。web検索で既知のFRIDA Rulebookウェビナー(10/13)を再確認、新規なし。個別ページURLは特定できず(europeanpaymentscouncil.eu内の検索でも直接ヒットしない)。"
- },
- "PIK – Potsdam-Institut für Klimafolgenforschung": {
-  "method": "search",
-  "alt_urls": [
-   "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27"
-  ],
-  "last_ok": "2026-09-02",
-  "note": "イベント一覧ページはイントラのログイン画面へリダイレクトされることが多い(接続不可の日もある)。site:pik-potsdam.de 検索で個別イベントページ(GCET27等)を探す。2026-09-02はGCET27(既知)を確認。"
- },
- "dfv Euro Finance Group (Frankfurt) – Executive Events": {
-  "method": "sub-pages",
-  "alt_urls": [
-   "https://tickets.dfv-eurofinance.com/EFW26/",
-   "https://frankfurt-ebc.com"
-  ],
-  "last_ok": "2026-08-19",
-  "note": "一覧ページに具体的日付が無いことがある。個別カンファレンスページ・チケットサイトを辿って日付を確定する(毎日3〜9件の実績)"
- },
- "Bank of Lithuania – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-09-20",
-  "note": "2026-09-20: lb.ltは引き続き403、WebFetchも403。web検索+第三者アグリゲータ(researchcal.com)でBaltic Digital Euro Conferenceの開催日をOct 1, 2026・Vilnius・Conference Hall S14で確認(既知の表記9/24-25・10/1と整合、検索結果に混在する11月表記は誤りと判断できる)。既知4件の日程に変化なし。"
- },
- "HNB – Croatian National Bank – Conferences": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-08-17",
-  "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い"
- },
- "Jacques Delors Centre (Hertie School, Berlin) – Events": {
-  "method": "webfetch",
-  "alt_urls": [],
-  "last_ok": "2026-09-03",
-  "note": "2026-09-19: 主URL401/403継続。web検索でも今後の確定日程は確認できず(EU to go シリーズ等の一般的説明のみ)。"
- },
- "PRI – Principles for Responsible Investment – Events": {
-  "method": "search",
-  "alt_urls": [
-   "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
-  ],
-  "last_ok": "2026-09-14",
-  "note": "2026-09-15: public.unpri.org は個別記事URLも含め405が継続(curl UA付きも同様、WebFetch限定の問題ではない)。web検索の要約文が実際の検索結果に無い日付を生成することがあるため、検索結果のリンク一覧に実在する記事かを必ず照合すること。既知のnature/biodiversityウェビナー以外の新規は確認できず。"
- },
- "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-09-11",
-  "note": "2026-09-15: モバイル版は復旧しbnr.roへ302で正常応答するがナビゲーションのみで日程情報なし。参加申込はbears@bnro.ro宛メール(要所属メール)とページに明記、自動取得の代替経路にはならない。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx を再試行のこと。"
- },
- "EBA – European Banking Authority – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-08-08",
-  "note2": "2026-08-19: site:検索は実行できたが、見つかった公聴会・ワークショップはすべて過去日程だった(検索結果が古い場合あり、日付の確認を要する)",
-  "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
- },
- "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
-  "method": "webfetch",
-  "alt_urls": [
-   "https://www.iwkoeln.de/institut/veranstaltungen.html"
-  ],
-  "last_ok": "2026-09-19",
-  "note": "2026-09-19: curlは403継続だがWebFetchで取得成功。今後予定は9/22の1件のみ(既知)。"
- },
- "BNB – Bulgarian National Bank – Events": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
-  ],
-  "last_ok": "2026-09-15",
-  "note": "2026-09-15: WebFetch直接取得でプレス発表一覧(2026年分含む)が正常に読めることを再確認(fetch_all.pyのFAIL-THIN判定は誤検知)。イベント告知は引き続き0件(found:0が正常)。"
- },
- "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.cbbh.ba/press/AllNews"
-  ],
-  "last_ok": "2026-08-19",
-  "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
- },
- "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
-  "method": "search",
-  "alt_urls": [
-   "https://www.ewi.uni-koeln.de/de/ewi-energietagung/"
-  ],
-  "last_ok": "2026-09-01",
-  "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。"
- },
- "CEP – Council on Economic Policies (Zürich) – Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.cepweb.org/events/upcoming-events/",
-   "https://www.cepweb.org/feed/"
-  ],
-  "last_ok": "2026-08-27",
-  "note": "Cloudflareチャレンジは2026-08-27のリトライで解消を確認(ua-curlで/events/upcoming-events/が読める。RSS /feed/ も生きている)、恒常ブロック解除。再発時はdiscoveryのESGクエリで補完"
- },
- "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.bofit.fi/en/research/seminars/",
-   "https://www.bofit.fi/en/research/conferences-and-workshops/"
-  ],
-  "last_ok": "2026-09-18",
-  "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下 / 2026-09-18: fetch_all.py(ua-curl)は元URL・alt_urlsとも info.suomenpankki.fi の通知ページへリダイレクトされ失敗。WebFetchでは正常にカレンダー内容(今後2件)を取得できた。ua-curlが失敗した場合はWebFetchを試すこと。"
- },
- "Latvijas Banka – Research/Events": {
-  "method": "search",
-  "alt_urls": [
-   "https://conference.bank.lv/"
-  ],
-  "last_ok": "2026-09-19",
-  "note": "2026-09-19: 主URL(macroeconomics.lv)はfetch_all/WebFetchともFAIL-THIN(空白)。web検索で新設の会議専用サイト conference.bank.lv を発見、旗艦会議 'From Policy to Impact'(2026-11-11, Riga)を確認・採用。次回以降はこのURLもalt_urlsとして併せて確認する。"
- }
+  "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。 permanent_block: {since, recheck_days, last_recheck} が付いたソースは恒常ブロック扱いで、fetch_all.py が日次取得をスキップし recheck_days ごとに再確認する(運用ルールは AGENTS.md B手順1.5・2a)。",
+  "DIW Berlin – Veranstaltungen": {
+    "method": "webfetch",
+    "alt_urls": [
+      "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
+    ],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: 直接取得403継続、hintのalt URL(diw-berlin.de)をWebFetchで取得成功再確認。既知20件・変化なし。"
+  },
+  "ifo Institut – Veranstaltungen": {
+    "method": "alt-url+search",
+    "alt_urls": [],
+    "last_ok": "2026-08-17",
+    "note": "一覧はJS描画で直接取得不可。alt_urls の CESifo会議一覧は独立ソース『CESifo (München) – Veranstaltungen』と重複のため2026-08-28に削除。site:ifo.de veranstaltung 検索で補完する"
+  },
+  "RWI Essen – Veranstaltungen": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
+      "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar",
+      "https://www.rwi-essen.de/en/events/"
+    ],
+    "last_ok": "2026-08-19",
+    "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる / 2026-08-28: 英語の全イベント一覧 /en/events/ を追加(研究セミナー系ページだけでは他イベントを取りこぼすため)"
+  },
+  "IMFS Frankfurt – 全ての今後のイベント": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.imfs-frankfurt.de/en/events/imfs-conferences/",
+      "https://www.imfs-frankfurt.de/en/events/imfs-distinguished-lectures/"
+    ],
+    "last_ok": "2026-08-08",
+    "note": "一覧はJS描画。カテゴリ別サブページを実ブラウザUA付きcurlで辿る / 2026-08-28: distinguished-lectures のカテゴリページを追加(実在・イベント掲載を確認)"
+  },
+  "SUERF – Events": {
+    "method": "ua-curl",
+    "alt_urls": [],
+    "last_ok": "2026-08-08",
+    "note": "403ボット対策は実ブラウザUA付きcurlで通る(継続的な成功実績)"
+  },
+  "Frankfurt School of Finance & Management – Events": {
+    "method": "ua-curl",
+    "alt_urls": [],
+    "last_ok": "2026-08-27",
+    "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完"
+  },
+  "Bank of Albania – Events": {
+    "method": "ua-curl",
+    "alt_urls": [],
+    "last_ok": "2026-08-08",
+    "note": "403ボット対策は実ブラウザUA付きcurlで通る"
+  },
+  "NBU – National Bank of Ukraine – Research Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://bank.gov.ua/en/research/events"
+    ],
+    "last_ok": "2026-08-17",
+    "note": "WebFetchは403だが実ブラウザUA付きcurlでほぼ毎日成功していた(個別詳細ページ /en/research/events/330 等も同様)。「JS SPA」と即断しないこと"
+  },
+  "dena – Deutsche Energie-Agentur (Berlin)": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://veranstaltungen.dena.de/",
+      "https://www.dena.de/dena-kongress/",
+      "https://www.dena.de/api/media/any"
+    ],
+    "last_ok": "2026-08-17",
+    "note": "本体の一覧はJS描画。専用イベントサイト veranstaltungen.dena.de が確実(毎日2〜9件の実績)。/api/media/any はバックエンドAPI直叩きの成功実績あり"
+  },
+  "Agora Energiewende (Berlin)": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.agora-energiewende.de/veranstaltungen",
+      "https://www.agora-energiewende.org/news-events/filter/tab-3",
+      "https://www.agora-energiewende.de/aktuelles/filter/tab-3"
+    ],
+    "last_ok": "2026-08-19",
+    "note": ".org が503の時は .de ドメインで取れる。イベントは tab-3 フィルタのAJAX一覧に出る"
+  },
+  "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://sustainablefinancecluster.com/en/events/"
+    ],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: fetch_all.py(alt-url)は本日もCSS/フォント宣言のみ(サブエージェント2回も同様)。メインモデルがWebFetchで直接取得し2件確認(いずれも既知・変化なし)。fetch_allの本文が空/CSSのみの場合はWebFetchを試す運用を継続。"
+  },
+  "NBP – Narodowy Bank Polski – Conferences": {
+    "method": "co-host",
+    "alt_urls": [],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: 直接取得・WebFetchともImperva継続。web検索で新規なし再確認(6th NBP-LB-CEBRA ConferenceはCEBRA経由で既知)。"
+  },
+  "EPC – European Payments Council – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: 直接取得404継続。web検索でFRIDA Rulebookウェビナーのみ再確認、新規なし。"
+  },
+  "PIK – Potsdam-Institut für Klimafolgenforschung": {
+    "method": "search",
+    "alt_urls": [
+      "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27"
+    ],
+    "last_ok": "2026-09-02",
+    "note": "イベント一覧ページはイントラのログイン画面へリダイレクトされることが多い(接続不可の日もある)。site:pik-potsdam.de 検索で個別イベントページ(GCET27等)を探す。2026-09-02はGCET27(既知)を確認。"
+  },
+  "dfv Euro Finance Group (Frankfurt) – Executive Events": {
+    "method": "sub-pages",
+    "alt_urls": [
+      "https://tickets.dfv-eurofinance.com/EFW26/",
+      "https://frankfurt-ebc.com"
+    ],
+    "last_ok": "2026-08-19",
+    "note": "一覧ページに具体的日付が無いことがある。個別カンファレンスページ・チケットサイトを辿って日付を確定する(毎日3〜9件の実績)"
+  },
+  "Bank of Lithuania – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: lb.lt/WebFetchとも403継続。web検索で既知5件を再確認、新規なし。"
+  },
+  "HNB – Croatian National Bank – Conferences": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-08-17",
+    "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い"
+  },
+  "Jacques Delors Centre (Hertie School, Berlin) – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: 直接取得・WebFetchとも403継続(前回2026-09-03のWebFetch成功は本日再現せず)。web検索で既知3件を再確認。methodをwebfetchからsearchに切替。"
+  },
+  "PRI – Principles for Responsible Investment – Events": {
+    "method": "search",
+    "alt_urls": [
+      "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
+    ],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: 主URL thin、alt URL 405継続。web検索の候補はいずれも対象地域外/終了済みで新規なし。"
+  },
+  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-09-11",
+    "note": "2026-09-15: モバイル版は復旧しbnr.roへ302で正常応答するがナビゲーションのみで日程情報なし。参加申込はbears@bnro.ro宛メール(要所属メール)とページに明記、自動取得の代替経路にはならない。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx を再試行のこと。"
+  },
+  "EBA – European Banking Authority – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-08-08",
+    "note2": "2026-08-19: site:検索は実行できたが、見つかった公聴会・ワークショップはすべて過去日程だった(検索結果が古い場合あり、日付の確認を要する)",
+    "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
+  },
+  "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
+    "method": "webfetch",
+    "alt_urls": [
+      "https://www.iwkoeln.de/institut/veranstaltungen.html"
+    ],
+    "last_ok": "2026-09-19",
+    "note": "2026-09-19: curlは403継続だがWebFetchで取得成功。今後予定は9/22の1件のみ(既知)。"
+  },
+  "BNB – Bulgarian National Bank – Events": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
+    ],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: WebFetch(alt-url)で正常取得再確認。イベント告知は引き続き0件。"
+  },
+  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.cbbh.ba/press/AllNews"
+    ],
+    "last_ok": "2026-08-19",
+    "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
+  },
+  "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
+    "method": "search",
+    "alt_urls": [
+      "https://www.ewi.uni-koeln.de/de/ewi-energietagung/"
+    ],
+    "last_ok": "2026-09-01",
+    "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。"
+  },
+  "CEP – Council on Economic Policies (Zürich) – Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.cepweb.org/events/upcoming-events/",
+      "https://www.cepweb.org/feed/"
+    ],
+    "last_ok": "2026-08-27",
+    "note": "Cloudflareチャレンジは2026-08-27のリトライで解消を確認(ua-curlで/events/upcoming-events/が読める。RSS /feed/ も生きている)、恒常ブロック解除。再発時はdiscoveryのESGクエリで補完"
+  },
+  "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.bofit.fi/en/research/seminars/",
+      "https://www.bofit.fi/en/research/conferences-and-workshops/"
+    ],
+    "last_ok": "2026-09-18",
+    "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下 / 2026-09-18: fetch_all.py(ua-curl)は元URL・alt_urlsとも info.suomenpankki.fi の通知ページへリダイレクトされ失敗。WebFetchでは正常にカレンダー内容(今後2件)を取得できた。ua-curlが失敗した場合はWebFetchを試すこと。"
+  },
+  "Latvijas Banka – Research/Events": {
+    "method": "search",
+    "alt_urls": [
+      "https://conference.bank.lv/"
+    ],
+    "last_ok": "2026-09-19",
+    "note": "2026-09-19: 主URL(macroeconomics.lv)はfetch_all/WebFetchともFAIL-THIN(空白)。web検索で新設の会議専用サイト conference.bank.lv を発見、旗艦会議 'From Policy to Impact'(2026-11-11, Riga)を確認・採用。次回以降はこのURLもalt_urlsとして併せて確認する。"
+  }
 }
