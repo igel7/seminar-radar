@@ -5,8 +5,8 @@
     "alt_urls": [
       "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
     ],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: 直接取得403継続、hintのalt URL(diw-berlin.de)をWebFetchで取得成功再確認。既知20件・変化なし。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: 直接取得403継続、hintのalt URL(diw-berlin.de)をWebFetchで取得成功再確認。多数のBerlin Macro Seminar等を確認、既知イベントのみ。"
   },
   "ifo Institut – Veranstaltungen": {
     "method": "alt-url+search",
@@ -90,14 +90,14 @@
   "NBP – Narodowy Bank Polski – Conferences": {
     "method": "co-host",
     "alt_urls": [],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: 直接取得・WebFetchともImperva継続。web検索で新規なし再確認(6th NBP-LB-CEBRA ConferenceはCEBRA経由で既知)。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: 直接取得・WebFetchともImperva継続。web検索で新規なし再確認(6th NBP-LB-CEBRA/NBU-NBP等はいずれも実行日以前または既知)。"
   },
   "EPC – European Payments Council – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: 直接取得404継続。web検索でFRIDA Rulebookウェビナーのみ再確認、新規なし。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: 直接取得404継続。web検索でFRIDA Rulebookウェビナー(10/13)を再確認、既知・新規なし。"
   },
   "PIK – Potsdam-Institut für Klimafolgenforschung": {
     "method": "search",
@@ -119,8 +119,8 @@
   "Bank of Lithuania – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: lb.lt/WebFetchとも403継続。web検索で既知5件を再確認、新規なし。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: lb.lt直接403継続。web検索で既知3件(Digital Euro Conference 10/1, Economics Conference 11/13, Fraud conference 11/19)を再確認、新規なし。"
   },
   "HNB – Croatian National Bank – Conferences": {
     "method": "search",
@@ -131,22 +131,22 @@
   "Jacques Delors Centre (Hertie School, Berlin) – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: 直接取得・WebFetchとも403継続(前回2026-09-03のWebFetch成功は本日再現せず)。web検索で既知3件を再確認。methodをwebfetchからsearchに切替。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: 直接取得・WebFetchとも403継続。web検索で新規なし再確認(既知イベントは10/9まで確認済み)。"
   },
   "PRI – Principles for Responsible Investment – Events": {
     "method": "search",
     "alt_urls": [
       "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
     ],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: 主URL thin、alt URL 405継続。web検索の候補はいずれも対象地域外/終了済みで新規なし。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: 主URL thin、alt URL 405継続。web検索の候補(PRI in Person 2026, Amsterdam)は対象地域外で新規なし。"
   },
   "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-11",
-    "note": "2026-09-15: モバイル版は復旧しbnr.roへ302で正常応答するがナビゲーションのみで日程情報なし。参加申込はbears@bnro.ro宛メール(要所属メール)とページに明記、自動取得の代替経路にはならない。次回はhttps://www.bnro.ro/Seminarul-de-Analiza-si-Cercetare-Economica--16412-Mobile.aspx を再試行のこと。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-15: モバイル版は復旧しbnr.roへ302で正常応答するがナビゲーションのみで日程情報なし。参加申込はbears@bnro.ro宛メール(要所属メール)とページに明記、自動取得の代替経路にはならない。2026-09-26: hint記載のモバイルURL(bnr.ro)をWebFetchで再確認、引き続き日程情報なし(ok:true, found:0)。"
   },
   "EBA – European Banking Authority – Events": {
     "method": "search",
@@ -160,16 +160,16 @@
     "alt_urls": [
       "https://www.iwkoeln.de/institut/veranstaltungen.html"
     ],
-    "last_ok": "2026-09-19",
-    "note": "2026-09-19: curlは403継続だがWebFetchで取得成功。今後予定は9/22の1件のみ(既知)。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: curlは403継続だがWebFetchで取得成功。今後予定はオンライン講座(9/28、既知)のみ、Brussels開催分は対象地域外。"
   },
   "BNB – Bulgarian National Bank – Events": {
     "method": "alt-url",
     "alt_urls": [
       "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
     ],
-    "last_ok": "2026-09-24",
-    "note": "2026-09-24: WebFetch(alt-url)で正常取得再確認。イベント告知は引き続き0件。"
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: WebFetch(alt-url)で正常取得再確認。イベント告知は引き続き0件(プレスリリースのみ)。"
   },
   "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
     "method": "alt-url",
@@ -185,7 +185,7 @@
       "https://www.ewi.uni-koeln.de/de/ewi-energietagung/"
     ],
     "last_ok": "2026-09-01",
-    "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。"
+    "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。"
   },
   "CEP – Council on Economic Policies (Zürich) – Events": {
     "method": "ua-curl",

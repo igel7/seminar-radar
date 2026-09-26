@@ -324,14 +324,6 @@ LOCATION:
 DESCRIPTION:OMFIF会長デービッド・マーシュ氏がイングランド銀行のベイリー総裁と、経済ショックや地政学的不確実性、金融安定リスクの中での中央銀行の独立性について語る無料ライブ配信。 / 主催: OMFIF Economic & Monetary Policy Institute / https://www.omfif.org/meetings/central-bank-independence-in-an-era-of-financial-instability/
 END:VEVENT
 BEGIN:VEVENT
-UID:8e2e1e3158c228ae@seminar-radar
-DTSTART;VALUE=DATE:20260826
-DTEND;VALUE=DATE:20260827
-SUMMARY:Monetary policy and financial stability at the SNB: the role of macroprudential tools
-LOCATION:Basel
-DESCRIPTION:SNB理事アントワーヌ・マルタンがバーゼル大学で、SNBの金融政策と金融安定の関係、マクロプルーデンス手段の役割について講演する。 / 主催: Swiss National Bank / https://www.snb.ch/en/services-events/digital-services/event-schedule
-END:VEVENT
-BEGIN:VEVENT
 UID:8f966184b58a3c7b@seminar-radar
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
@@ -1084,14 +1076,6 @@ LOCATION:Frankfurt am Main
 DESCRIPTION:ドイツ連邦銀行の金融監督分野における恒例の旗艦シンポジウム。銀行業界との対話を目的とする第28回開催。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine/bundesbank-symposium-629518
 END:VEVENT
 BEGIN:VEVENT
-UID:341ebb4fb199e32f@seminar-radar
-DTSTART;VALUE=DATE:20260826
-DTEND;VALUE=DATE:20260827
-SUMMARY:Zahlungsverkehrssymposium 2026: Innovationen im Zahlungsverkehr – Wege in eine vernetzte Zukunft
-LOCATION:Frankfurt am Main
-DESCRIPTION:決済分野のイノベーションと今後の展望を議論するブンデスバンクのシンポジウム。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine/zahlungsverkehrssymposium-2026-1002364
-END:VEVENT
-BEGIN:VEVENT
 UID:5b95602899df8970@seminar-radar
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261007
@@ -1121,7 +1105,7 @@ DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
 SUMMARY:4. Finanzplatzkonferenz
 LOCATION:Frankfurt am Main
-DESCRIPTION:ナーゲル総裁ら主催による、地政学的・技術的変化の中でのドイツの金融拠点としての競争力を議論する会議。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine/4-finanzplatzkonferenz-963050
+DESCRIPTION:ナーゲル総裁ら主催による、地政学的・技術的変化の中でのドイツの金融拠点としての競争力を議論する会議。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine/4-finanzplatzkonferenz-963050 / 登壇: Sabine Mauderer (Bundesbank)\, Joachim Nagel (Bundesbank)\, Kyriakos Pierrakakis
 END:VEVENT
 BEGIN:VEVENT
 UID:a82400c3c6aa5553@seminar-radar
@@ -1407,9 +1391,9 @@ BEGIN:VEVENT
 UID:3c141d1db29e2855@seminar-radar
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261002
-SUMMARY:Pop Culture &amp\; Soft Power
+SUMMARY:Pop Culture & Soft Power
 LOCATION:Düsseldorf
-DESCRIPTION:DJWおよびNRW Forumが共催するイベント。アジアポップ展示会の一部として開催されます。 / 主催: Deutsch-Japanischer Wirtschaftskreis e.V. (DJW) / https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-yoru-no-kai-102026
+DESCRIPTION:NRWフォーラムのASIA POP展に合わせたDJW主催イベント。日本のポップカルチャーとそのソフトパワー・経済的意義について議論する。 / 主催: DJW – Deutsch-Japanischer Wirtschaftskreis / https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-yoru-no-kai-102026
 END:VEVENT
 BEGIN:VEVENT
 UID:3db82969a2384ca1@seminar-radar
@@ -1727,9 +1711,9 @@ BEGIN:VEVENT
 UID:e2b806902699eca7@seminar-radar
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261122
-SUMMARY:Munich Lectures Workshop on Cities\, Housing and Infrastructure
+SUMMARY:CESifo Munich Lectures Workshop on Cities\, Housing and Infrastructure
 LOCATION:Munich
-DESCRIPTION:都市・住宅・インフラ投資をテーマとするCESifoのミュンヘン講演ワークショップ。 / 主催: CESifo / https://www.ifo.de/en/cesifo/event/2026-11-20/munich-lectures-workshop-cities-housing-and-infrastructure
+DESCRIPTION:都市化・住宅政策・インフラ投資への経済学的アプローチを議論するワークショップ。 / 主催: CESifo / https://www.ifo.de/en/cesifo/event/2026-11-20/munich-lectures-workshop-cities-housing-and-infrastructure
 END:VEVENT
 BEGIN:VEVENT
 UID:0d1b877fb69723d7@seminar-radar
@@ -1831,9 +1815,9 @@ BEGIN:VEVENT
 UID:6adc96bc8edcf3d8@seminar-radar
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261030
-SUMMARY:CESifo/CEMIR Junior Economist Workshop on Migration Research
+SUMMARY:CESifo/CEMIR Junior Economist Workshop on Migration Research 2026
 LOCATION:Munich
-DESCRIPTION:若手経済学者を対象とした移民研究ワークショップ。 / 主催: CESifo / https://www.ifo.de/en/cesifo/event/2026-10-28/cemir-junior-workshop-migration-research-2026
+DESCRIPTION:移民研究をテーマとする国際的なジュニア経済学者ワークショップ。労働市場と人口動態への影響について若手研究者が報告する。 / 主催: CESifo / https://www.ifo.de/en/cesifo/event/2026-10-28/cemir-junior-workshop-migration-research-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:a8b9d9994be5ebaf@seminar-radar
@@ -2255,9 +2239,9 @@ BEGIN:VEVENT
 UID:ad800bdea1d77013@seminar-radar
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
-SUMMARY:Mit Bargeld\, Karte oder Smartphone? So bezahlt Deutschland
-LOCATION:Potsdam
-DESCRIPTION:ドイツの支払い行動の最新研究に関する講演。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/mit-bargeld-karte-oder-smartphone-so-bezahlt-deutschland-795882
+SUMMARY:Mit Bargeld\, Karte oder Smartphone? So bezahlt Deutschland (Kiel)
+LOCATION:Kiel
+DESCRIPTION:現金・カード・スマートフォンによる決済動向をテーマとするブンデスバンクの公開講演(キール)。ドイツ人の支払い行動の変化を解説。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/mit-bargeld-karte-oder-smartphone-so-bezahlt-deutschland-898272 / 登壇: Martina Eschelbach (Bundesbank)\, Niklas Ego (Bundesbank)
 END:VEVENT
 BEGIN:VEVENT
 UID:c7bb920f35344a88@seminar-radar
@@ -2770,14 +2754,6 @@ DTEND;VALUE=DATE:20260902
 SUMMARY:"Resilienz im Epochenbruch": Epochenbruch in den Wirtschaftsbeziehungen zu China – wacht die deutsche und europäische Politik endlich auf?
 LOCATION:
 DESCRIPTION:対中経済関係における時代の転換を踏まえ、ドイツ・欧州の政策対応の遅れを問うIWのオンライン講演。イェルゲン・マテス氏が登壇。 / 主催: Institut der deutschen Wirtschaft (IW) / https://www.iwkoeln.de/institut/veranstaltungen/juergen-matthes-epochenbruch-in-den-wirtschaftsbeziehungen-zu-china-wacht-die-deutsche-und-europaeische-politik-endlich-auf.html
-END:VEVENT
-BEGIN:VEVENT
-UID:72343b41bd6ddf3a@seminar-radar
-DTSTART;VALUE=DATE:20260826
-DTEND;VALUE=DATE:20260827
-SUMMARY:Zahlungsverkehrssymposium 2026
-LOCATION:Frankfurt am Main
-DESCRIPTION:ドイツ連邦銀行主催の決済シンポジウム。決済のデジタル化、詐欺対策、AI活用、ステーブルコインなどを議論。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine/im-livestream-zahlungsverkehrssymposium-2026-1002364
 END:VEVENT
 BEGIN:VEVENT
 UID:859369af3cf4692b@seminar-radar
@@ -3946,5 +3922,45 @@ DTEND;VALUE=DATE:20261031
 SUMMARY:WU Manager of the Year 2026: Karin Exner-Wöhrer – Trust at a Distance: What International Market Expansion Teaches Us About Good Corporate Governance
 LOCATION:Vienna
 DESCRIPTION:「WUマネージャー・オブ・ザ・イヤー」講演シリーズの一環として、Karin Exner-Wöhrer氏が国際市場拡大とコーポレートガバナンスについて講演する。 / 主催: WU Wien / https://www.wu.ac.at/en/the-university/events / 登壇: Karin Exner-Wöhrer
+END:VEVENT
+BEGIN:VEVENT
+UID:2b43d5f63ab23e68@seminar-radar
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+SUMMARY:Key insights from the IMF's October 2026 World Economic Outlook\, Global Financial Stability Report and Fiscal Monitor
+LOCATION:
+DESCRIPTION:SUERF BAFFI Bocconi オンライン講演シリーズ。IMFの2026年10月版World Economic Outlook・Global Financial Stability Report・Fiscal Monitorの要点を解説する。 / 主催: SUERF / https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/
+END:VEVENT
+BEGIN:VEVENT
+UID:2bb107c3c724a2a7@seminar-radar
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270311
+SUMMARY:BASEforHANK Spring School 2027
+LOCATION:Berlin
+DESCRIPTION:異質的エージェント・ニューケインジアン(HANK)マクロモデルを学ぶ春季スクール。オンライン講義と対面セッションを組み合わせて開催。 / 主催: DIW Berlin / https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html / 登壇: Christian Bayer\, Benjamin Born\, Ralph Luetticke\, Alexander Kriwoluzky
+END:VEVENT
+BEGIN:VEVENT
+UID:98709f49a59df120@seminar-radar
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:Invest in Germany Summit 2026
+LOCATION:Berlin
+DESCRIPTION:ドイツ連邦経済エネルギー省が主催する政府初の投資家サミット。メルツ首相、ライヒェ経済相、クリングバイル財務相らが国際投資家・経済界首脳と対話し、対独投資の促進を図る。 / 主催: Bundesministerium für Wirtschaft und Energie (BMWE) / https://esmt.berlin/about/press/invest-germany-summit-esmt-berlin-host-german-governments-first-investor-summit / 登壇: Friedrich Merz (Bundesregierung)\, Katherina Reiche (BMWE)\, Lars Klingbeil (Bundesministerium der Finanzen)\, Martin Blessing
+END:VEVENT
+BEGIN:VEVENT
+UID:b1499b7183c7e19b@seminar-radar
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Public hearing on Implementing Technical Standards on joint decisions on institution-specific prudential requirements
+LOCATION:
+DESCRIPTION:EBAによる、機関別プルーデンス要件に関する共同決定の実施技術基準(ITS)案についての公聴会。 / 主催: European Banking Authority / https://www.eba.europa.eu/publications-and-media/events/public-hearing-implementing-technical-standards-joint-decisions-institution-specific-prudential
+END:VEVENT
+BEGIN:VEVENT
+UID:ed9a65de3bcaad93@seminar-radar
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:MCPF Double Session // "AI\, Competition and Competitiveness" & "Enforcing Interoperability under the DMA in the age of AI"
+LOCATION:Mannheim
+DESCRIPTION:マンハイム競争政策フォーラムの二重セッション。AI時代における競争・競争力、およびDMA(デジタル市場法)下の相互運用性の実施を扱う。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/mcpf-double-session/4985 / 登壇: Rupprecht Podszun (Monopolkommission)\, Alexander Matern (Europäische Kommission)
 END:VEVENT
 END:VCALENDAR
