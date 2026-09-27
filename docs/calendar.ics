@@ -793,7 +793,7 @@ DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261030
 SUMMARY:German-Baltic-Ukrainian Defence Industry Conference 2026
 LOCATION:Vilnius
-DESCRIPTION:ドイツ・バルト三国・ウクライナの防衛産業協力をテーマにした会議。リトアニア大統領の後援下で開催。 / 主催: German-Baltic Chamber of Commerce (AHK Balt) / https://www.bdc2026.com/
+DESCRIPTION:独・バルト三国・ウクライナの防衛産業協力をテーマにした会議。地経学的な安全保障環境や、ドローン・自律兵器システム、ドイツ連邦軍と産業界の協力等を扱う。 / 主催: German-Baltic Chamber of Commerce (AHK) / https://www.bdc2026.com/
 END:VEVENT
 BEGIN:VEVENT
 UID:4cfb3d2a77229b22@seminar-radar
@@ -2100,14 +2100,6 @@ LOCATION:Mannheim
 DESCRIPTION:情報開示・情報共有・秘匿に関する研究ワークショップ。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/disclosure-information-sharing-and-secrecy-diss-8/4973
 END:VEVENT
 BEGIN:VEVENT
-UID:70ce992653fbc17f@seminar-radar
-DTSTART;VALUE=DATE:20260827
-DTEND;VALUE=DATE:20260828
-SUMMARY:The Geopolitics of the New Information Reality
-LOCATION:Berlin
-DESCRIPTION:情報環境の変化がもたらす地政学的影響を議論するDGAPのイベント。 / 主催: DGAP / https://dgap.org/en/events/geopolitics-new-information-reality
-END:VEVENT
-BEGIN:VEVENT
 UID:7fd89015cccdab52@seminar-radar
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20261001
@@ -2242,14 +2234,6 @@ DTEND;VALUE=DATE:20260930
 SUMMARY:Mit Bargeld\, Karte oder Smartphone? So bezahlt Deutschland (Kiel)
 LOCATION:Kiel
 DESCRIPTION:現金・カード・スマートフォンによる決済動向をテーマとするブンデスバンクの公開講演(キール)。ドイツ人の支払い行動の変化を解説。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/mit-bargeld-karte-oder-smartphone-so-bezahlt-deutschland-898272 / 登壇: Martina Eschelbach (Bundesbank)\, Niklas Ego (Bundesbank)
-END:VEVENT
-BEGIN:VEVENT
-UID:c7bb920f35344a88@seminar-radar
-DTSTART;VALUE=DATE:20260827
-DTEND;VALUE=DATE:20260828
-SUMMARY:Geldpolitik aktuell: Wo stehen wir?
-LOCATION:
-DESCRIPTION:ブンデスバンクによる金融政策の現状に関するオンライン講演。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/de/service/termine/geldpolitik-aktuell-wo-stehen-wir--923736
 END:VEVENT
 BEGIN:VEVENT
 UID:1d133245fa92f441@seminar-radar
@@ -3962,5 +3946,29 @@ DTEND;VALUE=DATE:20261023
 SUMMARY:MCPF Double Session // "AI\, Competition and Competitiveness" & "Enforcing Interoperability under the DMA in the age of AI"
 LOCATION:Mannheim
 DESCRIPTION:マンハイム競争政策フォーラムの二重セッション。AI時代における競争・競争力、およびDMA(デジタル市場法)下の相互運用性の実施を扱う。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/mcpf-double-session/4985 / 登壇: Rupprecht Podszun (Monopolkommission)\, Alexander Matern (Europäische Kommission)
+END:VEVENT
+BEGIN:VEVENT
+UID:13a7d01f3327f3d1@seminar-radar
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Invest in Syria
+LOCATION:Frankfurt am Main
+DESCRIPTION:フランクフルト・スクール主催、シリア経済の新章をテーマにした投資会議。 / 主催: Frankfurt School of Finance & Management / https://forum.frankfurt-school.de/konferenzen/
+END:VEVENT
+BEGIN:VEVENT
+UID:39224051f8d4f16c@seminar-radar
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:3. Hamburger Sustainable Finance Summit
+LOCATION:Hamburg
+DESCRIPTION:ハンブルクで開催される第3回サステナブル・ファイナンス・サミット。持続可能な都市への転換に向けた資金調達をテーマに議論する。 / 主催: Sustainable Finance Cluster / https://www.forum-ng.org/en/termine/veranstaltung/sustainable-finance-cluster-3-hamburger-sustainable-finance-summit
+END:VEVENT
+BEGIN:VEVENT
+UID:76451d0daa0fe991@seminar-radar
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:RETHINK.MITTELSTAND – Erfolgreich durch Machen
+LOCATION:Heilbronn
+DESCRIPTION:中堅企業(Mittelstand)向けにデジタル化・データサイエンス・AI活用をテーマに議論するカンファレンス。TUMハイルブロン・キャンパスとツァイト出版グループが共催。 / 主催: TUM Campus Heilbronn / ZEIT Verlagsgruppe / https://www.rethinkmittelstand.de/
 END:VEVENT
 END:VCALENDAR
