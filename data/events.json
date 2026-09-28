@@ -3610,40 +3610,6 @@
    "registration_note_de": null
   },
   {
-   "title": "53. EARIE-Jahreskonferenz 2026",
-   "title_ja": "第53回EARIE年次会議2026",
-   "organizer": "ZEW Mannheim / EARIE",
-   "date_start": "2026-08-26",
-   "date_end": "2026-08-28",
-   "time": null,
-   "city": "Mannheim",
-   "venue": "University of Mannheim",
-   "format": "onsite",
-   "themes": [
-    "real_economy",
-    "fin_markets"
-   ],
-   "fee": "paid",
-   "open_to_public": true,
-   "registration_note": "要事前登録",
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/53-earie-jahreskonferenz-2026/4852",
-   "summary_ja": "産業組織論学会EARIEの年次会議をZEWが開催。",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ZEW",
-   "title_short": "Industrial Economics Conference",
-   "importance": 3,
-   "registration_url": "https://earie.org/register-earie-2026/",
-   "time_end": null,
-   "source": "ZEW Mannheim – Veranstaltungen",
-   "id": "81fe232dffe796de",
-   "first_seen": "2026-07-24",
-   "summary_en": "ZEW Mannheim hosts the annual conference of EARIE, the European Association for Research in Industrial Economics.",
-   "summary_de": "ZEW Mannheim richtet die Jahreskonferenz der EARIE aus, der European Association for Research in Industrial Economics.",
-   "registration_note_en": "Registration required",
-   "registration_note_de": "Anmeldung erforderlich"
-  },
-  {
    "title": "1. WPBl-Jahreskonferenz: Industriepolitik und Internationaler Handel",
    "title_ja": "第1回WPBl年次会議:産業政策と国際貿易",
    "organizer": "Wirtschaftskammer Österreich (WKÖ) mit EcoAustria, IHS, WIFO und WU Wien",
@@ -5751,7 +5717,8 @@
    "venue": "Hauptverwaltung Rheinland-Pfalz und Saarland",
    "format": "onsite",
    "themes": [
-    "ai"
+    "ai",
+    "fin_markets"
    ],
    "fee": "free",
    "open_to_public": true,
@@ -5772,7 +5739,14 @@
    "summary_de": "Ein Vortrag der Bundesbank zu Hype, Fakten und möglichen Konsequenzen der KI.",
    "registration_note_en": "A public lecture hosted by a Bundesbank regional head office; see the event page for details.",
    "registration_note_de": "Ein von einer Bundesbank-Hauptverwaltung veranstalteter öffentlicher Vortrag; Details siehe Veranstaltungsseite.",
-   "fee_amount": 0
+   "fee_amount": 0,
+   "speakers": [
+    {
+     "name": "Rafael Zajonz",
+     "org": "Bundesbank",
+     "role": "Senior Analyst"
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar: Rafaella Sadun",
@@ -22801,6 +22775,48 @@
    "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
    "id": "b34533a64153b401",
    "first_seen": "2026-09-27"
+  },
+  {
+   "title": "20. Bayerischer Finanzgipfel 2026",
+   "title_ja": "第20回バイエルン金融サミット2026",
+   "organizer": "Bayerisches Staatsministerium für Wirtschaft, Landesentwicklung und Energie",
+   "date_start": "2026-10-08",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "18:30",
+   "city": "Munich",
+   "venue": "IHK für München und Oberbayern, Max-Joseph-Straße 2",
+   "format": "onsite",
+   "themes": [
+    "fin_markets",
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "一般公開・要事前登録(参加費はページに記載なし)",
+   "registration_note_en": "Open to the public, advance registration required (fee not stated on the page)",
+   "registration_note_de": "Öffentlich zugänglich, Anmeldung erforderlich (Teilnahmegebühr nicht angegeben)",
+   "url": "https://www.stmwi.bayern.de/veranstaltungen/58305-20-bayerischer-finanzgipfel-2026/",
+   "summary_ja": "バイエルン州経済省主催の第20回金融サミット。分断化が進む世界における資本市場の発展とAIが金融セクターに与える影響をテーマに、経済相フーベルト・アイヴァンガーが基調講演を行う",
+   "summary_en": "The 20th Bavarian Finance Summit, hosted by the Bavarian Ministry for Economic Affairs, focuses on capital market developments and AI's impact on the financial sector amid growing global fragmentation, opened by Economy Minister Hubert Aiwanger",
+   "summary_de": "Der 20. Bayerische Finanzgipfel des bayerischen Wirtschaftsministeriums behandelt Kapitalmarktentwicklung und die Auswirkungen von KI auf den Finanzsektor in einer zunehmend fragmentierten Welt, eröffnet von Wirtschaftsminister Hubert Aiwanger",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bayern StMWi",
+   "title_short": "Bavarian Finance Summit",
+   "importance": 2,
+   "registration_url": "https://www.ultimamedia.de/finanzen/bayerischer-finanzgipfel/",
+   "speakers": [
+    {
+     "name": "Hubert Aiwanger",
+     "org": "Bayern StMWi",
+     "role": "Wirtschaftsminister"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "1fc56651626127b7",
+   "first_seen": "2026-09-28"
   }
  ]
 }
