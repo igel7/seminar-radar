@@ -12,6 +12,14 @@
     },
     "note": "2026-09-27: 独語版・英語版とも継続してCloudflare系のブラウザ検証ページ(JS空殻)のみで、少なくとも3回連続(2026-09-25, 09-26, 09-27)取得不可を確認。web検索でも2026年10-11月の具体的な日程は確認できず。恒常ブロックとして登録し週次(7日ごと)に再確認する。"
   },
+  "OeNB – Oesterreichische Nationalbank – Veranstaltungen": {
+    "method": "search",
+    "alt_urls": [
+      "https://www.suerf.org/events/new-challenges-in-safeguarding-financial-stability-and-managing-financial-crises-in-a-world-of-digital-finance-and-artificial-intelligence/"
+    ],
+    "last_ok": "2026-10-02",
+    "note": "2026-10-02: 直接取得は503(ua-curl・/en/events.html・/sitemap.xml等も同様)。OeNB主催イベントはSUERF等共催先の公式ページ経由(web検索)で確認できる(例: OeNB|SUERF|JVI|Yale Financial Stability Conference)。"
+  },
   "DIW Berlin – Veranstaltungen": {
     "method": "webfetch",
     "alt_urls": [
