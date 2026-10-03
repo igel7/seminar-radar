@@ -17,16 +17,16 @@
     "alt_urls": [
       "https://www.suerf.org/events/new-challenges-in-safeguarding-financial-stability-and-managing-financial-crises-in-a-world-of-digital-finance-and-artificial-intelligence/"
     ],
-    "last_ok": "2026-10-02",
-    "note": "2026-10-02: 直接取得は503(ua-curl・/en/events.html・/sitemap.xml等も同様)。OeNB主催イベントはSUERF等共催先の公式ページ経由(web検索)で確認できる(例: OeNB|SUERF|JVI|Yale Financial Stability Conference)。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: 直接503・404継続。web検索でOeNB|SUERF|JVI|Yale Financial Stability Conference(既知)を再確認。"
   },
   "DIW Berlin – Veranstaltungen": {
     "method": "webfetch",
     "alt_urls": [
       "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
     ],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: 直接取得403継続、hintのalt URL(diw-berlin.de)をWebFetchで取得成功再確認。多数のBerlin Macro Seminar等を確認、既知イベントのみ。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。22件確認、既知のみ。"
   },
   "ifo Institut – Veranstaltungen": {
     "method": "alt-url+search",
@@ -56,8 +56,8 @@
   "SUERF – Events": {
     "method": "ua-curl",
     "alt_urls": [],
-    "last_ok": "2026-08-08",
-    "note": "403ボット対策は実ブラウザUA付きcurlで通る(継続的な成功実績)"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: https://www.suerf.org/events/ をWebFetchで取得したところ本文が十分読めた(前回THIN判定を更新)。既知4件+新規1件確認。"
   },
   "Frankfurt School of Finance & Management – Events": {
     "method": "ua-curl",
@@ -110,14 +110,14 @@
   "NBP – Narodowy Bank Polski – Conferences": {
     "method": "co-host",
     "alt_urls": [],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: 直接取得・WebFetchともImperva継続。web検索で新規なし再確認(6th NBP-LB-CEBRA/NBU-NBP等はいずれも実行日以前または既知)。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。"
   },
   "EPC – European Payments Council – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: 直接取得404継続。web検索でFRIDA Rulebookウェビナー(10/13)を再確認、既知・新規なし。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。"
   },
   "PIK – Potsdam-Institut für Klimafolgenforschung": {
     "method": "search",
@@ -139,8 +139,8 @@
   "Bank of Lithuania – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: lb.lt直接403継続。web検索で既知3件(Digital Euro Conference 10/1, Economics Conference 11/13, Fraud conference 11/19)を再確認、新規なし。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: web検索で既知2件(Economics Conference 11/13, Fraud conference 11/19)を再確認。Digital Euro Conference(10/1)は実行日より前のため対象外。新規なし。"
   },
   "HNB – Croatian National Bank – Conferences": {
     "method": "search",
@@ -151,22 +151,22 @@
   "Jacques Delors Centre (Hertie School, Berlin) – Events": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: 直接取得・WebFetchとも403継続。web検索で新規なし再確認(既知イベントは10/9まで確認済み)。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: 直接取得・WebFetchとも403継続。web検索でも新規確認できず。"
   },
   "PRI – Principles for Responsible Investment – Events": {
     "method": "search",
     "alt_urls": [
       "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
     ],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: 主URL thin、alt URL 405継続。web検索の候補(PRI in Person 2026, Amsterdam)は対象地域外で新規なし。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: 主要ウェビナーは対象地域外(Amsterdam)。Africa向けMasterclassはテーマ適合性に疑義があり不採用。"
   },
   "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
     "method": "search",
     "alt_urls": [],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-15: モバイル版は復旧しbnr.roへ302で正常応答するがナビゲーションのみで日程情報なし。参加申込はbears@bnro.ro宛メール(要所属メール)とページに明記、自動取得の代替経路にはならない。2026-09-26: hint記載のモバイルURL(bnr.ro)をWebFetchで再確認、引き続き日程情報なし(ok:true, found:0)。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。"
   },
   "EBA – European Banking Authority – Events": {
     "method": "search",
@@ -188,8 +188,8 @@
     "alt_urls": [
       "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
     ],
-    "last_ok": "2026-09-26",
-    "note": "2026-09-26: WebFetch(alt-url)で正常取得再確認。イベント告知は引き続き0件(プレスリリースのみ)。"
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: alt_url(プレスリリース一覧)はWAF/プロキシでブロックされたが前回情報を維持。新規イベント告知なし継続。"
   },
   "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
     "method": "alt-url",
