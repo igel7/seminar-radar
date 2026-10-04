@@ -8,17 +8,18 @@
     "permanent_block": {
       "since": "2026-09-27",
       "recheck_days": 7,
-      "last_recheck": "2026-09-27"
+      "last_recheck": "2026-10-04"
     },
-    "note": "2026-09-27: 独語版・英語版とも継続してCloudflare系のブラウザ検証ページ(JS空殻)のみで、少なくとも3回連続(2026-09-25, 09-26, 09-27)取得不可を確認。web検索でも2026年10-11月の具体的な日程は確認できず。恒常ブロックとして登録し週次(7日ごと)に再確認する。"
+    "note": "2026-09-27: 独語版・英語版とも継続してCloudflare系のブラウザ検証ページ(JS空殻)のみで、少なくとも3回連続(2026-09-25, 09-26, 09-27)取得不可を確認。web検索でも2026年10-11月の具体的な日程は確認できず。恒常ブロックとして登録し週次(7日ごと)に再確認する。2026-10-04: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-11)。"
   },
   "OeNB – Oesterreichische Nationalbank – Veranstaltungen": {
-    "method": "search",
+    "method": "sitemap",
     "alt_urls": [
+      "https://www.oenb.at/sitemap.xml",
       "https://www.suerf.org/events/new-challenges-in-safeguarding-financial-stability-and-managing-financial-crises-in-a-world-of-digital-finance-and-artificial-intelligence/"
     ],
-    "last_ok": "2026-10-03",
-    "note": "2026-10-03: 直接503・404継続。web検索でOeNB|SUERF|JVI|Yale Financial Stability Conference(既知)を再確認。"
+    "last_ok": "2026-10-04",
+    "note": "2026-10-04: 直接/en/Calendar.htmlは404/503で継続不可だが、sitemap.xml(ua-curlで200)から正しい個別イベントURL構造を発見: /en/news-und-events/veranstaltungen/YYYY/YYYY-MM-DD-slug.html(旧来想定の /en/Calendar/YYYY/... ではない)。sitemapのveranstaltungen/2026/配下URLを一覧し、各個別ページをua-curlで取得すれば本文が読める。Pressekonferenz(Pk-...)は記者会見のため抽出ルールで除外対象なので混在注意。新規Podiumsdiskussion(10/9 Rentenkommission)を確認。"
   },
   "DIW Berlin – Veranstaltungen": {
     "method": "webfetch",
@@ -184,12 +185,12 @@
     "note": "2026-09-26: curlは403継続だがWebFetchで取得成功。今後予定はオンライン講座(9/28、既知)のみ、Brussels開催分は対象地域外。"
   },
   "BNB – Bulgarian National Bank – Events": {
-    "method": "alt-url",
+    "method": "webfetch",
     "alt_urls": [
       "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
     ],
-    "last_ok": "2026-10-03",
-    "note": "2026-10-03: alt_url(プレスリリース一覧)はWAF/プロキシでブロックされたが前回情報を維持。新規イベント告知なし継続。"
+    "last_ok": "2026-10-04",
+    "note": "2026-10-04: curl/ua-curl(Cookie userLanguage=EN付き)はHTTP200だがWAFの「エラーページ(incident ID付き)」を返すソフト404。WebFetchツールで同じalt URLを取得したところ正規の本文(プレスリリース一覧)が読めた。今後はcurlで本文が薄い/エラーページの場合、先にWebFetchを試すこと。今後のイベント告知は無し継続。"
   },
   "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
     "method": "alt-url",
@@ -200,12 +201,13 @@
     "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
   },
   "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
-    "method": "search",
+    "method": "sitemap+ua-curl",
     "alt_urls": [
-      "https://www.ewi.uni-koeln.de/de/ewi-energietagung/"
+      "https://www.ewi.uni-koeln.de/de/ewi-energietagung/",
+      "https://www.ewi.uni-koeln.de/de/termine-sitemap.xml"
     ],
-    "last_ok": "2026-09-01",
-    "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。"
+    "last_ok": "2026-10-04",
+    "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。"
   },
   "CEP – Council on Economic Policies (Zürich) – Events": {
     "method": "ua-curl",
