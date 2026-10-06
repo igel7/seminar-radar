@@ -2606,12 +2606,22 @@
    "speakers": [
     {
      "name": "Wolfgang Dauth",
-     "org": "IWH",
+     "org": null,
      "role": null
     },
     {
      "name": "Steffen Müller",
-     "org": "IWH",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Mirko Titze",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Gesine Stephan",
+     "org": null,
      "role": null
     }
    ]
@@ -11793,7 +11803,14 @@
    "time_end": null,
    "source": "DIW Berlin – Veranstaltungen",
    "id": "4ce55312b1ff64e8",
-   "first_seen": "2026-08-22"
+   "first_seen": "2026-08-22",
+   "speakers": [
+    {
+     "name": "Cristóbal Moya",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "The Economics of Crime and Criminal Justice",
@@ -23290,6 +23307,238 @@
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "cfb4eb23729492dd",
    "first_seen": "2026-10-05"
+  },
+  {
+   "title": "Money & More – die Nationalbank unterwegs mit Martin Kocher",
+   "title_ja": "コッハー総裁、グラーツで市民対話",
+   "organizer": "Oesterreichische Nationalbank (OeNB)",
+   "date_start": "2026-10-09",
+   "date_end": null,
+   "time": "17:00",
+   "city": "Graz",
+   "venue": "Styria Media Center, Gadollaplatz 1, 8010 Graz",
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-10-09-money-and-more-graz.html",
+   "summary_ja": "OeNB総裁マルティン・コッハーがグラーツを訪れ、現金・デジタルユーロ・決済手段や金利・経済について市民や学生、企業と直接対話する地方対話イベント。",
+   "summary_en": "OeNB Governor Martin Kocher visits Graz for a public town-hall event on cash, the digital euro, payment methods, interest rates and the economy, taking questions directly from citizens, students and businesses.",
+   "summary_de": "OeNB-Gouverneur Martin Kocher besucht Graz für eine öffentliche Dialogveranstaltung zu Bargeld, digitalem Euro, Zahlungsmethoden, Zinsen und Wirtschaft und beantwortet Fragen von Bürgerinnen und Bürgern, Schülern und Unternehmen direkt.",
+   "language": "de",
+   "country": "AT",
+   "organizer_short": "OeNB",
+   "title_short": "Digital Euro and Cash Policy",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Martin Kocher",
+     "org": "OeNB",
+     "role": "Governor"
+    }
+   ],
+   "source": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
+   "id": "2152ba4aa8830c27",
+   "first_seen": "2026-10-06"
+  },
+  {
+   "title": "Do Green Bonds Trade Differently? Evidence from European Electronic Markets",
+   "title_ja": "グリーンボンドの市場取引特性",
+   "organizer": "ZEW Mannheim",
+   "date_start": "2026-10-26",
+   "date_end": null,
+   "time": null,
+   "city": "Mannheim",
+   "venue": "ZEW Mannheim",
+   "format": "onsite",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "研究セミナー",
+   "registration_note_en": "Research seminar",
+   "registration_note_de": "Forschungsseminar",
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/do-green-bonds-trade-differently/5003",
+   "summary_ja": "欧州市場でのグリーンボンド取引特性を実証分析。",
+   "summary_en": "Empirical analysis of whether green bonds trade differently in European electronic markets compared to conventional bonds.",
+   "summary_de": "Empirische Analyse der Handelsmerkmale von grünen Anleihen auf europäischen elektronischen Märkten.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "ZEW",
+   "title_short": "Green Bonds Market Analysis",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Amir Amel-Zadeh",
+     "org": "University of Oxford",
+     "role": "Prof."
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "4d649a60d97047e0",
+   "first_seen": "2026-10-06"
+  },
+  {
+   "title": "Tax Expenditures in Germany",
+   "title_ja": "ドイツの租税支出",
+   "organizer": "Council on Economic Policies, FiFo Cologne, German Institute of Development and Sustainability",
+   "date_start": "2026-10-08",
+   "date_end": null,
+   "time": "10:00",
+   "city": "Berlin",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.cepweb.org/tax-expenditures-in-germany-event/",
+   "summary_ja": "ドイツの租税支出に関する政策レポート発表イベント。FiFo Cologne、ドイツ開発・持続可能性研究所(IDOS)との共催。",
+   "summary_en": "Launch event for the Tax Expenditures Country Report on Germany, co-hosted by FiFo Cologne and the German Institute of Development and Sustainability (IDOS).",
+   "summary_de": "Veranstaltung zur Vorstellung des Länderberichts über Steuerausgaben in Deutschland, gemeinsam ausgerichtet von FiFo Cologne und dem Deutschen Institut für Entwicklung und Nachhaltigkeit (IDOS).",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "CEP",
+   "title_short": "Tax Expenditures Germany",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "CEP – Council on Economic Policies (Zürich) – Events",
+   "id": "6fc3e31d9d373fb0",
+   "first_seen": "2026-10-06"
+  },
+  {
+   "title": "Labour Market Attitudes, Institutional Trust, and Migration Perception in Times of Wars: Evidence from Ukraine",
+   "title_ja": "戦時下の労働市場態度、制度的信頼、移民認識:ウクライナからの証拠",
+   "organizer": "BOFIT – Bank of Finland Institute for Emerging Economies",
+   "date_start": "2026-10-13",
+   "date_end": null,
+   "time": "10:30",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ukraine",
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "オンラインセミナー、参加登録不要の可能性",
+   "registration_note_en": "Online seminar, registration likely open",
+   "registration_note_de": "Online-Seminar, Registrierung möglich",
+   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
+   "summary_ja": "ウクライナの戦争がもたらす労働市場態度の変化、制度への信頼、移民に対する国民認識を実証研究で検証するセミナー。",
+   "summary_en": "Research seminar examining how war affects labor market attitudes, institutional trust, and migration perceptions in Ukraine through empirical evidence.",
+   "summary_de": "Forschungsseminar zur Auswirkung von Krieg auf Arbeitsmarkteinstellungen, institutionelles Vertrauen und Wahrnehmung der Migration in der Ukraine.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "BOFIT",
+   "title_short": "War, Labor Markets, and Migration in Ukraine",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Olga Zajkowska",
+     "org": "Institute of Economics of the Polish Academy of Sciences",
+     "role": null
+    }
+   ],
+   "source": "BOFIT – Bank of Finland Institute for Emerging Economies – Events",
+   "id": "86f18ac1dd5b7b3f",
+   "first_seen": "2026-10-06"
+  },
+  {
+   "title": "Fokus Zoll: Aktuelle Embargomaßnahmen Russland",
+   "title_ja": "対ロシア禁輸措置に関する税関ウェビナー",
+   "organizer": "IHK Regensburg für Oberpfalz / Kelheim",
+   "date_start": "2026-10-16",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "geopolitics",
+    "ukraine"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(オンラインウェビナー、参加費不明)",
+   "registration_note_en": "Advance registration required (online webinar, fee unspecified).",
+   "registration_note_de": "Anmeldung erforderlich (Online-Webinar, Teilnahmegebühr unbekannt).",
+   "url": "https://www.bayern-international.de/termine-veranstaltungen/veranstaltungsdetails/fokus-zoll-aktuelle-embargomassnahmen-russland-5854",
+   "summary_ja": "IHKレーゲンスブルクが対ロシア制裁の最新状況と税関実務上の留意点を解説するオンラインウェビナー。",
+   "summary_en": "An online webinar hosted by IHK Regensburg explaining the current EU sanctions measures against Russia and practical customs compliance questions.",
+   "summary_de": "Ein Online-Webinar der IHK Regensburg zu den aktuellen EU-Sanktionen gegen Russland und praktischen Zollfragen bei der Umsetzung.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "IHK Regensburg",
+   "title_short": "Russia Sanctions Customs Compliance",
+   "importance": 1,
+   "registration_url": "https://events.ihk-regensburg.de/b?p=fokuszollembargorussland-20261016",
+   "time_end": null,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "ba399b07c6227104",
+   "first_seen": "2026-10-06"
+  },
+  {
+   "title": "Insurance: A Catalyst for Financial Resilience",
+   "title_ja": "金融レジリエンスの触媒としての保険",
+   "organizer": "OMFIF",
+   "date_start": "2026-10-29",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "仮想ラウンドテーブル・要登録",
+   "registration_note_en": "Virtual roundtable, registration required",
+   "registration_note_de": "Virtueller Roundtable, Anmeldung erforderlich",
+   "url": "https://www.omfif.org/meetings/insurance-a-catalyst-for-financial-resilience/",
+   "summary_ja": "極端な気象災害が金融と社会に与える影響、保険の役割について議論。",
+   "summary_en": "Discussion of extreme weather disasters and the role of insurance in building financial and societal resilience.",
+   "summary_de": "Diskussion der Rolle von Versicherungen bei der Aufbau von finanzieller und gesellschaftlicher Widerstandskraft angesichts extremer Wetterereignisse.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "OMFIF",
+   "title_short": "Insurance and Financial Resilience",
+   "importance": 1,
+   "registration_url": "https://www.omfif.org/meetings/insurance-a-catalyst-for-financial-resilience/",
+   "time_end": null,
+   "speakers": [],
+   "source": "OMFIF – Events/Meetings",
+   "id": "d42d370a4207f0c9",
+   "first_seen": "2026-10-06"
   }
  ]
 }
