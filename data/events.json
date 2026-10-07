@@ -348,6 +348,7 @@
    "venue": "European Central Bank",
    "format": "onsite",
    "themes": [
+    "central_bank",
     "fin_markets"
    ],
    "fee": "free",
@@ -368,7 +369,39 @@
    "summary_en": "ECB conference on financial stability frameworks and macroprudential policy regulation",
    "summary_de": "ECB-Konferenz zu Finanzstabilitätsrahmen und Makroprudenzregulierung",
    "registration_note_en": "Advance registration required",
-   "registration_note_de": "Anmeldung erforderlich"
+   "registration_note_de": "Anmeldung erforderlich",
+   "speakers": [
+    {
+     "name": "Anil Kashyap",
+     "org": "Chicago Booth",
+     "role": "keynote speaker"
+    },
+    {
+     "name": "Anat Admati",
+     "org": "Stanford",
+     "role": "panellist"
+    },
+    {
+     "name": "Lorenzo Bini Smaghi",
+     "org": "Société Générale",
+     "role": "panellist"
+    },
+    {
+     "name": "Claudio Borio",
+     "org": "formerly BIS",
+     "role": "panellist"
+    },
+    {
+     "name": "Vicky Saporta",
+     "org": "Bank of England",
+     "role": "panellist"
+    },
+    {
+     "name": "Isabel Schnabel",
+     "org": "ECB",
+     "role": "moderator"
+    }
+   ]
   },
   {
    "title": "10th SAFE Market Microstructure Conference",
@@ -536,7 +569,44 @@
    "summary_en": "The 5th Kiel-CEPR Conference on Geoeconomics, hosted at the German Federal Foreign Office.",
    "summary_de": "Die 5. Kiel-CEPR-Konferenz zur Geoökonomie, ausgerichtet im Auswärtigen Amt.",
    "registration_note_en": "The call for papers is closed; to attend as a guest, contact berlin@kielinstitut.de.",
-   "registration_note_de": "Der Call for Papers ist geschlossen; für eine Teilnahme als Gast bitte berlin@kielinstitut.de kontaktieren."
+   "registration_note_de": "Der Call for Papers ist geschlossen; für eine Teilnahme als Gast bitte berlin@kielinstitut.de kontaktieren.",
+   "speakers": [
+    {
+     "name": "Arvind Krishnamurthy",
+     "org": "Stanford",
+     "role": "keynote speaker"
+    },
+    {
+     "name": "Carmen Reinhart",
+     "org": "Harvard/CEPR",
+     "role": "keynote speaker"
+    },
+    {
+     "name": "Doireann Fitzgerald",
+     "org": "Federal Reserve Bank of Minneapolis",
+     "role": "speaker"
+    },
+    {
+     "name": "Pierre-Olivier Gourinchas",
+     "org": "IMF",
+     "role": "speaker"
+    },
+    {
+     "name": "Philip Lane",
+     "org": "ECB",
+     "role": "speaker"
+    },
+    {
+     "name": "Stephen Redding",
+     "org": "Stanford/CEPR",
+     "role": "speaker"
+    },
+    {
+     "name": "Johann Wadephul",
+     "org": null,
+     "role": "Federal Minister for Foreign Affairs"
+    }
+   ]
   },
   {
    "title": "13th SAFE Asset Pricing Workshop",
@@ -1292,7 +1362,7 @@
    "format": "onsite",
    "themes": [
     "central_bank",
-    "real_economy"
+    "geopolitics"
    ],
    "fee": "free",
    "open_to_public": true,
@@ -1312,7 +1382,19 @@
    "summary_en": "Major conference on Central and Eastern European economic integration amid geopolitical change and digital transformation",
    "summary_de": "Große Konferenz über europäische Wirtschaftsintegration in Zeiten von Geoökonomie und technologischem Wandel",
    "registration_note_en": "To be confirmed",
-   "registration_note_de": "Zu bestätigen"
+   "registration_note_de": "Zu bestätigen",
+   "speakers": [
+    {
+     "name": "Simon Johnson",
+     "org": "MIT Sloan",
+     "role": "2024 Nobel Laureate in Economic Sciences"
+    },
+    {
+     "name": "Boris Vujčić",
+     "org": null,
+     "role": "ECB Vice President-designate"
+    }
+   ]
   },
   {
    "title": "CEPR European Conference in Household Finance 2026",
@@ -3346,9 +3428,8 @@
    "venue": "Radisson Blu Hotel Lietuva",
    "format": "onsite",
    "themes": [
-    "geopolitics",
     "real_economy",
-    "ukraine"
+    "geopolitics"
    ],
    "fee": "paid",
    "open_to_public": true,
@@ -3368,7 +3449,19 @@
    "summary_en": "A conference on defence industry cooperation between Germany, the Baltic states and Ukraine, covering the evolving security landscape, drone and autonomous systems, and Bundeswehr-industry cooperation.",
    "summary_de": "Eine Konferenz zur Kooperation der Verteidigungsindustrie zwischen Deutschland, den baltischen Staaten und der Ukraine, mit Themen wie geopolitischer Lage, Drohnen- und autonomen Systemen sowie Bundeswehr-Industrie-Kooperation.",
    "registration_note_en": "Ticketed event, register via official website",
-   "registration_note_de": "Kostenpflichtige Anmeldung über die offizielle Website"
+   "registration_note_de": "Kostenpflichtige Anmeldung über die offizielle Website",
+   "speakers": [
+    {
+     "name": "Grant Hendrik Tonne",
+     "org": "Lower Saxony Ministry of Economic Affairs, Transport and Building",
+     "role": "Minister"
+    },
+    {
+     "name": "Matthias Puschnig",
+     "org": "German Federal Ministry of Defence",
+     "role": "Special Staff Ukraine"
+    }
+   ]
   },
   {
    "title": "Indo-German Business Hub 26",
@@ -5534,9 +5627,8 @@
    "venue": "National Library of Latvia",
    "format": "onsite",
    "themes": [
-    "fin_markets",
     "central_bank",
-    "real_economy"
+    "fin_markets"
    ],
    "fee": "free",
    "open_to_public": true,
@@ -5559,14 +5651,19 @@
    "registration_note_de": "Kostenlos, Anmeldung erforderlich",
    "speakers": [
     {
+     "name": "Mārtiņš Kazāks",
+     "org": "Latvijas Banka",
+     "role": "Governor"
+    },
+    {
      "name": "Joachim Nagel",
-     "org": "Deutsche Bundesbank",
+     "org": "Bundesbank",
      "role": "President"
     },
     {
      "name": "Maria Luís Albuquerque",
      "org": "European Commission",
-     "role": "EU Commissioner for Financial Services"
+     "role": "Commissioner"
     },
     {
      "name": "Jeromin Zettelmeyer",
@@ -5574,14 +5671,19 @@
      "role": "Director"
     },
     {
+     "name": "Roberts Zīle",
+     "org": "European Parliament",
+     "role": "Vice President"
+    },
+    {
      "name": "Klaas Knot",
-     "org": "Peterson Institute for International Economics",
+     "org": "Peterson Institute",
      "role": "Distinguished Visiting Fellow"
     },
     {
      "name": "Alfred Kammer",
-     "org": "International Monetary Fund",
-     "role": "Director of European Department"
+     "org": "IMF",
+     "role": "Director"
     },
     {
      "name": "Agnès Bénassy-Quéré",
@@ -16684,7 +16786,14 @@
    "time_end": "15:45",
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "4630f51aa95967e9",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Petr Sedlacek",
+     "org": "UNSW",
+     "role": null
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar - Thorsten Martin",
@@ -23539,6 +23648,42 @@
    "source": "OMFIF – Events/Meetings",
    "id": "d42d370a4207f0c9",
    "first_seen": "2026-10-06"
+  },
+  {
+   "title": "Members Briefing: China's Economic Security Offensive",
+   "title_ja": "中国の経済安全保障攻勢に関する会員向けブリーフィング",
+   "organizer": "MERICS – Mercator Institute for China Studies",
+   "date_start": "2026-10-09",
+   "date_end": null,
+   "time": null,
+   "city": "Berlin",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "china",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "会員限定",
+   "registration_note_en": "Members only",
+   "registration_note_de": "Nur für Mitglieder",
+   "url": "https://merics.org/en/events/members-briefing-chinas-economic-security-offensive",
+   "summary_ja": "中国の経済安全保障政策の最新動向に関するMERICS会員向けブリーフィング。",
+   "summary_en": "A members-only briefing by MERICS on the latest developments in China's economic security policy.",
+   "summary_de": "Ein MERICS-Mitglieder-Briefing zu den neuesten Entwicklungen in Chinas Wirtschaftssicherheitspolitik.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "MERICS",
+   "title_short": "China Economic Security",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
+   "id": "a5466ff842b2518a",
+   "first_seen": "2026-10-07"
   }
  ]
 }
