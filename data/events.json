@@ -1352,47 +1352,48 @@
   },
   {
    "title": "Conference on European Economic Integration (CEEI 2026)",
-   "title_ja": "欧州経済統合会議2026",
-   "organizer": "Oesterreichische Nationalbank",
+   "title_ja": "欧州経済統合会議(CEEI 2026)",
+   "organizer": "Oesterreichische Nationalbank; Narodowy Bank Polski",
    "date_start": "2026-11-23",
    "date_end": "2026-11-24",
    "time": "11:30",
    "city": "Vienna",
-   "venue": "Oesterreichische Nationalbank",
+   "venue": "Oesterreichische Nationalbank, Otto-Wagner-Platz 3",
    "format": "onsite",
    "themes": [
     "central_bank",
-    "geopolitics"
+    "geopolitics",
+    "real_economy"
    ],
    "fee": "free",
    "open_to_public": true,
    "registration_note": "要確認",
-   "url": "https://www.oenb.at/en/Calendar/2026/2026-11-23-ceei.html",
-   "summary_ja": "地政学・技術・人口統計の変化の中でのCESEE地域経済統合に関する国際会議",
+   "url": "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-23-ceei.html",
+   "summary_ja": "OeNBとポーランド国立銀行共催の欧州経済統合会議(CEEI 2026)。地経学・技術革新・人口動態の変化など中東欧(CESEE)が直面する課題を議論する。2024年ノーベル経済学賞受賞者サイモン・ジョンソン氏やECB次期副総裁ボリス・ヴイチッチ氏が登壇予定。",
    "language": "en",
    "country": "AT",
-   "organizer_short": "OeNB",
-   "title_short": "European Integration",
+   "organizer_short": "OeNB/NBP+",
+   "title_short": "European Economic Integration",
    "importance": 3,
-   "registration_url": "https://www.oenb.at/en/Calendar/2026/2026-11-23-ceei.html",
+   "registration_url": "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-23-ceei.html",
    "time_end": "13:30",
    "source": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
    "id": "9080f78e3928334f",
    "first_seen": "2026-07-16",
-   "summary_en": "Major conference on Central and Eastern European economic integration amid geopolitical change and digital transformation",
-   "summary_de": "Große Konferenz über europäische Wirtschaftsintegration in Zeiten von Geoökonomie und technologischem Wandel",
+   "summary_en": "The Conference on European Economic Integration (CEEI 2026), co-hosted by the OeNB and Narodowy Bank Polski, examines how CESEE economies are navigating geoeconomics, technological change and demographic shifts. Speakers include Nobel laureate Simon Johnson and ECB Vice President-designate Boris Vujčić.",
+   "summary_de": "Die Konferenz zur europäischen Wirtschaftsintegration (CEEI 2026) der OeNB und der Narodowy Bank Polski befasst sich mit Geoökonomie, technologischem Wandel und demografischen Verschiebungen in CESEE. Zu den Rednern zählen Nobelpreisträger Simon Johnson und der designierte EZB-Vizepräsident Boris Vujčić.",
    "registration_note_en": "To be confirmed",
    "registration_note_de": "Zu bestätigen",
    "speakers": [
     {
      "name": "Simon Johnson",
-     "org": "MIT Sloan",
+     "org": null,
      "role": "2024 Nobel Laureate in Economic Sciences"
     },
     {
      "name": "Boris Vujčić",
-     "org": null,
-     "role": "ECB Vice President-designate"
+     "org": "ECB",
+     "role": "Vice President-designate"
     }
    ]
   },
@@ -1889,8 +1890,8 @@
   },
   {
    "title": "Macroeconomic Policy (Study Center Gerzensee)",
-   "title_ja": "マクロ経済政策(ゲルツェンゼー研究センター)",
-   "organizer": "Study Center Gerzensee",
+   "title_ja": "マクロ経済政策",
+   "organizer": "Swiss National Bank",
    "date_start": "2026-10-29",
    "date_end": "2026-10-31",
    "time": "09:00",
@@ -1898,26 +1899,25 @@
    "venue": "Study Center Gerzensee",
    "format": "onsite",
    "themes": [
-    "real_economy",
     "central_bank"
    ],
    "fee": "free",
    "open_to_public": false,
    "registration_note": "招待制(SNB主催)。宿泊・食事は主催者負担",
    "url": "https://www.szgerzensee.ch/programs/conferences-events/detail/macroeconomic-policy",
-   "summary_ja": "マクロ経済政策をテーマとするゲルツェンゼー研究センターのイベント。",
+   "summary_ja": "スイス国立銀行(SNB)と連携して開催される、マクロ経済政策をテーマとする研究会議。ゲルツェンゼーの研究センターで行われる。",
    "language": "en",
    "country": "CH",
-   "organizer_short": "Gerzensee",
-   "title_short": "Macroeconomic Policy Event",
+   "organizer_short": "SNB",
+   "title_short": "Macroeconomic Policy",
    "importance": 3,
    "registration_url": "https://www.szgerzensee.ch/news/article/call-for-papers-2026-macroeconomic-policy",
    "time_end": "13:00",
    "source": "Study Center Gerzensee – Events",
    "id": "0b4bde8d041f7c74",
    "first_seen": "2026-07-17",
-   "summary_en": "A Study Center Gerzensee event on macroeconomic policy.",
-   "summary_de": "Eine Veranstaltung des Studienzentrums Gerzensee zur makroökonomischen Politik.",
+   "summary_en": "A research conference on macroeconomic policy, held at the Study Center Gerzensee with the Swiss National Bank as partner.",
+   "summary_de": "Forschungskonferenz zur makroökonomischen Politik am Study Center Gerzensee in Zusammenarbeit mit der Schweizerischen Nationalbank.",
    "registration_note_en": "By invitation only. Organized by the Swiss National Bank. Accommodation and meals included.",
    "registration_note_de": "Nur auf Einladung. Von der Schweizerischen Nationalbank organisiert. Unterkunft und Mahlzeiten inklusive."
   },
@@ -3352,36 +3352,48 @@
   },
   {
    "title": "International conference: Why We Fall for Fraud and How to Beat It",
-   "title_ja": "国際会議:なぜ詐欺に騙されるのか",
+   "title_ja": "詐欺・金融犯罪対策国際会議",
    "organizer": "Bank of Lithuania",
    "date_start": "2026-11-19",
    "date_end": null,
-   "time": null,
+   "time": "10:00",
    "city": "Vilnius",
-   "venue": "Vilnius University",
-   "format": "onsite",
+   "venue": "AC Hotel by Marriott Vilnius",
+   "format": "hybrid",
    "themes": [
     "fin_markets"
    ],
    "fee": "unknown",
    "open_to_public": true,
    "registration_note": "要事前登録",
-   "url": "https://www.lb.lt/en/events",
-   "summary_ja": "金融詐欺の心理と対策を議論するリトアニア銀行主催の国際会議。",
+   "url": "https://www.lb.lt/en/events/international-conference-why-we-fall-for-fraud-and-how-to-beat-it",
+   "summary_ja": "リトアニア銀行主催の国際会議で、消費者の耐性強化・関係機関の連携・技術的解決策をテーマに、詐欺・金融犯罪への対策を議論する。",
    "language": "en",
    "country": "LT",
    "organizer_short": "Bank of Lithuania",
-   "title_short": "Fighting Financial Fraud",
+   "title_short": "Fraud Prevention Conference",
    "importance": 2,
    "registration_url": null,
-   "time_end": null,
+   "time_end": "16:00",
    "source": "手動取込: INBOX",
    "id": "3696788de7c3d6ed",
    "first_seen": "2026-07-24",
-   "summary_en": "A Bank of Lithuania international conference on the psychology of financial fraud and how to combat it.",
-   "summary_de": "Eine internationale Konferenz der Bank of Lithuania zur Psychologie von Finanzbetrug und dessen Bekämpfung.",
+   "summary_en": "This international conference hosted by the Bank of Lithuania focuses on preventing and detecting fraud and financial crime, covering consumer resilience, coordinated institutional action, and technological solutions.",
+   "summary_de": "Diese von der Bank von Litauen ausgerichtete internationale Konferenz behandelt die Prävention und Aufdeckung von Betrug und Finanzkriminalität mit Schwerpunkt auf Verbraucherresilienz, institutioneller Zusammenarbeit und technologischen Lösungen.",
    "registration_note_en": "Prior registration required",
-   "registration_note_de": "Voranmeldung erforderlich"
+   "registration_note_de": "Voranmeldung erforderlich",
+   "speakers": [
+    {
+     "name": "Gediminas Šimkus",
+     "org": "Bank of Lithuania",
+     "role": "Chair of the Board"
+    },
+    {
+     "name": "Elisabeth Carter",
+     "org": "Kingston University",
+     "role": "keynote speaker"
+    }
+   ]
   },
   {
    "title": "ibi-Zahlungsverkehrsforum 2026",
@@ -3498,13 +3510,13 @@
   },
   {
    "title": "Economics Conference: Breakthrough in Advanced Sectors – From Global Ideas to Solutions for Lithuania",
-   "title_ja": "経済会議:先端産業の躍進",
+   "title_ja": "先進産業への飛躍に関する経済会議",
    "organizer": "Bank of Lithuania",
    "date_start": "2026-11-13",
    "date_end": null,
    "time": null,
    "city": "Vilnius",
-   "venue": "Lietuvos bankas",
+   "venue": "Cyber City conference centre",
    "format": "onsite",
    "themes": [
     "real_economy"
@@ -3512,20 +3524,20 @@
    "fee": "unknown",
    "open_to_public": true,
    "registration_note": "要事前登録",
-   "url": "https://www.lb.lt/en/events",
-   "summary_ja": "世界の知見をリトアニアの先端産業振興にどう活かすかを議論するリトアニア銀行の経済会議。",
+   "url": "https://www.lb.lt/en/events/economics-conference-breakthrough-in-advanced-sectors-from-global-ideas-to-solutions-for-lithuania",
+   "summary_ja": "リトアニア銀行主催の経済会議で、国際的な経済学者・政策担当者・企業経営者が、先進産業育成によるリトアニアの次の成長段階への移行を議論する。",
    "language": "en",
    "country": "LT",
    "organizer_short": "Bank of Lithuania",
-   "title_short": "Advanced Sectors Economics",
+   "title_short": "Lithuania Advanced Sectors Growth",
    "importance": 2,
    "registration_url": null,
    "time_end": null,
    "source": "手動取込: INBOX",
    "id": "56766b927f09115b",
    "first_seen": "2026-07-24",
-   "summary_en": "A Bank of Lithuania economics conference on translating global ideas into solutions for advancing Lithuania's high-value sectors.",
-   "summary_de": "Eine Wirtschaftskonferenz der Bank of Lithuania darüber, wie globale Ideen zu Lösungen für Litauens fortgeschrittene Sektoren werden.",
+   "summary_en": "This economics conference hosted by the Bank of Lithuania brings together economists, policymakers, and business leaders to discuss how Lithuania can build advanced, globally competitive industries as it moves into its next stage of economic development.",
+   "summary_de": "Diese von der Bank von Litauen ausgerichtete Wirtschaftskonferenz bringt Ökonomen, politische Entscheidungsträger und Unternehmensvertreter zusammen, um zu erörtern, wie Litauen fortschrittliche, international wettbewerbsfähige Branchen aufbauen kann.",
    "registration_note_en": "Prior registration required",
    "registration_note_de": "Voranmeldung erforderlich",
    "error": "代替URL: Web検索補完(lb.ltはCloudflareで直接取得不可)"
@@ -5173,13 +5185,13 @@
   },
   {
    "title": "The Wandering Scholars: Understanding the Heterogeneity of University Commercialization",
-   "title_ja": "大学の商業化における異質性の理解",
+   "title_ja": "大学の商業化の異質性を探る",
    "organizer": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle",
    "date_start": "2026-11-17",
    "date_end": null,
-   "time": "10:00",
+   "time": "09:00",
    "city": "Halle (Saale)",
-   "venue": "IWH, conference room",
+   "venue": "IWH, conference room and via Zoom",
    "format": "hybrid",
    "themes": [
     "real_economy"
@@ -5188,25 +5200,25 @@
    "open_to_public": true,
    "registration_note": "ハイブリッド・無料",
    "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/the-wandering-scholars-understanding-the-heterogeneity-of-university-commercialization",
-   "summary_ja": "大学ベースの科学研究が商業革新と経済成長の源泉である役割を実証的に検証する研究セミナー。",
+   "summary_ja": "大学での科学研究は商業的イノベーションと経済成長の中核的な源泉だとされるが、大学ごとの商業化の多様性を検討する研究報告。",
    "language": "en",
    "country": "DE",
    "organizer_short": "IWH",
-   "title_short": "University Innovation",
+   "title_short": "University Research Commercialization",
    "importance": 1,
    "registration_url": null,
-   "time_end": "11:30",
+   "time_end": "10:30",
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "3edeadb732b5d8a7",
    "first_seen": "2026-07-27",
-   "summary_en": "Research seminar examining how university-based scientific research serves as a source of commercial innovation and economic growth with empirical analysis.",
-   "summary_de": "Forschungsseminar zur Untersuchung der Rolle universitärer Forschung als Quelle für kommerzielle Innovation und Wirtschaftswachstum.",
+   "summary_en": "A research talk on the heterogeneity of university commercialization, based on the view that university-based science is a central source of commercial innovation and growth.",
+   "summary_de": "Forschungsvortrag zur Heterogenität der Kommerzialisierung universitärer Forschung, die als zentrale Quelle kommerzieller Innovation und wirtschaftlichen Wachstums gilt.",
    "registration_note_en": "Hybrid, free",
    "registration_note_de": "Hybrid, kostenlos",
    "speakers": [
     {
      "name": "Josh Lerner",
-     "org": "Harvard Business School",
+     "org": "HBS",
      "role": null
     }
    ]
@@ -6951,7 +6963,14 @@
    "time_end": "15:00",
    "source": "OMFIF – Events/Meetings",
    "id": "1523153c02fb0f1e",
-   "first_seen": "2026-07-29"
+   "first_seen": "2026-07-29",
+   "speakers": [
+    {
+     "name": "Andrew Bailey",
+     "org": "BoE",
+     "role": "Governor"
+    }
+   ]
   },
   {
    "title": "RWI Regional Economics Seminar: Ieda Matavelli",
@@ -6984,7 +7003,14 @@
    "time_end": "12:00",
    "source": "RWI Essen – Veranstaltungen",
    "id": "1d4b2a02176d38d7",
-   "first_seen": "2026-07-29"
+   "first_seen": "2026-07-29",
+   "speakers": [
+    {
+     "name": "Ieda Matavelli",
+     "org": "UNSW",
+     "role": null
+    }
+   ]
   },
   {
    "title": "NOeG Annual Conference 2026: Economy and Democracy",
@@ -11213,7 +11239,14 @@
    "importance": 0,
    "source": "RWI Essen – Veranstaltungen",
    "id": "73f5a0dd3dfed49c",
-   "first_seen": "2026-08-21"
+   "first_seen": "2026-08-21",
+   "speakers": [
+    {
+     "name": "Colin P. Green",
+     "org": "NTNU",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Annual Workshop of the Committee for Organizational Economics",
@@ -11322,7 +11355,14 @@
    "importance": 0,
    "source": "RWI Essen – Veranstaltungen",
    "id": "9ac4e5d9f9ea2463",
-   "first_seen": "2026-08-21"
+   "first_seen": "2026-08-21",
+   "speakers": [
+    {
+     "name": "Arne Uhlendorff",
+     "org": "CREST",
+     "role": null
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar (November 24, 2026)",
@@ -14192,7 +14232,7 @@
    "registration_note": "要事前登録・無料",
    "registration_note_en": "Advance registration required, free",
    "registration_note_de": "Anmeldung erforderlich, kostenlos",
-   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
+   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/bundeshaushalt-und-schuldenbremse-wohin-geht-die-reise--896454",
    "summary_ja": "ドイツ連邦銀行バイエルン本部が主催する市民向け講演会。連邦予算と憲法上の債務ブレーキ(Schuldenbremse)の今後の展望について、専門家が解説する。",
    "summary_en": "A public lecture hosted by the Deutsche Bundesbank's Bavaria regional office on the outlook for the federal budget and Germany's constitutional debt brake.",
    "summary_de": "Öffentlicher Vortrag der Hauptverwaltung Bayern der Deutschen Bundesbank zur Zukunft des Bundeshaushalts und der Schuldenbremse.",
@@ -14205,7 +14245,14 @@
    "time_end": null,
    "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
    "id": "a4b3fd4e2fb4fa97",
-   "first_seen": "2026-08-28"
+   "first_seen": "2026-08-28",
+   "speakers": [
+    {
+     "name": "Jürgen Hamker",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Aktuelle Entwicklungen und Tendenzen im Zahlungsverkehr",
@@ -16305,7 +16352,6 @@
    "venue": null,
    "format": "onsite",
    "themes": [
-    "fin_markets",
     "central_bank"
    ],
    "fee": "free",
@@ -16327,7 +16373,14 @@
    "time_end": null,
    "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
    "id": "0892beea7ba80006",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Daniel Metcalf",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar - Charlotte Bartels",
@@ -16361,7 +16414,14 @@
    "time_end": "15:45",
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "15ce4fec399ed83e",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Charlotte Bartels",
+     "org": "Leipzig University",
+     "role": null
+    }
+   ]
   },
   {
    "title": "The AI Act for Generative and Agent-Based AI",
@@ -16657,7 +16717,14 @@
    "time_end": "15:45",
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "4a99d7c493916060",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Thorsten Martin",
+     "org": "Frankfurt School",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Winning trade wars or securing trade peace?",
@@ -17004,7 +17071,19 @@
    "time_end": "19:00",
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "a291c0e4c0aecbd7",
-   "first_seen": "2026-09-11"
+   "first_seen": "2026-09-11",
+   "speakers": [
+    {
+     "name": "Reint E. Gropp",
+     "org": "IWH",
+     "role": null
+    },
+    {
+     "name": "Jörg Rocholl",
+     "org": "ESMT",
+     "role": null
+    }
+   ]
   },
   {
    "title": "第85回独日経済懇談会",
@@ -20406,10 +20485,10 @@
    "title": "Global Payment Fraud & Financial Crime Summit – Vienna 2026",
    "date_start": "2026-11-19",
    "date_end": null,
-   "time": null,
-   "time_end": null,
+   "time": "09:00",
+   "time_end": "17:00",
    "city": "Vienna",
-   "venue": "Oesterreichische Nationalbank",
+   "venue": "Oesterreichische Nationalbank, Kassensaal, Otto-Wagner-Platz 3",
    "format": "hybrid",
    "themes": [
     "fin_markets"
@@ -20417,22 +20496,22 @@
    "fee": "unknown",
    "fee_amount": null,
    "open_to_public": true,
-   "registration_note": "要確認",
-   "registration_note_en": "To be confirmed",
-   "registration_note_de": "Zu bestätigen",
-   "url": "https://www.oenb.at/en/Calendar/2026/2026-06-19-global-payment-fraud-financial-crime-summit.html",
-   "summary_ja": "決済システムの詐欺・金融犯罪対策に関する国際サミット",
-   "summary_en": "International summit on payment fraud and financial crime prevention strategies",
-   "summary_de": "Internationaler Gipfel zu Zahlungsbetrug- und Finanzkriminalitätsbekämpfung",
+   "registration_note": "要事前登録(登録リンクより申込)",
+   "registration_note_en": "Advance registration required via the registration link on the event page.",
+   "registration_note_de": "Vorherige Anmeldung über den Registrierungslink auf der Veranstaltungsseite erforderlich.",
+   "url": "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-19-global-payment-fraud-financial-crime-summit.html",
+   "summary_ja": "OeNB主催のグローバル決済詐欺・金融犯罪サミット。ユーロシステム中央銀行、BIS、インターポール、ユーロポール、OSCE、各国監督当局等が参加し、対面・オンライン(Webex)のハイブリッド形式で開催される。",
+   "summary_en": "This OeNB-hosted summit on payment fraud and financial crime brings together Eurosystem central banks, the BIS, INTERPOL, Europol, the OSCE, supervisory authorities and industry to discuss combating payment fraud. It runs as a hybrid event, in person and via Webex.",
+   "summary_de": "Dieser von der OeNB ausgerichtete Gipfel zu Zahlungsbetrug und Finanzkriminalität bringt Eurosystem-Zentralbanken, die BIZ, INTERPOL, Europol, die OSZE, Aufsichtsbehörden und die Branche zusammen, um Maßnahmen gegen Zahlungsbetrug zu erörtern. Die Veranstaltung findet hybrid statt, vor Ort und per Webex.",
    "language": "en",
    "country": "AT",
    "organizer_short": "OeNB",
-   "title_short": "Payment Fraud Crime",
-   "importance": 1,
-   "registration_url": "https://www.oenb.at/en/Calendar/2026/2026-06-19-global-payment-fraud-financial-crime-summit.html",
+   "title_short": "Payment Fraud and Financial Crime",
+   "importance": 2,
+   "registration_url": "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-19-global-payment-fraud-financial-crime-summit.html",
    "speakers": [],
    "source": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
-   "title_ja": "グローバル決済詐欺・金融犯罪サミット",
+   "title_ja": "決済詐欺・金融犯罪サミット(ウィーン2026)",
    "id": "ca692364653fc4bf",
    "first_seen": "2026-09-24",
    "organizer": "Oesterreichische Nationalbank"
@@ -22805,8 +22884,7 @@
    "venue": null,
    "format": "online",
    "themes": [
-    "real_economy",
-    "fin_markets"
+    "real_economy"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -22823,7 +22901,13 @@
    "title_short": "Eurosclerosis 2.0",
    "importance": 2,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Pierre Wunsch",
+     "org": "NBB",
+     "role": "Governor"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "d51ddbee8a6c32db",
    "first_seen": "2026-10-03"
@@ -23514,6 +23598,704 @@
    "source": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
    "id": "a5466ff842b2518a",
    "first_seen": "2026-10-07"
+  },
+  {
+   "title": "Ukraine Recovery Conference 2027",
+   "title_ja": "ウクライナ復興会議2027",
+   "organizer": "Government of Estonia / Government of Ukraine",
+   "date_start": "2027-01-28",
+   "date_end": "2027-01-29",
+   "time": null,
+   "city": "Tallinn",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "ukraine",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://en.wikipedia.org/wiki/Ukraine_Recovery_Conference",
+   "summary_ja": "ウクライナと国際的な支援国政府が共催する、ウクライナの復興・戦後再建に向けた資金調達と投資促進を議題とする国際会議。2027年はエストニアのタリンで開催予定。",
+   "summary_en": "An international conference co-hosted by Ukraine and partner governments on financing and investment for Ukraine's post-war reconstruction; the 2027 edition is set to take place in Tallinn, Estonia.",
+   "summary_de": "Eine internationale Konferenz, die gemeinsam von der Ukraine und internationalen Partnerregierungen zur Finanzierung und Investitionsförderung für den Wiederaufbau der Ukraine ausgerichtet wird; die Ausgabe 2027 soll in Tallinn, Estland, stattfinden.",
+   "language": "en",
+   "country": "EE",
+   "organizer_short": "Estonia+Ukraine",
+   "title_short": "Ukraine Reconstruction Financing",
+   "importance": 3,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "01c5edb264f39497",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Area Conference on Macro with Micro Data",
+   "title_ja": "マクロ・ミクロデータ分析エリア会議",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-06-03",
+   "date_end": "2027-06-04",
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+   "summary_ja": "ミュンヘンで2日間開催される、マクロ経済をミクロデータで分析するエリア会議。",
+   "summary_en": "A two-day area conference on macroeconomics with micro data held in Munich.",
+   "summary_de": "Zweitägige Area-Konferenz zur Makroökonomik mit Mikrodaten in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 2,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "Macro with Micro Data",
+   "id": "090c4e19adc5a8d1",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Agentic Economy Forum",
+   "title_ja": "エージェント経済フォーラム",
+   "organizer": "AI Agents Berlin / Merantix Momentum",
+   "date_start": "2026-10-14",
+   "date_end": null,
+   "time": "10:00",
+   "city": "Berlin",
+   "venue": "Merantix AI Campus",
+   "format": "onsite",
+   "themes": [
+    "ai"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "無料・事前申込制(審査あり、約150席、応募随時審査)",
+   "registration_note_en": "Free attendance, application required (curated selection, ~150 seats, rolling review)",
+   "registration_note_de": "Kostenlose Teilnahme, Bewerbung mit Auswahlverfahren erforderlich (ca. 150 Plätze, laufende Prüfung)",
+   "url": "https://allai.events/event/agentic-economy-forum",
+   "summary_ja": "ベルリンのMerantix AI CampusでAI Agents BerlinとMerantix Momentumが開催する1日フォーラム。エージェント型AIシステムのドイツにおける実装・ガバナンス・展開をテーマとする。",
+   "summary_en": "A one-day forum at Merantix AI Campus in Berlin, hosted by AI Agents Berlin and Merantix Momentum, on building Germany's role in the agentic AI economy through implementation, governance and scaling of agentic systems.",
+   "summary_de": "Ein eintägiges Forum im Merantix AI Campus in Berlin, veranstaltet von AI Agents Berlin und Merantix Momentum, zur Rolle Deutschlands in der agentenbasierten KI-Wirtschaft mit Fokus auf Implementierung, Governance und Skalierung agentischer Systeme.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "Merantix+",
+   "title_short": "Agentic AI Economy",
+   "importance": 1,
+   "registration_url": "https://luma.com/agentic-economy-forum",
+   "time_end": "20:00",
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "13b2476d22bf0eb0",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "International Seminar on Trade (ISoT) - 3rd Edition",
+   "title_ja": "国際貿易セミナー（ISoT）第3回",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-05-20",
+   "date_end": "2027-05-21",
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/event/2027-05-20/3rd-international-seminar-trade-isot",
+   "summary_ja": "ミュンヘンで開催される、国際貿易をテーマとする第3回セミナー。",
+   "summary_en": "The third edition of an international seminar on trade, held in Munich.",
+   "summary_de": "Dritte Ausgabe des internationalen Seminars zum Welthandel in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 2,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "International Trade Seminar",
+   "id": "16fa25527f734627",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Junior Workshop on Energy and Climate Economics",
+   "title_ja": "エネルギー・気候経済学ジュニア・ワークショップ",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-03-22",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+   "summary_ja": "ミュンヘンで開催される、エネルギー・気候経済学のジュニア・ワークショップ。",
+   "summary_en": "A junior workshop on energy and climate economics held in Munich.",
+   "summary_de": "Junior-Workshop zur Energie- und Klimaökonomik in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 1,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "Energy and Climate Economics",
+   "id": "32c364386c29eaa7",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Junior Workshop on International Economics",
+   "title_ja": "国際経済学ジュニア・ワークショップ",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-04-05",
+   "date_end": "2027-04-06",
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+   "summary_ja": "ミュンヘンで開催される、国際経済学のジュニア・ワークショップ。",
+   "summary_en": "A junior workshop on international economics held in Munich.",
+   "summary_de": "Junior-Workshop zur Internationalen Ökonomik in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 1,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "International Economics Workshop",
+   "id": "3a0b1823982cf1a2",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "cric e.V.: Konferenz zur Klimagerechtigkeit in Frankfurt am Main",
+   "title_ja": "cric e.V.: フランクフルトでの気候正義会議",
+   "organizer": "cric e.V.",
+   "date_start": "2026-11-25",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/cric-ev-konferenz-zur-klimagerechtigkeit-in-frankfurt-am-main",
+   "summary_ja": "cric e.V.による気候正義をテーマとする会議。グローバルサウスへの投資について、開発効果、リスク管理、資本市場の要件の観点から扱う。",
+   "summary_en": "A conference by cric e.V. on climate justice, addressing investment in the Global South in terms of development impact, risk management and capital market requirements.",
+   "summary_de": "Konferenz des cric e.V. zur Klimagerechtigkeit, die Investitionen im Globalen Süden zwischen Entwicklungswirkung, Risikomanagement und Kapitalmarktanforderungen behandelt.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "cric e.V.",
+   "title_short": "Climate Justice Conference",
+   "importance": 2,
+   "registration_url": null,
+   "speakers": [],
+   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
+   "id": "400118719d35f837",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "cric e.V.: \"ESG beginnt nicht im Portfolio, sondern in der Fabrik\"",
+   "title_ja": "ESGは投資先ではなく工場から始まる(cricウェビナー)",
+   "organizer": "cric e.V.",
+   "date_start": "2026-10-29",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/cric-evwebinar-esg-beginnt-nicht-im-portfolio-sondern-in-der-fabrik",
+   "summary_ja": "cric e.V.によるウェビナー。ESGは金融ポートフォリオの中だけでなく工場の現場から始まるというテーマを扱う。Engagement Globalの支援による気候正義の取り組みの一環として開催される。",
+   "summary_en": "A webinar by cric e.V. on ESG starting in production facilities rather than in the investment portfolio. It is part of a climate-justice project funded by Engagement Global.",
+   "summary_de": "Webinar des cric e.V. zu ESG, das nicht im Portfolio, sondern in der Fabrik beginnt. Es findet im Rahmen der Projektförderung von Engagement Global zur Klimagerechtigkeit statt.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "cric e.V.",
+   "title_short": "ESG Starts in Factories",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
+   "id": "593302b3991b24b1",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "RWI Research Seminar: Linus Mattauch",
+   "title_ja": "RWI研究セミナー（Linus Mattauch）",
+   "organizer": "RWI Essen",
+   "organizer_short": "RWI",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": null,
+   "city": "Essen",
+   "country": "DE",
+   "venue": "RWI Essen",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
+   "summary_ja": "RWI研究セミナーで、TU BerlinのLinus Mattauch氏が研究報告を行う。",
+   "summary_en": "Linus Mattauch (TU Berlin) presents research at the RWI Research Seminar.",
+   "summary_de": "Linus Mattauch (TU Berlin) stellt im RWI-Forschungsseminar aktuelle Forschungsergebnisse vor.",
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Linus Mattauch",
+     "org": "TU Berlin",
+     "role": null
+    }
+   ],
+   "importance": 0,
+   "source": "RWI Essen – Veranstaltungen",
+   "title_short": "Economics Research Seminar",
+   "id": "5e95ec02ee6bf3f7",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Die Bundesbank in 45 Minuten fix erklärt",
+   "title_ja": "45分でわかる連邦銀行",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-10-08",
+   "date_end": null,
+   "time": "15:05",
+   "time_end": "15:50",
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bundesbank.de/de/service/termine/die-bundesbank-in-45-minuten-fix-erklaert-945854",
+   "summary_ja": "連邦銀行の役割を45分で分かりやすく紹介する公開講演。",
+   "summary_en": "An open lecture that introduces the Deutsche Bundesbank and its work in 45 minutes.",
+   "summary_de": "Ein offener Vortrag, der die Deutsche Bundesbank und ihre Aufgaben in 45 Minuten vorstellt.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Introduction to the Bundesbank",
+   "importance": 1,
+   "speakers": [],
+   "source": "Bundesbank – Termine",
+   "id": "5f1d29e3c8708683",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Area Conference on Energy and Climate Economics",
+   "title_ja": "エネルギー・気候経済学エリア会議",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-03-23",
+   "date_end": "2027-03-24",
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+   "summary_ja": "ミュンヘンで2日間開催される、エネルギー・気候経済学のエリア会議。",
+   "summary_en": "A two-day area conference on energy and climate economics held in Munich.",
+   "summary_de": "Zweitägige Area-Konferenz zur Energie- und Klimaökonomik in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 2,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "Energy and Climate Economics",
+   "id": "7a8ef6f337815eb6",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Junior Workshop on Macro with Micro Data",
+   "title_ja": "マクロ・ミクロデータ分析ジュニア・ワークショップ",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-06-02",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+   "summary_ja": "ミュンヘンで開催される、マクロ経済をミクロデータで分析するジュニア・ワークショップ。",
+   "summary_en": "A junior workshop on macroeconomics with micro data held in Munich.",
+   "summary_de": "Junior-Workshop zur Makroökonomik mit Mikrodaten in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 1,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "Macro with Micro Data",
+   "id": "80a8d478bf225304",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "RWI Research Seminar: Christofer Schroeder",
+   "title_ja": "RWI研究セミナー（Christofer Schroeder）",
+   "organizer": "RWI Essen",
+   "organizer_short": "RWI",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": null,
+   "city": "Essen",
+   "country": "DE",
+   "venue": "RWI Essen",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
+   "summary_ja": "RWI研究セミナーで、ECBのChristofer Schroeder氏が研究報告を行う。",
+   "summary_en": "Christofer Schroeder (ECB) presents research at the RWI Research Seminar.",
+   "summary_de": "Christofer Schroeder (EZB) stellt im RWI-Forschungsseminar aktuelle Forschungsergebnisse vor.",
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Christofer Schroeder",
+     "org": "ECB",
+     "role": null
+    }
+   ],
+   "importance": 0,
+   "source": "RWI Essen – Veranstaltungen",
+   "title_short": "Economics Research Seminar",
+   "id": "a441f41fa99f77c8",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Charity hazard in climate adaptation: The effect of anticipatory cash transfers on demand for weather insurance",
+   "title_ja": "気候適応のチャリティーハザード:現金給付と保険需要",
+   "organizer": "DIW Berlin",
+   "date_start": "2027-03-04",
+   "date_end": null,
+   "time": "13:00",
+   "city": "Berlin",
+   "venue": "Karl Popper Room, Room 2.3.020, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1021708.de/veranstaltungen/charity_hazard_in_climate_adaptation__the_effect_of_anticipatory_cash_transfers_on_demand_for_weather_insurance.html",
+   "summary_ja": "DIWベルリンの研究セミナーで、気候適応における事前的な現金給付が天候保険への需要に与える影響(チャリティーハザード)を分析する研究報告が行われる。",
+   "summary_en": "This DIW Berlin research seminar presents a study on how anticipatory cash transfers affect demand for weather insurance in climate adaptation, examining the 'charity hazard' effect.",
+   "summary_de": "In diesem DIW-Berlin-Forschungsseminar wird eine Studie zum Effekt antizipativer Geldtransfers auf die Nachfrage nach Wetterversicherungen im Kontext der Klimaanpassung (\"Charity Hazard\") vorgestellt.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Climate Adaptation Insurance",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": "14:00",
+   "speakers": [],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "a810e2ec8bbdebf4",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Hamburg Sustainability Reporting Forum 2026",
+   "title_ja": "ハンブルク・サステナビリティ報告フォーラム2026",
+   "organizer": "Deutsches Rechnungslegungs Standards Committee (DRSC) / Sustainable Finance Research Group, Universität Hamburg",
+   "date_start": "2026-11-26",
+   "date_end": "2026-11-27",
+   "time": null,
+   "city": "Hamburg",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "登録は2026年9月から受付開始(詳細は主催者発表待ち)",
+   "registration_note_en": "Registration opened in September 2026 (programme and fee details to be announced by the organizers)",
+   "registration_note_de": "Anmeldung ist seit September 2026 möglich (Programm und Gebühren werden von den Veranstaltern noch bekanntgegeben)",
+   "url": "https://www.drsc.de/en/news/save-the-date-hamburg-sustainability-reporting-forum-2026-registration-opens-in-september/",
+   "summary_ja": "DRSC(ドイツ会計基準委員会)とハンブルク大学サステナブルファイナンス研究グループが主催する、欧州サステナビリティ報告基準(ESRS)の簡素化やドイツのCSRD実施法を議題とするハンブルクでの会議。",
+   "summary_en": "A Hamburg conference hosted by the German Accounting Standards Committee (DRSC) and the University of Hamburg's Sustainable Finance Research Group, focused on the simplification of the ESRS and Germany's CSRD implementation act.",
+   "summary_de": "Eine Konferenz in Hamburg, veranstaltet vom DRSC und der Sustainable Finance Research Group der Universität Hamburg, zur Vereinfachung der ESRS und zum deutschen CSRD-Umsetzungsgesetz.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DRSC+",
+   "title_short": "ESRS Sustainability Reporting",
+   "importance": 2,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "b0e5bd823d952597",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "BS|EF seminar \"A Theory of Public Debt as a Macro-financial Stability Tool\"",
+   "title_ja": "公的債務をマクロ金融安定の手段とする理論",
+   "organizer": "Banka Slovenije",
+   "date_start": "2026-10-22",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bsi.si/en/upcoming-events/bs-ef-seminar-a-theory-of-public-debt-as-a-macro-financial-stability-tool",
+   "summary_ja": "公的債務をマクロ金融の安定化手段として捉える理論を扱う研究セミナー。",
+   "summary_en": "A research seminar presenting a theory of public debt as a tool for macro-financial stability.",
+   "summary_de": "Ein Forschungsseminar zu einer Theorie der öffentlichen Verschuldung als Instrument der makrofinanziellen Stabilität.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Banka Slovenije",
+   "title_short": "Public Debt Stability Tool",
+   "importance": 0,
+   "speakers": [],
+   "source": "Banka Slovenije – Events",
+   "id": "b533d13a0b6731f5",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Berlin Macro Seminar: Book Presentation",
+   "title_ja": "ベルリン・マクロセミナー:書籍発表会",
+   "organizer": "DIW Berlin",
+   "date_start": "2027-01-26",
+   "date_end": null,
+   "time": null,
+   "city": "Berlin",
+   "venue": "Elinor Ostrom Hall, DIW Berlin, Anton-Wilhelm-Amo-Strasse 58, 10117 Berlin",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1020796.de/veranstaltungen/berlin_macro_seminar.html",
+   "summary_ja": "DIWベルリンのマクロセミナーで、Alexander NützenadelとJochen Streb両氏が、不確実性・リスクと経済行動を歴史的観点から論じた著書を紹介する。",
+   "summary_en": "At this DIW Berlin Macro Seminar, Alexander Nützenadel and Jochen Streb present their book on uncertainty, risk, and economic behavior from a historical perspective.",
+   "summary_de": "Im Rahmen des Berlin Macro Seminars von DIW Berlin stellen Alexander Nützenadel und Jochen Streb ihr Buch über Unsicherheit, Risiko und ökonomisches Verhalten aus historischer Perspektive vor.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Economic History of Risk",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Alexander Nützenadel",
+     "org": "Humboldt-Universität zu Berlin",
+     "role": null
+    },
+    {
+     "name": "Jochen Streb",
+     "org": "University of Mannheim",
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "e8b3de51a7048523",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Area Conference on Global Economy",
+   "title_ja": "世界経済エリア会議",
+   "organizer": "CESifo",
+   "organizer_short": "CESifo",
+   "date_start": "2027-05-03",
+   "date_end": "2027-05-04",
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "country": "DE",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
+   "summary_ja": "ミュンヘンで開催される、世界経済をテーマとするエリア会議。",
+   "summary_en": "An area conference on the global economy held in Munich.",
+   "summary_de": "Area-Konferenz zur Weltwirtschaft in München.",
+   "language": "en",
+   "speakers": [],
+   "importance": 2,
+   "source": "CESifo (München) – Veranstaltungen",
+   "title_short": "Global Economy Conference",
+   "id": "eddf4d66f8b0268c",
+   "first_seen": "2026-10-08"
+  },
+  {
+   "title": "Klar gestaltet, sicher erkannt – Gutes Banknotendesign aus Sicht der Zentralbank",
+   "title_ja": "紙幣デザインを中央銀行の視点から考える",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-10-29",
+   "date_end": null,
+   "time": "18:00",
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/klar-gestaltet-sicher-erkannt-gutes-banknotendesign-aus-sicht-der-zentralbank-891898",
+   "summary_ja": "中央銀行の視点から、紙幣デザインの分かりやすさと確実な識別性について紹介する講演。",
+   "summary_en": "A talk from the central bank's perspective on banknote designs that are clear to the eye and reliably recognised.",
+   "summary_de": "Ein Vortrag aus Sicht der Zentralbank darüber, wie Banknotendesign gut gestaltet und sicher erkennbar sein kann.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Banknote Design Perspectives",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Alexander Ruske",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ],
+   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
+   "id": "ee54c3d08f76016e",
+   "first_seen": "2026-10-08"
   }
  ]
 }
