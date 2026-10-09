@@ -234,5 +234,21 @@
   ],
   "last_ok": "2026-09-19",
   "note": "2026-09-19: 主URL(macroeconomics.lv)はfetch_all/WebFetchともFAIL-THIN(空白)。web検索で新設の会議専用サイト conference.bank.lv を発見、旗艦会議 'From Policy to Impact'(2026-11-11, Riga)を確認・採用。次回以降はこのURLもalt_urlsとして併せて確認する。"
+ },
+ "Universität Mannheim – 経済学部イベント/セミナー": {
+  "method": "sub-pages",
+  "alt_urls": [
+   "https://www.vwl.uni-mannheim.de/en/forschung/forschungsseminare/micro-crc-tr-224-seminar-1/"
+  ],
+  "last_ok": "2026-10-09",
+  "note": "2026-10-09: 元URL(/en/research/research-seminars/)はインデックスのみでWebFetch可。下位ページ群(macro-crc-tr-224-seminar, internal-department-seminar, mannheim-applied-seminar, forschungsseminare/micro-crc-tr-224-seminar-1)を個別に辿る必要あり。Micro CRC TR 224 Seminar(上記alt_url)は今回初めて発見、既存のMacro CRC系列とは別シリーズ。internal-department-seminar/mannheim-applied-seminarは直近は過去学期分のみで今後分の掲載なし(0件が通常)。"
+ },
+ "ECONtribute (Bonn/Köln) – Events": {
+  "method": "api",
+  "alt_urls": [
+   "https://www.econtribute.de/wp-json/dhsv/v2/eco/events?per_page=100"
+  ],
+  "last_ok": "2026-10-09",
+  "note": "2026-10-09: 通常の/eventsページはJS描画のナビのみ(fetch/ua-curl失敗)。sitemap_index.xml経由でWordPressの未公開REST名前空間 dhsv/v2/eco/events を発見、今後のセミナー(日付・時刻・講演者・リンク)を構造化データで取得できる(per_page=100で全件)。次回以降はこのAPIエンドポイントを優先的に試す。"
  }
 }
