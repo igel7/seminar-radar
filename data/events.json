@@ -1060,8 +1060,7 @@
    "venue": null,
    "format": "onsite",
    "themes": [
-    "central_bank",
-    "fin_markets"
+    "central_bank"
    ],
    "fee": "free",
    "open_to_public": true,
@@ -1096,9 +1095,9 @@
    ]
   },
   {
-   "title": "Housing markets – squaring supply and demand",
-   "title_ja": "住宅市場:需給の均衡",
-   "organizer": "SUERF",
+   "title": "National Bank of Slovakia I SUERF Conference: Housing Markets – Squaring Supply and Demand",
+   "title_ja": "スロバキア国立銀行・SUERF会議:住宅市場の需給",
+   "organizer": "National Bank of Slovakia / SUERF",
    "date_start": "2026-11-17",
    "date_end": null,
    "time": "09:00",
@@ -1106,25 +1105,26 @@
    "venue": "Národná banka Slovenska",
    "format": "onsite",
    "themes": [
-    "real_economy"
+    "real_economy",
+    "fin_markets"
    ],
    "fee": "unknown",
    "open_to_public": false,
    "registration_note": "要登録",
-   "url": "https://www.suerf.org/events/housing-markets-squaring-supply-and-demand/",
-   "summary_ja": "住宅市場の需給均衡をテーマとするSUERFの会議。",
+   "url": "https://www.suerf.org/events/",
+   "summary_ja": "スロバキア国立銀行とSUERFが共催する会議で、住宅市場における需給の不均衡や政策対応を議論する。",
    "language": "en",
    "country": "SK",
-   "organizer_short": "SUERF",
-   "title_short": "Housing Supply and Demand",
+   "organizer_short": "NBS/SUERF",
+   "title_short": "Housing Market Supply and Demand",
    "importance": 2,
    "registration_url": "https://www.suerf.org/events/housing-markets-squaring-supply-and-demand/",
    "time_end": "17:00",
    "source": "SUERF – Events",
    "id": "5cfd5613faa14b41",
    "first_seen": "2026-07-16",
-   "summary_en": "A SUERF conference on balancing supply and demand in housing markets.",
-   "summary_de": "Eine SUERF-Konferenz über das Gleichgewicht von Angebot und Nachfrage auf dem Wohnungsmarkt.",
+   "summary_en": "Co-hosted by the National Bank of Slovakia and SUERF, this conference examines the imbalance between housing supply and demand and possible policy responses.",
+   "summary_de": "Die gemeinsam von der Nationalbank der Slowakei und SUERF ausgerichtete Konferenz untersucht das Ungleichgewicht zwischen Wohnungsangebot und -nachfrage sowie mögliche politische Antworten.",
    "registration_note_en": "Registration required",
    "registration_note_de": "Anmeldung erforderlich"
   },
@@ -2246,40 +2246,6 @@
    "summary_de": "IMFS-Konferenz über Wirtschafts-, Fiskal- und Geldpolitik für stabiles Wachstum und Preisstabilität.",
    "registration_note_en": "Registration required via Eventbrite.",
    "registration_note_de": "Anmeldung über Eventbrite erforderlich."
-  },
-  {
-   "title": "Mit Bargeld, Karte oder Smartphone? So bezahlt Deutschland",
-   "title_ja": "現金・カード・スマホ決済の動向",
-   "organizer": "Deutsche Bundesbank",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": "18:00",
-   "city": "Düsseldorf",
-   "venue": "Hauptverwaltung Nordrhein-Westfalen",
-   "format": "onsite",
-   "themes": [
-    "central_bank"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "連邦銀行地方本部主催の一般向け公開講演。詳細は開催ページを参照。",
-   "url": "https://www.bundesbank.de/de/service/termine/mit-bargeld-karte-oder-smartphone-so-bezahlt-deutschland-889624",
-   "summary_ja": "ドイツにおける現金・カード・スマホ決済の動向を紹介するブンデスバンクの講演。",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "Bundesbank",
-   "title_short": "Payment Habits in Germany",
-   "importance": 1,
-   "registration_url": "https://em.bundesbank.de/microsite/index.cfm?l=15028&sp_id=1",
-   "time_end": null,
-   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
-   "id": "df1650ef649cde2b",
-   "first_seen": "2026-07-17",
-   "summary_en": "A Bundesbank talk on cash, card and smartphone payment trends in Germany.",
-   "summary_de": "Ein Vortrag der Bundesbank zu Zahlungsgewohnheiten mit Bargeld, Karte und Smartphone in Deutschland.",
-   "registration_note_en": "A public lecture hosted by a Bundesbank regional head office; see the event page for details.",
-   "registration_note_de": "Ein von einer Bundesbank-Hauptverwaltung veranstalteter öffentlicher Vortrag; Details siehe Veranstaltungsseite.",
-   "fee_amount": 0
   },
   {
    "title": "20th South-Eastern European Economic Research Workshop",
@@ -3443,48 +3409,43 @@
    "registration_note_de": "Praxisorientiertes Forum, Anmeldung erforderlich (noch Plätze verfügbar)."
   },
   {
-   "title": "German-Baltic-Ukrainian Defence Industry Conference 2026",
-   "title_ja": "独・バルト・ウクライナ防衛産業会議2026",
+   "title": "German-Baltic Defence Industry Conference 2026 – United for Security: Strengthening Regional Defence Cooperation",
+   "title_ja": "独バルト防衛産業会議2026",
    "organizer": "German-Baltic Chamber of Commerce (AHK)",
    "date_start": "2026-10-29",
    "date_end": null,
-   "time": "09:30",
+   "time": "09:00",
    "city": "Vilnius",
    "venue": "Radisson Blu Hotel Lietuva",
    "format": "onsite",
    "themes": [
-    "real_economy",
-    "geopolitics"
+    "geopolitics",
+    "real_economy"
    ],
    "fee": "paid",
    "open_to_public": true,
-   "registration_note": "チケット購入制(公式サイトから)",
-   "url": "https://www.bdc2026.com/",
-   "summary_ja": "独・バルト三国・ウクライナの防衛産業協力をテーマにした会議。地経学的な安全保障環境や、ドローン・自律兵器システム、ドイツ連邦軍と産業界の協力等を扱う。",
+   "registration_note": "要事前登録(B2Bマッチングは参加券保持者のみ)",
+   "url": "https://www.ahk-balt.org/en/veranstaltungen/2026/oktober/german-baltic-defence-industry-conference-2026",
+   "summary_ja": "独バルト商工会議所主催の防衛産業会議で、ドローン戦・自律システム、独軍と産業界の協力、防衛ロジスティクス、NATO東方防衛を巡る戦略対話などを扱う。",
    "language": "en",
    "country": "LT",
    "organizer_short": "AHK Balt",
-   "title_short": "German-Baltic Defence Cooperation",
+   "title_short": "Baltic Defence Industry Cooperation",
    "importance": 2,
    "registration_url": "https://www.bdc2026.com/",
-   "time_end": "22:00",
+   "time_end": "19:00",
    "source": "web検索(discovery)",
    "id": "4c00bf40c4a1c0c4",
    "first_seen": "2026-07-24",
-   "summary_en": "A conference on defence industry cooperation between Germany, the Baltic states and Ukraine, covering the evolving security landscape, drone and autonomous systems, and Bundeswehr-industry cooperation.",
-   "summary_de": "Eine Konferenz zur Kooperation der Verteidigungsindustrie zwischen Deutschland, den baltischen Staaten und der Ukraine, mit Themen wie geopolitischer Lage, Drohnen- und autonomen Systemen sowie Bundeswehr-Industrie-Kooperation.",
-   "registration_note_en": "Ticketed event, register via official website",
-   "registration_note_de": "Kostenpflichtige Anmeldung über die offizielle Website",
+   "summary_en": "Organised by the German-Baltic Chamber of Commerce in Vilnius, this conference brings together government and industry to discuss drone warfare, Bundeswehr-industry cooperation, defence logistics and strategic dialogue on NATO's eastern flank.",
+   "summary_de": "Die von der Deutsch-Baltischen Handelskammer in Vilnius ausgerichtete Konferenz bringt Regierung und Industrie zusammen, um Drohnenkriegsführung, die Zusammenarbeit zwischen Bundeswehr und Industrie, Verteidigungslogistik und den strategischen Dialog zur NATO-Ostflanke zu diskutieren.",
+   "registration_note_en": "Advance registration required; B2B matchmaking access limited to ticket holders",
+   "registration_note_de": "Anmeldung erforderlich; Zugang zum B2B-Matchmaking nur für Ticketinhaber",
    "speakers": [
     {
      "name": "Grant Hendrik Tonne",
-     "org": "Lower Saxony Ministry of Economic Affairs, Transport and Building",
-     "role": "Minister"
-    },
-    {
-     "name": "Matthias Puschnig",
-     "org": "German Federal Ministry of Defence",
-     "role": "Special Staff Ukraine"
+     "org": "Niedersachsen",
+     "role": "Minister for Economic Affairs"
     }
    ]
   },
@@ -4292,8 +4253,8 @@
    "fee_amount": 2500
   },
   {
-   "title": "Eurosif Policy & Capacity Building Webinar (December)",
-   "title_ja": "Eurosif 政策・能力構築ウェビナー(12月)",
+   "title": "Eurosif Policy & Capacity Building Webinar",
+   "title_ja": "Eurosif政策・能力構築ウェビナー",
    "organizer": "Eurosif",
    "date_start": "2026-09-22",
    "date_end": "2026-12-03",
@@ -4302,25 +4263,26 @@
    "venue": "Online",
    "format": "online",
    "themes": [
-    "climate_esg"
+    "climate_esg",
+    "fin_markets"
    ],
    "fee": "free",
    "open_to_public": true,
    "registration_note": "オンライン開催・無料",
    "url": "https://www.forum-ng.org/en/termine/veranstaltung/eurosif-policy-capacity-building-webinar-1-1-1",
-   "summary_ja": "Eurosif によるサステナブルファイナンスの政策と能力構築に関するオンラインウェビナー。12月3日開催。",
+   "summary_ja": "Eurosifが主催する、サステナブル投資の政策と能力構築をテーマにしたオンラインウェビナー。",
    "language": "en",
    "country": null,
    "organizer_short": "Eurosif",
-   "title_short": "Sustainable Finance Policy",
+   "title_short": "Sustainable Finance Policy Webinar",
    "importance": 1,
    "registration_url": null,
    "time_end": null,
    "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
    "id": "2d173f63acea8db3",
    "first_seen": "2026-07-25",
-   "summary_en": "An online webinar by Eurosif on sustainable finance policy and capacity building, held on 3 December.",
-   "summary_de": "Online-Webinar von Eurosif zu Politik und Kapazitätsaufbau im nachhaltigen Finanzwesen, am 3. Dezember.",
+   "summary_en": "Online webinar by Eurosif on sustainable finance policy and capacity building.",
+   "summary_de": "Online-Webinar von Eurosif zu Politik und Kapazitätsaufbau im Bereich nachhaltige Finanzen.",
    "registration_note_en": "Online, free of charge",
    "registration_note_de": "Online, kostenlos"
   },
@@ -4402,8 +4364,7 @@
    "venue": null,
    "format": "onsite",
    "themes": [
-    "central_bank",
-    "fin_markets"
+    "central_bank"
    ],
    "fee": "unknown",
    "open_to_public": false,
@@ -6582,9 +6543,9 @@
    "registration_note_de": "Kostenloses Seminar"
   },
   {
-   "title": "29. EURO FINANCE WEEK 2026",
-   "title_ja": "第29回ユーロ・ファイナンス・ウィーク2026",
-   "organizer": "dfv Euro Finance Group",
+   "title": "12th CHINA DAY",
+   "title_ja": "第12回チャイナ・デー(欧州金融ウィーク)",
+   "organizer": "dfv Euro Finance Week",
    "date_start": "2026-11-16",
    "date_end": "2026-11-20",
    "time": "09:00",
@@ -6592,27 +6553,28 @@
    "venue": "Steigenberger Icon Frankfurter Hof",
    "format": "onsite",
    "themes": [
+    "china",
     "fin_markets"
    ],
-   "fee": "paid",
+   "fee": "free",
    "open_to_public": true,
-   "registration_note": "業界関係者向けの無料登録申請(審査あり)。その他は有料チケット(1日券690ユーロ、3日間ビジネス券1,380ユーロ、いずれも税別)。",
-   "url": "https://tickets.dfv-eurofinance.com/EFW26/",
-   "summary_ja": "フランクフルトで開催される銀行・金融業界のトップ意思決定者向けの年次カンファレンス週間。2026年11月16日から20日まで、複数の専門会議を併催する。",
+   "registration_note": "対象者限定・審査制の無料招待",
+   "url": "https://www.dfv-eurofinance.com/events/12th-china-day/",
+   "summary_ja": "欧州金融ウィーク(EFW)内のチャイナ・デーで、「中国のアジェンダ2030」をテーマに金融・貿易、技術、グリーンエネルギー分野での独中協力の可能性と課題を議論する。",
    "language": "en",
    "country": "DE",
-   "organizer_short": "dfv",
-   "title_short": "Frankfurt banking and finance week",
+   "organizer_short": "Euro Finance Week",
+   "title_short": "Germany-China Economic Cooperation",
    "importance": 3,
    "registration_url": "https://tickets.dfv-eurofinance.com/EFW26/",
    "time_end": "16:30",
    "source": "手動取込: INBOX",
    "id": "037996026ee766a1",
    "first_seen": "2026-07-28",
-   "summary_en": "Frankfurt's flagship annual conference week for banking and finance decision-makers, held 16-20 November 2026 with several specialist conferences.",
-   "summary_de": "Die jährliche Konferenzwoche in Frankfurt für Entscheider der Banken- und Finanzbranche, vom 16. bis 20. November 2026 mit mehreren Fachkonferenzen.",
-   "registration_note_en": "Free registration request for banking and finance professionals (checked). Others need paid tickets: day ticket EUR 690, three-day business ticket EUR 1,380 (both excl. VAT).",
-   "registration_note_de": "Kostenlose Anmeldeanfrage für Fachleute der Banken- und Finanzbranche (wird geprüft). Sonst kostenpflichtige Tickets: Tagesticket 690 EUR, Business-Ticket für drei Tage 1.380 EUR (jeweils zzgl. MwSt.).",
+   "summary_en": "Part of Euro Finance Week, China Day examines the realities and opportunities of German-Chinese cooperation under the theme 'China's Agenda 2030', covering finance, trade, technology and green energy.",
+   "summary_de": "Im Rahmen der Euro Finance Week befasst sich der China Day unter dem Motto „China's Agenda 2030\" mit den Realitäten und Chancen der deutsch-chinesischen Zusammenarbeit in Finanzen, Handel, Technologie und grüner Energie.",
+   "registration_note_en": "Complimentary ticket for core target group, subject to review",
+   "registration_note_de": "Kostenloses Ticket für die Kernzielgruppe, vorbehaltlich Prüfung",
    "fee_amount": 690
   },
   {
@@ -8276,40 +8238,6 @@
    "first_seen": "2026-08-03"
   },
   {
-   "title": "16th ifo Dresden Workshop on Regional Economics",
-   "title_ja": "第16回ifo地域経済ワークショップ",
-   "organizer": "ifo Institute",
-   "date_start": "2026-09-08",
-   "date_end": "2026-09-09",
-   "time": null,
-   "time_end": null,
-   "city": "Dresden",
-   "venue": "ifo Dresden",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": false,
-   "registration_note": "論文投稿締切は終了済み。参加登録方法の詳細はページに記載なし。",
-   "registration_note_en": "The paper submission deadline has passed; registration details for attendees are not specified on the page.",
-   "registration_note_de": "Die Einreichungsfrist ist abgelaufen; Anmeldedetails für Teilnehmer sind auf der Seite nicht angegeben.",
-   "url": "https://www.ifo.de/en/event/2026-09-08/16th-ifo-dresden-workshop-regional-economics",
-   "summary_ja": "ifo研究所主催の地域経済学に関する学術ワークショップ。地域格差、労働移動、開発経済学などを扱う。",
-   "summary_en": "An academic workshop on regional economics hosted by the ifo Institute in Dresden, covering regional disparities, mobility, and development economics.",
-   "summary_de": "Ein akademischer Workshop des ifo Instituts in Dresden zur Regionalökonomie, der regionale Disparitäten, Mobilität und Entwicklungsökonomie behandelt.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ifo",
-   "title_short": "Regional Economics Workshop",
-   "importance": 2,
-   "registration_url": null,
-   "source": "ifo Institut – Veranstaltungen",
-   "id": "49f1761acd57a882",
-   "first_seen": "2026-08-03"
-  },
-  {
    "title": "CESifo Area Conference on Behavioral Economics",
    "title_ja": "行動経済学に関するCESifoエリアカンファレンス",
    "organizer": "CESifo",
@@ -9621,41 +9549,6 @@
    "first_seen": "2026-08-17"
   },
   {
-   "title": "Will payment innovations disrupt banking? Lessons from prepaid cards",
-   "title_ja": "決済革新は銀行業を破壊するか:プリペイドカードの教訓",
-   "organizer": "Národná banka Slovenska",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": "10:30",
-   "city": "Bratislava",
-   "venue": "NBS building, 8th floor meeting room",
-   "format": "hybrid",
-   "themes": [
-    "central_bank",
-    "ai"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "参加希望はresearch@nbs.skまで連絡。対面またはオンライン参加可。",
-   "registration_note_en": "Contact research@nbs.sk to attend; in-person or online participation available.",
-   "registration_note_de": "Zur Teilnahme research@nbs.sk kontaktieren; Teilnahme vor Ort oder online möglich.",
-   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
-   "summary_ja": "プリペイドカードの経験から決済革新が銀行業に与える影響を分析するNBS研究セミナー。",
-   "summary_en": "An NBS research seminar on whether payment innovations disrupt banking, drawing lessons from prepaid cards.",
-   "summary_de": "Ein NBS-Forschungsseminar darüber, ob Zahlungsinnovationen das Bankwesen verändern, mit Lehren aus Prepaid-Karten.",
-   "language": "en",
-   "country": "SK",
-   "organizer_short": "NBS",
-   "title_short": "Payment Innovation and Banking",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "NBS – Národná banka Slovenska – Events",
-   "id": "2e884422768e98cc",
-   "first_seen": "2026-08-17"
-  },
-  {
    "title": "Die Zukunft des japanisch-deutschen Austauschs - Ein generationenübergreifender Dialog",
    "title_ja": "日独交流の未来-世代を超えた対話",
    "title_short": "Japan-Germany Exchange",
@@ -10038,40 +9931,6 @@
    "importance": 0,
    "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
    "id": "c797e695a5a88d1d",
-   "first_seen": "2026-08-17"
-  },
-  {
-   "title": "An Economic Approach to Survey-Based Measurement of Well-Being",
-   "title_ja": "幸福度測定の経済学的アプローチ(マスタークラス)",
-   "organizer": "DIW Berlin",
-   "date_start": "2026-09-08",
-   "date_end": "2026-09-09",
-   "time": "10:00",
-   "city": "Berlin",
-   "venue": "Karl Popper Room, DIW Berlin",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": null,
-   "registration_note_en": "Public registration available.",
-   "registration_note_de": "Öffentliche Anmeldung möglich.",
-   "url": "https://www.diw.de/de/diw_01.c.1012413.de/veranstaltungen/an_economic_approach_to_survey-based_measurement_of_well-being.html",
-   "summary_ja": "Daniel Benjamin氏(UCLAアンダーソン校)による、幸福度のサーベイ計測に関する経済学マスタークラス。",
-   "summary_en": "A Graduate Center masterclass by Daniel Benjamin (UCLA Anderson) on survey-based measurement of well-being.",
-   "summary_de": "Eine Graduate-Center-Masterclass von Daniel Benjamin (UCLA Anderson) zur umfragebasierten Messung von Wohlbefinden.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "DIW Berlin",
-   "title_short": "Well-Being Measurement Masterclass",
-   "importance": 2,
-   "registration_url": null,
-   "time_end": "16:00",
-   "source": "DIW Berlin – Veranstaltungen",
-   "id": "d189133c131b79d4",
    "first_seen": "2026-08-17"
   },
   {
@@ -11601,40 +11460,6 @@
    "first_seen": "2026-08-21"
   },
   {
-   "title": "Math Camp",
-   "title_ja": "数学キャンプ",
-   "organizer": "Kiel Institut für Weltwirtschaft / Advanced Studies Program",
-   "date_start": "2026-09-03",
-   "date_end": "2026-09-09",
-   "time": null,
-   "city": null,
-   "venue": "Haus Welt-Club",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
-   "summary_ja": "経済研究のための数学教育プログラム",
-   "summary_en": "Advanced studies math camp for economics research.",
-   "summary_de": "Mathe-Intensivkurs für Wirtschaftsforschung im Rahmen des Advanced Studies Program.",
-   "language": null,
-   "country": null,
-   "organizer_short": "IfW",
-   "title_short": "Math Camp",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "IfW Kiel – Veranstaltungen",
-   "id": "1dfb3742fbc36b71",
-   "first_seen": "2026-08-22"
-  },
-  {
    "title": "Japanisch-Bayerischer Wirtschaftsdialog: Munichiwa! #28",
    "title_ja": "日独ビジネス対話：ムニキワ！#28",
    "organizer": "DJW, DJG Bayern, JETRO, JIHK",
@@ -11785,41 +11610,6 @@
      "role": null
     }
    ]
-  },
-  {
-   "title": "Money Disrupted: Will Warsh quell inflation and can the AI boom last?",
-   "title_ja": "米インフレ抑制とAIブーム持続性を討議",
-   "organizer": "OMFIF Economic and Monetary Policy Institute",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": "15:00",
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "central_bank",
-    "ai"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": false,
-   "registration_note": "OMFIF会員限定のオンライン討論会。事前登録が必要。",
-   "registration_note_en": "Members-only virtual discussion; advance registration required.",
-   "registration_note_de": "Virtuelle Diskussion nur für OMFIF-Mitglieder; Anmeldung erforderlich.",
-   "url": "https://www.omfif.org/meetings/money-disrupted-will-warsh-quell-inflation-and-can-the-ai-boom-last/",
-   "summary_ja": "新FRB議長ウォーシュがインフレを2%目標に抑え込めるか、AIブームが経済を下支えし続けるかを議論するOMFIFの月例オンライン討論会。",
-   "summary_en": "Part of OMFIF's Money Disrupted series, this virtual discussion examines whether new Fed Chair Kevin Warsh can bring inflation sustainably to target and whether the AI boom can keep boosting the economy.",
-   "summary_de": "Virtuelle Diskussion im Rahmen der OMFIF-Reihe „Money Disrupted“ darüber, ob der neue Fed-Vorsitzende Kevin Warsh die Inflation nachhaltig auf das Zielniveau senken kann und ob der KI-Boom die Wirtschaft weiter stützt.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "OMFIF",
-   "title_short": "Fed Inflation and AI Boom",
-   "importance": 2,
-   "registration_url": "https://www.omfif.org/meetings/money-disrupted-will-warsh-quell-inflation-and-can-the-ai-boom-last/",
-   "time_end": "16:00",
-   "source": "OMFIF – Events/Meetings",
-   "id": "5e0481717fe96f26",
-   "first_seen": "2026-08-22"
   },
   {
    "title": "Financing of Pension Insurance",
@@ -13639,41 +13429,6 @@
    ]
   },
   {
-   "title": "In den Sturm: 5 Jahre Zentrum für Klima und Außenpolitik",
-   "title_ja": "嵐の中へ:気候・外交政策センター5周年",
-   "organizer": "DGAP",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": "18:00",
-   "city": "Berlin",
-   "venue": null,
-   "format": "onsite",
-   "themes": [
-    "climate_esg",
-    "geopolitics"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://dgap.org/de/veranstaltungen/den-sturm-5-jahre-zentrum-fuer-klima-und-aussenpolitik",
-   "summary_ja": "DGAP気候・外交政策センターの5周年を記念する討論会。",
-   "summary_en": "A discussion marking five years of DGAP's Centre for Climate and Foreign Policy.",
-   "summary_de": "Eine Diskussion zum fünfjährigen Bestehen des DGAP-Zentrums für Klima und Außenpolitik.",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "DGAP",
-   "title_short": "Climate and Foreign Policy",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": "19:30",
-   "source": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
-   "id": "ae742e60e7c0680a",
-   "first_seen": "2026-08-27"
-  },
-  {
    "title": "International FinTech Conference (Lithuania)",
    "title_ja": "国際フィンテック会議(リトアニア)",
    "organizer": "Ministry of Finance of Lithuania / Bank of Lithuania / Tech City Lithuania",
@@ -14441,41 +14196,6 @@
    "first_seen": "2026-09-01"
   },
   {
-   "title": "BS|EF seminar \"Panel Machine Learning with Mixed-Frequency Data: Monitoring State-Level Fiscal Variables\"",
-   "title_ja": "機械学習による財政変数監視",
-   "organizer": "Banka Slovenije / Ekonomska fakulteta Univerze v Ljubljani (BS|EF seminar series)",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": "Ljubljana",
-   "venue": null,
-   "format": null,
-   "themes": [
-    "ai",
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.bsi.si/en/upcoming-events/bs-ef-seminar-panel-machine-learning-with-mixed-frequency-data-monitoring-state-level-fiscal-variables",
-   "summary_ja": "混合頻度データを用いたパネル機械学習により、州レベルの財政変数を監視する手法を扱うBS|EF研究セミナー。",
-   "summary_en": "A BS|EF research seminar on using panel machine learning with mixed-frequency data to monitor state-level fiscal variables.",
-   "summary_de": "Ein BS|EF-Forschungsseminar über die Nutzung von Panel-Machine-Learning mit gemischten Datenfrequenzen zur Überwachung fiskalischer Variablen auf Bundesstaatsebene.",
-   "language": "en",
-   "country": "SI",
-   "organizer_short": "Banka Slovenije+",
-   "title_short": "Machine Learning for Fiscal Monitoring",
-   "importance": 0,
-   "registration_url": null,
-   "source": "Banka Slovenije – Events",
-   "id": "9bd5e5b3e7babfce",
-   "first_seen": "2026-09-01"
-  },
-  {
    "title": "TSI Congress 2026",
    "title_ja": "TSI会議2026(証券化)",
    "organizer": "True Sale International GmbH",
@@ -14898,40 +14618,6 @@
    "first_seen": "2026-09-04"
   },
   {
-   "title": "The Role of Wages and Benefits in Job Search",
-   "title_ja": "求職活動における賃金と給付の役割",
-   "organizer": "ZEW Mannheim",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": null,
-   "city": "Mannheim",
-   "venue": "ZEW",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/the-role-of-wages-and-benefits-in-job-search/4979",
-   "summary_ja": "求職過程における賃金と失業給付の役割を分析する応用経済学セミナー。Prof. Dr. Michael Siegenthaler(ETH Zürich)が報告。",
-   "summary_en": "Applied economics seminar on the role of wages and unemployment benefits in job search behaviour, presented by Prof. Dr. Michael Siegenthaler (ETH Zurich).",
-   "summary_de": "Angewandtes Seminar zur Rolle von Löhnen und Arbeitslosenleistungen bei der Arbeitssuche, vorgestellt von Prof. Dr. Michael Siegenthaler (ETH Zürich).",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ZEW",
-   "title_short": "Wages and Job Search",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": null,
-   "source": "ZEW Mannheim – Veranstaltungen",
-   "id": "80e6a2cece3092af",
-   "first_seen": "2026-09-04"
-  },
-  {
    "title": "Monetary Policy at the Margin",
    "title_ja": "限界での金融政策",
    "organizer": "Latvijas Banka",
@@ -14973,41 +14659,6 @@
    ]
   },
   {
-   "title": "Are low interest rates firing back? Interest rate risk in the banking book and bank lending in a rising interest rate environment",
-   "title_ja": "低金利政策の反動と銀行の金利リスク",
-   "organizer": "Latvijas Banka",
-   "date_start": "2026-09-09",
-   "date_end": null,
-   "time": null,
-   "city": "Riga",
-   "venue": "Latvijas Banka",
-   "format": "onsite",
-   "themes": [
-    "central_bank",
-    "fin_markets"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "研究セミナー。職員向けが中心だが外部聴講者も歓迎",
-   "registration_note_en": "Research seminar mainly for staff, but external participants are welcome.",
-   "registration_note_de": "Forschungsseminar, vorwiegend für Mitarbeitende, externe Teilnehmer sind willkommen.",
-   "url": "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026",
-   "summary_ja": "上昇金利環境下での銀行勘定の金利リスクと融資行動について、Alessio Reghezza氏(ECB)が報告する研究セミナー。",
-   "summary_en": "Research seminar on interest rate risk in the banking book and bank lending behaviour in a rising interest rate environment, presented by Alessio Reghezza (ECB).",
-   "summary_de": "Forschungsseminar zu Zinsrisiken im Bankbuch und Kreditvergabeverhalten in einem Umfeld steigender Zinsen, vorgestellt von Alessio Reghezza (EZB).",
-   "language": "en",
-   "country": "LV",
-   "organizer_short": "Latvijas Banka",
-   "title_short": "Interest Rate Risk in Banking",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "Latvijas Banka – Research/Events",
-   "id": "aacb5f888491a997",
-   "first_seen": "2026-09-04"
-  },
-  {
    "title": "Web scraping and machine learning for inflation nowcasting",
    "title_ja": "ウェブスクレイピングと機械学習によるインフレーション予測",
    "organizer": "Latvijas Banka",
@@ -15018,7 +14669,8 @@
    "venue": "Latvijas Banka",
    "format": "onsite",
    "themes": [
-    "central_bank"
+    "central_bank",
+    "ai"
    ],
    "fee": "free",
    "fee_amount": null,
@@ -15043,7 +14695,7 @@
    "speakers": [
     {
      "name": "Luigi Palumbo",
-     "org": "Banca di Italia",
+     "org": "Banca d'Italia",
      "role": null
     }
    ]
@@ -17650,15 +17302,15 @@
    "first_seen": "2026-09-15"
   },
   {
-   "title": "Finance Forschung Fingerfood – Wettbewerbsfähigkeit europäische Banken",
-   "title_ja": "欧州銀行の競争力ワークショップ",
-   "organizer": "DIW Berlin",
+   "title": "Finance Forschung Fingerfood",
+   "title_ja": "金融研究のフィンガーフード交流会",
+   "organizer": "IWH",
    "date_start": "2026-10-14",
    "date_end": null,
    "time": "16:00",
    "time_end": "18:00",
    "city": "Berlin",
-   "venue": "Elinor-Ostrom-Saal, DIW Berlin",
+   "venue": "DIW Berlin, Elinor-Ostrom-Saal",
    "format": "onsite",
    "themes": [
     "fin_markets"
@@ -17669,14 +17321,14 @@
    "registration_note": "招待制(非公開)",
    "registration_note_en": "Invitation only (not open to the public)",
    "registration_note_de": "Nur auf Einladung (nicht öffentlich)",
-   "url": "https://www.diw.de/de/diw_01.c.1018953.de/veranstaltungen/finance_forschung_fingerfood.html",
-   "summary_ja": "DIW Berlinが欧州銀行の競争力をテーマに非公開のポリシーワークショップを開催する。",
-   "summary_en": "DIW Berlin hosts an invitation-only policy workshop on the competitiveness of European banks.",
-   "summary_de": "Das DIW Berlin veranstaltet einen nicht öffentlichen Policy-Workshop zur Wettbewerbsfähigkeit europäischer Banken.",
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/finance-forschung-fingerfood",
+   "summary_ja": "IWHによる金融研究の交流会(フィンガーフード形式)。欧州銀行の競争力をテーマに、4名の研究者が登壇する。",
+   "summary_en": "IWH finance research networking event (fingerfood format) on the competitiveness of European banks, with four researchers.",
+   "summary_de": "IWH-Finanzforschungstreffen in Fingerfood-Form zur Wettbewerbsfähigkeit europäischer Banken, mit vier Forschenden.",
    "language": "de",
    "country": "DE",
-   "organizer_short": "DIW Berlin",
-   "title_short": "European Bank Competitiveness",
+   "organizer_short": "IWH",
+   "title_short": "Competitiveness of European Banks",
    "importance": 1,
    "registration_url": null,
    "speakers": [
@@ -17686,13 +17338,13 @@
      "role": null
     },
     {
-     "name": "Michael Kötter",
+     "name": "Pia Hüttl",
      "org": null,
      "role": null
     },
     {
-     "name": "Pia Hüttl",
-     "org": null,
+     "name": "Michael Koetter",
+     "org": "IWH",
      "role": null
     },
     {
@@ -19325,7 +18977,6 @@
    "venue": "NBS building, 8th floor meeting room",
    "format": "hybrid",
    "themes": [
-    "fin_markets",
     "real_economy"
    ],
    "fee": "free",
@@ -19348,7 +18999,7 @@
    "speakers": [
     {
      "name": "Gianni Carvelli",
-     "org": null,
+     "org": "Università Cattolica",
      "role": null
     }
    ],
@@ -19997,7 +19648,7 @@
    "speakers": [
     {
      "name": "Martin Kliem",
-     "org": "Deutsche Bundesbank",
+     "org": "Bundesbank",
      "role": null
     }
    ],
@@ -20601,9 +20252,9 @@
    "first_seen": "2026-09-25"
   },
   {
-   "title": "State Censorship and Global Demand: Evidence from China’s Book Bans",
-   "title_ja": "国家による検閲と世界需要:中国の書籍発禁から",
-   "organizer": "BOFIT – Bank of Finland Institute for Emerging Economies",
+   "title": "State Censorship and Global Demand: Evidence from China's Book Bans",
+   "title_ja": "国家検閲と世界需要:中国の書籍発禁",
+   "organizer": "BOFIT – The Bank of Finland Institute for Emerging Economies",
    "date_start": "2026-10-27",
    "date_end": null,
    "time": "10:30",
@@ -20613,7 +20264,8 @@
    "format": "online",
    "country": null,
    "themes": [
-    "china"
+    "china",
+    "real_economy"
    ],
    "fee": "free",
    "fee_amount": 0,
@@ -20623,9 +20275,9 @@
    "registration_note_de": "Online-Seminar. Vorab-Anmeldung erforderlich (Anmeldung bis 9:00 Uhr am Veranstaltungstag).",
    "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/2026/2026-10-27-li/",
    "registration_url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/registration",
-   "summary_ja": "中国の書籍発禁を事例に、国家による検閲が世界的な需要にどう影響するかを検証する研究セミナー。",
-   "summary_en": "A research seminar using China's book bans as a case to examine how state censorship affects global demand.",
-   "summary_de": "Forschungsseminar, das am Beispiel chinesischer Buchverbote untersucht, wie staatliche Zensur die globale Nachfrage beeinflusst.",
+   "summary_ja": "中国の書籍発禁を事例に、国家による検閲が世界の需要に与える影響を検証する研究報告。",
+   "summary_en": "A BOFIT seminar presentation using China's book bans to examine how state censorship affects global demand.",
+   "summary_de": "Seminarvortrag des BOFIT, der anhand chinesischer Buchverbote untersucht, wie staatliche Zensur die globale Nachfrage beeinflusst.",
    "language": "en",
    "organizer_short": "BOFIT",
    "title_short": "Censorship and Global Demand",
@@ -26404,6 +26056,277 @@
    "source": "ECONtribute (Bonn/Köln) – Events",
    "id": "faeab19051f6ed32",
    "first_seen": "2026-10-09"
+  },
+  {
+   "title": "Estimating Labour Market Power: The Long and Short Of It",
+   "title_ja": "労働市場支配力の推定:短期と長期",
+   "organizer": "ZEW Mannheim",
+   "date_start": "2026-10-14",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Mannheim",
+   "venue": "ZEW Mannheim",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/estimating-labour-market-power-the-long-and-short-of-it/5009",
+   "summary_ja": "労働市場における買い手独占力(労働市場支配力)の推定手法を扱うZEWの研究セミナーで、報告者はAlan Manning(LSE)です。",
+   "summary_en": "A ZEW research seminar on estimating labour market power, presented by Alan Manning of the London School of Economics.",
+   "summary_de": "ZEW-Forschungsseminar zur Schätzung der Arbeitsmarktmacht mit Alan Manning (London School of Economics) als Referent.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "ZEW",
+   "title_short": "Labour Market Power Estimation",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Alan Manning",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "194270f2782618eb",
+   "first_seen": "2026-10-10"
+  },
+  {
+   "title": "From Leniency to Data Screening // Modern Detection Mechanisms for Cartels",
+   "title_ja": "リニエンシーからデータスクリーニングへ:カルテル検知",
+   "organizer": "Mannheim Competition Policy Forum",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Mannheim",
+   "venue": "ZEW Mannheim",
+   "format": null,
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/from-leniency-to-data-screening/5007",
+   "summary_ja": "カルテルの検知手法(リニエンシー制度からデータスクリーニングまで)を扱う、Mannheim Competition Policy Forumの講演です。",
+   "summary_en": "A talk at the Mannheim Competition Policy Forum on modern cartel detection, from leniency programmes to data screening.",
+   "summary_de": "Vortrag des Mannheim Competition Policy Forum zu modernen Kartellerkennungsverfahren, von der Kronzeugenregelung bis zum Data Screening.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "MCPF",
+   "title_short": "Cartel Detection Mechanisms",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Christina Malz",
+     "org": "Schilling, Zutt & Anschütz",
+     "role": null
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "356e6eeb8771b56d",
+   "first_seen": "2026-10-10"
+  },
+  {
+   "title": "Economic impact of an ageing society and the related political choices",
+   "title_ja": "高齢化社会の経済的影響と政策選択",
+   "organizer": "Academy of Sciences",
+   "date_start": "2026-10-13",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": "Riigikogu",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.eestipank.ee/en/calendar/deputy-governor-martti-randveer-gives-presentation-economic-impact-ageing-society-and-related-13102026",
+   "summary_ja": "エストニア銀行のM.ランドベール副総裁が、科学アカデミーの会議(エストニア議会Riigikogu)で、高齢化社会の経済的影響と関連する政策選択について講演する。",
+   "summary_en": "Eesti Pank Deputy Governor Martti Randveer presents on the economic impact of an ageing society and related policy choices at an Academy of Sciences conference at the Riigikogu.",
+   "summary_de": "Vizegouverneur Martti Randveer der Eesti Pank spricht auf einer Konferenz der Akademie der Wissenschaften im Riigikogu über die wirtschaftlichen Folgen einer alternden Gesellschaft und die damit verbundenen politischen Entscheidungen.",
+   "language": "en",
+   "country": "EE",
+   "organizer_short": "Academy of Sciences",
+   "title_short": "Ageing Society Economics",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Martti Randveer",
+     "org": "Eesti Pank",
+     "role": "Deputy Governor"
+    }
+   ],
+   "source": "Eesti Pank (エストニア) – Events",
+   "id": "445f9b90c24d9d93",
+   "first_seen": "2026-10-10"
+  },
+  {
+   "title": "Kiel Report Launch – Defense Promotion and Industrial Development",
+   "title_ja": "キール報告書発表会:防衛促進と産業発展",
+   "organizer": "Kiel Institute for the World Economy",
+   "date_start": "2026-10-22",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "Kiel Institut für Weltwirtschaft, Standort Berlin",
+   "format": null,
+   "themes": [
+    "geopolitics",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "招待制",
+   "registration_note_en": "Invitation only",
+   "registration_note_de": "Nur auf Einladung",
+   "registration_url": null,
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/defense-promotion-and-industrial-development/",
+   "summary_ja": "キール世界経済研究所による報告書の発表会。防衛分野の産業振興と産業発展をテーマとし、招待制で開催される。",
+   "summary_en": "Kiel Institute report launch on defence promotion and industrial development, held by invitation at its Berlin office.",
+   "summary_de": "Präsentation eines Kiel-Institut-Reports zu Verteidigungsförderung und industrieller Entwicklung, nur auf Einladung am Berliner Standort.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IfW Kiel",
+   "title_short": "Defence Industrial Development",
+   "importance": 1,
+   "speakers": [],
+   "source": "IfW Kiel – Veranstaltungen",
+   "id": "6109281ede5234e9",
+   "first_seen": "2026-10-10"
+  },
+  {
+   "title": "Webinar: Europe's sustainable transition - the role of investors in strengthening energy resilience",
+   "title_ja": "欧州の持続可能な移行とエネルギー強靭化における投資家の役割",
+   "organizer": "FNG",
+   "date_start": "2026-11-06",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/webinar-europes-sustainable-transition",
+   "summary_ja": "FNGが告知するオンラインウェビナー。欧州の持続可能な移行において、投資家がエネルギー強靭性を高める役割を議論する。",
+   "summary_en": "An online webinar discussing how investors can strengthen energy resilience in Europe's sustainable transition.",
+   "summary_de": "Online-Webinar darüber, wie Investoren im Rahmen der nachhaltigen Transformation Europas die Energieresilienz stärken können.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "FNG",
+   "title_short": "Investors and Energy Resilience",
+   "importance": 1,
+   "speakers": [],
+   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
+   "id": "7daf58533d3b99fb",
+   "first_seen": "2026-10-10"
+  },
+  {
+   "title": "Sitzung des Arbeitskreises Bau- und Wohnungsmarktprognostik",
+   "title_ja": "建設・住宅市場予測作業部会",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-15",
+   "date_end": "2026-10-16",
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "Elinor-Ostrom-Saal, Room 1.2.019, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "招待制(非公開)",
+   "registration_note_en": "Invitation only (not open to the public)",
+   "registration_note_de": "Nur auf Einladung (nicht öffentlich)",
+   "registration_url": null,
+   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
+   "summary_ja": "建設・住宅市場の予測に関する研究者向け非公開作業部会の会合。",
+   "summary_en": "A closed-door workshop meeting of a research network on forecasting construction and housing markets.",
+   "summary_de": "Nicht öffentliches Arbeitstreffen eines Forschungsnetzwerks zur Bau- und Wohnungsmarktprognostik.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Housing Market Forecasting",
+   "importance": 1,
+   "speakers": [],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "c16af0e32b0ad279",
+   "first_seen": "2026-10-10"
+  },
+  {
+   "title": "Panel on the outlook for real estate in Estonia (seminar for LHV portfolio managers)",
+   "title_ja": "エストニア不動産の見通しに関するパネル",
+   "organizer": "LHV",
+   "date_start": "2026-10-15",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.eestipank.ee/en/calendar/eesti-pank-economist-peeter-luikmel-speaks-panel-discussing-outlook-real-estate-estonia-seminar-lhv-15102026",
+   "summary_ja": "エストニア銀行のエコノミストP.ルイクメル氏が、LHVのポートフォリオマネジャー向けセミナーのパネルで、エストニアの不動産市場の見通しについて議論する。",
+   "summary_en": "Eesti Pank economist Peeter Luikmel joins a panel on the outlook for Estonian real estate at a seminar for LHV portfolio managers.",
+   "summary_de": "Ökonom Peeter Luikmel von der Eesti Pank nimmt an einer Podiumsdiskussion zu den Aussichten für den estnischen Immobilienmarkt bei einem Seminar für Portfoliomanager der LHV teil.",
+   "language": "en",
+   "country": "EE",
+   "organizer_short": "LHV",
+   "title_short": "Estonian Real Estate Outlook",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Peeter Luikmel",
+     "org": "Eesti Pank",
+     "role": "Economist"
+    }
+   ],
+   "source": "Eesti Pank (エストニア) – Events",
+   "id": "e93d1761e7094566",
+   "first_seen": "2026-10-10"
   }
  ]
 }
