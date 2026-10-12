@@ -12,14 +12,6 @@ LOCATION:Frankfurt am Main
 DESCRIPTION:ドイツ連邦銀行、ECB、フランクフルト・スクール、ゲーテ大学が共催する半年に一度のマクロ経済半日ワークショップ。 / 主催: Deutsche Bundesbank\, European Central Bank\, Frankfurt School of Finance and Management\, Goethe University Frankfurt / https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798
 END:VEVENT
 BEGIN:VEVENT
-UID:0f45e63775f836f0@seminar-radar
-DTSTART;VALUE=DATE:20260910
-DTEND;VALUE=DATE:20260912
-SUMMARY:21st Central Bank Conference on the Microstructure of Financial Markets
-LOCATION:Eltville am Rhein
-DESCRIPTION:金融市場のマイクロストラクチャーに関する中央銀行会議の第21回。 / 主催: Deutsche Bundesbank / https://www.bundesbank.de/en/bundesbank/research/conferences/21st-central-bank-conference-on-the-microstructure-of-financial-markets-854184
-END:VEVENT
-BEGIN:VEVENT
 UID:101c02b611f5c100@seminar-radar
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261107
@@ -81,7 +73,7 @@ DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261204
 SUMMARY:ECB Conference on Financial Stability and Macroprudential Policy 2026
 LOCATION:Frankfurt am Main
-DESCRIPTION:金融の安定性とマクロプルーデンス規制の枠組みに関するECB国際会議 / 主催: European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261202_financial_stability.en.html / 登壇: Anil Kashyap (Chicago Booth)\, Anat Admati (Stanford)\, Lorenzo Bini Smaghi (Société Générale)\, Claudio Borio (formerly BIS)\, Vicky Saporta (Bank of England)\, Isabel Schnabel (ECB)
+DESCRIPTION:ECBがフランクフルトで開く金融安定・マクロプルーデンス政策に関する国際会議。規制の複雑性、銀行の競争力、金融分野におけるAIの役割を議論する。 / 主催: European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261202_financial_stability.en.html / 登壇: Anil Kashyap (Chicago Booth)\, Isabel Schnabel (ECB)\, Anat Admati (Stanford)\, Lorenzo Bini Smaghi (Société Générale)\, Claudio Borio (BIS)\, Vicky Saporta (Bank of England)\, Boris Vujčić (ECB)
 END:VEVENT
 BEGIN:VEVENT
 UID:9884a4a76208cdb1@seminar-radar
@@ -90,14 +82,6 @@ DTEND;VALUE=DATE:20260919
 SUMMARY:10th SAFE Market Microstructure Conference
 LOCATION:Frankfurt am Main
 DESCRIPTION:金融市場の取引構造、価格形成、市場効率性に関する学術会議。 / 主催: SAFE Frankfurt / https://safe-frankfurt.de/news-media/events/event-view/10th-safe-market-microstructure-conference.html
-END:VEVENT
-BEGIN:VEVENT
-UID:9e752632594a8615@seminar-radar
-DTSTART;VALUE=DATE:20260910
-DTEND;VALUE=DATE:20260912
-SUMMARY:3rd CEPR-SAFE Frankfurt Hub Conference of RPNs
-LOCATION:Frankfurt am Main
-DESCRIPTION:CEPRの複数の研究ネットワーク(RPN)によるフランクフルト・ハブ会議の第3回。 / 主催: SAFE / CEPR / https://safe-frankfurt.de/news-media/events/event-view/3rd-cepr-safe-frankfurt-hub-conference-of-rpns.html
 END:VEVENT
 BEGIN:VEVENT
 UID:b2216992f550a9a4@seminar-radar
@@ -121,7 +105,7 @@ DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261105
 SUMMARY:5th Kiel-CEPR Conference on Geoeconomics
 LOCATION:Berlin
-DESCRIPTION:ドイツ外務省を会場に開かれるKiel-CEPR地経学会議の第5回。 / 主催: IfW Kiel / CEPR / Auswärtiges Amt / https://www.ifw-kiel.de/de/veranstaltungen/konferenzen/geoeconomics-conferences/5th-kiel-cepr-conference-on-geoeconomics/ / 登壇: Arvind Krishnamurthy (Stanford)\, Carmen Reinhart (Harvard/CEPR)\, Doireann Fitzgerald (Federal Reserve Bank of Minneapolis)\, Pierre-Olivier Gourinchas (IMF)\, Philip Lane (ECB)\, Stephen Redding (Stanford/CEPR)\, Johann Wadephul
+DESCRIPTION:キール世界経済研究所とCEPRがベルリンの外務省で開く地経学会議。制裁・輸出管理、再軍備の経済学、エネルギー安全保障を研究者が議論する。ヴァーデフル外相も参加予定。 / 主催: Kiel Institute for the World Economy / CEPR / https://cepr.org/events/5th-kiel-cepr-conference-geoeconomics / 登壇: Johann Wadephul (Federal Foreign Office)\, Arvind Krishnamurthy (Stanford)\, Carmen Reinhart (Harvard/CEPR)\, Pierre-Olivier Gourinchas (IMF)\, Philip Lane (ECB)\, Stephen Redding (Stanford/CEPR)\, Doireann Fitzgerald (Federal Reserve Bank of Minneapolis)
 END:VEVENT
 BEGIN:VEVENT
 UID:eaf721d650667ca8@seminar-radar
@@ -231,9 +215,9 @@ BEGIN:VEVENT
 UID:5cfd5613faa14b41@seminar-radar
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
-SUMMARY:National Bank of Slovakia I SUERF Conference: Housing Markets – Squaring Supply and Demand
+SUMMARY:Housing markets – squaring supply and demand
 LOCATION:Bratislava
-DESCRIPTION:スロバキア国立銀行とSUERFが共催する会議で、住宅市場における需給の不均衡や政策対応を議論する。 / 主催: National Bank of Slovakia / SUERF / https://www.suerf.org/events/
+DESCRIPTION:スロバキア国立銀行とSUERFがブラティスラバで開く住宅市場会議。住宅価格の決定要因、マクロプルーデンス政策、各国比較を研究者・当局者が議論する。 / 主催: National Bank of Slovakia / SUERF / https://www.suerf.org/events/housing-markets-squaring-supply-and-demand/ / 登壇: Reiner Martin (NBS)\, John Muellbauer (Nuffield College\, Oxford)\, Carsten Detken (ECB)\, Benjamin Weigert (BMWK)\, Luiz De Mello (OECD)\, Angelos Athanasopoulos (Central Bank of Ireland)\, Marek Ličák (NBS)
 END:VEVENT
 BEGIN:VEVENT
 UID:608159d1b6040e93@seminar-radar
@@ -495,9 +479,9 @@ BEGIN:VEVENT
 UID:0c2b579ec75ee8d7@seminar-radar
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
-SUMMARY:Central Bank Digital Currency (CBDC) Retail component – IBFI Webinar
+SUMMARY:Central Bank Digital Currency (CBDC) Retail component
 LOCATION:
-DESCRIPTION:デジタルユーロ(CBDC小口決済)の意義・実装・進捗・今後のマイルストーンを解説するオンラインウェビナー。 / 主催: Banque de France / IBFI (International Banking and Finance Institute) / https://www.banque-france.fr/en/events/central-bank-digital-currency-cbdc-retail-component-2
+DESCRIPTION:フランス銀行のIBFI(国際銀行金融研修所)が開くデジタルユーロ(リテール型CBDC)に関するオンラインウェビナー。開発中のプロジェクトの現状を解説する。 / 主催: Banque de France (IBFI) / https://www.banque-france.fr/en/events/central-bank-digital-currency-cbdc-retail-component-2
 END:VEVENT
 BEGIN:VEVENT
 UID:0cb725b40b0a3a78@seminar-radar
@@ -612,14 +596,6 @@ LOCATION:Hamburg
 DESCRIPTION:ハンブルクで開催される証券市場および金融機関向けの公開イベント。 / 主催: BaFin / https://www.bafin.de/SharedDocs/Veranstaltungen/DE/261121_boersentag_hamburg_26.html?nn=149586
 END:VEVENT
 BEGIN:VEVENT
-UID:2b5483e41cfe4000@seminar-radar
-DTSTART;VALUE=DATE:20260908
-DTEND;VALUE=DATE:20260912
-SUMMARY:MSPO 2026 – 34th International Defence Industry Exhibition
-LOCATION:Kielce
-DESCRIPTION:ポーランド最大級の国際防衛産業見本市。欧州有数の規模で、2026年のリードネーションはカナダ。 / 主催: Targi Kielce S.A. / https://www.targikielce.pl/en/mspo
-END:VEVENT
-BEGIN:VEVENT
 UID:6e327d265ef7ba6c@seminar-radar
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260916
@@ -727,9 +703,9 @@ BEGIN:VEVENT
 UID:4c00bf40c4a1c0c4@seminar-radar
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261030
-SUMMARY:German-Baltic Defence Industry Conference 2026 – United for Security: Strengthening Regional Defence Cooperation
+SUMMARY:German-Baltic-Ukrainian Defence Industry Conference 2026
 LOCATION:Vilnius
-DESCRIPTION:独バルト商工会議所主催の防衛産業会議で、ドローン戦・自律システム、独軍と産業界の協力、防衛ロジスティクス、NATO東方防衛を巡る戦略対話などを扱う。 / 主催: German-Baltic Chamber of Commerce (AHK) / https://www.ahk-balt.org/en/veranstaltungen/2026/oktober/german-baltic-defence-industry-conference-2026 / 登壇: Grant Hendrik Tonne (Niedersachsen)
+DESCRIPTION:ドイツ・バルト三国・ウクライナの防衛産業関係者がヴィリニュスに集い、地域の防衛協力強化、ドローン戦、調達・資金調達をテーマに議論する会議。 / 主催: German-Baltic Chamber of Commerce (AHK Estonia\, Latvia\, Lithuania) / https://www.ahk-balt.org/en/veranstaltungen/2026/oktober/german-baltic-defence-industry-conference-2026 / 登壇: Grant Hendrik Tonne (Niedersachsen)
 END:VEVENT
 BEGIN:VEVENT
 UID:4cfb3d2a77229b22@seminar-radar
@@ -762,14 +738,6 @@ DTEND;VALUE=DATE:20260930
 SUMMARY:1. WPBl-Jahreskonferenz: Industriepolitik und Internationaler Handel
 LOCATION:Vienna
 DESCRIPTION:オーストリア商工会議所(WKÖ)がEcoAustria・IHS・WIFO・WU Wienと共催する学術誌『Wirtschaftspolitische Blätter』の第1回年次会議。産業政策とトランプ関税政策下の国際貿易・戦略的依存・EU単一市場をテーマに、ifoやWIFOの研究者らが基調講演とパネル討論を行う。 / 主催: Wirtschaftskammer Österreich (WKÖ) mit EcoAustria\, IHS\, WIFO und WU Wien / https://www.wko.at/oe/news/wirtschaftspolitische-blaetter-jahreskonferenz
-END:VEVENT
-BEGIN:VEVENT
-UID:8cb6750921939dd4@seminar-radar
-DTSTART;VALUE=DATE:20260910
-DTEND;VALUE=DATE:20260912
-SUMMARY:13. MannheimTaxation-Jahreskonferenz
-LOCATION:Mannheim
-DESCRIPTION:租税政策の研究報告を行うマンハイム租税会議の第13回。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/13-mannheimtaxation-jahreskonferenz/4846
 END:VEVENT
 BEGIN:VEVENT
 UID:9c1d7fc648fba2b8@seminar-radar
@@ -1596,14 +1564,6 @@ LOCATION:Munich
 DESCRIPTION:移民研究をテーマとする国際的なジュニア経済学者ワークショップ。労働市場と人口動態への影響について若手研究者が報告する。 / 主催: CESifo / https://www.ifo.de/en/cesifo/event/2026-10-28/cemir-junior-workshop-migration-research-2026
 END:VEVENT
 BEGIN:VEVENT
-UID:a8b9d9994be5ebaf@seminar-radar
-DTSTART;VALUE=DATE:20260910
-DTEND;VALUE=DATE:20260912
-SUMMARY:4th Workshop on Causal Inference with Spatial Data
-LOCATION:Essen
-DESCRIPTION:労働市場と住宅市場の相互作用に焦点を当て、空間データを用いた因果推論研究を発表するRWIとデュースブルク=エッセン大学共催のワークショップ。 / 主催: RWI Essen (FDZ Ruhr) / University of Duisburg-Essen / https://www.rwi-essen.de/forschung-beratung/weitere/forschungsdatenzentrum-ruhr/workshop-on-causal-inference-with-spatial-data
-END:VEVENT
-BEGIN:VEVENT
 UID:b501d7d6db8abccb@seminar-radar
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260913
@@ -1929,7 +1889,7 @@ DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Who owns what\, and where? The revamped Finflows dataset for analysing global financial interdependencies
 LOCATION:
-DESCRIPTION:国際金融の相互依存関係を分析する新Finflowsデータセットを紹介するSUERFのオンラインイベント。 / 主催: SUERF / https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies/
+DESCRIPTION:欧州委員会のエコノミストが、国際的な金融相互依存関係を分析する「Finflows」データセットの改良版をSUERFのオンラインeレクチャーで紹介する。 / 主催: SUERF / BAFFI Centre\, Bocconi University / https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies/ / 登壇: Erza Aruqaj (European Commission (DG ECFIN))\, Stefano Ungaro (European Commission (DG JRC))\, Martin Schmitz (ECB)\, Ernest Gnan (SUERF)
 END:VEVENT
 BEGIN:VEVENT
 UID:41ec8f3f2a22dd92@seminar-radar
@@ -2018,14 +1978,6 @@ DTEND;VALUE=DATE:20261107
 SUMMARY:11th ZEW Conference on Innovation and Patent Economics
 LOCATION:Mannheim
 DESCRIPTION:イノベーションと特許経済学に関するZEWの国際会議。産業政策と知的財産を論じる。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen
-END:VEVENT
-BEGIN:VEVENT
-UID:8454957c8a88a77d@seminar-radar
-DTSTART;VALUE=DATE:20260909
-DTEND;VALUE=DATE:20260912
-SUMMARY:Annual Workshop of the Committee for Organizational Economics
-LOCATION:Cologne
-DESCRIPTION:組織経済学委員会の年次ワークショップ。ケルン大学で開催され、論文報告と会員推薦が行われる。 / 主催: ECONtribute / University of Cologne / https://econtribute.de/event/annual-workshop-of-the-committee-for-organizational-economics-invitation-call-for-papers-and-nominations-for-membership-co-organized-by-econtribute/
 END:VEVENT
 BEGIN:VEVENT
 UID:8e2c4c521cfe3b16@seminar-radar
@@ -2193,7 +2145,7 @@ DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:12th Green Finance Forum
 LOCATION:Frankfurt am Main
-DESCRIPTION:EURO FINANCE WEEK内で開催される、グリーンファイナンスをテーマとする金融業界向けの会議。 / 主催: dfv Euro Finance Group / https://www.dfv-eurofinance.com/events/12th-green-finance-forum/
+DESCRIPTION:フランクフルトの「ユーロ・ファイナンス・ウィーク」内で開催される第12回グリーンファイナンスフォーラム。「グリーンからブルーファイナンスへ」をテーマに、気候・自然リスクや生物多様性金融を議論する。 / 主催: dfv Euro Finance Group GmbH / https://www.dfv-eurofinance.com/events/12th-green-finance-forum/
 END:VEVENT
 BEGIN:VEVENT
 UID:b70f24bff5cced7a@seminar-radar
@@ -3241,7 +3193,7 @@ DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
 SUMMARY:6th European China Conference
 LOCATION:Berlin
-DESCRIPTION:MERICS主催の欧中関係に関する年次会議で、対中経済・政策動向を議論する。 / 主催: MERICS – Mercator Institute for China Studies / https://merics.org/en/events/6th-european-china-conference
+DESCRIPTION:MERICS主催の欧州中国会議の第6回。欧州の対中地経学戦略、重要原材料、中国の対外政策を招待制フォーラムで議論する。 / 主催: Mercator Institute for China Studies (MERICS) / https://merics.org/en/events/6th-european-china-conference
 END:VEVENT
 BEGIN:VEVENT
 UID:e2e8915639855d77@seminar-radar
@@ -3423,9 +3375,9 @@ BEGIN:VEVENT
 UID:2b43d5f63ab23e68@seminar-radar
 DTSTART;VALUE=DATE:20261027
 DTEND;VALUE=DATE:20261028
-SUMMARY:State Censorship and Global Demand: Evidence from China's Book Bans
+SUMMARY:Key insights from the IMF's October 2026 World Economic Outlook\, Global Financial Stability Report and Fiscal Monitor
 LOCATION:
-DESCRIPTION:中国の書籍発禁を事例に、国家による検閲が世界の需要に与える影響を検証する研究報告。 / 主催: BOFIT – The Bank of Finland Institute for Emerging Economies / https://www.suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/2026/2026-10-27-li/ / 登壇: Peiyuan Li (DKU)
+DESCRIPTION:IMFエコノミストがSUERFのオンラインeレクチャーで、2026年10月の世界経済見通し・国際金融安定性報告・財政モニターの要点を解説する。 / 主催: SUERF / BAFFI Centre\, Bocconi University / https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/ / 登壇: Deniz Igan (IMF)\, Jason J. Wu (IMF)\, Davide Furceri (IMF)\, Ernest Gnan (SUERF)
 END:VEVENT
 BEGIN:VEVENT
 UID:2bb107c3c724a2a7@seminar-radar
@@ -3721,7 +3673,7 @@ DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Challenges for Monetary Policy Transmission in a Changing World
 LOCATION:
-DESCRIPTION:SUERFとボッコーニ大学BAFFIセンターによる、変化する世界における金融政策の伝達メカニズムをテーマとしたオンラインeレクチャー。 / 主催: SUERF / BAFFI Centre (Bocconi University) / https://www.suerf.org/events/challenges-for-monetary-policy-transmission-in-a-changing-world/
+DESCRIPTION:SUERFとボッコーニ大学BAFFIセンターによるオンラインeレクチャー。ベルギー・イタリア・オーストリアの中央銀行エコノミストが金融政策伝達の課題を議論する。 / 主催: SUERF / BAFFI Centre\, Bocconi University / https://www.suerf.org/events/challenges-for-monetary-policy-transmission-in-a-changing-world/ / 登壇: Emmanuel Dhyne (National Bank of Belgium)\, Margherita Bottero (Bank of Italy)\, María T. Valderrama (OeNB)\, Ernest Gnan (SUERF)
 END:VEVENT
 BEGIN:VEVENT
 UID:109886054472a7bc@seminar-radar
@@ -4122,5 +4074,13 @@ DTEND;VALUE=DATE:20261113
 SUMMARY:Jahresfestveranstaltung des VAC 2026: Wie verändert KI unsere Arbeitswelt?
 LOCATION:Munich
 DESCRIPTION:ミュンヘン大学経済学部同窓会(VAC)の年次式典。ifo経済研究所のエンツォ・ヴェーバー氏が「AIは労働の世界をどう変えるか」について基調講演を行い、パネル討論も開催される。 / 主催: Münchner Volkswirte Alumni-Club e.V. (VAC) / https://www.lmu.de/alumni-econ/de/aktuelles/veranstaltungsuebersicht/veranstaltung/jahresfestveranstaltung-des-vac-2026-201e875d.html / 登壇: Enzo Weber (ifo Institute)\, Regina T. Riphahn (FAU Erlangen-Nürnberg)\, Klaus Wohlrabe (ifo Institute)
+END:VEVENT
+BEGIN:VEVENT
+UID:1f26ed7fa922a005@seminar-radar
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Applying taxonomies to scale climate-resilient investment opportunities in Africa and the Middle East
+LOCATION:
+DESCRIPTION:UNEP FIが気候変動適応ファイナンスのタクソノミー活用について解説するオンラインウェビナー。アフリカ・中東地域の実例を扱い、Adaptation Finance Taxonomy Playbookを紹介する。 / 主催: UNEP Finance Initiative / https://www.unepfi.org/themes/climate-change/applying-taxonomies-to-scale-climate-resilient-investment-opportunities-in-africa-and-the-middle-east/
 END:VEVENT
 END:VCALENDAR

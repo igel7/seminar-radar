@@ -35,40 +35,6 @@
    "registration_note_de": "Details und Anmeldung siehe Veranstaltungsseite; halbtägiger, zweimal jährlich stattfindender Workshop."
   },
   {
-   "title": "21st Central Bank Conference on the Microstructure of Financial Markets",
-   "title_ja": "第21回 中央銀行金融市場マイクロストラクチャー会議",
-   "organizer": "Deutsche Bundesbank",
-   "date_start": "2026-09-10",
-   "date_end": "2026-09-11",
-   "time": null,
-   "city": "Eltville am Rhein",
-   "venue": "Eltville",
-   "format": "onsite",
-   "themes": [
-    "fin_markets",
-    "central_bank"
-   ],
-   "fee": "free",
-   "open_to_public": false,
-   "registration_note": "詳細・登録は開催ページを参照。",
-   "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/21st-central-bank-conference-on-the-microstructure-of-financial-markets-854184",
-   "summary_ja": "金融市場のマイクロストラクチャーに関する中央銀行会議の第21回。",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "Bundesbank",
-   "title_short": "Financial Market Microstructure",
-   "importance": 3,
-   "registration_url": "https://www.bundesbank.de/en/bundesbank/research/conferences/21st-central-bank-conference-on-the-microstructure-of-financial-markets-854184",
-   "time_end": null,
-   "source": "Bundesbank – Forschungskonferenzen",
-   "id": "0f45e63775f836f0",
-   "first_seen": "2026-07-14",
-   "summary_en": "The 21st edition of the central bank conference on financial market microstructure.",
-   "summary_de": "Die 21. Zentralbankkonferenz zur Mikrostruktur der Finanzmärkte.",
-   "registration_note_en": "See the event page for details and registration.",
-   "registration_note_de": "Details und Anmeldung siehe Veranstaltungsseite."
-  },
-  {
    "title": "ECB Conference on Money Markets 2026",
    "title_ja": "ECB金融市場会議2026",
    "organizer": "European Central Bank",
@@ -306,67 +272,73 @@
   },
   {
    "title": "ECB Conference on Financial Stability and Macroprudential Policy 2026",
-   "title_ja": "ECB金融安定・マクロプルーデンス政策会議2026",
+   "title_ja": "ECBマクロプルーデンス政策会議2026",
    "organizer": "European Central Bank",
    "date_start": "2026-12-02",
    "date_end": "2026-12-03",
    "time": null,
    "city": "Frankfurt am Main",
-   "venue": "European Central Bank",
+   "venue": "European Central Bank, Frankfurt am Main",
    "format": "onsite",
    "themes": [
     "central_bank",
-    "fin_markets"
+    "fin_markets",
+    "ai"
    ],
    "fee": "free",
    "open_to_public": true,
    "registration_note": "要事前登録・無料",
    "url": "https://www.ecb.europa.eu/press/conferences/html/20261202_financial_stability.en.html",
-   "summary_ja": "金融の安定性とマクロプルーデンス規制の枠組みに関するECB国際会議",
+   "summary_ja": "ECBがフランクフルトで開く金融安定・マクロプルーデンス政策に関する国際会議。規制の複雑性、銀行の競争力、金融分野におけるAIの役割を議論する。",
    "language": "en",
    "country": "DE",
    "organizer_short": "ECB",
-   "title_short": "Financial Stability & Macroprudential Policy",
+   "title_short": "Financial Stability and Macroprudential Policy",
    "importance": 3,
    "registration_url": "https://www.ecb.europa.eu/press/conferences/html/20261202_financial_stability.en.html",
    "time_end": null,
    "source": "ECB – Conferences & seminars",
    "id": "91f6f1f3ec824d02",
    "first_seen": "2026-07-14",
-   "summary_en": "ECB conference on financial stability frameworks and macroprudential policy regulation",
-   "summary_de": "ECB-Konferenz zu Finanzstabilitätsrahmen und Makroprudenzregulierung",
+   "summary_en": "The ECB's annual conference in Frankfurt brings together academics, central bankers and supervisors to discuss financial stability and macroprudential policy, with focus areas including regulatory complexity, banking competitiveness and AI in finance.",
+   "summary_de": "Die EZB-Konferenz in Frankfurt bringt Wissenschaftler, Zentralbanker und Aufseher zusammen, um Finanzstabilität und makroprudenzielle Politik zu diskutieren, mit Schwerpunkten auf regulatorischer Komplexität, Wettbewerbsfähigkeit der Banken und KI im Finanzwesen.",
    "registration_note_en": "Advance registration required",
    "registration_note_de": "Anmeldung erforderlich",
    "speakers": [
     {
      "name": "Anil Kashyap",
      "org": "Chicago Booth",
-     "role": "keynote speaker"
-    },
-    {
-     "name": "Anat Admati",
-     "org": "Stanford",
-     "role": "panellist"
-    },
-    {
-     "name": "Lorenzo Bini Smaghi",
-     "org": "Société Générale",
-     "role": "panellist"
-    },
-    {
-     "name": "Claudio Borio",
-     "org": "formerly BIS",
-     "role": "panellist"
-    },
-    {
-     "name": "Vicky Saporta",
-     "org": "Bank of England",
-     "role": "panellist"
+     "role": "Keynote speaker"
     },
     {
      "name": "Isabel Schnabel",
      "org": "ECB",
-     "role": "moderator"
+     "role": "Executive Board Member; panel moderator"
+    },
+    {
+     "name": "Anat Admati",
+     "org": "Stanford",
+     "role": "Panellist"
+    },
+    {
+     "name": "Lorenzo Bini Smaghi",
+     "org": "Société Générale",
+     "role": "Panellist"
+    },
+    {
+     "name": "Claudio Borio",
+     "org": "BIS",
+     "role": "Panellist (formerly)"
+    },
+    {
+     "name": "Vicky Saporta",
+     "org": "Bank of England",
+     "role": "Panellist"
+    },
+    {
+     "name": "Boris Vujčić",
+     "org": "ECB",
+     "role": "Dinner speaker"
     }
    ]
   },
@@ -402,40 +374,6 @@
    "summary_de": "Internationale Konferenz zur Marktmikrostruktur und Preisbildung an Finanzmärkten.",
    "registration_note_en": "Attendance limited to selected researchers; travel and accommodation covered by organizers.",
    "registration_note_de": "Teilnahme nur für ausgewählte Forschende; Reise- und Übernachtungskosten werden von den Veranstaltern übernommen."
-  },
-  {
-   "title": "3rd CEPR-SAFE Frankfurt Hub Conference of RPNs",
-   "title_ja": "第3回 CEPR-SAFEフランクフルト・ハブ会議",
-   "organizer": "SAFE / CEPR",
-   "date_start": "2026-09-10",
-   "date_end": "2026-09-11",
-   "time": "09:00",
-   "city": "Frankfurt am Main",
-   "venue": "Leibniz Institute for Financial Research SAFE",
-   "format": "onsite",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "参加登録が必要(参加費無料)",
-   "url": "https://safe-frankfurt.de/news-media/events/event-view/3rd-cepr-safe-frankfurt-hub-conference-of-rpns.html",
-   "summary_ja": "CEPRの複数の研究ネットワーク(RPN)によるフランクフルト・ハブ会議の第3回。",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "SAFE",
-   "title_short": "CEPR-SAFE Research Networks",
-   "importance": 3,
-   "registration_url": "https://safe-frankfurt.de/news-media/events/event-view/3rd-cepr-safe-frankfurt-hub-conference-of-rpns.html",
-   "time_end": "16:00",
-   "source": "SAFE Frankfurt – Events",
-   "id": "9e752632594a8615",
-   "first_seen": "2026-07-14",
-   "summary_en": "The 3rd CEPR-SAFE Frankfurt Hub Conference bringing together several CEPR Research and Policy Networks.",
-   "summary_de": "Die 3. CEPR-SAFE-Frankfurt-Hub-Konferenz mehrerer CEPR-Forschungsnetzwerke (RPNs).",
-   "registration_note_en": "Registration required; attendance is free of charge.",
-   "registration_note_de": "Anmeldung erforderlich; Teilnahme kostenlos.",
-   "fee_amount": 0
   },
   {
    "title": "Der Digitale Euro: Das Geld der Zukunft?",
@@ -506,13 +444,13 @@
   },
   {
    "title": "5th Kiel-CEPR Conference on Geoeconomics",
-   "title_ja": "第5回 Kiel-CEPR地経学会議",
-   "organizer": "IfW Kiel / CEPR / Auswärtiges Amt",
+   "title_ja": "第5回キール・CEPR地経学会議",
+   "organizer": "Kiel Institute for the World Economy / CEPR",
    "date_start": "2026-11-03",
    "date_end": "2026-11-04",
    "time": null,
    "city": "Berlin",
-   "venue": "Auswärtiges Amt",
+   "venue": "Federal Foreign Office (Auswärtiges Amt)",
    "format": "onsite",
    "themes": [
     "geopolitics",
@@ -521,57 +459,57 @@
    "fee": "unknown",
    "open_to_public": false,
    "registration_note": "CFP応募は締切済み。ゲスト参加希望はberlin@kielinstitut.deへ問い合わせ。",
-   "url": "https://www.ifw-kiel.de/de/veranstaltungen/konferenzen/geoeconomics-conferences/5th-kiel-cepr-conference-on-geoeconomics/",
-   "summary_ja": "ドイツ外務省を会場に開かれるKiel-CEPR地経学会議の第5回。",
+   "url": "https://cepr.org/events/5th-kiel-cepr-conference-geoeconomics",
+   "summary_ja": "キール世界経済研究所とCEPRがベルリンの外務省で開く地経学会議。制裁・輸出管理、再軍備の経済学、エネルギー安全保障を研究者が議論する。ヴァーデフル外相も参加予定。",
    "language": "en",
    "country": "DE",
-   "organizer_short": "IfW Kiel",
-   "title_short": "Geoeconomics Conference",
+   "organizer_short": "IfW Kiel+CEPR",
+   "title_short": "Geoeconomics and Economic Security",
    "importance": 3,
    "registration_url": null,
    "time_end": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "ccd3b57687dfd27b",
    "first_seen": "2026-07-14",
-   "summary_en": "The 5th Kiel-CEPR Conference on Geoeconomics, hosted at the German Federal Foreign Office.",
-   "summary_de": "Die 5. Kiel-CEPR-Konferenz zur Geoökonomie, ausgerichtet im Auswärtigen Amt.",
+   "summary_en": "The Kiel Institute and CEPR host a conference on geoeconomics at Germany's Federal Foreign Office in Berlin, with research on sanctions and export controls, the economics of rearmament, and energy security; Foreign Minister Johann Wadephul is set to take part.",
+   "summary_de": "Das Kieler Institut für Weltwirtschaft und CEPR veranstalten im Auswärtigen Amt in Berlin eine Konferenz zur Geoökonomie mit Forschung zu Sanktionen und Exportkontrollen, der Ökonomie der Aufrüstung und Energiesicherheit; Außenminister Johann Wadephul soll teilnehmen.",
    "registration_note_en": "The call for papers is closed; to attend as a guest, contact berlin@kielinstitut.de.",
    "registration_note_de": "Der Call for Papers ist geschlossen; für eine Teilnahme als Gast bitte berlin@kielinstitut.de kontaktieren.",
    "speakers": [
     {
+     "name": "Johann Wadephul",
+     "org": "Federal Foreign Office",
+     "role": "Federal Foreign Minister"
+    },
+    {
      "name": "Arvind Krishnamurthy",
      "org": "Stanford",
-     "role": "keynote speaker"
+     "role": "Keynote speaker"
     },
     {
      "name": "Carmen Reinhart",
      "org": "Harvard/CEPR",
-     "role": "keynote speaker"
-    },
-    {
-     "name": "Doireann Fitzgerald",
-     "org": "Federal Reserve Bank of Minneapolis",
-     "role": "speaker"
+     "role": "Keynote speaker"
     },
     {
      "name": "Pierre-Olivier Gourinchas",
      "org": "IMF",
-     "role": "speaker"
+     "role": "Speaker"
     },
     {
      "name": "Philip Lane",
      "org": "ECB",
-     "role": "speaker"
+     "role": "Speaker"
     },
     {
      "name": "Stephen Redding",
      "org": "Stanford/CEPR",
-     "role": "speaker"
+     "role": "Speaker"
     },
     {
-     "name": "Johann Wadephul",
-     "org": null,
-     "role": "Federal Minister for Foreign Affairs"
+     "name": "Doireann Fitzgerald",
+     "org": "Federal Reserve Bank of Minneapolis",
+     "role": "Speaker"
     }
    ]
   },
@@ -1028,8 +966,8 @@
    ]
   },
   {
-   "title": "National Bank of Slovakia I SUERF Conference: Housing Markets – Squaring Supply and Demand",
-   "title_ja": "スロバキア国立銀行・SUERF会議:住宅市場の需給",
+   "title": "Housing markets – squaring supply and demand",
+   "title_ja": "住宅市場の需給バランス会議(NBS/SUERF)",
    "organizer": "National Bank of Slovakia / SUERF",
    "date_start": "2026-11-17",
    "date_end": null,
@@ -1039,27 +977,65 @@
    "format": "onsite",
    "themes": [
     "real_economy",
-    "fin_markets"
+    "fin_markets",
+    "central_bank"
    ],
    "fee": "unknown",
-   "open_to_public": false,
-   "registration_note": "要登録",
-   "url": "https://www.suerf.org/events/",
-   "summary_ja": "スロバキア国立銀行とSUERFが共催する会議で、住宅市場における需給の不均衡や政策対応を議論する。",
+   "open_to_public": true,
+   "registration_note": "要事前登録",
+   "url": "https://www.suerf.org/events/housing-markets-squaring-supply-and-demand/",
+   "summary_ja": "スロバキア国立銀行とSUERFがブラティスラバで開く住宅市場会議。住宅価格の決定要因、マクロプルーデンス政策、各国比較を研究者・当局者が議論する。",
    "language": "en",
    "country": "SK",
-   "organizer_short": "NBS/SUERF",
+   "organizer_short": "NBS+SUERF",
    "title_short": "Housing Market Supply and Demand",
    "importance": 2,
-   "registration_url": "https://www.suerf.org/events/housing-markets-squaring-supply-and-demand/",
+   "registration_url": "https://www.suerf.org/events/housing-markets-squaring-supply-and-demand/registration",
    "time_end": "17:00",
    "source": "SUERF – Events",
    "id": "5cfd5613faa14b41",
    "first_seen": "2026-07-16",
-   "summary_en": "Co-hosted by the National Bank of Slovakia and SUERF, this conference examines the imbalance between housing supply and demand and possible policy responses.",
-   "summary_de": "Die gemeinsam von der Nationalbank der Slowakei und SUERF ausgerichtete Konferenz untersucht das Ungleichgewicht zwischen Wohnungsangebot und -nachfrage sowie mögliche politische Antworten.",
-   "registration_note_en": "Registration required",
-   "registration_note_de": "Anmeldung erforderlich"
+   "summary_en": "A one-day conference hosted by the National Bank of Slovakia and SUERF in Bratislava on housing markets, covering affordability, house-price drivers, macroprudential policy and cross-country perspectives.",
+   "summary_de": "Eine eintägige Konferenz der Nationalbank der Slowakei und SUERF in Bratislava zu Wohnungsmärkten, mit Themen wie Erschwinglichkeit, Preistreibern, makroprudenzieller Politik und Länder-Vergleichen.",
+   "registration_note_en": "Advance registration required.",
+   "registration_note_de": "Vorherige Anmeldung erforderlich.",
+   "speakers": [
+    {
+     "name": "Reiner Martin",
+     "org": "NBS",
+     "role": "Executive Director; SUERF Council"
+    },
+    {
+     "name": "John Muellbauer",
+     "org": "Nuffield College, Oxford",
+     "role": "Keynote speaker"
+    },
+    {
+     "name": "Carsten Detken",
+     "org": "ECB",
+     "role": "Head of Division, Macroprudential Policy"
+    },
+    {
+     "name": "Benjamin Weigert",
+     "org": "BMWK",
+     "role": "Director General Economic Policy"
+    },
+    {
+     "name": "Luiz De Mello",
+     "org": "OECD",
+     "role": "Director, Country Studies Branch"
+    },
+    {
+     "name": "Angelos Athanasopoulos",
+     "org": "Central Bank of Ireland",
+     "role": "Head, Macrofinancial Risk Assessment"
+    },
+    {
+     "name": "Marek Ličák",
+     "org": "NBS",
+     "role": "Director of Macroprudential Supervision"
+    }
+   ]
   },
   {
    "title": "Proportionalität in der Bankenaufsicht und -regulierung",
@@ -2229,9 +2205,9 @@
    ]
   },
   {
-   "title": "Central Bank Digital Currency (CBDC) Retail component – IBFI Webinar",
-   "title_ja": "CBDC(デジタルユーロ小口決済)ウェビナー",
-   "organizer": "Banque de France / IBFI (International Banking and Finance Institute)",
+   "title": "Central Bank Digital Currency (CBDC) Retail component",
+   "title_ja": "デジタルユーロ(リテール型CBDC)ウェビナー",
+   "organizer": "Banque de France (IBFI)",
    "date_start": "2026-12-09",
    "date_end": null,
    "time": "10:30",
@@ -2243,23 +2219,23 @@
    ],
    "fee": "free",
    "open_to_public": true,
-   "registration_note": "参加無料。登録締切2026年12月4日。英仏同時通訳あり",
+   "registration_note": "要事前登録(申込期限12月4日)。英語開催・仏語同時通訳あり",
    "url": "https://www.banque-france.fr/en/events/central-bank-digital-currency-cbdc-retail-component-2",
-   "summary_ja": "デジタルユーロ(CBDC小口決済)の意義・実装・進捗・今後のマイルストーンを解説するオンラインウェビナー。",
+   "summary_ja": "フランス銀行のIBFI(国際銀行金融研修所)が開くデジタルユーロ(リテール型CBDC)に関するオンラインウェビナー。開発中のプロジェクトの現状を解説する。",
    "language": "en",
    "country": null,
    "organizer_short": "Banque de France",
-   "title_short": "Digital Euro Webinar",
+   "title_short": "Digital Euro Retail Component",
    "importance": 1,
-   "registration_url": "https://www.banque-france.fr/en/events/central-bank-digital-currency-cbdc-retail-component-2",
+   "registration_url": "https://forms.office.com/pages/responsepage.aspx?id=SJRZ5qBijkGJMNANjVaCwhHaMEeFF01NrDSL0Bal-cVUQ1gwSzQzSDRFRTg4VjlBWlFGS1lWREhRUi4u&route=shorturl",
    "time_end": "12:30",
    "source": "web検索(discovery)",
    "id": "0c2b579ec75ee8d7",
    "first_seen": "2026-07-22",
-   "summary_en": "An online webinar explaining the rationale, implementation, progress and upcoming milestones of the retail digital euro (CBDC).",
-   "summary_de": "Ein Online-Webinar, das Sinn und Zweck, Umsetzung, Fortschritt und die nächsten Meilensteine des digitalen Euro im Massenzahlungsverkehr (CBDC) erläutert.",
-   "registration_note_en": "Free of charge; registration deadline 4 December 2026. Simultaneous interpretation in English and French will be provided.",
-   "registration_note_de": "Kostenlose Teilnahme. Anmeldeschluss ist der 4. Dezember 2026. Simultanübersetzung Englisch/Französisch wird angeboten."
+   "summary_en": "An online webinar hosted by the Banque de France's IBFI training institute detailing the digital euro (retail CBDC) project currently under development.",
+   "summary_de": "Ein Online-Webinar des IBFI-Schulungsinstituts der Banque de France, das das in Entwicklung befindliche Projekt des digitalen Euro (Retail-CBDC) erläutert.",
+   "registration_note_en": "Advance registration required (deadline 4 December 2026); held in English with simultaneous French interpretation.",
+   "registration_note_de": "Vorherige Anmeldung erforderlich (Frist 4. Dezember 2026); auf Englisch mit französischer Simultanübersetzung."
   },
   {
    "title": "Webinarreihe: EU Budget Talks",
@@ -2786,40 +2762,6 @@
    "registration_note_de": "Die BaFin ist als Aussteller vertreten, nicht als Veranstalter; Details siehe Website des Veranstalters."
   },
   {
-   "title": "MSPO 2026 – 34th International Defence Industry Exhibition",
-   "title_ja": "MSPO2026 国際防衛産業見本市",
-   "organizer": "Targi Kielce S.A.",
-   "date_start": "2026-09-08",
-   "date_end": "2026-09-11",
-   "time": null,
-   "city": "Kielce",
-   "venue": "Targi Kielce",
-   "format": "onsite",
-   "themes": [
-    "geopolitics",
-    "real_economy"
-   ],
-   "fee": "paid",
-   "open_to_public": true,
-   "registration_note": "業界関係者向け登録制の見本市(要事前登録)",
-   "url": "https://www.targikielce.pl/en/mspo",
-   "summary_ja": "ポーランド最大級の国際防衛産業見本市。欧州有数の規模で、2026年のリードネーションはカナダ。",
-   "language": null,
-   "country": "PL",
-   "organizer_short": "Targi Kielce",
-   "title_short": "Defence Industry Exhibition",
-   "importance": 3,
-   "registration_url": "https://www.targikielce.pl/en/mspo",
-   "time_end": null,
-   "source": "web検索(discovery)",
-   "id": "2b5483e41cfe4000",
-   "first_seen": "2026-07-23",
-   "summary_en": "MSPO is Poland's largest international defence industry exhibition and among the top defence trade fairs in Europe, with Canada as the 2026 Lead Nation.",
-   "summary_de": "Die MSPO ist Polens größte internationale Verteidigungsindustrie-Messe und zählt zu den führenden Rüstungsmessen Europas; Leitnation 2026 ist Kanada.",
-   "registration_note_en": "Trade exhibition requiring prior registration for industry and government visitors.",
-   "registration_note_de": "Fachmesse mit vorheriger Registrierungspflicht für Industrie- und Regierungsbesucher."
-  },
-  {
    "title": "Webinar: OCT Inst in Action",
    "title_ja": "ウェビナー:域外ワンレッグ即時送金の実践",
    "organizer": "European Payments Council (EPC)",
@@ -3273,38 +3215,38 @@
    "registration_note_de": "Praxisorientiertes Forum, Anmeldung erforderlich (noch Plätze verfügbar)."
   },
   {
-   "title": "German-Baltic Defence Industry Conference 2026 – United for Security: Strengthening Regional Defence Cooperation",
-   "title_ja": "独バルト防衛産業会議2026",
-   "organizer": "German-Baltic Chamber of Commerce (AHK)",
+   "title": "German-Baltic-Ukrainian Defence Industry Conference 2026",
+   "title_ja": "独バルト・ウクライナ防衛産業会議2026",
+   "organizer": "German-Baltic Chamber of Commerce (AHK Estonia, Latvia, Lithuania)",
    "date_start": "2026-10-29",
    "date_end": null,
-   "time": "09:00",
+   "time": "09:30",
    "city": "Vilnius",
    "venue": "Radisson Blu Hotel Lietuva",
    "format": "onsite",
    "themes": [
-    "geopolitics",
-    "real_economy"
+    "real_economy",
+    "geopolitics"
    ],
    "fee": "paid",
    "open_to_public": true,
-   "registration_note": "要事前登録(B2Bマッチングは参加券保持者のみ)",
+   "registration_note": "要事前登録(チケット購入制。AHK会員は優待あり)",
    "url": "https://www.ahk-balt.org/en/veranstaltungen/2026/oktober/german-baltic-defence-industry-conference-2026",
-   "summary_ja": "独バルト商工会議所主催の防衛産業会議で、ドローン戦・自律システム、独軍と産業界の協力、防衛ロジスティクス、NATO東方防衛を巡る戦略対話などを扱う。",
+   "summary_ja": "ドイツ・バルト三国・ウクライナの防衛産業関係者がヴィリニュスに集い、地域の防衛協力強化、ドローン戦、調達・資金調達をテーマに議論する会議。",
    "language": "en",
    "country": "LT",
-   "organizer_short": "AHK Balt",
+   "organizer_short": "AHK Baltic",
    "title_short": "Baltic Defence Industry Cooperation",
    "importance": 2,
    "registration_url": "https://www.bdc2026.com/",
-   "time_end": "19:00",
+   "time_end": "22:00",
    "source": "web検索(discovery)",
    "id": "4c00bf40c4a1c0c4",
    "first_seen": "2026-07-24",
-   "summary_en": "Organised by the German-Baltic Chamber of Commerce in Vilnius, this conference brings together government and industry to discuss drone warfare, Bundeswehr-industry cooperation, defence logistics and strategic dialogue on NATO's eastern flank.",
-   "summary_de": "Die von der Deutsch-Baltischen Handelskammer in Vilnius ausgerichtete Konferenz bringt Regierung und Industrie zusammen, um Drohnenkriegsführung, die Zusammenarbeit zwischen Bundeswehr und Industrie, Verteidigungslogistik und den strategischen Dialog zur NATO-Ostflanke zu diskutieren.",
-   "registration_note_en": "Advance registration required; B2B matchmaking access limited to ticket holders",
-   "registration_note_de": "Anmeldung erforderlich; Zugang zum B2B-Matchmaking nur für Ticketinhaber",
+   "summary_en": "A conference in Vilnius bringing together German, Baltic and Ukrainian defence-industry stakeholders to discuss strengthening regional defence cooperation, including drone warfare and procurement financing.",
+   "summary_de": "Eine Konferenz in Vilnius, die deutsche, baltische und ukrainische Akteure der Verteidigungsindustrie zusammenbringt, um die regionale Verteidigungskooperation zu stärken, mit Themen wie Drohnenkriegsführung und Beschaffungsfinanzierung.",
+   "registration_note_en": "Advance registration via ticket sales required; AHK members receive preferential pricing.",
+   "registration_note_de": "Vorherige Anmeldung über den Ticketverkauf erforderlich; AHK-Mitglieder erhalten Sonderkonditionen.",
    "speakers": [
     {
      "name": "Grant Hendrik Tonne",
@@ -3446,40 +3388,6 @@
    "summary_de": "Die Wirtschaftskammer Österreich (WKÖ) veranstaltet gemeinsam mit EcoAustria, IHS, WIFO und der WU Wien die 1. Jahreskonferenz der Wirtschaftspolitischen Blätter zu Industriepolitik und internationalem Handel vor dem Hintergrund geopolitischer Spannungen und der Handelspolitik unter Trump 2.0, mit Keynotes und Panels hochkarätiger Ökonom:innen.",
    "registration_note_en": "Advance registration required; limited to 70 seats, first come first served.",
    "registration_note_de": "Anmeldung erforderlich; nur 70 Plätze verfügbar, first come first served."
-  },
-  {
-   "title": "13. MannheimTaxation-Jahreskonferenz",
-   "title_ja": "第13回マンハイム租税会議",
-   "organizer": "ZEW Mannheim",
-   "date_start": "2026-09-10",
-   "date_end": "2026-09-11",
-   "time": null,
-   "city": "Mannheim",
-   "venue": "ZEW",
-   "format": "onsite",
-   "themes": [
-    "fin_markets",
-    "real_economy"
-   ],
-   "fee": "paid",
-   "open_to_public": false,
-   "registration_note": "学術会議・論文投稿制",
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/13-mannheimtaxation-jahreskonferenz/4846",
-   "summary_ja": "租税政策の研究報告を行うマンハイム租税会議の第13回。",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ZEW",
-   "title_short": "Taxation Conference",
-   "importance": 2,
-   "registration_url": "https://www.zew.de/VA4846",
-   "time_end": null,
-   "source": "ZEW Mannheim – Veranstaltungen",
-   "id": "8cb6750921939dd4",
-   "first_seen": "2026-07-24",
-   "summary_en": "The 13th MannheimTaxation annual conference on tax policy research.",
-   "summary_de": "Die 13. MannheimTaxation-Jahreskonferenz zur Steuerpolitikforschung.",
-   "registration_note_en": "Academic conference with paper submissions via EasyChair",
-   "registration_note_de": "Akademische Konferenz mit Beitragseinreichung über EasyChair"
   },
   {
    "title": "Real Business Cycles and Quantitative Methods",
@@ -8135,40 +8043,6 @@
    "first_seen": "2026-08-03"
   },
   {
-   "title": "4th Workshop on Causal Inference with Spatial Data",
-   "title_ja": "第4回空間データを用いた因果推論ワークショップ",
-   "organizer": "RWI Essen (FDZ Ruhr) / University of Duisburg-Essen",
-   "date_start": "2026-09-10",
-   "date_end": "2026-09-11",
-   "time": null,
-   "time_end": null,
-   "city": "Essen",
-   "venue": "University of Duisburg-Essen (Campus Essen)",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": false,
-   "registration_note": "論文採択者向け。旅費・宿泊費補助あり。招待制。",
-   "registration_note_en": "For accepted paper presenters; travel and accommodation covered. Invitation-based.",
-   "registration_note_de": "Für angenommene Referenten; Reise- und Übernachtungskosten werden übernommen. Nur auf Einladung.",
-   "url": "https://www.rwi-essen.de/forschung-beratung/weitere/forschungsdatenzentrum-ruhr/workshop-on-causal-inference-with-spatial-data",
-   "summary_ja": "労働市場と住宅市場の相互作用に焦点を当て、空間データを用いた因果推論研究を発表するRWIとデュースブルク=エッセン大学共催のワークショップ。",
-   "summary_en": "A workshop jointly organised by RWI's FDZ Ruhr and the University of Duisburg-Essen, focusing on causal inference using spatial data at the intersection of labour and housing markets.",
-   "summary_de": "Ein von FDZ Ruhr (RWI) und der Universität Duisburg-Essen organisierter Workshop zur kausalen Inferenz mit räumlichen Daten an der Schnittstelle von Arbeits- und Wohnungsmarkt.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "RWI",
-   "title_short": "Spatial Causal Inference",
-   "importance": 1,
-   "registration_url": null,
-   "source": "RWI Essen – Veranstaltungen",
-   "id": "a8b9d9994be5ebaf",
-   "first_seen": "2026-08-03"
-  },
-  {
    "title": "CESifo Area Conference on Economics of Education",
    "title_ja": "CESifo教育経済学エリア会議",
    "organizer": "ifo Institut, CESifo",
@@ -9954,8 +9828,8 @@
   },
   {
    "title": "Who owns what, and where? The revamped Finflows dataset for analysing global financial interdependencies",
-   "title_ja": "誰が何をどこで保有するか:Finflowsデータセットで見る国際金融相互依存",
-   "organizer": "SUERF",
+   "title_ja": "世界の金融相互依存データセット解説",
+   "organizer": "SUERF / BAFFI Centre, Bocconi University",
    "date_start": "2026-11-30",
    "date_end": null,
    "time": "14:30",
@@ -9963,29 +9837,50 @@
    "venue": null,
    "format": "online",
    "themes": [
-    "fin_markets",
-    "geopolitics"
+    "fin_markets"
    ],
    "fee": "free",
    "fee_amount": null,
    "open_to_public": true,
-   "registration_note": "要事前登録・無料",
-   "registration_note_en": "Advance registration required, free",
-   "registration_note_de": "Anmeldung erforderlich, kostenlos",
+   "registration_note": "要事前登録(オンラインウェビナー)",
+   "registration_note_en": "Advance registration required (online webinar).",
+   "registration_note_de": "Vorherige Anmeldung erforderlich (Online-Webinar).",
    "url": "https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies/",
-   "summary_ja": "国際金融の相互依存関係を分析する新Finflowsデータセットを紹介するSUERFのオンラインイベント。",
-   "summary_en": "A SUERF online event presenting the revamped Finflows dataset for analysing global financial interdependencies.",
-   "summary_de": "Eine SUERF-Online-Veranstaltung zum überarbeiteten Finflows-Datensatz zur Analyse globaler finanzieller Verflechtungen.",
+   "summary_ja": "欧州委員会のエコノミストが、国際的な金融相互依存関係を分析する「Finflows」データセットの改良版をSUERFのオンラインeレクチャーで紹介する。",
+   "summary_en": "European Commission economists present the revamped Finflows dataset for analysing global financial interdependencies in an online SUERF/BAFFI Bocconi e-lecture.",
+   "summary_de": "Ökonomen der Europäischen Kommission stellen in einer Online-E-Lecture von SUERF den überarbeiteten Finflows-Datensatz zur Analyse globaler finanzieller Verflechtungen vor.",
    "language": "en",
    "country": null,
-   "organizer_short": "SUERF",
-   "title_short": "Global Financial Interdependencies",
+   "organizer_short": "SUERF+Bocconi",
+   "title_short": "Global Financial Interdependencies Data",
    "importance": 1,
-   "registration_url": null,
+   "registration_url": "https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies/registration",
    "time_end": "15:45",
    "source": "SUERF – Events",
    "id": "3ec80de8464fb78a",
-   "first_seen": "2026-08-19"
+   "first_seen": "2026-08-19",
+   "speakers": [
+    {
+     "name": "Erza Aruqaj",
+     "org": "European Commission (DG ECFIN)",
+     "role": "Economic Analyst"
+    },
+    {
+     "name": "Stefano Ungaro",
+     "org": "European Commission (DG JRC)",
+     "role": "Economic and Policy Analyst"
+    },
+    {
+     "name": "Martin Schmitz",
+     "org": "ECB",
+     "role": "Senior Team Lead Economist-Statistician (discussant)"
+    },
+    {
+     "name": "Ernest Gnan",
+     "org": "SUERF",
+     "role": "Secretary General (moderator)"
+    }
+   ]
   },
   {
    "title": "Heterogeneous Effects of Borrower-Based Macroprudential Policy",
@@ -10556,40 +10451,6 @@
      "role": null
     }
    ]
-  },
-  {
-   "title": "Annual Workshop of the Committee for Organizational Economics",
-   "title_ja": "組織経済学委員会年次会議",
-   "title_short": "Organizational Economics Annual Workshop",
-   "organizer": "ECONtribute / University of Cologne",
-   "organizer_short": "ECONtribute",
-   "date_start": "2026-09-09",
-   "date_end": "2026-09-11",
-   "time": "12:00",
-   "time_end": "15:00",
-   "city": "Cologne",
-   "venue": "WiSo-Hochhaus, Universitätsstraße 24, University of Cologne",
-   "format": "onsite",
-   "country": "DE",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "paid",
-   "fee_amount": 100,
-   "open_to_public": false,
-   "registration_note": "論文投稿による参加登録制。参加費100ユーロ(食事等込み)",
-   "registration_note_en": "Registration with paper submission required; participation fee of €100 covers meals.",
-   "registration_note_de": "Anmeldung mit Papiereinreichung erforderlich; Teilnahmegebühr von 100 € deckt Verpflegung ab.",
-   "url": "https://econtribute.de/event/annual-workshop-of-the-committee-for-organizational-economics-invitation-call-for-papers-and-nominations-for-membership-co-organized-by-econtribute/",
-   "registration_url": "https://econtribute.de/event/annual-workshop-of-the-committee-for-organizational-economics-invitation-call-for-papers-and-nominations-for-membership-co-organized-by-econtribute/",
-   "summary_ja": "組織経済学委員会の年次ワークショップ。ケルン大学で開催され、論文報告と会員推薦が行われる。",
-   "summary_en": "Annual workshop of the Committee for Organizational Economics at the University of Cologne, featuring paper presentations.",
-   "summary_de": "Jährlicher Workshop des Committee for Organizational Economics an der Universität zu Köln mit Papierpräsentationen.",
-   "language": "en",
-   "importance": 2,
-   "source": "ECONtribute (Bonn/Köln) – Events",
-   "id": "8454957c8a88a77d",
-   "first_seen": "2026-08-21"
   },
   {
    "title": "Lifetime Earnings and Spatial Inequality",
@@ -11660,8 +11521,8 @@
   },
   {
    "title": "12th Green Finance Forum",
-   "title_ja": "第12回グリーンファイナンス・フォーラム",
-   "organizer": "dfv Euro Finance Group",
+   "title_ja": "第12回グリーンファイナンスフォーラム",
+   "organizer": "dfv Euro Finance Group GmbH",
    "date_start": "2026-11-17",
    "date_end": null,
    "time": null,
@@ -11675,17 +11536,17 @@
    "fee": "paid",
    "fee_amount": 690,
    "open_to_public": true,
-   "registration_note": "1日券(税別690ユーロ)。業界関係者は無料登録枠あり。",
-   "registration_note_en": "Day ticket EUR 690 excl. VAT; complimentary registration for banking and finance representatives.",
-   "registration_note_de": "Tagesticket 690 EUR zzgl. MwSt.; kostenlose Anmeldung für Vertreter der Banken- und Finanzbranche.",
+   "registration_note": "要事前登録(承認制の可能性あり、有料)",
+   "registration_note_en": "Registration required and may be subject to approval; paid admission.",
+   "registration_note_de": "Anmeldung erforderlich und ggf. genehmigungspflichtig; kostenpflichtig.",
    "url": "https://www.dfv-eurofinance.com/events/12th-green-finance-forum/",
-   "summary_ja": "EURO FINANCE WEEK内で開催される、グリーンファイナンスをテーマとする金融業界向けの会議。",
-   "summary_en": "Industry conference on green finance held within EURO FINANCE WEEK in Frankfurt.",
-   "summary_de": "Branchenkonferenz zur grünen Finanzierung im Rahmen der EURO FINANCE WEEK in Frankfurt.",
+   "summary_ja": "フランクフルトの「ユーロ・ファイナンス・ウィーク」内で開催される第12回グリーンファイナンスフォーラム。「グリーンからブルーファイナンスへ」をテーマに、気候・自然リスクや生物多様性金融を議論する。",
+   "summary_en": "The 12th Green Finance Forum, held during Frankfurt's Euro Finance Week under the theme 'From Green to Blue Finance', discusses climate and nature risk, biodiversity finance and ESG integration.",
+   "summary_de": "Das 12. Green Finance Forum im Rahmen der Frankfurter Euro Finance Week steht unter dem Motto „Von Grün zu Blau: Wandel der Perspektiven“ und behandelt Klima- und Naturrisiken, Biodiversitätsfinanzierung und ESG-Integration.",
    "language": "en",
    "country": "DE",
-   "organizer_short": "dfv",
-   "title_short": "Green finance forum",
+   "organizer_short": "Euro Finance Week",
+   "title_short": "Green to Blue Finance",
    "importance": 2,
    "registration_url": "https://tickets.dfv-eurofinance.com/GFF26/",
    "time_end": null,
@@ -17863,11 +17724,11 @@
   },
   {
    "title": "6th European China Conference",
-   "title_ja": "第6回欧州中国会議",
-   "organizer": "MERICS – Mercator Institute for China Studies",
+   "title_ja": "第6回欧州中国会議(MERICS主催)",
+   "organizer": "Mercator Institute for China Studies (MERICS)",
    "date_start": "2026-10-15",
    "date_end": null,
-   "time": null,
+   "time": "12:00",
    "city": "Berlin",
    "venue": null,
    "format": null,
@@ -17877,21 +17738,21 @@
    ],
    "fee": "unknown",
    "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
+   "open_to_public": false,
+   "registration_note": "招待制のため一般参加不可",
+   "registration_note_en": "Invitation only; not open to general public registration.",
+   "registration_note_de": "Nur auf Einladung; keine öffentliche Anmeldung möglich.",
    "url": "https://merics.org/en/events/6th-european-china-conference",
-   "summary_ja": "MERICS主催の欧中関係に関する年次会議で、対中経済・政策動向を議論する。",
-   "summary_en": "Annual conference hosted by MERICS discussing Europe-China economic and policy relations.",
-   "summary_de": "Jährliche von MERICS ausgerichtete Konferenz zu den europäisch-chinesischen Wirtschafts- und Politikbeziehungen.",
+   "summary_ja": "MERICS主催の欧州中国会議の第6回。欧州の対中地経学戦略、重要原材料、中国の対外政策を招待制フォーラムで議論する。",
+   "summary_en": "The 6th edition of MERICS's invitation-only European China Conference, bringing together experts to discuss Europe's geoeconomic strategy toward China, critical raw materials, and China's foreign policy.",
+   "summary_de": "Die 6. Ausgabe der von MERICS veranstalteten European China Conference, einem Forum nur auf Einladung, das Europas geoökonomische Strategie gegenüber China, kritische Rohstoffe und Chinas Außenpolitik diskutiert.",
    "language": null,
    "country": "DE",
    "organizer_short": "MERICS",
-   "title_short": "European China Conference",
+   "title_short": "Europe's China Strategy",
    "importance": 2,
    "registration_url": null,
-   "time_end": null,
+   "time_end": "21:00",
    "speakers": [],
    "source": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
    "id": "d716b5c12c8ab4eb",
@@ -18866,11 +18727,11 @@
   },
   {
    "title": "Financial Markets: Too Many Faultlines?",
-   "title_ja": "金融市場:断層線は多すぎるか",
-   "organizer": "SUERF",
+   "title_ja": "金融市場の断層線は多すぎるか",
+   "organizer": "SUERF / BAFFI Centre, Bocconi University",
    "date_start": "2026-11-04",
    "date_end": null,
-   "time": null,
+   "time": "15:00",
    "city": null,
    "venue": null,
    "format": "online",
@@ -18880,21 +18741,52 @@
    "fee": "free",
    "fee_amount": null,
    "open_to_public": true,
-   "registration_note": "要事前登録・無料(オンライン)",
-   "registration_note_en": "Advance registration required, free (online)",
-   "registration_note_de": "Anmeldung erforderlich, kostenlos (online)",
+   "registration_note": "要事前登録(オンラインウェビナー)",
+   "registration_note_en": "Advance registration required (online webinar).",
+   "registration_note_de": "Vorherige Anmeldung erforderlich (Online-Webinar).",
    "url": "https://www.suerf.org/events/financial-markets-too-many-faultlines/",
-   "summary_ja": "SUERF BAFFI Bocconiシリーズのオンライン講座。金融市場に存在する複数の構造的な脆弱性を議論する。",
-   "summary_en": "SUERF BAFFI Bocconi e-lecture examining multiple structural faultlines in financial markets.",
-   "summary_de": "SUERF-BAFFI-Bocconi-Online-Vortrag über mehrere strukturelle Schwachstellen an den Finanzmärkten.",
+   "summary_ja": "SUERFのオンラインeレクチャー。金融市場の分断リスクについて、スウェーデン国債管理庁・FSB・NYUスターン・元ECB理事らが議論する。",
+   "summary_en": "An online SUERF/BAFFI Bocconi e-lecture examining fault lines in financial markets, with panellists from the Swedish National Debt Office, the FSB, NYU Stern and a former ECB Executive Board member.",
+   "summary_de": "Eine Online-E-Lecture von SUERF, die Bruchlinien in den Finanzmärkten untersucht, mit Teilnehmern der schwedischen Staatsschuldenverwaltung, des FSB, der NYU Stern und einem ehemaligen EZB-Direktoriumsmitglied.",
    "language": "en",
    "country": null,
-   "organizer_short": "SUERF",
-   "title_short": "Financial Markets Faultlines",
+   "organizer_short": "SUERF+Bocconi",
+   "title_short": "Financial Market Faultlines",
    "importance": 0,
    "registration_url": "https://www.suerf.org/events/financial-markets-too-many-faultlines/registration",
-   "time_end": null,
-   "speakers": [],
+   "time_end": "16:30",
+   "speakers": [
+    {
+     "name": "Karolina Ekholm",
+     "org": "Swedish National Debt Office",
+     "role": "Director General (panel chair)"
+    },
+    {
+     "name": "Viral V. Acharya",
+     "org": "NYU Stern",
+     "role": "Panellist"
+    },
+    {
+     "name": "Paul Hiebert",
+     "org": "FSB",
+     "role": "Director, Financial Stability Analysis"
+    },
+    {
+     "name": "Peter Praet",
+     "org": "ECB",
+     "role": "Former Executive Board Member"
+    },
+    {
+     "name": "Til Schuermann",
+     "org": "Oliver Wyman",
+     "role": "Global Head, Finance and Risk Practice"
+    },
+    {
+     "name": "Martin Scheicher",
+     "org": "ECB",
+     "role": "Adviser, DG Horizontal Line Supervision (SSM)"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "7f187cb132760170",
    "first_seen": "2026-09-23"
@@ -19602,41 +19494,56 @@
    "first_seen": "2026-09-25"
   },
   {
-   "title": "State Censorship and Global Demand: Evidence from China's Book Bans",
-   "title_ja": "国家検閲と世界需要:中国の書籍発禁",
-   "organizer": "BOFIT – The Bank of Finland Institute for Emerging Economies",
+   "title": "Key insights from the IMF's October 2026 World Economic Outlook, Global Financial Stability Report and Fiscal Monitor",
+   "title_ja": "IMF世界経済見通し等2026年10月版解説",
+   "organizer": "SUERF / BAFFI Centre, Bocconi University",
    "date_start": "2026-10-27",
    "date_end": null,
-   "time": "10:30",
-   "time_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
    "city": null,
    "venue": null,
    "format": "online",
    "country": null,
    "themes": [
-    "china",
-    "real_economy"
+    "real_economy",
+    "fin_markets"
    ],
    "fee": "free",
    "fee_amount": 0,
    "open_to_public": true,
-   "registration_note": "オンライン開催。事前登録制(当日9:00まで受付)",
-   "registration_note_en": "Online seminar. Advance registration required (closes 9:00 on the day).",
-   "registration_note_de": "Online-Seminar. Vorab-Anmeldung erforderlich (Anmeldung bis 9:00 Uhr am Veranstaltungstag).",
-   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/2026/2026-10-27-li/",
+   "registration_note": "要事前登録(オンラインウェビナー)",
+   "registration_note_en": "Advance registration required (online webinar).",
+   "registration_note_de": "Vorherige Anmeldung erforderlich (Online-Webinar).",
+   "url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/",
    "registration_url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/registration",
-   "summary_ja": "中国の書籍発禁を事例に、国家による検閲が世界の需要に与える影響を検証する研究報告。",
-   "summary_en": "A BOFIT seminar presentation using China's book bans to examine how state censorship affects global demand.",
-   "summary_de": "Seminarvortrag des BOFIT, der anhand chinesischer Buchverbote untersucht, wie staatliche Zensur die globale Nachfrage beeinflusst.",
+   "summary_ja": "IMFエコノミストがSUERFのオンラインeレクチャーで、2026年10月の世界経済見通し・国際金融安定性報告・財政モニターの要点を解説する。",
+   "summary_en": "IMF economists present key findings from the October 2026 World Economic Outlook, Global Financial Stability Report and Fiscal Monitor in an online SUERF/BAFFI Bocconi e-lecture.",
+   "summary_de": "IMF-Ökonomen stellen in einer Online-E-Lecture von SUERF und dem BAFFI Centre die wichtigsten Ergebnisse des World Economic Outlook, des Global Financial Stability Report und des Fiscal Monitor vom Oktober 2026 vor.",
    "language": "en",
-   "organizer_short": "BOFIT",
-   "title_short": "Censorship and Global Demand",
+   "organizer_short": "SUERF+Bocconi",
+   "title_short": "IMF Global Economic Outlook",
    "importance": 1,
    "speakers": [
     {
-     "name": "Peiyuan Li",
-     "org": "DKU",
-     "role": null
+     "name": "Deniz Igan",
+     "org": "IMF",
+     "role": "Chief, World Economic Studies"
+    },
+    {
+     "name": "Jason J. Wu",
+     "org": "IMF",
+     "role": "Assistant Director, Monetary and Capital Markets Department"
+    },
+    {
+     "name": "Davide Furceri",
+     "org": "IMF",
+     "role": "Division Chief, Fiscal Affairs Department"
+    },
+    {
+     "name": "Ernest Gnan",
+     "org": "SUERF",
+     "role": "Secretary General (moderator)"
     }
    ],
    "source": "SUERF – Events",
@@ -21633,9 +21540,9 @@
   },
   {
    "title": "Challenges for Monetary Policy Transmission in a Changing World",
-   "title_ja": "金融政策伝達の課題",
-   "organizer": "SUERF / BAFFI Centre (Bocconi University)",
-   "organizer_short": "SUERF/BAFFI",
+   "title_ja": "変化する世界の金融政策伝達メカニズム",
+   "organizer": "SUERF / BAFFI Centre, Bocconi University",
+   "organizer_short": "SUERF+Bocconi",
    "date_start": "2026-11-10",
    "date_end": null,
    "time": "15:00",
@@ -21649,19 +21556,40 @@
    "fee": "unknown",
    "fee_amount": null,
    "open_to_public": true,
-   "registration_note": "要事前登録",
-   "registration_note_en": "Advance registration required",
-   "registration_note_de": "Anmeldung erforderlich",
+   "registration_note": "要事前登録(オンラインウェビナー)",
+   "registration_note_en": "Advance registration required (online webinar).",
+   "registration_note_de": "Vorherige Anmeldung erforderlich (Online-Webinar).",
    "url": "https://www.suerf.org/events/challenges-for-monetary-policy-transmission-in-a-changing-world/",
-   "summary_ja": "SUERFとボッコーニ大学BAFFIセンターによる、変化する世界における金融政策の伝達メカニズムをテーマとしたオンラインeレクチャー。",
-   "summary_en": "An online SUERF/BAFFI Bocconi e-lecture on the challenges of monetary policy transmission in a changing world.",
-   "summary_de": "Eine Online-E-Lecture von SUERF und dem BAFFI-Zentrum der Bocconi-Universität zu den Herausforderungen der geldpolitischen Transmission in einer sich wandelnden Welt.",
+   "summary_ja": "SUERFとボッコーニ大学BAFFIセンターによるオンラインeレクチャー。ベルギー・イタリア・オーストリアの中央銀行エコノミストが金融政策伝達の課題を議論する。",
+   "summary_en": "An online SUERF/BAFFI Bocconi e-lecture in which economists from the central banks of Belgium, Italy and Austria discuss challenges to monetary policy transmission in a changing world.",
+   "summary_de": "Eine Online-E-Lecture von SUERF und dem BAFFI Centre der Bocconi-Universität, in der Ökonomen der Zentralbanken Belgiens, Italiens und Österreichs über Herausforderungen der geldpolitischen Transmission diskutieren.",
    "language": "en",
    "country": null,
-   "title_short": "Monetary Policy Transmission",
+   "title_short": "Monetary Policy Transmission Challenges",
    "importance": 1,
-   "registration_url": null,
-   "speakers": [],
+   "registration_url": "https://www.suerf.org/events/challenges-for-monetary-policy-transmission-in-a-changing-world/registration",
+   "speakers": [
+    {
+     "name": "Emmanuel Dhyne",
+     "org": "National Bank of Belgium",
+     "role": "Head, Structural Issues, Employment and Competitiveness Unit"
+    },
+    {
+     "name": "Margherita Bottero",
+     "org": "Bank of Italy",
+     "role": "Head, Money and Credit Unit"
+    },
+    {
+     "name": "María T. Valderrama",
+     "org": "OeNB",
+     "role": "Head, Monetary Policy Section"
+    },
+    {
+     "name": "Ernest Gnan",
+     "org": "SUERF",
+     "role": "Secretary General (moderator)"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "f878a6971edc6900",
    "first_seen": "2026-10-03"
@@ -25780,6 +25708,42 @@
    "source": "web検索(discovery)",
    "id": "fd23232481dbc428",
    "first_seen": "2026-10-11"
+  },
+  {
+   "title": "Applying taxonomies to scale climate-resilient investment opportunities in Africa and the Middle East",
+   "title_ja": "気候適応金融タクソノミー(アフリカ・中東)",
+   "organizer": "UNEP Finance Initiative",
+   "date_start": "2026-10-21",
+   "date_end": null,
+   "time": "13:00",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "free",
+   "fee_amount": 0,
+   "open_to_public": true,
+   "registration_note": "要事前登録・無料のオンラインウェビナー",
+   "registration_note_en": "Free online webinar; advance registration required.",
+   "registration_note_de": "Kostenloses Online-Webinar, Anmeldung erforderlich.",
+   "url": "https://www.unepfi.org/themes/climate-change/applying-taxonomies-to-scale-climate-resilient-investment-opportunities-in-africa-and-the-middle-east/",
+   "summary_ja": "UNEP FIが気候変動適応ファイナンスのタクソノミー活用について解説するオンラインウェビナー。アフリカ・中東地域の実例を扱い、Adaptation Finance Taxonomy Playbookを紹介する。",
+   "summary_en": "UNEP FI hosts a free online webinar on using sustainable finance taxonomies to scale climate-resilient investment in Africa and the Middle East, introducing its Adaptation Finance Taxonomy Playbook and toolkit.",
+   "summary_de": "UNEP FI veranstaltet ein kostenloses Online-Webinar zur Nutzung von Nachhaltigkeits-Taxonomien zur Förderung klimaresilienter Investitionen in Afrika und dem Nahen Osten.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UNEP FI",
+   "title_short": "Climate Adaptation Finance Taxonomies",
+   "importance": 1,
+   "registration_url": "https://www.brighttalk.com/webcast/17290/676578",
+   "time_end": "14:00",
+   "speakers": [],
+   "source": "UNEP FI – Events",
+   "id": "1f26ed7fa922a005",
+   "first_seen": "2026-10-12"
   }
  ]
 }
