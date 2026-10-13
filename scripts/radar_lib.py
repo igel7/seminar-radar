@@ -611,7 +611,10 @@ def merge(existing, new_events):
         ev = sanitize(dict(ev) if isinstance(ev, dict) else {})
         if not ev:
             continue
-        k = event_key(ev)
+        # 薄いレコード(手順1.6の詳細ページ由来など)は既存イベントの id を名指しできる。
+        # 台帳と同じ title/date_start を写し損ねても確実に当たるようにするため
+        k = ev.get("id") if ev.get("id") in by_key else event_key(ev)
+        thin = is_thin_record(ev)
         if k in by_key:
             old = by_key[k]
             before = {f: old.get(f) for f in CHANGELOG_WATCHED_FIELDS}
@@ -619,7 +622,7 @@ def merge(existing, new_events):
                 old.get("date_start"), old.get("date_end"),
                 ev.get("date_start"), ev.get("date_end"))
             for field, val in ev.items():
-                if field in ("source", "importance"):
+                if field in ("source", "importance", "id") or (thin and field == "title"):
                     continue
                 if val not in (None, "", "unknown", []):
                     old[field] = val
@@ -634,14 +637,14 @@ def merge(existing, new_events):
                     match.get("date_start"), match.get("date_end"),
                     ev.get("date_start"), ev.get("date_end"))
                 for field, val in ev.items():
-                    if field in ("source", "importance"):
+                    if field in ("source", "importance", "id") or (thin and field == "title"):
                         continue
                     if val not in (None, "", "unknown", []):
                         match[field] = val
                 match["importance"] = _merge_importance(match.get("importance"), ev.get("importance"))
                 match["date_start"], match["date_end"] = new_start, new_end
                 record_update(match, before)
-            elif is_thin_record(ev):
+            elif thin:
                 # 薄いレコード(登壇者だけの追記など)が既存イベントに当たらなかった。
                 # タイトルや日付の表記が既知台帳と食い違っている可能性が高く、
                 # このまま追加すると要約のないイベントが増えるので捨てて警告する。
