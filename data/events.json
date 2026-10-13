@@ -65,7 +65,49 @@
    "summary_en": "ECB conference on money market infrastructure, operations and central bank policy implementation",
    "summary_de": "ECB-Konferenz zu Geldmarktinfrastruktur, Operationen und geldpolitischer Umsetzen",
    "registration_note_en": "Free of charge; interested participants must register their interest by 15 October 2026.",
-   "registration_note_de": "Kostenlos; Interessierte müssen sich bis zum 15. Oktober 2026 registrieren."
+   "registration_note_de": "Kostenlos; Interessierte müssen sich bis zum 15. Oktober 2026 registrieren.",
+   "speakers": [
+    {
+     "name": "Isabel Schnabel",
+     "org": "ECB",
+     "role": "Member of the Executive Board"
+    },
+    {
+     "name": "Arvind Krishnamurthy",
+     "org": "Stanford GSB",
+     "role": "Keynote speaker"
+    },
+    {
+     "name": "Pablo Hernández de Cos",
+     "org": "BIS",
+     "role": "General Manager"
+    },
+    {
+     "name": "Philip R. Lane",
+     "org": "ECB",
+     "role": "Member of the Executive Board"
+    },
+    {
+     "name": "John Williams",
+     "org": "New York Fed",
+     "role": "President and Chief Executive Officer"
+    },
+    {
+     "name": "Petra Tschudin",
+     "org": "SNB",
+     "role": "Member of the Governing Board"
+    },
+    {
+     "name": "Robert Czech",
+     "org": "Bank of England",
+     "role": "Presenter"
+    },
+    {
+     "name": "Tobias Linzert",
+     "org": "ECB",
+     "role": "Presenter"
+    }
+   ]
   },
   {
    "title": "Wirtschaftsfaktor Rüstung 2026",
@@ -1817,7 +1859,49 @@
    "summary_en": "A research conference on macroeconomic policy, held at the Study Center Gerzensee with the Swiss National Bank as partner.",
    "summary_de": "Forschungskonferenz zur makroökonomischen Politik am Study Center Gerzensee in Zusammenarbeit mit der Schweizerischen Nationalbank.",
    "registration_note_en": "By invitation only. Organized by the Swiss National Bank. Accommodation and meals included.",
-   "registration_note_de": "Nur auf Einladung. Von der Schweizerischen Nationalbank organisiert. Unterkunft und Mahlzeiten inklusive."
+   "registration_note_de": "Nur auf Einladung. Von der Schweizerischen Nationalbank organisiert. Unterkunft und Mahlzeiten inklusive.",
+   "speakers": [
+    {
+     "name": "Robert J. Barro",
+     "org": "Harvard",
+     "role": "Presenter"
+    },
+    {
+     "name": "Livia Chiţu",
+     "org": "ECB",
+     "role": "Presenter"
+    },
+    {
+     "name": "Frank Smets",
+     "org": "BIS",
+     "role": "Discussant"
+    },
+    {
+     "name": "Roberto M. Billi",
+     "org": "Riksbank",
+     "role": "Presenter"
+    },
+    {
+     "name": "Michael Barczay",
+     "org": "IMF",
+     "role": "Poster presenter"
+    },
+    {
+     "name": "Giacomo Mangiante",
+     "org": "Banca d'Italia",
+     "role": "Poster presenter"
+    },
+    {
+     "name": "William Pagel",
+     "org": "Oxford/Bank of England",
+     "role": "Poster presenter"
+    },
+    {
+     "name": "Jordi Gali",
+     "org": "CREI/UPF",
+     "role": "Discussant"
+    }
+   ]
   },
   {
    "title": "22. Praxisforum Wirtschaftskriminalität",
@@ -6961,7 +7045,24 @@
    "source": "ZEW Mannheim – Veranstaltungen",
    "id": "c23ab7f178d14037",
    "first_seen": "2026-07-29",
-   "fee_amount": 200
+   "fee_amount": 200,
+   "speakers": [
+    {
+     "name": "Fabian Gaessler",
+     "org": "UPF",
+     "role": "Keynote speaker"
+    },
+    {
+     "name": "Matt Marx",
+     "org": "Cornell",
+     "role": "Keynote speaker"
+    },
+    {
+     "name": "Valentina Tartari",
+     "org": "Stockholm School of Economics",
+     "role": "Keynote speaker"
+    }
+   ]
   },
   {
    "organizer": "WU Vienna, Department of Economics",
@@ -10903,14 +11004,7 @@
    "time_end": null,
    "source": "DIW Berlin – Veranstaltungen",
    "id": "547288cd84fd6bd7",
-   "first_seen": "2026-08-22",
-   "speakers": [
-    {
-     "name": "Randi Hjalmarsson",
-     "org": "University of Gothenburg",
-     "role": null
-    }
-   ]
+   "first_seen": "2026-08-22"
   },
   {
    "title": "Financing of Pension Insurance",
@@ -12578,19 +12672,7 @@
    "time_end": null,
    "source": "SNB – Swiss National Bank – Events",
    "id": "ac1f2a35324889df",
-   "first_seen": "2026-08-27",
-   "speakers": [
-    {
-     "name": "Petra Tschudin",
-     "org": "SNB",
-     "role": null
-    },
-    {
-     "name": "Thomas Moser",
-     "org": "SNB",
-     "role": null
-    }
-   ]
+   "first_seen": "2026-08-27"
   },
   {
    "title": "International FinTech Conference (Lithuania)",
