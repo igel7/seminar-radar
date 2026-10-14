@@ -2248,7 +2248,14 @@
    "summary_en": "20th Southeast Europe Economic Research Workshop hosted by the Bank of Albania, featuring academic research presentations.",
    "summary_de": "20. Workshop zu wirtschaftlicher Forschung für Südosteuropa, veranstaltet von der Zentralbank Albaniens.",
    "registration_note_en": "Advance registration required (see webpage for details)",
-   "registration_note_de": "Voranmeldung erforderlich (siehe Website für Details)"
+   "registration_note_de": "Voranmeldung erforderlich (siehe Website für Details)",
+   "speakers": [
+    {
+     "name": "Harald Uhlig",
+     "org": "University of Chicago",
+     "role": "Professor of Economics"
+    }
+   ]
   },
   {
    "title": "Firms, Workers, and Households in Times of Crisis and Digital Transformation",
@@ -3272,13 +3279,18 @@
    "speakers": [
     {
      "name": "Gediminas Šimkus",
-     "org": "Bank of Lithuania",
-     "role": "Chair of the Board"
+     "org": null,
+     "role": null
     },
     {
      "name": "Elisabeth Carter",
-     "org": "Kingston University",
-     "role": "keynote speaker"
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Vytautas Danta",
+     "org": "Revolut",
+     "role": "Chief Compliance Officer Europe"
     }
    ]
   },
@@ -4094,8 +4106,8 @@
    "fee_amount": 2500
   },
   {
-   "title": "Eurosif Policy & Capacity Building Webinar",
-   "title_ja": "Eurosif政策・能力開発ウェビナー",
+   "title": "Policy and Capacity Building Webinar by EUROSIF",
+   "title_ja": "EUROSIF政策・能力構築ウェビナー",
    "organizer": "Eurosif",
    "date_start": "2026-09-22",
    "date_end": "2026-12-03",
@@ -4109,23 +4121,23 @@
    ],
    "fee": "free",
    "open_to_public": false,
-   "registration_note": "SSF会員限定(会員ページから申込)",
+   "registration_note": "SSF会員限定・会員ページから申込",
    "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
-   "summary_ja": "Eurosifが主催する政策・能力開発ウェビナー。SSF会員向けで、詳細と申込は会員専用ページで案内される。",
+   "summary_ja": "SSF会員向けに、サステナブル・ファイナンスの政策動向と能力構築をテーマとしたEUROSIFのオンラインウェビナー。",
    "language": "en",
    "country": null,
    "organizer_short": "Eurosif",
-   "title_short": "EUROSIF Policy Capacity Building",
+   "title_short": "Sustainable Finance Policy Webinar",
    "importance": 1,
    "registration_url": "https://www.sustainablefinance.ch/en/e/member-resources/member-benefits.html",
    "time_end": null,
    "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
    "id": "2d173f63acea8db3",
    "first_seen": "2026-07-25",
-   "summary_en": "Policy and capacity-building webinar organised by Eurosif, reserved for SSF members, with details and registration in the member section.",
-   "summary_de": "Policy- und Capacity-Building-Webinar von Eurosif, nur für SSF-Mitglieder; Details und Anmeldung im Mitgliederbereich.",
-   "registration_note_en": "Reserved for SSF members; register via member section",
-   "registration_note_de": "Nur für SSF-Mitglieder; Anmeldung über den Mitgliederbereich"
+   "summary_en": "Online webinar by Eurosif for SSF members on sustainable finance policy developments and capacity building.",
+   "summary_de": "Online-Webinar von Eurosif fuer SSF-Mitglieder zu politischen Entwicklungen und Kapazitaetsaufbau im Bereich nachhaltiger Finanzen.",
+   "registration_note_en": "SSF members only, register via member section",
+   "registration_note_de": "Nur fuer SSF-Mitglieder, Anmeldung ueber den Mitgliederbereich"
   },
   {
    "title": "Ökofinanz 21 Herbsttagung 2026: DIE POLITISCHEN DIMENSIONEN DES INVESTIERENS – WOFÜR SIND WIR VERANTWORTLICH?",
@@ -5777,7 +5789,39 @@
    "summary_de": "Eine Bitkom-Digitalfinanzkonferenz in Berlin zum Aufbau eines widerstandsfähigen, innovativen Finanzsystems für Deutschland und Europa vor dem Hintergrund geopolitischer und technologischer Veränderungen.",
    "registration_note_en": "Digital finance conference themed 'Rebuilding Resilience', covering trust in financial systems, AI and digital identity innovation, and competitiveness.",
    "registration_note_de": "Digitalfinanz-Konferenz unter dem Motto „Rebuilding Resilience“ zu Vertrauen im Finanzsystem, Innovationen wie KI und digitale Identitäten sowie Wettbewerbsfähigkeit.",
-   "fee_amount": 350
+   "fee_amount": 350,
+   "speakers": [
+    {
+     "name": "Mark Branson",
+     "org": "BaFin",
+     "role": "Präsident"
+    },
+    {
+     "name": "Steffen Jentsch",
+     "org": "Solaris",
+     "role": "CEO"
+    },
+    {
+     "name": "Fritzi Köhler-Geib",
+     "org": "Bundesbank",
+     "role": "Vorständin"
+    },
+    {
+     "name": "Daniel Llano Manibardo",
+     "org": "Chase Germany",
+     "role": "CEO"
+    },
+    {
+     "name": "Simone Löfgen",
+     "org": "Commerzbank",
+     "role": "Global Head of Payment Platforms"
+    },
+    {
+     "name": "Martina Weimert",
+     "org": "EPI Company",
+     "role": "CEO"
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar - Oliver Falck",
@@ -6382,7 +6426,49 @@
    "summary_de": "Im Rahmen der Euro Finance Week befasst sich der China Day unter dem Motto „China's Agenda 2030\" mit den Realitäten und Chancen der deutsch-chinesischen Zusammenarbeit in Finanzen, Handel, Technologie und grüner Energie.",
    "registration_note_en": "Complimentary ticket for core target group, subject to review",
    "registration_note_de": "Kostenloses Ticket für die Kernzielgruppe, vorbehaltlich Prüfung",
-   "fee_amount": 690
+   "fee_amount": 690,
+   "speakers": [
+    {
+     "name": "Corinne Abele",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Yiyang Huang",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Christopher Hui",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Jian (Helen) Liang",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Matthias Liermann",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Wenpei Lin",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Thomas List",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Fuzhong Liu",
+     "org": null,
+     "role": null
+    }
+   ]
   },
   {
    "title": "Watching Trade from Space: Measuring Maritime Trade Using Satellite Imagery — Yonggeun Jung",
@@ -19492,56 +19578,40 @@
    "first_seen": "2026-09-25"
   },
   {
-   "title": "Key insights from the IMF's October 2026 World Economic Outlook, Global Financial Stability Report and Fiscal Monitor",
-   "title_ja": "IMF世界経済見通し等2026年10月版解説",
-   "organizer": "SUERF / BAFFI Centre, Bocconi University",
+   "title": "State Censorship and Global Demand: Evidence from China's Book Bans",
+   "title_ja": "国家検閲と世界需要:中国の書籍発禁の実証",
+   "organizer": "BOFIT",
    "date_start": "2026-10-27",
    "date_end": null,
-   "time": "14:00",
+   "time": "10:30",
    "time_end": "15:30",
    "city": null,
    "venue": null,
    "format": "online",
    "country": null,
    "themes": [
-    "real_economy",
-    "fin_markets"
+    "china"
    ],
    "fee": "free",
    "fee_amount": 0,
    "open_to_public": true,
-   "registration_note": "要事前登録(オンラインウェビナー)",
-   "registration_note_en": "Advance registration required (online webinar).",
-   "registration_note_de": "Vorherige Anmeldung erforderlich (Online-Webinar).",
-   "url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/",
+   "registration_note": "要事前登録・オンライン",
+   "registration_note_en": "Advance registration required, online",
+   "registration_note_de": "Anmeldung erforderlich, online",
+   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/2026/2026-10-27-li/",
    "registration_url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/registration",
-   "summary_ja": "IMFエコノミストがSUERFのオンラインeレクチャーで、2026年10月の世界経済見通し・国際金融安定性報告・財政モニターの要点を解説する。",
-   "summary_en": "IMF economists present key findings from the October 2026 World Economic Outlook, Global Financial Stability Report and Fiscal Monitor in an online SUERF/BAFFI Bocconi e-lecture.",
-   "summary_de": "IMF-Ökonomen stellen in einer Online-E-Lecture von SUERF und dem BAFFI Centre die wichtigsten Ergebnisse des World Economic Outlook, des Global Financial Stability Report und des Fiscal Monitor vom Oktober 2026 vor.",
+   "summary_ja": "BOFITのオンラインセミナー。Duke Kunshan UniversityのPeiyuan Li氏が、中国の書籍発禁を用いて国家検閲がグローバルな需要に与える影響を報告する。",
+   "summary_en": "BOFIT online seminar where Peiyuan Li (Duke Kunshan University) presents evidence from China's book bans on how state censorship affects global demand.",
+   "summary_de": "Online-Seminar des BOFIT, in dem Peiyuan Li (Duke Kunshan University) anhand der Buecherverbote in China untersucht, wie staatliche Zensur die globale Nachfrage beeinflusst.",
    "language": "en",
-   "organizer_short": "SUERF+Bocconi",
-   "title_short": "IMF Global Economic Outlook",
+   "organizer_short": "BOFIT",
+   "title_short": "Censorship and Global Demand",
    "importance": 1,
    "speakers": [
     {
-     "name": "Deniz Igan",
-     "org": "IMF",
-     "role": "Chief, World Economic Studies"
-    },
-    {
-     "name": "Jason J. Wu",
-     "org": "IMF",
-     "role": "Assistant Director, Monetary and Capital Markets Department"
-    },
-    {
-     "name": "Davide Furceri",
-     "org": "IMF",
-     "role": "Division Chief, Fiscal Affairs Department"
-    },
-    {
-     "name": "Ernest Gnan",
-     "org": "SUERF",
-     "role": "Secretary General (moderator)"
+     "name": "Peiyuan Li",
+     "org": "DKU",
+     "role": null
     }
    ],
    "source": "SUERF – Events",
@@ -26148,6 +26218,832 @@
    "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
    "id": "dce4592c1ec28fba",
    "first_seen": "2026-10-13"
+  },
+  {
+   "title": "Die Verzerrung in Pseudo-Event-Studien",
+   "title_ja": "疑似イベントスタディにおける偏り",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-21",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022154.de/veranstaltungen/die_verzerrung_in_pseudo-event-studien.html",
+   "summary_ja": "疑似イベントスタディ手法に内在する推定の偏りを検討する研究セミナー。",
+   "summary_en": "Research seminar examining estimation bias inherent in pseudo-event-study methods.",
+   "summary_de": "Forschungsseminar zur Verzerrung, die der Methode der Pseudo-Event-Studien innewohnt.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Pseudo-Event-Study Bias",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Timo Haller",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "051d9a0d0c611738",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Implementing Borrower-Based Measures in the EU: The Role of Institutional Frameworks",
+   "title_ja": "EUにおける借り手ベース規制の実施と制度設計",
+   "organizer": "National Bank of Slovakia",
+   "date_start": "2026-11-11",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Bratislava",
+   "venue": "NBS building, 8th floor meeting room",
+   "format": "hybrid",
+   "themes": [
+    "fin_markets",
+    "central_bank"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(research@nbs.sk へ連絡)・無料",
+   "registration_note_en": "Contact research@nbs.sk to register, free",
+   "registration_note_de": "Anmeldung per E-Mail an research@nbs.sk, kostenlos",
+   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
+   "summary_ja": "EU26か国(2010〜2025年)を対象に、借り手ベース規制の実施権限を中央銀行に与えるとLTV上限や所得基準の上限が導入されやすいことを分析する。",
+   "summary_en": "Analyzes 26 EU countries (2010-2025) and finds that giving central banks the power to implement borrower-based measures makes LTV and income-based limits more likely.",
+   "summary_de": "Analyse von 26 EU-Laendern (2010-2025): Die Zustaendigkeit der Zentralbanken fuer borrower-basierte Massnahmen erhoeht die Wahrscheinlichkeit von LTV- und einkommensbasierten Obergrenzen.",
+   "language": "en",
+   "country": "SK",
+   "organizer_short": "NBS",
+   "title_short": "Borrower-Based Measures in EU",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Radu Popa",
+     "org": "NBR",
+     "role": null
+    }
+   ],
+   "source": "NBS – Národná banka Slovenska – Events",
+   "id": "136c5f55c48a4e77",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "The SSM Reform Agenda: On the Path toward Efficient and Competitive Supervision?",
+   "title_ja": "SSMの改革課題と効率的な監督への道",
+   "organizer": "Center for Financial Studies (CFS)",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://gfk-cfs.de/events/conferences/the-ssm-reform-agenda-on-the-path-toward-efficient-and-competitive-supervision/",
+   "summary_ja": "単一監督メカニズム(SSM)の改革課題と、効率的で競争力のある銀行監督の在り方を論じる会議。",
+   "summary_en": "A conference on the reform agenda of the Single Supervisory Mechanism (SSM) and how to achieve efficient and competitive bank supervision.",
+   "summary_de": "Konferenz zur Reformagenda des Einheitlichen Aufsichtsmechanismus (SSM) und zu effizienter, wettbewerbsfaehiger Bankenaufsicht.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "CFS",
+   "title_short": "SSM Reform Agenda",
+   "importance": 2,
+   "registration_url": null,
+   "speakers": [],
+   "source": "House of Finance (Goethe大) – Veranstaltungen",
+   "id": "1b4a9b2120fb2bf4",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "The Global Euro Starts at Home – Advancing the Global Euro by Completing Europe's Monetary Union",
+   "title_ja": "グローバル・ユーロの推進と通貨同盟の完成",
+   "organizer": "Center for Financial Studies (CFS)",
+   "date_start": "2026-11-16",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://gfk-cfs.de/events/presidential-lectures/the-global-euro-starts-at-home-advancing-the-global-euro-by-completing-europes-monetary-union/",
+   "summary_ja": "欧州通貨同盟を完成させ、ユーロの国際的役割を高める方策を論じるCFSの大統領講演会。",
+   "summary_en": "CFS presidential lecture on completing Europe's monetary union to advance the global role of the euro.",
+   "summary_de": "Presidential Lecture des CFS zur Vollendung der Europaeischen Waehrungsunion und zur Staerkung des Euro als globaler Waehrung.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "CFS+",
+   "title_short": "Global Euro and Monetary Union",
+   "importance": 2,
+   "registration_url": null,
+   "speakers": [],
+   "source": "House of Finance (Goethe大) – Veranstaltungen",
+   "id": "1ca303030ed1ebae",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Ausstieg, Mitsprache und die Grenzen beider: Die Handlungsfähigkeit von Migranten angesichts lokaler politischer Feindseligkeit",
+   "title_ja": "移民の行動主体性と地域の政治的敵意",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-11-04",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022162.de/veranstaltungen/ausstieg__mitsprache_und_die_grenzen_beider__die_handlungsf____von_migranten_angesichts_lokaler_politischer_feindseligkeit.html",
+   "summary_ja": "地域の政治的敵意に対し、移民が「退出」や「発言」などの手段をどこまで行使できるかを分析する研究セミナー。",
+   "summary_en": "Research seminar analysing migrants' agency — exit, voice, and their limits — in the face of local political hostility.",
+   "summary_de": "Forschungsseminar zur Handlungsfaehigkeit von Migranten ('Exit', 'Voice' und deren Grenzen) angesichts lokaler politischer Feindseligkeit.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Migrants Facing Political Hostility",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Abdelkarim Laglil Herradi",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "1eefee2af0e4790c",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Asa no Kai: Resilience in Japan and Germany",
+   "title_ja": "日独のレジリエンス(サイバー・法務の視点)",
+   "organizer": "DJW – Deutsch-Japanischer Wirtschaftskreis",
+   "date_start": "2026-12-17",
+   "date_end": null,
+   "time": "09:00",
+   "time_end": "11:00",
+   "city": "Willich",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "geopolitics",
+    "japan"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-asa-no-kai-202612",
+   "summary_ja": "日独のレジリエンスをテーマに、サイバーレジリエンスや法務の観点、ビジネスネットワーキングを取り上げる朝の会合。",
+   "summary_en": "A morning DJW meeting on resilience in Japan and Germany, covering cyber resilience, legal perspectives and business networking.",
+   "summary_de": "Morgendliches DJW-Treffen zur Resilienz in Japan und Deutschland mit Schwerpunkten auf Cyber-Resilienz, rechtlichen Perspektiven und Business-Networking.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DJW",
+   "title_short": "Japan-Germany Cyber Resilience",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
+   "id": "2c655dfad51df1c8",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Wie nehmen Haushalte Inflation wahr und was bedeutet das für die Geldpolitik?",
+   "title_ja": "家計はインフレをどう認識するか――金融政策への含意",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-11-25",
+   "date_end": null,
+   "time": "18:00",
+   "time_end": null,
+   "city": "Kiel",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/wie-nehmen-haushalte-inflation-wahr-und-was-bedeutet-das-fuer-die-geldpolitik--898272",
+   "summary_ja": "家計がインフレをどう認識しているかを取り上げ、その結果が金融政策にとって何を意味するかを、キール世界経済研究所のレナ・ドレーガー研究ディレクターが講演します。",
+   "summary_en": "Prof. Lena Draeger, research director at the Kiel Institute for the World Economy, discusses how households perceive inflation and what this means for monetary policy.",
+   "summary_de": "Prof. Dr. Lena Draeger, Forschungsdirektorin am Kiel Institut fuer Weltwirtschaft, eroertert, wie Haushalte Inflation wahrnehmen und was das fuer die Geldpolitik bedeutet.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Household Inflation Perceptions",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Lena Dräger",
+     "org": "IfW Kiel",
+     "role": "Forschungsdirektorin"
+    }
+   ],
+   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
+   "id": "2d8f288922e463c1",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "IFZ Swiss Stewardship Forum",
+   "title_ja": "IFZスイス・スチュワードシップ・フォーラム",
+   "organizer": "IFZ (Hochschule Luzern) in cooperation with Swiss Sustainable Finance",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Rotkreuz",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録・参加費不明",
+   "registration_note_en": "Advance registration required, fee unknown",
+   "registration_note_de": "Anmeldung erforderlich, Gebuehr unbekannt",
+   "url": "https://www.hslu.ch/de-ch/wirtschaft/agenda/veranstaltungen/2026/12/01/ifz-swiss-stewardship-forum/",
+   "summary_ja": "オーナー、アセットマネジャー、議決権行使者、発行体、研究者が集まり、スチュワードシップ、アクティブ・オーナーシップ、サステナブル・ファイナンスの課題と解決策を議論する。",
+   "summary_en": "Brings together owners, asset managers, proxy voters, issuers and academics to discuss challenges and solutions in stewardship, active ownership and sustainable finance.",
+   "summary_de": "Bringt Eigentuemer, Vermoegensverwalter, Stimmrechtsberater, Emittenten und Wissenschaft zusammen, um Herausforderungen und Loesungsansaetze bei Stewardship, aktivem Eigentum und nachhaltiger Finanzierung zu diskutieren.",
+   "language": "de",
+   "country": "CH",
+   "organizer_short": "IFZ/SSF",
+   "title_short": "Swiss Stewardship Forum",
+   "importance": 2,
+   "registration_url": "https://www.hslu.ch/de-ch/wirtschaft/agenda/veranstaltungen/2026/12/01/ifz-swiss-stewardship-forum/",
+   "speakers": [],
+   "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
+   "id": "3ed10ec79d99d74b",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Webinar on social media and retail trading behaviour: How can these platforms influence investors trading choices",
+   "title_ja": "SNSと個人投資家の売買行動に関するウェビナー",
+   "organizer": "European Securities and Markets Authority",
+   "date_start": "2026-11-03",
+   "date_end": null,
+   "time": "13:30",
+   "time_end": "14:30",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(締切2026年11月2日 12:00 CET)",
+   "registration_note_en": "Advance registration required (deadline 2 November 2026, 12:00 CET)",
+   "registration_note_de": "Anmeldung erforderlich (Frist 2. November 2026, 12:00 MEZ)",
+   "url": "https://www.esma.europa.eu/press-news/hearings/webinar-social-media-and-retail-trading-behaviour-how-can-these-platforms",
+   "summary_ja": "SNSが個人投資家の売買判断に影響を与えるかについて、ESMAの分析結果を紹介するウェビナー。",
+   "summary_en": "A webinar presenting ESMA analysis on whether social media platforms influence retail investors' trading choices.",
+   "summary_de": "Webinar zu den Ergebnissen einer ESMA-Analyse, ob soziale Medien die Handelsentscheidungen von Kleinanlegern beeinflussen.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "ESMA",
+   "title_short": "Social Media and Retail Trading",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "ESMA – Public Hearings",
+   "id": "5100ab391d96dee5",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Being Heard: A Randomized Controlled Trial on Economizing Procedural Justice",
+   "title_ja": "意見を聴かれること:手続的正義の経済実験",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-16",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022060.de/veranstaltungen/being_heard__a_randomized_controlled_trial_on_economizing_procedural_justice.html",
+   "summary_ja": "手続的正義のコスト削減策をランダム化対照試験で検証する研究セミナー。",
+   "summary_en": "Research seminar presenting a randomized controlled trial on how to economize procedural justice while preserving its benefits.",
+   "summary_de": "Forschungsseminar mit einem randomisierten Kontrollversuch zur kosteneffizienten Gestaltung prozeduraler Gerechtigkeit.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Procedural Justice Experiment",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Michel Marechal",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "559d7104b972fead",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "IFC contribution at the 66th ISI World Statistics Congress",
+   "title_ja": "第66回ISI世界統計会議へのIFCの寄与",
+   "organizer": "Irving Fisher Committee on Central Bank Statistics (BIS)",
+   "date_start": "2027-07-11",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bis.org/events/20270711-ifc-contribution-66th-isi-world-statistics-congress",
+   "summary_ja": "国際統計協会(ISI)の第66回世界統計会議におけるIFC(中央銀行統計委員会)の寄与。",
+   "summary_en": "The Irving Fisher Committee (IFC) contributes to the 66th ISI World Statistics Congress.",
+   "summary_de": "Das Irving Fisher Committee (IFC) leistet einen Beitrag zum 66. ISI World Statistics Congress.",
+   "language": null,
+   "country": null,
+   "organizer_short": "BIS",
+   "title_short": "Central Bank Statistics",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "BIS – Bank for International Settlements – Events",
+   "id": "7446dea3b359e9ac",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Hyper-Personalized Financial Co-Pilots",
+   "title_ja": "超個別化された金融コパイロット",
+   "organizer": "House of Finance (Goethe-Universität)",
+   "date_start": "2026-11-02",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "ai",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.eflab.de/events/detail/hyper-personalized-financial-co-pilots",
+   "summary_ja": "デジタル金融助言を、粗いリスク区分を超えて個人ごとに最適化する会話型ツールの可能性を論じるイベント。",
+   "summary_en": "An event on hyper-personalized financial co-pilots that move beyond coarse risk categories toward individual portfolio advice.",
+   "summary_de": "Veranstaltung zu hyperpersonalisierten Finanz-Copilots, die ueber grobe Risikokategorien hinaus individuelle Anlageberatung ermoeglichen.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "efl",
+   "title_short": "Hyper-Personalized Financial Advice",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "House of Finance (Goethe大) – Veranstaltungen",
+   "id": "a3271ffa99c63acb",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Network Spillovers and the Social Returns to Crime-Reduction Interventions",
+   "title_ja": "犯罪削減介入のネットワーク外部性と社会的収益",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-30",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022072.de/veranstaltungen/network_spillovers_and_the_social_returns_to_crime-reduction_interventions.html",
+   "summary_ja": "犯罪削減策がネットワークを通じて周辺に及ぼす外部性と、その社会的収益を検証する研究セミナー。",
+   "summary_en": "Research seminar examining network spillovers from crime-reduction interventions and their broader social returns.",
+   "summary_de": "Forschungsseminar zu Netzwerkeffekten von Massnahmen zur Kriminalitaetsreduktion und deren gesellschaftlichem Nutzen.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Crime-Reduction Spillovers",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Sara Heller",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "aec22a13735f5b52",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Climate risk and risk-free interest rates",
+   "title_ja": "気候リスクと無リスク金利",
+   "organizer": "National Bank of Slovakia",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Bratislava",
+   "venue": "NBS building, 8th floor meeting room",
+   "format": "hybrid",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(research@nbs.sk へ連絡)・無料",
+   "registration_note_en": "Contact research@nbs.sk to register, free",
+   "registration_note_de": "Anmeldung per E-Mail an research@nbs.sk, kostenlos",
+   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
+   "summary_ja": "気候リスクの上昇が米国債利回りを低下させ、主に将来の短期金利予想の低下を通じて作用し、安全資産需要も高めることを示す実証研究。",
+   "summary_en": "Shows that higher climate risk lowers U.S. Treasury yields, mainly via lower expected short-term rates, and raises safe-asset demand.",
+   "summary_de": "Zeigt, dass hoeheres Klimarisiko die US-Staatsanleihenrenditen senkt, vor allem ueber erwartete niedrigere kurzfristige Zinsen, und die Nachfrage nach sicheren Anlagen erhoeht.",
+   "language": "en",
+   "country": "SK",
+   "organizer_short": "NBS",
+   "title_short": "Climate Risk and Interest Rates",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Davide Avino",
+     "org": "University of Liverpool",
+     "role": null
+    }
+   ],
+   "source": "NBS – Národná banka Slovenska – Events",
+   "id": "b8672fb5cde91f70",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Healthcare at Home: Parental Costs of Child Eating Disorders",
+   "title_ja": "在宅医療:小児摂食障害の保護者負担",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-14",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022047.de/veranstaltungen/healthcare_at_home__parental_costs_of_child_eating_disorders.html",
+   "summary_ja": "小児の摂食障害が保護者の医療・経済的負担に与える影響を分析する研究セミナー。",
+   "summary_en": "Research seminar analysing the healthcare and economic costs that child eating disorders impose on parents.",
+   "summary_de": "Forschungsseminar zu den gesundheitlichen und oekonomischen Kosten, die Essstoerungen bei Kindern fuer Eltern verursachen.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Child Eating Disorders Costs",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Yannik Obelöer",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "c6ad09f4317497b0",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Klimawandel, Umwelt und Finanzmärkte – Die Rolle von Zentralbanken",
+   "title_ja": "気候変動・環境と金融市場――中央銀行の役割",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "17:30",
+   "time_end": null,
+   "city": "Flensburg",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg",
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/klimawandel-umwelt-und-finanzmaerkte-die-rolle-von-zentralbanken-802788",
+   "summary_ja": "ドイツ連邦銀行のサステナビリティ部門の担当者が、気候変動と環境問題が金融市場に与える影響と、中央銀行の役割について講演します。",
+   "summary_en": "A Bundesbank sustainability department representative speaks on how climate change and environmental issues affect financial markets and the role of central banks.",
+   "summary_de": "Ein Vertreter der Nachhaltigkeitsabteilung der Deutschen Bundesbank spricht ueber die Auswirkungen von Klimawandel und Umwelt auf die Finanzmaerkte und die Rolle der Zentralbanken.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Climate Risk and Central Banks",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Christian Weiß",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ],
+   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
+   "id": "ca0804239f33143a",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "A Few Bad Apples? Academic Dishonesty, Political Selection, and Institutional Performance in China",
+   "title_ja": "学術不正・政治的選抜と中国の機関パフォーマンス",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-11-13",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "china"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022084.de/veranstaltungen/a_few_bad_apples__academic_dishonesty__political_selection__and_institutional_performance_in_china.html",
+   "summary_ja": "中国における学術不正と政治的選抜が、機関のパフォーマンスにどのような影響を与えるかを検証する研究セミナー。",
+   "summary_en": "Research seminar examining how academic dishonesty and political selection affect institutional performance in China.",
+   "summary_de": "Forschungsseminar dazu, wie akademische Unredlichkeit und politische Selektion die institutionelle Leistungsfaehigkeit in China beeinflussen.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Academic Dishonesty in China",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Wenwei Peng",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "d5ef2724128b1dfc",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Neue Technologien und die Zunahme der Lohnungleichheit",
+   "title_ja": "新技術と賃金不平等の拡大",
+   "organizer": "DIW Berlin",
+   "date_start": "2027-02-10",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022182.de/veranstaltungen/neue_technologien_und_die_zunahme_der_lohnungleichheit.html",
+   "summary_ja": "新技術の普及が賃金不平等の拡大にどの程度寄与しているかを検証する研究セミナー。",
+   "summary_en": "Research seminar examining how the diffusion of new technologies has contributed to rising wage inequality.",
+   "summary_de": "Forschungsseminar zur Frage, inwieweit die Verbreitung neuer Technologien zur steigenden Lohnungleichheit beigetragen hat.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Technology and Wage Inequality",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Juan Palomino",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "ecf6fcb8730f8466",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Geschlechtsspezifische Unterschiede beim Lohnaufschlag in städtischen Gebieten",
+   "title_ja": "都市部における賃金プレミアムの男女差",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-28",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "DIW Berlin",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022158.de/veranstaltungen/geschlechtsspezifische_unterschiede_beim_lohnaufschlag_in_st___n_gebieten__zusammen_mit_kenza_elass_und_christian_schluter.html",
+   "summary_ja": "都市部の賃金プレミアムにおける男女差を分析する研究セミナー(Kenza Elass、Christian Schluterとの共同研究)。",
+   "summary_en": "Research seminar on gender differences in the urban wage premium, joint work with Kenza Elass and Christian Schluter.",
+   "summary_de": "Forschungsseminar zu geschlechtsspezifischen Unterschieden beim staedtischen Lohnaufschlag, gemeinsame Arbeit mit Kenza Elass und Christian Schluter.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Gender Gap Urban Wage Premium",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Cecilia García Peñalosa",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "f74acec966725df5",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Teleworking and the Environment",
+   "title_ja": "在宅勤務と環境",
+   "organizer": "National Bank of Slovakia",
+   "date_start": "2026-10-21",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Bratislava",
+   "venue": "NBS building, 8th floor meeting room",
+   "format": "hybrid",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(research@nbs.sk へ連絡)・無料",
+   "registration_note_en": "Contact research@nbs.sk to register, free",
+   "registration_note_de": "Anmeldung per E-Mail an research@nbs.sk, kostenlos",
+   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
+   "summary_ja": "在宅勤務が通勤距離・新車登録・大気質に与える影響を、オーストリアの行政データとCOVID-19を自然実験とした差分の差分法で分析する研究報告。",
+   "summary_en": "Uses Austrian administrative microdata and the COVID-19 shock to show that work from home reduces commuting, new car registrations and local air pollution.",
+   "summary_de": "Analysiert mit oesterreichischen Verwaltungsdaten und dem COVID-19-Schock als natuerlichem Experiment, wie Homeoffice Pendelwege, Neuwagenzulassungen und Luftbelastung beeinflusst.",
+   "language": "en",
+   "country": "SK",
+   "organizer_short": "NBS",
+   "title_short": "Teleworking and the Environment",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Beate Thies",
+     "org": "University of Vienna",
+     "role": null
+    }
+   ],
+   "source": "NBS – Národná banka Slovenska – Events",
+   "id": "f98511f4ddd8e2cc",
+   "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Product Storability and Exchange Rate Passthrough: Evidence from Chilean Exports",
+   "title_ja": "財の貯蔵可能性と為替パススルー",
+   "organizer": "Kiel Institut für Weltwirtschaft",
+   "date_start": "2026-10-20",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Kiel",
+   "venue": "Kiel Institut für Weltwirtschaft",
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/product-storability-and-exchange-rate-passthrough-evidence-from-chilean-exports-vasundhara-thakur/",
+   "summary_ja": "チリの輸出データを用い、財の貯蔵可能性が為替パススルーに与える影響を検証する研究報告。",
+   "summary_en": "Research seminar presenting evidence from Chilean exports on how product storability shapes exchange rate passthrough.",
+   "summary_de": "Forschungsseminar mit Chile-Exportdaten: Wie die Lagerfaehigkeit von Produkten die Wechselkurs-Weitergabe beeinflusst.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IfW Kiel",
+   "title_short": "Exchange Rate Passthrough",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Vasundhara Thakur",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "IfW Kiel – Veranstaltungen",
+   "id": "fd821f3e7545fece",
+   "first_seen": "2026-10-14"
   }
  ]
 }
