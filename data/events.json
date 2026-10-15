@@ -36,24 +36,25 @@
   },
   {
    "title": "ECB Conference on Money Markets 2026",
-   "title_ja": "ECB金融市場会議2026",
+   "title_ja": "ECBマネーマーケット会議 2026",
    "organizer": "European Central Bank",
    "date_start": "2026-11-05",
    "date_end": "2026-11-06",
    "time": "08:00",
-   "city": "Frankfurt am Main",
+   "city": "Rome",
    "venue": "European Central Bank, Sonnemannstrasse 20",
    "format": "onsite",
    "themes": [
+    "central_bank",
     "fin_markets"
    ],
    "fee": "free",
    "open_to_public": true,
    "registration_note": "無料。2026年10月15日までに参加希望を登録する必要あり。",
    "url": "https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html",
-   "summary_ja": "ユーロ圏の金融市場インフラストラクチャと市場参加者の動向に関する国際会議",
+   "summary_ja": "ECBが主催するマネーマーケットに関する2日間の会議。短期金融市場の動向や金融政策の運営に関する研究・政策議論を行う。",
    "language": "en",
-   "country": "DE",
+   "country": "IT",
    "organizer_short": "ECB",
    "title_short": "Money Markets Conference",
    "importance": 3,
@@ -62,8 +63,8 @@
    "source": "ECB – Conferences & seminars",
    "id": "101c02b611f5c100",
    "first_seen": "2026-07-14",
-   "summary_en": "ECB conference on money market infrastructure, operations and central bank policy implementation",
-   "summary_de": "ECB-Konferenz zu Geldmarktinfrastruktur, Operationen und geldpolitischer Umsetzen",
+   "summary_en": "A two-day ECB conference on money market developments and the implementation of monetary policy, combining research and policy discussion.",
+   "summary_de": "Zweitägige EZB-Konferenz zu Entwicklungen an den Geldmärkten und zur Umsetzung der Geldpolitik, mit Forschung und Politikdiskussion.",
    "registration_note_en": "Free of charge; interested participants must register their interest by 15 October 2026.",
    "registration_note_de": "Kostenlos; Interessierte müssen sich bis zum 15. Oktober 2026 registrieren.",
    "speakers": [
@@ -1157,7 +1158,49 @@
    "summary_de": "Jahreskonferenz zur Versicherungsaufsicht mit den wichtigsten regulatorischen Entwicklungen.",
    "registration_note_en": "Free of charge with limited capacity; registration deadline 18 September 2026, online registration only.",
    "registration_note_de": "Kostenlos mit begrenzter Kapazität; Anmeldeschluss 18. September 2026, ausschließlich Online-Anmeldung.",
-   "fee_amount": 0
+   "fee_amount": 0,
+   "speakers": [
+    {
+     "name": "Julia Wiens",
+     "org": "BaFin",
+     "role": "Exekutivdirektorin"
+    },
+    {
+     "name": "Petra Hielkema",
+     "org": "EIOPA",
+     "role": null
+    },
+    {
+     "name": "Jörg Asmussen",
+     "org": "GDV",
+     "role": null
+    },
+    {
+     "name": "Beate Petry",
+     "org": "aba",
+     "role": null
+    },
+    {
+     "name": "Fred Wagner",
+     "org": "Universität Leipzig",
+     "role": null
+    },
+    {
+     "name": "Gerrit Böhm",
+     "org": "Volkswohl Bund",
+     "role": null
+    },
+    {
+     "name": "Andreas Zapp",
+     "org": "BaFin",
+     "role": null
+    },
+    {
+     "name": "Mark Klein",
+     "org": "ERGO",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Annual Monetary Economics and Fluctuations Symposium 2026",
@@ -2037,7 +2080,19 @@
    "summary_en": "An event presenting the German Council of Economic Experts' annual report and discussing its policy recommendations, featuring council chair Monika Schnitzer.",
    "summary_de": "Eine Veranstaltung zur Vorstellung des Jahresgutachtens des Sachverständigenrates mit Diskussion der wirtschaftspolitischen Empfehlungen, mit Ratsvorsitzender Monika Schnitzer.",
    "registration_note_en": "Invitations are sent end of November; interested attendees should contact event@zew.de.",
-   "registration_note_de": "Einladungen werden Ende November versandt; Interessierte wenden sich an event@zew.de."
+   "registration_note_de": "Einladungen werden Ende November versandt; Interessierte wenden sich an event@zew.de.",
+   "speakers": [
+    {
+     "name": "Achim Wambach",
+     "org": "ZEW",
+     "role": "Präsident"
+    },
+    {
+     "name": "Monika Schnitzer",
+     "org": "LMU",
+     "role": "Vorsitzende des Sachverständigenrates"
+    }
+   ]
   },
   {
    "title": "95th East Jour Fixe of the Oesterreichische Nationalbank",
@@ -3869,7 +3924,7 @@
   {
    "title": "6. Jahreskonferenz der Marktoffensive Erneuerbare Energien",
    "title_ja": "再生可能エネルギー市場攻勢 第6回年次会議",
-   "organizer": "Marktoffensive Erneuerbare Energien",
+   "organizer": "dena (Deutsche Energie-Agentur)",
    "date_start": "2026-10-15",
    "date_end": "2026-10-16",
    "time": "10:00",
@@ -3877,28 +3932,28 @@
    "venue": "Future Energy Lab / Haus der Deutschen Wirtschaft",
    "format": "onsite",
    "themes": [
-    "real_economy",
-    "climate_esg"
+    "climate_esg",
+    "real_economy"
    ],
    "fee": "unknown",
    "open_to_public": true,
-   "registration_note": "申込・料金は dena のイベント予約ページで確認(一覧には記載なし)。",
+   "registration_note": "申込期限切れ(掲載時点)",
    "url": "https://veranstaltungen.dena.de/",
-   "summary_ja": "再生可能エネルギーの普及と市場拡大を議論する年次会議。2026年10月15日から16日まで開催。",
+   "summary_ja": "再生可能エネルギーの市場拡大を取り上げる「Marktoffensive Erneuerbare Energien」の第6回年次会議。2026年10月15日から16日までの2日間、Future Energy Lab / Haus der Deutschen Wirtschaftで開催される。",
    "language": "de",
    "country": "DE",
-   "organizer_short": "Marktoffensive EE",
-   "title_short": "Renewable energy market conference",
+   "organizer_short": "dena",
+   "title_short": "Renewable Energy Market Push",
    "importance": 3,
    "registration_url": "https://veranstaltungen.dena.de/",
    "time_end": "13:00",
    "source": "web検索(discovery)",
    "id": "f176bbf60cc30849",
    "first_seen": "2026-07-24",
-   "summary_en": "Annual conference on expanding renewable energy and its market, held 15-16 October 2026.",
-   "summary_de": "Jahreskonferenz zum Ausbau und Marktgeschehen erneuerbarer Energien, 15. bis 16. Oktober 2026.",
-   "registration_note_en": "Registration and fees via the dena event booking page (not stated in the listing).",
-   "registration_note_de": "Anmeldung und Gebühren über die dena-Veranstaltungsseite (im Listing nicht angegeben)."
+   "summary_en": "The sixth annual conference of the Marktoffensive Erneuerbare Energien, a renewable-energy market initiative, held over two days at the Future Energy Lab / Haus der Deutschen Wirtschaft.",
+   "summary_de": "Die sechste Jahreskonferenz der Marktoffensive Erneuerbare Energien, die zweitägig im Future Energy Lab / Haus der Deutschen Wirtschaft stattfindet.",
+   "registration_note_en": "Registration deadline has passed (as listed)",
+   "registration_note_de": "Anmeldefrist abgelaufen (laut Ankündigung)"
   },
   {
    "title": "19. Hamburger Bankenaufsicht-Tage 2026",
@@ -6135,8 +6190,7 @@
    "venue": "ZEW, Heinz-König-Hall",
    "format": "onsite",
    "themes": [
-    "ai",
-    "real_economy"
+    "ai"
    ],
    "fee": "free",
    "open_to_public": true,
@@ -6156,7 +6210,14 @@
    "summary_en": "A ZEW research seminar on rent and surplus value in the data economy.",
    "summary_de": "Ein ZEW-Forschungsseminar zu Rente und Mehrwert in der Datenökonomie.",
    "registration_note_en": "Registration required",
-   "registration_note_de": "Registrierung erforderlich"
+   "registration_note_de": "Registrierung erforderlich",
+   "speakers": [
+    {
+     "name": "Siavash Mohades",
+     "org": "Maastricht University",
+     "role": null
+    }
+   ]
   },
   {
    "title": "European Sustainability Week 2026",
@@ -7691,7 +7752,19 @@
    "registration_url": null,
    "source": "ZEW Mannheim – Veranstaltungen",
    "id": "1773aee45e76e9f3",
-   "first_seen": "2026-07-31"
+   "first_seen": "2026-07-31",
+   "speakers": [
+    {
+     "name": "Achim Wambach",
+     "org": "ZEW",
+     "role": "Präsident"
+    },
+    {
+     "name": "Monika Schnitzer",
+     "org": "LMU",
+     "role": "Vorsitzende des Sachverständigenrates"
+    }
+   ]
   },
   {
    "title": "fair-finance-institute: Fachworkshop – Chancen nutzen, Grenzen verstehen: GLI für globale nachhaltige Entwicklung",
@@ -10696,7 +10769,7 @@
    "registration_note": "ハイブリッド型・無料",
    "registration_note_en": "Hybrid format, free admission",
    "registration_note_de": "Hybridformat, kostenlos",
-   "url": "https://www.iwh-halle.de/veranstaltungen/",
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/tba-49",
    "registration_url": null,
    "summary_ja": "ifo Institut Münchner のOliver Falck氏による研究セミナー。",
    "summary_en": "Research seminar by Oliver Falck from ifo Institut Munich.",
@@ -10705,7 +10778,14 @@
    "importance": 0,
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "b494d651fc1c17cf",
-   "first_seen": "2026-08-21"
+   "first_seen": "2026-08-21",
+   "speakers": [
+    {
+     "name": "Sebastian Findeisen",
+     "org": "Konstanz",
+     "role": null
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar (October 20, 2026)",
@@ -12029,42 +12109,6 @@
    "time_end": null,
    "source": "Bank of Lithuania – Events",
    "id": "39fbcd77087c5a55",
-   "first_seen": "2026-08-25"
-  },
-  {
-   "title": "3rd SAFE-CEPR EFA RPN Web Seminar Series: Financial Regulation in the Era of Fragmentation, AI, and Geopolitics",
-   "title_ja": "金融規制:分断・AI・地政学の時代",
-   "organizer": "SAFE / CEPR / EFA",
-   "date_start": "2026-09-14",
-   "date_end": null,
-   "time": "16:00",
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "fin_markets",
-    "ai",
-    "geopolitics"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "Zoomリンクによる事前登録が必要",
-   "registration_note_en": "Registration via Zoom link on the event page.",
-   "registration_note_de": "Anmeldung über den Zoom-Link auf der Veranstaltungsseite.",
-   "url": "https://safe-frankfurt.de/news-media/events/event-view/3rd-safe-cepr-efa-rpn-web-seminar-series-on-financial-regulation-in-the-era-of-fragmentation-ai-and-geopolitics.html",
-   "summary_ja": "分断・AI・地政学の時代における金融規制を議論するSAFE-CEPRのウェブセミナー。",
-   "summary_en": "A SAFE-CEPR-EFA web seminar on financial regulation in an era of fragmentation, AI and geopolitics.",
-   "summary_de": "Ein SAFE-CEPR-EFA-Webseminar zur Finanzregulierung im Zeitalter von Fragmentierung, KI und Geopolitik.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "SAFE",
-   "title_short": "Financial Regulation and Fragmentation",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": "17:00",
-   "source": "SAFE Frankfurt – Events",
-   "id": "9c43717b9c4d4e2e",
    "first_seen": "2026-08-25"
   },
   {
@@ -15000,7 +15044,7 @@
    "speakers": [
     {
      "name": "Charlotte Bartels",
-     "org": "Leipzig University",
+     "org": "Leipzig",
      "role": null
     }
    ]
@@ -15278,7 +15322,7 @@
    "venue": "IWH, conference room and via Zoom",
    "format": "hybrid",
    "themes": [
-    "fin_markets"
+    "real_economy"
    ],
    "fee": "free",
    "fee_amount": null,
@@ -16838,7 +16882,7 @@
    "venue": "IWH, conference room and via Zoom",
    "format": "hybrid",
    "themes": [
-    "real_economy"
+    "ai"
    ],
    "fee": "free",
    "fee_amount": null,
@@ -16846,7 +16890,7 @@
    "registration_note": null,
    "registration_note_en": null,
    "registration_note_de": null,
-   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/tba-47",
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/ai-as-co-founder-genai-for-entrepreneurship",
    "summary_ja": "IWHリサーチセミナー。演題は未発表(TBA)。",
    "summary_en": "IWH Research Seminar; topic to be announced.",
    "summary_de": "IWH Research Seminar; Thema noch nicht bekannt gegeben (TBA).",
@@ -16859,7 +16903,7 @@
    "speakers": [
     {
      "name": "Xian Gu",
-     "org": "Durham University",
+     "org": "Durham",
      "role": null
     }
    ],
@@ -27044,6 +27088,265 @@
    "source": "IfW Kiel – Veranstaltungen",
    "id": "fd821f3e7545fece",
    "first_seen": "2026-10-14"
+  },
+  {
+   "title": "Der digitale Euro – Digital bezahlen im digitalen Zeitalter",
+   "title_ja": "デジタルユーロ：デジタル時代の支払い",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-10-22",
+   "date_end": null,
+   "time": "19:00",
+   "time_end": "20:30",
+   "city": "Fulda",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bundesbank.de/de/service/termine/der-digitale-euro-digital-bezahlen-im-digitalen-zeitalter-970220",
+   "summary_ja": "ドイツ連邦銀行の担当者が、デジタルユーロの仕組みとデジタル時代の支払いについて解説する講演。",
+   "summary_en": "A talk by a Bundesbank speaker on how the digital euro works and how payments are changing in the digital age.",
+   "summary_de": "Vortrag eines Referenten der Bundesbank zur Funktionsweise des digitalen Euro und zum Bezahlen im digitalen Zeitalter.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Digital Euro Payments",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Matthias Endres",
+     "org": "Bundesbank",
+     "role": "Stab des Präsidenten"
+    }
+   ],
+   "source": "Bundesbank – Termine",
+   "id": "1fbbab71205cbf0e",
+   "first_seen": "2026-10-15"
+  },
+  {
+   "title": "KI Fahrstunde: Building Agent Skills",
+   "title_ja": "KI Fahrstunde: エージェントスキルの構築",
+   "organizer": "appliedAI Institute",
+   "date_start": "2026-10-15",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.appliedai-institute.de/en/participate/events/",
+   "summary_ja": "AIエージェントの「スキル」とは何か、通常のプロンプトとの違い、エージェントが実際に使うスキルの作り方を90分で学ぶ実践型セッション。",
+   "summary_en": "A 90-minute hands-on session on what agent skills are, how they differ from ordinary prompts, and how to write one that an AI agent actually uses.",
+   "summary_de": "In 90 Minuten praxisnah: Was Agent-Skills sind, worin sie sich von normalen Prompts unterscheiden und wie man einen Skill schreibt, den ein KI-Agent tatsächlich nutzt.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "appliedAI",
+   "title_short": "Building AI Agent Skills",
+   "importance": 1,
+   "speakers": [],
+   "source": "appliedAI Institute (München) – Events",
+   "id": "50045aac39169047",
+   "first_seen": "2026-10-15"
+  },
+  {
+   "title": "Fundamentals of AI: From Machine Learning to AI Agents",
+   "title_ja": "AIの基礎: 機械学習からAIエージェントまで",
+   "organizer": "appliedAI Institute",
+   "date_start": "2026-10-26",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Munich",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.appliedai-institute.de/en/workshops-trainings/grundlagen-der-ki-von-maschinellem-lernen-bis-zu-ki-agenten-2/",
+   "summary_ja": "AIの学習の仕組み、言語モデルの働き、エージェント型システムの現在の能力を学ぶ基礎講座。",
+   "summary_en": "A foundational course on how AI learns, how language models work, and what agent-based systems can do today.",
+   "summary_de": "Grundlagenkurs: wie KI lernt, wie Sprachmodelle funktionieren und was agentenbasierte Systeme heute leisten.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "appliedAI",
+   "title_short": "AI Fundamentals and Agents",
+   "importance": 1,
+   "speakers": [],
+   "source": "appliedAI Institute (München) – Events",
+   "id": "59a294958eb223da",
+   "first_seen": "2026-10-15"
+  },
+  {
+   "title": "Global China Conversations #52: Chinas starker Exportanstieg: Wie kann Europa der zunehmenden Konkurrenz aus China begegnen?",
+   "title_ja": "中国の輸出急増と欧州の対応(GCC #52)",
+   "organizer": "Kiel Institut für Weltwirtschaft",
+   "date_start": "2026-11-19",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "china",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録",
+   "registration_note_en": "Advance registration required",
+   "registration_note_de": "Anmeldung erforderlich",
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/global-china-conversations/chinas-starker-exportanstieg-wie-kann-europa-der-zunehmenden-konkurrenz-aus-china-begegnen/",
+   "summary_ja": "中国の強い輸出拡大を取り上げ、欧州が増大する中国製品との競争にどう対応すべきかを議論するオンライン回(Global China Conversations 第52回)。",
+   "summary_en": "Online session #52 of the Global China Conversations series, asking how Europe can respond to China's strong export growth and rising competition.",
+   "summary_de": "Online-Veranstaltung Nr. 52 der Reihe „Global China Conversations“ zur Frage, wie Europa auf den starken chinesischen Exportanstieg und die wachsende Konkurrenz reagieren kann.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "IfW Kiel",
+   "title_short": "China's Export Surge",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "IfW Kiel – Veranstaltungen",
+   "id": "6c0f2ec172d4c0dc",
+   "first_seen": "2026-10-15"
+  },
+  {
+   "title": "Understanding AI Agents: From ML, LLMs to Autonomous Systems",
+   "title_ja": "AIエージェントの理解: MLからLLM・自律システムまで",
+   "organizer": "appliedAI Institute",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Heilbronn",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.appliedai-institute.de/en/participate/events/",
+   "summary_ja": "機械学習と大規模言語モデルの基礎から、エージェント型システムの特徴、業務プロセスへの適用可否の判断までを学ぶ研修。",
+   "summary_en": "Training that moves from ML and LLM basics to what sets agentic systems apart and how to judge which processes suit an agentic approach.",
+   "summary_de": "Schulung von den Grundlagen des maschinellen Lernens und von LLMs bis zu agentischen Systemen und zur Einschätzung geeigneter Prozesse.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "appliedAI",
+   "title_short": "Understanding AI Agents",
+   "importance": 1,
+   "speakers": [],
+   "source": "appliedAI Institute (München) – Events",
+   "id": "765274e11462a1a1",
+   "first_seen": "2026-10-15"
+  },
+  {
+   "title": "The Relationship Between Austria, Europe and the United States",
+   "title_ja": "オーストリア・欧州・米国の関係",
+   "organizer": "WU Wien (Wirtschaftsuniversität)",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": "18:00",
+   "time_end": "19:30",
+   "city": "Vienna",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.wu.ac.at/en/the-university/events",
+   "summary_ja": "オーストリア、欧州、米国の関係について、課題と展望を論じる公開講演。",
+   "summary_en": "A public lecture on the relationship between Austria, Europe and the United States, covering challenges and prospects.",
+   "summary_de": "Öffentlicher Vortrag über das Verhältnis zwischen Österreich, Europa und den USA mit Herausforderungen und Perspektiven.",
+   "language": "en",
+   "country": "AT",
+   "organizer_short": "WU Wien",
+   "title_short": "Austria, Europe and the US",
+   "importance": 1,
+   "speakers": [],
+   "source": "WU Wien (Wirtschaftsuniversität) – Events",
+   "id": "8e0365b44472cfb0",
+   "first_seen": "2026-10-15"
+  },
+  {
+   "title": "Infrastruktur-Investmentforum",
+   "title_ja": "インフラ投資フォーラム(ハンブルク)",
+   "organizer": "portfolio institutionell",
+   "organizer_short": "portfolio institutionell",
+   "date_start": "2026-10-29",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Hamburg",
+   "venue": "Hotel Reichshof",
+   "format": "onsite",
+   "country": "DE",
+   "themes": [
+    "real_economy",
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.portfolio-institutionell.de/wp-content/uploads/2026/05/Save-the-Date-HH290426.pdf",
+   "registration_url": null,
+   "summary_ja": "機関投資家・銀行・自治体系エネルギー企業が参加する「インフラ投資フォーラム」が2026年10月29日にハンブルクのHotel Reichshofで開催される。自治体のエネルギー・インフラへの投融資をめぐる対話を目的とし、dena(ドイツエネルギー機関)のコリンナ・エンダース代表が基調講演を行う。",
+   "summary_en": "The Infrastruktur-Investmentforum brings together institutional investors, banks, family offices and municipal energy companies in Hamburg on 29 October 2026 to foster dialogue on financing and investment in municipal (energy) infrastructure. dena CEO Corinna Enders opens the forum with a keynote on Germany's energy transition.",
+   "summary_de": "Das Infrastruktur-Investmentforum bringt am 29. Oktober 2026 im Hotel Reichshof in Hamburg institutionelle Investoren, Banken, Family Offices und kommunale Energieunternehmen zusammen, um Finanzierungen und Investitionen in die kommunale (Energie-)Infrastruktur zu fördern. dena-Geschäftsführerin Corinna Enders eröffnet mit einem Impulsvortrag zur Energiewende in Deutschland.",
+   "language": "de",
+   "title_short": "Municipal Energy Infrastructure Investment",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Corinna Enders",
+     "org": "dena",
+     "role": "Geschäftsführerin"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "dced6d0b0fab38e0",
+   "first_seen": "2026-10-15"
   }
  ]
 }

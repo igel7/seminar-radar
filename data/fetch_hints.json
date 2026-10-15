@@ -26,8 +26,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-10-11",
-  "note": "2026-10-08: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。24件中20件が収載条件に合致、新規2件(Berlin Macro Seminar 2027-01-26、Charity hazard climate adaptation seminar 2027-03-04)を採用、残りは既知で変化なし。 2026-10-11: alt URL(diw-berlin.de)をWebFetchで再取得、22件(採用・研修2件除外後)すべて既知で変化なし。"
+  "last_ok": "2026-10-15",
+  "note": "2026-10-08: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。24件中20件が収載条件に合致、新規2件(Berlin Macro Seminar 2027-01-26、Charity hazard climate adaptation seminar 2027-03-04)を採用、残りは既知で変化なし。 2026-10-11: alt URL(diw-berlin.de)をWebFetchで再取得、22件(採用・研修2件除外後)すべて既知で変化なし。 2026-10-15: alt URL(diw-berlin.de)をWebFetchで再取得(1回目503、再試行で成功)、28件既知で変化なし。"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -111,14 +111,14 @@
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
   "alt_urls": [],
-  "last_ok": "2026-10-11",
-  "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。 2026-10-11: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし(Imperva継続)。"
+  "last_ok": "2026-10-15",
+  "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。 2026-10-11: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし(Imperva継続)。 2026-10-15: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし。"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-10-11",
-  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。"
+  "last_ok": "2026-10-15",
+  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -140,8 +140,8 @@
  "Bank of Lithuania – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-10-11",
-  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。"
+  "last_ok": "2026-10-15",
+  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。"
  },
  "HNB – Croatian National Bank – Conferences": {
   "method": "search",
@@ -160,8 +160,8 @@
   "alt_urls": [
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
-  "last_ok": "2026-10-11",
-  "note": "2026-10-03: 主要ウェビナーは対象地域外(Amsterdam)。Africa向けMasterclassはテーマ適合性に疑義があり不採用。 2026-10-11: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。"
+  "last_ok": "2026-10-15",
+  "note": "2026-10-03: 主要ウェビナーは対象地域外(Amsterdam)。Africa向けMasterclassはテーマ適合性に疑義があり不採用。 2026-10-11: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。 2026-10-15: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
@@ -189,8 +189,8 @@
   "alt_urls": [
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
   ],
-  "last_ok": "2026-10-11",
-  "note": "2026-10-08: WebFetchで同alt URLを再取得し正規の本文(プレスリリース一覧、2026年1月以降89件)を確認。セミナー・会議の告知は依然0件(通常運用)。 2026-10-11: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。"
+  "last_ok": "2026-10-15",
+  "note": "2026-10-08: WebFetchで同alt URLを再取得し正規の本文(プレスリリース一覧、2026年1月以降89件)を確認。セミナー・会議の告知は依然0件(通常運用)。 2026-10-11: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-15: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
   "method": "alt-url",
@@ -206,8 +206,8 @@
    "https://www.ewi.uni-koeln.de/de/ewi-energietagung/",
    "https://www.ewi.uni-koeln.de/de/termine-sitemap.xml"
   ],
-  "last_ok": "2026-10-11",
-  "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。 2026-10-11: termine-sitemap.xmlを再取得、SAPHyR Webinar・Workshop Ammoniakとも既知で変化なし。新規なし。"
+  "last_ok": "2026-10-15",
+  "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。 2026-10-11: termine-sitemap.xmlを再取得、SAPHyR Webinar・Workshop Ammoniakとも既知で変化なし。新規なし。 2026-10-15: termine-sitemap.xmlを再取得、SAPHyR・Workshop Ammoniak・EWI-Insights・EWI-Energietagung 2027とも既知で変化なし。"
  },
  "CEP – Council on Economic Policies (Zürich) – Events": {
   "method": "ua-curl",
