@@ -20,6 +20,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://nbs.sk/o-narodnej-banke/konferencie-a-podujatia/navigating-longevity-risk-the-role-of-insurance-in-an-ageing-society-and-iais-ceet-regional-seminar": {
+  "event_id": "ed6ff7203d9ccfbc",
+  "http": 200,
+  "last": "2026-10-16",
+  "result": "ok",
+  "tries": 1
+ },
  "https://warsawsecurityforum.org/wsf-2026": {
   "event_id": "873bf74df6b65306",
   "http": 200,
@@ -55,10 +62,38 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.diw.de/de/diw_01.c.1010628.de/veranstaltungen/the_economics_of_crime_and_criminal_justice.html": {
+  "event_id": "547288cd84fd6bd7",
+  "http": 403,
+  "last": "2026-10-16",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html": {
   "event_id": "101c02b611f5c100",
   "http": 200,
   "last": "2026-10-13",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.forum-ng.org/en/termine/veranstaltung/die-politischen-dimensionen-des-investierens-wofuer-sind-wir-verantwortlich": {
+  "event_id": "50688d253e6f294d",
+  "http": 200,
+  "last": "2026-10-16",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.hojinkai.de/activities/327": {
+  "event_id": "b5d1ac6c404291ca",
+  "http": 200,
+  "last": "2026-10-16",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ifo.de/en/cesifo/event/2026-10-23/cesifo-area-conference-behavioral-economics-2026": {
+  "event_id": "530fe88251420672",
+  "http": 200,
+  "last": "2026-10-16",
   "result": "ok",
   "tries": 1
  },

@@ -26,8 +26,8 @@
   "alt_urls": [
    "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
   ],
-  "last_ok": "2026-10-15",
-  "note": "2026-10-08: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。24件中20件が収載条件に合致、新規2件(Berlin Macro Seminar 2027-01-26、Charity hazard climate adaptation seminar 2027-03-04)を採用、残りは既知で変化なし。 2026-10-11: alt URL(diw-berlin.de)をWebFetchで再取得、22件(採用・研修2件除外後)すべて既知で変化なし。 2026-10-15: alt URL(diw-berlin.de)をWebFetchで再取得(1回目503、再試行で成功)、28件既知で変化なし。"
+  "last_ok": "2026-10-16",
+  "note": "2026-10-08: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。24件中20件が収載条件に合致、新規2件(Berlin Macro Seminar 2027-01-26、Charity hazard climate adaptation seminar 2027-03-04)を採用、残りは既知で変化なし。 2026-10-11: alt URL(diw-berlin.de)をWebFetchで再取得、22件(採用・研修2件除外後)すべて既知で変化なし。 2026-10-15: alt URL(diw-berlin.de)をWebFetchで再取得(1回目503、再試行で成功)、28件既知で変化なし。 2026-10-16: 直接(diw.de)403継続、alt URL(diw-berlin.de)をWebFetchで取得成功。30件中、新規2件(SOEP入門 11/4-18、年金タウンホール11/11)を採用、採用関連2件・演題未定5件を除外、残りは既知で変化なし。"
  },
  "ifo Institut – Veranstaltungen": {
   "method": "alt-url+search",
@@ -111,14 +111,14 @@
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
   "alt_urls": [],
-  "last_ok": "2026-10-15",
-  "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。 2026-10-11: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし(Imperva継続)。 2026-10-15: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし。"
+  "last_ok": "2026-10-16",
+  "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。 2026-10-11: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし(Imperva継続)。 2026-10-15: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし。 2026-10-16: 直接アクセスは引き続きImperva継続。web検索で共催CEBRA(6th Biennial Conference, 9/24-25 Warsaw)を再確認したが開催済み。新規なし。"
  },
  "EPC – European Payments Council – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-10-15",
-  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。"
+  "last_ok": "2026-10-16",
+  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-16: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -140,8 +140,8 @@
  "Bank of Lithuania – Events": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-10-15",
-  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。"
+  "last_ok": "2026-10-16",
+  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-16: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。"
  },
  "HNB – Croatian National Bank – Conferences": {
   "method": "search",
@@ -160,14 +160,14 @@
   "alt_urls": [
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
-  "last_ok": "2026-10-15",
-  "note": "2026-10-03: 主要ウェビナーは対象地域外(Amsterdam)。Africa向けMasterclassはテーマ適合性に疑義があり不採用。 2026-10-11: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。 2026-10-15: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。"
+  "last_ok": "2026-10-16",
+  "note": "2026-10-03: 主要ウェビナーは対象地域外(Amsterdam)。Africa向けMasterclassはテーマ適合性に疑義があり不採用。 2026-10-11: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。 2026-10-15: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。 2026-10-16: JSシェル継続。web検索で対象地域・オンラインの新規ウェビナーなし。"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
   "alt_urls": [],
-  "last_ok": "2026-10-03",
-  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。"
+  "last_ok": "2026-10-16",
+  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。"
  },
  "EBA – European Banking Authority – Events": {
   "method": "search",
@@ -250,5 +250,11 @@
   ],
   "last_ok": "2026-10-09",
   "note": "2026-10-09: 通常の/eventsページはJS描画のナビのみ(fetch/ua-curl失敗)。sitemap_index.xml経由でWordPressの未公開REST名前空間 dhsv/v2/eco/events を発見、今後のセミナー(日付・時刻・講演者・リンク)を構造化データで取得できる(per_page=100で全件)。次回以降はこのAPIエンドポイントを優先的に試す。"
+ },
+ "Eesti Pank (エストニア) – Events": {
+  "method": "search",
+  "alt_urls": [],
+  "last_ok": null,
+  "note": "2026-10-16: ドメイン全体が503(トップページ・research-seminars・calendar・sitemap.xmlすべて503)。サイト側障害の可能性。web検索でも今後の日程付きイベント確認できず(Tuulelohe lend・30周年記念・理事会セミナー等いずれも過去開催)。"
  }
 }
