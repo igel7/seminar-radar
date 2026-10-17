@@ -13,6 +13,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://fccr.frankfurt-school.de/8-frankfurter-regulierungskonferenz-2026": {
+  "event_id": "7552b9bd644a7a4c",
+  "http": 404,
+  "last": "2026-10-17",
+  "result": "FAIL-HTTP",
+  "tries": 1
+ },
  "https://industry.sfi.ch/en/sfi-event": {
   "event_id": "1ace20c75b6ca7de",
   "http": 200,
@@ -48,6 +55,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.bundesbank.de/de/service/termine/3-fachtagung-zur-regulierung-von-wertpapierinstituten-in-der-kapitalmarktunion-964146": {
+  "event_id": "ce93262e94ea5209",
+  "http": 200,
+  "last": "2026-10-17",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.bundesbank.de/de/service/termine/bundesbank-symposium-629518": {
   "event_id": "11e215a0524f70fd",
   "http": 200,
@@ -67,6 +81,13 @@
   "http": 403,
   "last": "2026-10-16",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.ecb.europa.eu/press/conferences/html/20261029_bdi_ecb_conference.en.html": {
+  "event_id": "1d133245fa92f441",
+  "http": 200,
+  "last": "2026-10-17",
+  "result": "ok",
   "tries": 1
  },
  "https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html": {
@@ -95,6 +116,20 @@
   "http": 200,
   "last": "2026-10-16",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.kielinstitut.de/de/veranstaltungen/konferenzen/kieler-konjunkturgespraeche/housing-and-the-macro-economy": {
+  "event_id": "89bd0bb53d198344",
+  "http": 200,
+  "last": "2026-10-17",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ndia.org/events/2026/10/28/mnc-2026": {
+  "event_id": "c9356c05f0c536af",
+  "http": 200,
+  "last": "2026-10-17",
+  "result": "FAIL-THIN",
   "tries": 1
  },
  "https://www.szgerzensee.ch/programs/conferences-events/detail/fintech-digital-currency": {
