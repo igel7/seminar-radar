@@ -1,8 +1,155 @@
 [
  {
   "date": "2026-10-17",
-  "added": [],
-  "updated": []
+  "added": [
+   {
+    "id": "ef7106c7ddae0f91",
+    "title": "Digital Sustainability Summit",
+    "title_ja": "デジタル・サステナビリティ・サミット(ベルリン)",
+    "title_short": "Digital Sustainability Summit",
+    "importance": 1,
+    "organizer_short": "Bitkom",
+    "date_start": "2027-04-29",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.bitkom.org/Digital-Sustainability-Summit"
+   },
+   {
+    "id": "2b184b4b046dde01",
+    "title": "Wirtschaftssicherheit gemeinsam gestalten: Deutschland und Japan",
+    "title_ja": "共に築く経済安全保障：日本とドイツ",
+    "title_short": "Economic Security Germany Japan",
+    "importance": 1,
+    "organizer_short": "DJW",
+    "date_start": "2026-11-19",
+    "date_end": null,
+    "city": "Tokyo",
+    "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/wirtschaftssicherheit-gemeinsam-gestalten-deutschland-und-japan"
+   },
+   {
+    "id": "65d4e17cd5a088b9",
+    "title": "Eesti Pank economist Tairi Rõõm gives a presentation at a conference on sustainable development at the University of Tartu",
+    "title_ja": "エストニア銀行エコノミストによるタルトゥ大学での講演",
+    "title_short": "Sustainable Development Tartu Talk",
+    "importance": 1,
+    "organizer_short": "Eesti Pank",
+    "date_start": "2026-10-20",
+    "date_end": null,
+    "city": "Tartu",
+    "url": "https://www.eestipank.ee/en/calendar/eesti-pank-economist-tairi-room-gives-presentation-conference-sustainable-development-university-16102026"
+   },
+   {
+    "id": "97077039dbde5b9b",
+    "title": "Data day 2026: Data in the SIU: from burden to opportunity",
+    "title_ja": "データデイ2026: SIUにおけるデータ、負担から機会へ",
+    "title_short": "Data Burden to Opportunity",
+    "importance": 2,
+    "organizer_short": "ESMA",
+    "date_start": "2026-11-24",
+    "date_end": null,
+    "city": "Paris",
+    "url": "https://www.esma.europa.eu/press-news/hearings/data-day-2026"
+   },
+   {
+    "id": "51ee5a2aeea2b933",
+    "title": "Tokenisation workshop – From experimentation to scale: building tokenised capital markets in Europe",
+    "title_ja": "トークン化ワークショップ: 実験から規模拡大へ",
+    "title_short": "Tokenised Capital Markets Workshop",
+    "importance": 2,
+    "organizer_short": "ESMA",
+    "date_start": "2026-10-28",
+    "date_end": null,
+    "city": "Paris",
+    "url": "https://www.esma.europa.eu/press-news/hearings/tokenisation-workshop-experimentation-scale-building-tokenised-capital-markets"
+   },
+   {
+    "id": "d69faf6c75a2d9d4",
+    "title": "Vom Werkzeug zum Akteur: KI-Agenten und ihre Folgen für Wirtschaft, Recht und Gesellschaft",
+    "title_ja": "道具から行為者へ: AIエージェントの影響",
+    "title_short": "AI Agents: Economic Impact",
+    "importance": 1,
+    "organizer_short": "ZBW",
+    "date_start": "2026-10-27",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.kielinstitut.de/de/veranstaltungen/vom-werkzeug-zum-akteur-ki-agenten-und-ihre-folgen-fuer-wirtschaft-recht-und-gesellschaft/"
+   },
+   {
+    "id": "59867c28ee8583f4",
+    "title": "Money Disrupted: AI, capital markets and financial stability",
+    "title_ja": "Money Disrupted: AI・資本市場・金融安定",
+    "title_short": "AI, Capital Markets, Stability",
+    "importance": 1,
+    "organizer_short": "OMFIF",
+    "date_start": "2026-11-23",
+    "date_end": null,
+    "city": null,
+    "url": "https://www.omfif.org/meetings/money-disrupted-ai-capital-markets-and-financial-stability/"
+   },
+   {
+    "id": "e031906d37135712",
+    "title": "Reproduzierbare Arbeitsabläufe in der wissenschaftlichen Kommunikation mit CODECHECK",
+    "title_ja": "CODECHECKによる再現可能な研究手法",
+    "title_short": "CODECHECK Reproducibility Seminar",
+    "importance": 0,
+    "organizer_short": "DIW",
+    "date_start": "2026-12-16",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.diw.de/de/diw_01.c.1022178.de/veranstaltungen/reproduzierbare_arbeitsablaeufe_in_der_wissenschaftlichen_kommunikation_mit_codecheck.html"
+   },
+   {
+    "id": "fa998cf883042b77",
+    "title": "Berlin Macro Seminar – Marko Mlikota (Geneva Graduate Institute)",
+    "title_ja": "ベルリン・マクロセミナー(Mlikota氏)",
+    "title_short": "Berlin Macro Seminar Mlikota",
+    "importance": 0,
+    "organizer_short": "DIW",
+    "date_start": "2027-02-09",
+    "date_end": null,
+    "city": "Berlin",
+    "url": "https://www.diw.de/de/diw_01.c.1022736.de/veranstaltungen/berlin_macro_seminar.html"
+   },
+   {
+    "id": "1598b90e8ad766a5",
+    "title": "KPMG Banking Day 2026",
+    "title_ja": "KPMGバンキングデー2026",
+    "title_short": "KPMG Banking Day 2026",
+    "importance": 1,
+    "organizer_short": "KPMG",
+    "date_start": "2026-11-12",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://kpmg.com/de/de/events/kpmg-banking-day.html"
+   },
+   {
+    "id": "29b35bb8fd408835",
+    "title": "Der digitale Euro und die Zukunft des Bezahlens",
+    "title_ja": "デジタルユーロと決済の未来(カッセル)",
+    "title_short": "Digital Euro Panel Kassel",
+    "importance": 0,
+    "organizer_short": "Bundesbank",
+    "date_start": "2026-11-12",
+    "date_end": null,
+    "city": "Kassel",
+    "url": "https://www.bundesbank.de/de/service/termine/805324!ical"
+   },
+   {
+    "id": "c5edeb1db7df050f",
+    "title": "Opening Conference of the 29th EURO FINANCE WEEK",
+    "title_ja": "第29回ユーロ・ファイナンス週間 開幕会議",
+    "title_short": "Euro Finance Week Opening",
+    "importance": 1,
+    "organizer_short": "dfv Euro Finance Group",
+    "date_start": "2026-11-16",
+    "date_end": null,
+    "city": "Frankfurt am Main",
+    "url": "https://www.dfv-eurofinance.com/events/eroeffnungskonferenz-der-29-euro-finance-week/"
+   }
+  ],
+  "updated": [],
+  "end": "2026-10-17T05:04:35+02:00",
+  "start": "2026-10-17T04:45:46+02:00"
  },
  {
   "date": "2026-10-16",

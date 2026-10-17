@@ -183,9 +183,9 @@ BEGIN:VEVENT
 UID:564ce9627c281571@seminar-radar
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261030
-SUMMARY:Money Market Event (Geneva)
+SUMMARY:Money Market Event: Speech by Petra Tschudin and Thomas Moser
 LOCATION:Geneva
-DESCRIPTION:SNBのペトラ・チュディンおよびトーマス・モーザーが、ジュネーブで開催されるマネーマーケット・イベントで講演する。 / 主催: Swiss National Bank / https://www.snb.ch/en/services-events/digital-services/event-schedule / 登壇: Petra Tschudin (SNB)\, Thomas Moser (SNB)
+DESCRIPTION:スイス国立銀行のPetra Tschudin氏とThomas Moser氏によるマネーマーケット・イベントでの講演。 / 主催: Swiss National Bank / https://www.snb.ch/en/services-events/digital-services/event-schedule / 登壇: Petra Tschudin (SNB)\, Thomas Moser (SNB)
 END:VEVENT
 BEGIN:VEVENT
 UID:5cfd5613faa14b41@seminar-radar
@@ -823,9 +823,9 @@ BEGIN:VEVENT
 UID:2d173f63acea8db3@seminar-radar
 DTSTART;VALUE=DATE:20260922
 DTEND;VALUE=DATE:20261204
-SUMMARY:Policy and Capacity Building Webinar by EUROSIF
+SUMMARY:Eurosif Policy & Capacity Building Webinar
 LOCATION:
-DESCRIPTION:SSF会員向けに、サステナブル・ファイナンスの政策動向と能力構築をテーマとしたEUROSIFのオンラインウェビナー。 / 主催: Eurosif / https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html
+DESCRIPTION:欧州のサステナブルファイナンスに関する政策と能力構築をテーマとする、Eurosifのオンラインウェビナー。FNGのイベントカレンダーに掲載されている。 / 主催: Eurosif / https://www.forum-ng.org/en/termine/veranstaltung/eurosif-policy-capacity-building-webinar-1-1-1
 END:VEVENT
 BEGIN:VEVENT
 UID:50688d253e6f294d@seminar-radar
@@ -1721,7 +1721,7 @@ DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261031
 SUMMARY:Joint conference by Banca d'Italia and the European Central Bank "Trade\, value chains and financial linkages in the global economy" 2026
 LOCATION:Rome
-DESCRIPTION:イタリア銀行とECBが共催する第5回会議。貿易・産業政策、グローバル供給網、貿易金融、デジタル貿易とAIなどを扱う。 / 主催: Banca d'Italia and European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261029_bdi_ecb_conference.en.html
+DESCRIPTION:イタリア銀行とECBが共催する第5回会議。貿易・産業政策、グローバル供給網、貿易金融、デジタル貿易とAIなどを扱う。 / 主催: Banca d'Italia and European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261029_bdi_ecb_conference.en.html / 登壇: Felix Tintelnot (Duke)\, Paola Conconi (Oxford)
 END:VEVENT
 BEGIN:VEVENT
 UID:1fbda8887f8668e6@seminar-radar
@@ -2154,14 +2154,6 @@ DTEND;VALUE=DATE:20261023
 SUMMARY:Insight from Hindsight: Useful Financial History
 LOCATION:Frankfurt am Main
 DESCRIPTION:金融史から現代の市場分析に適用できる教訓を抽出するセミナー。過去の危機と現在の課題を比較。 / 主催: Leibniz Institute SAFE / https://safe-frankfurt.de/news-media/events/event-view/insight-from-hindsight-useful-financial-history.html
-END:VEVENT
-BEGIN:VEVENT
-UID:ac1f2a35324889df@seminar-radar
-DTSTART;VALUE=DATE:20261029
-DTEND;VALUE=DATE:20261030
-SUMMARY:Money Market Event: Speech by Petra Tschudin and Thomas Moser
-LOCATION:Geneva
-DESCRIPTION:スイス国立銀行のPetra Tschudin氏とThomas Moser氏によるマネーマーケット・イベントでの講演。 / 主催: Swiss National Bank / 
 END:VEVENT
 BEGIN:VEVENT
 UID:b1bee36ace943a35@seminar-radar
@@ -4130,5 +4122,53 @@ DTEND;VALUE=DATE:20261202
 SUMMARY:2. Industrial Policy Lab Annual Conference: Industrial Policy in an Age of (Geo)strategic Competition
 LOCATION:Berlin
 DESCRIPTION:産業政策ラボの第2回年次会議。地政学的競争の時代における産業政策を取り上げる招待制の会議。 / 主催: Kiel Institut für Weltwirtschaft / https://www.kielinstitut.de/de/veranstaltungen/konferenzen/2-industrial-policy-lab-annual-conference-industrial-policy-in-an-age-of-geostrategic-competition/
+END:VEVENT
+BEGIN:VEVENT
+UID:1598b90e8ad766a5@seminar-radar
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:KPMG Banking Day 2026
+LOCATION:Frankfurt am Main
+DESCRIPTION:KPMGがフランクフルトで開催する銀行業界の意思決定者向けカンファレンス。オペレーショナル・レジリエンス、地政学リスク、AI、サイバーセキュリティ、規制動向などを議論する。 / 主催: KPMG AG Wirtschaftsprüfungsgesellschaft / https://kpmg.com/de/de/events/kpmg-banking-day.html / 登壇: Dr. Imke Jacob (DZ Bank AG)\, Jörg Hessenmüller (Standard Chartered Bank AG)\, Dominik Schmidt-Kiefer (Deutsche Bank)\, Nikolaus Maximilian Linaric (ING Deutschland)\, Jochen Klöpper (N26)\, Bernd Spalt (Commerzbank AG)\, Manuel Gerres (SAP)\, Christine Neuberger (LBBW)
+END:VEVENT
+BEGIN:VEVENT
+UID:59867c28ee8583f4@seminar-radar
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Money Disrupted: AI\, capital markets and financial stability
+LOCATION:
+DESCRIPTION:AI、資本市場、金融安定の関係を論じるOMFIFのオンライン円卓会議シリーズの回。 / 主催: OMFIF Economic and Monetary Policy Institute / https://www.omfif.org/meetings/money-disrupted-ai-capital-markets-and-financial-stability/
+END:VEVENT
+BEGIN:VEVENT
+UID:65d4e17cd5a088b9@seminar-radar
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:Eesti Pank economist Tairi Rõõm gives a presentation at a conference on sustainable development at the University of Tartu
+LOCATION:Tartu
+DESCRIPTION:エストニア銀行のエコノミストTairi Rõõm氏が、タルトゥ大学で開催される持続可能な開発に関する会議で講演する予定。 / 主催: Eesti Pank / https://www.eestipank.ee/en/calendar/eesti-pank-economist-tairi-room-gives-presentation-conference-sustainable-development-university-16102026 / 登壇: Tairi Rõõm (Eesti Pank)
+END:VEVENT
+BEGIN:VEVENT
+UID:c5edeb1db7df050f@seminar-radar
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Opening Conference of the 29th EURO FINANCE WEEK
+LOCATION:Frankfurt am Main
+DESCRIPTION:フランクフルトで開催される第29回ユーロ・ファイナンス週間の開幕会議。独財務相クリスティアン・リントナー氏やヘッセン州首相ボリス・ライン氏ら金融・政界の要人が参加する。 / 主催: dfv Euro Finance Group GmbH / https://www.dfv-eurofinance.com/events/eroeffnungskonferenz-der-29-euro-finance-week/ / 登壇: Christian Lindner\, Boris Rhein\, Dr. Andreas Dombret\, Lutz Diederichs\, Francesca McDonagh\, Bruna Szego\, Dr. Cornelius Riese\, Thomas Groß
+END:VEVENT
+BEGIN:VEVENT
+UID:d69faf6c75a2d9d4@seminar-radar
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+SUMMARY:Vom Werkzeug zum Akteur: KI-Agenten und ihre Folgen für Wirtschaft\, Recht und Gesellschaft
+LOCATION:
+DESCRIPTION:ZBW Leibniz-Informationszentrum Wirtschaftが主催し、AIエージェントが経済・法・社会に与える影響を取り上げる。 / 主催: ZBW Leibniz-Informationszentrum Wirtschaft / https://www.kielinstitut.de/de/veranstaltungen/vom-werkzeug-zum-akteur-ki-agenten-und-ihre-folgen-fuer-wirtschaft-recht-und-gesellschaft/
+END:VEVENT
+BEGIN:VEVENT
+UID:ef7106c7ddae0f91@seminar-radar
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270430
+SUMMARY:Digital Sustainability Summit
+LOCATION:Berlin
+DESCRIPTION:Bitkomが2027年4月29日にベルリンで開催を予定している、デジタル分野の持続可能性をテーマとする会議です。詳細は公式ページでご確認ください。 / 主催: Bitkom / https://www.bitkom.org/Digital-Sustainability-Summit
 END:VEVENT
 END:VCALENDAR

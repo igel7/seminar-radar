@@ -875,8 +875,8 @@
    "registration_note_de": "Anmeldung erforderlich. NBU-Forschungsevent."
   },
   {
-   "title": "Money Market Event (Geneva)",
-   "title_ja": "SNBマネーマーケット・イベント(ジュネーブ)",
+   "title": "Money Market Event: Speech by Petra Tschudin and Thomas Moser",
+   "title_ja": "マネーマーケット・イベント講演",
    "organizer": "Swiss National Bank",
    "date_start": "2026-10-29",
    "date_end": null,
@@ -891,19 +891,19 @@
    "open_to_public": true,
    "registration_note": "SNB理事ペトラ・チュディン氏らが登壇する短期金融市場関係者向けの交流イベント。招待制とみられる。",
    "url": "https://www.snb.ch/en/services-events/digital-services/event-schedule",
-   "summary_ja": "SNBのペトラ・チュディンおよびトーマス・モーザーが、ジュネーブで開催されるマネーマーケット・イベントで講演する。",
+   "summary_ja": "スイス国立銀行のPetra Tschudin氏とThomas Moser氏によるマネーマーケット・イベントでの講演。",
    "language": "en",
    "country": "CH",
    "organizer_short": "SNB",
-   "title_short": "Money Market Policy Talk",
+   "title_short": "SNB Money Market Speech",
    "importance": 2,
    "registration_url": null,
    "time_end": null,
    "source": "SNB – Swiss National Bank – Events",
    "id": "564ce9627c281571",
    "first_seen": "2026-07-16",
-   "summary_en": "SNB representatives Petra Tschudin and Thomas Moser speak at a Money Market Event in Geneva.",
-   "summary_de": "SNB-Vertreter Petra Tschudin und Thomas Moser sprechen bei einer Geldmarktveranstaltung in Genf.",
+   "summary_en": "A Swiss National Bank Money Market Event featuring speeches by Petra Tschudin and Thomas Moser.",
+   "summary_de": "Ein Money-Market-Event der Schweizerischen Nationalbank mit Reden von Petra Tschudin und Thomas Moser.",
    "registration_note_en": "Speakers: Petra Tschudin and Thomas Moser",
    "registration_note_de": "Redner: Petra Tschudin und Thomas Moser",
    "speakers": [
@@ -3927,8 +3927,8 @@
    "fee_amount": 2500
   },
   {
-   "title": "Policy and Capacity Building Webinar by EUROSIF",
-   "title_ja": "EUROSIF政策・能力構築ウェビナー",
+   "title": "Eurosif Policy & Capacity Building Webinar",
+   "title_ja": "Eurosif 政策・能力構築ウェビナー",
    "organizer": "Eurosif",
    "date_start": "2026-09-22",
    "date_end": "2026-12-03",
@@ -3943,8 +3943,8 @@
    "fee": "free",
    "open_to_public": false,
    "registration_note": "SSF会員限定・会員ページから申込",
-   "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
-   "summary_ja": "SSF会員向けに、サステナブル・ファイナンスの政策動向と能力構築をテーマとしたEUROSIFのオンラインウェビナー。",
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/eurosif-policy-capacity-building-webinar-1-1-1",
+   "summary_ja": "欧州のサステナブルファイナンスに関する政策と能力構築をテーマとする、Eurosifのオンラインウェビナー。FNGのイベントカレンダーに掲載されている。",
    "language": "en",
    "country": null,
    "organizer_short": "Eurosif",
@@ -3955,8 +3955,8 @@
    "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
    "id": "2d173f63acea8db3",
    "first_seen": "2026-07-25",
-   "summary_en": "Online webinar by Eurosif for SSF members on sustainable finance policy developments and capacity building.",
-   "summary_de": "Online-Webinar von Eurosif fuer SSF-Mitglieder zu politischen Entwicklungen und Kapazitaetsaufbau im Bereich nachhaltiger Finanzen.",
+   "summary_en": "An online webinar by Eurosif on sustainable finance policy and capacity building, listed on the FNG events calendar.",
+   "summary_de": "Ein Online-Webinar von Eurosif zu Politik und Kapazitätsaufbau im nachhaltigen Finanzwesen, im FNG-Terminkalender gelistet.",
    "registration_note_en": "SSF members only, register via member section",
    "registration_note_de": "Nur fuer SSF-Mitglieder, Anmeldung ueber den Mitgliederbereich"
   },
@@ -9402,7 +9402,19 @@
    "time_end": null,
    "source": "ECB – Conferences & seminars",
    "id": "1d133245fa92f441",
-   "first_seen": "2026-08-19"
+   "first_seen": "2026-08-19",
+   "speakers": [
+    {
+     "name": "Felix Tintelnot",
+     "org": "Duke",
+     "role": null
+    },
+    {
+     "name": "Paola Conconi",
+     "org": "Oxford",
+     "role": null
+    }
+   ]
   },
   {
    "title": "SAFE-IBF Lecture: Thirty Years of Utilising Financial History To Forecast the Future",
@@ -12026,41 +12038,6 @@
    "time_end": null,
    "source": "SAFE Frankfurt – Events",
    "id": "92fcf5d2563596ac",
-   "first_seen": "2026-08-27"
-  },
-  {
-   "title": "Money Market Event: Speech by Petra Tschudin and Thomas Moser",
-   "title_ja": "マネーマーケット・イベント講演",
-   "organizer": "Swiss National Bank",
-   "date_start": "2026-10-29",
-   "date_end": null,
-   "time": null,
-   "city": "Geneva",
-   "venue": null,
-   "format": "onsite",
-   "themes": [
-    "central_bank",
-    "fin_markets"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": null,
-   "summary_ja": "スイス国立銀行のPetra Tschudin氏とThomas Moser氏によるマネーマーケット・イベントでの講演。",
-   "summary_en": "A Swiss National Bank Money Market Event featuring speeches by Petra Tschudin and Thomas Moser.",
-   "summary_de": "Ein Money-Market-Event der Schweizerischen Nationalbank mit Reden von Petra Tschudin und Thomas Moser.",
-   "language": "en",
-   "country": "CH",
-   "organizer_short": "SNB",
-   "title_short": "SNB Money Market Speech",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "SNB – Swiss National Bank – Events",
-   "id": "ac1f2a35324889df",
    "first_seen": "2026-08-27"
   },
   {
@@ -26756,6 +26733,424 @@
    "source": "IfW Kiel – Veranstaltungen",
    "id": "dfe14d84636e87aa",
    "first_seen": "2026-10-16"
+  },
+  {
+   "title": "KPMG Banking Day 2026",
+   "title_ja": "KPMGバンキングデー2026",
+   "organizer": "KPMG AG Wirtschaftsprüfungsgesellschaft",
+   "organizer_short": "KPMG",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": "Sankt-Peter Kirche, Bleichstraße 33, 60313 Frankfurt am Main",
+   "format": "onsite",
+   "themes": [
+    "fin_markets",
+    "geopolitics",
+    "ai"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "登録制。信用機関の意思決定者が対象で、対象外の登録はKPMGが拒否する場合がある。",
+   "registration_note_en": "Registration required; aimed at decision-makers at credit institutions. KPMG may decline registrations that do not fit the target audience.",
+   "registration_note_de": "Anmeldung erforderlich; Zielgruppe sind Entscheider bei Kreditinstituten. KPMG kann nicht passende Anmeldungen ablehnen.",
+   "url": "https://kpmg.com/de/de/events/kpmg-banking-day.html",
+   "summary_ja": "KPMGがフランクフルトで開催する銀行業界の意思決定者向けカンファレンス。オペレーショナル・レジリエンス、地政学リスク、AI、サイバーセキュリティ、規制動向などを議論する。",
+   "summary_en": "KPMG's annual conference for banking-sector decision-makers in Frankfurt, covering operational resilience, geopolitical and emerging risks, AI, cyber security, and regulation/digital sovereignty.",
+   "summary_de": "KPMGs jährliche Konferenz für Entscheider der Bankenbranche in Frankfurt zu operationaler Resilienz, geopolitischen Risiken, KI, Cybersicherheit sowie Regulierung und digitaler Souveränität.",
+   "language": "de",
+   "country": "DE",
+   "title_short": "KPMG Banking Day 2026",
+   "importance": 1,
+   "registration_url": "https://kpmg.com/de/de/events/kpmg-banking-day.html",
+   "speakers": [
+    {
+     "name": "Dr. Imke Jacob",
+     "org": "DZ Bank AG",
+     "role": null
+    },
+    {
+     "name": "Jörg Hessenmüller",
+     "org": "Standard Chartered Bank AG",
+     "role": null
+    },
+    {
+     "name": "Dominik Schmidt-Kiefer",
+     "org": "Deutsche Bank",
+     "role": null
+    },
+    {
+     "name": "Nikolaus Maximilian Linaric",
+     "org": "ING Deutschland",
+     "role": null
+    },
+    {
+     "name": "Jochen Klöpper",
+     "org": "N26",
+     "role": null
+    },
+    {
+     "name": "Bernd Spalt",
+     "org": "Commerzbank AG",
+     "role": null
+    },
+    {
+     "name": "Manuel Gerres",
+     "org": "SAP",
+     "role": null
+    },
+    {
+     "name": "Christine Neuberger",
+     "org": "LBBW",
+     "role": null
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "1598b90e8ad766a5",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Der digitale Euro und die Zukunft des Bezahlens",
+   "title_ja": "デジタルユーロと決済の未来(カッセル)",
+   "organizer": "Deutsche Bundesbank (Hauptverwaltung in Hessen), Hessische Landeszentrale für politische Bildung, EUROPE DIRECT NordOstHessen",
+   "organizer_short": "Bundesbank",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": "19:00",
+   "time_end": "21:00",
+   "city": "Kassel",
+   "venue": "Regierungspräsidium Kassel, Walter-Lübcke-Saal, Am Alten Stadtschloss 1, 34117 Kassel",
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "参加費無料。登録要否はページに明記されていない。",
+   "registration_note_en": "Free of charge; the page does not state whether advance registration is required.",
+   "registration_note_de": "Kostenfrei; die Seite macht keine Angabe zur Anmeldepflicht.",
+   "url": "https://www.bundesbank.de/de/service/termine/805324!ical",
+   "summary_ja": "ブンデスバンクがカッセルで開催する公開パネル討論会。「デジタルユーロと決済の未来」をテーマに、挨拶・パネル討論・懇親会の構成で行われる。",
+   "summary_en": "A public panel discussion organized by the Bundesbank in Kassel on \"the digital euro and the future of payments,\" followed by a get-together.",
+   "summary_de": "Öffentliche Podiumsdiskussion der Bundesbank in Kassel zum Thema \"Der digitale Euro und die Zukunft des Bezahlens\", mit anschließendem Get-together.",
+   "language": "de",
+   "country": "DE",
+   "title_short": "Digital Euro Panel Kassel",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "29b35bb8fd408835",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Money Disrupted: AI, capital markets and financial stability",
+   "title_ja": "Money Disrupted: AI・資本市場・金融安定",
+   "organizer": "OMFIF Economic and Monetary Policy Institute",
+   "date_start": "2026-11-23",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ai",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "申込はOMFIF詳細ページから",
+   "registration_note_en": "Register via the OMFIF event page",
+   "registration_note_de": "Anmeldung über die OMFIF-Veranstaltungsseite",
+   "url": "https://www.omfif.org/meetings/money-disrupted-ai-capital-markets-and-financial-stability/",
+   "summary_ja": "AI、資本市場、金融安定の関係を論じるOMFIFのオンライン円卓会議シリーズの回。",
+   "summary_en": "Online roundtable in OMFIF's Money Disrupted series on AI, capital markets and financial stability.",
+   "summary_de": "Online-Roundtable der OMFIF-Reihe Money Disrupted zu KI, Kapitalmärkten und Finanzstabilität.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "OMFIF",
+   "title_short": "AI, Capital Markets, Stability",
+   "importance": 1,
+   "registration_url": "https://www.omfif.org/meetings/money-disrupted-ai-capital-markets-and-financial-stability/",
+   "time_end": null,
+   "speakers": [],
+   "source": "OMFIF – Events/Meetings",
+   "id": "59867c28ee8583f4",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Eesti Pank economist Tairi Rõõm gives a presentation at a conference on sustainable development at the University of Tartu",
+   "title_ja": "エストニア銀行エコノミストによるタルトゥ大学での講演",
+   "organizer": "Eesti Pank",
+   "organizer_short": "Eesti Pank",
+   "date_start": "2026-10-20",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Tartu",
+   "venue": "University of Tartu",
+   "format": null,
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.eestipank.ee/en/calendar/eesti-pank-economist-tairi-room-gives-presentation-conference-sustainable-development-university-16102026",
+   "summary_ja": "エストニア銀行のエコノミストTairi Rõõm氏が、タルトゥ大学で開催される持続可能な開発に関する会議で講演する予定。",
+   "summary_en": "Eesti Pank economist Tairi Rõõm will give a presentation at a conference on sustainable development at the University of Tartu.",
+   "summary_de": "Der Ökonom der Eesti Pank Tairi Rõõm hält einen Vortrag auf einer Konferenz zu nachhaltiger Entwicklung an der Universität Tartu.",
+   "language": "en",
+   "country": "EE",
+   "title_short": "Sustainable Development Tartu Talk",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Tairi Rõõm",
+     "org": "Eesti Pank",
+     "role": "Economist"
+    }
+   ],
+   "source": "Eesti Pank (エストニア) – Events",
+   "id": "65d4e17cd5a088b9",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Opening Conference of the 29th EURO FINANCE WEEK",
+   "title_ja": "第29回ユーロ・ファイナンス週間 開幕会議",
+   "organizer": "dfv Euro Finance Group GmbH",
+   "organizer_short": "dfv Euro Finance Group",
+   "date_start": "2026-11-16",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": "Steigenberger Icon Frankfurter Hof",
+   "format": "onsite",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "tickets.dfv-eurofinance.com/EK2026 で登録リクエストが必要。",
+   "registration_note_en": "Registration by request via tickets.dfv-eurofinance.com/EK2026.",
+   "registration_note_de": "Anmeldung über Registrierungsanfrage unter tickets.dfv-eurofinance.com/EK2026.",
+   "url": "https://www.dfv-eurofinance.com/events/eroeffnungskonferenz-der-29-euro-finance-week/",
+   "summary_ja": "フランクフルトで開催される第29回ユーロ・ファイナンス週間の開幕会議。独財務相クリスティアン・リントナー氏やヘッセン州首相ボリス・ライン氏ら金融・政界の要人が参加する。",
+   "summary_en": "Kick-off event of the 29th Euro Finance Week in Frankfurt, bringing together senior finance-industry and political figures, including German Finance Minister Christian Lindner and Hesse's Minister President Boris Rhein.",
+   "summary_de": "Eröffnungsveranstaltung der 29. Euro Finance Week in Frankfurt mit hochrangigen Vertretern aus Finanzwirtschaft und Politik, darunter Bundesfinanzminister Christian Lindner und Hessens Ministerpräsident Boris Rhein.",
+   "language": "de",
+   "country": "DE",
+   "title_short": "Euro Finance Week Opening",
+   "importance": 1,
+   "registration_url": "https://tickets.dfv-eurofinance.com/EK2026",
+   "speakers": [
+    {
+     "name": "Christian Lindner",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Boris Rhein",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Dr. Andreas Dombret",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Lutz Diederichs",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Francesca McDonagh",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Bruna Szego",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Dr. Cornelius Riese",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Thomas Groß",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "c5edeb1db7df050f",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Vom Werkzeug zum Akteur: KI-Agenten und ihre Folgen für Wirtschaft, Recht und Gesellschaft",
+   "title_ja": "道具から行為者へ: AIエージェントの影響",
+   "organizer": "ZBW Leibniz-Informationszentrum Wirtschaft",
+   "date_start": "2026-10-27",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "申込(Mit Anmeldung)が必要。会場・時刻はページ上で確認できず。",
+   "registration_note_en": "Registration required. Venue and time not shown on the listing.",
+   "registration_note_de": "Anmeldung erforderlich. Veranstaltungsort und Uhrzeit sind in der Übersicht nicht angegeben.",
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/vom-werkzeug-zum-akteur-ki-agenten-und-ihre-folgen-fuer-wirtschaft-recht-und-gesellschaft/",
+   "summary_ja": "ZBW Leibniz-Informationszentrum Wirtschaftが主催し、AIエージェントが経済・法・社会に与える影響を取り上げる。",
+   "summary_en": "Hosted by the ZBW Leibniz Information Centre for Economics, this event examines how AI agents affect the economy, law and society.",
+   "summary_de": "Die vom ZBW Leibniz-Informationszentrum Wirtschaft veranstaltete Tagung befasst sich mit den Auswirkungen von KI-Agenten auf Wirtschaft, Recht und Gesellschaft.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "ZBW",
+   "title_short": "AI Agents: Economic Impact",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "IfW Kiel – Veranstaltungen",
+   "time_end": null,
+   "id": "d69faf6c75a2d9d4",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Reproduzierbare Arbeitsabläufe in der wissenschaftlichen Kommunikation mit CODECHECK",
+   "title_ja": "CODECHECKによる再現可能な研究手法",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-12-16",
+   "date_end": null,
+   "time": "12:30",
+   "time_end": "13:30",
+   "city": "Berlin",
+   "venue": "Karl-Popper-Raum, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022178.de/veranstaltungen/reproduzierbare_arbeitsablaeufe_in_der_wissenschaftlichen_kommunikation_mit_codecheck.html",
+   "summary_ja": "DIW BerlinのSOEP Brown Bag Seminarで、CODECHECKを用いた学術コミュニケーションにおける再現可能な研究ワークフローについてDaniel Nüst氏(TUドレスデン)が講演。",
+   "summary_en": "SOEP Brown Bag Seminar at DIW Berlin on reproducible research workflows in scientific communication using CODECHECK, presented by Daniel Nüst (TU Dresden).",
+   "summary_de": "SOEP Brown Bag Seminar am DIW Berlin über reproduzierbare Arbeitsabläufe in der wissenschaftlichen Kommunikation mit CODECHECK, vorgetragen von Daniel Nüst (TU Dresden).",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "DIW",
+   "title_short": "CODECHECK Reproducibility Seminar",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Daniel Nüst",
+     "org": "TU Dresden",
+     "role": "speaker"
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "e031906d37135712",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Digital Sustainability Summit",
+   "title_ja": "デジタル・サステナビリティ・サミット(ベルリン)",
+   "organizer": "Bitkom",
+   "date_start": "2027-04-29",
+   "date_end": null,
+   "time": null,
+   "city": "Berlin",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bitkom.org/Digital-Sustainability-Summit",
+   "summary_ja": "Bitkomが2027年4月29日にベルリンで開催を予定している、デジタル分野の持続可能性をテーマとする会議です。詳細は公式ページでご確認ください。",
+   "summary_en": "A Bitkom conference planned for 29 April 2027 in Berlin, focusing on sustainability in the digital sector. See the event page for details.",
+   "summary_de": "Geplante Konferenz von Bitkom am 29. April 2027 in Berlin zum Thema Nachhaltigkeit im digitalen Sektor. Details siehe Veranstaltungsseite.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "Bitkom",
+   "title_short": "Digital Sustainability Summit",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "Bitkom (Berlin) – Veranstaltungen",
+   "id": "ef7106c7ddae0f91",
+   "first_seen": "2026-10-17"
+  },
+  {
+   "title": "Berlin Macro Seminar – Marko Mlikota (Geneva Graduate Institute)",
+   "title_ja": "ベルリン・マクロセミナー(Mlikota氏)",
+   "organizer": "DIW Berlin",
+   "date_start": "2027-02-09",
+   "date_end": null,
+   "time": "16:15",
+   "time_end": "17:30",
+   "city": "Berlin",
+   "venue": "Elinor Ostrom Hall, DIW Berlin",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.diw.de/de/diw_01.c.1022736.de/veranstaltungen/berlin_macro_seminar.html",
+   "summary_ja": "DIW BerlinのBerlin Macro SeminarでMarko Mlikota氏(ジュネーブ大学院)が講演。",
+   "summary_en": "Berlin Macro Seminar at DIW Berlin, presented by Marko Mlikota (Geneva Graduate Institute).",
+   "summary_de": "Berlin Macro Seminar am DIW Berlin mit Marko Mlikota (Geneva Graduate Institute).",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "DIW",
+   "title_short": "Berlin Macro Seminar Mlikota",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Marko Mlikota",
+     "org": "Geneva Graduate Institute",
+     "role": "speaker"
+    }
+   ],
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "fa998cf883042b77",
+   "first_seen": "2026-10-17"
   }
  ]
 }
