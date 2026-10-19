@@ -1530,8 +1530,9 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
-/* Area=DE のときは country も DE をセットで表示する(area変更ハンドラでも連動)。 */
-const DEFAULTS = {area:"DE", country:"DE", city:"", org:"", imp:"2", vip:"", theme:"", lang:"",
+/* Area=home(本拠国)のときは country も本拠国をセットで表示する(area変更ハンドラでも連動)。
+   注意: 値は "home"/"away"(プロファイル非依存)。"DE" を直書きすると英国ページで既定が崩れる。 */
+const DEFAULTS = {area:"home", country:PROFILE.home, city:"", org:"", imp:"2", vip:"", theme:"", lang:"",
                    online:false, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
