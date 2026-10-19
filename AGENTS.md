@@ -126,6 +126,8 @@ Claude Code では Task/Agent ツール(軽量モデルを指定)、Codex では
 
 - `data/events.json` を直接編集しないこと(必ず `data/new_events.json` 経由)。
 - `data/overrides.json` を書き換えないこと(ユーザー管理ファイル)。
+- `data/people.json` を書き換えないこと(要人名簿。ユーザー管理ファイル。`ingest.py` が
+  登壇者との照合にだけ使う。名簿の更新はユーザーが明示的に指示した保守作業でのみ行う)。
 - `data/aliases.json` を書き換えないこと(重複統合の台帳。メンテナンス時のみ人が更新する)。
 - `data/changelog.json` を直接編集しないこと(更新履歴の台帳。`ingest.py` が自動生成・更新する)。
 - `data/token_usage.json` を直接編集しないこと(巡回1回あたりのトークン消費量の台帳。
@@ -570,6 +572,12 @@ mainへの反映はGitHub Actionsの自動マージが行うので、mainに直�
 | `time_end` | 終了時刻 `"HH:MM"`(現地時間)。不明なら `null` |
 | `speakers` | ページに明記された登壇者の配列。各要素は `{"name": 氏名, "org": 所属機関の略称または null, "role": 役職の短い原文または null}`。`name` は原文表記で敬称・肩書き(Dr., Prof.)を付けない。`org` は **`organizer_short` と同じ表記規則**(ラテン文字のみ・定着した略称。例 `"ECB"`, `"Bundesbank"`, `"BIS"`, `"IfW Kiel"`。主催機関の人物なら `organizer_short` と同じ文字列)。`role` は例 `"President"`, `"Executive Board Member"`, `"Vizepräsidentin"`。**最大8名**。記載がなければ `[]`(登壇者・演題がTBAの場合も `[]`)。詳細は下の抽出ルール |
 | `source` | 情報源の名前(sources.yamlの`name`、または`"web検索(discovery)"`) |
+
+**派生フィールド(抽出時には書かない)**: `notables`(登壇者のうち要人名簿 `data/people.json`
+に一致した人物の `{person, name, group, tier}` の配列)と `notable_tier`(その最小 tier。該当なしは
+`null`)は、`ingest.py` が毎回名簿と照合して計算する。`new_events.json` に書いても捨てられる。
+要人かどうかの判断はエージェントの仕事ではなく名簿の仕事である(抽出側は「ページに書いて
+あった登壇者」を `speakers` に写すだけでよい)。
 
 ## 抽出ルール
 

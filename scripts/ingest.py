@@ -15,9 +15,10 @@ import json
 import sys
 
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
-                       apply_aliases, apply_flagship, apply_overrides, dedupe_events,
-                       load_json, mark_crawl_start, merge, parse_sources, region_ok,
-                       render_html, render_ics, split_archive, update_changelog)
+                       annotate_notables, apply_aliases, apply_flagship, apply_overrides,
+                       dedupe_events, load_json, load_people, mark_crawl_start, merge,
+                       parse_sources, region_ok, render_html, render_ics, split_archive,
+                       update_changelog)
 
 KNOWN_FILE = DATA_FILE.parent / "known_events.json"
 
@@ -89,6 +90,10 @@ def main():
     before = len(events)
     events = [ev for ev in events if region_ok(ev, anywhere_sources)]
     region_removed = before - len(events)
+
+    # 要人名簿(data/people.json)と登壇者を照合して派生フィールドを付け直す
+    # (名簿の更新が全イベントに遡及する。判断は名簿にあり、ここでは照合だけ)。
+    events = annotate_notables(events, load_people())
 
     events, to_archive = split_archive(events)
 

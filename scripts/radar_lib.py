@@ -27,6 +27,7 @@ HTML_FILE = ROOT / "docs" / "index.html"
 ICS_FILE = ROOT / "docs" / "calendar.ics"
 TEMPLATE_FILE = ROOT / "scripts" / "template.html"
 SOURCES_FILE = ROOT / "sources.yaml"
+PEOPLE_FILE = ROOT / "data" / "people.json"   # 要人名簿(ユーザー管理。AGENTS.md A-4)
 
 TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
@@ -146,6 +147,135 @@ def apply_flagship(ev):
     if any(pat in title for pat in FLAGSHIP_PATTERNS):
         ev["importance"] = max(ev.get("importance") or 0, 3)
     return ev
+
+
+# ----------------------------------------------------------------------
+# 要人名簿(data/people.json)との照合 — 派生フィールド notables / notable_tier
+# ----------------------------------------------------------------------
+# 設計: 登壇者(speakers)は「ページにこう書いてあった」という生データで、要人かどうかの
+# 判断はここで名簿と突き合わせて決める。名簿が更新されれば翌日の ingest で全イベントに
+# 遡及する(再抽出不要・LLM不使用)。名簿の形式は data/people.json 冒頭の _doc を参照。
+
+PEOPLE_GROUPS = ("ecb", "bundesbank", "bis", "ncb", "supervisor", "government",
+                 "eu_body", "intl_org", "academia")
+
+
+def norm_person_name(s):
+    """氏名の照合キー: アクセント除去・小文字化・ピリオド/ハイフン除去・1文字の
+    イニシャル("R.")を落とす。"Philip R. Lane" と "Philip Lane"、"Véron" と "Veron" を同一視。"""
+    if not isinstance(s, str):
+        return ""
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c)).casefold()
+    s = re.sub(r"[.\u2019'’]", "", s)
+    s = re.sub(r"[-–—/,()]", " ", s)
+    return " ".join(t for t in s.split() if len(t) > 1)
+
+
+def norm_org_name(s):
+    if not isinstance(s, str):
+        return ""
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c)).casefold()
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", s).split())
+
+
+def load_people():
+    """名簿を読み込み、最低限の検証をして有効なエントリだけ返す。無ければ []。
+    壊れた行は捨てて標準エラーに警告(ingest を止めない)。"""
+    raw = load_json(PEOPLE_FILE, {})
+    people = raw.get("people") if isinstance(raw, dict) else raw
+    if not isinstance(people, list):
+        return []
+    out, seen = [], set()
+    for i, p in enumerate(people):
+        if not isinstance(p, dict) or not p.get("name") or not p.get("id"):
+            print(f"警告: people.json [{i}] に id/name がありません。無視します", file=sys.stderr)
+            continue
+        if p["id"] in seen:
+            print(f"警告: people.json の id 重複: {p['id']}。後の方を無視します", file=sys.stderr)
+            continue
+        if p.get("tier") not in (1, 2):
+            print(f"警告: people.json {p['id']} の tier が 1/2 ではありません。無視します", file=sys.stderr)
+            continue
+        if p.get("group") not in PEOPLE_GROUPS:
+            print(f"警告: people.json {p['id']} の group が不正: {p.get('group')!r}。無視します",
+                  file=sys.stderr)
+            continue
+        seen.add(p["id"])
+        out.append(p)
+    return out
+
+
+def build_people_index(people):
+    """照合キー(正規化氏名)→ 名簿エントリのリスト。別表記(aliases)も同じエントリを指す。"""
+    index = {}
+    for p in people:
+        for n in [p.get("name")] + list(p.get("aliases") or []):
+            k = norm_person_name(n)
+            if k and not any(q is p for q in index.setdefault(k, [])):
+                index[k].append(p)   # 正規化で name と alias が同じキーになっても1回だけ
+    return index
+
+
+def _person_org_compatible(speaker_org, person):
+    """登壇者の所属が名簿の所属と矛盾しないか。片方が空なら矛盾なし。
+    略称と正式名の混在を吸収するため、正規化後の包含でも一致とみなす。"""
+    so = norm_org_name(speaker_org)
+    if not so:
+        return True
+    cands = [norm_org_name(x) for x in [person.get("org")] + list(person.get("org_aliases") or [])]
+    cands = [c for c in cands if c]
+    if not cands:
+        return True
+    return any(c == so or c in so or so in c for c in cands)
+
+
+def match_person(speaker, index):
+    """登壇者1名を名簿に照合する。一致したエントリ、無ければ None。
+    - 氏名キーが一致する候補のうち、所属が矛盾しないものだけ残す
+    - require_org のエントリは登壇者側に所属が書かれていなければ一致させない(同姓同名対策)
+    - それでも候補が複数残る(別人の同名)場合は、所属で絞れていなければ一致させない"""
+    if not isinstance(speaker, dict):
+        return None
+    cands = index.get(norm_person_name(speaker.get("name")))
+    if not cands:
+        return None
+    org = speaker.get("org")
+    ok = []
+    for p in cands:
+        if p.get("require_org") and not norm_org_name(org):
+            continue
+        if not _person_org_compatible(org, p):
+            continue
+        ok.append(p)
+    if len(ok) == 1:
+        return ok[0]
+    if len(ok) > 1 and norm_org_name(org):
+        exact = [p for p in ok if norm_org_name(p.get("org")) == norm_org_name(org)]
+        if len(exact) == 1:
+            return exact[0]
+    return None
+
+
+def annotate_notables(events, people):
+    """全イベントの speakers を名簿に照合し、派生フィールドを毎回計算し直す:
+      notables     … [{"person": 名簿id, "name": 名簿上の正規名, "group", "tier"}, ...]
+                     (登壇者の並び順。同一人物は1回)
+      notable_tier … notables の最小 tier(1 が最上位)。該当なしは None
+    名簿が空でもキーは必ず付ける(表示側が存在チェックを省けるように)。"""
+    index = build_people_index(people)
+    for ev in events:
+        hits, seen = [], set()
+        for sp in ev.get("speakers") or []:
+            p = match_person(sp, index)
+            if p and p["id"] not in seen:
+                seen.add(p["id"])
+                hits.append({"person": p["id"], "name": p["name"],
+                             "group": p["group"], "tier": p["tier"]})
+        ev["notables"] = hits
+        ev["notable_tier"] = min((h["tier"] for h in hits), default=None)
+    return events
 
 
 def apply_overrides(events):
@@ -536,6 +666,9 @@ def sanitize(ev):
         time_end = None
     ev["time_end"] = time_end
     ev["speakers"] = sanitize_speakers(ev.get("speakers"))
+    # notables / notable_tier は ingest が名簿から毎回計算する派生値。入力にあっても捨てる
+    ev.pop("notables", None)
+    ev.pop("notable_tier", None)
     ev["url"] = safe_url(ev.get("url"))
     end = ev.get("date_end") or ev.get("date_start")
     if date.fromisoformat(end) < TODAY - timedelta(days=1):
