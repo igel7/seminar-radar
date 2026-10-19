@@ -1,7 +1,8 @@
 # 英国+北欧への拡大計画 — 「ドイツモード / 英国モード」の切替
 
-> 状態: **確定版(2026-10-19)。実装中。** 未決事項はすべてユーザー回答済み(末尾「決定事項」)。
-> 実装が終わったら、この冒頭を「実装済み」に書き換え、差分があれば追記する。
+> 状態: **実装済み(2026-10-19)。** 未決事項はすべてユーザー回答済み(末尾「決定事項」)。
+> 残作業: 英国 Routine の作成と初回巡回(人の作業。README「英国モード」参照)、要人名簿の追記(提案→承認後)。
+> 計画からの差分は末尾「実装時の差分」を参照。
 
 ## 要望(ユーザー指示の要約)
 
@@ -173,3 +174,31 @@
 
 実装上の補足(ユーザー回答から導いた扱い): ハイブリッド開催は開催国が付くため、北欧では
 現地開催と同じく規模3のみとする。
+
+## 実装時の差分・補足(2026-10-19)
+
+- **定点**: 英国・アイルランド 49 機関を実取得で検証し 43 件を登録(`regions: [uk]`)。PRA・HM Treasury・OBR
+  (公開イベント一覧なし)、Green Finance Institute(一覧なし)、Tony Blair Institute(Vercel のボット対策)、
+  City of London Corporation(文化イベント中心のJSページ)は定点にせず discovery で補完する。
+  北欧は5中銀を登録。既存の OMFIF・PRI・SUERF・UNEP FI は `[de, uk]` に広げ、ICMA は新規で `[de, uk]`。
+  verified: false(403・JS描画)が英国側で約17件ある。403 はこの実行環境のプロキシ固有の可能性があるため、
+  初回巡回で `scripts/audit_urls.py --profile uk` を実行して見直す。
+- **旗艦パターン**はプロファイル限定(`FLAGSHIP_PATTERNS_BY_PROFILE["uk"]`)で追加した。汎用語
+  「annual research conference」(Riksbank)は大学の研究会議にも当たるため入れていない。Riksbank の
+  年次研究会議は抽出時の importance 判定(機関の年次旗艦=3)に委ねる。
+- **London 日帰り圏**は Trainline の所要時間(最速値)を根拠に 24 都市+Leamington Spa(Warwick)。
+  Edinburgh(4h05)・Glasgow(4h30)は超過、Belfast・Dublin は鉄道直通なしで除外。
+- **UI の付随変更**(ドイツモードにも影響): 「仕組み」パネルに「対象地域」の節を追加(以前は辞書にだけあり
+  未表示だった)。狭幅(390px以下)でヘッダのツール列が折り返すようにした(改修前から横溢れしていた)。
+- **CI の再生成**は `docs/` と `docs/uk/` の両方を行う。英国側は初回巡回まで `data/uk/meta.json` の
+  固定時刻を LAST UPDATE に表示する。
+- **ネットワーク許可リストに必要なドメイン**(Routines 環境が許可リスト方式の場合):
+  bankofengland.co.uk, fca.org.uk, niesr.ac.uk, ifs.org.uk, cepr.org, resolutionfoundation.org,
+  instituteforgovernment.org.uk, cer.eu, chathamhouse.org, rusi.org, my.rusi.org, iiss.org,
+  policyexchange.org.uk, lse.ac.uk, centreformacroeconomics.ac.uk, fmg.ac.uk, systemicrisk.ac.uk,
+  cep.lse.ac.uk, e3g.org, sbs.ox.ac.uk, oxfordmartin.ox.ac.uk, jbs.cam.ac.uk, bennettschool.cam.ac.uk,
+  kcl.ac.uk, imperial.ac.uk, warwick.ac.uk, wbs.ac.uk, bayes.citystgeorges.ac.uk, mmf.ac.uk, iea.org.uk,
+  ukandeu.ac.uk, centralbank.ie, esri.ie, tcd.ie, ukfinance.org.uk, thecityuk.com, lseg.com,
+  icmagroup.org, isda.org, dajf.org.uk, japansociety.org.uk, jetro.go.jp, soas.ac.uk, cbbc.org,
+  riksbank.se, norges-bank.no, nationalbanken.dk, cb.is(suomenpankki.fi・omfif.org・unpri.org・
+  suerf.org・unepfi.org は既存)。

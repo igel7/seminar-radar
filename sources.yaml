@@ -22,7 +22,9 @@ settings:
 
 # ------------------------------------------------------------
 # 定点観測リスト
-# verified: このURLは2026-07-16時点で実在確認済みか
+# verified: このURLは2026-07-16時点で実在確認済みか(英国モード分は2026-10-19)
+# regions:  この定点が属するプロファイル(未記載 = [de]。英国モードだけなら [uk]、
+#           両方なら [de, uk])。AGENTS.md A-0 / UK_NORDIC_PLAN.md 参照
 # ------------------------------------------------------------
 sources:
   - name: "ECB – Conferences & seminars"
@@ -91,6 +93,7 @@ sources:
 
   - name: "SUERF – Events"
     url: "https://www.suerf.org/events/"
+    regions: [de, uk]   # 2026-10-19 英国モードにも出す(ロンドン/汎欧州の機関)
     category: tt
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
@@ -178,6 +181,7 @@ sources:
 
   - name: "OMFIF – Events/Meetings"
     url: "https://www.omfif.org/meetings/"
+    regions: [de, uk]   # 2026-10-19 英国モードにも出す(ロンドン/汎欧州の機関)
     category: tt
     verified: true
 
@@ -396,10 +400,12 @@ sources:
     verified: true   # 気候×中央銀行・サステナブルファイナンスの無料ウェビナーを不定期開催
   - name: "PRI – Principles for Responsible Investment – Events"
     url: "https://www.unpri.org/events"
+    regions: [de, uk]   # 2026-10-19 英国モードにも出す(ロンドン/汎欧州の機関)
     category: other
     verified: true   # 無料ウェビナー多数。ロンドン所在のためオンライン開催分のみ収載対象。一覧はJS描画の可能性: site:unpri.org 検索で補完
   - name: "UNEP FI – Events"
     url: "https://www.unepfi.org/events/"
+    regions: [de, uk]   # 2026-10-19 英国モードにも出す(ロンドン/汎欧州の機関)
     category: other
     verified: false  # 503(ボット対策)で自動取得不可: site:unepfi.org 検索補完かINBOX。無料ウェビナー多数(ジュネーブ所在=対象地域内)
 
@@ -445,6 +451,281 @@ sources:
     category: other
     verified: false   # ウェビナー中心の一覧。オンライン開催分が収載対象になる(現地開催の企業ミッション等は対象地域外の可能性が高い)
 
+
+  # ============================================================
+  # 英国モード(profile uk)の定点。2026-10-19 調査(UK_NORDIC_PLAN.md)。
+  # verified は同日時点にこの実行環境から実取得した結果。403 系はプロキシ環境固有の
+  # 可能性があるため、初回巡回時に scripts/audit_urls.py --profile uk で再確認する。
+  # 北欧の現地開催は importance 3 のみ収載(ingest.py が強制)。
+  # ============================================================
+  # --- 中央銀行・当局 ---
+  - name: "Bank of England – Events"
+    url: "https://www.bankofengland.co.uk/news/events"
+    category: cb
+    regions: [uk]
+    verified: false   # 一覧はJS描画(静的HTMLは「0 results」)。個別ページ /events/YYYY/month/… は静的。site:bankofengland.co.uk/events 検索で補完
+  - name: "Bank of England – Upcoming external events involving Bank staff"
+    url: "https://www.bankofengland.co.uk/events/upcoming-events"
+    category: cb
+    regions: [uk]
+    verified: true    # 週次更新の静的ページ(BoE職員の外部登壇予定)。登壇先がセミナー・会議形式で
+                      # 日付・場所が確認できるものだけ収載する(単なる講演予定の羅列は収載しない)
+  - name: "FCA – Financial Conduct Authority – Events"
+    url: "https://www.fca.org.uk/events"
+    category: cb
+    regions: [uk]
+    verified: true    # 静的だが掲載は開催済み中心。今後のウェビナーは webinars.fca.org.uk(JS描画): site:fca.org.uk 検索で補完
+  # HM Treasury・OBR・PRA は公開イベント一覧を持たないため定点にしない(discovery で補完。PRA の会議は BoE Events に載る)
+
+  # --- 研究所・シンクタンク ---
+  - name: "NIESR – National Institute of Economic and Social Research – Events"
+    url: "https://niesr.ac.uk/events"
+    category: tt
+    regions: [uk]
+    verified: true
+  - name: "IFS – Institute for Fiscal Studies – Events"
+    url: "https://ifs.org.uk/events"
+    category: tt
+    regions: [uk]
+    verified: false   # 403(ボット対策、実ブラウザUAでも不可): site:ifs.org.uk/events 検索補完かINBOX
+  - name: "CEPR – Centre for Economic Policy Research – Events"
+    url: "https://cepr.org/events"
+    category: tt
+    regions: [uk]
+    verified: false   # 403(ボット対策): site:cepr.org/events 検索補完かINBOX。開催地は世界各地のためGB/オンライン分のみ収載される
+  - name: "Resolution Foundation – Events"
+    url: "https://www.resolutionfoundation.org/events/"
+    category: tt
+    regions: [uk]
+    verified: true
+  - name: "Institute for Government – Events"
+    url: "https://www.instituteforgovernment.org.uk/our-events"
+    category: tt
+    regions: [uk]
+    verified: true    # 注意: /events は /our-events/old にリダイレクトされ403になる。/our-events を直接使う
+  - name: "CER – Centre for European Reform – Events"
+    url: "https://www.cer.eu/events"
+    category: tt
+    regions: [uk]
+    verified: true    # 招待制・ブリュッセル開催が多い(GB/オンライン分のみ収載される)
+  - name: "Chatham House – Events"
+    url: "https://www.chathamhouse.org/events"
+    category: tt
+    regions: [uk]
+    verified: false   # 403(ボット対策、RSSも403): site:chathamhouse.org/events 検索補完かINBOX
+  - name: "RUSI – Royal United Services Institute – Events"
+    url: "https://my.rusi.org/events.html"
+    category: tt
+    regions: [uk]
+    verified: true    # rusi.org/events からのリダイレクト先。会員限定イベントが混在(ページ内に種別表示あり)
+  - name: "IISS – International Institute for Strategic Studies – Events"
+    url: "https://www.iiss.org/events/"
+    category: tt
+    regions: [uk]
+    verified: false   # 403(ボット対策): site:iiss.org/events 検索補完かINBOX
+  - name: "Policy Exchange – Events"
+    url: "https://policyexchange.org.uk/events/"
+    category: tt
+    regions: [uk]
+    verified: false   # 実行環境から接続不能(HTTP/2 PROTOCOL_ERROR / Empty reply、HTTP/1.1でも同様)。検索補完かINBOX
+  - name: "Grantham Research Institute (LSE) – Events"
+    url: "https://www.lse.ac.uk/granthaminstitute/events/"
+    category: tt
+    regions: [uk]
+    verified: true
+  - name: "E3G – Latest (events are mixed into the news feed)"
+    url: "https://www.e3g.org/latest/"
+    category: tt
+    regions: [uk]
+    verified: true    # /events/ は404。イベントは /latest/ にニュースと混在して掲載。ブリュッセル開催が多く収載は少ない見込み
+  # Green Finance Institute(/events/ 404・一覧なし)、Tony Blair Institute(429 Vercel Security Checkpoint・公開セミナー稀)は定点にしない
+
+  # --- 大学 ---
+  - name: "LSE – Public events (Search)"
+    url: "https://www.lse.ac.uk/Events/Search-Events"
+    category: uni
+    regions: [uk]
+    verified: true    # /events ハブは約460k字で巨大なため検索一覧ページを使う
+  - name: "LSE – Centre for Macroeconomics (CFM) – Events"
+    url: "https://www.centreformacroeconomics.ac.uk/events"
+    category: uni
+    regions: [uk]
+    verified: false   # 実行環境からTLS接続不能(FAIL-NET)。環境依存の可能性あり: 検索補完かINBOX
+  - name: "LSE – Financial Markets Group (FMG) – Events"
+    url: "https://www.fmg.ac.uk/events"
+    category: uni
+    regions: [uk]
+    verified: true    # 姉妹ページ /seminars も alt_urls 候補
+  - name: "LSE – Systemic Risk Centre (SRC) – Events"
+    url: "https://www.systemicrisk.ac.uk/events"
+    category: uni
+    regions: [uk]
+    verified: true    # 2026-10-19時点「No upcoming events.」(構造は静的)
+  - name: "LSE – Centre for Economic Performance (CEP) – Events"
+    url: "https://cep.lse.ac.uk/_new/events/"
+    category: uni
+    regions: [uk]
+    verified: true
+  - name: "Oxford – Saïd Business School – Events"
+    url: "https://www.sbs.ox.ac.uk/events"
+    category: uni
+    regions: [uk]
+    verified: false   # 403(ボット対策): site:sbs.ox.ac.uk/events 検索補完かINBOX
+  - name: "Oxford Martin School – Events"
+    url: "https://www.oxfordmartin.ox.ac.uk/events"
+    category: uni
+    regions: [uk]
+    verified: true
+  - name: "Cambridge Judge Business School – Events"
+    url: "https://www.jbs.cam.ac.uk/events/"
+    category: uni
+    regions: [uk]
+    verified: false   # 一覧はJS描画(静的HTMLはナビのみ): site:jbs.cam.ac.uk/events 検索で補完
+  - name: "Bennett School of Public Policy (Cambridge) – Events"
+    url: "https://www.bennettschool.cam.ac.uk/events/"
+    category: uni
+    regions: [uk]
+    verified: true
+  - name: "KCL – Qatar Centre for Global Banking & Finance – Event series"
+    url: "https://www.kcl.ac.uk/events/series/qatar-centre-for-global-banking-finance-event-series"
+    category: uni
+    regions: [uk]
+    verified: false   # 一覧に日付付き項目が出ない(JS描画か0件)。旗艦の BoE Watchers' Conference は MMF 側(mmf.ac.uk/policy/)で拾う
+  - name: "Imperial College Business School – Events"
+    url: "https://www.imperial.ac.uk/business-school/events/"
+    category: uni
+    regions: [uk]
+    verified: true    # 入試説明会が大半(テーマ除外に任せる)。?category= フィルタは効かない
+  - name: "Warwick – Department of Economics – Events"
+    url: "https://warwick.ac.uk/fac/soc/economics/events/"
+    category: uni
+    regions: [uk]
+    verified: true
+  - name: "Warwick Business School – Events"
+    url: "https://www.wbs.ac.uk/events/"
+    category: uni
+    regions: [uk]
+    verified: false   # 一覧はJS描画: site:wbs.ac.uk/events 検索で補完
+  - name: "Bayes Business School – Events"
+    url: "https://www.bayes.citystgeorges.ac.uk/events"
+    category: uni
+    regions: [uk]
+    verified: false   # 403(ボット対策): 検索補完かINBOX
+  - name: "MMF – Money Macro and Finance Society"
+    url: "https://mmf.ac.uk/"
+    category: uni
+    regions: [uk]
+    verified: true    # トップに年次会議・Max Fry Lecture・BoE Watchers' Conference の予定。会議ページ /policy/ と /conference/ も alt_urls 候補
+  - name: "IEA – Institute of Economic Affairs – Upcoming events"
+    url: "https://iea.org.uk/events-upcoming/"
+    category: tt
+    regions: [uk]
+    verified: true
+  - name: "UK in a Changing Europe (UKICE) – Events"
+    url: "https://ukandeu.ac.uk/all-events/"
+    category: uni
+    regions: [uk]
+    verified: true    # 掲載は少数
+
+  # --- アイルランド ---
+  - name: "Central Bank of Ireland – Upcoming events"
+    url: "https://www.centralbank.ie/events/upcoming-events"
+    category: cb
+    regions: [uk]
+    verified: true    # 一覧は年のみ表示、日付は個別ページ(/events/upcoming-events/YYYY/MM/DD/…)に出る
+  - name: "ESRI – Economic and Social Research Institute (Dublin) – Events"
+    url: "https://www.esri.ie/events"
+    category: tt
+    regions: [uk]
+    verified: true
+  - name: "Trinity College Dublin – Economics seminar series"
+    url: "https://www.tcd.ie/economics/research/seminar-series/"
+    category: uni
+    regions: [uk]
+    verified: true    # 静的だが更新が遅く過去分中心(2026-10-19時点で今後の予定なし)。収量は低い
+
+  # --- 業界・市場(規模3相当のみ収載) ---
+  - name: "UK Finance – Events"
+    url: "https://www.ukfinance.org.uk/events"
+    category: other
+    regions: [uk]
+    verified: false   # 403(ボット対策、/events/feed も403): 検索補完かINBOX
+  - name: "TheCityUK – Events"
+    url: "https://www.thecityuk.com/events/"
+    category: other
+    regions: [uk]
+    verified: true
+  - name: "LSEG – London Stock Exchange Group – Events"
+    url: "https://www.lseg.com/en/events"
+    category: other
+    regions: [uk]
+    verified: true    # 世界各地の有料会議中心(GB/オンライン分のみ収載される)
+  - name: "ICMA – International Capital Market Association – Events"
+    url: "https://www.icmagroup.org/events/"
+    category: other
+    regions: [de, uk]
+    verified: true    # 会員限定が多い。フランクフルト等の欧州開催もあるため de にも出す
+  - name: "ISDA – Events"
+    url: "https://www.isda.org/events/"
+    category: other
+    regions: [uk]
+    verified: true    # 世界各地(GB/オンライン分のみ収載される)
+  # City of London Corporation は公開ページが文化イベント中心のJSページのため定点にしない(Mansion House 等は discovery)
+
+  # --- 日本・中国軸 ---
+  - name: "Daiwa Anglo-Japanese Foundation – Events"
+    url: "https://dajf.org.uk/events"
+    category: other
+    regions: [uk]
+    verified: true
+  - name: "Japan Society (London) – Events"
+    url: "https://www.japansociety.org.uk/events"
+    category: other
+    regions: [uk]
+    verified: true    # 文化行事が多い(テーマ除外に任せる)。日付は dd/mm/yyyy 表記
+  - name: "JETRO London – Events"
+    url: "https://www.jetro.go.jp/uk/events.html"
+    category: other
+    regions: [uk]
+    verified: false   # 2026-10-19時点 jetro.go.jp 全体が不正アクセス対応で停止中(「ウェブサイト停止のお知らせ」)。復旧後に正URLを再確認
+  - name: "SOAS – What's on (SOAS China Institute を含む)"
+    url: "https://www.soas.ac.uk/about/whats-on"
+    category: uni
+    regions: [uk]
+    verified: false   # China Institute 専用一覧なし。全学 What's on はJS描画: site:soas.ac.uk "China Institute" 検索で補完
+  - name: "CBBC – China-Britain Business Council – Events"
+    url: "https://www.cbbc.org/events"
+    category: other
+    regions: [uk]
+    verified: false   # 403(ボット対策): 検索補完かINBOX
+
+  # --- 北欧(中銀のみ。現地開催は規模3のみ収載=ingest 側で強制) ---
+  - name: "Sveriges Riksbank – Conferences"
+    url: "https://www.riksbank.se/en-gb/press-and-published/conferences/"
+    category: cb
+    regions: [uk]
+    verified: true    # 研究会議の一覧(新しい順)。講演予定は /en-gb/press-and-published/calendar/(alt_urls 候補)
+  - name: "Norges Bank – Research conferences"
+    url: "https://www.norges-bank.no/en/topics/Research/Conferences/"
+    category: cb
+    regions: [uk]
+    verified: true    # Upcoming/Past の静的一覧。/en/news-events/calendar/ は公表予定中心
+  - name: "Danmarks Nationalbank – Research events"
+    url: "https://www.nationalbanken.dk/en/research/events"
+    category: cb
+    regions: [uk]
+    verified: true    # 静的(セミナー+会議)。公式カレンダー /en/news-and-knowledge/calendar はJS描画で取得不可
+  - name: "Suomen Pankki – Bank of Finland – Events calendar"
+    url: "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/"
+    category: cb
+    regions: [uk]
+    verified: true    # 全カテゴリ版(研究セミナー・会議・講演)。de 側の BOFIT 定点(?c=26,24,25)とは別エントリ
+  - name: "Seðlabanki Íslands – Central Bank of Iceland"
+    url: "https://cb.is/"
+    category: cb
+    regions: [uk]
+    verified: true    # 専用一覧 /news-and-publications/events はJS(Blazor)描画で0字。トップはサーバ描画で直近のイベント欄が出る(公表予定中心・収量は低い)
+
 # ------------------------------------------------------------
 # ネット検索による新規発見(定点リスト外の拾い漏れ対策)
 # 毎日この観点で web 検索を行い、新規イベントを追加する
@@ -466,3 +747,23 @@ discovery_topics:
   - "日本経済・日独/日欧経済関係に関する会議やセミナー(例: Japan Wirtschaft Konferenz Deutschland, Deutsch-Japanisches Wirtschaftsforum, Japan economy seminar, Bank of Japan lecture Europe, EU-Japan EPA event)"
   - "ウクライナの復興・戦後経済再建に関する会議やセミナー(例: Ukraine Recovery Conference, Ukraine reconstruction finance, EBRD EIB Ukraine, frozen Russian assets 凍結資産, Wiederaufbau Ukraine Konferenz, Ukraine investment forum, Kyiv School of Economics event)"
   - "対ロシア制裁・輸出管理・脱ロシア産エネルギーに関するセミナー(例: Russia sanctions seminar, export controls Russia conference, sanctions enforcement workshop, Energieversorgung ohne russisches Gas Konferenz, war economy Russia Ukraine seminar, Ukraine refugees labour market study)"
+
+# ------------------------------------------------------------
+# 英国モード(profile uk)の発見検索観点。英語クエリのみ。2026-10-19 作成
+# ------------------------------------------------------------
+discovery_topics_uk:
+  - "イングランド銀行・金融政策に関する会議やセミナー(英国内またはオンライン)。例: Bank of England conference 2026, BoE research conference, monetary policy conference London, BEAR conference, Bank of England Watchers' Conference, MPC member speech event London"
+  - "英国実体経済に関するセミナー。特にエネルギー価格・防衛支出拡大・インフラ投資・産業戦略(Industrial Strategy)・財政(Budget/Spending Review)関連。例: UK defence spending conference, UK industrial strategy event, energy prices UK seminar, infrastructure investment conference UK, Budget 2026 analysis event, OBR forecast briefing, UK productivity conference"
+  - "金融規制・金融市場に関する会議(PRA・FCA・Edinburgh Reforms・Basel 3.1・Solvency UK・非銀行金融)。例: PRA conference, FCA webinar, UK banking regulation conference London, Basel 3.1 implementation event UK, Edinburgh Reforms event, financial stability conference London, UK capital markets reform seminar, Mansion House reforms pensions event"
+  - "省庁・規制当局・業界団体・メディア主催の単発イベント(サミット・年次会議・パネル討論)。例: HM Treasury conference, UK Finance annual conference, TheCityUK event, City of London Corporation summit, Financial Times conference London 2026, Bloomberg event London"
+  - "地政学・安全保障・地経学に関するセミナーや講演(英国内またはオンライン)。例: RUSI event, IISS event London, Chatham House event, economic security conference UK, sanctions export controls seminar London, defence economics workshop UK, UK-EU relations event, geoeconomics seminar London"
+  - "サステナブルファイナンス・気候関連の会議やセミナー(英国内またはオンライン)。例: Transition Plan Taskforce event, Green Finance Institute event, Grantham Research Institute event, UK sustainable finance conference, climate risk Bank of England event, net zero finance London, TNFD event London, Climate Financial Risk Forum"
+  - "無料で一般参加できる経済・金融・ESG系のウェビナー・公開講演・公聴会(英国内機関主催またはオンライン)。例: free webinar UK economy registration, LSE public lecture economics, NIESR webinar, IFS event online free, FCA webinar registration, OMFIF panel online, UNEP FI webinar, PRI webinar"
+  - "AI・デジタル技術と経済・金融・規制に関する会議やセミナー(英国内またはオンライン)。例: AI economy conference London, AI regulation UK event, AI financial services FCA event, digital pound CBDC event, UK fintech conference, AI productivity labour market seminar UK, Alan Turing Institute economics event"
+  - "中国経済・英中経済関係に関する会議やセミナー。例: China economic outlook London event, SOAS China Institute event, China-Britain Business Council event, UK China trade investment seminar, de-risking China conference London, Chatham House China event"
+  - "日本経済・日英経済関係に関する会議やセミナー。例: Japan economy seminar London, Daiwa Anglo-Japanese Foundation event, Japan Society London lecture, JETRO London seminar, UK-Japan economic partnership event, Bank of Japan speech London, Nippon Club London seminar"
+  - "ウクライナの復興・戦後経済再建に関する会議やセミナー(ロンドン開催・オンライン)。例: Ukraine Recovery Conference London, Ukraine reconstruction finance event London, EBRD Ukraine investment event, frozen Russian assets seminar London, Kyiv School of Economics London event, Ukraine investment forum"
+  - "アイルランドの経済・金融政策イベント。例: Central Bank of Ireland conference, Financial System Conference Dublin, ESRI seminar, Trinity College Dublin economics lecture, Irish Fiscal Advisory Council event, Dublin finance conference, Department of Finance Ireland conference"
+  - "北欧中央銀行の旗艦会議・年次会議(現地開催は規模3のみ収載、オンラインは全規模)。例: Riksbank annual research conference, Norges Bank conference, Danmarks Nationalbank conference, Bank of Finland CEPR joint conference, Seðlabanki conference Reykjavik, Nordic central bank conference 2026, Riksbank Economic Outlook event"
+  - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: site:ifs.org.uk/events, site:cepr.org/events London 2026, site:chathamhouse.org/events economy, site:iiss.org/events, site:ukfinance.org.uk/events, site:sbs.ox.ac.uk/events, site:bayes.citystgeorges.ac.uk/events, site:cbbc.org/events, site:policyexchange.org.uk/events, site:centreformacroeconomics.ac.uk events, site:bankofengland.co.uk/events 2026, site:jbs.cam.ac.uk/events, site:wbs.ac.uk/events, site:kcl.ac.uk/events banking finance, Tony Blair Institute event)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
+  - "英国の大学・学会の公開講演・年次会議(経済・金融)。例: Royal Economic Society annual conference 2027, MMF annual conference, LSE public event economics, Oxford economics lecture, Cambridge economics conference, UCL economics event, Warwick economics conference, Bank of England Agenda for Research"
