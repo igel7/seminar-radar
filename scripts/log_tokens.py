@@ -16,6 +16,7 @@ Claude Code は実行中のセッションの発話ログを
     python3 scripts/log_tokens.py --summary       # 記録済みの直近20件を一覧表示
     python3 scripts/log_tokens.py --transcript PATH   # ログの場所を明示指定
     python3 scripts/log_tokens.py --no-render     # docs/index.html を作り直さない
+    python3 scripts/log_tokens.py --profile uk    # 英国モード(data/uk/token_usage.json・docs/uk/)
 
 注意(重要):
   このスクリプト自身がセッションの途中で動くため、**実行後のターン
@@ -33,15 +34,27 @@ Claude Code は実行中のセッションの発話ログを
 
 import argparse
 import json
-import os
 import re
-import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-ROOT = Path(__file__).resolve().parent.parent
-USAGE_FILE = ROOT / "data" / "token_usage.json"
+import os
+import sys
+
+# --profile uk  ==  SR_PROFILE=uk  (AGENTS.md「プロファイル」参照)。
+# radar_lib はプロファイルを import 時に確定するため、import より前に環境変数へ写す。
+_argv = sys.argv[1:]
+for _i, _a in enumerate(_argv):
+    if _a == "--profile" and _i + 1 < len(_argv):
+        os.environ["SR_PROFILE"] = _argv[_i + 1]
+    elif _a.startswith("--profile="):
+        os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import radar_lib  # noqa: E402
+from radar_lib import PROFILE_ID, ROOT, TOKEN_USAGE_FILE as USAGE_FILE  # noqa: E402
+
 TZ = ZoneInfo("Europe/Berlin")
 
 # 1レコードあたりのトークン集計キー(JSONの並び順もこの順にする)
@@ -211,6 +224,7 @@ def upsert(records: list, record: dict) -> str:
 
 def print_summary(limit: int) -> None:
     records = load_records()
+    print(f"[profile={PROFILE_ID}] {USAGE_FILE.relative_to(ROOT)}")
     if not records:
         print("記録がまだありません。")
         return
@@ -238,6 +252,8 @@ def main() -> None:
                     help="記録するだけで docs/index.html を作り直さない")
     ap.add_argument("--summary", nargs="?", type=int, const=20, metavar="N",
                     help="記録済みの直近N件(既定20)を表示して終了する")
+    ap.add_argument("--profile", default=PROFILE_ID,
+                    help="プロファイル de/uk(既定 de。SR_PROFILE と同義。冒頭で処理済み)")
     args = ap.parse_args()
 
     if args.summary is not None:
@@ -283,15 +299,14 @@ def rerender() -> None:
     """更新履歴に当日のトークン数を反映させるため docs/index.html を組み直す。
     再生成に失敗しても記録自体は済んでいるので、警告だけ出して終了コードは変えない
     (数字が1日分載らないことより、日次更新が止まる方が損失が大きい)。"""
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    html_rel = radar_lib.HTML_FILE.relative_to(ROOT)
     try:
-        import radar_lib
         radar_lib.rerender_html()
     except Exception as e:      # noqa: BLE001 - 表示上のおまけなので握りつぶす
-        print(f"docs/index.html の再生成に失敗しました(記録は済んでいます): {e}",
+        print(f"{html_rel} の再生成に失敗しました(記録は済んでいます): {e}",
               file=sys.stderr)
         return
-    print("docs/index.html を組み直しました(更新履歴にトークン数を反映)。")
+    print(f"{html_rel} を組み直しました(更新履歴にトークン数を反映)。")
 
 
 if __name__ == "__main__":

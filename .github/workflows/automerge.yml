@@ -48,11 +48,23 @@ jobs:
       # --maintenance: サイトの LAST UPDATE(最終巡回時刻)は data/meta.json の値を使う。
       # 巡回時刻は実行エージェント側の ingest.py が data/meta.json に記録済みであり、
       # ここでの再生成はそれを進めてはならない(進めるのは巡回本体のみ)。
-      - name: Data update — take data/ only and regenerate docs/
+      # プロファイル(ドイツモード data/ ・英国モード data/uk/)ごとに別の Routine が
+      # 別ブランチから push するため、data/ を丸ごと checkout せず、**そのブランチが変更した
+      # ファイルだけ**を取り込む(丸ごと取り込むと、先に main へ入った他方のプロファイルの
+      # データが、ブランチ分岐時点の古いコピーで巻き戻ってしまう)。
+      # docs/ は両プロファイル分(docs/ と docs/uk/)を main 側で再生成する。
+      - name: Data update — take changed data/ files only and regenerate docs/
         if: steps.classify.outputs.mode == 'data'
         run: |
-          git checkout "origin/${GITHUB_REF_NAME}" -- data/
+          git diff --no-renames --name-status "origin/main...origin/${GITHUB_REF_NAME}" -- data/ \
+            | while IFS=$'\t' read -r st path; do
+                case "$st" in
+                  D) git rm -q -- "$path" || true ;;
+                  *) git checkout "origin/${GITHUB_REF_NAME}" -- "$path" ;;
+                esac
+              done
           python3 scripts/ingest.py --maintenance
+          python3 scripts/ingest.py --maintenance --profile uk
           git add data/ docs/
           git diff --cached --quiet || git commit -m "daily update (from ${GITHUB_REF_NAME})"
           git push origin main
@@ -63,6 +75,7 @@ jobs:
         run: |
           git merge --no-edit -X theirs "origin/${GITHUB_REF_NAME}"
           python3 scripts/ingest.py --maintenance
+          python3 scripts/ingest.py --maintenance --profile uk
           git add data/ docs/
           git diff --cached --quiet || git commit -m "regenerate docs/ after code merge"
           git push origin main

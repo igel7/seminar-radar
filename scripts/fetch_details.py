@@ -31,22 +31,34 @@ LLMは使わない(標準ライブラリのみ)。
     python3 scripts/fetch_details.py             # 最大 LIMIT 件を取得
     python3 scripts/fetch_details.py --limit 3   # 件数を変える
     python3 scripts/fetch_details.py --dry-run   # 候補の一覧だけ出して取得も台帳更新もしない
+    python3 scripts/fetch_details.py --profile uk  # 英国モード(data/uk/ の収載分・台帳)
 """
 
 import argparse
 import concurrent.futures
 import json
 import re
-import sys
 from datetime import date, timedelta
 from pathlib import Path
 
+import os
+import sys
+
+# --profile uk  ==  SR_PROFILE=uk  (AGENTS.md「プロファイル」参照)。
+# radar_lib はプロファイルを import 時に確定するため、import より前に環境変数へ写す。
+_argv = sys.argv[1:]
+for _i, _a in enumerate(_argv):
+    if _a == "--profile" and _i + 1 < len(_argv):
+        os.environ["SR_PROFILE"] = _argv[_i + 1]
+    elif _a.startswith("--profile="):
+        os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from radar_lib import DATA_FILE, ROOT, TODAY, load_json, parse_sources  # noqa: E402
+from radar_lib import DATA_DIR, DATA_FILE, PROFILE_ID, ROOT, TODAY, load_json, parse_sources  # noqa: E402
 from fetch_all import (CACHE_DIR, HINTS_FILE, classify_failure, decode, fetch,  # noqa: E402
                        html_to_text)
 
-STATE_FILE = ROOT / "data" / "detail_state.json"
+STATE_FILE = DATA_DIR / "detail_state.json"     # プロファイル別(data/uk/ 等)
 MANIFEST_FILE = CACHE_DIR / "detail_manifest.json"
 LIMIT = 5                   # 1日あたりの取得上限(トークンと取得回数を抑えるため)
 RETRY_DAYS = 21             # 同じURLを再確認するまでの間隔
@@ -123,6 +135,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=LIMIT)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--profile", default=PROFILE_ID,
+                    help="プロファイル de/uk(既定 de。SR_PROFILE と同義。冒頭で処理済み)")
     args = ap.parse_args()
 
     store = load_json(DATA_FILE, {})

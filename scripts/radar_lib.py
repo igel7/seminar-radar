@@ -8,6 +8,7 @@ LLM(実行エージェント: Claude Code / Codex)は抽出だけを担当し、
 
 import hashlib
 import json
+import os
 import re
 import sys
 import unicodedata
@@ -16,15 +17,62 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_FILE = ROOT / "data" / "events.json"
-NEW_FILE = ROOT / "data" / "new_events.json"
-STATUS_FILE = ROOT / "data" / "status.json"
-META_FILE = ROOT / "data" / "meta.json"     # 最終巡回時刻などのメタ情報
-ARCHIVE_FILE = ROOT / "data" / "archive.json"
-CHANGELOG_FILE = ROOT / "data" / "changelog.json"
-TOKEN_USAGE_FILE = ROOT / "data" / "token_usage.json"   # 巡回1回ごとのトークン消費量
-HTML_FILE = ROOT / "docs" / "index.html"
-ICS_FILE = ROOT / "docs" / "calendar.ics"
+
+# ----------------------------------------------------------------------
+# プロファイル(ドイツモード de / 英国モード uk。UK_NORDIC_PLAN.md・AGENTS.md「プロファイル」)
+# ----------------------------------------------------------------------
+# 対象地域(開催国ISO 3166-1 alpha-2)。ドイツモード:
+# 対象=ドイツ・スイス・オーストリア・中東欧・バルカン・バルト・ウクライナ。
+# 英仏・ベネルクス(ルクセンブルク含む)・北欧・南欧・トルコは対象外。
+REGION = {
+    "DE", "CH", "AT",              # ドイツ・スイス・オーストリア
+    "PL", "CZ", "SK", "HU", "SI",  # 中東欧
+    "HR", "RS", "BA", "AL", "RO", "BG",  # バルカン
+    "LT", "LV", "EE",              # バルト三国
+    "UA",                          # ウクライナ
+}
+
+# 各プロファイルの設定。de のときの各パス定数は従来の値と一字も変わらない(後方互換)。
+#   data_dir / docs_dir : 巡回状態ファイル・出力ページの置き場
+#   region              : 開催国がこの集合に含まれれば収載(country None=オンラインは常に可)
+#   min_importance      : 開催国がこれらの国のイベントは importance がこの値未満なら除去
+#                         (北欧の現地開催は規模3のみ。完全オンラインは対象外)
+#   anywhere_orgs       : ECB・BIS 主催の「開催国不問」例外を適用するか
+#   ics_name            : ICS の X-WR-CALNAME
+#   topics_key          : sources.yaml の発見検索観点のキー
+#   home / other / other_href / ls_suffix : テンプレート(__PROFILE_JSON__)へ渡す値
+#                         (既定フィルタの国、切替スイッチの遷移先、localStorage キー接尾辞)
+PROFILES = {
+    "de": dict(data_dir=ROOT / "data", docs_dir=ROOT / "docs",
+               region=REGION, min_importance={}, anywhere_orgs=True,
+               ics_name="Germany Econ/Fin Seminars", topics_key="discovery_topics",
+               home="DE", other="uk", other_href="uk/", ls_suffix=""),
+    "uk": dict(data_dir=ROOT / "data" / "uk", docs_dir=ROOT / "docs" / "uk",
+               region={"GB", "IE", "DK", "SE", "NO", "FI", "IS"},
+               min_importance={"DK": 3, "SE": 3, "NO": 3, "FI": 3, "IS": 3},
+               anywhere_orgs=False,
+               ics_name="UK Econ/Fin Seminars", topics_key="discovery_topics_uk",
+               home="GB", other="de", other_href="../", ls_suffix="_uk"),
+}
+# 環境変数 SR_PROFILE で選ぶ(各スクリプトの --profile は import 前にこれを設定する)。
+PROFILE_ID = os.environ.get("SR_PROFILE", "de")
+if PROFILE_ID not in PROFILES:
+    sys.exit(f"SR_PROFILE / --profile の値が不正です: {PROFILE_ID!r}"
+             f"(有効: {', '.join(sorted(PROFILES))})")
+PROFILE = PROFILES[PROFILE_ID]
+
+DATA_DIR = PROFILE["data_dir"]
+DOCS_DIR = PROFILE["docs_dir"]
+DATA_FILE = DATA_DIR / "events.json"
+NEW_FILE = DATA_DIR / "new_events.json"
+STATUS_FILE = DATA_DIR / "status.json"
+META_FILE = DATA_DIR / "meta.json"     # 最終巡回時刻などのメタ情報
+ARCHIVE_FILE = DATA_DIR / "archive.json"
+CHANGELOG_FILE = DATA_DIR / "changelog.json"
+TOKEN_USAGE_FILE = DATA_DIR / "token_usage.json"   # 巡回1回ごとのトークン消費量
+HTML_FILE = DOCS_DIR / "index.html"
+ICS_FILE = DOCS_DIR / "calendar.ics"
+# 以下はプロファイル共用(全プロファイルで同じファイルを使う)
 TEMPLATE_FILE = ROOT / "scripts" / "template.html"
 SOURCES_FILE = ROOT / "sources.yaml"
 PEOPLE_FILE = ROOT / "data" / "people.json"   # 要人名簿(ユーザー管理。AGENTS.md A-4)
@@ -33,8 +81,8 @@ TZ = ZoneInfo("Europe/Berlin")
 TODAY = datetime.now(TZ).date()
 THEMES = ["central_bank", "real_economy", "fin_markets", "geopolitics", "climate_esg",
           "ai", "china", "japan", "ukraine"]
-OVERRIDES_FILE = ROOT / "data" / "overrides.json"
-ALIASES_FILE = ROOT / "data" / "aliases.json"
+OVERRIDES_FILE = DATA_DIR / "overrides.json"
+ALIASES_FILE = DATA_DIR / "aliases.json"
 
 # 更新履歴(data/changelog.json)に「変更」として記録するフィールドのホワイトリスト。
 # summary_ja・title_ja 等はLLMが毎日再抽出するたびに言い回しが変わりがちで、
@@ -46,17 +94,6 @@ CHANGELOG_KEEP_DAYS = 90    # data/changelog.json にファイルとして保持
 CHANGELOG_EMBED_DAYS = 30   # HTMLに埋め込み・表示する日数(ファイル保持より短い窓)
 
 _URL_RE = re.compile(r"^https?://", re.IGNORECASE)
-
-# 対象地域(開催国ISO 3166-1 alpha-2)。
-# 対象=ドイツ・スイス・オーストリア・中東欧・バルカン・バルト・ウクライナ。
-# 英仏・ベネルクス(ルクセンブルク含む)・北欧・南欧・トルコは対象外。
-REGION = {
-    "DE", "CH", "AT",              # ドイツ・スイス・オーストリア
-    "PL", "CZ", "SK", "HU", "SI",  # 中東欧
-    "HR", "RS", "BA", "AL", "RO", "BG",  # バルカン
-    "LT", "LV", "EE",              # バルト三国
-    "UA",                          # ウクライナ
-}
 
 # ECB・BIS 主催かどうかの判定(単語境界。大文字小文字・全半角ゆれを吸収するため
 # casefold済みの文字列に対して使う)。
@@ -125,19 +162,34 @@ def safe_url(u):
 
 def region_ok(ev, anywhere_sources):
     """開催地域が対象かどうかを決定論的に判定する。次のいずれかでTrue:
-    (1) country が None(オンライン)または REGION 内
-    (2) organizer_short/organizer に ECB・BIS が単語として含まれる(開催国不問)
+    (1) country が None(オンライン)またはプロファイルの対象地域(PROFILE["region"])内
+    (2) organizer_short/organizer に ECB・BIS が単語として含まれる(開催国不問)。
+        ただしプロファイルで anywhere_orgs が有効な場合のみ(英国モードでは適用しない)
     (3) event の source が anywhere_sources(sources.yaml で anywhere: true の定点)に含まれる"""
     country = ev.get("country")
-    if country is None or country in REGION:
+    if country is None or country in PROFILE["region"]:
         return True
-    for key in ("organizer_short", "organizer"):
-        val = ev.get(key)
-        if val and _ANYWHERE_ORG_RE.search(str(val).casefold()):
-            return True
+    if PROFILE["anywhere_orgs"]:
+        for key in ("organizer_short", "organizer"):
+            val = ev.get(key)
+            if val and _ANYWHERE_ORG_RE.search(str(val).casefold()):
+                return True
     if ev.get("source") in anywhere_sources:
         return True
     return False
+
+
+def importance_ok(ev):
+    """プロファイルの重要度下限(PROFILE["min_importance"]: 開催国→下限)を満たすか。
+    英国モードの北欧(DK/SE/NO/FI/IS)は現地開催・ハイブリッド(country が付く)なら
+    importance 3 のみ収載する。country が None(完全オンライン)や下限の無い国は常にTrue。"""
+    country = ev.get("country")
+    if country is None:
+        return True
+    minimum = PROFILE["min_importance"].get(country)
+    if minimum is None:
+        return True
+    return (ev.get("importance") or 0) >= minimum
 
 
 def apply_flagship(ev):
@@ -1074,28 +1126,41 @@ def sanitize_statuses(statuses):
     return out
 
 
+def _yaml_top_sections(text):
+    """sources.yaml のトップレベルキー(行頭 `key:` だけの行)ごとに本文を切り出す。
+    各セクションは次のトップレベルキー(または末尾)まで。戻り値: {key: 本文}。"""
+    marks = list(re.finditer(r'^([a-z_]+):\s*$', text, re.MULTILINE))
+    sections = {}
+    for i, m in enumerate(marks):
+        end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
+        sections[m.group(1)] = text[m.end():end]
+    return sections
+
+
 def parse_sources():
     """sources.yaml を行ベースで解析する(このファイルは自前管理でフォーマットが
     安定しているため、PyYAML の無い環境でも動くよう汎用YAMLパーサは使わない)。
-    戻り値: {"sources": [{"name", "url", "anywhere", "category"}, ...], "topics": [str, ...]}。
+    戻り値: {"sources": [{"name", "url", "anywhere", "category", "regions"}, ...],
+            "topics": [str, ...], "profile": PROFILE_ID}。
     category は巡回ステータスのグループ表示用(cb/tt/uni/other。未記載は other)。
+    regions はその定点が属するプロファイル(`regions: [de, uk]`。未記載は [de])で、
+    **現在のプロファイルに属する定点だけ**を返す。topics は PROFILE["topics_key"]
+    (de: discovery_topics / uk: discovery_topics_uk)のセクションから取る(無ければ空)。
     ファイルが無い/解析に失敗しても例外を投げず空の結果を返す(巡回を止めない)。"""
-    empty = {"sources": [], "topics": []}
+    empty = {"sources": [], "topics": [], "profile": PROFILE_ID}
     try:
         text = SOURCES_FILE.read_text(encoding="utf-8")
     except OSError:
         return empty
 
     try:
-        src_marker = re.search(r'^sources:\s*$', text, re.MULTILINE)
-        topics_marker = re.search(r'^discovery_topics:\s*$', text, re.MULTILINE)
-        sources_section = (text[src_marker.end():topics_marker.start()]
-                            if src_marker and topics_marker else "")
-        topics_section = text[topics_marker.end():] if topics_marker else ""
+        sections = _yaml_top_sections(text)
+        sources_section = sections.get("sources", "")
+        topics_section = sections.get(PROFILE["topics_key"], "")
 
         sources = []
         # 各エントリの "name: ... \n url: ..." の直後、次の "- name:" (または末尾) までを
-        # そのエントリのブロックとして anywhere: true の有無を調べる。
+        # そのエントリのブロックとして anywhere: true / category / regions を調べる。
         entry_re = re.compile(
             r'-\s*name:\s*"([^"]*)"\s*\n\s*url:\s*"([^"]*)"(?P<rest>.*?)(?=\n\s*-\s*name:|\Z)',
             re.DOTALL)
@@ -1108,10 +1173,18 @@ def parse_sources():
                 mcat = re.search(r'^\s*category:\s*"?([a-z]+)"?\s*(?:#.*)?$', rest,
                                  re.MULTILINE)
                 category = mcat.group(1) if mcat else "other"
+                mreg = re.search(r'^\s*regions:\s*\[([^\]]*)\]\s*(?:#.*)?$', rest,
+                                 re.MULTILINE)
+                regions = ([r.strip().strip('"\'') for r in mreg.group(1).split(",")]
+                           if mreg else ["de"])
+                regions = [r for r in regions if r]
+                if PROFILE_ID not in regions:
+                    continue
                 # ステータス表のリンクとしてそのまま href に入るため、ここで
                 # スキームを強制する(javascript: 等は空文字にしてリンクを張らせない)。
                 sources.append({"name": name, "url": safe_url(url) or "",
-                                "anywhere": anywhere, "category": category})
+                                "anywhere": anywhere, "category": category,
+                                "regions": regions})
 
         topics = []
         for m in re.finditer(r'^\s*-\s*"([^"]*)"\s*$', topics_section, re.MULTILINE):
@@ -1119,7 +1192,7 @@ def parse_sources():
             if topic:
                 topics.append(topic)
 
-        return {"sources": sources, "topics": topics}
+        return {"sources": sources, "topics": topics, "profile": PROFILE_ID}
     except Exception:
         return empty
 
@@ -1143,6 +1216,16 @@ def load_token_totals():
             continue
         totals[r["date"]] = totals.get(r["date"], 0) + int(n)
     return totals
+
+
+def _sources_for_embed():
+    """ページに埋め込む定点リスト。parse_sources() が返す regions / profile は
+    巡回スクリプト用の属性であり、ページ側はプロファイルを __PROFILE_JSON__ から受け取る
+    ため埋め込まない(埋め込み内容を従来どおりに保ち、de の出力を変えないため)。"""
+    parsed = parse_sources()
+    keep = ("name", "url", "anywhere", "category")
+    return {"sources": [{k: s.get(k) for k in keep} for s in parsed["sources"]],
+            "topics": parsed["topics"]}
 
 
 def render_html(events, statuses, changelog=None, maintenance=False):
@@ -1195,14 +1278,20 @@ def render_html(events, statuses, changelog=None, maintenance=False):
         "__EVENTS_JSON__": script_json(events_sorted),
         "__ALIASES_JSON__": script_json(load_aliases_for_embed()),
         "__STATUS_JSON__": script_json(sanitize_statuses(statuses)),
-        "__SOURCES_JSON__": script_json(parse_sources()),
+        "__SOURCES_JSON__": script_json(_sources_for_embed()),
         "__CHANGELOG_JSON__": script_json(changelog),
+        # プロファイル設定(テンプレートが既定フィルタ・切替スイッチ・localStorage キーを切替)
+        "__PROFILE_JSON__": script_json({
+            "id": PROFILE_ID, "home": PROFILE["home"],
+            "other": {"id": PROFILE["other"], "href": PROFILE["other_href"]},
+            "ls_suffix": PROFILE["ls_suffix"]}),
         "__UPDATED__": updated,
         "__UPDATED_ISO__": updated_iso,
         "__TODAY__": TODAY.isoformat(),
     }
     pattern = re.compile("|".join(map(re.escape, mapping)))
     html = pattern.sub(lambda m: mapping[m.group(0)], template)
+    HTML_FILE.parent.mkdir(parents=True, exist_ok=True)
     HTML_FILE.write_text(html, encoding="utf-8")
 
 
@@ -1232,7 +1321,7 @@ def ics_escape(s):
 def render_ics(events):
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0",
              "PRODID:-//seminar-radar//DE", "CALSCALE:GREGORIAN",
-             "X-WR-CALNAME:Germany Econ/Fin Seminars"]
+             f"X-WR-CALNAME:{PROFILE['ics_name']}"]
     for ev in events:
         # importance 0(毎週型の定例研究セミナー等のマイクロイベント)は ICS に含めない。
         # 購読カレンダーに週次セミナーが溢れてノイズになるのを防ぐため
@@ -1257,4 +1346,5 @@ def render_ics(events):
                   f"DESCRIPTION:{ics_escape(desc)}",
                   "END:VEVENT"]
     lines.append("END:VCALENDAR")
+    ICS_FILE.parent.mkdir(parents=True, exist_ok=True)
     ICS_FILE.write_text("\r\n".join(lines) + "\r\n", encoding="utf-8")

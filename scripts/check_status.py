@@ -20,14 +20,28 @@ check_status.py: 巡回ステータスの品質ゲート(AGENTS.md B手順5)。
 
 import json
 import subprocess
-import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-ROOT = Path(__file__).resolve().parent.parent
-STATUS_FILE = ROOT / "data" / "status.json"
-FETCH_STATE_FILE = ROOT / "data" / "fetch_state.json"
+import os
+import sys
+
+# --profile uk  ==  SR_PROFILE=uk  (AGENTS.md「プロファイル」参照)。
+# radar_lib はプロファイルを import 時に確定するため、import より前に環境変数へ写す。
+_argv = sys.argv[1:]
+for _i, _a in enumerate(_argv):
+    if _a == "--profile" and _i + 1 < len(_argv):
+        os.environ["SR_PROFILE"] = _argv[_i + 1]
+    elif _a.startswith("--profile="):
+        os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from radar_lib import DATA_DIR, PROFILE_ID, ROOT, STATUS_FILE  # noqa: E402
+
+FETCH_STATE_FILE = DATA_DIR / "fetch_state.json"
+# git show HEAD:<path> 用のリポジトリ相対パス(de: data/status.json / uk: data/uk/status.json)
+STATUS_REL = STATUS_FILE.relative_to(ROOT).as_posix()
 TODAY = datetime.now(ZoneInfo("Europe/Berlin")).date().isoformat()
 
 # 巡回ソースではない特殊行(比較・tried判定の対象外)
@@ -46,18 +60,23 @@ def load_current():
     try:
         return json.loads(STATUS_FILE.read_text(encoding="utf-8"))
     except FileNotFoundError:
-        sys.exit("data/status.json が存在しない。手順4を先に実行すること。")
+        sys.exit(f"{STATUS_REL} が存在しない。手順4を先に実行すること。")
     except json.JSONDecodeError as e:
-        sys.exit(f"data/status.json がJSONとして読めない: {e}")
+        sys.exit(f"{STATUS_REL} がJSONとして読めない: {e}")
 
 
 def load_previous():
-    """前回コミット時点の status.json。取れなければ None(初回実行など)。"""
+    """前回コミット時点の status.json。取れなければ None(初回実行など)。
+    HEAD にまだファイルが無い場合(プロファイル初回の巡回)は空リストとして扱い、
+    比較チェックは「前回ゼロ」から行う。"""
     try:
         out = subprocess.run(
-            ["git", "show", "HEAD:data/status.json"],
+            ["git", "show", f"HEAD:{STATUS_REL}"],
             cwd=ROOT, capture_output=True, text=True)
         if out.returncode != 0:
+            err = out.stderr or ""
+            if "does not exist" in err or "exists on disk, but not in" in err:
+                return []        # HEAD に未登録(初回)
             return None
         return json.loads(out.stdout)
     except Exception:
@@ -132,8 +151,8 @@ def main():
         print("対応方法は AGENTS.md B手順5 を参照。警告を黙殺して commit しないこと。")
         sys.exit(1)
 
-    print("check_status: 問題なし(失敗 {} 件 / 巡回 {} ソース)。".format(
-        sum(1 for e in current if not e.get("ok")), len(current)))
+    print("check_status [profile={}]: 問題なし(失敗 {} 件 / 巡回 {} ソース)。".format(
+        PROFILE_ID, sum(1 for e in current if not e.get("ok")), len(current)))
 
 
 if __name__ == "__main__":

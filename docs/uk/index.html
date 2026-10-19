@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex">
+<title>Seminar Calendar — ドイツ経済・金融セミナー</title>
+<meta name="theme-color" id="themecolor" content="#080b10">
+<script>
+/* 保存済みの配色を最初のペイント前に当てる(ダークで描いてから明転するちらつきを防ぐ)。
+   本体スクリプトはページ末尾にありCSS適用後に走るため、ここだけ独立して head に置く。
+   既定はダークで、:root の既定値がそのまま効く = 何も属性を付けない。 */
+(function(){try{
+  var q=new URLSearchParams(location.search).get("skin");
+  var v=(q==="light"||q==="dark")?q:localStorage.getItem("sr_skin");
+  if(q==="light"||q==="dark"){ try{ localStorage.setItem("sr_skin",q); }catch(e){} }
+  if(v==="light"||v==="dark"){
+    document.documentElement.dataset.skin=v;
+    var m=document.getElementById("themecolor");
+    if(m) m.content = (v==="light") ? "#eef1f5" : "#080b10";
+  }
+}catch(e){}})();
+</script>
+<style>
+  /* ---------- 配色トークン(既定=ダーク) ----------
+     色は必ずここのトークン経由で参照する。CSS本体に色を直書きすると
+     ライトテーマ(下の [data-skin="light"])で拾えなくなる。 */
+  :root{
+    color-scheme:dark;
+    --bg:#080b10; --panel:#10161f; --cal:#141b26; --cell:#0c121b; --cell2:#111925;
+    --line:#232e3c; --line2:#303d4e;
+    --ink:#e6e9ee; --ink2:#c7ccd3; --sub:#818d9b; --dim:#4a5462;
+    --amber:#f5a623; --amber-dim:#b9781a;
+    /* アンバーの極薄背景(適用中バー・展開行・今日のセル)と、アンバー面上に乗る前景 */
+    --amber-wash:rgba(245,166,35,.07); --on-amber:#10161f;
+    /* 重要度3色(暗背景用): 高=アンバー / 中=シアン / 低=ニュートラルグレー(可読) */
+    --imp3:#f5a623; --imp3-tx:#f8bd57; --imp3-bg:rgba(245,166,35,.15);
+    --imp2:#35c4dc; --imp2-tx:#63d6ea; --imp2-bg:rgba(53,196,220,.12);
+    --imp1:#63707f; --imp1-tx:#b3bcc7; --imp1-bg:rgba(120,135,152,.12);
+    /* 複数日スパンの帯(重要度色の面)と、帯の上に重なるラベルの縁取り */
+    --seg3:rgba(245,166,35,.34); --seg2:rgba(53,196,220,.30); --seg1:rgba(120,135,152,.34);
+    --seglbl-sh:0 1px 2px rgba(8,11,16,.92),0 0 3px rgba(8,11,16,.8);
+    /* アクセント色(リンク=シアン系 / 有料=アンバー系 / 無料=グリーン系) */
+    --cb-tx:#63d6ea; --re-tx:#f7bb52; --fm-tx:#6ad196;
+    --fail:#ff5257; --ok:#46c17a;
+    --wendout:#0a0e14;                    /* 週末かつ表示月外のセル(最も沈む面) */
+    --shadowc:rgba(0,0,0,.55); --shadowc2:rgba(0,0,0,.4);
+    /* イベント帯のホバー強調。暗背景では明るく、明背景では暗くする(下を参照) */
+    --hover-b:1.25; --hover-b2:1.3;
+    --mono:"SF Mono","JetBrains Mono",Consolas,"Roboto Mono",Menlo,monospace;
+  }
+  /* ---------- ライトテーマ ----------
+     暗背景用の値の単純反転では読めない(特にアンバー #f5a623 は白地でコントラスト比
+     2.2しかない)。色相は保ったまま明度・彩度を引き直し、本文・重要度ラベルは
+     いずれも背景に対して 4.5:1 以上を確保してある。上書きはこのブロックだけで完結する。 */
+  :root[data-skin="light"]{
+    color-scheme:light;
+    --bg:#eef1f5; --panel:#ffffff; --cal:#ffffff; --cell:#f6f8fb; --cell2:#e9edf3;
+    --line:#dfe4ea; --line2:#c2cad4;
+    --ink:#141a22; --ink2:#3d4753; --sub:#5a6675; --dim:#78838f;
+    --amber:#9d5a08; --amber-dim:#a06510;
+    --amber-wash:rgba(245,166,35,.13); --on-amber:#ffffff;
+    --imp3:#c07800; --imp3-tx:#8a5008; --imp3-bg:rgba(245,166,35,.20);
+    --imp2:#1088a3; --imp2-tx:#0b6a80; --imp2-bg:rgba(16,136,163,.13);
+    --imp1:#8b96a4; --imp1-tx:#4c5765; --imp1-bg:rgba(120,135,152,.13);
+    --seg3:rgba(245,166,35,.38); --seg2:rgba(16,136,163,.22); --seg1:rgba(120,135,152,.28);
+    --seglbl-sh:0 1px 2px rgba(255,255,255,.92),0 0 3px rgba(255,255,255,.75);
+    --cb-tx:#0b6a80; --re-tx:#8a5008; --fm-tx:#0f7a4e;
+    --fail:#c1272d; --ok:#12784c;
+    --wendout:#e4e8ee;
+    --shadowc:rgba(20,30,45,.16); --shadowc2:rgba(20,30,45,.13);
+    --hover-b:.96; --hover-b2:.94;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI","Hiragino Sans","Yu Gothic UI",Meiryo,sans-serif;
+    font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:14px 16px 60px}
+
+  /* ---------- ヘッダー(圧縮したステータスバー風) ---------- */
+  header{border:1px solid var(--line2);background:var(--panel);
+    border-radius:6px;padding:8px 14px;margin-bottom:14px}
+  .statusbar{display:flex;align-items:center;gap:5px 14px;flex-wrap:wrap}
+  /* デスクトップ幅ではタイトル・LIVE・更新時刻・右端ツールを1行に収める */
+  @media(min-width:1140px){ .statusbar{flex-wrap:nowrap} }
+  h1{margin:0;font-size:25px;letter-spacing:.055em;font-family:var(--mono);
+    font-weight:700;color:var(--ink);line-height:1.05;white-space:nowrap}
+  h1::before{content:"▸ ";color:var(--amber)}
+  .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);
+    font-size:10.5px;font-weight:700;letter-spacing:.2em;color:var(--ok);
+    text-transform:uppercase;align-self:center}
+  .live .ld{width:8px;height:8px;border-radius:50%;background:var(--ok);
+    box-shadow:0 0 6px var(--ok),0 0 2px var(--ok);
+    animation:liveblink 1.15s steps(1,end) infinite}
+  @keyframes liveblink{0%,55%{opacity:1}56%,100%{opacity:.15}}
+  .updated{font-family:var(--mono);font-size:10.5px;color:var(--sub);
+    letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .updated b{color:var(--amber-dim);font-weight:600}
+  /* ---------- ヘッダー右端ツール(仕組み・調査対象ボタン + 検索) ---------- */
+  .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto;min-width:0}
+  .srcwrap{position:relative}
+  .srcbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
+    padding:6px 11px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
+    letter-spacing:.08em;color:var(--sub);white-space:nowrap;
+    transition:border-color .12s,color .12s,background .12s}
+  .srcbtn:hover{border-color:var(--amber);color:var(--amber)}
+  /* UI言語切替(セグメントコントロール風。3ボタンを1つの枠に連結)。
+     同じ見た目を DE|UK モード切替(#modesw: 現在側は <span>、相手側は <a>)でも使う。 */
+  .langsw{display:inline-flex;flex:0 0 auto;border:1px solid var(--line2);
+    border-radius:4px;overflow:hidden;background:var(--cell)}
+  .langsw>button,.langsw>a,.langsw>span{border:0;border-left:1px solid var(--line2);background:transparent;
+    padding:6px 9px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
+    letter-spacing:.06em;color:var(--sub);white-space:nowrap;line-height:1.1;
+    text-decoration:none;display:inline-block;box-sizing:border-box;
+    transition:border-color .12s,color .12s,background .12s}
+  .langsw>:first-child{border-left:0}
+  .langsw>button:hover,.langsw>a:hover{color:var(--amber)}
+  .langsw>.on{color:var(--amber);background:var(--cell2);cursor:default}
+  .langsw:focus-within{border-color:var(--amber)}
+  .langsw>button:focus-visible,.langsw>a:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
+  /* 配色(ライト/ダーク)切替。ヘッダーの幅が狭いのでアイコン1個のトグルにし、
+     アイコンだけでは用途が伝わらないぶんをホバーの吹き出し(.skintip)で補う。
+     表示するアイコンは「押した後になる側」(暗い今は☀=明るくする)。 */
+  .skinwrap{position:relative;flex:0 0 auto;display:flex;align-items:center}
+  .skinbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
+    width:32px;height:30px;padding:0;cursor:pointer;font-size:13px;line-height:1;
+    font-family:var(--mono);color:var(--sub);
+    transition:border-color .12s,color .12s,background .12s}
+  .skinbtn:hover{border-color:var(--amber);color:var(--amber)}
+  .skinbtn .ico{display:block;margin:0 auto;fill:none;stroke:currentColor;
+    stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+  /* 表示するのは「押した後になる側」: 暗い今は☀、明るい今は☾ */
+  .skinbtn .ico-moon{display:none}
+  :root[data-skin="light"] .skinbtn .ico-sun{display:none}
+  :root[data-skin="light"] .skinbtn .ico-moon{display:block}
+  .skinbtn:focus-visible{outline:none;border-color:var(--amber);
+    box-shadow:0 0 0 1px var(--amber)}
+  .skintip{display:none;position:absolute;top:100%;right:0;margin-top:7px;z-index:60;
+    white-space:nowrap;background:var(--panel);border:1px solid var(--line2);
+    border-radius:4px;padding:5px 9px;font-family:var(--mono);font-size:11.5px;
+    color:var(--ink);box-shadow:0 4px 16px var(--shadowc);pointer-events:none}
+  /* ホバー可能な環境だけ(タップ端末で押すたびに吹き出しが残らないように) */
+  @media(hover:hover){ .skinwrap:hover .skintip{display:block} }
+  .skinbtn:focus-visible ~ .skintip{display:block}
+  .srcwrap.open .srcbtn{border-color:var(--amber);color:var(--amber);background:var(--cell2)}
+  .srcpanel{display:none;position:absolute;top:100%;right:0;left:auto;margin-top:8px;
+    width:min(440px,88vw);max-height:min(70vh,540px);overflow-y:auto;z-index:60;
+    background:var(--panel);border:1px solid var(--line2);border-radius:6px;
+    padding:13px 15px;box-shadow:0 8px 26px var(--shadowc);text-align:left;
+    line-height:1.55}
+  @media(hover:hover){ .srcwrap:hover .srcpanel{display:block} }
+  .srcwrap.open .srcpanel{display:block}
+  .srcsec{margin:0 0 13px}
+  .srcsec:last-child{margin-bottom:0}
+  .srcsec h3{margin:0 0 5px;font-size:10.5px;font-family:var(--mono);
+    letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .srcsec p{margin:0;font-size:12px;color:var(--ink2);line-height:1.65}
+  /* 仕組みパネル内のフロー図(CSSボックス+矢印。SVGにしないのは3言語切替のため) */
+  .mflow{display:flex;flex-direction:column;gap:3px;margin:0 0 13px}
+  .mrow{display:flex;gap:6px}
+  .mnode{flex:1 1 0;border:1px solid var(--line2);background:var(--cell);
+    border-radius:4px;padding:6px 9px;font-size:11.5px;line-height:1.4;
+    text-align:center;color:var(--ink2)}
+  .mnode small{display:block;font-size:10px;color:var(--sub);margin-top:1px}
+  .mnode.agent{border-color:var(--amber-dim)}
+  .marrow{text-align:center;color:var(--amber-dim);font-size:11px;line-height:1;
+    user-select:none}
+
+  /* ---------- 更新履歴(News・折りたたみ) ---------- */
+  /* 巡回ステータス(ターミナルログ調)と同系統の控えめな見た目。閉じている間は
+     summary の1行だけが見える(既定=閉。open属性は付けない)。 */
+  #news{border:1px solid var(--line2);background:var(--panel);border-radius:5px;
+    margin:0 0 14px;font-family:var(--mono)}
+  #news[hidden]{display:none}
+  #newssum{display:block;cursor:pointer;padding:6px 12px;font-size:12px;
+    letter-spacing:.02em;color:var(--sub);white-space:nowrap;overflow:hidden;
+    text-overflow:ellipsis;list-style:none;transition:color .12s}
+  #newssum::-webkit-details-marker{display:none}
+  #newssum::before{content:"▸ ";color:var(--amber-dim)}
+  #news[open] #newssum::before{content:"▾ "}
+  #newssum:hover{color:var(--amber)}
+  #newssum:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
+  #news[open] #newssum{border-bottom:1px solid var(--line);color:var(--ink)}
+  #newsbody{padding:7px 12px 9px;font-size:12.5px;line-height:1.55}
+  .nwday{margin:8px 0 3px;font-size:11px;letter-spacing:.14em;color:var(--amber);
+    border-bottom:1px solid var(--line);padding-bottom:2px}
+  .nwday:first-child{margin-top:0}
+  .nwrow{display:flex;gap:6px;padding:1px 0}
+  .nwmk{flex:0 0 auto;width:1.15em;text-align:center;font-weight:700}
+  .nwmk.add{color:var(--fm-tx)}
+  .nwmk.upd{color:var(--imp2-tx)}
+  .nwtx{min-width:0;overflow-wrap:anywhere}
+  .nwtx a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2)}
+  .nwtx a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+  .nwmeta{color:var(--sub);margin-left:3px}
+  .nwfld{color:var(--imp2-tx)}
+  .nwst{color:var(--amber-dim);letter-spacing:.05em}
+  /* 日付行の右に添える消費トークン数。日付より一段落とした色にする */
+  .nwtok{color:var(--sub);letter-spacing:.02em}
+
+  /* ---------- フィルタ ---------- */
+  .filters{margin:14px 0 18px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end}
+  .fld{display:flex;flex-direction:column;gap:3px;min-width:0}
+  /* プルダウンの幅は最長の選択肢で決まり、放置するとフィルタ行が折り返す。
+     各フィールドに標準幅(flex-basis)を与え、収まらない分は比率を保って縮める。
+     閉じたセレクトは省略記号(…)で切り詰め、開いたリスト内は全文表示される。 */
+  .controls .fld select{width:100%;min-width:0;font-size:13px;padding:7px 8px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* min-width は既定選択値(「ドイツ」「Deutschland」「Großbritannien」「すべて」等)が切れない下限。
+     候補の長い City/Organizer は縮んだときに省略表示になる。 */
+  .fld-area{flex:0 1 132px;min-width:126px}
+  .fld-country{flex:0 1 150px;min-width:110px}
+  .fld-org{flex:0 1 260px;min-width:140px}
+  .fld-imp{flex:0 1 300px;min-width:200px}
+  .fld-city{flex:0 1 170px;min-width:110px}
+  .fld-theme{flex:0 1 150px;min-width:100px}
+  .fld-lang{flex:0 1 110px;min-width:90px}
+  .controls .cbrow{font-size:12.5px;min-height:33px}
+  /* 「その他」ボタンと折りたたみ行(開いている間はボタンを点灯させ、
+     展開行を枠付きパネルにして「ボタンから開いた」ことを視覚的につなぐ) */
+  .morebtn{flex:0 0 auto;align-self:flex-end;padding:8px 12px;font-size:12px}
+  .morebtn.open{border-color:var(--amber);color:var(--amber);background:var(--cell2)}
+  .marr{color:var(--amber-dim)}
+  .morebtn.open .marr{color:var(--amber)}
+  .morebadge{margin-left:6px;color:var(--amber);font-weight:700}
+  .morerow{margin-top:8px;border:1px solid var(--amber-dim);border-radius:6px;
+    background:var(--amber-wash);padding:10px 12px}
+  .controls[hidden]{display:none}
+  /* デスクトップ幅(=.wrapが上限幅で表示される環境)ではフィルタを1行に固定 */
+  @media(min-width:1140px){ .controls{flex-wrap:nowrap;gap:8px} }
+  .fld .cap{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--dim)}
+  select,input[type=search]{border:1px solid var(--line2);border-radius:4px;
+    padding:8px 11px;font-size:15px;background:var(--cell);color:var(--ink);
+    font-family:var(--mono)}
+  select{cursor:pointer}
+  select option:disabled{color:var(--dim)}
+  /* Organizerプルダウンのグループ見出し: 選択肢と紛れないよう灰色・非太字。
+     選択肢側はインデント(padding非対応ブラウザ向けにラベル先頭のNBSPでも二重に確保) */
+  select optgroup{color:var(--sub);font-weight:400;font-style:normal}
+  select optgroup option{color:var(--ink);padding-left:18px}
+  input[type=search]{min-width:200px}
+  select:focus,input:focus{outline:none;border-color:var(--amber);
+    box-shadow:0 0 0 1px var(--amber)}
+  /* ヘッダー内の検索欄 */
+  .hdtools input[type=search]{min-width:0;flex:1 1 170px;max-width:230px;
+    padding:6px 10px;font-size:14px}
+  /* オンライン開催チェックボックス */
+  .cbfld{justify-content:flex-end;flex:0 0 auto}
+  .cbrow{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none;
+    min-height:37px;padding:0 2px;font-family:var(--mono);font-size:13.5px;
+    letter-spacing:.02em;color:var(--sub)}
+  .cbrow input{appearance:none;-webkit-appearance:none;width:16px;height:16px;
+    margin:0;border:1px solid var(--line2);border-radius:3px;background:var(--cell);
+    cursor:pointer;position:relative;flex:0 0 auto}
+  .cbrow input:checked{background:var(--amber);border-color:var(--amber)}
+  .cbrow input:checked::after{content:"";position:absolute;left:4.5px;top:1px;
+    width:4px;height:9px;border:solid var(--on-amber);border-width:0 2px 2px 0;
+    transform:rotate(45deg)}
+  .cbrow input:focus-visible{outline:none;box-shadow:0 0 0 2px var(--amber)}
+  .cbrow input:checked + .cblbl{color:var(--ink)}
+  /* 減光(グレーアウト)状態: AREA/COUNTRY が本拠国(PROFILE.home)以外に固定されている間 */
+  .cbrow.dis{opacity:.38;cursor:not-allowed}
+  .cbrow.dis input,.cbrow.dis .cblbl{cursor:not-allowed}
+
+  /* ---------- フィルタ適用中バー ---------- */
+  #filterbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin:0 0 10px;padding:6px 12px;border:1px solid var(--amber-dim);
+    border-radius:4px;background:var(--amber-wash);
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--imp3-tx)}
+  #filterbar[hidden]{display:none}
+  #filterbar b{color:var(--amber);font-weight:700}
+  #filterbar .fbreset{border:1px solid var(--amber-dim);background:transparent;
+    color:var(--amber-dim);border-radius:3px;padding:3px 11px;font-family:var(--mono);
+    font-size:12px;letter-spacing:.04em;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+  #filterbar .fbreset:hover{border-color:var(--amber);color:var(--amber)}
+
+  /* ---------- ウォッチリスト(#lists で有効化する裏機能) ---------- */
+  /* filters と同じ幅・同じ1行バーの見た目に揃える。position:relative は
+     ⚙メニュー(#listmenu)の絶対配置の基準にするため。 */
+  #listbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;
+    gap:7px 9px;margin:0 0 14px;padding:7px 11px;border:1px solid var(--line2);
+    border-radius:4px;background:var(--panel);font-family:var(--mono);
+    font-size:12.5px;color:var(--sub)}
+  #listbar[hidden]{display:none}
+  #listbar select{padding:5px 9px;font-size:13px;max-width:250px}
+  .lsbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
+    padding:5px 10px;cursor:pointer;font-size:12px;font-family:var(--mono);
+    letter-spacing:.05em;color:var(--sub);white-space:nowrap;line-height:1.3}
+  .lsbtn:hover{border-color:var(--amber);color:var(--amber)}
+  .lsonly{display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+    user-select:none;white-space:nowrap}
+  .lsonly input{appearance:none;-webkit-appearance:none;width:15px;height:15px;
+    margin:0;border:1px solid var(--line2);border-radius:3px;background:var(--cell);
+    cursor:pointer;position:relative;flex:0 0 auto}
+  .lsonly input:checked{background:var(--amber);border-color:var(--amber)}
+  .lsonly input:checked::after{content:"";position:absolute;left:4px;top:1px;
+    width:4px;height:8px;border:solid var(--on-amber);border-width:0 2px 2px 0;
+    transform:rotate(45deg)}
+  .lsonly input:disabled{opacity:.4;cursor:not-allowed}
+  #listnewname{border:1px solid var(--amber-dim);border-radius:4px;padding:5px 9px;
+    font-size:13px;background:var(--cell);color:var(--ink);font-family:var(--mono);
+    min-width:190px}
+  #listlinkout{flex:1 1 240px;min-width:120px;border:1px solid var(--line2);
+    border-radius:4px;padding:5px 9px;font-size:11.5px;background:var(--cell);
+    color:var(--cb-tx);font-family:var(--mono)}
+  #listlinkwarn{color:var(--re-tx);font-size:11.5px}
+  #listmenu{position:absolute;top:100%;right:6px;margin-top:6px;z-index:60;
+    display:flex;flex-direction:column;gap:5px;min-width:215px;max-width:88vw;
+    background:var(--panel);border:1px solid var(--line2);border-radius:6px;
+    padding:8px;box-shadow:0 8px 26px var(--shadowc)}
+  #listmenu[hidden]{display:none}
+  #listmenu .lsbtn{width:100%;text-align:left}
+  /* 一覧カードの☆ボタン(リスト登録トグル) */
+  .star{flex:0 0 auto;align-self:flex-start;border:1px solid var(--line2);
+    background:var(--cell);border-radius:4px;width:30px;height:30px;padding:0;
+    line-height:1;cursor:pointer;font-size:15px;color:var(--dim);
+    font-family:var(--mono)}
+  .star:hover{border-color:var(--amber);color:var(--amber)}
+  .star[aria-pressed="true"]{color:var(--amber);border-color:var(--amber-dim)}
+  /* 共有ビューのバナー(#filterbar と同系統の目立つ帯) */
+  #sharebanner{display:flex;align-items:center;justify-content:space-between;
+    gap:8px 12px;flex-wrap:wrap;margin:0 0 14px;padding:7px 12px;
+    border:1px solid var(--amber-dim);border-radius:4px;
+    background:var(--amber-wash);font-family:var(--mono);font-size:13px;
+    letter-spacing:.02em;color:var(--imp3-tx)}
+  #sharebanner[hidden]{display:none}
+  #sharebanner .shbtns{display:flex;gap:8px;flex:0 0 auto;flex-wrap:wrap}
+  #shareorphans{color:var(--sub);margin-left:8px}
+  /* トースト(画面下部の小さな通知) */
+  #toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:80;
+    max-width:min(420px,92vw);padding:8px 14px;border:1px solid var(--line2);
+    border-radius:5px;background:var(--panel);color:var(--ink);
+    font-family:var(--mono);font-size:12.5px;line-height:1.5;
+    box-shadow:0 4px 16px var(--shadowc);opacity:0;transition:opacity .2s}
+  #toast[hidden]{display:none}
+  #toast.show{opacity:.97}
+
+  /* ---------- カレンダー ---------- */
+  .calhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .calhead h2{font-size:15px;margin:0;font-family:var(--mono);letter-spacing:.1em;
+    color:var(--ink);min-width:150px}
+  .navbtn{border:1px solid var(--line2);background:var(--cell);border-radius:4px;
+    width:30px;height:30px;cursor:pointer;font-size:15px;color:var(--ink);
+    font-family:var(--mono);line-height:1}
+  .navbtn:hover{border-color:var(--amber);color:var(--amber)}
+  .navbtn.today{width:auto;height:30px;padding:0 10px;font-size:12.5px;
+    letter-spacing:.04em}
+  table.cal{width:100%;border-collapse:collapse;background:var(--cal);
+    border:1px solid var(--line2);table-layout:fixed}
+  table.cal th{border:1px solid var(--line2);padding:6px 4px;font-size:11.5px;
+    font-weight:700;color:var(--sub);background:var(--cell2);font-family:var(--mono);
+    letter-spacing:.12em;text-transform:uppercase;width:14.285%;
+    border-bottom:2px solid var(--amber-dim)}
+  table.cal td{border:1px solid var(--line);vertical-align:top;height:96px;
+    padding:3px 4px;width:14.285%;background:var(--cal)}
+  td .dnum{font-family:var(--mono);font-size:12.5px;color:var(--ink);display:block;
+    font-weight:600;margin-bottom:1px}
+  td.out{background:var(--bg)} td.out .dnum{color:var(--dim);font-weight:400}
+  td.today{outline:2px solid var(--amber);outline-offset:-2px}
+  td.today .dnum{color:var(--amber);font-weight:700}
+  td.wend{background:var(--cell2)}
+  td.wend.out{background:var(--wendout)}
+  .ev{display:block;line-height:1.32;margin:2px 0;
+    padding:1px 4px 2px 6px;border-left:3px solid;border-radius:2px;cursor:pointer;
+    text-decoration:none;overflow-wrap:anywhere;word-break:normal}
+  .ev.i3{font-size:14px;font-weight:700;line-height:1.28;
+    border-color:var(--imp3);background:var(--imp3-bg);color:var(--imp3-tx)}
+  .ev.i2{font-size:13px;font-weight:500;
+    border-color:var(--imp2);background:var(--imp2-bg);color:var(--imp2-tx)}
+  .ev.i1{font-size:12px;font-weight:400;
+    border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
+  .ev.foreign{border-left-style:dashed;border-left-width:3px}
+  .ev:hover{filter:brightness(var(--hover-b))}
+  /* 登録参加可(招待制・CfP型でない)イベント: ラベルに下線 */
+  .ev.openreg{text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:2px}
+  /* 複数日イベント(モバイル週ビュー)の期間サフィックス */
+  .ev .evsp{font-size:.8em;font-weight:400;color:var(--sub);margin-left:2px;
+    white-space:nowrap}
+  /* ---------- 複数日スパン(デスクトップ月グリッド・Googleカレンダー式レーン) ---------- */
+  /* .lanes: セル上部のレーンコンテナ。全レーン分のスロット(セグメント or 透明スペーサー)
+     を縦に積み、隣接セルとバーがつながって見えるようにする。 */
+  .lanes{margin:2px 0 1px}
+  /* スロット高はレーンに載る週内イベントの最大重要度で決まる(.lh3/.lh2/.lh1)。
+     2行ラベル分の高さ(フォントサイズ×line-height×2行 + 上下padding)にほぼ合わせてある。
+     セグメントもスペーサーも同一レーン内では常に同じ高さクラスを持ち、セル間で1本の
+     バーに見える縦位置の整合を保つ(高さがズレるとバーの位置が崩れるため)。 */
+  .seg,.segsp{display:block;margin-bottom:2px}
+  .seg.lh3,.segsp.lh3{height:40px}
+  .seg.lh2,.segsp.lh2{height:37px}
+  .seg.lh1,.segsp.lh1{height:34px}
+  .segsp{visibility:hidden}                    /* 透明スペーサー(縦位置を全セルで揃える) */
+  .seg{position:relative;border-radius:3px;cursor:pointer;text-decoration:none;
+    overflow:visible;background:var(--imp1-bg)}
+  .seg.i3{background:var(--seg3)}
+  .seg.i2{background:var(--seg2)}
+  .seg.i1{background:var(--seg1)}
+  /* 真の開始日(date_start)セルにだけ重要度色の左キャップ(◇国外は破線) */
+  .seg.startcap{border-left:3px solid}
+  .seg.i3.startcap{border-left-color:var(--imp3)}
+  .seg.i2.startcap{border-left-color:var(--imp2)}
+  .seg.i1.startcap{border-left-color:var(--imp1)}
+  .seg.foreign.startcap{border-left-style:dashed}
+  /* 継続(前日/翌日へ続く)側は角を落とし、同一週内の隣接セル側は負マージンで境界を跨ぐ */
+  .seg.flatL{border-top-left-radius:0;border-bottom-left-radius:0}
+  .seg.flatR{border-top-right-radius:0;border-bottom-right-radius:0}
+  .seg.bridgeL{margin-left:-5px}
+  .seg.bridgeR{margin-right:-5px}
+  .seg:hover{filter:brightness(var(--hover-b2))}
+  /* ラベルは週内の最初のカバー日に1回だけ。--n(週内カバー日数)ぶんのバー全幅で
+     2行まで折り返し(-webkit-line-clamp)、3行目以降は省略してカレンダー外へ漏らさない。 */
+  .seglbl{position:absolute;left:6px;top:2px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    pointer-events:none;z-index:3;
+    font-family:var(--mono);line-height:1.25;letter-spacing:.01em;
+    text-shadow:var(--seglbl-sh);
+    width:calc(var(--n) * 100% + (var(--n) - 1) * 4px - 10px)}
+  /* 単日イベント(.ev.i3/.i2/.i1)と同じサイズ・太さの体系に揃える */
+  .seglbl.i3{color:var(--imp3-tx);font-size:14px;font-weight:700;line-height:1.28}
+  .seglbl.i2{color:var(--imp2-tx);font-size:13px;font-weight:500}
+  .seglbl.i1{color:var(--imp1-tx);font-size:12px;font-weight:400}
+  .seglbl.openreg{text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:2px}
+
+  /* ---------- カレンダー凡例 ---------- */
+  .callegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 14px;
+    margin:9px 0 2px;font-family:var(--mono);font-size:12px;color:var(--sub);
+    letter-spacing:.02em}
+  .callegend .lgset{display:flex;align-items:center;gap:6px}
+  .callegend .lg{border-left:3px solid;padding:1px 8px;border-radius:2px}
+  .callegend .lg.i3{border-color:var(--imp3);background:var(--imp3-bg);
+    color:var(--imp3-tx);font-weight:700}
+  .callegend .lg.i2{border-color:var(--imp2);background:var(--imp2-bg);color:var(--imp2-tx)}
+  .callegend .lg.i1{border-color:var(--imp1);background:var(--imp1-bg);color:var(--imp1-tx)}
+  .callegend .cap{color:var(--dim)}
+  .callegend .fg{border-left:3px dashed var(--sub);padding-left:8px;color:var(--sub)}
+  /* 凡例の詳細説明(旧footer記載。一覧が長く埋もれるためカレンダー直下に置く) */
+  .legnote{margin:6px 0 0;font-size:11.5px;color:var(--sub);line-height:1.65}
+
+  /* ---------- 週ビュー(モバイル専用・デスクトップでは非表示) ---------- */
+  #weekbody{display:none}
+
+  /* ---------- 一覧 ---------- */
+  h2.sect{font-size:12px;font-family:var(--mono);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--amber);border-bottom:1px solid var(--line2);
+    padding-bottom:5px;margin:34px 0 12px}
+  .listhead{display:flex;align-items:flex-end;gap:14px;margin:34px 0 12px}
+  .listhead h2.sect{flex:1;margin:0}
+  .listhead .fld{flex:0 0 auto}
+  h2.sect::before{content:"// "}
+  .month-h{font-size:13px;font-weight:700;margin:20px 0 8px;font-family:var(--mono);
+    letter-spacing:.06em;padding-left:9px;border-left:3px solid var(--amber);
+    color:var(--sub)}
+  .row{display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);
+    border-radius:5px;padding:11px 14px;margin-bottom:7px}
+  .row.hl{outline:2px solid var(--amber);outline-offset:-1px}
+  .when{font-family:var(--mono);font-size:13px;min-width:104px;color:var(--ink);
+    white-space:nowrap}
+  .when .wd{color:var(--sub);font-size:11px;display:block}
+  .when .imp{color:var(--amber-dim);font-size:11px;letter-spacing:.06em;display:block;
+    margin-top:2px}
+  .body{flex:1;min-width:0}
+  .title{font-weight:600;font-size:14.5px;font-family:var(--mono);
+    letter-spacing:.01em;color:var(--ink);line-height:1.4}
+  .title.i3{font-size:16px} .title.i1{font-size:13.5px;color:var(--ink2)}
+  .title a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line2)}
+  .title a:hover{border-bottom-color:var(--amber);color:var(--amber)}
+  .orig{color:var(--sub);font-size:12px;margin-top:2px;line-height:1.4}
+  .orig a{color:var(--sub);text-decoration:none;border-bottom:1px dotted var(--line2)}
+  .orig a:hover{color:var(--cb-tx);border-bottom-color:var(--cb-tx)}
+  .ja{color:var(--dim);font-size:12.5px;margin-top:1px}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px}
+  .badge{border-radius:3px;padding:1px 7px;border:1px solid var(--line2);
+    color:var(--sub);font-family:var(--mono);letter-spacing:.02em}
+  .badge.free{color:var(--fm-tx);border-color:var(--fm-tx)}
+  .badge.paid{color:var(--re-tx);border-color:var(--re-tx)}
+  .badge.open{color:var(--ok);border-color:var(--ok)}
+  .badge.closed{color:var(--fail);border-color:var(--fail)}
+  .sum{font-size:13px;margin-top:7px;color:var(--ink2)}
+  .reg,.spk{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .reglink{font-size:12.5px;margin-top:3px}
+  .reglink a{color:var(--cb-tx);text-decoration:none;font-family:var(--mono);
+    border-bottom:1px solid var(--line2)}
+  .reglink a:hover{border-bottom-color:var(--cb-tx)}
+  .src{font-size:10.5px;color:var(--dim);margin-top:5px;font-family:var(--mono)}
+  .empty{color:var(--sub);padding:24px;text-align:center;font-family:var(--mono);
+    border:1px dashed var(--line2);border-radius:5px}
+
+  /* ---------- 巡回ステータス(ターミナルログ風) ---------- */
+  table.st{width:100%;border-collapse:collapse;font-size:12px;background:var(--panel);
+    border:1px solid var(--line2);font-family:var(--mono)}
+  table.st td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
+  table.st th{border:1px solid var(--line);padding:5px 10px;text-align:left;
+    color:var(--amber-dim);font-weight:700;background:var(--bg)}
+  table.st td:first-child{color:var(--sub)}
+  /* カテゴリ見出し行(主催フィルタと同じ4分類で巡回先をグループ分け) */
+  table.st tr.stgrp td{color:var(--amber-dim);background:var(--cell);
+    font-size:11px;letter-spacing:.1em;padding:4px 10px}
+  /* 対象地域・広域検索の補記(ステータス表の直上) */
+  .covnote{margin:6px 0 8px;font-size:11.5px;color:var(--sub);line-height:1.65}
+  .covnote p{margin:0 0 4px}
+  .covnote b{color:var(--ink);font-weight:600}
+  table.st a{color:var(--cb-tx);text-decoration:none}
+  table.st a:hover{text-decoration:underline}
+  .ok{color:var(--ok)} .ng{color:var(--fail);font-weight:700}
+  .st small{color:var(--dim)}
+  .st a.stcnt{color:var(--amber-dim);text-decoration:underline;text-underline-offset:2px}
+  .st a.stcnt:hover{color:var(--amber)}
+  footer{margin-top:40px;font-size:12px;color:var(--sub);
+    border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
+
+  /* ---------- スクロールトップボタン ---------- */
+  #totop{position:fixed;right:34px;bottom:42px;width:56px;height:56px;
+    border-radius:8px;border:1px solid var(--line2);background:var(--panel);
+    color:var(--amber-dim);font-size:25px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);
+    opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;
+    box-shadow:0 2px 8px var(--shadowc2);z-index:50}
+  #totop.show{opacity:.85;visibility:visible}
+  #totop:hover{opacity:1;border-color:var(--amber);color:var(--amber)}
+
+  @media(max-width:640px){
+    .wrap{padding:12px 10px 48px}
+    h1{font-size:15px}
+    /* 言語・モード切替・配色・仕組み・ソース・検索は1行に収まらないので折り返す
+       (折り返し後は検索欄が残り幅を取る) */
+    .hdtools{flex-basis:100%;margin-left:0;margin-top:6px;flex-wrap:wrap;row-gap:6px}
+    .hdtools input[type=search]{max-width:none;flex:1 1 120px}
+    .langsw>button,.langsw>a,.langsw>span{padding:6px 6px;font-size:10.5px;letter-spacing:.02em}
+    .srcpanel{left:0;right:auto;width:min(360px,86vw)}
+    /* 更新履歴: 狭い画面では見出し行を折り返して全文見せる(省略記号を出さない) */
+    #newssum{white-space:normal;text-overflow:clip;padding:6px 10px;font-size:11.5px}
+    #newsbody{padding:6px 10px 8px;font-size:12px}
+    .controls{gap:8px}
+    .fld{flex:1 1 42%;min-width:0}
+    .fld select{width:100%;max-width:none}
+    input[type=search]{min-width:0;width:100%}
+    .cbfld{flex:1 1 100%}
+    .cbrow{min-height:0;padding:4px 2px}
+    .calhead h2{font-size:12px;min-width:0;letter-spacing:.04em}
+    #filterbar{flex-wrap:wrap;padding:6px 10px}
+    #filterbar span{flex:1 1 auto}
+    /* モバイルでは月グリッドを隠し、週ビューを表示 */
+    table.cal{display:none}
+    #weekbody{display:block;border:1px solid var(--line2);border-radius:4px;
+      overflow:hidden;background:var(--cal)}
+    .wday{border-bottom:1px solid var(--line);padding:6px 9px}
+    .wday:last-child{border-bottom:0}
+    .wday.wend{background:var(--cell2)}
+    .wday.today{background:var(--amber-wash);
+      box-shadow:inset 0 0 0 2px var(--amber)}
+    .wday.empty{padding:3px 9px;opacity:.5}
+    .wdhead{display:flex;gap:7px;align-items:baseline;font-family:var(--mono)}
+    .wdate{font-size:13px;font-weight:600;color:var(--ink)}
+    .wday.today .wdate{color:var(--amber);font-weight:700}
+    .wday.empty .wdate{font-weight:400;color:var(--dim)}
+    .wdow{font-size:11.5px;color:var(--sub)}
+    .wevs{display:flex;flex-direction:column;gap:3px;margin-top:5px}
+    .wevs .ev{display:block;font-size:13px;line-height:1.35;font-weight:500;
+      padding:3px 7px 4px 8px;border-left-width:3px;border-radius:2px;margin:0;
+      height:auto;opacity:1}
+    .wevs .ev.i1,.wevs .ev.i2{font-size:13px}
+    .wevs .ev.i3{font-size:13.5px;font-weight:700}
+    .wevs .ev.foreign{border-left-style:dashed}
+    /* 継続日: 縮小・減光した1行(高さ約6割) */
+    .wevs .ev.wcont{font-size:11.5px;font-weight:400;padding:2px 7px 2px 8px;
+      opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      line-height:1.25}
+    .wevs .ev.wcont.i3{font-size:11.5px;font-weight:600}
+    .row{flex-direction:column;gap:4px;position:relative}
+    .when{min-width:0}
+    /* 縦積みになる行では☆を右上に浮かせる(日付・本文の下に落とさない) */
+    .star{position:absolute;right:10px;top:9px}
+    #listbar{padding:7px 9px}
+    #listbar select{max-width:100%;flex:1 1 130px}
+    #listmenu{right:auto;left:6px}
+    #totop{right:16px;bottom:24px;width:48px;height:48px;font-size:21px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="statusbar">
+    <h1>Seminar Calendar</h1>
+    <span class="live"><span class="ld"></span>LIVE</span>
+    <span class="updated"><span data-i18n="lastUpdate">LAST UPDATE:</span> <b id="updrel" data-iso="2026-10-19T17:26:41+02:00" title="2026-10-19 17:26 (CEST)">2026-10-19 17:26 (CEST)</b></span>
+    <div class="hdtools">
+      <div class="langsw" id="langsw" role="group" aria-label="Language">
+        <button type="button" data-ui="ja">日本語</button>
+        <button type="button" data-ui="en">EN</button>
+        <button type="button" data-ui="de">DE</button>
+      </div>
+      <!-- ドイツ/英国モード切替(中身は PROFILE を見て buildModeSwitch() が組み立てる) -->
+      <div class="langsw" id="modesw" role="group" aria-label="Mode" data-i18n-aria="modeSwitch"></div>
+      <div class="skinwrap">
+        <button class="skinbtn" id="skinbtn" type="button">
+          <svg class="ico ico-sun" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <circle cx="8" cy="8" r="3.1"/>
+            <path d="M8 .9v2M8 13.1v2M.9 8h2M13.1 8h2M3 3l1.4 1.4M11.6 11.6L13 13M13 3l-1.4 1.4M4.4 11.6L3 13"/>
+          </svg>
+          <svg class="ico ico-moon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+            <path d="M13.4 10.3A5.9 5.9 0 0 1 5.7 2.6 6.1 6.1 0 1 0 13.4 10.3Z"/>
+          </svg>
+        </button>
+        <span class="skintip" id="skintip" aria-hidden="true"></span>
+      </div>
+      <div class="srcwrap" id="mechwrap">
+        <button class="srcbtn" id="mechbtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="mech">仕組み</button>
+        <div class="srcpanel" id="mechpanel" role="dialog" aria-label="仕組み" data-i18n-aria="mech"></div>
+      </div>
+      <button class="srcbtn" id="srcbtn" type="button" data-i18n="sources">調査対象</button>
+      <input type="search" id="q" placeholder="キーワード" aria-label="キーワード検索" data-i18n-ph="qPlaceholder" data-i18n-aria="qAria">
+    </div>
+  </div>
+</header>
+
+<!-- 更新履歴(News): 既定は閉。中身は drawNews() が組み立て、空なら hidden のまま。 -->
+<details id="news" hidden>
+  <summary id="newssum"></summary>
+  <div id="newsbody"></div>
+</details>
+
+<div class="filters">
+  <div class="controls">
+    <label class="fld fld-area"><span class="cap" data-i18n="capArea">エリア</span>
+      <select id="area">
+        <option value="" data-i18n="all">すべて</option>
+        <option value="home" data-i18n="areaHome">ドイツ</option>
+        <option value="away" data-i18n="areaAway">ドイツ以外</option>
+      </select></label>
+    <label class="fld fld-country"><span class="cap" data-i18n="capCountry">国</span>
+      <select id="country"></select></label>
+    <label class="fld fld-imp"><span class="cap" data-i18n="capImp">重要度</span>
+      <select id="imp">
+        <option value="0" data-i18n="imp0">★0以上 — すべて(定例セミナー含む)</option>
+        <option value="1" data-i18n="imp1">★1以上 — 標準</option>
+        <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
+        <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
+      </select></label>
+    <label class="fld fld-theme"><span class="cap" data-i18n="capTheme">テーマ</span>
+      <select id="theme">
+        <option value="" data-i18n="all">すべて</option>
+        <option value="central_bank" data-i18n="th_central_bank">①中銀</option>
+        <option value="real_economy" data-i18n="th_real_economy">②実体経済</option>
+        <option value="fin_markets" data-i18n="th_fin_markets">③規制・市場</option>
+        <option value="geopolitics" data-i18n="th_geopolitics">④地政学</option>
+        <option value="climate_esg" data-i18n="th_climate_esg">⑤環境ESG</option>
+        <option value="ai" data-i18n="th_ai">⑥AI</option>
+        <option value="china" data-i18n="th_china">⑦中国</option>
+        <option value="japan" data-i18n="th_japan">⑧日本</option>
+        <option value="ukraine" data-i18n="th_ukraine">⑨ウクライナ</option>
+      </select></label>
+    <button type="button" id="morebtn" class="srcbtn morebtn" aria-expanded="false" aria-controls="morerow"><span data-i18n="more">その他</span> <span class="marr" aria-hidden="true">▾</span><span id="morebadge" class="morebadge" hidden></span></button>
+  </div>
+  <div class="controls morerow" id="morerow" hidden>
+    <label class="fld fld-city"><span class="cap" data-i18n="capCity">都市</span>
+      <select id="city"></select></label>
+    <label class="fld fld-org"><span class="cap" data-i18n="capOrg">主催</span>
+      <select id="org"></select></label>
+    <label class="fld fld-lang"><span class="cap" data-i18n="capLang">言語</span>
+      <select id="lang">
+        <option value="" data-i18n="all">すべて</option>
+        <option value="en" data-i18n="langEn">英語</option>
+        <option value="de" data-i18n="langDe">ドイツ語</option>
+      </select></label>
+    <label class="fld cbfld"><span class="cbrow">
+      <input type="checkbox" id="online"><span class="cblbl" data-i18n="cbOnline">オンライン開催を含む</span></span></label>
+    <label class="fld cbfld"><span class="cbrow" id="daytriprow">
+      <input type="checkbox" id="daytrip"><span class="cblbl" data-i18n="cbDaytrip">Frankfurt日帰り圏のみ</span></span></label>
+  </div>
+</div>
+
+<div id="listbar" hidden>
+  <select id="listsel" data-i18n-aria="lsSelAria"></select>
+  <button type="button" class="lsbtn" id="listnew" data-i18n="lsNew">＋新規</button>
+  <input type="text" id="listnewname" maxlength="60" hidden
+         data-i18n-ph="lsNewPh" data-i18n-aria="lsNewPh">
+  <label class="lsonly"><input type="checkbox" id="listonly"><span data-i18n="lsOnly">このリストのみ表示</span></label>
+  <button type="button" class="lsbtn" id="listshare" data-i18n="lsShare">🔗共有リンク</button>
+  <button type="button" class="lsbtn" id="listgear" aria-haspopup="true" aria-expanded="false"
+          data-i18n-aria="lsMenuAria">⚙</button>
+  <input type="text" id="listlinkout" readonly hidden data-i18n-aria="lsLinkAria">
+  <span id="listlinkwarn" hidden data-i18n="lsLongLink">リンクが長いため改行に注意</span>
+  <div id="listmenu" hidden>
+    <button type="button" class="lsbtn" id="listrename" data-i18n="lsRename">名前を変更</button>
+    <button type="button" class="lsbtn" id="listdel" data-i18n="lsDel">削除</button>
+    <button type="button" class="lsbtn" id="listbackup" data-i18n="lsBackup">全リストをバックアップ</button>
+    <button type="button" class="lsbtn" id="listclean"></button>
+    <button type="button" class="lsbtn" id="listhide" data-i18n="lsHide">バーを隠す</button>
+  </div>
+</div>
+
+<div id="sharebanner" hidden>
+  <span class="shtxt">
+    <span id="sharev1"><span data-i18n="shLead">📋 共有リスト「</span><span
+      id="sharename"></span><span data-i18n="shMid">」を表示中(</span><span
+      id="sharecount"></span><span data-i18n="shTail">件)</span><span id="shareorphans" hidden></span></span>
+    <span id="sharev2" hidden><span data-i18n="shBackupLead">📋 バックアップリンク(</span><span
+      id="sharebkcount"></span><span data-i18n="shBackupTail">リスト)</span></span>
+  </span>
+  <span class="shbtns">
+    <button type="button" class="lsbtn" id="shareall" data-i18n="shAll">全イベントを表示</button>
+    <button type="button" class="lsbtn" id="shareimport" hidden data-i18n="shImport">このリストを取り込む</button>
+  </span>
+</div>
+
+<div class="calhead">
+  <button class="navbtn today" id="todaybtn" type="button" data-i18n="today">今日</button>
+  <button class="navbtn" id="prev">&#8249;</button>
+  <h2 id="callabel"></h2>
+  <button class="navbtn" id="next">&#8250;</button>
+</div>
+<div id="filterbar" hidden>
+  <span id="fbtext"></span>
+  <button class="fbreset" id="fbreset" type="button" data-i18n="reset">リセット</button>
+</div>
+<table class="cal"><thead><tr>
+  <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+</tr></thead><tbody id="calbody"></tbody></table>
+<div id="weekbody"></div>
+<div class="callegend">
+  <span class="cap" data-i18n="lgColorImp">色=重要度:</span>
+  <span class="lgset"><span class="lg i3" data-i18n="lgHigh">高</span><span class="lg i2" data-i18n="lgMid">中</span><span class="lg i1" data-i18n="lgLow">低</span></span>
+  <span class="fg" data-i18n="lgForeign">◇ ドイツ国外での開催</span>
+  <span class="lgset"><u style="text-underline-offset:2px" data-i18n="lgUnderline">下線</u><span class="cap" data-i18n="lgOpenReg">= 登録参加可(招待制・CfP型でない)</span></span>
+</div>
+<p class="legnote" data-i18n="legnote">
+  カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 /
+  シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
+  ◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。
+  下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
+</p>
+
+<div class="listhead">
+  <h2 class="sect" data-i18n="upcoming">今後のイベント一覧</h2>
+  <label class="fld"><span class="cap">Sort</span>
+    <select id="sort">
+      <option value="date" data-i18n="sortDate">日付順</option>
+      <option value="imp" data-i18n="sortImp">重要度順</option>
+    </select></label>
+</div>
+<div id="list"></div>
+
+<h2 class="sect" id="crawlsec" data-i18n="crawlStatus">巡回ステータス</h2>
+<table class="st">
+  <thead><tr><th data-i18n="stHdrOrg">機関</th><th data-i18n="stHdrCount">本日以降のイベント数</th></tr></thead>
+  <tbody id="status"></tbody>
+</table>
+
+<footer data-i18n="footer">
+  情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、
+  日付・参加費等は必ずリンク先の原文で確認すること。
+</footer>
+</div>
+
+<button id="totop" title="トップへ" aria-label="Scroll to top" data-i18n-title="totop">&#8593;</button>
+<div id="toast" hidden role="status" aria-live="polite"></div>
+
+<script>
+const EVENTS  = [];
+/* 重複ID→正本IDの対応表(data/aliases.json)。キー・値とも16桁hexだけが埋め込まれる。
+   古い共有リンク・localStorage に残った旧IDを引き直すためだけに使う。 */
+const ALIASES = {};
+const STATUS  = [];
+const SOURCES = {"sources": [], "topics": []};
+/* 更新履歴(News)。日付降順・直近30日分のみが埋め込まれる。空配列のこともある。 */
+const CHANGELOG = [{"date": "2026-10-19", "added": [], "updated": []}];
+const TODAY   = "2026-10-19";
+/* ページのプロファイル(radar_lib.render_html が差し込む)。
+   de: {"id":"de","home":"DE","other":{"id":"uk","href":"uk/"},"ls_suffix":""}
+   uk: {"id":"uk","home":"GB","other":{"id":"de","href":"../"},"ls_suffix":"_uk"}
+   home=本拠国(Area/Country の既定値・◇判定・日帰り圏の基準)、other=相手モードへの相対リンク、
+   ls_suffix=フィルタ保存・マイリストの localStorage キー接尾辞(UI言語・配色は共用)。 */
+const PROFILE = {"id": "uk", "home": "GB", "other": {"id": "de", "href": "../"}, "ls_suffix": "_uk"};
+
+/* ================= UI言語(uiLang)=================
+   注意: state.lang は「イベントの開催言語フィルタ(en/de)」であり、
+   ここで扱う uiLang(画面表示言語 ja/en/de)とは全くの別物。混同しないこと。 */
+const UI_LANGS  = ["ja","en","de"];
+const LS_UILANG = "sr_uilang";          /* フィルタ保存キー(LS_KEY)とは別キー */
+
+const I18N = {
+ja:{
+  modeDe:"ドイツモード", modeUk:"英国モード", modeSwitch:"モード切替",
+  lastUpdate:"LAST UPDATE:",
+  sources:"調査対象",
+  skinToLight:"明るいテーマに切り替え", skinToDark:"暗いテーマに切り替え",
+  capArea:"エリア", capCountry:"国", capCity:"都市", capOrg:"主催",
+  capTheme:"テーマ", capImp:"重要度", capLang:"言語",
+  mech:"仕組み",
+  mpAgentT:"AIエージェント",
+  mpAgentText:"収集は Claude Code または Codex のAIエージェントが毎日1回自動実行します。作業の一部はサブエージェントに分担させ、抽出結果の検証は主エージェントが行います。更新は GitHub リポジトリへのコミットとして反映され、自動マージ後にこのページが再生成されます。",
+  mpFlowSrc:"定点観測先の巡回",
+  mpFlowSearch:"テーマ別Web検索",
+  mpFlowAgent:"AIエージェントが抽出・検証",
+  mpFlowAgentSub:"Claude Code / Codex・毎日1回",
+  mpFlowGit:"GitHub に自動コミット・自動マージ",
+  mpFlowSite:"このページを自動再生成",
+  mpListT:"ウォッチリスト",
+  mpListText:"URLの末尾に #lists を付けて開くと有効になる隠し機能です。一覧の ☆ でイベントをリストに登録し、「共有リンク」でリスト全体を1つのURLにして共有できます(データはブラウザ内にのみ保存)。",
+  more:"その他",
+  relNow:"たった今", relMin:"{n}分前", relHour:"{n}時間前",
+  relDay:"{n}日前", relDay1:"1日前",
+  qPlaceholder:"キーワード",
+  qAria:"キーワード検索",
+  all:"すべて",
+  th_central_bank:"①中銀", th_real_economy:"②実体経済", th_fin_markets:"③規制・市場",
+  th_geopolitics:"④地政学", th_climate_esg:"⑤環境ESG", th_ai:"⑥AI",
+  th_china:"⑦中国", th_japan:"⑧日本", th_ukraine:"⑨ウクライナ",
+  imp0:"★0以上 — すべて(定例セミナー含む)", imp1:"★1以上 — 標準",
+  imp2:"★2以上 — 中規模会議から", imp3:"★3のみ — 旗艦・大型会議",
+  langEn:"英語", langDe:"ドイツ語",
+  cbOnline:"オンライン開催を含む",
+  today:"今日",
+  fbHidden:"⚠ フィルタ適用中 — 非表示: {n}件", reset:"リセット",
+  lgColorImp:"色=重要度:", lgHigh:"高", lgMid:"中", lgLow:"低",
+  lgUnderline:"下線", lgOpenReg:"= 登録参加可(招待制・CfP型でなく、高額有料イベントを除く)",
+  legnote:"カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 / シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。{{legnoteForeign}}一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの(参加費がおおむね300ユーロ以上の高額イベントには下線を付けない)。",
+  upcoming:"今後のイベント一覧",
+  sortDate:"日付順", sortImp:"重要度順",
+  crawlStatus:"巡回ステータス",
+  footer:"情報は各主催者の公開ページおよびweb検索から自動抽出したものであり、日付・参加費等は必ずリンク先の原文で確認すること。",
+  totop:"トップへ",
+  empty:"条件に合うイベントはありません。",
+  bOpenReg:"登録参加可", bFree:"無料", bPaid:"有料", bInvite:"招待制",
+  bOnline:"オンライン", bHybrid:"オンラインも可", bOnsite:"現地開催",
+  lb_en:"英語", lb_de:"独語", lb_ende:"英語・独語",
+  ls_en:"英", ls_de:"独", ls_ende:"英独",
+  sep:"・", dash:"〜", contPrefix:"(続き)",
+  regNote:"申込:", regPage:"申込ページ →", speakersLbl:"登壇:",
+  srcInfo:"情報源:", firstSeen:"／ 初検出:",
+  stUpcoming:"{n}件",
+  stHdrOrg:"機関", stHdrCount:"本日以降のイベント数",
+  stFilterTip:"この主催団体でカレンダーを絞り込む",
+  /* 更新履歴(News) */
+  nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
+  nwRange:"〜", nwTokens:"({n}トークン使用)",
+  nwTokensTip:"この日の巡回でAIエージェントが消費したトークン数(ほぼ全量)",
+  nwPinned:"フィルタで非表示のイベントを一時的に表示しています(フィルタ操作で解除)",
+  nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
+  nwf_fee:"参加費", nwf_reg:"申込",
+  spCoverage:"対象地域",
+  spDiscovery:"広域検索",
+  spDiscoveryText:"上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本/ウクライナのテーマ、中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。",
+  og_cb:"中銀・規制当局", og_tt:"シンクタンク・研究機関", og_uni:"大学", og_other:"その他",
+  /* ウォッチリスト(#lists で有効化する裏機能) */
+  lsSelAria:"ウォッチリスト", lsNone:"リストがありません", lsUntitled:"(名称未設定)",
+  lsNew:"＋新規", lsNewPh:"リスト名を入力してEnter", lsOnly:"このリストのみ表示",
+  lsShare:"🔗共有リンク", lsMenuAria:"リスト操作メニュー", lsLinkAria:"共有リンク",
+  lsRename:"名前を変更", lsDel:"削除", lsBackup:"全リストをバックアップ",
+  lsClean:"掲載終了を整理({n}件)", lsHide:"バーを隠す",
+  lsDelConfirm:"リスト「{name}」を削除します。よろしいですか?",
+  lsNoLists:"リストがありません。", lsEmptyShare:"リストが空のため共有リンクを作れません。",
+  lsCopied:"共有リンクをコピーしました。",
+  lsCopyFail:"自動コピーできませんでした。下の欄から手動でコピーしてください。",
+  lsLongLink:"リンクが長いため改行に注意", lsCleaned:"掲載終了の{n}件を整理しました。",
+  lsFullLists:"リストは最大50個までです。",
+  lsFullIds:"1つのリストに登録できるのは500件までです。",
+  shLead:"📋 共有リスト「", shMid:"」を表示中(", shTail:"件)",
+  shOrphans:"終了・掲載終了のため{n}件は表示されません",
+  shAll:"全イベントを表示", shImport:"このリストを取り込む",
+  shBackupLead:"📋 バックアップリンク(", shBackupTail:"リスト)",
+  shImported:"リストを取り込みました。",
+  shImpDropped:"上限超過の{n}リストは取り込みませんでした。",
+  monthFmt:"{y}年{m}月",
+  months:["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+  wd:["日","月","火","水","木","金","土"],          /* 0=日曜始まり */
+  wdWeek:["月","火","水","木","金","土","日"]        /* 0=月曜始まり */
+},
+en:{
+  modeDe:"Germany mode", modeUk:"UK mode", modeSwitch:"Mode",
+  lastUpdate:"LAST UPDATE:",
+  sources:"Sources",
+  skinToLight:"Switch to light theme", skinToDark:"Switch to dark theme",
+  capArea:"Area", capCountry:"Country", capCity:"City", capOrg:"Organizer",
+  capTheme:"Theme", capImp:"Importance", capLang:"Lang",
+  mech:"How it works",
+  mpAgentT:"AI agents",
+  mpAgentText:"Collection runs automatically once a day, performed by an AI agent (Claude Code or Codex). Part of the work is delegated to sub-agents, while the main agent verifies the extracted results. Updates are pushed as commits to the GitHub repository, and this page is regenerated after the auto-merge.",
+  mpFlowSrc:"Monitored sources",
+  mpFlowSearch:"Topic-based web search",
+  mpFlowAgent:"AI agent extracts & verifies",
+  mpFlowAgentSub:"Claude Code / Codex · once a day",
+  mpFlowGit:"Auto-commit & merge on GitHub",
+  mpFlowSite:"This page is regenerated",
+  mpListT:"Watchlist",
+  mpListText:"A hidden feature — enable it by opening the page with #lists appended to the URL. Click ☆ in the list view to add events, and the share-link button turns a list into a single URL (data is stored only in your browser).",
+  more:"More",
+  relNow:"just now", relMin:"{n} min ago", relHour:"{n} h ago",
+  relDay:"{n} d ago", relDay1:"1 d ago",
+  qPlaceholder:"Keyword",
+  qAria:"Keyword search",
+  all:"All",
+  th_central_bank:"① Central banks", th_real_economy:"② Real economy",
+  th_fin_markets:"③ Regulation & markets", th_geopolitics:"④ Geopolitics",
+  th_climate_esg:"⑤ Climate & ESG", th_ai:"⑥ AI",
+  th_china:"⑦ China", th_japan:"⑧ Japan", th_ukraine:"⑨ Ukraine",
+  imp0:"★0+ — all (incl. weekly seminars)", imp1:"★1+ — standard",
+  imp2:"★2+ — mid-size conferences and up", imp3:"★3 only — flagship & major events",
+  langEn:"English", langDe:"German",
+  cbOnline:"Incl. online events",
+  today:"Today",
+  fbHidden:"⚠ Filters active — hidden: {n}", reset:"Reset",
+  lgColorImp:"Color = importance:", lgHigh:"High", lgMid:"Mid", lgLow:"Low",
+  lgUnderline:"underline", lgOpenReg:"= open registration (not invite-only/CfP; high-fee events excluded)",
+  legnote:"Colour and text size in the calendar indicate importance (amber = high: ★★★ large international conferences with central bank governor-level speakers / cyan = mid: ★★☆ mid-size conferences / grey = low: ★☆☆ regular seminars). {{legnoteForeign}} The numbers ①–⑧ in the list show the main theme of each event (displayed in monochrome). Underlined events are open to general registration, i.e. not invitation-only or call-for-papers events (events with fees of roughly €300 or more are not underlined).",
+  upcoming:"Upcoming events",
+  sortDate:"By date", sortImp:"By importance",
+  crawlStatus:"Crawl status",
+  footer:"Event data is extracted automatically from organizers' public pages and web search. Always confirm dates, fees etc. on the linked original page.",
+  totop:"Back to top",
+  empty:"No events match the current filters.",
+  bOpenReg:"Open registration", bFree:"Free", bPaid:"Paid", bInvite:"Invitation only",
+  bOnline:"Online", bHybrid:"Hybrid (online available)", bOnsite:"On-site",
+  lb_en:"English", lb_de:"German", lb_ende:"English & German",
+  ls_en:"EN", ls_de:"DE", ls_ende:"EN+DE",
+  sep:"·", dash:"–", contPrefix:"(cont.) ",
+  regNote:"Registration:", regPage:"Registration page →", speakersLbl:"Speakers:",
+  srcInfo:"Source:", firstSeen:"/ first seen:",
+  stUpcoming:"{n}",
+  stHdrOrg:"Institution", stHdrCount:"Events from today onward",
+  stFilterTip:"Filter the calendar by this organizer",
+  /* Change log (News) */
+  nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
+  nwNone:"no changes", nwRange:"–", nwTokens:"({n} tokens used)",
+  nwTokensTip:"Tokens consumed by the AI agent on this day's crawl (near-complete total)",
+  nwPinned:"Temporarily showing an event hidden by your filters (cleared on any filter change)",
+  nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
+  nwf_fee:"Fee", nwf_reg:"Registration",
+  spCoverage:"Coverage",
+  spDiscovery:"Web discovery",
+  spDiscoveryText:"In addition to the sources above, a daily web search covers monetary policy, the real economy (energy, defence, infrastructure), financial regulation, geopolitics, climate & ESG, AI, China, Japan and Ukraine, as well as central bank seminars in Central & Eastern Europe and major policy and security forums.",
+  og_cb:"Central banks & regulators", og_tt:"Think tanks & research",
+  og_uni:"Universities", og_other:"Other",
+  /* Watchlist (hidden feature, enabled via #lists) */
+  lsSelAria:"Watchlist", lsNone:"No lists yet", lsUntitled:"(untitled)",
+  lsNew:"+ New", lsNewPh:"Type a list name, then Enter", lsOnly:"Show only this list",
+  lsShare:"🔗 Share link", lsMenuAria:"List actions", lsLinkAria:"Share link",
+  lsRename:"Rename", lsDel:"Delete", lsBackup:"Back up all lists",
+  lsClean:"Clean up removed items ({n})", lsHide:"Hide this bar",
+  lsDelConfirm:"Delete the list “{name}”?",
+  lsNoLists:"There are no lists yet.",
+  lsEmptyShare:"This list is empty — there is nothing to share.",
+  lsCopied:"Share link copied to the clipboard.",
+  lsCopyFail:"Could not copy automatically — please copy the link from the field below.",
+  lsLongLink:"Long link — watch out for line breaks",
+  lsCleaned:"Removed {n} entries that are no longer listed.",
+  lsFullLists:"At most 50 lists can be stored.",
+  lsFullIds:"A list can hold at most 500 events.",
+  shLead:"📋 Shared list “", shMid:"” — showing ", shTail:" events",
+  shOrphans:"{n} entries are not shown (already over or no longer listed)",
+  shAll:"Show all events", shImport:"Import this list",
+  shBackupLead:"📋 Backup link (", shBackupTail:" lists)",
+  shImported:"List imported.",
+  shImpDropped:"{n} lists were not imported (limit reached).",
+  monthFmt:"{mon} {y}",
+  months:["January","February","March","April","May","June",
+          "July","August","September","October","November","December"],
+  wd:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+  wdWeek:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+},
+de:{
+  modeDe:"Deutschland-Modus", modeUk:"UK-Modus", modeSwitch:"Modus",
+  lastUpdate:"LETZTES UPDATE:",
+  sources:"Quellen",
+  skinToLight:"Zum hellen Design wechseln", skinToDark:"Zum dunklen Design wechseln",
+  capArea:"Region", capCountry:"Land", capCity:"Stadt", capOrg:"Veranstalter",
+  capTheme:"Thema", capImp:"Relevanz", capLang:"Sprache",
+  mech:"Funktionsweise",
+  mpAgentT:"KI-Agenten",
+  mpAgentText:"Die Erfassung erfolgt täglich einmal automatisch durch einen KI-Agenten (Claude Code oder Codex). Ein Teil der Arbeit wird an Subagenten delegiert; die extrahierten Ergebnisse prüft der Hauptagent. Aktualisierungen werden als Commits in das GitHub-Repository übernommen; nach dem automatischen Merge wird diese Seite neu generiert.",
+  mpFlowSrc:"Beobachtete Quellen",
+  mpFlowSearch:"Themenbasierte Websuche",
+  mpFlowAgent:"KI-Agent extrahiert & prüft",
+  mpFlowAgentSub:"Claude Code / Codex · täglich einmal",
+  mpFlowGit:"Auto-Commit & Merge auf GitHub",
+  mpFlowSite:"Diese Seite wird neu generiert",
+  mpListT:"Merkliste",
+  mpListText:"Verstecktes Feature — zum Aktivieren die Seite mit angehängtem #lists öffnen. In der Listenansicht ☆ anklicken, um Termine zu merken; der Freigabelink macht aus der Liste eine einzelne URL (Daten bleiben nur im Browser).",
+  more:"Mehr",
+  relNow:"gerade eben", relMin:"vor {n} Min.", relHour:"vor {n} Std.",
+  relDay:"vor {n} Tagen", relDay1:"vor 1 Tag",
+  qPlaceholder:"Stichwort",
+  qAria:"Stichwortsuche",
+  all:"Alle",
+  th_central_bank:"① Zentralbanken", th_real_economy:"② Realwirtschaft",
+  th_fin_markets:"③ Regulierung & Märkte", th_geopolitics:"④ Geopolitik",
+  th_climate_esg:"⑤ Klima & ESG", th_ai:"⑥ KI",
+  th_china:"⑦ China", th_japan:"⑧ Japan", th_ukraine:"⑨ Ukraine",
+  imp0:"★0+ — alle (inkl. Forschungsseminare)", imp1:"★1+ — Standard",
+  imp2:"★2+ — ab mittelgroßen Konferenzen", imp3:"★3 — nur Flaggschiff-Konferenzen",
+  langEn:"Englisch", langDe:"Deutsch",
+  cbOnline:"Inkl. Online-Events",
+  today:"Heute",
+  fbHidden:"⚠ Filter aktiv — ausgeblendet: {n}", reset:"Zurücksetzen",
+  lgColorImp:"Farbe = Wichtigkeit:", lgHigh:"Hoch", lgMid:"Mittel", lgLow:"Niedrig",
+  lgUnderline:"Unterstrichen", lgOpenReg:"= Anmeldung offen (nicht nur auf Einladung/CfP; ohne hohe Teilnahmegebühren)",
+  legnote:"Farbe und Schriftgröße im Kalender zeigen die Wichtigkeit an (Bernstein = hoch: ★★★ große internationale Konferenzen mit Rednern auf Notenbankchef-Ebene / Cyan = mittel: ★★☆ mittelgroße Konferenzen / Grau = niedrig: ★☆☆ Forschungsseminare). {{legnoteForeign}} Die Ziffern ①–⑧ in der Liste stehen für das Hauptthema der Veranstaltung (monochrom dargestellt). Unterstrichene Veranstaltungen stehen der allgemeinen Anmeldung offen, sind also nicht nur auf Einladung oder als Call for Papers zugänglich (Veranstaltungen mit Teilnahmegebühren ab etwa 300 € werden nicht unterstrichen).",
+  upcoming:"Kommende Veranstaltungen",
+  sortDate:"Nach Datum", sortImp:"Nach Wichtigkeit",
+  crawlStatus:"Abrufstatus",
+  footer:"Die Angaben werden automatisch aus öffentlichen Seiten der Veranstalter und Websuchen extrahiert. Termine, Gebühren usw. bitte stets auf der verlinkten Originalseite prüfen.",
+  totop:"Nach oben",
+  empty:"Keine Veranstaltungen entsprechen den Filtern.",
+  bOpenReg:"Anmeldung offen", bFree:"Kostenlos", bPaid:"Kostenpflichtig",
+  bInvite:"Nur auf Einladung",
+  bOnline:"Online", bHybrid:"Hybrid (auch online)", bOnsite:"Präsenz",
+  lb_en:"Englisch", lb_de:"Deutsch", lb_ende:"Englisch & Deutsch",
+  ls_en:"EN", ls_de:"DE", ls_ende:"EN+DE",
+  sep:"·", dash:"–", contPrefix:"(Forts.) ",
+  regNote:"Anmeldung:", regPage:"Anmeldeseite →", speakersLbl:"Referenten:",
+  srcInfo:"Quelle:", firstSeen:"/ erfasst am:",
+  stUpcoming:"{n}",
+  stHdrOrg:"Institution", stHdrCount:"Veranstaltungen ab heute",
+  stFilterTip:"Kalender nach diesem Veranstalter filtern",
+  /* Änderungen (News) */
+  nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
+  nwNone:"keine Änderungen", nwRange:"–", nwTokens:"({n} Token verbraucht)",
+  nwTokensTip:"Vom KI-Agenten an diesem Tag verbrauchte Token (nahezu vollständig)",
+  nwPinned:"Ein durch Filter verborgenes Event wird vorübergehend angezeigt (Filteränderung hebt dies auf)",
+  nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
+  nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
+  spCoverage:"Erfasste Region",
+  spDiscovery:"Websuche",
+  spDiscoveryText:"Ergänzend zu den oben genannten Quellen wird täglich im Web nach Geldpolitik, Realwirtschaft (Energie, Verteidigung, Infrastruktur), Finanzregulierung, Geopolitik, Klima & ESG, KI, China, Japan und Ukraine sowie nach Zentralbankseminaren in Mittel- und Osteuropa und großen Politik- und Sicherheitsforen gesucht.",
+  og_cb:"Zentralbanken & Aufsicht", og_tt:"Think-Tanks & Forschung",
+  og_uni:"Universitäten", og_other:"Sonstige",
+  /* Merkliste (verstecktes Feature, Aktivierung über #lists) */
+  lsSelAria:"Merkliste", lsNone:"Noch keine Listen", lsUntitled:"(ohne Namen)",
+  lsNew:"+ Neu", lsNewPh:"Listenname eingeben, dann Enter",
+  lsOnly:"Nur diese Liste anzeigen",
+  lsShare:"🔗 Freigabelink", lsMenuAria:"Listenaktionen", lsLinkAria:"Freigabelink",
+  lsRename:"Umbenennen", lsDel:"Löschen", lsBackup:"Alle Listen sichern",
+  lsClean:"Nicht mehr gelistete entfernen ({n})", lsHide:"Leiste ausblenden",
+  lsDelConfirm:"Liste „{name}“ wirklich löschen?",
+  lsNoLists:"Es gibt noch keine Listen.",
+  lsEmptyShare:"Die Liste ist leer — es gibt nichts zu teilen.",
+  lsCopied:"Freigabelink in die Zwischenablage kopiert.",
+  lsCopyFail:"Automatisches Kopieren nicht möglich — bitte den Link unten manuell kopieren.",
+  lsLongLink:"Langer Link — auf Zeilenumbrüche achten",
+  lsCleaned:"{n} nicht mehr gelistete Einträge entfernt.",
+  lsFullLists:"Es können höchstens 50 Listen gespeichert werden.",
+  lsFullIds:"Eine Liste fasst höchstens 500 Veranstaltungen.",
+  shLead:"📋 Geteilte Liste „", shMid:"“ — angezeigt: ", shTail:" Termine",
+  shOrphans:"{n} Einträge werden nicht angezeigt (vorbei oder nicht mehr gelistet)",
+  shAll:"Alle Veranstaltungen anzeigen", shImport:"Diese Liste übernehmen",
+  shBackupLead:"📋 Backup-Link (", shBackupTail:" Listen)",
+  shImported:"Liste übernommen.",
+  shImpDropped:"{n} Listen wurden nicht übernommen (Limit erreicht).",
+  monthFmt:"{mon} {y}",
+  months:["Januar","Februar","März","April","Mai","Juni",
+          "Juli","August","September","Oktober","November","Dezember"],
+  wd:["So","Mo","Di","Mi","Do","Fr","Sa"],
+  wdWeek:["Mo","Di","Mi","Do","Fr","Sa","So"]
+}
+};
+
+/* ?lang= > localStorage > ブラウザ言語 > "ja" */
+function detectUiLang(){
+  try{
+    const p=new URLSearchParams(location.search).get("lang");
+    if(UI_LANGS.includes(p)){
+      try{ localStorage.setItem(LS_UILANG,p); }catch(e){}
+      return p;
+    }
+  }catch(e){}
+  try{
+    const s=localStorage.getItem(LS_UILANG);
+    if(UI_LANGS.includes(s)) return s;
+  }catch(e){}
+  try{
+    const navs=(navigator.languages && navigator.languages.length)
+      ? navigator.languages : [navigator.language||""];
+    for(const n of navs){
+      const s=String(n||"").toLowerCase();
+      if(s.startsWith("ja")) return "ja";
+      if(s.startsWith("de")) return "de";
+      if(s.startsWith("en")) return "en";
+    }
+  }catch(e){}
+  return "ja";
+}
+let uiLang = detectUiLang();
+
+/* ================= プロファイル別UI(ドイツモード / 英国モード)=================
+   地域に依存する文言と日帰り圏の都市集合だけをここに持つ。PROFILE.id で選び、
+   t() は PUI.i18n を基本辞書(I18N)より先に引く。 */
+const PROFILE_UI = {
+  de: {
+    /* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
+       基準: DB の標準的なICE所要時間で片道約4時間以内。
+       Kiel(FRA発 約5時間超)・Dresden(約4.5時間)は基準超のため対象外。 */
+    daytripCities: new Set([
+      "Frankfurt am Main","Mainz","Wiesbaden","Darmstadt","Eltville am Rhein",
+      "Bonn","Cologne","Düsseldorf","Essen","Bochum","Dortmund",
+      "Mannheim","Heidelberg","Karlsruhe","Stuttgart","Ulm","Würzburg",
+      "Nürnberg","Munich","Berlin","Hamburg","Hannover","Leipzig",
+      "Halle (Saale)","Kassel","Göttingen","Saarbrücken"
+    ]),
+    i18n: {
+      ja:{
+        docTitle:"Seminar Calendar — ドイツ経済・金融セミナー",
+        mpIntro:"ドイツ語圏と中東欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
+        areaHome:"ドイツ", areaAway:"ドイツ以外",
+        cbDaytrip:"Frankfurt日帰り圏のみ",
+        lgForeign:"◇ ドイツ国外での開催",
+        legnoteForeign:"◇ が付くイベントはドイツ国外での開催。",
+        spCoverageText:"ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。"
+      },
+      en:{
+        docTitle:"Seminar Calendar — German Economics & Finance Seminars",
+        mpIntro:"Economics and finance seminars across the German-speaking region and Central & Eastern Europe, collected automatically once a day by AI agents.",
+        areaHome:"Germany", areaAway:"Outside Germany",
+        cbDaytrip:"Frankfurt day-trip only",
+        lgForeign:"◇ held outside Germany",
+        legnoteForeign:"Events marked ◇ are held outside Germany.",
+        spCoverageText:"Germany, Switzerland, Austria, Central & Eastern Europe (PL/CZ/SK/HU/SI), the Balkans, the Baltic states and Ukraine. Events hosted by central banks, the ECB or the BIS are included regardless of the host country."
+      },
+      de:{
+        docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Deutschland",
+        mpIntro:"Wirtschafts- und Finanzseminare im deutschsprachigen Raum und in Mittel- und Osteuropa, täglich einmal automatisch von KI-Agenten erfasst.",
+        areaHome:"Deutschland", areaAway:"Außerhalb Deutschlands",
+        cbDaytrip:"Nur Umkreis Frankfurt",
+        lgForeign:"◇ Veranstaltung außerhalb Deutschlands",
+        legnoteForeign:"Mit ◇ markierte Veranstaltungen finden außerhalb Deutschlands statt.",
+        spCoverageText:"Deutschland, Schweiz, Österreich, Mittel- und Osteuropa (PL/CZ/SK/HU/SI), Balkan, Baltikum und Ukraine. Veranstaltungen von Zentralbanken, der EZB oder der BIZ werden unabhängig vom Austragungsland erfasst."
+      }
+    }
+  },
+  uk: {
+    /* London(Central line の Bank 駅起点)から鉄道で片道おおむね4時間以内の英国都市(=日帰り圏)。
+       暫定リスト。基準: 標準的な所要時間で片道約4時間以内(Edinburgh・Glasgow は約4.5時間超で対象外)。 */
+    daytripCities: new Set([
+      "London","Oxford","Cambridge","Reading","Brighton","Birmingham","Bristol","Bath",
+      "Cardiff","Manchester","Leeds","Sheffield","Nottingham","Leicester","Coventry",
+      "Warwick","York","Liverpool","Norwich","Southampton","Exeter","Newcastle upon Tyne",
+      "Durham","Milton Keynes"
+    ]),
+    i18n: {
+      ja:{
+        docTitle:"Seminar Calendar — 英国経済・金融セミナー",
+        mpIntro:"英国・アイルランドと北欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
+        areaHome:"英国", areaAway:"英国以外",
+        cbDaytrip:"London日帰り圏のみ",
+        lgForeign:"◇ 英国外での開催",
+        legnoteForeign:"◇ が付くイベントは英国外での開催。",
+        spCoverageText:"英国・アイルランド。北欧(DK/SE/NO/FI/IS)は現地開催なら旗艦・大型会議(★3)のみ、オンライン開催は全規模を収載。"
+      },
+      en:{
+        docTitle:"Seminar Calendar — UK Economics & Finance Seminars",
+        mpIntro:"Economics and finance seminars across the UK, Ireland and the Nordics, collected automatically once a day by AI agents.",
+        areaHome:"UK", areaAway:"Outside UK",
+        cbDaytrip:"London day-trip only",
+        lgForeign:"◇ held outside the UK",
+        legnoteForeign:"Events marked ◇ are held outside the UK.",
+        spCoverageText:"United Kingdom and Ireland. For the Nordics (DK/SE/NO/FI/IS) only flagship/large conferences (★3) are included when held on site; online events of any size are included."
+      },
+      de:{
+        docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Großbritannien",
+        mpIntro:"Wirtschafts- und Finanzseminare in Großbritannien, Irland und den nordischen Ländern, täglich einmal automatisch von KI-Agenten erfasst.",
+        areaHome:"Großbritannien", areaAway:"Außerhalb Großbritanniens",
+        cbDaytrip:"Nur Umkreis London",
+        lgForeign:"◇ Veranstaltung außerhalb Großbritanniens",
+        legnoteForeign:"Mit ◇ markierte Veranstaltungen finden außerhalb Großbritanniens statt.",
+        spCoverageText:"Vereinigtes Königreich und Irland. Für die nordischen Länder (DK/SE/NO/FI/IS) werden Präsenzveranstaltungen nur als Flaggschiff-/Großkonferenzen (★3) erfasst; Online-Veranstaltungen unabhängig von der Größe."
+      }
+    }
+  }
+};
+const PUI = PROFILE_UI[PROFILE.id] || PROFILE_UI.de;
+
+/* 辞書引き(プロファイル辞書 PUI.i18n → 基本辞書 I18N の順。各辞書内は現在の uiLang → ja の順)。
+   見つからなければキー名をそのまま返す。文字列中の {{key}} は別キーの参照として再帰的に展開する
+   (地域依存の一文だけをプロファイル側に持たせるため。tf() の {n} 差し込みとは別物)。 */
+function t(k){
+  let s;
+  const p=PUI.i18n[uiLang]||PUI.i18n.ja, d=I18N[uiLang]||I18N.ja;
+  if(p && p[k]!=null) s=p[k];
+  else if(PUI.i18n.ja[k]!=null) s=PUI.i18n.ja[k];
+  else if(d && d[k]!=null) s=d[k];
+  else if(I18N.ja[k]!=null) s=I18N.ja[k];
+  else return k;
+  if(typeof s==="string" && s.includes("{{"))
+    s=s.replace(/\{\{(\w+)\}\}/g,(m,key)=>key===k?m:String(t(key)));
+  return s;
+}
+/* {n} 等のプレースホルダ差し込み(HTMLに入れる値は呼び出し側で esc 済みにすること) */
+function tf(k, vals){
+  let s=String(t(k));
+  for(const key in vals) s=s.split("{"+key+"}").join(vals[key]);
+  return s;
+}
+
+/* 国名: ja は既存辞書、en/de は Intl.DisplayNames(言語ごとにキャッシュ) */
+const DN_CACHE = {};
+function displayNames(){
+  if(!(uiLang in DN_CACHE)){
+    try{ DN_CACHE[uiLang]=new Intl.DisplayNames([uiLang],{type:"region"}); }
+    catch(e){ DN_CACHE[uiLang]=null; }
+  }
+  return DN_CACHE[uiLang];
+}
+function countryName(code){
+  if(uiLang==="ja") return COUNTRY_JA[code]||code;
+  try{ const dn=displayNames(); if(dn) return dn.of(code)||code; }catch(e){}
+  return code;
+}
+/* Organizer括弧内の国名(ja は半角カナ、en/de は DisplayNames) */
+function countryParen(code){
+  if(uiLang==="ja") return COUNTRY_KANA[code]||code;
+  return countryName(code);
+}
+/* organizer_short に混じる日本語「他」は en/de では "+" に置換して表示する。
+   ※ フィルタ/ファセットは orgShort() の生の値のまま扱い、表示だけを変える。 */
+function orgDisp(s){
+  const v=String(s??"");
+  return uiLang==="ja" ? v : v.replace(/他$/,"+");
+}
+
+const THEME_KEYS = ["central_bank","real_economy","fin_markets","geopolitics",
+                    "climate_esg","ai","china","japan","ukraine"];
+const thLabel = k => t("th_"+k);
+const LANG_BADGE_KEY = {en:"lb_en", de:"lb_de", "en+de":"lb_ende"};
+const LANG_SHORT_KEY = {en:"ls_en", de:"ls_de", "en+de":"ls_ende"};
+function langBadge(l){ const k=LANG_BADGE_KEY[l]; return k?t(k):l; }
+function langShort(l){ const k=LANG_SHORT_KEY[l]; return k?t(k):""; }
+
+/* 最終更新の相対時刻表示(「32分前」等)。data-iso が読めなければ絶対時刻のまま。
+   正確な日時は <b> の title 属性(ホバー)で見られる。 */
+function drawUpdated(){
+  const el=document.getElementById("updrel");
+  if(!el) return;
+  const ts=Date.parse(el.dataset.iso||"");
+  if(!isFinite(ts)) return;
+  const m=Math.max(0, Math.floor((Date.now()-ts)/60000));
+  let txt;
+  if(m<1) txt=t("relNow");
+  else if(m<60) txt=tf("relMin",{n:m});
+  else if(m<1440) txt=tf("relHour",{n:Math.floor(m/60)});
+  else{
+    const d=Math.floor(m/1440);
+    txt = d===1 ? t("relDay1") : tf("relDay",{n:d});
+  }
+  el.textContent=txt;
+}
+setInterval(drawUpdated, 60000);
+
+/* ヘッダの DE|UK モード切替を PROFILE から組み立てる(両ページで同じマークアップ)。
+   現在側は押せない <span class="on">、相手側は相対リンク <a>(/ ⇄ /uk/)。
+   title は data-i18n-title 経由で applyStaticText() が UI言語に合わせて付ける。 */
+function buildModeSwitch(){
+  const box=document.getElementById("modesw");
+  if(!box) return;
+  box.textContent="";
+  const other=(PROFILE.other&&PROFILE.other.id)||"", href=(PROFILE.other&&PROFILE.other.href)||"";
+  for(const id of ["de","uk"]){
+    const cur=(id===PROFILE.id), key=(id==="uk"?"modeUk":"modeDe");
+    const el=document.createElement(cur||id!==other ? "span" : "a");
+    el.textContent=id.toUpperCase();
+    el.dataset.mode=id;
+    el.dataset.i18nTitle=key;
+    if(cur){ el.className="on"; el.setAttribute("aria-current","page"); }
+    else if(id===other){ el.href=href; }
+    box.appendChild(el);
+  }
+}
+
+/* HTML静的部分(data-i18n 属性)の一括書き換え */
+function applyStaticText(){
+  document.documentElement.lang = uiLang;
+  document.title = t("docTitle");
+  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t(el.dataset.i18n);});
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
+  document.querySelectorAll("[data-i18n-aria]").forEach(el=>{el.setAttribute("aria-label",t(el.dataset.i18nAria));});
+  document.querySelectorAll("[data-i18n-title]").forEach(el=>{el.setAttribute("title",t(el.dataset.i18nTitle));});
+  document.querySelectorAll("#langsw button").forEach(b=>{
+    const on = b.dataset.ui===uiLang;
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-pressed", on?"true":"false");
+  });
+  applySkin();     /* 配色トグルのラベル・吹き出しもUI言語に追随させる */
+  drawUpdated();   /* 相対時刻もUI言語に追随させる */
+}
+/* UI言語の切替(state.lang=開催言語フィルタには一切触れない) */
+function setUiLang(l){
+  if(!UI_LANGS.includes(l)) return;
+  uiLang=l;
+  try{ localStorage.setItem(LS_UILANG,l); }catch(e){}
+  applyStaticText();
+  redraw();
+  drawStatus();
+  drawMech();
+  drawNews();            /* redraw() の後(一覧行 #ev-<id> の有無を見てリンクを決める) */
+}
+
+/* ================= 配色(skin)=================
+   注意: state.theme は「セミナーのテーマ(分野)フィルタ」であって配色ではない。
+   名前の衝突を避けるため、ライト/ダークの配色はここでは skin と呼ぶ。
+   既定はダーク。?skin= または保存値がある場合だけライトになり、初回ペイント前の
+   反映は <head> のインラインスクリプトが済ませてある(ここはその続きを引き継ぐ)。 */
+const SKINS   = ["dark","light"];
+const LS_SKIN = "sr_skin";               /* head のインラインスクリプトと同じキー */
+let skin = SKINS.includes(document.documentElement.dataset.skin)
+  ? document.documentElement.dataset.skin : "dark";
+
+/* ボタンの表示は「押した後になる側」。ラベルはUI言語に追随する
+   (applyStaticText から呼ばれるので言語切替でも文言が更新される)。 */
+function applySkin(){
+  document.documentElement.dataset.skin = skin;
+  const light = (skin==="light");
+  const m = document.getElementById("themecolor");
+  if(m) m.content = light ? "#eef1f5" : "#080b10";
+  const label = t(light ? "skinToDark" : "skinToLight");   /* アイコン自体はCSSで切替 */
+  document.getElementById("skinbtn").setAttribute("aria-label", label);
+  document.getElementById("skintip").textContent = label;
+}
+function setSkin(sk){
+  if(!SKINS.includes(sk)) return;
+  skin = sk;
+  try{ localStorage.setItem(LS_SKIN, sk); }catch(e){}
+  applySkin();
+}
+
+/* 日帰り圏の都市集合はプロファイル別(PROFILE_UI[*].daytripCities → PUI.daytripCities)。 */
+
+const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau",
+                    "Eltville am Rhein":"Eltville"};
+const COUNTRY_JA = {
+  DE:"ドイツ", AT:"オーストリア", CH:"スイス", IT:"イタリア", FR:"フランス",
+  NL:"オランダ", BE:"ベルギー", LU:"ルクセンブルク", GB:"英国", IE:"アイルランド",
+  ES:"スペイン", PT:"ポルトガル", GR:"ギリシャ", MT:"マルタ", CY:"キプロス",
+  DK:"デンマーク", FI:"フィンランド", SE:"スウェーデン", NO:"ノルウェー",
+  IS:"アイスランド", PL:"ポーランド", CZ:"チェコ", SK:"スロバキア", HU:"ハンガリー",
+  SI:"スロベニア", HR:"クロアチア", RO:"ルーマニア", BG:"ブルガリア",
+  BA:"ボスニア", RS:"セルビア", AL:"アルバニア", MK:"北マケドニア",
+  ME:"モンテネグロ", XK:"コソボ", LT:"リトアニア", LV:"ラトビア", EE:"エストニア",
+  UA:"ウクライナ", MD:"モルドバ", TR:"トルコ",
+  MC:"モナコ", LI:"リヒテンシュタイン",
+  US:"米国", CA:"カナダ", JP:"日本", CN:"中国", KR:"韓国",
+  AU:"オーストラリア", SG:"シンガポール"
+};
+
+/* ---------- Organizerプルダウンのグループ分け ---------- */
+/* 括弧表示用の半角カタカナ国名 */
+const COUNTRY_KANA = {
+  AT:"ｵｰｽﾄﾘｱ", CH:"ｽｲｽ", PL:"ﾎﾟｰﾗﾝﾄﾞ", CZ:"ﾁｪｺ", SK:"ｽﾛﾊﾞｷｱ", HU:"ﾊﾝｶﾞﾘｰ",
+  SI:"ｽﾛﾍﾞﾆｱ", HR:"ｸﾛｱﾁｱ", RS:"ｾﾙﾋﾞｱ", BA:"ﾎﾞｽﾆｱ", AL:"ｱﾙﾊﾞﾆｱ", RO:"ﾙｰﾏﾆｱ",
+  BG:"ﾌﾞﾙｶﾞﾘｱ", LT:"ﾘﾄｱﾆｱ", LV:"ﾗﾄﾋﾞｱ", EE:"ｴｽﾄﾆｱ", UA:"ｳｸﾗｲﾅ", BE:"ﾍﾞﾙｷﾞｰ",
+  GB:"ｲｷﾞﾘｽ", FR:"ﾌﾗﾝｽ", IT:"ｲﾀﾘｱ", NL:"ｵﾗﾝﾀﾞ", LU:"ﾙｸｾﾝﾌﾞﾙｸ", ES:"ｽﾍﾟｲﾝ",
+  GR:"ｷﾞﾘｼｬ", DK:"ﾃﾞﾝﾏｰｸ", SE:"ｽｳｪｰﾃﾞﾝ", FI:"ﾌｨﾝﾗﾝﾄﾞ", NO:"ﾉﾙｳｪｰ",
+  IE:"ｱｲﾙﾗﾝﾄﾞ", IS:"ｱｲｽﾗﾝﾄﾞ", DE:"ﾄﾞｲﾂ",
+  TR:"ﾄﾙｺ", US:"ｱﾒﾘｶ", EU:"EU"
+};
+/* 主催者トークン → グループ(g: cb=中銀・規制当局 / tt=シンクタンク・研究機関 /
+   uni=大学 / 無指定=その他)と、必要な場合のみ本拠国(c)。
+   exempt: ECB等の超有名組織は国名括弧を付けない。
+   c の無い組織は「その組織のイベントの開催国が全て同一かつ本拠国(PROFILE.home)以外」の
+   場合だけ自動で括弧が付く(本拠国の組織・多国開催・オンラインのみは付かない)。
+   表は両モード共用(英国モードでは c:"GB" に括弧が付かず、c 無しのドイツ組織には
+   開催国 DE から自動で括弧が付く)。 */
+const ORG_META = {
+  /* 中銀・規制当局 */
+  "ECB":{g:"cb",exempt:true}, "EZB":{g:"cb",exempt:true}, "BIS":{g:"cb",exempt:true},
+  "Bundesbank":{g:"cb"}, "SNB":{g:"cb",c:"CH"}, "OeNB":{g:"cb",c:"AT"},
+  "CNB":{g:"cb",c:"CZ"}, "NBP":{g:"cb",c:"PL"}, "NBU":{g:"cb",c:"UA"},
+  "NBS":{g:"cb",c:"SK"}, "MNB":{g:"cb",c:"HU"}, "NBR":{g:"cb",c:"RO"},
+  "HNB":{g:"cb",c:"HR"}, "BNB":{g:"cb",c:"BG"}, "Banka Slovenije":{g:"cb",c:"SI"},
+  "Bank of Lithuania":{g:"cb",c:"LT"}, "Latvijas Banka":{g:"cb",c:"LV"},
+  "Eesti Pank":{g:"cb",c:"EE"}, "CBBH":{g:"cb",c:"BA"}, "Bank of Albania":{g:"cb",c:"AL"},
+  "BaFin":{g:"cb"}, "EIOPA":{g:"cb"}, "ESRB":{g:"cb"}, "SRB":{g:"cb",c:"EU"},
+  /* 英国・アイルランド・北欧(英国モード用。表は共用) */
+  "BoE":{g:"cb",c:"GB"}, "Bank of England":{g:"cb",c:"GB"}, "PRA":{g:"cb",c:"GB"},
+  "FCA":{g:"cb",c:"GB"}, "Central Bank of Ireland":{g:"cb",c:"IE"},
+  "Riksbank":{g:"cb",c:"SE"}, "Norges Bank":{g:"cb",c:"NO"},
+  "Danmarks Nationalbank":{g:"cb",c:"DK"}, "Bank of Finland":{g:"cb",c:"FI"},
+  "Sedlabanki":{g:"cb",c:"IS"},
+  /* シンクタンク・研究機関 */
+  "ifo":{g:"tt"}, "CESifo":{g:"tt"}, "EconPol":{g:"tt"}, "DIW Berlin":{g:"tt"},
+  "IfW Kiel":{g:"tt"}, "RWI":{g:"tt"}, "ZEW":{g:"tt"}, "IWH":{g:"tt"},
+  "IW Köln":{g:"tt"}, "SAFE":{g:"tt"}, "IMFS":{g:"tt"}, "CFS":{g:"tt"},
+  "efl":{g:"tt"}, "DGAP":{g:"tt"}, "EWI":{g:"tt"}, "Gerzensee":{g:"tt",c:"CH"},
+  "SUERF":{g:"tt",c:"AT"}, "Bruegel":{g:"tt",c:"BE"}, "OMFIF":{g:"tt",c:"GB"},
+  "CEBRA":{g:"tt"}, "CEPR":{g:"tt",c:"GB"}, "ikf Bochum":{g:"tt"},
+  "Hohenheimer Kreis":{g:"tt"},
+  "NIESR":{g:"tt",c:"GB"}, "IFS":{g:"tt",c:"GB"}, "Resolution Foundation":{g:"tt",c:"GB"},
+  "Chatham House":{g:"tt",c:"GB"}, "RUSI":{g:"tt",c:"GB"}, "IISS":{g:"tt",c:"GB"},
+  "IfG":{g:"tt",c:"GB"}, "CER":{g:"tt",c:"GB"}, "ESRI":{g:"tt",c:"IE"}, "OBR":{g:"tt",c:"GB"},
+  /* 大学・ビジネススクール */
+  "Frankfurt School":{g:"uni"}, "FS Forum":{g:"uni"}, "Hertie School":{g:"uni"},
+  "House of Finance":{g:"uni"}, "HFM":{g:"uni"}, "Goethe Uni":{g:"uni"},
+  "ECONtribute":{g:"uni"}, "Berlin School of Economics":{g:"uni"},
+  "Uni Mannheim":{g:"uni"}, "WU Wien":{g:"uni",c:"AT"},
+  "LSE":{g:"uni",c:"GB"}, "Oxford":{g:"uni",c:"GB"}, "Cambridge":{g:"uni",c:"GB"},
+  "KCL":{g:"uni",c:"GB"}, "Imperial":{g:"uni",c:"GB"}, "Warwick":{g:"uni",c:"GB"},
+  "Bayes":{g:"uni",c:"GB"}, "TCD":{g:"uni",c:"IE"}
+};
+const ORG_GROUP_ORDER = ["cb","tt","uni","other"];
+/* グループ見出しのラベルは I18N の og_cb / og_tt / og_uni / og_other を引く */
+const orgGroupLabel = g => t("og_"+g);
+
+/* ---------- ラベル生成 ---------- */
+/* importance の真値(0〜3)。0=毎週型の定例研究セミナー等のマイクロイベント。
+   null/未設定/不正値は1(定例セミナー相当)扱い。
+   注意: `+ev.importance` は使わない(+null===0 となり、未設定を誤って0=マイクロ
+   イベント扱いしてしまうため)。 */
+function imp(ev){ const n=ev.importance; return (n===0||n===1||n===2||n===3)?n:1; }
+/* CSS クラス用のバケツ(i1/i2/i3のみ既存)。importance 0 は新クラスを増やさず
+   1(グレー)と同じ見た目に丸める。imp()自体はフィルタ・★表示のため0を維持する。 */
+function impCls(ev){ return imp(ev)||1; }
+/* 本拠国(PROFILE.home)以外での開催か(◇印)。online(country null)は対象外 */
+function isForeign(ev){ return ev.country!=null && ev.country!==PROFILE.home; }
+/* 「Call for Papers・招待制ではなく、登録すれば参加できる」イベントか判定する。
+   カレンダー上の下線表示・一覧の「登録参加可」バッジで使う。 */
+function isOpenReg(ev){
+  if(ev.open_to_public===false) return false;                 /* 明示的に招待制 */
+  const cfpRe=/call for paper|cfp/i;
+  if(cfpRe.test(ev.title||"") || cfpRe.test(ev.registration_note||"")) return false; /* CfP型 */
+  if(ev.open_to_public===true) return true;
+  if(ev.open_to_public==null){                                 /* 不明: 周辺情報から推定 */
+    const note=ev.registration_note||"";
+    const regRe=/登録|registration|register|anmeld/i;
+    const invRe=/招待|invitation/i;
+    if(safeUrl(ev.registration_url)) return true;
+    if(regRe.test(note) && !invRe.test(note)) return true;
+  }
+  return false;                                                 /* それ以外(不明含む)は下線なし */
+}
+/* 「明らかに高額な有料イベント」判定。fee_amount はデータ側で抽出される
+   一般参加(非会員)の標準参加費の概数(EUR)。閾値はここで調整する。 */
+const HIGH_FEE_EUR = 300;
+function isHighFee(ev){
+  return ev.fee==="paid" && typeof ev.fee_amount==="number" && ev.fee_amount>=HIGH_FEE_EUR;
+}
+/* カレンダーの下線は「登録参加可かつ高額でない」に絞る。一覧の「登録参加可」バッジは
+   isOpenReg のまま(事実表示)。下線は“現実的に参加しやすい”ものを拾う視覚マーカー。 */
+function underlineReg(ev){ return isOpenReg(ev) && !isHighFee(ev); }
+function stars(ev){ const n=imp(ev); return "★".repeat(n)+"☆".repeat(3-n); }
+function cityShort(ev){
+  if(ev.city) return CITY_SHORT[ev.city] || ev.city;
+  if(ev.format==="online") return "Online";
+  return "?";
+}
+function orgShort(ev){
+  if(ev.organizer_short) return ev.organizer_short;
+  const org = ev.organizer || "";
+  const m = org.match(/\(([^)]+)\)/);
+  if(m){
+    const inner = m[1].trim();
+    if(inner.length>=2 && inner.length<=8 && /^[A-Z0-9&.\-\/]+$/.test(inner)) return inner;
+  }
+  if(org.length<=12) return org || "?";
+  return org.slice(0,12)+"…";
+}
+/* 主催者を "+" で分解したトークン集合(例 "SAFE+CEPR" → ["SAFE","CEPR"]) */
+function orgTokens(ev){
+  return String(orgShort(ev)||"").split("+").map(s=>s.trim()).filter(Boolean);
+}
+function evLabel(ev){
+  const lang = ev.language ? langShort(ev.language) : "";
+  const org  = orgDisp(orgShort(ev));
+  const mid = lang ? `${lang}${t("sep")}${org}` : org;
+  const theme = ev.title_short || ev.title || "";
+  return `${isForeign(ev)?"◇ ":""}[${cityShort(ev)}][${mid}]${theme}`;
+}
+function evFull(ev){
+  return [ev.title, ev.organizer, ev.city].filter(Boolean).join(" / ");
+}
+/* ---------- 複数日イベント用ヘルパー ---------- */
+function isMulti(ev){ return !!(ev.date_end && ev.date_end!==ev.date_start); }
+function md(iso){ return `${+iso.slice(5,7)}/${+iso.slice(8,10)}`; }
+function endSuffix(ev){ return `${t("dash")}${md(ev.date_end)}`; }       /* ラベル末尾に付ける期間サフィックス */
+function contTitle(ev){ return `${t("contPrefix")}${ev.title} / ${md(ev.date_start)}${t("dash")}${md(ev.date_end)}`; }
+function spanTitle(ev){ return `${evFull(ev)} / ${md(ev.date_start)}${t("dash")}${md(ev.date_end)}`; }
+function daysBetween(a,b){ return Math.round((Date.parse(b)-Date.parse(a))/86400000); }
+
+/* ---------- 週ビュー用の日付ヘルパー ---------- */
+const mqMobile = window.matchMedia("(max-width:640px)");
+const isoOf = d => d.toISOString().slice(0,10);
+function mondayOf(iso){
+  const d=new Date(iso+"T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay()+6)%7));
+  return d;
+}
+
+/* ---------- 状態 ---------- */
+const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
+/* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
+/* Area=home(本拠国)のときは country も本拠国をセットで表示する(area変更ハンドラでも連動)。 */
+const DEFAULTS = {area:"home", country:PROFILE.home, city:"", org:"", imp:"2", theme:"", lang:"",
+                   online:false, daytrip:false, q:""};
+const state = {...DEFAULTS, sort:"date",
+               y:TODAY_Y, m:TODAY_M,
+               weekStart:isoOf(mondayOf(TODAY))};
+
+/* v7: 既定値変更(Area=DE・Country=DE・★2以上・オンライン除外)を全訪問者に
+   行き渡らせるためキーを更新。旧キーの保存値は読まない(一度だけ既定にリセットされる)。
+   プロファイル別に別キー(uk は "_uk" 接尾辞。de は従来どおり)。 */
+const LS_KEY = "sr_filters_v7" + (PROFILE.ls_suffix||"");
+function loadState(){
+  let s;
+  try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
+  if(!s || typeof s!=="object") return;
+  /* 旧保存値 "DE"/"nonDE"(本拠国固定だった頃の値)は "home"/"away" に移行する */
+  if(s.area==="DE") s.area="home"; else if(s.area==="nonDE") s.area="away";
+  if(["","home","away"].includes(s.area)) state.area = s.area;
+  if(["","en","de"].includes(s.lang)) state.lang = s.lang;
+  /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★2以上(imp:"2")に移行する */
+  if(s.imp==="") state.imp = "2";
+  else if(["0","1","2","3"].includes(s.imp)) state.imp = s.imp;
+  if(["",...THEME_KEYS].includes(s.theme)) state.theme = s.theme;
+  if(typeof s.online==="boolean") state.online = s.online;
+  if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
+  if(typeof s.q==="string") state.q = s.q;
+  if(["date","imp"].includes(s.sort)) state.sort = s.sort;
+  /* country/city/org は候補構築時に検証(候補に無ければ黙って空に戻す) */
+  if(typeof s.country==="string") state.country = s.country;
+  if(typeof s.city==="string")    state.city    = s.city;
+  if(typeof s.org==="string")     state.org     = s.org;
+}
+function saveState(){
+  try{
+    localStorage.setItem(LS_KEY, JSON.stringify({
+      area:state.area, country:state.country, city:state.city, org:state.org,
+      imp:state.imp, theme:state.theme, lang:state.lang, online:state.online,
+      daytrip:state.daytrip, q:state.q, sort:state.sort
+    }));
+  }catch(e){}
+}
+
+/* ---------- 個別フィルタ判定 ---------- */
+function passArea(ev, area=state.area){
+  if(area==="") return true;
+  if(ev.format==="online") return true;               /* 完全オンラインは所在地なし→常に表示 */
+  if(area==="home") return ev.country===PROFILE.home;
+  if(area==="away") return ev.country!=null && ev.country!==PROFILE.home;
+  return true;
+}
+function passCountry(ev){
+  if(state.country==="") return true;
+  if(ev.format==="online") return true;               /* 完全オンラインは国を問わず(CBはonline判定で別途制御) */
+  return ev.country===state.country;                  /* 厳密一致(country===null は除外) */
+}
+function passCity(ev){
+  if(state.city==="") return true;
+  return ev.city===state.city;                        /* 物理都市の明示選択→オンラインは外れる */
+}
+function passOrg(ev){
+  if(state.org==="") return true;
+  return orgTokens(ev).includes(state.org);
+}
+function passImp(ev){
+  return imp(ev) >= +state.imp;      /* state.imp="0"なら全部通る。既定"1"で★0(imp0)を隠す */
+}
+function passTheme(ev){
+  if(state.theme==="") return true;
+  return (ev.themes||[]).includes(state.theme);
+}
+function passLang(ev){
+  if(state.lang==="en" && !(ev.language==="en"||ev.language==="en+de"||ev.language==null)) return false;
+  if(state.lang==="de" && !(ev.language==="de"||ev.language==="en+de"||ev.language==null)) return false;
+  return true;
+}
+function passOnline(ev){
+  if(state.online) return true;                       /* オン: 完全オンラインも含める */
+  return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
+}
+/* 日帰り圏チェックが無効(=グレーアウト)になる条件。
+   AREA=本拠国以外、または COUNTRY が本拠国以外に固定されているとき、
+   物理参加を前提とする日帰り圏フィルタは意味を持たないため無効化する。 */
+function daytripDisabled(){
+  return state.area==="away" || (state.country!=="" && state.country!==PROFILE.home);
+}
+function passDaytrip(ev){
+  if(!state.daytrip || daytripDisabled()) return true; /* OFF または無効中は素通し */
+  /* ON: 本拠国内かつ日帰り圏都市のみ(完全オンライン=city/country null も false=非表示) */
+  return ev.country===PROFILE.home && PUI.daytripCities.has(ev.city);
+}
+function passQ(ev){
+  if(!state.q) return true;
+  /* 検索対象は UI言語によらず全言語分(ja/en/de)の要約と登壇者(氏名/所属)を含める */
+  const hay=[ev.title,ev.title_ja,ev.title_short,ev.organizer,ev.organizer_short,
+             ev.city,ev.summary_ja,ev.summary_en,ev.summary_de,speakersText(ev)].join(" ").toLowerCase();
+  return hay.includes(state.q.toLowerCase());
+}
+
+/* ---------- ファセット合成(指定した軸以外の全フィルタを通過するか) ----------
+   ex は文字列(1軸)でも配列(複数軸)でも可。渡された軸のフィルタは無視する。 */
+function passExcept(ev, ex){
+  const s = Array.isArray(ex) ? new Set(ex) : new Set([ex]);
+  if(!s.has("area")    && !passArea(ev))    return false;
+  if(!s.has("country") && !passCountry(ev)) return false;
+  if(!s.has("city")    && !passCity(ev))    return false;
+  if(!s.has("org")     && !passOrg(ev))     return false;
+  if(!s.has("imp")     && !passImp(ev))     return false;
+  if(!s.has("theme")   && !passTheme(ev))   return false;
+  if(!s.has("lang")    && !passLang(ev))    return false;
+  if(!s.has("online")  && !passOnline(ev))  return false;
+  if(!s.has("daytrip") && !passDaytrip(ev)) return false;
+  if(!s.has("q")       && !passQ(ev))       return false;
+  if(!s.has("listonly")&& !passListOnly(ev))return false;
+  return true;
+}
+const visible = ev => passExcept(ev, null);
+/* 共有ビュー(v1)では利用者フィルタ・既定フィルタを一切通さず、復号した実在イベントを
+   そのまま描画する(v2 は通常表示のまま)。 */
+const fEvents = () => isShareList() ? SHARE_EVENTS : EVENTS.filter(visible);
+const inRange = (ev,iso) => iso>=ev.date_start && iso<=(ev.date_end||ev.date_start);
+/* 終了済み(実行日より前に終わった)イベントかどうか。一覧・各ファセット候補で
+   共通して使い、「プルダウンには出るのに一覧には出ない」不整合を防ぐ。 */
+const notEnded = e => (e.date_end||e.date_start) >= TODAY;
+
+/* ---------- 候補値(ファセット) ---------- */
+/* format==="online" は場所情報を持たない(city/country が null)ため、
+   COUNTRY/CITY のファセット母集合から構造的に除外する。将来データが汚れて
+   online イベントに国が付いても「本拠国以外を選んだのに本拠国が出る」型のバグを防ぐ。
+   ORG は online 主催者も ORGANIZER フィルタ対象なので除外しない。 */
+function facetCountry(){
+  /* 地理階層 AREA > COUNTRY > CITY。COUNTRY の候補は下位の CITY 選択に従属させない
+     ため city も判定から除外する(area には従属してよい)。 */
+  return [...new Set(EVENTS.filter(e=>notEnded(e) && e.format!=="online" && passExcept(e,["country","city"]))
+            .map(e=>e.country).filter(Boolean))].sort();
+}
+function facetCity(){
+  return [...new Set(EVENTS.filter(e=>notEnded(e) && e.format!=="online" && passExcept(e,"city"))
+            .map(e=>e.city).filter(c=>c && c!=="Online"))].sort();
+}
+function facetOrg(){
+  const set=new Set();
+  EVENTS.filter(e=>notEnded(e) && passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(tok=>set.add(tok)));
+  return [...set].sort((a,b)=>a.localeCompare(b));
+}
+/* AREA の特定選択肢(home/away)を選んだと仮定した場合に1件以上ヒットするか。
+   AREA は地理階層の最上位なので、下位の country・city 選択には従属させない
+   (= area/country/city の3軸を無視して評価)。daytrip 等その他ファセットは
+   現状のまま効かせる(日帰り圏ONのとき away がグレーアウトする挙動を維持)。 */
+function areaOptionEnabled(area){
+  return EVENTS.some(e=>notEnded(e) && passExcept(e,["area","country","city"]) && passArea(e,area));
+}
+
+/* ---------- 動的セレクト構築(全連動) ---------- */
+function fillSelect(id, cand, labelFn){
+  const sel=document.getElementById(id);
+  let opts=`<option value="">${esc(t("all"))}</option>`;
+  for(const v of cand) opts+=`<option value="${esc(v)}">${esc(labelFn?labelFn(v):v)}</option>`;
+  sel.innerHTML=opts;
+  sel.value=state[id];
+}
+/* Organizer専用: optgroupでカテゴリ分けして構築 */
+function orgGroupOf(tok){ return (ORG_META[tok]&&ORG_META[tok].g)||"other"; }
+function orgCountryOf(tok){
+  const m=ORG_META[tok]||{};
+  if(m.exempt) return null;
+  if(m.c) return m.c===PROFILE.home?null:m.c;
+  const cs=[...new Set(EVENTS.filter(e=>orgTokens(e).includes(tok))
+              .map(e=>e.country).filter(Boolean))];
+  return (cs.length===1 && cs[0]!==PROFILE.home) ? cs[0] : null;
+}
+/* 注意: 以下2関数では引数名に t を使わない(辞書引き関数 t() を隠してしまうため) */
+function orgOptionLabel(tok){
+  const c=orgCountryOf(tok);
+  const nm=orgDisp(tok);
+  return c ? `${nm} (${countryParen(c)})` : nm;
+}
+function fillOrgSelect(cand){
+  const sel=document.getElementById("org");
+  let html=`<option value="">${esc(t("all"))}</option>`;
+  for(const g of ORG_GROUP_ORDER){
+    const items=cand.filter(tok=>orgGroupOf(tok)===g);
+    if(!items.length) continue;
+    /* ja は既存どおり【】付き、en/de は括弧を外した素のラベル */
+    const glbl = uiLang==="ja" ? `【${orgGroupLabel(g)}】` : orgGroupLabel(g);
+    html+=`<optgroup label="${esc(glbl)}">`;
+    for(const tok of items)
+      html+=`<option value="${esc(tok)}">\u00A0\u00A0${esc(orgOptionLabel(tok))}</option>`;
+    html+=`</optgroup>`;
+  }
+  sel.innerHTML=html;
+  sel.value=state.org;
+}
+function rebuildSelects(){
+  /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大4回で安定させる
+     (area も含める: 例えば country=AT が選ばれた状態で area=home が localStorage 等から
+     復元されるなど、area 自体が他の現行フィルタと矛盾して0件になる場合に "" へ戻し、
+     他ファセットの再計算ループに載せる。なお area と daytrip 自体が矛盾するケースは
+     daytripDisabled()/updateDaytripUI() 側の既存ルールで area 優先のまま解決される) */
+  for(let i=0;i<4;i++){
+    let changed=false;
+    if(state.area    && !areaOptionEnabled(state.area))          {state.area="";   changed=true;}
+    if(state.country && !facetCountry().includes(state.country)){state.country="";changed=true;}
+    if(state.city    && !facetCity().includes(state.city))      {state.city="";   changed=true;}
+    if(state.org     && !facetOrg().includes(state.org))        {state.org="";    changed=true;}
+    if(!changed) break;
+  }
+  fillSelect("country", facetCountry(), c=>countryName(c));
+  fillSelect("city",    facetCity());
+  fillOrgSelect(facetOrg());
+  document.getElementById("area").value   = state.area;
+  updateAreaOptions();
+  document.getElementById("imp").value    = state.imp;
+  document.getElementById("theme").value  = state.theme;
+  document.getElementById("lang").value   = state.lang;
+  document.getElementById("q").value      = state.q;
+  document.getElementById("sort").value   = state.sort;
+  document.getElementById("online").checked = state.online;
+  document.getElementById("daytrip").checked = state.daytrip;
+  updateDaytripUI();
+}
+/* AREA セレクトの home/away option を、選んでも0件になる場合は disabled にする(「すべて」は常に有効)。 */
+function updateAreaOptions(){
+  const areaSel = document.getElementById("area");
+  areaSel.querySelector('option[value="home"]').disabled = !areaOptionEnabled("home");
+  areaSel.querySelector('option[value="away"]').disabled = !areaOptionEnabled("away");
+}
+/* 日帰り圏チェックボックスの disabled + 減光を現在の AREA/COUNTRY に合わせて更新。
+   チェック状態(state.daytrip)自体は保持し、条件が解ければ復活する。 */
+function updateDaytripUI(){
+  const dis = daytripDisabled();
+  document.getElementById("daytrip").disabled = dis;
+  document.getElementById("daytriprow").classList.toggle("dis", dis);
+}
+
+/* ---------- カレンダー(描画モード分岐) ---------- */
+function drawCal(){
+  if(mqMobile.matches) drawWeek();
+  else drawMonth();
+}
+
+/* ---------- 週の基準日 ⇄ 月表示 の整合 ---------- */
+function shiftWeek(days){
+  const d=new Date(state.weekStart+"T00:00:00Z");
+  d.setUTCDate(d.getUTCDate()+days);
+  state.weekStart=isoOf(d);
+}
+function syncToMobile(){
+  const rep = (state.y===TODAY_Y && state.m===TODAY_M)
+    ? TODAY
+    : `${state.y}-${String(state.m+1).padStart(2,"0")}-01`;
+  state.weekStart = isoOf(mondayOf(rep));
+}
+function syncToDesktop(){
+  const d=new Date(state.weekStart+"T00:00:00Z");
+  d.setUTCDate(d.getUTCDate()+3);
+  state.y=d.getUTCFullYear(); state.m=d.getUTCMonth();
+}
+
+/* ---------- 月グリッド(デスクトップ) ---------- */
+function drawMonth(){
+  document.getElementById("callabel").textContent=
+    state.y+" / "+String(state.m+1).padStart(2,"0");
+  const first=new Date(Date.UTC(state.y,state.m,1));
+  let start=new Date(first); start.setUTCDate(1-((first.getUTCDay()+6)%7));
+  const evs=fEvents();
+  const multiAll=evs.filter(isMulti);
+  let html="";
+  for(let w=0;w<6;w++){
+    /* --- この週の7日 --- */
+    const weekIso=[];
+    for(let d=0;d<7;d++){
+      const cur=new Date(start); cur.setUTCDate(start.getUTCDate()+w*7+d);
+      weekIso.push(cur.toISOString().slice(0,10));
+    }
+    const wMon=weekIso[0], wSun=weekIso[6];
+    /* --- 週に重なる複数日イベントを集め、週内カバー範囲(segStart..segEnd)を出し、
+           開始日順に貪欲レーン割当(空いている最小レーン) --- */
+    const spans=multiAll
+      .filter(e=> e.date_start<=wSun && e.date_end>=wMon)
+      .map(e=>({ev:e,
+                segStart: e.date_start>wMon ? e.date_start : wMon,
+                segEnd:   e.date_end   <wSun ? e.date_end   : wSun}))
+      .sort((a,b)=> a.segStart<b.segStart?-1 : a.segStart>b.segStart?1 :
+                    a.segEnd<b.segEnd?-1   : a.segEnd>b.segEnd?1   :
+                    (a.ev.id<b.ev.id?-1:1));
+    const laneEnd=[];                              /* laneEnd[i] = レーン i に置いた最後の segEnd */
+    const laneImp=[];                              /* laneImp[i] = レーン i に載る週内イベントの最大重要度 */
+    for(const s of spans){
+      let li=0;
+      for(; li<laneEnd.length; li++){ if(laneEnd[li]<s.segStart) break; }
+      s.lane=li; laneEnd[li]=s.segEnd;
+      laneImp[li]=Math.max(laneImp[li]||0, impCls(s.ev));
+    }
+
+    html+="<tr>";
+    for(let d=0;d<7;d++){
+      const iso=weekIso[d];
+      const dnum=+iso.slice(8,10);
+      const out=iso.slice(0,7)!==`${state.y}-${String(state.m+1).padStart(2,"0")}`;
+      const cls=[out?"out":"", iso===TODAY?"today":"", d>=5?"wend":""].join(" ");
+      /* --- レーンコンテナ(セグメントのある最大レーンまでスロットを縦積み。
+             途中の非カバーレーンは透明スペーサーで縦位置を揃え、それより下の
+             未使用レーンは描かない=バーが通らない日は単日イベントが上に詰まる) --- */
+      const cellMax=spans.reduce((m,x)=>
+        (iso>=x.segStart && iso<=x.segEnd && x.lane>m) ? x.lane : m, -1);
+      let lanesHtml="";
+      for(let li=0; li<=cellMax; li++){
+        const lhCls=`lh${laneImp[li]}`;              /* レーン内は全セルで同じ高さクラス */
+        const s=spans.find(x=>x.lane===li && iso>=x.segStart && iso<=x.segEnd);
+        if(!s){ lanesHtml+=`<div class="segsp ${lhCls}"></div>`; continue; }
+        const e=s.ev;
+        const isStart = iso===e.date_start;        /* 真の開始日(左キャップを出す) */
+        const flatL   = iso>e.date_start;          /* 左へ継続(前週含む)→左角を落とす */
+        const flatR   = iso<e.date_end;            /* 右へ継続(翌週含む)→右角を落とす */
+        const bridgeL = iso>s.segStart;            /* 同一週内に左隣がある→負マージンで跨ぐ */
+        const bridgeR = iso<s.segEnd;              /* 同一週内に右隣がある→負マージンで跨ぐ */
+        const cc=[`i${impCls(e)}`, lhCls, isForeign(e)?"foreign":"",
+                  isStart?"startcap":"", flatL?"flatL":"", flatR?"flatR":"",
+                  bridgeL?"bridgeL":"", bridgeR?"bridgeR":""].filter(Boolean).join(" ");
+        let lbl="";
+        if(iso===s.segStart){                      /* 週内の最初のカバー日にだけラベルを1回 */
+          const n=daysBetween(s.segStart,s.segEnd)+1;
+          const text=`${starMark(e)}${evLabel(e)} ${endSuffix(e)}`;
+          const lblCls=`seglbl i${impCls(e)}${underlineReg(e)?' openreg':''}`;
+          lbl=`<span class="${lblCls}" style="--n:${n}">${esc(text)}</span>`;
+        }
+        lanesHtml+=`<a class="seg ${cc}" href="#ev-${esc(e.id)}" title="${esc(spanTitle(e))}">${lbl}</a>`;
+      }
+      const lanesBox = cellMax>=0 ? `<div class="lanes">${lanesHtml}</div>` : "";
+      /* --- 単日イベント(レーンの下) --- */
+      const singles=evs.filter(e=>!isMulti(e) && inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
+      let singleHtml="";
+      for(const e of singles){
+        const ic=`i${impCls(e)}${isForeign(e)?' foreign':''}${underlineReg(e)?' openreg':''}`;
+        singleHtml+=`<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(starMark(e)+evLabel(e))}</a>`;
+      }
+      html+=`<td class="${cls}"><span class="dnum">${dnum}</span>${lanesBox}${singleHtml}</td>`;
+    }
+    html+="</tr>";
+  }
+  document.getElementById("calbody").innerHTML=html;
+}
+
+/* ---------- 週ビュー(モバイル) ---------- */
+/* 曜日名は I18N の wdWeek(index 0=月曜)を言語別に引く */
+function drawWeek(){
+  const start=new Date(state.weekStart+"T00:00:00Z"); /* 月曜 */
+  const days=[];
+  for(let i=0;i<7;i++){const d=new Date(start);d.setUTCDate(start.getUTCDate()+i);days.push(d);}
+  const sIso=isoOf(days[0]), eIso=isoOf(days[6]);
+  document.getElementById("callabel").textContent=
+    `${start.getUTCFullYear()}/${String(start.getUTCMonth()+1).padStart(2,"0")} · `+
+    `${sIso.slice(5).replace("-","/")} – ${eIso.slice(5).replace("-","/")}`;
+  const evs=fEvents();
+  let html="";
+  for(let i=0;i<7;i++){
+    const d=days[i], iso=isoOf(d), isToday=iso===TODAY, isWend=i>=5;
+    const day=evs.filter(e=>inRange(e,iso)).sort((a,b)=>imp(b)-imp(a));
+    /* 土日はイベントが無ければ非表示(ただし今日は常に表示) */
+    if(isWend && day.length===0 && !isToday) continue;
+    const empty=day.length===0;
+    const cls=["wday", isToday?"today":"", isWend?"wend":"", empty?"empty":""].join(" ");
+    const evHtml=day.map(e=>{
+      const ic=`i${impCls(e)}${isForeign(e)?' foreign':''}${underlineReg(e)?' openreg':''}`;
+      if(!isMulti(e) || iso===e.date_start){
+        /* 初日 or 単日: フル+期間サフィックス */
+        const suf=isMulti(e)?`<span class="evsp">${esc(endSuffix(e))}</span>`:"";
+        return `<a class="ev ${ic}" href="#ev-${esc(e.id)}" title="${esc(evFull(e))}">${esc(starMark(e)+evLabel(e))}${suf}</a>`;
+      }
+      /* 継続日: ⤷ プレフィックス + 縮小・減光した1行ラベル */
+      return `<a class="ev ${ic} wcont" href="#ev-${esc(e.id)}" title="${esc(contTitle(e))}">⤷ ${esc(starMark(e)+evLabel(e))}</a>`;
+    }).join("");
+    html+=`<div class="${cls}">`+
+      `<div class="wdhead"><span class="wdate">${d.getUTCMonth()+1}/${d.getUTCDate()}</span>`+
+      `<span class="wdow">(${esc(t("wdWeek")[i])})</span></div>`+
+      (empty?"":`<div class="wevs">${evHtml}</div>`)+
+    `</div>`;
+  }
+  document.getElementById("weekbody").innerHTML=html;
+}
+
+/* ---------- 一覧 ---------- */
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const safeUrl=u=>{u=String(u??"").trim();return /^https?:\/\//i.test(u)?u:null;};
+/* 曜日名は I18N の wd(index 0=日曜)を言語別に引く */
+function fmtWhen(ev){
+  const s=new Date(ev.date_start+"T00:00:00");
+  /* 変数名 t は辞書引き関数 t() を隠すため使わない(dt にリネーム) */
+  let dt=ev.date_start.slice(5).replace("-","/");
+  if(ev.date_end && ev.date_end!==ev.date_start)
+    dt+="–"+ev.date_end.slice(5).replace("-","/");
+  let tm="";
+  if(ev.time && ev.time_end) tm=" "+ev.time+"–"+ev.time_end;
+  else if(ev.time) tm=" "+ev.time;
+  const wd="("+esc(t("wd")[s.getDay()])+")"+tm;
+  return `${dt}<span class="wd">${wd}</span><span class="imp">${stars(ev)}</span>`;
+}
+/* 一覧の月見出し: ja「2026年7月」/ en「July 2026」/ de「Juli 2026」 */
+function monthHeading(mo){
+  const y=mo.slice(0,4), mi=+mo.slice(5);
+  return tf("monthFmt", {y:y, m:mi, mon:(t("months")[mi-1]||mi)});
+}
+/* 要約: ja→summary_ja / en→summary_en / de→summary_de(無ければ summary_en)。
+   いずれも無ければ空文字(=非表示)。 */
+function summaryOf(ev){
+  if(uiLang==="ja") return ev.summary_ja || "";
+  if(uiLang==="en") return ev.summary_en || "";
+  return ev.summary_de || ev.summary_en || "";
+}
+/* 申込メモ: ja→registration_note / en→registration_note_en /
+   de→registration_note_de(無ければ registration_note_en)。 */
+function regNoteOf(ev){
+  if(uiLang==="ja") return ev.registration_note || "";
+  if(uiLang==="en") return ev.registration_note_en || "";
+  return ev.registration_note_de || ev.registration_note_en || "";
+}
+/* 登壇者: "氏名 (所属), 氏名, …"。所属(org)は organizer_short と同じ表記規則なので
+   表示だけ orgDisp() を通す。speakers が無い/空なら空文字(=非表示)。 */
+function speakersText(ev){
+  if(!Array.isArray(ev.speakers)) return "";
+  return ev.speakers
+    .filter(s=>s && typeof s==="object" && typeof s.name==="string" && s.name.trim())
+    .map(s=>s.org ? `${s.name.trim()} (${orgDisp(s.org)})` : s.name.trim())
+    .join(", ");
+}
+function drawList(){
+  /* 共有ビュー(v1)は復号したイベントを全件出す(終了済みも隠さない)。
+     通常ビューでは、更新履歴からのピン(newsPin)だけは全フィルタを素通しで含める */
+  let evs=isShareList() ? fEvents()
+          : EVENTS.filter(e=>(visible(e)&&notEnded(e)) || e.id===newsPin);
+  const box=document.getElementById("list");
+  if(!evs.length){box.innerHTML=`<div class="empty">${esc(t("empty"))}</div>`;return;}
+  const byImp = state.sort==="imp";
+  if(byImp){
+    /* 重要度降順、同重要度内は日付昇順(元配列は日付順のため安定ソートで維持) */
+    evs=evs.slice().sort((a,b)=>imp(b)-imp(a));
+  }
+  let html="",lastMonth="";
+  for(const ev of evs){
+    if(!byImp){
+      const mo=ev.date_start.slice(0,7);
+      if(mo!==lastMonth){
+        html+=`<div class="month-h">${esc(monthHeading(mo))}</div>`;
+        lastMonth=mo;
+      }
+    }
+    const badges=[];
+    if(isOpenReg(ev)) badges.push(`<span class="badge open">${esc(t("bOpenReg"))}</span>`);
+    ev.themes.forEach(th=>badges.push(`<span class="badge th-${th}">${esc(thLabel(th))}</span>`));
+    if(ev.language) badges.push(`<span class="badge">${esc(langBadge(ev.language))}</span>`);
+    if(ev.format==="online") badges.push(`<span class="badge">${esc(t("bOnline"))}</span>`);
+    if(ev.format==="hybrid") badges.push(`<span class="badge">${esc(t("bHybrid"))}</span>`);
+    if(ev.format==="onsite") badges.push(`<span class="badge">${esc(t("bOnsite"))}</span>`);
+    if(ev.fee==="free") badges.push(`<span class="badge free">${esc(t("bFree"))}</span>`);
+    if(ev.fee==="paid") badges.push(`<span class="badge paid">${esc(t("bPaid"))}</span>`);
+    if(ev.open_to_public===false) badges.push(`<span class="badge closed">${esc(t("bInvite"))}</span>`);
+    const label=evLabel(ev);
+    const u=safeUrl(ev.url);
+    const orig=u
+      ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(ev.title)}</a>`
+      : esc(ev.title);
+    const iv=impCls(ev);
+    const ru=safeUrl(ev.registration_url);
+    const sum=summaryOf(ev);          /* UI言語に応じた要約(無ければ非表示) */
+    const spk=speakersText(ev);       /* 登壇者(無ければ非表示) */
+    const rnote=regNoteOf(ev);        /* UI言語に応じた申込メモ(無ければ非表示) */
+    html+=`<div class="row" id="ev-${esc(ev.id)}">
+      <div class="when">${fmtWhen(ev)}</div>
+      <div class="body">
+        <div class="title i${iv}">${esc(label)}</div>
+        <div class="orig">${orig}</div>
+        ${(uiLang==="ja"&&ev.title_ja)?`<div class="ja">${esc(ev.title_ja)}</div>`:""}
+        <div class="meta">${badges.join("")}</div>
+        ${sum?`<div class="sum">${esc(sum)}</div>`:""}
+        ${spk?`<div class="spk">${esc(t("speakersLbl"))} ${esc(spk)}</div>`:""}
+        ${rnote?`<div class="reg">${esc(t("regNote"))} ${esc(rnote)}</div>`:""}
+        ${ru?`<div class="reglink"><a href="${esc(ru)}" target="_blank" rel="noopener">${esc(t("regPage"))}</a></div>`:""}
+        <div class="src">${esc(t("srcInfo"))} ${esc(ev.source||"")} ${esc(t("firstSeen"))} ${esc(ev.first_seen||"")}</div>
+      </div>${starHtml(ev)}</div>`;
+  }
+  box.innerHTML=html;
+}
+
+/* ---------- ステータス ---------- */
+/* 巡回先を主催フィルタと同じ4分類(ORG_GROUP_ORDER / og_* ラベル)で見出し付きに
+   グループ分けして表示する。分類は sources.yaml の category(SOURCES 埋め込み)を
+   name で引く。web検索・手動取込など定点リストに無い行は「その他」に落とす。
+   各グループ内の並び順は STATUS(=巡回順)のまま。 */
+function drawStatus(){
+  /* 2列目は巡回時の発見数(status.jsonのfound)ではなく、カレンダー収載済みの
+     「本日以降のイベント数」をEVENTSから集計して表示する。
+     手動取込のsourceは「手動取込: INBOX」等の形式なのでプレフィックスで束ねる。
+     あわせてソース別の organizer_short トークン頻度も集計する(件数クリックの
+     主催団体フィルタで最頻トークンを使うため)。 */
+  const upc={}, orgCnt={};
+  for(const ev of EVENTS){
+    const end=ev.date_end||ev.date_start;
+    if(!end||end<TODAY) continue;
+    let key=(ev.source||"").replace(/&amp;/g,"&");
+    if(key.startsWith("手動取込")) key="手動取込";
+    upc[key]=(upc[key]||0)+1;
+    const oc=(orgCnt[key]=orgCnt[key]||{});
+    for(const tk of orgTokens(ev)) oc[tk]=(oc[tk]||0)+1;
+  }
+  /* 機関名リンクは sources.yaml(SOURCES)の現行URLを優先する。status.json の url は
+     巡回時のスナップショットで、URL差し替え後も旧リンクが残ってしまうため。 */
+  const srcUrl={};
+  if(SOURCES && Array.isArray(SOURCES.sources))
+    for(const s of SOURCES.sources) if(s.name) srcUrl[s.name]=s.url||"";
+  /* 主催者が雑多な特殊行は件数クリックの対象外 */
+  const NOFILTER=new Set(["web検索(discovery)","手動取込"]);
+  const row=s=>{
+    const u=safeUrl(srcUrl[s.name]||s.url);
+    const n=upc[s.name]||0;
+    let cnt=tf("stUpcoming",{n:esc(n)});
+    if(n>0 && !NOFILTER.has(s.name))
+      cnt=`<a href="#" class="stcnt" data-src="${esc(s.name)}" title="${esc(t("stFilterTip"))}">${cnt}</a>`;
+    return `<tr><td>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</td>
+     <td>${s.ok?`<span class="ok">[OK]</span> ${cnt}`
+              :`<span class="ng">[FAIL]</span> ${cnt} <small>${esc(s.error||"")}</small>`}</td></tr>`;
+  };
+  /* 主催フィルタと同じ4分類(ORG_GROUP_ORDER / og_*)の見出し付きグループ表示。
+     分類は sources.yaml の category を name で引き、定点リストに無い行は「その他」へ。 */
+  const cat={};
+  if(SOURCES && Array.isArray(SOURCES.sources))
+    for(const s of SOURCES.sources) if(s.name) cat[s.name]=s.category;
+  const groups={cb:[],tt:[],uni:[],other:[]};
+  STATUS.forEach(s=>{ (groups[cat[s.name]]||groups.other).push(s); });
+  document.getElementById("status").innerHTML=ORG_GROUP_ORDER.map(g=>{
+    if(!groups[g].length) return "";
+    const lbl = uiLang==="ja" ? `【${orgGroupLabel(g)}】` : orgGroupLabel(g);
+    return `<tr class="stgrp"><td colspan="2">${esc(lbl)}</td></tr>`+groups[g].map(row).join("");
+  }).join("");
+  /* 件数クリック: 全フィルタ解除 → 主催団体フィルタのみセット → カレンダーへ移動。
+     online:true が「完全オンラインも含める」= 全部表示側であることに注意。 */
+  document.querySelectorAll("#status a.stcnt").forEach(a=>{
+    a.addEventListener("click",e=>{
+      e.preventDefault();
+      const oc=orgCnt[a.dataset.src]||{};
+      const top=Object.keys(oc).sort((x,y)=>oc[y]-oc[x])[0]||"";
+      Object.assign(state,{area:"",country:"",city:"",org:top,imp:"0",theme:"",
+                           lang:"",online:true,daytrip:false,q:""});
+      redraw();
+      const cal=document.querySelector(".calhead");
+      if(cal) cal.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+}
+
+/* ---------- 仕組みパネル ---------- */
+function drawMech(){
+  const node=(k,cls)=>`<div class="mnode${cls?" "+cls:""}">${esc(t(k))}</div>`;
+  document.getElementById("mechpanel").innerHTML=
+    `<div class="srcsec"><p>${esc(t("mpIntro"))}</p></div>`+
+    `<div class="srcsec"><h3>${esc(t("spCoverage"))}</h3><p>${esc(t("spCoverageText"))}</p></div>`+
+    `<div class="mflow" aria-hidden="true">`+
+      `<div class="mrow">${node("mpFlowSrc")}${node("mpFlowSearch")}</div>`+
+      `<div class="marrow">▼</div>`+
+      `<div class="mnode agent">${esc(t("mpFlowAgent"))}<small>${esc(t("mpFlowAgentSub"))}</small></div>`+
+      `<div class="marrow">▼</div>`+
+      node("mpFlowGit")+
+      `<div class="marrow">▼</div>`+
+      node("mpFlowSite")+
+    `</div>`+
+    `<div class="srcsec"><h3>${esc(t("mpAgentT"))}</h3>`+
+    `<p>${esc(t("mpAgentText"))}</p></div>`+
+    `<div class="srcsec"><h3>${esc(t("mpListT"))}</h3>`+
+    `<p>${esc(t("mpListText"))}</p></div>`;
+}
+
+/* ---------- 更新履歴(News) ---------- */
+/* 変更フィールド → 表示ラベルのバケツ。同じバケツに落ちる複数フィールド
+   (例 date_start と date_end)はまとめて1回だけ表示する。 */
+const NW_BUCKET = {
+  date_start:"date", date_end:"date", time:"time", time_end:"time",
+  venue:"venue", city:"venue", format:"format", fee:"fee", fee_amount:"fee",
+  registration_url:"reg", open_to_public:"reg"
+};
+const NW_BUCKET_ORDER = ["date","time","venue","format","fee","reg"];
+
+/* 掲載中イベントのID集合(EVENTSは静的なので一度だけ作る)。履歴リンクの内部/外部の
+   振り分けに使う: 掲載中なら一覧の該当行へ、掲載終了なら原文URLへ。 */
+const NW_EV_IDS = new Set(EVENTS.map(e=>String(e.id||"")));
+/* フィルタで隠れているイベントを履歴クリックで一時的に一覧へ再表示するためのピン。
+   drawList() が全フィルタを素通しで通す唯一の例外。フィルタ操作(変更・リセット)で解除。 */
+let newsPin=null;
+function clearNewsPin(){ newsPin=null; }
+
+/* CHANGELOG は生成側で日付降順・直近30日に整えてあるが、壊れた値でも例外を出さない。
+   日付が不正な要素・追加も更新も無い日は落とす。 */
+function newsDays(){
+  let src;
+  try{ src = Array.isArray(CHANGELOG) ? CHANGELOG : []; }catch(e){ return []; }
+  return src.filter(d=>{
+    if(!d || typeof d!=="object" || !DATE_RE.test(String(d.date??""))) return false;
+    const a=Array.isArray(d.added)?d.added.length:0;
+    const u=Array.isArray(d.updated)?d.updated.length:0;
+    return (a+u)>0;
+  });
+}
+/* 表示タイトル: カレンダーセルと同じ表記(evLabel のテーマ部 = title_short 優先)。
+   旧履歴エントリ(title_short 未収録)は原題にフォールバックする。 */
+function newsTitle(it){
+  return it.title_short || it.title || it.title_ja || "";
+}
+/* ホバー時に正式名を出す(ja は訳題も併記)。title_short 表示の補完。 */
+function newsTip(it){
+  const full=(uiLang==="ja" && it.title_ja && it.title) ? `${it.title_ja} / ${it.title}`
+             : (it.title || it.title_ja || "");
+  return full!==newsTitle(it) ? full : "";
+}
+/* 重要度の★表記(凡例と同じ3桁: 3=★★★ … 0=☆☆☆)。値が無い旧エントリは空 */
+function newsStars(it){
+  const n=it.importance;
+  return (Number.isInteger(n) && n>=0 && n<=3) ? "★".repeat(n)+"☆".repeat(3-n) : "";
+}
+/* 括弧内のメタ情報: 日付(複数日は範囲)・主催者・都市 */
+function newsMeta(it){
+  const parts=[];
+  if(DATE_RE.test(String(it.date_start??""))){
+    let d=md(it.date_start);
+    if(DATE_RE.test(String(it.date_end??"")) && it.date_end!==it.date_start)
+      d+=t("dash")+md(it.date_end);
+    parts.push(d);
+  }
+  if(it.organizer_short) parts.push(orgDisp(it.organizer_short));
+  if(it.city) parts.push(CITY_SHORT[it.city]||it.city);
+  return parts.join(t("sep"));
+}
+/* 更新行に付ける「何が変わったか」の短いラベル(重複バケツは1回だけ) */
+function newsFields(fields){
+  if(!Array.isArray(fields)) return "";
+  const set=new Set();
+  for(const f of fields){ const b=NW_BUCKET[String(f)]; if(b) set.add(b); }
+  return NW_BUCKET_ORDER.filter(b=>set.has(b)).map(b=>t("nwf_"+b)).join(t("sep"));
+}
+/* タイトルのリンク先: 一覧に該当行があればそこへ(クリックでスクロール+一時ハイライト)、
+   無ければ原文URLを別タブで開く。どちらも無ければプレーンテキスト。 */
+function newsLink(it){
+  const nm=esc(newsTitle(it));
+  const tip=newsTip(it);
+  const tipAttr=tip?` title="${esc(tip)}"`:"";
+  const id=canonId(it.id);
+  /* 掲載中(EVENTSに存在)なら内部リンク。一覧行がフィルタで無くても、クリック時に
+     ピンで一時再表示するので描画時点の行の有無は見ない。 */
+  if(id && NW_EV_IDS.has(id))
+    return `<a class="nwev" data-id="${esc(id)}" href="#ev-${esc(id)}"${tipAttr}>${nm}</a>`;
+  const u=safeUrl(it.url);
+  if(u) return `<a class="nwev" data-id="${esc(id||"")}" href="${esc(u)}" target="_blank" rel="noopener"${tipAttr}>${nm}</a>`;
+  return tip?`<span${tipAttr}>${nm}</span>`:nm;
+}
+function newsRow(it, kind){
+  if(!it || typeof it!=="object") return "";
+  const meta=newsMeta(it);
+  const st=newsStars(it);
+  const fl=(kind==="upd") ? newsFields(it.fields) : "";
+  return `<div class="nwrow"><span class="nwmk ${kind}">${kind==="add"?"＋":"↻"}</span>`+
+    `<span class="nwtx">`+
+    (st?`<span class="nwst">${st}</span> `:"")+
+    `${newsLink(it)}`+
+    (meta?`<span class="nwmeta">(${esc(meta)})</span>`:"")+
+    (fl?`<span class="nwfld"> — ${esc(fl)}</span>`:"")+
+    `</span></div>`;
+}
+/* 一覧行の有無を見るため、必ず drawList()(=redraw())より後に呼ぶこと。 */
+/* 巡回の開始・終了時刻(ISO文字列、Europe/Berlin ローカル)を「 17:05〜17:09」の形に。
+   記録がある日のみ表示し、開始が無ければ「 〜17:09」、両方無ければ空文字。 */
+const NWT_RE=/^\d{4}-\d{2}-\d{2}T(\d{2}:\d{2})/;
+function nwTimes(d){
+  const s=NWT_RE.exec(String(d.start||"")), e=NWT_RE.exec(String(d.end||""));
+  if(s&&e) return ` ${s[1]}${t("nwRange")}${e[1]}`;
+  if(e)    return ` ${t("nwRange")}${e[1]}`;
+  return "";
+}
+/* その日の巡回でエージェントが消費したトークン数。日本語は「万」、en/de は M/k に
+   丸める(桁が大きく、正確な桁数に意味は無いため)。記録が無い日は空文字。
+   数値は生成側(radar_lib.render_html)が data/token_usage.json から合流させる。 */
+function nwTokenText(d){
+  const n=Number(d && d.tokens);
+  if(!Number.isFinite(n) || n<=0) return "";
+  const loc = uiLang==="de" ? "de-DE" : (uiLang==="en" ? "en-US" : "ja-JP");
+  const round1 = v => v.toLocaleString(loc,{maximumFractionDigits:1});
+  let s;
+  if(uiLang==="ja"){
+    s = n>=10000 ? Math.round(n/10000).toLocaleString(loc)+"万" : n.toLocaleString(loc);
+  }else if(n>=1e6){
+    s = round1(n/1e6)+(uiLang==="de"?" Mio.":"M");
+  }else if(n>=1e3){
+    s = round1(n/1e3)+(uiLang==="de"?" Tsd.":"k");
+  }else{
+    s = n.toLocaleString(loc);
+  }
+  return tf("nwTokens",{n:s});
+}
+function drawNews(){
+  const box=document.getElementById("news");
+  const days=newsDays();
+  if(!days.length){ box.hidden=true; return; }
+  /* summary(閉じている間に見える1行)の件数は最新日のもの */
+  const top=days[0];
+  const nA=Array.isArray(top.added)?top.added.length:0;
+  const nU=Array.isArray(top.updated)?top.updated.length:0;
+  const cnt=[];
+  if(nA) cnt.push(tf("nwAdded",{n:nA}));
+  if(nU) cnt.push(tf("nwUpdated",{n:nU}));
+  const topTok=nwTokenText(top);
+  document.getElementById("newssum").textContent =
+    `${t("nwTitle")} — ${md(top.date)}${nwTimes(top)}: `+
+    `${cnt.length?cnt.join(t("sep")):t("nwNone")}${topTok?" "+topTok:""}`;
+  let html="";
+  for(const d of days){
+    const tok=nwTokenText(d);
+    html+=`<div class="nwday">${esc(md(d.date)+nwTimes(d))}`+
+      (tok?` <span class="nwtok" title="${esc(t("nwTokensTip"))}">${esc(tok)}</span>`:"")+
+      `</div>`;
+    if(Array.isArray(d.added))   for(const it of d.added)   html+=newsRow(it,"add");
+    if(Array.isArray(d.updated)) for(const it of d.updated) html+=newsRow(it,"upd");
+  }
+  document.getElementById("newsbody").innerHTML=html;
+  box.hidden=false;
+}
+
+/* ---------- フィルタ適用中バー ---------- */
+/* 現在の state が DEFAULTS と1項目でも異なるか(sort/y/m/weekStart は比較対象外)。 */
+function isDefaultState(){
+  return Object.keys(DEFAULTS).every(k=>state[k]===DEFAULTS[k]);
+}
+function updateFilterBar(){
+  const bar=document.getElementById("filterbar");
+  /* 共有ビューは利用者フィルタを適用しない(バー自体を出さない) */
+  if(shareView || isDefaultState()){ bar.hidden=true; return; }
+  const hidden = EVENTS.length - EVENTS.filter(visible).length;
+  document.getElementById("fbtext").innerHTML = tf("fbHidden", {n:`<b>${hidden}</b>`});
+  bar.hidden=false;
+}
+
+/* ================= ウォッチリスト(#lists で有効化する裏機能)=================
+   localStorage(sr_lists_v1)に「リスト名 + イベントID(16桁hex)」だけを持ち、共有は
+   URLフラグメント #l=<base64url> への自己完結した埋め込みで行う(送信処理は一切ない)。
+   localStorage・共有リンク由来の値は攻撃者が制御しうるものとして扱い、
+   表示は textContent か esc() 経由のみ、IDは使用前に必ず16桁hexを検証する。 */
+const LS_LISTS  = "sr_lists_v1" + (PROFILE.ls_suffix||"");   /* プロファイル別(uk は "_uk") */
+const HEX16     = /^[0-9a-f]{16}$/;
+const DATE_RE   = /^\d{4}-\d{2}-\d{2}$/;
+/* リストキー(uuid)の形。キーを限定して __proto__ 等の特殊キーの混入を防ぐ */
+const LKEY_RE   = /^[0-9a-fA-F-]{8,64}$/;
+const B64URL_RE = /^[A-Za-z0-9_-]+$/;
+const MAX_LISTS = 50, MAX_IDS = 500, MAX_NAME = 60, MAX_PAYLOAD = 11000;
+const MAX_URL   = 2000;                  /* これを超える共有URLは改行注意を出す */
+
+/* 検証済みの状態。localStorage の内容は決してそのまま採用せず、ここへ1項目ずつ転記する */
+let lists        = {enabled:false, active:"", filterOn:false, lists:{}};
+let ACTIVE_IDS   = new Set();            /* activeリストの ids(描画時の照合用) */
+let shareView    = null;                 /* null / {ver:1,name,ids,orphans} / {ver:2,lists} */
+let SHARE_EVENTS = [];                   /* ver1 で表示する実在イベント(EVENTS の順) */
+let nameMode     = null;                 /* インライン入力の用途 {kind,pendingId} */
+let toastTimer   = null;
+
+const EVENT_IDS = new Set(EVENTS.map(e=>String((e&&e.id)||"")).filter(id=>HEX16.test(id)));
+const hasOwn = (o,k) => Object.prototype.hasOwnProperty.call(o,k);
+const isShareList = () => !!(shareView && shareView.ver===1);
+
+/* 統合済みの旧IDを1段だけ正本IDへ引き直す(チェーンは辿らない)。
+   16桁hexでない入力は null を返し、以降の処理から確実に落とす。 */
+function canonId(id){
+  const s=String(id??"");
+  if(!HEX16.test(s)) return null;
+  if(hasOwn(ALIASES,s)){
+    const c=ALIASES[s];
+    if(typeof c==="string" && HEX16.test(c)) return c;
+  }
+  return s;
+}
+function newUuid(){
+  try{ if(window.crypto && typeof crypto.randomUUID==="function") return crypto.randomUUID(); }catch(e){}
+  let s="";
+  for(let i=0;i<32;i++) s+=Math.floor(Math.random()*16).toString(16);
+  return s;
+}
+
+/* ---------- 保存値の検証(1項目ずつ自前オブジェクトへ転記) ---------- */
+/* 制御文字は表示崩れの元なので空白に潰したうえで60文字に切り詰める */
+function cleanName(s){
+  return String(typeof s==="string"?s:"").replace(/[\u0000-\u001f\u007f]/g," ").slice(0,MAX_NAME);
+}
+function cleanDate(s){
+  return (typeof s==="string" && DATE_RE.test(s)) ? s : TODAY;
+}
+function cleanIds(arr){
+  const out=[], seen=new Set();
+  if(!Array.isArray(arr)) return out;
+  for(const v of arr){
+    if(out.length>=MAX_IDS) break;
+    const id=canonId(v);
+    if(!id || seen.has(id)) continue;
+    seen.add(id); out.push(id);
+  }
+  return out;
+}
+function makeList(name, ids, created, updated){
+  return {name:cleanName(name), ids:cleanIds(ids),
+          created:cleanDate(created), updated:cleanDate(updated)};
+}
+function loadLists(){
+  let raw;
+  try{ raw = JSON.parse(localStorage.getItem(LS_LISTS) || "{}"); }catch(e){ return; }
+  if(!raw || typeof raw!=="object" || Array.isArray(raw)) return;
+  const out={enabled:raw.enabled===true, active:"", filterOn:raw.filterOn===true, lists:{}};
+  const src=(raw.lists && typeof raw.lists==="object" && !Array.isArray(raw.lists)) ? raw.lists : {};
+  let n=0;
+  for(const key of Object.keys(src)){
+    if(n>=MAX_LISTS) break;
+    if(!hasOwn(src,key) || !LKEY_RE.test(key)) continue;
+    const v=src[key];
+    if(!v || typeof v!=="object" || Array.isArray(v)) continue;
+    out.lists[key]=makeList(v.name, v.ids, v.created, v.updated);
+    n++;
+  }
+  const keys=Object.keys(out.lists);
+  if(keys.length)
+    out.active = (typeof raw.active==="string" && hasOwn(out.lists,raw.active)) ? raw.active : keys[0];
+  lists=out;
+}
+function saveLists(){
+  try{ localStorage.setItem(LS_LISTS, JSON.stringify(lists)); }catch(e){}
+}
+
+/* ---------- リスト操作 ---------- */
+const listKeys = () => Object.keys(lists.lists);
+function activeList(){
+  return (lists.active && hasOwn(lists.lists,lists.active)) ? lists.lists[lists.active] : null;
+}
+function syncActive(){
+  const l=activeList();
+  ACTIVE_IDS = new Set(l ? l.ids : []);
+}
+function listLabel(l){
+  return (l.name || t("lsUntitled")) + " (" + l.ids.length + ")";
+}
+/* 同名があれば「◯◯ (2)」形式で連番を付ける(skipKey=改名対象は自分自身と衝突させない) */
+function uniqueName(base, skipKey){
+  const nm=cleanName(base).trim() || t("lsUntitled");
+  const names=listKeys().filter(k=>k!==skipKey).map(k=>lists.lists[k].name);
+  if(names.indexOf(nm)<0) return nm;
+  for(let i=2;i<1000;i++){
+    const cand=(nm+" ("+i+")").slice(0,MAX_NAME);
+    if(names.indexOf(cand)<0) return cand;
+  }
+  return nm;
+}
+function createList(name, ids){
+  if(listKeys().length>=MAX_LISTS) return null;
+  const key=newUuid();
+  lists.lists[key]={name:uniqueName(name), ids:cleanIds(ids||[]),
+                    created:TODAY, updated:TODAY};
+  return key;
+}
+function toggleStar(id){
+  const l=activeList();
+  if(!l){ openNameInput("new", id); return; }   /* リストが無ければ作成フローへ(空振りさせない) */
+  const i=l.ids.indexOf(id);
+  if(i>=0) l.ids.splice(i,1);
+  else{
+    if(l.ids.length>=MAX_IDS){ toast(t("lsFullIds")); return; }
+    l.ids.push(id);
+  }
+  l.updated=TODAY;
+  syncActive(); saveLists(); redraw();
+}
+function orphanCount(){
+  let n=0;
+  for(const k of listKeys())
+    for(const id of lists.lists[k].ids) if(!EVENT_IDS.has(id)) n++;
+  return n;
+}
+function cleanOrphans(){
+  const n=orphanCount();
+  if(!n) return;                                 /* 0件なら何もしない */
+  for(const k of listKeys()){
+    const l=lists.lists[k];
+    const before=l.ids.length;
+    l.ids=l.ids.filter(id=>EVENT_IDS.has(id));
+    if(l.ids.length!==before) l.updated=TODAY;
+  }
+  syncActive(); saveLists(); redraw(); toast(tf("lsCleaned",{n:n}));
+}
+
+/* ---------- 共有ペイロード(バイナリ固定形式 ⇄ base64url) ---------- */
+function b64urlEncode(bytes){
+  let s="";
+  for(let i=0;i<bytes.length;i++) s+=String.fromCharCode(bytes[i]);
+  return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+}
+function b64urlDecode(str){
+  const s=String(str).replace(/-/g,"+").replace(/_/g,"/");
+  const bin=atob(s + (s.length%4 ? "=".repeat(4-s.length%4) : ""));
+  const out=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
+  return out;
+}
+function hexToBytes(id){
+  const out=new Uint8Array(8);
+  for(let i=0;i<8;i++) out[i]=parseInt(id.slice(i*2,i*2+2),16);
+  return out;
+}
+function bytesToHex(b,off){
+  let s="";
+  for(let i=0;i<8;i++) s+=b[off+i].toString(16).padStart(2,"0");
+  return s;
+}
+/* v1: [0x01][nameLen][name(UTF-8)][id×N(各8byte)] */
+function encodeShareV1(name, ids){
+  const nb=new TextEncoder().encode(cleanName(name));
+  const list=ids.slice(0,MAX_IDS);
+  const buf=new Uint8Array(2+nb.length+list.length*8);
+  buf[0]=1; buf[1]=nb.length; buf.set(nb,2);
+  let off=2+nb.length;
+  for(const id of list){ buf.set(hexToBytes(id),off); off+=8; }
+  return b64urlEncode(buf);
+}
+/* v2: [0x02][listCount][リストごと: nameLen, name, idCount(2byte BE), id×N] */
+function encodeShareV2(){
+  const enc=new TextEncoder();
+  const parts=listKeys().slice(0,MAX_LISTS).map(k=>({
+    nb:enc.encode(cleanName(lists.lists[k].name)),
+    ids:lists.lists[k].ids.slice(0,MAX_IDS)
+  }));
+  let total=2;
+  for(const p of parts) total += 3 + p.nb.length + p.ids.length*8;
+  const buf=new Uint8Array(total);
+  buf[0]=2; buf[1]=parts.length;
+  let off=2;
+  for(const p of parts){
+    buf[off++]=p.nb.length;
+    buf.set(p.nb,off); off+=p.nb.length;
+    buf[off++]=(p.ids.length>>8)&0xff;
+    buf[off++]=p.ids.length&0xff;
+    for(const id of p.ids){ buf.set(hexToBytes(id),off); off+=8; }
+  }
+  return b64urlEncode(buf);
+}
+/* 受理条件を1つでも破れば null。壊れたリンクで通常表示を壊さないため例外は外に出さない。 */
+function decodeShare(s){
+  try{
+    const str=String(s??"");
+    if(!str || str.length>MAX_PAYLOAD || !B64URL_RE.test(str)) return null;
+    const b=b64urlDecode(str);
+    if(b.length<2) return null;
+    const dec=new TextDecoder("utf-8",{fatal:true});
+    if(b[0]===1){
+      let off=2;
+      const nl=b[1];
+      if(off+nl>b.length) return null;
+      const name=dec.decode(b.subarray(off,off+nl)); off+=nl;
+      if(name.length>MAX_NAME) return null;
+      const rest=b.length-off;
+      if(rest<=0 || rest%8!==0) return null;      /* 総バイト長が過不足なく一致すること */
+      const n=rest/8;
+      if(n<1 || n>MAX_IDS) return null;
+      const ids=[];
+      for(let i=0;i<n;i++){ ids.push(canonId(bytesToHex(b,off))); off+=8; }
+      return {ver:1, name:name, ids:ids};
+    }
+    if(b[0]===2){
+      const cnt=b[1];
+      if(cnt<1 || cnt>MAX_LISTS) return null;
+      let off=2;
+      const out=[];
+      for(let i=0;i<cnt;i++){
+        if(off+1>b.length) return null;
+        const nl=b[off]; off+=1;
+        if(off+nl>b.length) return null;
+        const name=dec.decode(b.subarray(off,off+nl)); off+=nl;
+        if(name.length>MAX_NAME) return null;
+        if(off+2>b.length) return null;
+        const idc=(b[off]<<8)|b[off+1]; off+=2;
+        if(idc>MAX_IDS || off+idc*8>b.length) return null;
+        const ids=[];
+        for(let k=0;k<idc;k++){ ids.push(canonId(bytesToHex(b,off))); off+=8; }
+        out.push({name:name, ids:ids});
+      }
+      if(off!==b.length) return null;             /* 末尾に余分なバイトがあれば拒否 */
+      return {ver:2, lists:out};
+    }
+    return null;
+  }catch(e){ return null; }
+}
+
+/* ---------- 共有ビュー ---------- */
+function setupShareView(d){
+  if(d.ver===1){
+    const uniq=[...new Set(d.ids)];
+    const want=new Set(uniq);
+    SHARE_EVENTS = EVENTS.filter(e=>want.has(String((e&&e.id)||"")));
+    shareView={ver:1, name:d.name, ids:uniq, orphans:uniq.length-SHARE_EVENTS.length};
+  }else{
+    SHARE_EVENTS=[];
+    shareView={ver:2, lists:d.lists};
+  }
+}
+function stripHash(){
+  try{ history.replaceState(null,"",location.pathname+location.search); }catch(e){}
+}
+function renderShare(){
+  const banner=document.getElementById("sharebanner");
+  const v1=isShareList();
+  banner.hidden=!shareView;
+  /* v1 は利用者フィルタを一切適用しないので .filters を隠す(v2 は通常表示のまま) */
+  document.querySelector(".filters").hidden=v1;
+  if(!shareView) return;
+  document.getElementById("sharev1").hidden=!v1;
+  document.getElementById("sharev2").hidden=v1;
+  document.getElementById("shareall").hidden=!v1;
+  document.getElementById("shareimport").hidden=!lists.enabled;
+  if(v1){
+    /* 共有元が付けた名前は攻撃者が制御しうるため textContent で入れる(innerHTML禁止) */
+    document.getElementById("sharename").textContent = shareView.name || t("lsUntitled");
+    document.getElementById("sharecount").textContent = String(SHARE_EVENTS.length);
+    const orp=document.getElementById("shareorphans");
+    orp.hidden = !(shareView.orphans>0);
+    orp.textContent = shareView.orphans>0 ? tf("shOrphans",{n:shareView.orphans}) : "";
+  }else{
+    document.getElementById("sharebkcount").textContent = String(shareView.lists.length);
+  }
+}
+function importShare(){
+  if(!shareView) return;
+  if(shareView.ver===1){
+    const key=createList(shareView.name, shareView.ids);
+    if(!key){ toast(t("lsFullLists")); return; }
+    lists.enabled=true; lists.active=key; lists.filterOn=true;
+    saveLists();
+    stripHash();
+    location.reload();
+    return;
+  }
+  let dropped=0;
+  for(const l of shareView.lists){
+    if(!createList(l.name, l.ids)) dropped++;
+  }
+  lists.enabled=true;
+  if(!activeList()) lists.active = listKeys()[0] || "";
+  saveLists();
+  /* v2 は通常表示のままなのでリロードせず、その場でバナーを畳んでバーへ戻す */
+  shareView=null; SHARE_EVENTS=[];
+  stripHash();
+  syncActive(); renderShare(); redraw();
+  toast(dropped ? tf("shImpDropped",{n:dropped}) : t("shImported"));
+}
+
+/* ---------- 描画部品 ---------- */
+function passListOnly(ev){
+  if(!lists.enabled || !lists.filterOn || shareView) return true;
+  if(!activeList()) return true;                 /* リストが無ければ素通し */
+  return ACTIVE_IDS.has(String((ev&&ev.id)||""));
+}
+/* カレンダーのセル内ラベルに前置する目印(静的文字) */
+function starMark(ev){
+  if(!lists.enabled || shareView) return "";
+  return ACTIVE_IDS.has(String((ev&&ev.id)||"")) ? "★" : "";
+}
+function starHtml(ev){
+  if(!lists.enabled || shareView) return "";
+  const id=String((ev&&ev.id)||"");
+  if(!HEX16.test(id)) return "";                 /* IDは使用前に必ず検証 */
+  const on=ACTIVE_IDS.has(id);
+  return `<button type="button" class="star" data-id="${esc(id)}" `+
+         `aria-pressed="${on?"true":"false"}">${on?"★":"☆"}</button>`;
+}
+function toast(msg){
+  const el=document.getElementById("toast");
+  el.textContent=String(msg??"");                /* トーストは textContent のみ */
+  el.hidden=false;
+  el.classList.add("show");
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>{ el.classList.remove("show"); el.hidden=true; }, 3600);
+}
+
+/* ---------- リスト管理バー ---------- */
+function renderListBar(){
+  const bar=document.getElementById("listbar");
+  const show = lists.enabled && !shareView;
+  bar.hidden=!show;
+  if(!show){ closeMenu(); return; }
+  const keys=listKeys();
+  const sel=document.getElementById("listsel");
+  let html="";
+  if(!keys.length) html=`<option value="">${esc(t("lsNone"))}</option>`;
+  else for(const k of keys)
+    html+=`<option value="${esc(k)}">${esc(listLabel(lists.lists[k]))}</option>`;
+  sel.innerHTML=html;                            /* option の value/text はいずれも esc 済み */
+  sel.value = keys.length ? lists.active : "";
+  const only=document.getElementById("listonly");
+  only.checked = !!lists.filterOn;
+  only.disabled = !keys.length;
+  document.getElementById("listclean").textContent = tf("lsClean",{n:orphanCount()});
+}
+function closeMenu(){
+  document.getElementById("listmenu").hidden=true;
+  document.getElementById("listgear").setAttribute("aria-expanded","false");
+}
+function hideLink(){
+  document.getElementById("listlinkout").hidden=true;
+  document.getElementById("listlinkwarn").hidden=true;
+}
+function showLink(payload){
+  const url=location.origin+location.pathname+"#l="+payload;
+  const out=document.getElementById("listlinkout");
+  out.hidden=false;
+  out.value=url;                                 /* value 代入(HTML組み立てを経由しない) */
+  out.select();
+  document.getElementById("listlinkwarn").hidden = url.length<=MAX_URL;
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(url).then(()=>toast(t("lsCopied")), ()=>toast(t("lsCopyFail")));
+    else toast(t("lsCopyFail"));
+  }catch(e){ toast(t("lsCopyFail")); }
+}
+/* 新規作成・改名で共用するインライン入力 */
+function openNameInput(kind, pendingId){
+  const el=document.getElementById("listnewname");
+  if(kind==="rename"){
+    const l=activeList();
+    if(!l) return;
+    el.value=l.name;
+  }else{
+    el.value="";
+  }
+  nameMode={kind:kind, pendingId:(pendingId&&HEX16.test(pendingId))?pendingId:null};
+  el.hidden=false;
+  closeMenu(); hideLink();
+  el.focus(); el.select();
+}
+function closeNameInput(){
+  nameMode=null;
+  const el=document.getElementById("listnewname");
+  el.hidden=true; el.value="";
+}
+function commitName(){
+  if(!nameMode) return;
+  const nm=cleanName(document.getElementById("listnewname").value).trim();
+  if(!nm) return;                                /* 空文字は無視(入力欄はそのまま) */
+  if(nameMode.kind==="rename"){
+    const l=activeList();
+    if(l){ l.name=uniqueName(nm, lists.active); l.updated=TODAY; }
+  }else{
+    const pending=nameMode.pendingId;
+    const key=createList(nm, pending?[pending]:[]);
+    if(!key){ toast(t("lsFullLists")); closeNameInput(); return; }
+    lists.active=key;
+  }
+  closeNameInput();
+  syncActive(); saveLists(); redraw();
+}
+
+/* ---------- 初期化(最初の描画より前にURLフラグメントを処理する) ---------- */
+function initLists(){
+  loadLists();
+  let h="";
+  try{ h=String(location.hash||""); }catch(e){}
+  if(h==="#lists"){
+    lists.enabled=true;
+    saveLists();
+    stripHash();
+  }else if(h.indexOf("#l=")===0){
+    const d=decodeShare(h.slice(3));
+    if(d) setupShareView(d);                     /* 復号失敗は黙って無視して通常表示 */
+  }
+  syncActive();
+}
+/* 共有・有効化ハッシュが後から付いた場合は読み直す(#ev- 等には触らない) */
+window.addEventListener("hashchange",()=>{
+  const h=String(location.hash||"");
+  if(h==="#lists" || h.indexOf("#l=")===0) location.reload();
+});
+
+/* ---------- ハンドラ ---------- */
+document.getElementById("listsel").addEventListener("change",e=>{
+  const k=e.target.value;
+  if(!k || !hasOwn(lists.lists,k)) return;
+  lists.active=k; hideLink(); syncActive(); saveLists(); redraw();
+});
+document.getElementById("listnew").addEventListener("click",()=>openNameInput("new",null));
+document.getElementById("listnewname").addEventListener("keydown",e=>{
+  if(e.key==="Enter"){ e.preventDefault(); commitName(); }
+  else if(e.key==="Escape"){ e.preventDefault(); closeNameInput(); }
+});
+document.getElementById("listonly").addEventListener("change",e=>{
+  lists.filterOn=e.target.checked; saveLists(); redraw();
+});
+document.getElementById("listshare").addEventListener("click",()=>{
+  const l=activeList();
+  if(!l){ toast(t("lsNoLists")); return; }
+  if(!l.ids.length){ toast(t("lsEmptyShare")); return; }   /* 空リストはリンクを作らない */
+  showLink(encodeShareV1(l.name, l.ids));
+});
+document.getElementById("listgear").addEventListener("click",e=>{
+  e.stopPropagation();
+  const menu=document.getElementById("listmenu");
+  const open=menu.hidden;
+  menu.hidden=!open;
+  document.getElementById("listgear").setAttribute("aria-expanded", open?"true":"false");
+});
+document.addEventListener("click",e=>{
+  const menu=document.getElementById("listmenu");
+  if(!menu.hidden && !menu.contains(e.target)) closeMenu();
+});
+document.getElementById("listrename").addEventListener("click",()=>{
+  if(!activeList()){ toast(t("lsNoLists")); return; }
+  openNameInput("rename",null);
+});
+document.getElementById("listdel").addEventListener("click",()=>{
+  const l=activeList();
+  if(!l){ toast(t("lsNoLists")); return; }
+  if(!confirm(tf("lsDelConfirm",{name:(l.name||t("lsUntitled"))}))) return;
+  delete lists.lists[lists.active];
+  lists.active=listKeys()[0]||"";
+  closeMenu(); hideLink(); syncActive(); saveLists(); redraw();
+});
+document.getElementById("listbackup").addEventListener("click",()=>{
+  if(!listKeys().length){ toast(t("lsNoLists")); return; }
+  closeMenu();
+  showLink(encodeShareV2());
+});
+document.getElementById("listclean").addEventListener("click",()=>{ closeMenu(); cleanOrphans(); });
+document.getElementById("listhide").addEventListener("click",()=>{
+  lists.enabled=false; closeMenu(); hideLink(); saveLists(); redraw();
+});
+/* ☆のクリックは #list へのイベント委譲1本で処理する */
+document.getElementById("list").addEventListener("click",e=>{
+  const b=e.target.closest("button.star");
+  if(!b) return;
+  const id=b.getAttribute("data-id");
+  if(!id || !HEX16.test(id)) return;
+  toggleStar(id);
+});
+document.getElementById("shareall").addEventListener("click",()=>{ stripHash(); location.reload(); });
+document.getElementById("shareimport").addEventListener("click",importShare);
+
+/* ---------- 「その他」フィルタ(折りたたみ)---------- */
+/* 折りたたみ側に入っているフィルタが既定値から変わっている間は、
+   閉じていても気づけるようボタンに件数バッジを出す */
+const MORE_KEYS=["city","org","lang","online","daytrip"];
+function updateMoreBadge(){
+  const n=MORE_KEYS.filter(k=>state[k]!==DEFAULTS[k]).length;
+  const b=document.getElementById("morebadge");
+  b.hidden = n===0;
+  b.textContent = n ? "•"+n : "";
+}
+const morebtn=document.getElementById("morebtn");
+const morerow=document.getElementById("morerow");
+morebtn.addEventListener("click",()=>{
+  const open = morerow.hidden;             /* これから開くか */
+  morerow.hidden = !open;
+  morebtn.classList.toggle("open", open);
+  morebtn.setAttribute("aria-expanded", open?"true":"false");
+  morebtn.querySelector(".marr").textContent = open?"▴":"▾";
+});
+
+/* ---------- 再描画 ---------- */
+function redraw(){rebuildSelects();renderShare();renderListBar();drawCal();drawList();updateFilterBar();updateMoreBadge();saveState();}
+
+/* ---------- 初期化 ---------- */
+loadState();
+initLists();            /* ウォッチリスト復元・URLフラグメント処理(最初の描画より前) */
+buildModeSwitch();      /* ヘッダの DE|UK 切替(applyStaticText が title を付けるので先に組む) */
+applyStaticText();      /* <html lang>・<title>・静的UI文字列を uiLang に合わせる */
+rebuildSelects();
+renderShare();
+renderListBar();
+drawMech();
+
+/* ---------- イベントハンドラ ---------- */
+document.getElementById("area").addEventListener("change",e=>{
+  /* <select>.value の仕様上、option の disabled は「UIでのユーザー選択」しか防げず、
+     スクリプト等からの値代入は素通りしてしまう。disabled な選択肢が実際に選ばれて
+     しまった場合は表示を元の state.area に戻し、変更を無視する(選択拒否)。 */
+  const picked = e.target.selectedOptions[0];
+  if(picked && picked.disabled){ e.target.value = state.area; return; }
+  const prev = state.area;
+  state.area = e.target.value;
+  /* エリアと国の連動: 本拠国(home)を選んだら国も本拠国に。本拠国から離れたら、
+     連動でセットされていた国=本拠国だけを解除する(手動選択の他国は rebuildSelects が整合) */
+  if(state.area==="home") state.country=PROFILE.home;
+  else if(prev==="home" && state.country===PROFILE.home) state.country="";
+  redraw();
+});
+document.getElementById("country").addEventListener("change",e=>{state.country=e.target.value;redraw();});
+document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
+document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
+document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
+document.getElementById("theme").addEventListener("change",e=>{state.theme=e.target.value;redraw();});
+document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
+document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
+document.getElementById("daytrip").addEventListener("change",e=>{state.daytrip=e.target.checked;redraw();});
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;redraw();});
+document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;drawList();saveState();});
+/* UI言語トグル(state.lang=開催言語フィルタとは無関係) */
+document.getElementById("langsw").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-ui]");
+  if(b) setUiLang(b.dataset.ui);
+});
+/* 配色トグル(1クリックでライト⇄ダーク) */
+document.getElementById("skinbtn").addEventListener("click",()=>{
+  setSkin(skin==="light" ? "dark" : "light");
+});
+document.getElementById("fbreset").addEventListener("click",()=>{
+  Object.assign(state, DEFAULTS);
+  redraw();
+});
+document.getElementById("prev").addEventListener("click",()=>{
+  if(mqMobile.matches) shiftWeek(-7);
+  else if(--state.m<0){state.m=11;state.y--;}
+  drawCal();
+});
+document.getElementById("next").addEventListener("click",()=>{
+  if(mqMobile.matches) shiftWeek(7);
+  else if(++state.m>11){state.m=0;state.y++;}
+  drawCal();
+});
+document.getElementById("todaybtn").addEventListener("click",()=>{
+  if(mqMobile.matches) state.weekStart=isoOf(mondayOf(TODAY));
+  else{state.y=TODAY_Y;state.m=TODAY_M;}
+  drawCal();
+});
+/* 月表示 ⇄ 週表示 の切替(リサイズ・回転に追従) */
+mqMobile.addEventListener("change",e=>{
+  if(e.matches) syncToMobile(); else syncToDesktop();
+  drawCal();
+});
+document.addEventListener("click",e=>{
+  const a=e.target.closest("a.ev, a.seg"); if(!a)return;
+  let el=null; try{el=document.querySelector(a.getAttribute("href"));}catch(_){}
+  if(el){el.classList.add("hl");setTimeout(()=>el.classList.remove("hl"),2500);}
+});
+/* 更新履歴の行タイトル: クリック時に ALIASES で引き直し、一覧の該当行へスクロール+
+   一時ハイライト。行がフィルタで隠れている場合はピン(newsPin)を立てて一覧を描き直し、
+   そのイベントだけ一時的に再表示してから飛ぶ。掲載終了分は別タブで原文(=既定動作)。 */
+document.getElementById("newsbody").addEventListener("click",e=>{
+  const a=e.target.closest("a.nwev"); if(!a) return;
+  const id=canonId(a.getAttribute("data-id"));
+  let el=id?document.getElementById("ev-"+id):null;
+  if(!el && id && NW_EV_IDS.has(id)){
+    newsPin=id;
+    drawList();
+    el=document.getElementById("ev-"+id);
+    if(el) toast(t("nwPinned"));
+  }
+  if(!el){
+    /* 掲載中なのに行を作れなかった異常時のみ。宛先のないフラグメント遷移はしない */
+    if((a.getAttribute("href")||"").charAt(0)==="#") e.preventDefault();
+    return;
+  }
+  e.preventDefault();
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+  el.classList.add("hl");
+  setTimeout(()=>el.classList.remove("hl"),2500);
+});
+/* フィルタ操作(変更・キーワード入力・リセット)でピンを解除する。capture段階で
+   先に外しておけば、各コントロール自身のハンドラが行う redraw() でピン無しの
+   一覧が描かれる(リセットボタンも同様)。 */
+document.querySelector(".filters").addEventListener("change",clearNewsPin,true);
+document.querySelector(".filters").addEventListener("input",clearNewsPin,true);
+document.getElementById("fbreset").addEventListener("click",clearNewsPin,true);
+document.getElementById("listonly").addEventListener("change",clearNewsPin,true);
+
+/* ---------- 仕組みボタン(PC=ホバー / モバイル・タップ=クリックトグル) ---------- */
+const mechwrap=document.getElementById("mechwrap"), mechbtn=document.getElementById("mechbtn");
+mechbtn.addEventListener("click",e=>{
+  e.stopPropagation();
+  const open=mechwrap.classList.toggle("open");
+  mechbtn.setAttribute("aria-expanded", open?"true":"false");
+});
+document.addEventListener("click",e=>{
+  if(!mechwrap.contains(e.target) && mechwrap.classList.contains("open")){
+    mechwrap.classList.remove("open");
+    mechbtn.setAttribute("aria-expanded","false");
+  }
+});
+
+/* ---------- 調査対象ボタン(パネルは持たず、巡回ステータスへスクロールするだけ) ---------- */
+document.getElementById("srcbtn").addEventListener("click",()=>{
+  const sec=document.getElementById("crawlsec");
+  if(sec) sec.scrollIntoView({behavior:"smooth",block:"start"});
+});
+
+/* ---------- スクロールトップボタン ---------- */
+const totop=document.getElementById("totop");
+function onScroll(){
+  if(window.pageYOffset>300) totop.classList.add("show");
+  else totop.classList.remove("show");
+}
+window.addEventListener("scroll",onScroll,{passive:true});
+totop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+onScroll();
+
+redraw();drawStatus();drawNews();   /* drawNews は一覧描画(redraw)より後 */
+</script>
+</body>
+</html>
