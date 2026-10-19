@@ -1,0 +1,2585 @@
+{
+ "_doc": [
+  "要人名簿。ユーザー管理ファイル(AGENTS.md A-4)。ingest.py が登壇者(speakers)と照合し、",
+  "一致したイベントに派生フィールド notables / notable_tier を付ける。名簿を直せば翌日の",
+  "ingest で全イベントに遡及する。形式と階層・区分の定義は README.md「要人名簿」を参照。",
+  "tier: 1=機関の長(中銀総裁・大臣・長官)、ECB総裁と特に知名度の高いECB理事、五賢人の現・元",
+  "メンバー / 2=副総裁・理事・局長・チーフエコノミスト級、研究所所長(五賢人経験者を除く)。",
+  "group: ecb / bundesbank / bis / ncb / supervisor / government / eu_body / intl_org / academia。",
+  "require_org: 同姓同名が多い名前。登壇者側に所属の記載が無ければ一致させない。",
+  "source: 根拠にした公式ページ。checked: その確認日。人事異動は人が反映する。"
+ ],
+ "updated": "2026-10-19",
+ "people": [
+  {
+   "id": "christine-lagarde",
+   "name": "Christine Lagarde",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem"
+   ],
+   "position": "President of the ECB",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2019-11",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "Term ends 2027-10-31 (ECB terms-of-office page: https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html)"
+  },
+  {
+   "id": "isabel-schnabel",
+   "name": "Isabel Schnabel",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem"
+   ],
+   "position": "Member of the Executive Board of the ECB",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2020-01",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "Still a member. Responsible for DG Market Operations, DG Research, DG Statistics. Term ends 2027-01-03 per terms-of-office page."
+  },
+  {
+   "id": "philip-lane",
+   "name": "Philip R. Lane",
+   "aliases": [
+    "Philip Lane"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem"
+   ],
+   "position": "Member of the Executive Board of the ECB",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2019-06",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "CHIEF ECONOMIST: responsible for DG Economics and DG Monetary Policy (ECB responsibilities PDF 'as of June 2026': https://www.ecb.europa.eu/ecb/pdf/orga/ecb.EB_responsibilities.en.pdf). Term ends 2027-05-31."
+  },
+  {
+   "id": "boris-vujcic",
+   "name": "Boris Vujčić",
+   "aliases": [
+    "Boris Vujcic"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem"
+   ],
+   "position": "Vice-President of the ECB",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2026-06",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "Succeeded Luis de Guindos (term ended 2026-05-31); term 2026-06-01 to 2034-05-31 per ECB terms-of-office page. Responsible for DG Macroprudential Policy and Financial Stability."
+  },
+  {
+   "id": "frank-elderson",
+   "name": "Frank Elderson",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem"
+   ],
+   "position": "Member of the Executive Board of the ECB",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2020-12",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "also SSM Vice-Chair (Vice-Chair of the Supervisory Board, since 2021-02 per https://www.bankingsupervision.europa.eu/about/organisation/leadership/supervisoryboard/html/index.en.html). Board term ends 2028-12-14."
+  },
+  {
+   "id": "piero-cipollone",
+   "name": "Piero Cipollone",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem"
+   ],
+   "position": "Member of the Executive Board of the ECB",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2023-11",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "Responsible for DG International and European Relations, DG Market Infrastructure and Payments, Banknotes (digital euro lead)."
+  },
+  {
+   "id": "joachim-nagel",
+   "name": "Joachim Nagel",
+   "aliases": [],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "President of the Deutsche Bundesbank",
+   "group": "bundesbank",
+   "tier": 1,
+   "since": "2022-01",
+   "require_org": false,
+   "source": "https://www.bundesbank.de/en/bundesbank/organisation/executive-board/joachim-nagel-837992",
+   "checked": "2026-10-19",
+   "note": "Also confirmed on the ECB page. Responsibilities: Board and International Affairs, Communications, Legal Services, Strategy and innovation, Economics."
+  },
+  {
+   "id": "fritzi-kohler-geib",
+   "name": "Fritzi Köhler-Geib",
+   "aliases": [
+    "Fritzi Koehler-Geib",
+    "Fritzi Kohler-Geib"
+   ],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "Member of the Executive Board (Data and Statistics; Research Centre; Information Technology; Risk Control)",
+   "group": "bundesbank",
+   "tier": 2,
+   "since": "2024-11",
+   "require_org": false,
+   "source": "https://www.bundesbank.de/en/bundesbank/organisation/executive-board/fritzi-koehler-geib-636746",
+   "checked": "2026-10-19",
+   "note": "Page title is 'Professor'."
+  },
+  {
+   "id": "lutz-lienenkamper",
+   "name": "Lutz Lienenkämper",
+   "aliases": [
+    "Lutz Lienenkaemper"
+   ],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "Member of the Executive Board (Cash Management; Compliance; Digital Euro; Human Resources; Audit; Payments and Settlement Systems)",
+   "group": "bundesbank",
+   "tier": 2,
+   "since": "2024-09",
+   "require_org": false,
+   "source": "https://www.bundesbank.de/en/bundesbank/organisation/executive-board/lutz-lienenkaemper-715620",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "michael-theurer",
+   "name": "Michael Theurer",
+   "aliases": [],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "Member of the Executive Board (Financial Supervision; Financial Stability)",
+   "group": "bundesbank",
+   "tier": 2,
+   "since": "2024-09",
+   "require_org": false,
+   "source": "https://www.bundesbank.de/en/bundesbank/organisation/executive-board/michael-theurer-667272",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "sabine-mauderer",
+   "name": "Sabine Mauderer",
+   "aliases": [],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "First Deputy Governor of the Deutsche Bundesbank (Controlling, Accounting and Organisation; Markets; Sustainability)",
+   "group": "bundesbank",
+   "tier": 2,
+   "since": "2024-09",
+   "require_org": false,
+   "source": "https://www.bundesbank.de/en/bundesbank/organisation/executive-board/sabine-mauderer-758366",
+   "checked": "2026-10-19",
+   "note": "Page title is 'Dr'. Member of the Executive Board since 2018; First Deputy Governor since September 2024. Alternate to the President on the ECB Governing Council."
+  },
+  {
+   "id": "pablo-hernandez-de-cos",
+   "name": "Pablo Hernández de Cos",
+   "aliases": [
+    "Pablo Hernandez de Cos"
+   ],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "Bank für Internationalen Zahlungsausgleich",
+    "BIZ"
+   ],
+   "position": "General Manager",
+   "group": "bis",
+   "tier": 1,
+   "since": "2025-07",
+   "require_org": false,
+   "source": "https://www.bis.org/about/organisation/management",
+   "checked": "2026-10-19",
+   "note": "Assumed office 2025-07-01."
+  },
+  {
+   "id": "andrea-maechler",
+   "name": "Andréa M Maechler",
+   "aliases": [
+    "Andréa Maechler",
+    "Andrea Maechler"
+   ],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "Bank für Internationalen Zahlungsausgleich",
+    "BIZ"
+   ],
+   "position": "Deputy General Manager",
+   "group": "bis",
+   "tier": 2,
+   "since": "2023-09",
+   "require_org": false,
+   "source": "https://www.bis.org/about/organisation/management",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "helene-rey",
+   "name": "Hélène Rey",
+   "aliases": [
+    "Helene Rey"
+   ],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "Bank für Internationalen Zahlungsausgleich",
+    "BIZ"
+   ],
+   "position": "Economic Adviser and Head of Monetary and Economic Department",
+   "group": "bis",
+   "tier": 2,
+   "since": "2026-09",
+   "require_org": false,
+   "source": "https://www.bis.org/about/organisation/management",
+   "checked": "2026-10-19",
+   "note": "One person covers two of the requested roles (Head of MED, and Economic Adviser/Head of Research), so only one entry is given. The BIS page uses this combined title and has no separate 'Head of Research' entry. Became Economic Adviser and Head of MED on 2026-09-01."
+  },
+  {
+   "id": "adam-glapinski",
+   "name": "Adam Glapiński",
+   "aliases": [
+    "Adam Glapinski"
+   ],
+   "org": "NBP",
+   "org_aliases": [
+    "Narodowy Bank Polski",
+    "National Bank of Poland"
+   ],
+   "position": "President of NBP (Prezes NBP; English NBP site titles it Governor)",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://nbp.pl/en/about-nbp/nbp-management-board",
+   "checked": "2026-10-19",
+   "note": "要確認: NOT confirmed on an official page. nbp.pl returns a bot-challenge page ('Pardon Our Interruption') to curl and WebFetch; I did not try to bypass it. Name comes only from WebSearch snippets of nbp.pl and press results, not from a page I fetched."
+  },
+  {
+   "id": "alexander-demarco",
+   "name": "Alexander Demarco",
+   "aliases": [],
+   "org": "Central Bank of Malta",
+   "org_aliases": [
+    "Bank Ċentrali ta' Malta",
+    "CBM"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "ales-michl",
+   "name": "Aleš Michl",
+   "aliases": [
+    "Ales Michl"
+   ],
+   "org": "CNB",
+   "org_aliases": [
+    "Czech National Bank",
+    "Česká národní banka",
+    "ČNB"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2022-07",
+   "require_org": false,
+   "source": "https://www.cnb.cz/en/about_cnb/bank-board/ales-michl/",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "andrew-bailey",
+   "name": "Andrew Bailey",
+   "aliases": [],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE",
+    "FSB",
+    "Financial Stability Board"
+   ],
+   "position": "Governor; Chair of the FSB",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2020-03",
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/andrew-bailey/biography",
+   "checked": "2026-10-19",
+   "note": "Term 2020-03-16 to 2028-03-15. Also Chair of the FSB (separate entry below). / Main position is Governor of the Bank of England (separate entry above). The FSB page lists him as 'Chair of the FSB, Governor, Bank of England'. FSB profile: https://www.fsb.org/profile/andrew-bailey/. The Chair's term is three years, renewable once. No FSB start date was on the pages fetched."
+  },
+  {
+   "id": "andriy-pyshnyy",
+   "name": "Andriy Pyshnyy",
+   "aliases": [
+    "Andriy Pyshnyi",
+    "Andrii Pyshnyi"
+   ],
+   "org": "NBU",
+   "org_aliases": [
+    "National Bank of Ukraine",
+    "Національний банк України"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2022-10",
+   "require_org": false,
+   "source": "https://bank.gov.ua/en/about/structure/details?member=8",
+   "checked": "2026-10-19",
+   "note": "Governor from 7 Oct 2022. The Board list at https://bank.gov.ua/en/about/structure also names him."
+  },
+  {
+   "id": "ante-zigman",
+   "name": "Ante Žigman",
+   "aliases": [
+    "Ante Zigman"
+   ],
+   "org": "Hrvatska narodna banka",
+   "org_aliases": [
+    "Croatian National Bank",
+    "HNB"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "christodoulos-patsalides",
+   "name": "Christodoulos Patsalides",
+   "aliases": [
+    "Χριστόδουλος Πατσαλίδης"
+   ],
+   "org": "Central Bank of Cyprus",
+   "org_aliases": [
+    "Κεντρική Τράπεζα της Κύπρου",
+    "CBC"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "dimitar-radev",
+   "name": "Dimitar Radev",
+   "aliases": [
+    "Димитър Радев"
+   ],
+   "org": "BNB",
+   "org_aliases": [
+    "Българска народна банка",
+    "Bulgarian National Bank"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "Confirmed on ECB page only; bnb.bg pages were blocked by a WAF (error page) so the national spot-check failed."
+  },
+  {
+   "id": "emmanuel-moulin",
+   "name": "Emmanuel Moulin",
+   "aliases": [],
+   "org": "Banque de France",
+   "org_aliases": [
+    "BdF",
+    "Bank of France"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2026-06",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "Governor confirmed on the ECB page. Since 2026-06 comes from a WebSearch snippet (took office 2 June 2026, succeeding Villeroy de Galhau), not a fetched page. banque-france.fr returned 403 (Akamai), so the national spot-check failed."
+  },
+  {
+   "id": "fabio-panetta",
+   "name": "Fabio Panetta",
+   "aliases": [],
+   "org": "Banca d'Italia",
+   "org_aliases": [
+    "Bank of Italy",
+    "Banca d’Italia"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2023-11",
+   "require_org": false,
+   "source": "https://www.bancaditalia.it/chi-siamo/funzioni-governance/direttorio/index.html?com.dotmarketing.htmlpage.language=1",
+   "checked": "2026-10-19",
+   "note": "Also confirmed on the ECB page."
+  },
+  {
+   "id": "gabriel-makhlouf",
+   "name": "Gabriel Makhlouf",
+   "aliases": [],
+   "org": "Central Bank of Ireland",
+   "org_aliases": [
+    "Banc Ceannais na hÉireann",
+    "CBI"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "gaston-reinesch",
+   "name": "Gaston Reinesch",
+   "aliases": [],
+   "org": "Banque centrale du Luxembourg",
+   "org_aliases": [
+    "BCL",
+    "Central Bank of Luxembourg"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "gediminas-simkus",
+   "name": "Gediminas Šimkus",
+   "aliases": [
+    "Gediminas Simkus"
+   ],
+   "org": "Lietuvos bankas",
+   "org_aliases": [
+    "Bank of Lithuania"
+   ],
+   "position": "Chairman of the Board",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "The ECB page lists him as 'Chairman of the Board', not 'Governor'."
+  },
+  {
+   "id": "gent-sejko",
+   "name": "Gent Sejko",
+   "aliases": [],
+   "org": "Bank of Albania",
+   "org_aliases": [
+    "Banka e Shqipërisë"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2015-02",
+   "require_org": false,
+   "source": "https://bankofalbania.org/About_the_Bank/Organizational_Structure/The_Governor/Curriculum_Vitae",
+   "checked": "2026-10-19",
+   "note": "Governor since 5 Feb 2015; re-elected for a second term on 24 Feb 2022."
+  },
+  {
+   "id": "jasmina-selimovic",
+   "name": "Jasmina Selimović",
+   "aliases": [
+    "Jasmina Selimovic"
+   ],
+   "org": "CBBH",
+   "org_aliases": [
+    "Central Bank of Bosnia and Herzegovina",
+    "Centralna banka Bosne i Hercegovine"
+   ],
+   "position": "Governor (Chairman of the Governing Board)",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2024-01",
+   "require_org": false,
+   "source": "https://www.cbbh.ba/Content/Read/15",
+   "checked": "2026-10-19",
+   "note": "Elected 3 Jan 2024 for a six-year term (https://www.cbbh.ba/press/ShowNews/1547?lang=en)."
+  },
+  {
+   "id": "jorgovanka-tabakovic",
+   "name": "Jorgovanka Tabaković",
+   "aliases": [
+    "Jorgovanka Tabakovic"
+   ],
+   "org": "NBS Serbia",
+   "org_aliases": [
+    "National Bank of Serbia",
+    "Narodna banka Srbije"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2012-08",
+   "require_org": false,
+   "source": "https://nbs.rs/en/o_nbs/rukovodstvo/",
+   "checked": "2026-10-19",
+   "note": "Third six-year term began Aug 2024."
+  },
+  {
+   "id": "jose-luis-escriva",
+   "name": "José Luis Escrivá",
+   "aliases": [
+    "Jose Luis Escriva"
+   ],
+   "org": "Banco de España",
+   "org_aliases": [
+    "Bank of Spain",
+    "BdE"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2024-09",
+   "require_org": false,
+   "source": "https://www.bde.es/wbe/en/sobre-banco/organizacion/organos-rectores/gobernador/gobernador.html",
+   "checked": "2026-10-19",
+   "note": "BdE page says only '2024 to date'; the month 2024-09 comes from a WebSearch result (inauguration ceremony 24 Sep 2024), not from a fetched page. Also confirmed on the ECB page."
+  },
+  {
+   "id": "kazuo-ueda",
+   "name": "Kazuo Ueda",
+   "aliases": [
+    "UEDA Kazuo"
+   ],
+   "org": "Bank of Japan",
+   "org_aliases": [
+    "BoJ",
+    "日本銀行"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2023-04",
+   "require_org": false,
+   "source": "https://www.boj.or.jp/en/about/organization/policyboard/gv_ueda.htm",
+   "checked": "2026-10-19",
+   "note": "Term 2023-04-09 to 2028-04-08. Member list: https://www.boj.or.jp/en/about/organization/policyboard/index.htm"
+  },
+  {
+   "id": "kevin-warsh",
+   "name": "Kevin Warsh",
+   "aliases": [],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System",
+    "US Federal Reserve"
+   ],
+   "position": "Chairman",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2026-05",
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
+   "checked": "2026-10-19",
+   "note": "Official title on the Fed page is 'Chairman'. Took office 2026-05-22 (term to 2030-05-21). Board members page (https://www.federalreserve.gov/aboutthefed/bios/board/default.htm) shows 'Last Update: May 28, 2026'."
+  },
+  {
+   "id": "martin-kocher",
+   "name": "Martin Kocher",
+   "aliases": [],
+   "org": "OeNB",
+   "org_aliases": [
+    "Oesterreichische Nationalbank",
+    "Österreichische Nationalbank",
+    "Austrian National Bank"
+   ],
+   "position": "Governor of the Oesterreichische Nationalbank",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2025-09",
+   "require_org": false,
+   "source": "https://www.oenb.at/en/die-oenb/organisation/direktorium.html",
+   "checked": "2026-10-19",
+   "note": "Term 1 September 2025 to 31 August 2031. Also confirmed on the ECB page."
+  },
+  {
+   "id": "martin-schlegel",
+   "name": "Martin Schlegel",
+   "aliases": [],
+   "org": "SNB",
+   "org_aliases": [
+    "Swiss National Bank",
+    "Schweizerische Nationalbank",
+    "Banque nationale suisse"
+   ],
+   "position": "Chairman of the Governing Board",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2024-10",
+   "require_org": false,
+   "source": "https://www.snb.ch/en/the-snb/organisation/supervisory-management-boards",
+   "checked": "2026-10-19",
+   "note": "Chairman effective 1 Oct 2024 (Vice Chairman from Aug 2022)."
+  },
+  {
+   "id": "mihaly-varga",
+   "name": "Mihály Varga",
+   "aliases": [
+    "Mihaly Varga",
+    "Varga Mihály"
+   ],
+   "org": "MNB",
+   "org_aliases": [
+    "Magyar Nemzeti Bank",
+    "Hungarian National Bank",
+    "Central Bank of Hungary"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2025-03",
+   "require_org": false,
+   "source": "https://www.mnb.hu/en/the-central-bank/management-and-control-of-the-mnb/management-of-mnb",
+   "checked": "2026-10-19",
+   "note": "CV page: Governor since 4 March 2025."
+  },
+  {
+   "id": "mugur-isarescu",
+   "name": "Mugur Isărescu",
+   "aliases": [
+    "Mugur Isarescu"
+   ],
+   "org": "BNR",
+   "org_aliases": [
+    "National Bank of Romania",
+    "Banca Națională a României",
+    "NBR"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.bnr.ro/en/1389-the-board-of-directors",
+   "checked": "2026-10-19",
+   "note": "On the Board for 11 Oct 2024 to 10 Oct 2029 (Parliament Decision 27/2024). The page gives no original start date. The page body loads by AJAX; I read it from the site's own /blocks endpoint, block 2118."
+  },
+  {
+   "id": "martins-kazaks",
+   "name": "Mārtiņš Kazāks",
+   "aliases": [
+    "Martins Kazaks"
+   ],
+   "org": "Latvijas Banka",
+   "org_aliases": [
+    "Bank of Latvia"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "olaf-sleijpen",
+   "name": "Olaf Sleijpen",
+   "aliases": [],
+   "org": "De Nederlandsche Bank",
+   "org_aliases": [
+    "DNB",
+    "Dutch Central Bank"
+   ],
+   "position": "President",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2025-07",
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": "President confirmed on the ECB page. Since 2025-07 comes from a WebSearch snippet (president since 1 July 2025), not a fetched page. dnb.nl returned 403 (Akamai), so the national spot-check failed."
+  },
+  {
+   "id": "olli-rehn",
+   "name": "Olli Rehn",
+   "aliases": [],
+   "org": "Suomen Pankki",
+   "org_aliases": [
+    "Bank of Finland",
+    "Finlands Bank",
+    "Suomen Pankki - Finlands Bank"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "pan-gongsheng",
+   "name": "Pan Gongsheng",
+   "aliases": [],
+   "org": "PBoC",
+   "org_aliases": [
+    "People's Bank of China",
+    "PBC"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2023-07",
+   "require_org": false,
+   "source": "https://www.pbc.gov.cn/en/3688066/3688083/index.html",
+   "checked": "2026-10-19",
+   "note": "Management Team page lists him as 'Secretary of the CPC PBC Committee, Governor'. 'since' is inferred: the Former Governors page (https://www.pbc.gov.cn/en/3688066/3688086/index.html) shows Yi Gang's term ending 2023.7, and no start date is given for Pan. PBC English home page (fetched today) carries news of Governor Pan Gongsheng through 2026-10-17."
+  },
+  {
+   "id": "peter-kazimir",
+   "name": "Peter Kažimír",
+   "aliases": [
+    "Peter Kazimir"
+   ],
+   "org": "Národná banka Slovenska",
+   "org_aliases": [
+    "National Bank of Slovakia",
+    "NBS"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "pierre-wunsch",
+   "name": "Pierre Wunsch",
+   "aliases": [],
+   "org": "Nationale Bank van België",
+   "org_aliases": [
+    "Banque nationale de Belgique",
+    "National Bank of Belgium",
+    "NBB"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "primoz-dolenc",
+   "name": "Primož Dolenc",
+   "aliases": [
+    "Primoz Dolenc"
+   ],
+   "org": "Banka Slovenije",
+   "org_aliases": [
+    "Bank of Slovenia"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "yannis-stournaras",
+   "name": "Yannis Stournaras",
+   "aliases": [
+    "Ioannis Stournaras",
+    "Γιάννης Στουρνάρας"
+   ],
+   "org": "Bank of Greece",
+   "org_aliases": [
+    "Τράπεζα της Ελλάδος",
+    "BoG"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "alvaro-santos-pereira",
+   "name": "Álvaro Santos Pereira",
+   "aliases": [
+    "Alvaro Santos Pereira"
+   ],
+   "org": "Banco de Portugal",
+   "org_aliases": [
+    "Bank of Portugal",
+    "BdP"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "ulo-kaasik",
+   "name": "Ülo Kaasik",
+   "aliases": [
+    "Ulo Kaasik"
+   ],
+   "org": "Eesti Pank",
+   "org_aliases": [
+    "Bank of Estonia"
+   ],
+   "position": "Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "antoine-martin",
+   "name": "Antoine Martin",
+   "aliases": [],
+   "org": "SNB",
+   "org_aliases": [
+    "Swiss National Bank",
+    "Schweizerische Nationalbank",
+    "Banque nationale suisse"
+   ],
+   "position": "Vice Chairman of the Governing Board",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2024-10",
+   "require_org": true,
+   "source": "https://www.snb.ch/en/the-snb/organisation/supervisory-management-boards",
+   "checked": "2026-10-19",
+   "note": "Governing Board member from 1 Jan 2024; Vice Chairman from 1 Oct 2024."
+  },
+  {
+   "id": "clare-lombardelli",
+   "name": "Clare Lombardelli",
+   "aliases": [],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Deputy Governor, Monetary Policy",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2024-07",
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/clare-lombardelli/biography",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "dave-ramsden",
+   "name": "Dave Ramsden",
+   "aliases": [
+    "Sir Dave Ramsden",
+    "David Ramsden"
+   ],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Deputy Governor, Markets and Banking",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2017-09",
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/david-ramsden/biography",
+   "checked": "2026-10-19",
+   "note": "Second term ends 2027-09-03."
+  },
+  {
+   "id": "daniel-palotai",
+   "name": "Dániel Palotai",
+   "aliases": [
+    "Daniel Palotai",
+    "Palotai Dániel"
+   ],
+   "org": "MNB",
+   "org_aliases": [
+    "Magyar Nemzeti Bank",
+    "Hungarian National Bank",
+    "Central Bank of Hungary"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-09",
+   "require_org": false,
+   "source": "https://www.mnb.hu/en/the-central-bank/management-and-control-of-the-mnb/management-of-mnb/curriculum-vitae-of-daniel-palotai",
+   "checked": "2026-10-19",
+   "note": "International relations; from September 2025."
+  },
+  {
+   "id": "edeltraud-stiftinger",
+   "name": "Edeltraud Stiftinger",
+   "aliases": [],
+   "org": "OeNB",
+   "org_aliases": [
+    "Oesterreichische Nationalbank",
+    "Österreichische Nationalbank",
+    "Austrian National Bank"
+   ],
+   "position": "Vice Governor of the Oesterreichische Nationalbank",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2024-12",
+   "require_org": false,
+   "source": "https://www.oenb.at/en/die-oenb/organisation/direktorium.html",
+   "checked": "2026-10-19",
+   "note": "Term 1 December 2024 to 30 November 2030."
+  },
+  {
+   "id": "eva-zamrazilova",
+   "name": "Eva Zamrazilová",
+   "aliases": [
+    "Eva Zamrazilova"
+   ],
+   "org": "CNB",
+   "org_aliases": [
+    "Czech National Bank",
+    "Česká národní banka",
+    "ČNB"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2022-07",
+   "require_org": false,
+   "source": "https://www.cnb.cz/en/about_cnb/bank-board/eva-zamrazilova/",
+   "checked": "2026-10-19",
+   "note": "Listed as Deputy Governor on https://www.cnb.cz/en/about_cnb/bank-board/ (fetched today)."
+  },
+  {
+   "id": "huw-pill",
+   "name": "Huw Pill",
+   "aliases": [],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Chief Economist",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2021-09",
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/huw-pill/biography",
+   "checked": "2026-10-19",
+   "note": "Full title 'Chief Economist and Executive Director, Monetary Analysis' on https://www.bankofengland.co.uk/about/people/executive-directors. Second term runs to 2027-09-05."
+  },
+  {
+   "id": "jan-frait",
+   "name": "Jan Frait",
+   "aliases": [],
+   "org": "CNB",
+   "org_aliases": [
+    "Czech National Bank",
+    "Česká národní banka",
+    "ČNB"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2023-02",
+   "require_org": false,
+   "source": "https://www.cnb.cz/en/about_cnb/bank-board/jan-frait/",
+   "checked": "2026-10-19",
+   "note": "Bank Board member from 1 Jul 2022; Deputy Governor since 13 Feb 2023."
+  },
+  {
+   "id": "john-williams",
+   "name": "John C. Williams",
+   "aliases": [
+    "John Williams"
+   ],
+   "org": "New York Fed",
+   "org_aliases": [
+    "Federal Reserve Bank of New York",
+    "FRBNY"
+   ],
+   "position": "President and Chief Executive Officer",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2018-06",
+   "require_org": true,
+   "source": "https://www.newyorkfed.org/aboutthefed/orgchart/williams",
+   "checked": "2026-10-19",
+   "note": "Also permanent voting member and vice chair of the FOMC."
+  },
+  {
+   "id": "josef-meichenitsch",
+   "name": "Josef Meichenitsch",
+   "aliases": [],
+   "org": "OeNB",
+   "org_aliases": [
+    "Oesterreichische Nationalbank",
+    "Österreichische Nationalbank",
+    "Austrian National Bank"
+   ],
+   "position": "Executive Director, Oesterreichische Nationalbank",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-07",
+   "require_org": false,
+   "source": "https://www.oenb.at/en/die-oenb/organisation/direktorium.html",
+   "checked": "2026-10-19",
+   "note": "Term 11 July 2025 to 10 July 2031."
+  },
+  {
+   "id": "katharine-braddick",
+   "name": "Katharine Braddick",
+   "aliases": [],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Deputy Governor for Prudential Regulation and Chief Executive Officer of the Prudential Regulation Authority",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2026-07",
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/katharine-braddick/biography",
+   "checked": "2026-10-19",
+   "note": "New in role 2026-07-01 (term to 2031-06-30). Listed on https://www.bankofengland.co.uk/about/people/governors as Deputy Governor for Prudential Regulation, and CEO of the PRA."
+  },
+  {
+   "id": "leonardo-badea",
+   "name": "Leonardo Badea",
+   "aliases": [],
+   "org": "BNR",
+   "org_aliases": [
+    "National Bank of Romania",
+    "Banca Națională a României",
+    "NBR"
+   ],
+   "position": "First Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2024-10",
+   "require_org": false,
+   "source": "https://www.bnr.ro/en/1389-the-board-of-directors",
+   "checked": "2026-10-19",
+   "note": "The 2019-2024 board lists him as Deputy Governor; he is First Deputy on the 2024-2029 board. Start month is inferred from the board term start, not stated on the page."
+  },
+  {
+   "id": "levente-sipos-tompa",
+   "name": "Levente Sipos-Tompa",
+   "aliases": [
+    "Sipos-Tompa Levente"
+   ],
+   "org": "MNB",
+   "org_aliases": [
+    "Magyar Nemzeti Bank",
+    "Hungarian National Bank",
+    "Central Bank of Hungary"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-10",
+   "require_org": false,
+   "source": "https://www.mnb.hu/en/the-central-bank/management-and-control-of-the-mnb/management-of-mnb/curriculum-vitae-of-dr-levente-sipos-tompa",
+   "checked": "2026-10-19",
+   "note": "Financial institutions supervision and consumer protection; from 2 Oct 2025."
+  },
+  {
+   "id": "marta-kightley",
+   "name": "Marta Kightley",
+   "aliases": [],
+   "org": "NBP",
+   "org_aliases": [
+    "Narodowy Bank Polski",
+    "National Bank of Poland"
+   ],
+   "position": "First Deputy President (Pierwszy Zastępca Prezesa; English NBP site: First Deputy Governor)",
+   "group": "ncb",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://nbp.pl/en/about-nbp/nbp-management-board/marta-kightley",
+   "checked": "2026-10-19",
+   "note": "要確認: NOT confirmed on a fetched page (bot challenge). The search snippet says the nbp.pl profile and an org chart valid from 1 Aug 2025 list her as First Deputy. Other Deputy Presidents are unknown; one non-official article named Anna Trzecińska, and a separate press item mentioned new nominations (Adam Lipiński, Marta Gajęcka) with no date. I left them out as unverified."
+  },
+  {
+   "id": "michelle-bowman",
+   "name": "Michelle W. Bowman",
+   "aliases": [
+    "Michelle Bowman"
+   ],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System",
+    "US Federal Reserve"
+   ],
+   "position": "Vice Chair for Supervision",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-06",
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
+   "checked": "2026-10-19",
+   "note": "Sworn in as Vice Chair for Supervision 2025-06-09."
+  },
+  {
+   "id": "petra-tschudin",
+   "name": "Petra Tschudin",
+   "aliases": [],
+   "org": "SNB",
+   "org_aliases": [
+    "Swiss National Bank",
+    "Schweizerische Nationalbank",
+    "Banque nationale suisse"
+   ],
+   "position": "Member of the Governing Board",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2024-10",
+   "require_org": false,
+   "source": "https://www.snb.ch/en/the-snb/organisation/supervisory-management-boards",
+   "checked": "2026-10-19",
+   "note": "Alternate Member from Aug 2022; full Member from 1 Oct 2024."
+  },
+  {
+   "id": "philip-jefferson",
+   "name": "Philip N. Jefferson",
+   "aliases": [
+    "Philip Jefferson"
+   ],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System",
+    "US Federal Reserve"
+   ],
+   "position": "Vice Chair",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2023-09",
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
+   "checked": "2026-10-19",
+   "note": "Vice Chair since 2023-09-13 (four-year term); Governor since 2022-05-23."
+  },
+  {
+   "id": "peter-beno-banai",
+   "name": "Péter Benő Banai",
+   "aliases": [
+    "Peter Beno Banai",
+    "Banai Péter Benő"
+   ],
+   "org": "MNB",
+   "org_aliases": [
+    "Magyar Nemzeti Bank",
+    "Hungarian National Bank",
+    "Central Bank of Hungary"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-12",
+   "require_org": false,
+   "source": "https://www.mnb.hu/en/the-central-bank/management-and-control-of-the-mnb/management-of-mnb/curriculum-vitae-of-peter-beno-banai",
+   "checked": "2026-10-19",
+   "note": "Analyses, payments and central bank programmes; from 1 Dec 2025."
+  },
+  {
+   "id": "ryozo-himino",
+   "name": "Ryozo Himino",
+   "aliases": [
+    "HIMINO Ryozo"
+   ],
+   "org": "Bank of Japan",
+   "org_aliases": [
+    "BoJ",
+    "日本銀行"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2023-03",
+   "require_org": false,
+   "source": "https://www.boj.or.jp/en/about/organization/policyboard/dg_himino.htm",
+   "checked": "2026-10-19",
+   "note": "Term 2023-03-20 to 2028-03-19."
+  },
+  {
+   "id": "sarah-breeden",
+   "name": "Sarah Breeden",
+   "aliases": [],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Deputy Governor, Financial Stability",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2023-11",
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/sarah-breeden/biography",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "sergiy-nikolaychuk",
+   "name": "Sergiy Nikolaychuk",
+   "aliases": [
+    "Serhii Nikolaichuk",
+    "Sergii Nikolaychuk"
+   ],
+   "org": "NBU",
+   "org_aliases": [
+    "National Bank of Ukraine",
+    "Національний банк України"
+   ],
+   "position": "First Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-08",
+   "require_org": false,
+   "source": "https://bank.gov.ua/en/about/structure/details?member=11",
+   "checked": "2026-10-19",
+   "note": "First Deputy from 15 Aug 2025; Deputy Governor since 13 Jul 2021."
+  },
+  {
+   "id": "shinichi-uchida",
+   "name": "Shinichi Uchida",
+   "aliases": [
+    "UCHIDA Shinichi"
+   ],
+   "org": "Bank of Japan",
+   "org_aliases": [
+    "BoJ",
+    "日本銀行"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2023-03",
+   "require_org": false,
+   "source": "https://www.boj.or.jp/en/about/organization/policyboard/dg_uchida.htm",
+   "checked": "2026-10-19",
+   "note": "Term 2023-03-20 to 2028-03-19."
+  },
+  {
+   "id": "thomas-steiner",
+   "name": "Thomas Steiner",
+   "aliases": [],
+   "org": "OeNB",
+   "org_aliases": [
+    "Oesterreichische Nationalbank",
+    "Österreichische Nationalbank",
+    "Austrian National Bank"
+   ],
+   "position": "Executive Director, Oesterreichische Nationalbank",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-05",
+   "require_org": true,
+   "source": "https://www.oenb.at/en/die-oenb/organisation/direktorium.html",
+   "checked": "2026-10-19",
+   "note": "Term 1 May 2025 to 30 April 2031."
+  },
+  {
+   "id": "zoltan-kurali",
+   "name": "Zoltán Kurali",
+   "aliases": [
+    "Zoltan Kurali",
+    "Kurali Zoltán"
+   ],
+   "org": "MNB",
+   "org_aliases": [
+    "Magyar Nemzeti Bank",
+    "Hungarian National Bank",
+    "Central Bank of Hungary"
+   ],
+   "position": "Deputy Governor",
+   "group": "ncb",
+   "tier": 2,
+   "since": "2025-04",
+   "require_org": false,
+   "source": "https://www.mnb.hu/en/the-central-bank/management-and-control-of-the-mnb/management-of-mnb/curriculum-vitae-of-zoltan-kurali",
+   "checked": "2026-10-19",
+   "note": "Responsible for monetary policy, financial stability and reserve management; appointed 22 Apr 2025."
+  },
+  {
+   "id": "claudia-buch",
+   "name": "Claudia Buch",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB",
+    "Eurosystem",
+    "ECB Banking Supervision",
+    "SSM",
+    "Single Supervisory Mechanism"
+   ],
+   "position": "Chair of the Supervisory Board",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2024-01",
+   "require_org": false,
+   "source": "https://www.bankingsupervision.europa.eu/about/organisation/leadership/supervisoryboard/html/cvbuch.en.html",
+   "checked": "2026-10-19",
+   "note": "Listed as Chair on https://www.bankingsupervision.europa.eu/about/organisation/leadership/supervisoryboard/html/index.en.html"
+  },
+  {
+   "id": "dominique-laboureix",
+   "name": "Dominique Laboureix",
+   "aliases": [],
+   "org": "SRB",
+   "org_aliases": [
+    "Single Resolution Board",
+    "Einheitlicher Abwicklungsausschuss"
+   ],
+   "position": "Chair",
+   "group": "supervisor",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.srb.europa.eu/en/content/dominique-laboureix",
+   "checked": "2026-10-19",
+   "note": "Page says he took up current mandate in 2023 (month not stated). Listed as Chair on https://www.srb.europa.eu/en/board"
+  },
+  {
+   "id": "francois-louis-michaud",
+   "name": "François-Louis Michaud",
+   "aliases": [
+    "Francois-Louis Michaud"
+   ],
+   "org": "EBA",
+   "org_aliases": [
+    "European Banking Authority",
+    "Europäische Bankenaufsichtsbehörde"
+   ],
+   "position": "Chair",
+   "group": "supervisor",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.eba.europa.eu/about-us/organisation-and-governance/internal-organisation/top-management-and-directors",
+   "checked": "2026-10-19",
+   "note": "Appointed by the Council on 2026-03-30 (confirmed by EP 2026-03-10); previously EBA Executive Director since 2020-09-01. Exact start-of-term date not stated on page."
+  },
+  {
+   "id": "helmut-ettl",
+   "name": "Helmut Ettl",
+   "aliases": [],
+   "org": "FMA",
+   "org_aliases": [
+    "Austrian Financial Market Authority",
+    "EBA",
+    "European Banking Authority",
+    "Europäische Bankenaufsichtsbehörde",
+    "FMA Österreich",
+    "Finanzmarktaufsicht"
+   ],
+   "position": "Vorstand (Executive Director) der FMA; Vice-Chair of the EBA",
+   "group": "supervisor",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.eba.europa.eu/about-us/organisation-and-governance/governance-structure-and-decision-making/management-board/members",
+   "checked": "2026-10-19",
+   "note": "Vice-Chair per Management Board members table (Austrian FMA); stand-in while Executive Director post is vacant is NOT stated. Start of Vice-Chair role not stated (Management Board term 2023-07-10 renewed from 2026-01-10). / In office now but steps down 31 Oct 2026 (to become IMF Executive Director from 1 Nov 2026); successor Oliver Schütz appointed (https://www.fma.gv.at/fma-aufsichtskonferenz-europe-financial-future/, 06.10.2026). Page says appointed 2008 (month not given), term ran to 13 Feb 2028."
+  },
+  {
+   "id": "mariana-kuhnel",
+   "name": "Mariana Kühnel",
+   "aliases": [],
+   "org": "FMA",
+   "org_aliases": [
+    "Finanzmarktaufsicht",
+    "Austrian Financial Market Authority",
+    "FMA Österreich"
+   ],
+   "position": "Vorständin (Executive Director)",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2025-07",
+   "require_org": false,
+   "source": "https://www.fma.gv.at/organisation/",
+   "checked": "2026-10-19",
+   "note": "'seit Juli 2025 Vorständin der FMA'."
+  },
+  {
+   "id": "mark-branson",
+   "name": "Mark Branson",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Präsident",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2021-08",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/praesident/praesident_node.html",
+   "checked": "2026-10-19",
+   "note": "'seit August 2021 Präsident'. Directorate overview: https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/direktorium_node.html"
+  },
+  {
+   "id": "petra-hielkema",
+   "name": "Petra Hielkema",
+   "aliases": [],
+   "org": "EIOPA",
+   "org_aliases": [
+    "European Insurance and Occupational Pensions Authority",
+    "Europäische Aufsichtsbehörde für das Versicherungswesen und die betriebliche Altersversorgung"
+   ],
+   "position": "Chairperson",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2021-09",
+   "require_org": false,
+   "source": "https://www.eiopa.europa.eu/petra-hielkema_en",
+   "checked": "2026-10-19",
+   "note": "Page: term 2021-09-01 to 2031-08-31; Council extended mandate for a second five-year term starting 2026-09-01."
+  },
+  {
+   "id": "stefan-walter",
+   "name": "Stefan Walter",
+   "aliases": [],
+   "org": "FINMA",
+   "org_aliases": [
+    "Eidgenössische Finanzmarktaufsicht",
+    "Swiss Financial Market Supervisory Authority"
+   ],
+   "position": "Chief Executive Officer (Direktor)",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2024-04",
+   "require_org": true,
+   "source": "https://www.finma.ch/en/finma/organisation/executive-board/",
+   "checked": "2026-10-19",
+   "note": "'CEO since 1 April 2024'. Patric Eymann is Interim Deputy CEO (since 1 May 2025)."
+  },
+  {
+   "id": "verena-ross",
+   "name": "Verena Ross",
+   "aliases": [],
+   "org": "ESMA",
+   "org_aliases": [
+    "European Securities and Markets Authority",
+    "Europäische Wertpapier- und Marktaufsichtsbehörde"
+   ],
+   "position": "Chair",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2021-11",
+   "require_org": false,
+   "source": "https://www.esma.europa.eu/about-esma/governance-structure/senior-management",
+   "checked": "2026-10-19",
+   "note": "CURRENT UNTIL 2026-10-31. Council confirmed Carlo Comporti as next ESMA Chair on 2026-10-09; he takes up the position on 2026-11-01 (https://www.esma.europa.eu/press-news/esma-news/carlo-comporti-appointed-chair-european-securities-and-markets-authority). Update roster on 2026-11-01."
+  },
+  {
+   "id": "birgit-rodolphe",
+   "name": "Birgit Rodolphe",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Exekutivdirektorin Geschäftsbereich Anti-Financial Crime",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2026-07",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/anti-financial-crime/anti-financial-crime_node.html",
+   "checked": "2026-10-19",
+   "note": "New division since Jul 2026; she led the former Abwicklung und Geldwäscheprävention division from Nov 2021."
+  },
+  {
+   "id": "damian-jaworski",
+   "name": "Damian Jaworski",
+   "aliases": [],
+   "org": "EIOPA",
+   "org_aliases": [
+    "European Insurance and Occupational Pensions Authority",
+    "Europäische Aufsichtsbehörde für das Versicherungswesen und die betriebliche Altersversorgung"
+   ],
+   "position": "Executive Director",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2026-04",
+   "require_org": false,
+   "source": "https://www.eiopa.europa.eu/damian-jaworski_en",
+   "checked": "2026-10-19",
+   "note": "Executive Director since 2026-04-01 (succeeded Fausto Parente). EIOPA Vice-Chairperson is Zuzana Silberova per https://www.eiopa.europa.eu/about/governance-structure/internal-organisation_en; not added as separate entry."
+  },
+  {
+   "id": "julia-wiens",
+   "name": "Julia Wiens",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Exekutivdirektorin Geschäftsbereich Versicherungs- und Pensionsfondsaufsicht",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2024-01",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/versicherungsaufsicht/versicherungsaufsicht_node.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "marlene-amstad",
+   "name": "Marlene Amstad",
+   "aliases": [],
+   "org": "FINMA",
+   "org_aliases": [
+    "Eidgenössische Finanzmarktaufsicht",
+    "Swiss Financial Market Supervisory Authority"
+   ],
+   "position": "Chair of the Board of Directors (Verwaltungsratspräsidentin)",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2021-01",
+   "require_org": false,
+   "source": "https://www.finma.ch/en/finma/organisation/board-of-directors/",
+   "checked": "2026-10-19",
+   "note": "'Chair ... since 1 January 2021'; Vice-Chair is Martin Suter."
+  },
+  {
+   "id": "miguel-carcano-saenz-de-cenzano",
+   "name": "Miguel Carcaño Saenz De Cenzano",
+   "aliases": [
+    "Miguel Carcano Saenz De Cenzano"
+   ],
+   "org": "SRB",
+   "org_aliases": [
+    "Single Resolution Board",
+    "Einheitlicher Abwicklungsausschuss"
+   ],
+   "position": "Vice-Chair",
+   "group": "supervisor",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.srb.europa.eu/en/content/miguel-carcano-saenz-de-cenzano",
+   "checked": "2026-10-19",
+   "note": "SRB has no Executive Director on its Board page; Vice-Chair used as tier-2 slot. Start date not stated."
+  },
+  {
+   "id": "natasha-cazenave",
+   "name": "Natasha Cazenave",
+   "aliases": [],
+   "org": "ESMA",
+   "org_aliases": [
+    "European Securities and Markets Authority",
+    "Europäische Wertpapier- und Marktaufsichtsbehörde"
+   ],
+   "position": "Executive Director",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2021-06",
+   "require_org": false,
+   "source": "https://www.esma.europa.eu/about-esma/governance-structure/senior-management",
+   "checked": "2026-10-19",
+   "note": "ESMA Vice-Chair (observer on Management Board) is Vojtěch Belling per https://www.esma.europa.eu/about-esma/governance/management-board; not added as separate entry."
+  },
+  {
+   "id": "nikolas-speer",
+   "name": "Nikolas Speer",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Exekutivdirektor Geschäftsbereich Bankenaufsicht",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2025-04",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/bankenaufsicht/bankenaufsicht_node.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "rupert-schaefer",
+   "name": "Rupert Schaefer",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Exekutivdirektor Geschäftsbereich Strategie, Policy und Stabilität",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2026-07",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/sps/sps_node.html",
+   "checked": "2026-10-19",
+   "note": "Division renamed in Jul 2026 (formerly Strategie, Policy und Steuerung); he has been ED since Nov 2022."
+  },
+  {
+   "id": "silke-deppmeyer",
+   "name": "Silke Deppmeyer",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Exekutivdirektorin Geschäftsbereich Innere Verwaltung",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2023-02",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/iv/innereverwaltung_node.html",
+   "checked": "2026-10-19",
+   "note": "'seit dem 6. Februar 2023' (acting from Nov 2022)."
+  },
+  {
+   "id": "thorsten-potzsch",
+   "name": "Thorsten Pötzsch",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht",
+    "Federal Financial Supervisory Authority"
+   ],
+   "position": "Exekutivdirektor Geschäftsbereich Wertpapieraufsicht / Asset-Management",
+   "group": "supervisor",
+   "tier": 2,
+   "since": "2021-09",
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/die-bafin/ueber-die-bafin/organisation/direktorium/wertpapieraufsicht/wertpapieraufsicht_node.html",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "friedrich-merz",
+   "name": "Friedrich Merz",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "German Federal Government",
+    "Bundeskanzleramt"
+   ],
+   "position": "Bundeskanzler",
+   "group": "government",
+   "tier": 1,
+   "since": "2025-05",
+   "require_org": false,
+   "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett/friedrich-merz-2342660",
+   "checked": "2026-10-19",
+   "note": "Page: 'Seit dem 6. Mai 2025 Bundeskanzler'. Also listed on https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett"
+  },
+  {
+   "id": "karin-keller-sutter",
+   "name": "Karin Keller-Sutter",
+   "aliases": [],
+   "org": "EFD",
+   "org_aliases": [
+    "Eidgenössisches Finanzdepartement",
+    "Federal Department of Finance",
+    "Swiss Federal Council",
+    "Bundesrat"
+   ],
+   "position": "Vorsteherin des Eidgenössischen Finanzdepartements EFD",
+   "group": "government",
+   "tier": 1,
+   "since": "2023-01",
+   "require_org": false,
+   "source": "https://www.efd.admin.ch/de/",
+   "checked": "2026-10-19",
+   "note": "Page: 'seit Januar 2023 Vorsteherin des EFD, seit 2019 im Bundesrat'"
+  },
+  {
+   "id": "katherina-reiche",
+   "name": "Katherina Reiche",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "German Federal Government",
+    "Bundeskanzleramt",
+    "BMWE",
+    "BMWK",
+    "Bundesministerium für Wirtschaft und Energie"
+   ],
+   "position": "Bundesministerin für Wirtschaft und Energie",
+   "group": "government",
+   "tier": 1,
+   "since": "2025-05",
+   "require_org": false,
+   "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett/katherina-reiche-2342740",
+   "checked": "2026-10-19",
+   "note": "Official title is the female form; page: 'Seit dem 6. Mai 2025'. bmwe.de is NOT the ministry (unrelated site); the ministry was only confirmed via bundesregierung.de."
+  },
+  {
+   "id": "lars-klingbeil",
+   "name": "Lars Klingbeil",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "German Federal Government",
+    "Bundeskanzleramt",
+    "BMF",
+    "Bundesministerium der Finanzen"
+   ],
+   "position": "Bundesminister der Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "2025-05",
+   "require_org": false,
+   "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett/lars-klingbeil-2342606",
+   "checked": "2026-10-19",
+   "note": "Page: 'Seit dem 6. Mai 2025 Bundesminister der Finanzen und Stellvertreter des Bundeskanzlers'"
+  },
+  {
+   "id": "markus-marterbauer",
+   "name": "Markus Marterbauer",
+   "aliases": [],
+   "org": "BMF Österreich",
+   "org_aliases": [
+    "Bundesministerium für Finanzen",
+    "Austrian Federal Ministry of Finance"
+   ],
+   "position": "Bundesminister für Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "2025-03",
+   "require_org": false,
+   "source": "https://www.bmf.gv.at/ministerium/finanzminister-markus-marterbauer.html",
+   "checked": "2026-10-19",
+   "note": "Lebenslauf: 'Bundesminister für Finanzen, seit 3. März 2025'. Staatssekretärin Barbara Eibinger-Miedl is also listed (not requested)."
+  },
+  {
+   "id": "andrius-kubilius",
+   "name": "Andrius Kubilius",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "Commissioner for Defence and Space",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners/andrius-kubilius_en",
+   "checked": "2026-10-19",
+   "note": "Defence portfolio. Commissioner 2024-2029."
+  },
+  {
+   "id": "dan-jorgensen",
+   "name": "Dan Jørgensen",
+   "aliases": [
+    "Dan Jorgensen"
+   ],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "Commissioner for Energy and Housing",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners/dan-jorgensen_en",
+   "checked": "2026-10-19",
+   "note": "Energy portfolio. Commissioner 2024-2029."
+  },
+  {
+   "id": "kyriakos-pierrakakis",
+   "name": "Kyriakos Pierrakakis",
+   "aliases": [],
+   "org": "Eurogroup",
+   "org_aliases": [
+    "Euro Group",
+    "Eurogruppe",
+    "Eurogroup of euro area finance ministers"
+   ],
+   "position": "President of the Eurogroup",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2025-12",
+   "require_org": false,
+   "source": "https://commission.europa.eu/kyriakos-pierrakakis_en",
+   "checked": "2026-10-19",
+   "note": "Greek Minister of Economy and Finance; Eurogroup President as of 2025-12-12 (Commission profile; also ESM profile https://www.esm.europa.eu/profile/kyriakos-pierrakakis, which says he is ESM Board of Governors Chairperson). Consilium (Eurogroup's own site) returned a Cloudflare bot-challenge (HTTP 403), so not read directly."
+  },
+  {
+   "id": "maria-luis-albuquerque",
+   "name": "Maria Luís Albuquerque",
+   "aliases": [
+    "Maria Luis Albuquerque"
+   ],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "Commissioner for Financial Services and the Savings and Investments Union",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners/maria-luis-albuquerque_en",
+   "checked": "2026-10-19",
+   "note": "Financial Services / SIU portfolio. Commissioner 2024-2029."
+  },
+  {
+   "id": "maros-sefcovic",
+   "name": "Maroš Šefčovič",
+   "aliases": [
+    "Maros Sefcovic"
+   ],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "Commissioner for Trade and Economic Security; Interinstitutional Relations and Transparency",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners/maros-sefcovic_en",
+   "checked": "2026-10-19",
+   "note": "Trade portfolio. Commissioner 2024-2029."
+  },
+  {
+   "id": "nadia-calvino",
+   "name": "Nadia Calviño",
+   "aliases": [
+    "Nadia Calvino"
+   ],
+   "org": "EIB",
+   "org_aliases": [
+    "European Investment Bank",
+    "Europäische Investitionsbank",
+    "EIB Group"
+   ],
+   "position": "President",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2024-01",
+   "require_org": false,
+   "source": "https://www.eib.org/en/press/news/nadia-calvino-takes-over-as-eib-president",
+   "checked": "2026-10-19",
+   "note": "Page: 'appointed on 1 January 2024'. Also listed as President on https://www.eib.org/en/about/governance-and-structure/statutory-bodies/management-committee/ (date of situation 18/03/2026)."
+  },
+  {
+   "id": "pierre-gramegna",
+   "name": "Pierre Gramegna",
+   "aliases": [],
+   "org": "ESM",
+   "org_aliases": [
+    "European Stability Mechanism",
+    "Europäischer Stabilitätsmechanismus"
+   ],
+   "position": "Managing Director",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2022-12",
+   "require_org": false,
+   "source": "https://www.esm.europa.eu/profile/pierre-gramegna",
+   "checked": "2026-10-19",
+   "note": "Since 2022-12-01; also EFSF CEO. Listed on https://www.esm.europa.eu/about-us/governance."
+  },
+  {
+   "id": "teresa-ribera",
+   "name": "Teresa Ribera",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "Executive Vice-President for Clean, Just and Competitive Transition",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners/teresa-ribera_en",
+   "checked": "2026-10-19",
+   "note": "Holds the COMPETITION portfolio (her page: 'also responsible for modernising the EU's competition policy'). Term 2024-2029."
+  },
+  {
+   "id": "ursula-von-der-leyen",
+   "name": "Ursula von der Leyen",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "President of the European Commission",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners_en",
+   "checked": "2026-10-19",
+   "note": "Von der Leyen Commission, term 2024-2029; start month not stated on fetched page."
+  },
+  {
+   "id": "valdis-dombrovskis",
+   "name": "Valdis Dombrovskis",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EU Commission",
+    "Europäische Kommission",
+    "EU-Kommission"
+   ],
+   "position": "Commissioner for Economy and Productivity; Implementation and Simplification",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "require_org": false,
+   "source": "https://commission.europa.eu/about/organisation/college-commissioners/valdis-dombrovskis_en",
+   "checked": "2026-10-19",
+   "note": "Economy portfolio. Commissioner 2024-2029."
+  },
+  {
+   "id": "ajay-banga",
+   "name": "Ajay Banga",
+   "aliases": [],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "Weltbank"
+   ],
+   "position": "World Bank Group President",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2023-06",
+   "require_org": false,
+   "source": "https://www.worldbank.org/ext/en/who-we-are/leadership",
+   "checked": "2026-10-19",
+   "note": "Took office 2023-06-02 per his bio page (https://www.worldbank.org/ext/en/who-we-are/leadership/ajay-banga). Pages read via WebFetch."
+  },
+  {
+   "id": "kristalina-georgieva",
+   "name": "Kristalina Georgieva",
+   "aliases": [],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF",
+    "Internationaler Währungsfonds"
+   ],
+   "position": "Managing Director",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2019-10",
+   "require_org": false,
+   "source": "https://www.imf.org/en/about/senior-officials/bios/kristalina-georgieva",
+   "checked": "2026-10-19",
+   "note": "Second term began 2024-10-01. Page was read via WebFetch because curl got 'Access Denied' from imf.org."
+  },
+  {
+   "id": "mathias-cormann",
+   "name": "Mathias Cormann",
+   "aliases": [],
+   "org": "OECD",
+   "org_aliases": [
+    "Organisation for Economic Co-operation and Development"
+   ],
+   "position": "Secretary-General",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2021-06",
+   "require_org": false,
+   "source": "https://www.oecd.org/en/about/directorates/office-secretary-general/mathias-cormann.html",
+   "checked": "2026-10-19",
+   "note": "要確認: NOT confirmed by a page fetched today. oecd.org returned 403 or a Cloudflare challenge to curl and WebFetch. Only WebSearch result snippets from oecd.org pages say he is Secretary-General, with a second term from 2026-06-01. The source URL is the page named in those results and was not read."
+  },
+  {
+   "id": "ngozi-okonjo-iweala",
+   "name": "Ngozi Okonjo-Iweala",
+   "aliases": [],
+   "org": "WTO",
+   "org_aliases": [
+    "World Trade Organization",
+    "Welthandelsorganisation"
+   ],
+   "position": "Director-General",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2021-03",
+   "require_org": false,
+   "source": "https://www.wto.org/english/thewto_e/dg_e/dg_e.htm",
+   "checked": "2026-10-19",
+   "note": "First term began 2021-03-01. Second term began 2025-09-01 (four years)."
+  },
+  {
+   "id": "odile-renaud-basso",
+   "name": "Odile Renaud-Basso",
+   "aliases": [],
+   "org": "EBRD",
+   "org_aliases": [
+    "European Bank for Reconstruction and Development",
+    "Europäische Bank für Wiederaufbau und Entwicklung"
+   ],
+   "position": "President of the EBRD",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2020-11",
+   "require_org": false,
+   "source": "https://www.ebrd.com/home/who-we-are/our-organisation/ebrd-governance-leadership/president-odile-renaud-basso.html",
+   "checked": "2026-10-19",
+   "note": "Took up role Nov 2020; re-elected 2024-05-16, President until 2028 (https://www.ebrd.com/home/who-we-are/our-organisation/ebrd-governance-leadership/2024-election-of-the-ebrd-president.html)."
+  },
+  {
+   "id": "silvana-tenreyro",
+   "name": "Silvana Tenreyro",
+   "aliases": [],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF",
+    "Internationaler Währungsfonds"
+   ],
+   "position": "Economic Counsellor and Director, Research Department",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2026-08",
+   "require_org": false,
+   "source": "https://www.imf.org/annual-report/2026/who-we-are/executive-directors-and-management-team/",
+   "checked": "2026-10-19",
+   "note": "Succeeded Pierre-Olivier Gourinchas effective 2026-08-10 (per annual report management page). The title in the 2026-07-07 press release (https://www.imf.org/en/news/articles/2026/07/07/pr26241-imf-md-kristalina-georgieva-names-silvana-tenreyro-economic-counsellor-and-head-of-res-dept) is 'Economic Counsellor and Head of Research Department'. Her own IMF bio page returned HTTP 429 and was not read."
+  },
+  {
+   "id": "dan-katz",
+   "name": "Dan Katz",
+   "aliases": [
+    "Daniel Katz"
+   ],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF",
+    "Internationaler Währungsfonds"
+   ],
+   "position": "First Deputy Managing Director",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2025-10",
+   "require_org": true,
+   "source": "https://www.imf.org/en/about/senior-officials/bios/dan-katz",
+   "checked": "2026-10-19",
+   "note": "Assumed office 2025-10-06. Read via WebFetch."
+  },
+  {
+   "id": "mateusz-szczurek",
+   "name": "Mateusz Szczurek",
+   "aliases": [],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF",
+    "Internationaler Währungsfonds"
+   ],
+   "position": "Director, European Department",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2026-07",
+   "require_org": false,
+   "source": "https://www.imf.org/en/about/senior-officials/bios/mateusz-szczurek",
+   "checked": "2026-10-19",
+   "note": "Succeeded Alfred Kammer effective 2026-07-27 (annual report management page). The bio page itself says only 'July 2026'."
+  },
+  {
+   "id": "michael-kremer",
+   "name": "Michael Kremer",
+   "aliases": [],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "Weltbank"
+   ],
+   "position": "Chief Economist and Senior Vice President for Development Economics",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2026-10",
+   "require_org": true,
+   "source": "https://www.worldbank.org/ext/en/who-we-are/leadership",
+   "checked": "2026-10-19",
+   "note": "Listed on the leadership page as 'World Bank Group Chief Economist and Senior Vice President for Development Economics'. Press release 2026-09-16 (https://www.worldbank.org/en/news/press-release/2026/09/16/michael-kremer-appointed-as-world-bank-group-chief-economist) says the appointment is effective 2026-10-01. He replaces Indermit Gill, who is no longer on the page."
+  },
+  {
+   "id": "stefano-scarpetta",
+   "name": "Stefano Scarpetta",
+   "aliases": [],
+   "org": "OECD",
+   "org_aliases": [
+    "Organisation for Economic Co-operation and Development"
+   ],
+   "position": "Chief Economist",
+   "group": "intl_org",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.oecd.org/content/dam/oecd/en/publications/support-materials/2026/09/interim-economic-outlook/IEO120_PPT_Weathering_Successive_Shocks.pdf",
+   "checked": "2026-10-19",
+   "note": "Title page of the OECD Interim Economic Outlook slides dated 23 September 2026 reads 'Stefano Scarpetta, OECD Chief Economist'. This is an official OECD document fetched today, but not a leadership or bio page. Start date not found."
+  },
+  {
+   "id": "achim-truger",
+   "name": "Achim Truger",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Sachverständigenrat Wirtschaft",
+    "Wirtschaftsweise",
+    "Universität Duisburg-Essen",
+    "UDE"
+   ],
+   "position": "Mitglied des Sachverständigenrates Wirtschaft",
+   "group": "academia",
+   "tier": 1,
+   "since": "2019-03",
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/prof-dr-achim-truger.html",
+   "checked": "2026-10-19",
+   "note": "Affiliation: Professor für Sozioökonomie (Staatstätigkeit und Staatsfinanzen), Universität Duisburg-Essen (since Apr 2019)."
+  },
+  {
+   "id": "gabriel-felbermayr",
+   "name": "Gabriel Felbermayr",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "Austrian Institute of Economic Research",
+    "German Council of Economic Experts",
+    "SVR",
+    "Sachverständigenrat Wirtschaft",
+    "WIFO",
+    "WU Wien",
+    "Wirtschaftsuniversität Wien",
+    "Wirtschaftsweise",
+    "Österreichisches Institut für Wirtschaftsforschung"
+   ],
+   "position": "Mitglied des Sachverständigenrates Wirtschaft; Direktor",
+   "group": "academia",
+   "tier": 1,
+   "since": "2026-03",
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/prof-gabriel-felbermayr-phd.html",
+   "checked": "2026-10-19",
+   "note": "Member since Mar 2026. Affiliation: Director of WIFO (Vienna) and Professor at WU Wien. Same person as the WIFO entry below. / 'seit 1. Oktober 2021 Direktor'. Tier 1 because he has been an SVR member since Mar 2026 (SVR page and WIFO news of 15.09.2026)."
+  },
+  {
+   "id": "martin-werding",
+   "name": "Martin Werding",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Sachverständigenrat Wirtschaft",
+    "Wirtschaftsweise",
+    "Ruhr-Universität Bochum",
+    "RUB"
+   ],
+   "position": "Mitglied des Sachverständigenrates Wirtschaft",
+   "group": "academia",
+   "tier": 1,
+   "since": "2022-09",
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/prof-dr-martin-werding.html",
+   "checked": "2026-10-19",
+   "note": "Affiliation: Professor für Sozialpolitik und öffentliche Finanzen, Ruhr-Universität Bochum. Members list (5 persons) confirmed at https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder.html"
+  },
+  {
+   "id": "monika-schnitzer",
+   "name": "Monika Schnitzer",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Sachverständigenrat Wirtschaft",
+    "Wirtschaftsweise",
+    "LMU München",
+    "Ludwig-Maximilians-Universität München",
+    "LMU"
+   ],
+   "position": "Vorsitzende des Sachverständigenrates Wirtschaft",
+   "group": "academia",
+   "tier": 1,
+   "since": "2022-10",
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/prof-dr-monika-schnitzer.html",
+   "checked": "2026-10-19",
+   "note": "Chair since Oct 2022, member since Apr 2020. Affiliation: Professorin für Komparative Wirtschaftsforschung, LMU München."
+  },
+  {
+   "id": "veronika-grimm",
+   "name": "Veronika Grimm",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Sachverständigenrat Wirtschaft",
+    "Wirtschaftsweise",
+    "Technische Universität Nürnberg",
+    "UTN",
+    "TU Nürnberg"
+   ],
+   "position": "Mitglied des Sachverständigenrates Wirtschaft",
+   "group": "academia",
+   "tier": 1,
+   "since": "2020-04",
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/prof-dr-veronika-grimm.html",
+   "checked": "2026-10-19",
+   "note": "Affiliation: Professorin, Technische Universität Nürnberg (UTN), Leiterin Energy Systems und Market Design Lab (was FAU Erlangen-Nürnberg until 2024)."
+  },
+  {
+   "id": "achim-wambach",
+   "name": "Achim Wambach",
+   "aliases": [],
+   "org": "ZEW",
+   "org_aliases": [
+    "ZEW Mannheim",
+    "Leibniz-Zentrum für Europäische Wirtschaftsforschung",
+    "ZEW - Leibniz Centre for European Economic Research"
+   ],
+   "position": "Präsident (Wissenschaftliche Leitung)",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.zew.de/das-zew/organisation/praesident-und-kaufmaennische-direktorin",
+   "checked": "2026-10-19",
+   "note": "Also confirmed at https://www.zew.de/das-zew/ueber-das-zew ('Institutsleitung'). Commercial director: Claudia von Schuttenbach. No since-date. Not an SVR member, so tier 2."
+  },
+  {
+   "id": "clemens-fuest",
+   "name": "Clemens Fuest",
+   "aliases": [],
+   "org": "ifo",
+   "org_aliases": [
+    "ifo Institut",
+    "ifo Institut München",
+    "Leibniz-Institut für Wirtschaftsforschung an der Universität München"
+   ],
+   "position": "Präsident",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ifo.de/ueber-uns/team",
+   "checked": "2026-10-19",
+   "note": "Page lists Fuest as Präsident, Stephanie Dittmer as Vorstandsmitglied; no since-date given. Not in SVR current/former lists, so tier 2. Page blocks curl (client challenge); read via WebFetch."
+  },
+  {
+   "id": "hans-gersbach",
+   "name": "Hans Gersbach",
+   "aliases": [],
+   "org": "KOF",
+   "org_aliases": [
+    "KOF Institut",
+    "KOF Swiss Economic Institute",
+    "KOF Konjunkturforschungsstelle",
+    "KOF ETH Zürich"
+   ],
+   "position": "Director of Research (member of KOF Directorate)",
+   "group": "academia",
+   "tier": 2,
+   "since": "2023",
+   "require_org": false,
+   "source": "https://kof.ethz.ch/en/the-institute/our-history.html",
+   "checked": "2026-10-19",
+   "note": "'member of the KOF Directorate as Director of Research since 2023' (month not given). Added because KOF is co-led; drop if only one head is wanted."
+  },
+  {
+   "id": "holger-bonin",
+   "name": "Holger Bonin",
+   "aliases": [],
+   "org": "IHS",
+   "org_aliases": [
+    "Institut für Höhere Studien",
+    "Institute for Advanced Studies",
+    "IHS Wien"
+   ],
+   "position": "Scientific Director (Wissenschaftlicher Leiter)",
+   "group": "academia",
+   "tier": 2,
+   "since": "2023-07",
+   "require_org": false,
+   "source": "https://www.ihs.ac.at/people/holger-bonin/",
+   "checked": "2026-10-19",
+   "note": "Managing Director: Julia Studencki (https://www.ihs.ac.at/about/organisation/). Not an SVR member, so tier 2."
+  },
+  {
+   "id": "jan-egbert-sturm",
+   "name": "Jan-Egbert Sturm",
+   "aliases": [],
+   "org": "KOF",
+   "org_aliases": [
+    "KOF Institut",
+    "KOF Swiss Economic Institute",
+    "KOF Konjunkturforschungsstelle",
+    "KOF ETH Zürich"
+   ],
+   "position": "Director (Direktor, KOF Directorate)",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://kof.ethz.ch/en/the-institute/our-history.html",
+   "checked": "2026-10-19",
+   "note": "Page: 'has headed the KOF since 2006' (no month). KOF has dual leadership; co-director is Hans Gersbach (next entry). Not an SVR member, so tier 2."
+  },
+  {
+   "id": "jeromin-zettelmeyer",
+   "name": "Jeromin Zettelmeyer",
+   "aliases": [],
+   "org": "Bruegel",
+   "org_aliases": [
+    "Bruegel Brussels",
+    "Brussels European and Global Economic Laboratory"
+   ],
+   "position": "Director",
+   "group": "academia",
+   "tier": 2,
+   "since": "2022-09",
+   "require_org": false,
+   "source": "https://www.bruegel.org/people/jeromin-zettelmeyer",
+   "checked": "2026-10-19",
+   "note": "'Director of Bruegel since September 2022'. Not an SVR member, so tier 2."
+  },
+  {
+   "id": "marcel-fratzscher",
+   "name": "Marcel Fratzscher",
+   "aliases": [],
+   "org": "DIW Berlin",
+   "org_aliases": [
+    "Deutsches Institut für Wirtschaftsforschung",
+    "DIW"
+   ],
+   "position": "Präsident",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.diw.de/de/diw_01.c.618953.de/das_institut.html",
+   "checked": "2026-10-19",
+   "note": "Page lists Fratzscher as Präsident (Vorstand also: Kritikos, Rüttinger, Zinn); no since-date. Not an SVR member, so tier 2. diw.de returns 403 to curl; read via WebFetch."
+  },
+  {
+   "id": "michael-huther",
+   "name": "Michael Hüther",
+   "aliases": [],
+   "org": "IW Köln",
+   "org_aliases": [
+    "Institut der deutschen Wirtschaft",
+    "Institut der deutschen Wirtschaft Köln",
+    "IW"
+   ],
+   "position": "Direktor und Mitglied des Präsidiums",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.iwkoeln.de/institut/direktion-und-geschaeftsfuehrung.html",
+   "checked": "2026-10-19",
+   "note": "Page also names Vera Demary (Leiterin Wissenschaft) and Klaus Hafemann (kaufmännischer Geschäftsführer). No since-date. Not an SVR member, so tier 2."
+  },
+  {
+   "id": "moritz-schularick",
+   "name": "Moritz Schularick",
+   "aliases": [],
+   "org": "IfW Kiel",
+   "org_aliases": [
+    "Kiel Institut für Weltwirtschaft",
+    "Kiel Institute for the World Economy",
+    "Kiel Institut"
+   ],
+   "position": "Präsident, Geschäftsführender Wissenschaftlicher Direktor",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.ifw-kiel.de/de/institut/ueber-das-kiel-institut/organisation/organigramm/",
+   "checked": "2026-10-19",
+   "note": "Vizepräsident: Christoph Trebesch. Not an SVR member, so tier 2. The 'Präsidenten' history page still ends at Felbermayr (2021), so no since-date confirmed."
+  },
+  {
+   "id": "reint-gropp",
+   "name": "Reint E. Gropp",
+   "aliases": [
+    "Reint Gropp"
+   ],
+   "org": "IWH",
+   "org_aliases": [
+    "Leibniz-Institut für Wirtschaftsforschung Halle",
+    "Halle Institute for Economic Research",
+    "IWH Halle"
+   ],
+   "position": "Präsident",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": false,
+   "source": "https://www.iwh-halle.de/ueber-das-iwh/gremien/vorstand-und-aufsichtsrat",
+   "checked": "2026-10-19",
+   "note": "'Professor Reint E. Gropp, Ph.D. ist Präsident des IWH'; no since-date. Not an SVR member, so tier 2."
+  },
+  {
+   "id": "sebastian-dullien",
+   "name": "Sebastian Dullien",
+   "aliases": [],
+   "org": "IMK",
+   "org_aliases": [
+    "Institut für Makroökonomie und Konjunkturforschung",
+    "Hans-Böckler-Stiftung",
+    "HBS",
+    "IMK Düsseldorf"
+   ],
+   "position": "Wissenschaftlicher Direktor",
+   "group": "academia",
+   "tier": 2,
+   "since": "2019-04",
+   "require_org": false,
+   "source": "https://www.imk-boeckler.de/de/organigramm-15349.htm",
+   "checked": "2026-10-19",
+   "note": "Since-date from IMK press release 07.03.2019 (appointed effective 1 Apr). Not an SVR member (Truger is a former IMK fellow only), so tier 2."
+  },
+  {
+   "id": "thomas-bauer",
+   "name": "Thomas K. Bauer",
+   "aliases": [],
+   "org": "RWI",
+   "org_aliases": [
+    "RWI Essen",
+    "RWI – Leibniz-Institut für Wirtschaftsforschung",
+    "Rheinisch-Westfälisches Institut für Wirtschaftsforschung"
+   ],
+   "position": "Vizepräsident (highest-ranking listed Vorstand member; Präsident post not filled on page)",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "require_org": true,
+   "source": "https://www.rwi-essen.de/rwi/organisation/vorstand",
+   "checked": "2026-10-19",
+   "note": "要確認: Christoph M. Schmidt (former SVR chair) ended as RWI president on 30 Jun 2026 (press release 02.07.2026, rwi-essen.de) and is now Leibniz Association president. Vorstand page now shows Bauer (VP since 2009), Rumpf (administrative), Schneider (extended board) and NO president or acting president. Successor/acting status is unconfirmed; the 02.07.2026 'Veränderungen in den Gremien' release failed to load. Bauer is not an SVR member, so tier 2."
+  }
+ ]
+}

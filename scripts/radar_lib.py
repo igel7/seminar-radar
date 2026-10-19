@@ -160,12 +160,18 @@ PEOPLE_GROUPS = ("ecb", "bundesbank", "bis", "ncb", "supervisor", "government",
                  "eu_body", "intl_org", "academia")
 
 
+# NFKD で分解されない文字(ø ł đ ß æ œ þ)の転写。これが無いと "Jørgensen" が "rgensen" になる
+_TRANSLIT = str.maketrans({"ø": "o", "Ø": "o", "ł": "l", "Ł": "l", "đ": "d", "Đ": "d",
+                           "ß": "ss", "æ": "ae", "Æ": "ae", "œ": "oe", "Œ": "oe",
+                           "þ": "th", "Þ": "th", "ı": "i"})
+
+
 def norm_person_name(s):
     """氏名の照合キー: アクセント除去・小文字化・ピリオド/ハイフン除去・1文字の
     イニシャル("R.")を落とす。"Philip R. Lane" と "Philip Lane"、"Véron" と "Veron" を同一視。"""
     if not isinstance(s, str):
         return ""
-    s = unicodedata.normalize("NFKD", s)
+    s = unicodedata.normalize("NFKD", s.translate(_TRANSLIT))
     s = "".join(c for c in s if not unicodedata.combining(c)).casefold()
     s = re.sub(r"[.\u2019'’]", "", s)
     s = re.sub(r"[-–—/,()]", " ", s)
@@ -175,7 +181,7 @@ def norm_person_name(s):
 def norm_org_name(s):
     if not isinstance(s, str):
         return ""
-    s = unicodedata.normalize("NFKD", s)
+    s = unicodedata.normalize("NFKD", s.translate(_TRANSLIT))
     s = "".join(c for c in s if not unicodedata.combining(c)).casefold()
     return " ".join(re.sub(r"[^a-z0-9]+", " ", s).split())
 
