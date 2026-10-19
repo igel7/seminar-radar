@@ -7,6 +7,7 @@
   "現・元メンバー / 2=各国中銀の副総裁・理事、局長・チーフエコノミスト級、研究所所長(五賢人経験者を除く)。",
   "元職者も同じ原則で載せる(former: true, until: 退任年月)。元職者は所属が食い違っても照合で一致させる。",
   "group: ecb / bundesbank / bis / ncb / supervisor / government / eu_body / intl_org / academia。",
+  "short: カレンダーセル・一覧に出す短い英語肩書(例 'ECB President', 'ex-IMF Chief Economist')。元職者は 'ex-' を付ける。",
   "require_org: 同姓同名が多い名前。登壇者側に所属の記載が無ければ一致させない。",
   "source: 根拠にした公式ページ。checked: その確認日。人事異動は人が反映する。"
  ],
@@ -26,6 +27,7 @@
     "Eurosystem"
    ],
    "position": "Vice-President of the ECB",
+   "short": "ECB VP",
    "group": "ecb",
    "tier": 1,
    "since": "2026-06",
@@ -48,6 +50,7 @@
     "Eurosystem"
    ],
    "position": "President of the ECB",
+   "short": "ECB President",
    "group": "ecb",
    "tier": 1,
    "since": "2019-11",
@@ -70,6 +73,7 @@
     "Eurosystem"
    ],
    "position": "Member of the Executive Board of the ECB",
+   "short": "ECB Board member",
    "group": "ecb",
    "tier": 1,
    "since": "2020-01",
@@ -91,6 +95,7 @@
     "EZB"
    ],
    "position": "Former President",
+   "short": "ex-ECB President",
    "group": "ecb",
    "tier": 1,
    "since": "2003-11",
@@ -114,6 +119,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board (Chief Economist)",
+   "short": "ex-ECB Chief Economist",
    "group": "ecb",
    "tier": 1,
    "since": "2006-06",
@@ -137,6 +143,7 @@
     "EZB"
    ],
    "position": "Former Vice-President",
+   "short": "ex-ECB VP",
    "group": "ecb",
    "tier": 1,
    "since": "2002-06",
@@ -158,6 +165,7 @@
     "EZB"
    ],
    "position": "Former Vice-President",
+   "short": "ex-ECB VP",
    "group": "ecb",
    "tier": 1,
    "since": "2018-06",
@@ -179,6 +187,7 @@
     "EZB"
    ],
    "position": "Former President",
+   "short": "ex-ECB President",
    "group": "ecb",
    "tier": 1,
    "since": "2011-11",
@@ -200,6 +209,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board (Chief Economist)",
+   "short": "ex-ECB Chief Economist",
    "group": "ecb",
    "tier": 1,
    "since": "1998-06",
@@ -221,6 +231,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board (Chief Economist)",
+   "short": "ex-ECB Chief Economist",
    "group": "ecb",
    "tier": 1,
    "since": "2011-06",
@@ -245,6 +256,7 @@
     "Eurosystem"
    ],
    "position": "Member of the Executive Board of the ECB",
+   "short": "ECB Chief Economist",
    "group": "ecb",
    "tier": 1,
    "since": "2019-06",
@@ -267,6 +279,7 @@
     "Eurosystem"
    ],
    "position": "Member of the Executive Board of the ECB",
+   "short": "ECB Board member",
    "group": "ecb",
    "tier": 1,
    "since": "2023-11",
@@ -290,6 +303,7 @@
     "EZB"
    ],
    "position": "Former Vice-President",
+   "short": "ex-ECB VP",
    "group": "ecb",
    "tier": 1,
    "since": "2010-06",
@@ -314,6 +328,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2012-01",
@@ -336,6 +351,7 @@
     "Eurosystem"
    ],
    "position": "Member of the Executive Board of the ECB",
+   "short": "ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2020-12",
@@ -357,6 +373,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2003-06",
@@ -381,6 +398,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2004-06",
@@ -404,6 +422,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2012-01",
@@ -425,6 +444,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2005-06",
@@ -448,6 +468,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2014-01",
@@ -469,6 +490,7 @@
     "EZB"
    ],
    "position": "Former Member of the Executive Board",
+   "short": "ex-ECB Board member",
    "group": "ecb",
    "tier": 2,
    "since": "2012-12",
@@ -490,6 +512,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "Former President",
+   "short": "ex-Bundesbank President",
    "group": "bundesbank",
    "tier": 1,
    "since": "2004-04",
@@ -509,6 +532,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "Former President",
+   "short": "ex-Bundesbank President",
    "group": "bundesbank",
    "tier": 1,
    "since": "2011-05",
@@ -528,6 +552,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "President of the Deutsche Bundesbank",
+   "short": "Bundesbank President",
    "group": "bundesbank",
    "tier": 1,
    "since": "2022-01",
@@ -550,6 +575,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "Member of the Executive Board (Data and Statistics; Research Centre; Information Technology; Risk Control)",
+   "short": "Bundesbank Board member",
    "group": "bundesbank",
    "tier": 2,
    "since": "2024-11",
@@ -571,6 +597,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "Member of the Executive Board (Cash Management; Compliance; Digital Euro; Human Resources; Audit; Payments and Settlement Systems)",
+   "short": "Bundesbank Board member",
    "group": "bundesbank",
    "tier": 2,
    "since": "2024-09",
@@ -590,6 +617,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "Member of the Executive Board (Financial Supervision; Financial Stability)",
+   "short": "Bundesbank Board member",
    "group": "bundesbank",
    "tier": 2,
    "since": "2024-09",
@@ -609,6 +637,7 @@
     "Deutsche Bundesbank"
    ],
    "position": "First Deputy Governor of the Deutsche Bundesbank (Controlling, Accounting and Organisation; Markets; Sustainability)",
+   "short": "Bundesbank VP",
    "group": "bundesbank",
    "tier": 2,
    "since": "2024-09",
@@ -631,6 +660,7 @@
     "BIZ"
    ],
    "position": "Former General Manager",
+   "short": "ex-BIS GM",
    "group": "bis",
    "tier": 1,
    "since": "2017-12",
@@ -651,6 +681,7 @@
     "BIZ"
    ],
    "position": "Former General Manager",
+   "short": "ex-BIS GM",
    "group": "bis",
    "tier": 1,
    "since": "2009-04",
@@ -673,6 +704,7 @@
     "BIZ"
    ],
    "position": "Former General Manager",
+   "short": "ex-BIS GM",
    "group": "bis",
    "tier": 1,
    "since": "2003-04",
@@ -696,6 +728,7 @@
     "BIZ"
    ],
    "position": "General Manager",
+   "short": "BIS GM",
    "group": "bis",
    "tier": 1,
    "since": "2025-07",
@@ -720,6 +753,7 @@
     "BIZ"
    ],
    "position": "Deputy General Manager",
+   "short": "BIS Deputy GM",
    "group": "bis",
    "tier": 2,
    "since": "2023-09",
@@ -740,6 +774,7 @@
     "BIZ"
    ],
    "position": "Former Head of the Monetary and Economic Department",
+   "short": "ex-BIS Chief Economist",
    "group": "bis",
    "tier": 2,
    "since": "2013-11",
@@ -760,6 +795,7 @@
     "BIZ"
    ],
    "position": "Former Economic Adviser and Head of the Monetary and Economic Department",
+   "short": "ex-BIS Chief Economist",
    "group": "bis",
    "tier": 2,
    "since": "2014-05",
@@ -783,6 +819,7 @@
     "BIZ"
    ],
    "position": "Economic Adviser and Head of Monetary and Economic Department",
+   "short": "BIS Chief Economist",
    "group": "bis",
    "tier": 2,
    "since": "2026-09",
@@ -805,6 +842,7 @@
     "National Bank of Poland"
    ],
    "position": "President of NBP (Prezes NBP; English NBP site titles it Governor)",
+   "short": "NBP President",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -826,6 +864,7 @@
     "Board of Governors of the Federal Reserve System"
    ],
    "position": "Former Chair of the Board of Governors",
+   "short": "ex-Fed Chair",
    "group": "ncb",
    "tier": 1,
    "since": "1987-08",
@@ -846,6 +885,7 @@
     "CBM"
    ],
    "position": "Governor",
+   "short": "CB Malta Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -869,6 +909,7 @@
     "ČNB"
    ],
    "position": "Governor",
+   "short": "CNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2022-07",
@@ -890,6 +931,7 @@
     "Financial Stability Board"
    ],
    "position": "Governor; Chair of the FSB",
+   "short": "BoE Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2020-03",
@@ -913,6 +955,7 @@
     "Національний банк України"
    ],
    "position": "Governor",
+   "short": "NBU Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2022-10",
@@ -935,6 +978,7 @@
     "HNB"
    ],
    "position": "Governor",
+   "short": "HNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -958,6 +1002,7 @@
     "Board of Governors of the Federal Reserve System"
    ],
    "position": "Former Chair of the Board of Governors",
+   "short": "ex-Fed Chair",
    "group": "ncb",
    "tier": 1,
    "since": "2006-02",
@@ -979,6 +1024,7 @@
     "Bank of Slovenia"
    ],
    "position": "Former Governor",
+   "short": "ex-Banka Slovenije Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2019-01",
@@ -1001,6 +1047,7 @@
     "CBC"
    ],
    "position": "Governor",
+   "short": "CB Cyprus Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1023,6 +1070,7 @@
     "Κεντρική Τράπεζα της Κύπρου"
    ],
    "position": "Former Governor",
+   "short": "ex-CB Cyprus Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2019-04",
@@ -1045,6 +1093,7 @@
     "Bulgarian National Bank"
    ],
    "position": "Governor",
+   "short": "BNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1065,6 +1114,7 @@
     "Bank Ċentrali ta' Malta"
    ],
    "position": "Former Governor",
+   "short": "ex-CB Malta Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2021-01",
@@ -1085,6 +1135,7 @@
     "Bank of France"
    ],
    "position": "Governor",
+   "short": "BdF Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2026-06",
@@ -1105,6 +1156,7 @@
     "Finlands Bank"
    ],
    "position": "Former Governor",
+   "short": "ex-BoF Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2004-07",
@@ -1125,6 +1177,7 @@
     "Banca d’Italia"
    ],
    "position": "Governor",
+   "short": "BdI Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2023-11",
@@ -1146,6 +1199,7 @@
     "Bank of France"
    ],
    "position": "Former Governor",
+   "short": "ex-BdF Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2015",
@@ -1166,6 +1220,7 @@
     "CBI"
    ],
    "position": "Governor",
+   "short": "CB Ireland Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1186,6 +1241,7 @@
     "Central Bank of Luxembourg"
    ],
    "position": "Governor",
+   "short": "BCL Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1207,6 +1263,7 @@
     "Bank of Lithuania"
    ],
    "position": "Chairman of the Board",
+   "short": "Lietuvos bankas Chair",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1226,6 +1283,7 @@
     "Banka e Shqipërisë"
    ],
    "position": "Governor",
+   "short": "Bank of Albania Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2015-02",
@@ -1249,6 +1307,7 @@
     "National Bank of Hungary"
    ],
    "position": "Former Governor",
+   "short": "ex-MNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2013-03",
@@ -1271,6 +1330,7 @@
     "日本銀行"
    ],
    "position": "Former Governor",
+   "short": "ex-BoJ Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2013-03",
@@ -1291,6 +1351,7 @@
     "Banca d’Italia"
    ],
    "position": "Former Governor",
+   "short": "ex-BdI Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2011-11",
@@ -1312,6 +1373,7 @@
     "Bank of Latvia"
    ],
    "position": "Former Governor",
+   "short": "ex-Latvijas Banka Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2001",
@@ -1333,6 +1395,7 @@
     "NBB"
    ],
    "position": "Former Governor",
+   "short": "ex-NBB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1356,6 +1419,7 @@
     "Board of Governors of the Federal Reserve System"
    ],
    "position": "Former Chair of the Board of Governors",
+   "short": "ex-Fed Chair",
    "group": "ncb",
    "tier": 1,
    "since": "2014-02",
@@ -1378,6 +1442,7 @@
     "Centralna banka Bosne i Hercegovine"
    ],
    "position": "Governor (Chairman of the Governing Board)",
+   "short": "CBBH Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2024-01",
@@ -1398,6 +1463,7 @@
     "Schweizerische Nationalbank"
    ],
    "position": "Former Chairman of the Governing Board",
+   "short": "ex-SNB Chairman",
    "group": "ncb",
    "tier": 1,
    "since": "2001-01",
@@ -1422,6 +1488,7 @@
     "Board of Governors of the Federal Reserve System"
    ],
    "position": "Former Chair of the Board of Governors",
+   "short": "ex-Fed Chair",
    "group": "ncb",
    "tier": 1,
    "since": "2018-02",
@@ -1444,6 +1511,7 @@
     "ČNB"
    ],
    "position": "Former Governor",
+   "short": "ex-CNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2016-07",
@@ -1466,6 +1534,7 @@
     "Narodna banka Srbije"
    ],
    "position": "Governor",
+   "short": "NBS Serbia Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2012-08",
@@ -1488,6 +1557,7 @@
     "BdE"
    ],
    "position": "Governor",
+   "short": "BdE Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2024-09",
@@ -1510,6 +1580,7 @@
     "NBS"
    ],
    "position": "Former Governor",
+   "short": "ex-NBS Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2010-01",
@@ -1532,6 +1603,7 @@
     "日本銀行"
    ],
    "position": "Governor",
+   "short": "BoJ Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2023-04",
@@ -1554,6 +1626,7 @@
     "US Federal Reserve"
    ],
    "position": "Chairman",
+   "short": "Fed Chair",
    "group": "ncb",
    "tier": 1,
    "since": "2026-05",
@@ -1574,6 +1647,7 @@
     "Dutch Central Bank"
    ],
    "position": "Former President",
+   "short": "ex-DNB President",
    "group": "ncb",
    "tier": 1,
    "since": "2011-07",
@@ -1595,6 +1669,7 @@
     "NBU"
    ],
    "position": "Former Governor",
+   "short": "ex-NBU Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2020-07",
@@ -1616,6 +1691,7 @@
     "Bank of Estonia"
    ],
    "position": "Former Governor",
+   "short": "ex-Eesti Pank Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2019-06",
@@ -1636,6 +1712,7 @@
     "National Bank of Poland"
    ],
    "position": "Former President",
+   "short": "ex-NBP President",
    "group": "ncb",
    "tier": 1,
    "since": "2010-06",
@@ -1657,6 +1734,7 @@
     "BoE"
    ],
    "position": "Former Governor",
+   "short": "ex-BoE Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2013",
@@ -1678,6 +1756,7 @@
     "Austrian National Bank"
    ],
    "position": "Governor of the Oesterreichische Nationalbank",
+   "short": "OeNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2025-09",
@@ -1699,6 +1778,7 @@
     "Banque nationale suisse"
    ],
    "position": "Chairman of the Governing Board",
+   "short": "SNB Chairman",
    "group": "ncb",
    "tier": 1,
    "since": "2024-10",
@@ -1721,6 +1801,7 @@
     "日本銀行"
    ],
    "position": "Former Governor",
+   "short": "ex-BoJ Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2008-04",
@@ -1742,6 +1823,7 @@
     "BoE"
    ],
    "position": "Former Governor",
+   "short": "ex-BoE Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2003",
@@ -1766,6 +1848,7 @@
     "Central Bank of Hungary"
    ],
    "position": "Governor",
+   "short": "MNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2025-03",
@@ -1789,6 +1872,7 @@
     "NBR"
    ],
    "position": "Governor",
+   "short": "BNR Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1811,6 +1895,7 @@
     "Eurogroup"
    ],
    "position": "Former Governor; Former President of the Eurogroup",
+   "short": "ex-BdP Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2020-07",
@@ -1832,6 +1917,7 @@
     "Bank of Latvia"
    ],
    "position": "Governor",
+   "short": "Latvijas Banka Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1852,6 +1938,7 @@
     "Dutch Central Bank"
    ],
    "position": "President",
+   "short": "DNB President",
    "group": "ncb",
    "tier": 1,
    "since": "2025-07",
@@ -1873,6 +1960,7 @@
     "Suomen Pankki - Finlands Bank"
    ],
    "position": "Governor",
+   "short": "BoF Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1893,6 +1981,7 @@
     "PBC"
    ],
    "position": "Governor",
+   "short": "PBoC Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2023-07",
@@ -1915,6 +2004,7 @@
     "NBS"
    ],
    "position": "Governor",
+   "short": "NBS Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1937,6 +2027,7 @@
     "Schweizerische Nationalbank"
    ],
    "position": "Former Chairman of the Governing Board",
+   "short": "ex-SNB Chairman",
    "group": "ncb",
    "tier": 1,
    "since": "2010-01",
@@ -1958,6 +2049,7 @@
     "NBB"
    ],
    "position": "Governor",
+   "short": "NBB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1979,6 +2071,7 @@
     "Bank of Slovenia"
    ],
    "position": "Governor",
+   "short": "Banka Slovenije Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -1999,6 +2092,7 @@
     "Austrian National Bank"
    ],
    "position": "Former Governor",
+   "short": "ex-OeNB Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2019-09",
@@ -2021,6 +2115,7 @@
     "Schweizerische Nationalbank"
    ],
    "position": "Former Chairman of the Governing Board",
+   "short": "ex-SNB Chairman",
    "group": "ncb",
    "tier": 1,
    "since": "2012-04",
@@ -2043,6 +2138,7 @@
     "日本銀行"
    ],
    "position": "Former Governor",
+   "short": "ex-BoJ Gov.",
    "group": "ncb",
    "tier": 1,
    "since": "2003-03",
@@ -2062,6 +2158,7 @@
     "Bank of Lithuania"
    ],
    "position": "Former Chairman of the Board",
+   "short": "ex-Lietuvos bankas Chair",
    "group": "ncb",
    "tier": 1,
    "since": "2011-03",
@@ -2085,6 +2182,7 @@
     "BoG"
    ],
    "position": "Governor",
+   "short": "BoG Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -2107,6 +2205,7 @@
     "BdP"
    ],
    "position": "Governor",
+   "short": "BdP Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -2128,6 +2227,7 @@
     "Bank of Estonia"
    ],
    "position": "Governor",
+   "short": "Eesti Pank Gov.",
    "group": "ncb",
    "tier": 1,
    "since": null,
@@ -2149,6 +2249,7 @@
     "Banque nationale suisse"
    ],
    "position": "Vice Chairman of the Governing Board",
+   "short": "SNB Vice Chair",
    "group": "ncb",
    "tier": 2,
    "since": "2024-10",
@@ -2168,6 +2269,7 @@
     "BoE"
    ],
    "position": "Deputy Governor, Monetary Policy",
+   "short": "BoE Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2024-07",
@@ -2190,6 +2292,7 @@
     "BoE"
    ],
    "position": "Deputy Governor, Markets and Banking",
+   "short": "BoE Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2017-09",
@@ -2214,6 +2317,7 @@
     "Central Bank of Hungary"
    ],
    "position": "Deputy Governor",
+   "short": "MNB Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2025-09",
@@ -2235,6 +2339,7 @@
     "Austrian National Bank"
    ],
    "position": "Vice Governor of the Oesterreichische Nationalbank",
+   "short": "OeNB Vice Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2024-12",
@@ -2258,6 +2363,7 @@
     "ČNB"
    ],
    "position": "Deputy Governor",
+   "short": "CNB Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2022-07",
@@ -2277,6 +2383,7 @@
     "BoE"
    ],
    "position": "Chief Economist",
+   "short": "BoE Chief Economist",
    "group": "ncb",
    "tier": 2,
    "since": "2021-09",
@@ -2298,6 +2405,7 @@
     "ČNB"
    ],
    "position": "Deputy Governor",
+   "short": "CNB Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2023-02",
@@ -2320,6 +2428,7 @@
     "FRBNY"
    ],
    "position": "President and Chief Executive Officer",
+   "short": "NY Fed President",
    "group": "ncb",
    "tier": 2,
    "since": "2018-06",
@@ -2341,6 +2450,7 @@
     "Austrian National Bank"
    ],
    "position": "Executive Director, Oesterreichische Nationalbank",
+   "short": "OeNB Board member",
    "group": "ncb",
    "tier": 2,
    "since": "2025-07",
@@ -2360,6 +2470,7 @@
     "BoE"
    ],
    "position": "Deputy Governor for Prudential Regulation and Chief Executive Officer of the Prudential Regulation Authority",
+   "short": "BoE Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2026-07",
@@ -2381,6 +2492,7 @@
     "NBR"
    ],
    "position": "First Deputy Governor",
+   "short": "BNR First Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2024-10",
@@ -2404,6 +2516,7 @@
     "Central Bank of Hungary"
    ],
    "position": "Deputy Governor",
+   "short": "MNB Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2025-10",
@@ -2424,6 +2537,7 @@
     "National Bank of Poland"
    ],
    "position": "First Deputy President (Pierwszy Zastępca Prezesa; English NBP site: First Deputy Governor)",
+   "short": "NBP First Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": null,
@@ -2448,6 +2562,7 @@
     "US Federal Reserve"
    ],
    "position": "Vice Chair for Supervision",
+   "short": "Fed Vice Chair (Supervision)",
    "group": "ncb",
    "tier": 2,
    "since": "2025-06",
@@ -2469,6 +2584,7 @@
     "Banque nationale suisse"
    ],
    "position": "Member of the Governing Board",
+   "short": "SNB Board member",
    "group": "ncb",
    "tier": 2,
    "since": "2024-10",
@@ -2493,6 +2609,7 @@
     "US Federal Reserve"
    ],
    "position": "Vice Chair",
+   "short": "Fed Vice Chair",
    "group": "ncb",
    "tier": 2,
    "since": "2023-09",
@@ -2517,6 +2634,7 @@
     "Central Bank of Hungary"
    ],
    "position": "Deputy Governor",
+   "short": "MNB Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2025-12",
@@ -2539,6 +2657,7 @@
     "日本銀行"
    ],
    "position": "Deputy Governor",
+   "short": "BoJ Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2023-03",
@@ -2558,6 +2677,7 @@
     "BoE"
    ],
    "position": "Deputy Governor, Financial Stability",
+   "short": "BoE Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2023-11",
@@ -2581,6 +2701,7 @@
     "Національний банк України"
    ],
    "position": "First Deputy Governor",
+   "short": "NBU First Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2025-08",
@@ -2603,6 +2724,7 @@
     "日本銀行"
    ],
    "position": "Deputy Governor",
+   "short": "BoJ Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2023-03",
@@ -2624,6 +2746,7 @@
     "Austrian National Bank"
    ],
    "position": "Executive Director, Oesterreichische Nationalbank",
+   "short": "OeNB Board member",
    "group": "ncb",
    "tier": 2,
    "since": "2025-05",
@@ -2648,6 +2771,7 @@
     "Central Bank of Hungary"
    ],
    "position": "Deputy Governor",
+   "short": "MNB Dep. Gov.",
    "group": "ncb",
    "tier": 2,
    "since": "2025-04",
@@ -2673,6 +2797,7 @@
     "Single Supervisory Mechanism"
    ],
    "position": "Chair of the Supervisory Board",
+   "short": "SSM Chair",
    "group": "supervisor",
    "tier": 1,
    "since": "2024-01",
@@ -2693,6 +2818,7 @@
     "Einheitlicher Abwicklungsausschuss"
    ],
    "position": "Chair",
+   "short": "SRB Chair",
    "group": "supervisor",
    "tier": 1,
    "since": null,
@@ -2712,6 +2838,7 @@
     "Bundesanstalt für Finanzdienstleistungsaufsicht"
    ],
    "position": "Former President of BaFin",
+   "short": "ex-BaFin President",
    "group": "supervisor",
    "tier": 1,
    "since": "2012",
@@ -2731,6 +2858,7 @@
     "Bundesanstalt für Finanzdienstleistungsaufsicht"
    ],
    "position": "Former President of BaFin",
+   "short": "ex-BaFin President",
    "group": "supervisor",
    "tier": 1,
    "since": "2015",
@@ -2753,6 +2881,7 @@
     "Europäische Bankenaufsichtsbehörde"
    ],
    "position": "Chair",
+   "short": "EBA Chair",
    "group": "supervisor",
    "tier": 1,
    "since": null,
@@ -2777,6 +2906,7 @@
     "Finanzmarktaufsicht"
    ],
    "position": "Vorstand (Executive Director) der FMA; Vice-Chair of the EBA",
+   "short": "FMA Exec. Director",
    "group": "supervisor",
    "tier": 1,
    "since": null,
@@ -2796,6 +2926,7 @@
     "Bundesanstalt für Finanzdienstleistungsaufsicht"
    ],
    "position": "Former President of BaFin",
+   "short": "ex-BaFin President",
    "group": "supervisor",
    "tier": 1,
    "since": "2002",
@@ -2817,6 +2948,7 @@
     "FMA Österreich"
    ],
    "position": "Vorständin (Executive Director)",
+   "short": "FMA Exec. Director",
    "group": "supervisor",
    "tier": 1,
    "since": "2025-07",
@@ -2837,6 +2969,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Präsident",
+   "short": "BaFin President",
    "group": "supervisor",
    "tier": 1,
    "since": "2021-08",
@@ -2857,6 +2990,7 @@
     "Europäische Aufsichtsbehörde für das Versicherungswesen und die betriebliche Altersversorgung"
    ],
    "position": "Chairperson",
+   "short": "EIOPA Chair",
    "group": "supervisor",
    "tier": 1,
    "since": "2021-09",
@@ -2877,6 +3011,7 @@
     "Swiss Financial Market Supervisory Authority"
    ],
    "position": "Chief Executive Officer (Direktor)",
+   "short": "FINMA CEO",
    "group": "supervisor",
    "tier": 1,
    "since": "2024-04",
@@ -2897,6 +3032,7 @@
     "Europäische Wertpapier- und Marktaufsichtsbehörde"
    ],
    "position": "Chair",
+   "short": "ESMA Chair",
    "group": "supervisor",
    "tier": 1,
    "since": "2021-11",
@@ -2917,6 +3053,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Exekutivdirektorin Geschäftsbereich Anti-Financial Crime",
+   "short": "BaFin Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2026-07",
@@ -2937,6 +3074,7 @@
     "Europäische Aufsichtsbehörde für das Versicherungswesen und die betriebliche Altersversorgung"
    ],
    "position": "Executive Director",
+   "short": "EIOPA Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2026-04",
@@ -2957,6 +3095,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Exekutivdirektorin Geschäftsbereich Versicherungs- und Pensionsfondsaufsicht",
+   "short": "BaFin Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2024-01",
@@ -2977,6 +3116,7 @@
     "Swiss Financial Market Supervisory Authority"
    ],
    "position": "Chair of the Board of Directors (Verwaltungsratspräsidentin)",
+   "short": "FINMA Board Chair",
    "group": "supervisor",
    "tier": 2,
    "since": "2021-01",
@@ -2999,6 +3139,7 @@
     "Einheitlicher Abwicklungsausschuss"
    ],
    "position": "Vice-Chair",
+   "short": "SRB Vice-Chair",
    "group": "supervisor",
    "tier": 2,
    "since": null,
@@ -3019,6 +3160,7 @@
     "Europäische Wertpapier- und Marktaufsichtsbehörde"
    ],
    "position": "Executive Director",
+   "short": "ESMA Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2021-06",
@@ -3039,6 +3181,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Exekutivdirektor Geschäftsbereich Bankenaufsicht",
+   "short": "BaFin Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2025-04",
@@ -3059,6 +3202,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Exekutivdirektor Geschäftsbereich Strategie, Policy und Stabilität",
+   "short": "BaFin Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2026-07",
@@ -3079,6 +3223,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Exekutivdirektorin Geschäftsbereich Innere Verwaltung",
+   "short": "BaFin Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2023-02",
@@ -3099,6 +3244,7 @@
     "Federal Financial Supervisory Authority"
    ],
    "position": "Exekutivdirektor Geschäftsbereich Wertpapieraufsicht / Asset-Management",
+   "short": "BaFin Exec. Director",
    "group": "supervisor",
    "tier": 2,
    "since": "2021-09",
@@ -3119,6 +3265,7 @@
     "Bundeskanzlerin"
    ],
    "position": "Former Bundeskanzlerin",
+   "short": "ex-German Chancellor",
    "group": "government",
    "tier": 1,
    "since": "2005-11",
@@ -3140,6 +3287,7 @@
     "BMWi"
    ],
    "position": "Former Bundesministerin für Wirtschaft und Energie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2017-01",
@@ -3160,6 +3308,7 @@
     "BMF"
    ],
    "position": "Former Bundesminister der Finanzen",
+   "short": "ex-German Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "2021-12",
@@ -3180,6 +3329,7 @@
     "Bundeskanzleramt"
    ],
    "position": "Bundeskanzler",
+   "short": "German Chancellor",
    "group": "government",
    "tier": 1,
    "since": "2025-05",
@@ -3200,6 +3350,7 @@
     "Bundeskanzler"
    ],
    "position": "Former Bundeskanzler",
+   "short": "ex-German Chancellor",
    "group": "government",
    "tier": 1,
    "since": "1998-10",
@@ -3220,6 +3371,7 @@
     "BMF"
    ],
    "position": "Former Bundesminister der Finanzen",
+   "short": "ex-German Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "1999-04",
@@ -3240,6 +3392,7 @@
     "BMF"
    ],
    "position": "Former Bundesminister der Finanzen",
+   "short": "ex-German Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "2024-11",
@@ -3262,6 +3415,7 @@
     "Bundesrat"
    ],
    "position": "Vorsteherin des Eidgenössischen Finanzdepartements EFD",
+   "short": "Swiss Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "2023-01",
@@ -3285,6 +3439,7 @@
     "BMWi"
    ],
    "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2009-02",
@@ -3308,6 +3463,7 @@
     "Bundesministerium für Wirtschaft und Energie"
    ],
    "position": "Bundesministerin für Wirtschaft und Energie",
+   "short": "German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2025-05",
@@ -3330,6 +3486,7 @@
     "Bundesministerium der Finanzen"
    ],
    "position": "Bundesminister der Finanzen",
+   "short": "German Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "2025-05",
@@ -3350,6 +3507,7 @@
     "Austrian Federal Ministry of Finance"
    ],
    "position": "Bundesminister für Finanzen",
+   "short": "Austrian Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "2025-03",
@@ -3371,6 +3529,7 @@
     "BMWi"
    ],
    "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2005-11",
@@ -3393,6 +3552,7 @@
     "Bundesministerium der Finanzen"
    ],
    "position": "Former Bundeskanzler; Former Bundesminister der Finanzen",
+   "short": "ex-German Chancellor",
    "group": "government",
    "tier": 1,
    "since": "2021-12",
@@ -3413,6 +3573,7 @@
     "BMF"
    ],
    "position": "Former Bundesminister der Finanzen",
+   "short": "ex-German Finance Minister",
    "group": "government",
    "tier": 1,
    "since": "2005-11",
@@ -3435,6 +3596,7 @@
     "Bundesministerium der Finanzen"
    ],
    "position": "Former Bundesminister für Wirtschaft und Energie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2018-03",
@@ -3456,6 +3618,7 @@
     "BMWi"
    ],
    "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2011-05",
@@ -3477,6 +3640,7 @@
     "BMWi"
    ],
    "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2009-10",
@@ -3498,6 +3662,7 @@
     "BMWK"
    ],
    "position": "Former Bundesminister für Wirtschaft und Klimaschutz",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2021-12",
@@ -3519,6 +3684,7 @@
     "BMWi"
    ],
    "position": "Former Bundesminister für Wirtschaft und Energie",
+   "short": "ex-German Economy Minister",
    "group": "government",
    "tier": 1,
    "since": "2013-12",
@@ -3540,6 +3706,7 @@
     "EU-Kommission"
    ],
    "position": "Commissioner for Defence and Space",
+   "short": "EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3563,6 +3730,7 @@
     "EU-Kommission"
    ],
    "position": "Commissioner for Energy and Housing",
+   "short": "EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3580,6 +3748,7 @@
    "org": "Eurogroup",
    "org_aliases": [],
    "position": "Former President of the Eurogroup",
+   "short": "ex-Eurogroup President",
    "group": "eu_body",
    "tier": 1,
    "since": "2005",
@@ -3597,6 +3766,7 @@
    "org": "Eurogroup",
    "org_aliases": [],
    "position": "Former President of the Eurogroup",
+   "short": "ex-Eurogroup President",
    "group": "eu_body",
    "tier": 1,
    "since": "2013-01",
@@ -3619,6 +3789,7 @@
     "Commission"
    ],
    "position": "Former Commissioner for Economic and Monetary Affairs",
+   "short": "ex-EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": "2004",
@@ -3641,6 +3812,7 @@
     "Commission"
    ],
    "position": "Former Commissioner for Financial Stability, Financial Services and Capital Markets Union",
+   "short": "ex-EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": "2014-11",
@@ -3662,6 +3834,7 @@
     "Eurogroup of euro area finance ministers"
    ],
    "position": "President of the Eurogroup",
+   "short": "Eurogroup President",
    "group": "eu_body",
    "tier": 1,
    "since": "2025-12",
@@ -3682,6 +3855,7 @@
     "Commission"
    ],
    "position": "Former Commissioner for Financial Services, Financial Stability and Capital Markets Union",
+   "short": "ex-EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3705,6 +3879,7 @@
     "EU-Kommission"
    ],
    "position": "Commissioner for Financial Services and the Savings and Investments Union",
+   "short": "EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3728,6 +3903,7 @@
     "EU-Kommission"
    ],
    "position": "Commissioner for Trade and Economic Security; Interinstitutional Relations and Transparency",
+   "short": "EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3748,6 +3924,7 @@
     "Commission"
    ],
    "position": "Former Vice-President for Internal Market and Services (financial services regulation)",
+   "short": "ex-EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3771,6 +3948,7 @@
     "EIB Group"
    ],
    "position": "President",
+   "short": "EIB President",
    "group": "eu_body",
    "tier": 1,
    "since": "2024-01",
@@ -3791,6 +3969,7 @@
     "Commission"
    ],
    "position": "Former Commissioner for Economy",
+   "short": "ex-EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": "2019",
@@ -3808,6 +3987,7 @@
    "org": "Eurogroup",
    "org_aliases": [],
    "position": "Former President of the Eurogroup",
+   "short": "ex-Eurogroup President",
    "group": "eu_body",
    "tier": 1,
    "since": "2020-07",
@@ -3828,6 +4008,7 @@
     "Europäischer Stabilitätsmechanismus"
    ],
    "position": "Managing Director",
+   "short": "ESM MD",
    "group": "eu_body",
    "tier": 1,
    "since": "2022-12",
@@ -3848,6 +4029,7 @@
     "Commission"
    ],
    "position": "Former Commissioner for Economic and Financial Affairs, Taxation and Customs",
+   "short": "ex-EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": "2014-11",
@@ -3869,6 +4051,7 @@
     "EU-Kommission"
    ],
    "position": "Executive Vice-President for Clean, Just and Competitive Transition",
+   "short": "EU Exec. Vice-President",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3890,6 +4073,7 @@
     "EU-Kommission"
    ],
    "position": "President of the European Commission",
+   "short": "Commission President",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3911,6 +4095,7 @@
     "EU-Kommission"
    ],
    "position": "Commissioner for Economy and Productivity; Implementation and Simplification",
+   "short": "EU Commissioner",
    "group": "eu_body",
    "tier": 1,
    "since": null,
@@ -3931,6 +4116,7 @@
     "Weltbank"
    ],
    "position": "World Bank Group President",
+   "short": "World Bank President",
    "group": "intl_org",
    "tier": 1,
    "since": "2023-06",
@@ -3953,6 +4139,7 @@
     "IWF"
    ],
    "position": "Former Managing Director",
+   "short": "ex-IMF MD",
    "group": "intl_org",
    "tier": 1,
    "since": "2007-11",
@@ -3973,6 +4160,7 @@
     "IWF"
    ],
    "position": "Former Economic Counsellor and Director of Research (Chief Economist)",
+   "short": "ex-IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2019-01",
@@ -3994,6 +4182,7 @@
     "Internationaler Währungsfonds"
    ],
    "position": "Managing Director",
+   "short": "IMF MD",
    "group": "intl_org",
    "tier": 1,
    "since": "2019-10",
@@ -4013,6 +4202,7 @@
     "Organisation for Economic Co-operation and Development"
    ],
    "position": "Secretary-General",
+   "short": "OECD SG",
    "group": "intl_org",
    "tier": 1,
    "since": "2021-06",
@@ -4035,6 +4225,7 @@
     "IWF"
    ],
    "position": "Former Economic Counsellor and Director of Research",
+   "short": "ex-IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2015-09",
@@ -4055,6 +4246,7 @@
     "Welthandelsorganisation"
    ],
    "position": "Director-General",
+   "short": "WTO DG",
    "group": "intl_org",
    "tier": 1,
    "since": "2021-03",
@@ -4075,6 +4267,7 @@
     "Europäische Bank für Wiederaufbau und Entwicklung"
    ],
    "position": "President of the EBRD",
+   "short": "EBRD President",
    "group": "intl_org",
    "tier": 1,
    "since": "2020-11",
@@ -4095,6 +4288,7 @@
     "IWF"
    ],
    "position": "Former Economic Counsellor and Director of Research",
+   "short": "ex-IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2008",
@@ -4118,6 +4312,7 @@
     "IWF"
    ],
    "position": "Former Economic Counsellor and Director of Research",
+   "short": "ex-IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2022",
@@ -4140,6 +4335,7 @@
     "IWF"
    ],
    "position": "Former Economic Counsellor and Director of Research",
+   "short": "ex-IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2003-10",
@@ -4162,6 +4358,7 @@
     "IWF"
    ],
    "position": "Former Managing Director",
+   "short": "ex-IMF MD",
    "group": "intl_org",
    "tier": 1,
    "since": "2004-06",
@@ -4183,6 +4380,7 @@
     "Internationaler Währungsfonds"
    ],
    "position": "Economic Counsellor and Director, Research Department",
+   "short": "IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2026-08",
@@ -4206,6 +4404,7 @@
     "Massachusetts Institute of Technology"
    ],
    "position": "Former Economic Counsellor and Director of Research",
+   "short": "ex-IMF Chief Economist",
    "group": "intl_org",
    "tier": 1,
    "since": "2007-04",
@@ -4228,6 +4427,7 @@
     "Organisation for Economic Co-operation and Development"
    ],
    "position": "Former Secretary-General",
+   "short": "ex-OECD SG",
    "group": "intl_org",
    "tier": 1,
    "since": "2006-06",
@@ -4250,6 +4450,7 @@
     "WBG"
    ],
    "position": "Former Chief Economist (Senior Vice President)",
+   "short": "ex-World Bank Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2020-06",
@@ -4271,6 +4472,7 @@
     "Organisation for Economic Co-operation and Development"
    ],
    "position": "Former Chief Economist",
+   "short": "ex-OECD Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2014",
@@ -4294,6 +4496,7 @@
     "Internationaler Währungsfonds"
    ],
    "position": "First Deputy Managing Director",
+   "short": "IMF FDMD",
    "group": "intl_org",
    "tier": 2,
    "since": "2025-10",
@@ -4314,6 +4517,7 @@
     "WBG"
    ],
    "position": "Former Chief Economist (Senior Vice President, Development Economics)",
+   "short": "ex-World Bank Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2022-09",
@@ -4334,6 +4538,7 @@
     "WBG"
    ],
    "position": "Former Chief Economist",
+   "short": "ex-World Bank Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2012",
@@ -4353,6 +4558,7 @@
     "Organisation for Economic Co-operation and Development"
    ],
    "position": "Former Chief Economist",
+   "short": "ex-OECD Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2018-06",
@@ -4374,6 +4580,7 @@
     "Internationaler Währungsfonds"
    ],
    "position": "Director, European Department",
+   "short": "IMF Europe Dept. Director",
    "group": "intl_org",
    "tier": 2,
    "since": "2026-07",
@@ -4394,6 +4601,7 @@
     "Weltbank"
    ],
    "position": "Chief Economist and Senior Vice President for Development Economics",
+   "short": "World Bank Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2026-10",
@@ -4414,6 +4622,7 @@
     "WBG"
    ],
    "position": "Former Chief Economist",
+   "short": "ex-World Bank Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2016-09",
@@ -4437,6 +4646,7 @@
     "WBG"
    ],
    "position": "Former Chief Economist",
+   "short": "ex-World Bank Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": "2018",
@@ -4456,6 +4666,7 @@
     "Organisation for Economic Co-operation and Development"
    ],
    "position": "Chief Economist",
+   "short": "OECD Chief Economist",
    "group": "intl_org",
    "tier": 2,
    "since": null,
@@ -4480,6 +4691,7 @@
     "UDE"
    ],
    "position": "Mitglied des Sachverständigenrates Wirtschaft",
+   "short": "SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2019-03",
@@ -4505,6 +4717,7 @@
     "Graduate Institute Geneva"
    ],
    "position": "Former Member of the Sachverständigenrat",
+   "short": "ex-SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2004-08",
@@ -4526,6 +4739,7 @@
     "Wirtschaftsweise"
    ],
    "position": "Former Chair of the Sachverständigenrat",
+   "short": "ex-SVR chair",
    "group": "academia",
    "tier": 1,
    "since": "2000-03",
@@ -4553,6 +4767,7 @@
     "Wirtschaftsweise"
    ],
    "position": "Former Chair of the Sachverständigenrat; Former President",
+   "short": "ex-SVR chair",
    "group": "academia",
    "tier": 1,
    "since": "2009-03",
@@ -4580,6 +4795,7 @@
     "Österreichisches Institut für Wirtschaftsforschung"
    ],
    "position": "Mitglied des Sachverständigenrates Wirtschaft; Direktor",
+   "short": "SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2026-03",
@@ -4605,6 +4821,7 @@
     "Universität Freiburg"
    ],
    "position": "Former Chair of the Sachverständigenrat",
+   "short": "ex-SVR chair",
    "group": "academia",
    "tier": 1,
    "since": "2011-03",
@@ -4629,6 +4846,7 @@
     "RUB"
    ],
    "position": "Mitglied des Sachverständigenrates Wirtschaft",
+   "short": "SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2022-09",
@@ -4654,6 +4872,7 @@
     "LMU"
    ],
    "position": "Vorsitzende des Sachverständigenrates Wirtschaft",
+   "short": "SVR chair",
    "group": "academia",
    "tier": 1,
    "since": "2022-10",
@@ -4676,6 +4895,7 @@
     "Universität Würzburg"
    ],
    "position": "Former Member of the Sachverständigenrat",
+   "short": "ex-SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2004-03",
@@ -4699,6 +4919,7 @@
     "Berkeley Haas"
    ],
    "position": "Former Member of the Sachverständigenrat",
+   "short": "ex-SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2022-09",
@@ -4724,6 +4945,7 @@
     "TU Nürnberg"
    ],
    "position": "Mitglied des Sachverständigenrates Wirtschaft",
+   "short": "SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2020-04",
@@ -4747,6 +4969,7 @@
     "IMFS"
    ],
    "position": "Former Member of the Sachverständigenrat",
+   "short": "ex-SVR member",
    "group": "academia",
    "tier": 1,
    "since": "2013-03",
@@ -4768,6 +4991,7 @@
     "Wirtschaftsweise"
    ],
    "position": "Former Chair of the Sachverständigenrat",
+   "short": "ex-SVR chair",
    "group": "academia",
    "tier": 1,
    "since": "1994-05",
@@ -4789,6 +5013,7 @@
     "Wirtschaftsweise"
    ],
    "position": "Former Chair of the Sachverständigenrat",
+   "short": "ex-SVR chair",
    "group": "academia",
    "tier": 1,
    "since": "2001-03",
@@ -4810,6 +5035,7 @@
     "ZEW - Leibniz Centre for European Economic Research"
    ],
    "position": "Präsident (Wissenschaftliche Leitung)",
+   "short": "ZEW President",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -4830,6 +5056,7 @@
     "Austrian Institute of Economic Research"
    ],
    "position": "Former Director",
+   "short": "ex-WIFO Director",
    "group": "academia",
    "tier": 2,
    "since": "2016",
@@ -4851,6 +5078,7 @@
     "Leibniz-Institut für Wirtschaftsforschung an der Universität München"
    ],
    "position": "Präsident",
+   "short": "ifo President",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -4872,6 +5100,7 @@
     "Bruegel think tank"
    ],
    "position": "Former Director",
+   "short": "ex-Bruegel Director",
    "group": "academia",
    "tier": 2,
    "since": "2013",
@@ -4894,6 +5123,7 @@
     "KOF ETH Zürich"
    ],
    "position": "Director of Research (member of KOF Directorate)",
+   "short": "KOF Director",
    "group": "academia",
    "tier": 2,
    "since": "2023",
@@ -4915,6 +5145,7 @@
     "Leibniz-Institut für Wirtschaftsforschung an der Universität München"
    ],
    "position": "Former President",
+   "short": "ex-ifo President",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -4936,6 +5167,7 @@
     "IHS Wien"
    ],
    "position": "Scientific Director (Wissenschaftlicher Leiter)",
+   "short": "IHS Director",
    "group": "academia",
    "tier": 2,
    "since": "2023-07",
@@ -4958,6 +5190,7 @@
     "KOF ETH Zürich"
    ],
    "position": "Director (Direktor, KOF Directorate)",
+   "short": "KOF Director",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -4978,6 +5211,7 @@
     "Brussels European and Global Economic Laboratory"
    ],
    "position": "Director",
+   "short": "Bruegel Director",
    "group": "academia",
    "tier": 2,
    "since": "2022-09",
@@ -4998,6 +5232,7 @@
     "DIW"
    ],
    "position": "Präsident",
+   "short": "DIW President",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -5019,6 +5254,7 @@
     "IW"
    ],
    "position": "Direktor und Mitglied des Präsidiums",
+   "short": "IW Köln Director",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -5040,6 +5276,7 @@
     "Kiel Institut"
    ],
    "position": "Präsident, Geschäftsführender Wissenschaftlicher Direktor",
+   "short": "IfW Kiel President",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -5063,6 +5300,7 @@
     "IWH Halle"
    ],
    "position": "Präsident",
+   "short": "IWH President",
    "group": "academia",
    "tier": 2,
    "since": null,
@@ -5085,6 +5323,7 @@
     "IMK Düsseldorf"
    ],
    "position": "Wissenschaftlicher Direktor",
+   "short": "IMK Director",
    "group": "academia",
    "tier": 2,
    "since": "2019-04",
@@ -5106,6 +5345,7 @@
     "Rheinisch-Westfälisches Institut für Wirtschaftsforschung"
    ],
    "position": "Vizepräsident (highest-ranking listed Vorstand member; Präsident post not filled on page)",
+   "short": "RWI Vice-President",
    "group": "academia",
    "tier": 2,
    "since": null,
