@@ -58,7 +58,11 @@
 - `organizer_short` の例: `"BoE"`(Bank of England)・`"PRA"`・`"FCA"`・`"HM Treasury"`・`"OBR"`・
   `"NIESR"`・`"IFS"`・`"CEPR"`・`"LSE"`・`"Riksbank"`・`"Norges Bank"`・`"Danmarks Nationalbank"`・
   `"Bank of Finland"`・`"Sedlabanki"`・`"Central Bank of Ireland"`(`"CBI"` は英国産業連盟と
-  衝突するので使わない)。登壇者の `org` も同じ表記にする。
+  衝突するので使わない)・`"Resolution Foundation"`・`"IfG"`・`"CER"`・`"Chatham House"`・`"RUSI"`・
+  `"IISS"`・`"Policy Exchange"`・`"Grantham"`・`"E3G"`・`"IEA"`・`"MMF"`・`"UKICE"`・`"CFM"`・`"FMG"`・
+  `"SRC"`・`"CEP"`・`"Oxford Martin"`・`"Bennett School"`・`"KCL"`・`"Imperial"`・`"Warwick"`・`"WBS"`・
+  `"Bayes"`・`"SOAS"`・`"ESRI"`・`"TCD"`・`"UK Finance"`・`"TheCityUK"`・`"LSEG"`・`"ICMA"`・`"ISDA"`・
+  `"DAJF"`・`"Japan Society"`・`"JETRO"`・`"CBBC"`。登壇者の `org` も同じ表記にする。
 - 都市名は英語正式名(`"London"`・`"Edinburgh"`・`"Dublin"`・`"Stockholm"`・`"Oslo"`・
   `"Copenhagen"`・`"Helsinki"`・`"Reykjavik"`)。
 

@@ -116,6 +116,24 @@ FLAGSHIP_PATTERNS = [
     "national bank of ukraine",            # NBU/NBP 年次研究会議
     "cebra biennial",                      # NBP/BoL/CEBRA Biennial Conference
 ]
+# プロファイル限定の旗艦パターン(そのプロファイルでのみ FLAGSHIP_PATTERNS に加える)。
+# 英国モード: 2026-10-19 の定点調査(UK_NORDIC_PLAN.md)で年次性・総裁級登壇を確認したもの。
+# 「annual research conference」のような汎用語は大学の研究会議にも当たるため入れない。
+FLAGSHIP_PATTERNS_BY_PROFILE = {
+    "uk": [
+        "bear conference",                     # BoE Annual BEAR research conference
+        "bear research conference",
+        "bank of england watchers",            # MMF/KCL Bank of England Watchers' Conference
+        "watchers' conference",
+        "watchers conference",
+        "bank of england monetary economics conference",  # Oxford/NY Fed/BoE
+        "financial system conference",         # Central Bank of Ireland 年次会議
+        "bank of finland and cepr",            # Bank of Finland–CEPR Joint Conference
+        "reykjavik economic conference",       # Seðlabanki Íslands
+        "reykjavík economic conference",
+        "cebra annual meeting",                # CEBRA Annual Meeting(2026 は DN 共催)
+    ],
+}
 
 # 都市名の表記ゆれ正規化(casefoldキー → 正式名)。
 # 値は現データの多数派表記(英語exonym優先、Frankfurtのみドイツ語正式名)。
@@ -196,7 +214,8 @@ def apply_flagship(ev):
     """タイトルが FLAGSHIP_PATTERNS のいずれかに部分一致すれば importance の下限を
     3に強制する(既存の3を下回る値での格下げは発生しない: maxを取るだけ)。"""
     title = unicodedata.normalize("NFKC", str(ev.get("title") or "")).casefold()
-    if any(pat in title for pat in FLAGSHIP_PATTERNS):
+    patterns = FLAGSHIP_PATTERNS + FLAGSHIP_PATTERNS_BY_PROFILE.get(PROFILE_ID, [])
+    if any(pat in title for pat in patterns):
         ev["importance"] = max(ev.get("importance") or 0, 3)
     return ev
 
