@@ -216,6 +216,9 @@
   .fld-city{flex:0 1 170px;min-width:110px}
   .fld-theme{flex:0 1 150px;min-width:100px}
   .fld-lang{flex:0 1 110px;min-width:90px}
+  .fld-vip{flex:0 1 150px;min-width:110px}
+  /* 要人フィルタ有効中は重要度セレクトを減光(操作は可能) */
+  .fld.dimmed{opacity:.45}
   .controls .cbrow{font-size:12.5px;min-height:33px}
   /* 「その他」ボタンと折りたたみ行(開いている間はボタンを点灯させ、
      展開行を枠付きパネルにして「ボタンから開いた」ことを視覚的につなぐ) */
@@ -478,6 +481,8 @@
   .badge.closed{color:var(--fail);border-color:var(--fail)}
   .sum{font-size:13px;margin-top:7px;color:var(--ink2)}
   .reg,.spk{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .spk b.vip{font-weight:600;color:var(--ink)}
+  .spk .vipshort{color:var(--sub)}
   .reglink{font-size:12.5px;margin-top:3px}
   .reglink a{color:var(--cb-tx);text-decoration:none;font-family:var(--mono);
     border-bottom:1px solid var(--line2)}
@@ -634,6 +639,12 @@
         <option value="2" data-i18n="imp2">★2以上 — 中規模会議から</option>
         <option value="3" data-i18n="imp3">★3のみ — 旗艦・大型会議</option>
       </select></label>
+    <label class="fld fld-vip"><span class="cap" data-i18n="capVip">要人登壇</span>
+      <select id="vip">
+        <option value="" data-i18n="vipAll">指定なし</option>
+        <option value="1" data-i18n="vip1">tier 1</option>
+        <option value="2" data-i18n="vip2">tier 1+2</option>
+      </select></label>
     <label class="fld fld-theme"><span class="cap" data-i18n="capTheme">テーマ</span>
       <select id="theme">
         <option value="" data-i18n="all">すべて</option>
@@ -726,6 +737,7 @@
   シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。
   ◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。
   下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの。
+  ◆ は要人名簿(tier 1: 総裁・大臣級)の登壇者がいるイベント。「要人登壇」フィルタを使うとセルに筆頭登壇者と肩書を表示し、重要度の下限は適用されません。
 </p>
 
 <div class="listhead">
@@ -778,6 +790,9 @@ ja:{
   skinToLight:"明るいテーマに切り替え", skinToDark:"暗いテーマに切り替え",
   capArea:"エリア", capCountry:"国", capCity:"都市", capOrg:"主催",
   capTheme:"テーマ", capImp:"重要度", capLang:"言語",
+  capVip:"要人登壇", vipAll:"指定なし", vip1:"tier 1 のみ", vip2:"tier 1+2",
+  impOverridden:"要人フィルタ有効中は重要度の下限は適用されません",
+  notablesLbl:"要人:",
   mech:"仕組み",
   mpIntro:"ドイツ語圏と中東欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
   mpAgentT:"AIエージェント",
@@ -809,7 +824,7 @@ ja:{
   lgColorImp:"色=重要度:", lgHigh:"高", lgMid:"中", lgLow:"低",
   lgForeign:"◇ ドイツ国外での開催",
   lgUnderline:"下線", lgOpenReg:"= 登録参加可(招待制・CfP型でなく、高額有料イベントを除く)",
-  legnote:"カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 / シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの(参加費がおおむね300ユーロ以上の高額イベントには下線を付けない)。",
+  legnote:"カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 / シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの(参加費がおおむね300ユーロ以上の高額イベントには下線を付けない)。◆ は要人名簿(tier 1: 総裁・大臣級)の登壇者がいるイベント。「要人登壇」フィルタを使うとセルに筆頭登壇者と肩書を表示し、重要度の下限は適用されません。",
   upcoming:"今後のイベント一覧",
   sortDate:"日付順", sortImp:"重要度順",
   crawlStatus:"巡回ステータス",
@@ -869,6 +884,9 @@ en:{
   skinToLight:"Switch to light theme", skinToDark:"Switch to dark theme",
   capArea:"Area", capCountry:"Country", capCity:"City", capOrg:"Organizer",
   capTheme:"Theme", capImp:"Importance", capLang:"Lang",
+  capVip:"Notable speakers", vipAll:"Any", vip1:"tier 1 only", vip2:"tier 1+2",
+  impOverridden:"Importance floor is not applied while the notable-speaker filter is active",
+  notablesLbl:"Notable:",
   mech:"How it works",
   mpIntro:"Economics and finance seminars across the German-speaking region and Central & Eastern Europe, collected automatically once a day by AI agents.",
   mpAgentT:"AI agents",
@@ -901,7 +919,7 @@ en:{
   lgColorImp:"Color = importance:", lgHigh:"High", lgMid:"Mid", lgLow:"Low",
   lgForeign:"◇ held outside Germany",
   lgUnderline:"underline", lgOpenReg:"= open registration (not invite-only/CfP; high-fee events excluded)",
-  legnote:"Colour and text size in the calendar indicate importance (amber = high: ★★★ large international conferences with central bank governor-level speakers / cyan = mid: ★★☆ mid-size conferences / grey = low: ★☆☆ regular seminars). Events marked ◇ are held outside Germany. The numbers ①–⑧ in the list show the main theme of each event (displayed in monochrome). Underlined events are open to general registration, i.e. not invitation-only or call-for-papers events (events with fees of roughly €300 or more are not underlined).",
+  legnote:"Colour and text size in the calendar indicate importance (amber = high: ★★★ large international conferences with central bank governor-level speakers / cyan = mid: ★★☆ mid-size conferences / grey = low: ★☆☆ regular seminars). Events marked ◇ are held outside Germany. The numbers ①–⑧ in the list show the main theme of each event (displayed in monochrome). Underlined events are open to general registration, i.e. not invitation-only or call-for-papers events (events with fees of roughly €300 or more are not underlined). ◆ marks events with a tier-1 notable speaker (governors, ministers). With the Notable-speakers filter the cell shows the lead speaker and title, and the importance floor is not applied.",
   upcoming:"Upcoming events",
   sortDate:"By date", sortImp:"By importance",
   crawlStatus:"Crawl status",
@@ -965,6 +983,9 @@ de:{
   skinToLight:"Zum hellen Design wechseln", skinToDark:"Zum dunklen Design wechseln",
   capArea:"Region", capCountry:"Land", capCity:"Stadt", capOrg:"Veranstalter",
   capTheme:"Thema", capImp:"Relevanz", capLang:"Sprache",
+  capVip:"Prominente Redner", vipAll:"Alle", vip1:"nur Tier 1", vip2:"Tier 1+2",
+  impOverridden:"Die Wichtigkeitsschwelle gilt nicht, solange der Redner-Filter aktiv ist",
+  notablesLbl:"Prominent:",
   mech:"Funktionsweise",
   mpIntro:"Wirtschafts- und Finanzseminare im deutschsprachigen Raum und in Mittel- und Osteuropa, täglich einmal automatisch von KI-Agenten erfasst.",
   mpAgentT:"KI-Agenten",
@@ -997,7 +1018,7 @@ de:{
   lgColorImp:"Farbe = Wichtigkeit:", lgHigh:"Hoch", lgMid:"Mittel", lgLow:"Niedrig",
   lgForeign:"◇ Veranstaltung außerhalb Deutschlands",
   lgUnderline:"Unterstrichen", lgOpenReg:"= Anmeldung offen (nicht nur auf Einladung/CfP; ohne hohe Teilnahmegebühren)",
-  legnote:"Farbe und Schriftgröße im Kalender zeigen die Wichtigkeit an (Bernstein = hoch: ★★★ große internationale Konferenzen mit Rednern auf Notenbankchef-Ebene / Cyan = mittel: ★★☆ mittelgroße Konferenzen / Grau = niedrig: ★☆☆ Forschungsseminare). Mit ◇ markierte Veranstaltungen finden außerhalb Deutschlands statt. Die Ziffern ①–⑧ in der Liste stehen für das Hauptthema der Veranstaltung (monochrom dargestellt). Unterstrichene Veranstaltungen stehen der allgemeinen Anmeldung offen, sind also nicht nur auf Einladung oder als Call for Papers zugänglich (Veranstaltungen mit Teilnahmegebühren ab etwa 300 € werden nicht unterstrichen).",
+  legnote:"Farbe und Schriftgröße im Kalender zeigen die Wichtigkeit an (Bernstein = hoch: ★★★ große internationale Konferenzen mit Rednern auf Notenbankchef-Ebene / Cyan = mittel: ★★☆ mittelgroße Konferenzen / Grau = niedrig: ★☆☆ Forschungsseminare). Mit ◇ markierte Veranstaltungen finden außerhalb Deutschlands statt. Die Ziffern ①–⑧ in der Liste stehen für das Hauptthema der Veranstaltung (monochrom dargestellt). Unterstrichene Veranstaltungen stehen der allgemeinen Anmeldung offen, sind also nicht nur auf Einladung oder als Call for Papers zugänglich (Veranstaltungen mit Teilnahmegebühren ab etwa 300 € werden nicht unterstrichen). ◆ kennzeichnet Veranstaltungen mit einem Tier-1-Redner (Gouverneure, Minister). Mit dem Redner-Filter zeigt die Zelle den Hauptredner mit Funktion; die Wichtigkeitsschwelle gilt dann nicht.",
   upcoming:"Kommende Veranstaltungen",
   sortDate:"Nach Datum", sortImp:"Nach Wichtigkeit",
   crawlStatus:"Abrufstatus",
@@ -1341,10 +1362,26 @@ function evLabel(ev){
   const org  = orgDisp(orgShort(ev));
   const mid = lang ? `${lang}${t("sep")}${org}` : org;
   const theme = ev.title_short || ev.title || "";
-  return `${isForeign(ev)?"◇ ":""}[${cityShort(ev)}][${mid}]${theme}`;
+  const vip = Array.isArray(ev.notables) && ev.notables.length ? ev.notables : null;
+  if(state.vip!=="" && vip){
+    /* 要人フィルタ中: 主催者の代わりに筆頭登壇者(長い氏名は姓のみ)と肩書、他N名を出す */
+    const first = vip[0] || {};
+    const full = String(first.name||first.person||"").trim();
+    const lead0 = full.length>18 ? full.split(/\s+/).pop() : full;
+    const lead = lead0 + (first.short ? ` · ${first.short}` : "");
+    const rest = vip.length>1 ? ` +${vip.length-1}` : "";
+    return `${isForeign(ev)?"◇ ":""}[${cityShort(ev)}] ${lead}${rest} — ${theme}`;
+  }
+  /* 通常時: tier 1 の登壇者がいるイベントには ◆ を付ける(◇ より前) */
+  return `${ev.notable_tier===1?"◆ ":""}${isForeign(ev)?"◇ ":""}[${cityShort(ev)}][${mid}]${theme}`;
 }
 function evFull(ev){
-  return [ev.title, ev.organizer, ev.city].filter(Boolean).join(" / ");
+  const segs = [ev.title, ev.organizer, ev.city];
+  if(Array.isArray(ev.notables) && ev.notables.length){
+    segs.push(t("notablesLbl")+" "+ev.notables
+      .map(n=>n.short ? `${n.name} (${n.short})` : n.name).join(", "));
+  }
+  return segs.filter(Boolean).join(" / ");
 }
 /* ---------- 複数日イベント用ヘルパー ---------- */
 function isMulti(ev){ return !!(ev.date_end && ev.date_end!==ev.date_start); }
@@ -1367,7 +1404,7 @@ function mondayOf(iso){
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
 /* Area=DE のときは country も DE をセットで表示する(area変更ハンドラでも連動)。 */
-const DEFAULTS = {area:"DE", country:"DE", city:"", org:"", imp:"2", theme:"", lang:"",
+const DEFAULTS = {area:"DE", country:"DE", city:"", org:"", imp:"2", vip:"", theme:"", lang:"",
                    online:false, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
@@ -1385,6 +1422,7 @@ function loadState(){
   /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★2以上(imp:"2")に移行する */
   if(s.imp==="") state.imp = "2";
   else if(["0","1","2","3"].includes(s.imp)) state.imp = s.imp;
+  if(["","1","2"].includes(s.vip)) state.vip = s.vip;
   if(["",...THEME_KEYS].includes(s.theme)) state.theme = s.theme;
   if(typeof s.online==="boolean") state.online = s.online;
   if(typeof s.daytrip==="boolean") state.daytrip = s.daytrip;
@@ -1399,7 +1437,7 @@ function saveState(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({
       area:state.area, country:state.country, city:state.city, org:state.org,
-      imp:state.imp, theme:state.theme, lang:state.lang, online:state.online,
+      imp:state.imp, vip:state.vip, theme:state.theme, lang:state.lang, online:state.online,
       daytrip:state.daytrip, q:state.q, sort:state.sort
     }));
   }catch(e){}
@@ -1427,7 +1465,14 @@ function passOrg(ev){
   return orgTokens(ev).includes(state.org);
 }
 function passImp(ev){
+  /* 要人フィルタ有効時は重要度の下限を適用しない(要人登壇自体が重要度の根拠) */
+  if(state.vip!=="") return true;
   return imp(ev) >= +state.imp;      /* state.imp="0"なら全部通る。既定"1"で★0(imp0)を隠す */
+}
+function passVip(ev){
+  if(state.vip==="") return true;
+  const tr=ev.notable_tier;
+  return (tr===1||tr===2) && tr <= +state.vip;
 }
 function passTheme(ev){
   if(state.theme==="") return true;
@@ -1470,6 +1515,7 @@ function passExcept(ev, ex){
   if(!s.has("city")    && !passCity(ev))    return false;
   if(!s.has("org")     && !passOrg(ev))     return false;
   if(!s.has("imp")     && !passImp(ev))     return false;
+  if(!s.has("vip")     && !passVip(ev))     return false;
   if(!s.has("theme")   && !passTheme(ev))   return false;
   if(!s.has("lang")    && !passLang(ev))    return false;
   if(!s.has("online")  && !passOnline(ev))  return false;
@@ -1575,6 +1621,11 @@ function rebuildSelects(){
   document.getElementById("area").value   = state.area;
   updateAreaOptions();
   document.getElementById("imp").value    = state.imp;
+  document.getElementById("vip").value    = state.vip;
+  /* 要人フィルタ有効中は重要度セレクトを減光し、理由をツールチップで示す(操作は可能) */
+  const impFld = document.getElementById("imp").closest(".fld");
+  impFld.classList.toggle("dimmed", state.vip!=="");
+  if(state.vip!=="") impFld.title = t("impOverridden"); else impFld.removeAttribute("title");
   document.getElementById("theme").value  = state.theme;
   document.getElementById("lang").value   = state.lang;
   document.getElementById("q").value      = state.q;
@@ -1788,6 +1839,35 @@ function speakersText(ev){
     .map(s=>s.org ? `${s.name.trim()} (${orgDisp(s.org)})` : s.name.trim())
     .join(", ");
 }
+/* 氏名の正規化(小文字化・ダイアクリティカルマーク除去・ピリオド除去・1文字トークン除去) */
+function normName(s){
+  return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase()
+    .replace(/\./g," ").split(/\s+/).filter(w=>w.length>1).join(" ");
+}
+/* 登壇者の HTML 版。要人名簿に該当する登壇者は太字+肩書で強調する(検索用の speakersText は別)。 */
+function speakersHtml(ev){
+  if(!Array.isArray(ev.speakers)) return "";
+  const nots=(Array.isArray(ev.notables)?ev.notables:[])
+    .filter(n=>n && typeof n==="object")
+    .map(n=>({short:n.short, key:normName(n.name)})).filter(n=>n.key);
+  const find=nm=>{
+    const k=normName(nm); if(!k) return null;
+    const kt=k.split(" ");
+    return nots.find(n=>{
+      if(n.key===k) return true;
+      const nt=n.key.split(" "), [a,b]=nt.length<=kt.length?[nt,kt]:[kt,nt];
+      return a.length>=2 && a.every(w=>b.includes(w));   /* 2語以上なら語順・省略違いも許容 */
+    })||null;
+  };
+  return ev.speakers
+    .filter(s=>s && typeof s==="object" && typeof s.name==="string" && s.name.trim())
+    .map(s=>{
+      const nm=s.name.trim(), hit=find(nm);
+      if(hit) return `<b class="vip">${esc(nm)}</b>`+(hit.short?` <span class="vipshort">(${esc(hit.short)})</span>`:"");
+      return s.org ? `${esc(nm)} (${esc(orgDisp(s.org))})` : esc(nm);
+    })
+    .join(", ");
+}
 function drawList(){
   /* 共有ビュー(v1)は復号したイベントを全件出す(終了済みも隠さない)。
      通常ビューでは、更新履歴からのピン(newsPin)だけは全フィルタを素通しで含める */
@@ -1827,7 +1907,7 @@ function drawList(){
     const iv=impCls(ev);
     const ru=safeUrl(ev.registration_url);
     const sum=summaryOf(ev);          /* UI言語に応じた要約(無ければ非表示) */
-    const spk=speakersText(ev);       /* 登壇者(無ければ非表示) */
+    const spk=speakersHtml(ev);       /* 登壇者(HTML。無ければ非表示) */
     const rnote=regNoteOf(ev);        /* UI言語に応じた申込メモ(無ければ非表示) */
     html+=`<div class="row" id="ev-${esc(ev.id)}">
       <div class="when">${fmtWhen(ev)}</div>
@@ -1837,7 +1917,7 @@ function drawList(){
         ${(uiLang==="ja"&&ev.title_ja)?`<div class="ja">${esc(ev.title_ja)}</div>`:""}
         <div class="meta">${badges.join("")}</div>
         ${sum?`<div class="sum">${esc(sum)}</div>`:""}
-        ${spk?`<div class="spk">${esc(t("speakersLbl"))} ${esc(spk)}</div>`:""}
+        ${spk?`<div class="spk">${esc(t("speakersLbl"))} ${spk}</div>`:""}
         ${rnote?`<div class="reg">${esc(t("regNote"))} ${esc(rnote)}</div>`:""}
         ${ru?`<div class="reglink"><a href="${esc(ru)}" target="_blank" rel="noopener">${esc(t("regPage"))}</a></div>`:""}
         <div class="src">${esc(t("srcInfo"))} ${esc(ev.source||"")} ${esc(t("firstSeen"))} ${esc(ev.first_seen||"")}</div>
@@ -1903,7 +1983,7 @@ function drawStatus(){
       e.preventDefault();
       const oc=orgCnt[a.dataset.src]||{};
       const top=Object.keys(oc).sort((x,y)=>oc[y]-oc[x])[0]||"";
-      Object.assign(state,{area:"",country:"",city:"",org:top,imp:"0",theme:"",
+      Object.assign(state,{area:"",country:"",city:"",org:top,imp:"0",vip:"",theme:"",
                            lang:"",online:true,daytrip:false,q:""});
       redraw();
       const cal=document.querySelector(".calhead");
@@ -2652,6 +2732,7 @@ document.getElementById("country").addEventListener("change",e=>{state.country=e
 document.getElementById("city").addEventListener("change",e=>{state.city=e.target.value;redraw();});
 document.getElementById("org").addEventListener("change",e=>{state.org=e.target.value;redraw();});
 document.getElementById("imp").addEventListener("change",e=>{state.imp=e.target.value;redraw();});
+document.getElementById("vip").addEventListener("change",e=>{state.vip=e.target.value;redraw();});
 document.getElementById("theme").addEventListener("change",e=>{state.theme=e.target.value;redraw();});
 document.getElementById("lang").addEventListener("change",e=>{state.lang=e.target.value;redraw();});
 document.getElementById("online").addEventListener("change",e=>{state.online=e.target.checked;redraw();});
