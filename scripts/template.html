@@ -106,18 +106,20 @@
     letter-spacing:.08em;color:var(--sub);white-space:nowrap;
     transition:border-color .12s,color .12s,background .12s}
   .srcbtn:hover{border-color:var(--amber);color:var(--amber)}
-  /* UI言語切替(セグメントコントロール風。3ボタンを1つの枠に連結) */
+  /* UI言語切替(セグメントコントロール風。3ボタンを1つの枠に連結)。
+     同じ見た目を DE|UK モード切替(#modesw: 現在側は <span>、相手側は <a>)でも使う。 */
   .langsw{display:inline-flex;flex:0 0 auto;border:1px solid var(--line2);
     border-radius:4px;overflow:hidden;background:var(--cell)}
-  .langsw button{border:0;border-left:1px solid var(--line2);background:transparent;
+  .langsw>button,.langsw>a,.langsw>span{border:0;border-left:1px solid var(--line2);background:transparent;
     padding:6px 9px;cursor:pointer;font-size:11.5px;font-family:var(--mono);
     letter-spacing:.06em;color:var(--sub);white-space:nowrap;line-height:1.1;
+    text-decoration:none;display:inline-block;box-sizing:border-box;
     transition:border-color .12s,color .12s,background .12s}
-  .langsw button:first-child{border-left:0}
-  .langsw button:hover{color:var(--amber)}
-  .langsw button.on{color:var(--amber);background:var(--cell2)}
+  .langsw>:first-child{border-left:0}
+  .langsw>button:hover,.langsw>a:hover{color:var(--amber)}
+  .langsw>.on{color:var(--amber);background:var(--cell2);cursor:default}
   .langsw:focus-within{border-color:var(--amber)}
-  .langsw button:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
+  .langsw>button:focus-visible,.langsw>a:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
   /* 配色(ライト/ダーク)切替。ヘッダーの幅が狭いのでアイコン1個のトグルにし、
      アイコンだけでは用途が伝わらないぶんをホバーの吹き出し(.skintip)で補う。
      表示するアイコンは「押した後になる側」(暗い今は☀=明るくする)。 */
@@ -207,7 +209,7 @@
      閉じたセレクトは省略記号(…)で切り詰め、開いたリスト内は全文表示される。 */
   .controls .fld select{width:100%;min-width:0;font-size:13px;padding:7px 8px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  /* min-width は既定選択値(「ドイツ」「Deutschland」「すべて」等)が切れない下限。
+  /* min-width は既定選択値(「ドイツ」「Deutschland」「Großbritannien」「すべて」等)が切れない下限。
      候補の長い City/Organizer は縮んだときに省略表示になる。 */
   .fld-area{flex:0 1 132px;min-width:126px}
   .fld-country{flex:0 1 150px;min-width:110px}
@@ -260,7 +262,7 @@
     transform:rotate(45deg)}
   .cbrow input:focus-visible{outline:none;box-shadow:0 0 0 2px var(--amber)}
   .cbrow input:checked + .cblbl{color:var(--ink)}
-  /* 減光(グレーアウト)状態: AREA/COUNTRY がドイツ以外に固定されている間 */
+  /* 減光(グレーアウト)状態: AREA/COUNTRY が本拠国(PROFILE.home)以外に固定されている間 */
   .cbrow.dis{opacity:.38;cursor:not-allowed}
   .cbrow.dis input,.cbrow.dis .cblbl{cursor:not-allowed}
 
@@ -522,9 +524,11 @@
   @media(max-width:640px){
     .wrap{padding:12px 10px 48px}
     h1{font-size:15px}
-    .hdtools{flex-basis:100%;margin-left:0;margin-top:6px}
-    .hdtools input[type=search]{max-width:none;flex:1 1 auto}
-    .langsw button{padding:6px 6px;font-size:10.5px;letter-spacing:.02em}
+    /* 言語・モード切替・配色・仕組み・ソース・検索は1行に収まらないので折り返す
+       (折り返し後は検索欄が残り幅を取る) */
+    .hdtools{flex-basis:100%;margin-left:0;margin-top:6px;flex-wrap:wrap;row-gap:6px}
+    .hdtools input[type=search]{max-width:none;flex:1 1 120px}
+    .langsw>button,.langsw>a,.langsw>span{padding:6px 6px;font-size:10.5px;letter-spacing:.02em}
     .srcpanel{left:0;right:auto;width:min(360px,86vw)}
     /* 更新履歴: 狭い画面では見出し行を折り返して全文見せる(省略記号を出さない) */
     #newssum{white-space:normal;text-overflow:clip;padding:6px 10px;font-size:11.5px}
@@ -589,6 +593,8 @@
         <button type="button" data-ui="en">EN</button>
         <button type="button" data-ui="de">DE</button>
       </div>
+      <!-- ドイツ/英国モード切替(中身は PROFILE を見て buildModeSwitch() が組み立てる) -->
+      <div class="langsw" id="modesw" role="group" aria-label="Mode" data-i18n-aria="modeSwitch"></div>
       <div class="skinwrap">
         <button class="skinbtn" id="skinbtn" type="button">
           <svg class="ico ico-sun" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
@@ -622,8 +628,8 @@
     <label class="fld fld-area"><span class="cap" data-i18n="capArea">エリア</span>
       <select id="area">
         <option value="" data-i18n="all">すべて</option>
-        <option value="DE" data-i18n="areaDE">ドイツ</option>
-        <option value="nonDE" data-i18n="areaNonDE">ドイツ以外</option>
+        <option value="home" data-i18n="areaHome">ドイツ</option>
+        <option value="away" data-i18n="areaAway">ドイツ以外</option>
       </select></label>
     <label class="fld fld-country"><span class="cap" data-i18n="capCountry">国</span>
       <select id="country"></select></label>
@@ -763,6 +769,12 @@ const SOURCES = __SOURCES_JSON__;
 /* 更新履歴(News)。日付降順・直近30日分のみが埋め込まれる。空配列のこともある。 */
 const CHANGELOG = __CHANGELOG_JSON__;
 const TODAY   = "__TODAY__";
+/* ページのプロファイル(radar_lib.render_html が差し込む)。
+   de: {"id":"de","home":"DE","other":{"id":"uk","href":"uk/"},"ls_suffix":""}
+   uk: {"id":"uk","home":"GB","other":{"id":"de","href":"../"},"ls_suffix":"_uk"}
+   home=本拠国(Area/Country の既定値・◇判定・日帰り圏の基準)、other=相手モードへの相対リンク、
+   ls_suffix=フィルタ保存・マイリストの localStorage キー接尾辞(UI言語・配色は共用)。 */
+const PROFILE = __PROFILE_JSON__;
 
 /* ================= UI言語(uiLang)=================
    注意: state.lang は「イベントの開催言語フィルタ(en/de)」であり、
@@ -772,14 +784,13 @@ const LS_UILANG = "sr_uilang";          /* フィルタ保存キー(LS_KEY)と�
 
 const I18N = {
 ja:{
-  docTitle:"Seminar Calendar — ドイツ経済・金融セミナー",
+  modeDe:"ドイツモード", modeUk:"英国モード", modeSwitch:"モード切替",
   lastUpdate:"LAST UPDATE:",
   sources:"調査対象",
   skinToLight:"明るいテーマに切り替え", skinToDark:"暗いテーマに切り替え",
   capArea:"エリア", capCountry:"国", capCity:"都市", capOrg:"主催",
   capTheme:"テーマ", capImp:"重要度", capLang:"言語",
   mech:"仕組み",
-  mpIntro:"ドイツ語圏と中東欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
   mpAgentT:"AIエージェント",
   mpAgentText:"収集は Claude Code または Codex のAIエージェントが毎日1回自動実行します。作業の一部はサブエージェントに分担させ、抽出結果の検証は主エージェントが行います。更新は GitHub リポジトリへのコミットとして反映され、自動マージ後にこのページが再生成されます。",
   mpFlowSrc:"定点観測先の巡回",
@@ -796,20 +807,18 @@ ja:{
   qPlaceholder:"キーワード",
   qAria:"キーワード検索",
   all:"すべて",
-  areaDE:"ドイツ", areaNonDE:"ドイツ以外",
   th_central_bank:"①中銀", th_real_economy:"②実体経済", th_fin_markets:"③規制・市場",
   th_geopolitics:"④地政学", th_climate_esg:"⑤環境ESG", th_ai:"⑥AI",
   th_china:"⑦中国", th_japan:"⑧日本", th_ukraine:"⑨ウクライナ",
   imp0:"★0以上 — すべて(定例セミナー含む)", imp1:"★1以上 — 標準",
   imp2:"★2以上 — 中規模会議から", imp3:"★3のみ — 旗艦・大型会議",
   langEn:"英語", langDe:"ドイツ語",
-  cbOnline:"オンライン開催を含む", cbDaytrip:"Frankfurt日帰り圏のみ",
+  cbOnline:"オンライン開催を含む",
   today:"今日",
   fbHidden:"⚠ フィルタ適用中 — 非表示: {n}件", reset:"リセット",
   lgColorImp:"色=重要度:", lgHigh:"高", lgMid:"中", lgLow:"低",
-  lgForeign:"◇ ドイツ国外での開催",
   lgUnderline:"下線", lgOpenReg:"= 登録参加可(招待制・CfP型でなく、高額有料イベントを除く)",
-  legnote:"カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 / シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。◇ が付くイベントはドイツ国外での開催。一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの(参加費がおおむね300ユーロ以上の高額イベントには下線を付けない)。",
+  legnote:"カレンダーの色・文字サイズは重要度を表す(アンバー=高:★★★ 大規模国際会議・中銀総裁級登壇 / シアン=中:★★☆ 中規模カンファレンス / グレー=低:★☆☆ 定例セミナー)。{{legnoteForeign}}一覧の①〜⑧はイベントの主テーマ(モノクロ表示)。下線が付くイベントは招待制・CfP(Call for Papers)型ではなく、一般の参加登録が可能なもの(参加費がおおむね300ユーロ以上の高額イベントには下線を付けない)。",
   upcoming:"今後のイベント一覧",
   sortDate:"日付順", sortImp:"重要度順",
   crawlStatus:"巡回ステータス",
@@ -834,7 +843,6 @@ ja:{
   nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
   nwf_fee:"参加費", nwf_reg:"申込",
   spCoverage:"対象地域",
-  spCoverageText:"ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。",
   spDiscovery:"広域検索",
   spDiscoveryText:"上記に加えて、金融政策/実体経済(エネルギー・防衛・インフラ)/金融規制/地政学/環境・ESG/AI/中国/日本/ウクライナのテーマ、中東欧の中央銀行セミナー、大型政策・安全保障フォーラムを毎日Web検索で補完している。",
   og_cb:"中銀・規制当局", og_tt:"シンクタンク・研究機関", og_uni:"大学", og_other:"その他",
@@ -863,14 +871,13 @@ ja:{
   wdWeek:["月","火","水","木","金","土","日"]        /* 0=月曜始まり */
 },
 en:{
-  docTitle:"Seminar Calendar — German Economics & Finance Seminars",
+  modeDe:"Germany mode", modeUk:"UK mode", modeSwitch:"Mode",
   lastUpdate:"LAST UPDATE:",
   sources:"Sources",
   skinToLight:"Switch to light theme", skinToDark:"Switch to dark theme",
   capArea:"Area", capCountry:"Country", capCity:"City", capOrg:"Organizer",
   capTheme:"Theme", capImp:"Importance", capLang:"Lang",
   mech:"How it works",
-  mpIntro:"Economics and finance seminars across the German-speaking region and Central & Eastern Europe, collected automatically once a day by AI agents.",
   mpAgentT:"AI agents",
   mpAgentText:"Collection runs automatically once a day, performed by an AI agent (Claude Code or Codex). Part of the work is delegated to sub-agents, while the main agent verifies the extracted results. Updates are pushed as commits to the GitHub repository, and this page is regenerated after the auto-merge.",
   mpFlowSrc:"Monitored sources",
@@ -887,7 +894,6 @@ en:{
   qPlaceholder:"Keyword",
   qAria:"Keyword search",
   all:"All",
-  areaDE:"Germany", areaNonDE:"Outside Germany",
   th_central_bank:"① Central banks", th_real_economy:"② Real economy",
   th_fin_markets:"③ Regulation & markets", th_geopolitics:"④ Geopolitics",
   th_climate_esg:"⑤ Climate & ESG", th_ai:"⑥ AI",
@@ -895,13 +901,12 @@ en:{
   imp0:"★0+ — all (incl. weekly seminars)", imp1:"★1+ — standard",
   imp2:"★2+ — mid-size conferences and up", imp3:"★3 only — flagship & major events",
   langEn:"English", langDe:"German",
-  cbOnline:"Incl. online events", cbDaytrip:"Frankfurt day-trip only",
+  cbOnline:"Incl. online events",
   today:"Today",
   fbHidden:"⚠ Filters active — hidden: {n}", reset:"Reset",
   lgColorImp:"Color = importance:", lgHigh:"High", lgMid:"Mid", lgLow:"Low",
-  lgForeign:"◇ held outside Germany",
   lgUnderline:"underline", lgOpenReg:"= open registration (not invite-only/CfP; high-fee events excluded)",
-  legnote:"Colour and text size in the calendar indicate importance (amber = high: ★★★ large international conferences with central bank governor-level speakers / cyan = mid: ★★☆ mid-size conferences / grey = low: ★☆☆ regular seminars). Events marked ◇ are held outside Germany. The numbers ①–⑧ in the list show the main theme of each event (displayed in monochrome). Underlined events are open to general registration, i.e. not invitation-only or call-for-papers events (events with fees of roughly €300 or more are not underlined).",
+  legnote:"Colour and text size in the calendar indicate importance (amber = high: ★★★ large international conferences with central bank governor-level speakers / cyan = mid: ★★☆ mid-size conferences / grey = low: ★☆☆ regular seminars). {{legnoteForeign}} The numbers ①–⑧ in the list show the main theme of each event (displayed in monochrome). Underlined events are open to general registration, i.e. not invitation-only or call-for-papers events (events with fees of roughly €300 or more are not underlined).",
   upcoming:"Upcoming events",
   sortDate:"By date", sortImp:"By importance",
   crawlStatus:"Crawl status",
@@ -926,7 +931,6 @@ en:{
   nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
   nwf_fee:"Fee", nwf_reg:"Registration",
   spCoverage:"Coverage",
-  spCoverageText:"Germany, Switzerland, Austria, Central & Eastern Europe (PL/CZ/SK/HU/SI), the Balkans, the Baltic states and Ukraine. Events hosted by central banks, the ECB or the BIS are included regardless of the host country.",
   spDiscovery:"Web discovery",
   spDiscoveryText:"In addition to the sources above, a daily web search covers monetary policy, the real economy (energy, defence, infrastructure), financial regulation, geopolitics, climate & ESG, AI, China, Japan and Ukraine, as well as central bank seminars in Central & Eastern Europe and major policy and security forums.",
   og_cb:"Central banks & regulators", og_tt:"Think tanks & research",
@@ -959,14 +963,13 @@ en:{
   wdWeek:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 },
 de:{
-  docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Deutschland",
+  modeDe:"Deutschland-Modus", modeUk:"UK-Modus", modeSwitch:"Modus",
   lastUpdate:"LETZTES UPDATE:",
   sources:"Quellen",
   skinToLight:"Zum hellen Design wechseln", skinToDark:"Zum dunklen Design wechseln",
   capArea:"Region", capCountry:"Land", capCity:"Stadt", capOrg:"Veranstalter",
   capTheme:"Thema", capImp:"Relevanz", capLang:"Sprache",
   mech:"Funktionsweise",
-  mpIntro:"Wirtschafts- und Finanzseminare im deutschsprachigen Raum und in Mittel- und Osteuropa, täglich einmal automatisch von KI-Agenten erfasst.",
   mpAgentT:"KI-Agenten",
   mpAgentText:"Die Erfassung erfolgt täglich einmal automatisch durch einen KI-Agenten (Claude Code oder Codex). Ein Teil der Arbeit wird an Subagenten delegiert; die extrahierten Ergebnisse prüft der Hauptagent. Aktualisierungen werden als Commits in das GitHub-Repository übernommen; nach dem automatischen Merge wird diese Seite neu generiert.",
   mpFlowSrc:"Beobachtete Quellen",
@@ -983,7 +986,6 @@ de:{
   qPlaceholder:"Stichwort",
   qAria:"Stichwortsuche",
   all:"Alle",
-  areaDE:"Deutschland", areaNonDE:"Außerhalb Deutschlands",
   th_central_bank:"① Zentralbanken", th_real_economy:"② Realwirtschaft",
   th_fin_markets:"③ Regulierung & Märkte", th_geopolitics:"④ Geopolitik",
   th_climate_esg:"⑤ Klima & ESG", th_ai:"⑥ KI",
@@ -991,13 +993,12 @@ de:{
   imp0:"★0+ — alle (inkl. Forschungsseminare)", imp1:"★1+ — Standard",
   imp2:"★2+ — ab mittelgroßen Konferenzen", imp3:"★3 — nur Flaggschiff-Konferenzen",
   langEn:"Englisch", langDe:"Deutsch",
-  cbOnline:"Inkl. Online-Events", cbDaytrip:"Nur Umkreis Frankfurt",
+  cbOnline:"Inkl. Online-Events",
   today:"Heute",
   fbHidden:"⚠ Filter aktiv — ausgeblendet: {n}", reset:"Zurücksetzen",
   lgColorImp:"Farbe = Wichtigkeit:", lgHigh:"Hoch", lgMid:"Mittel", lgLow:"Niedrig",
-  lgForeign:"◇ Veranstaltung außerhalb Deutschlands",
   lgUnderline:"Unterstrichen", lgOpenReg:"= Anmeldung offen (nicht nur auf Einladung/CfP; ohne hohe Teilnahmegebühren)",
-  legnote:"Farbe und Schriftgröße im Kalender zeigen die Wichtigkeit an (Bernstein = hoch: ★★★ große internationale Konferenzen mit Rednern auf Notenbankchef-Ebene / Cyan = mittel: ★★☆ mittelgroße Konferenzen / Grau = niedrig: ★☆☆ Forschungsseminare). Mit ◇ markierte Veranstaltungen finden außerhalb Deutschlands statt. Die Ziffern ①–⑧ in der Liste stehen für das Hauptthema der Veranstaltung (monochrom dargestellt). Unterstrichene Veranstaltungen stehen der allgemeinen Anmeldung offen, sind also nicht nur auf Einladung oder als Call for Papers zugänglich (Veranstaltungen mit Teilnahmegebühren ab etwa 300 € werden nicht unterstrichen).",
+  legnote:"Farbe und Schriftgröße im Kalender zeigen die Wichtigkeit an (Bernstein = hoch: ★★★ große internationale Konferenzen mit Rednern auf Notenbankchef-Ebene / Cyan = mittel: ★★☆ mittelgroße Konferenzen / Grau = niedrig: ★☆☆ Forschungsseminare). {{legnoteForeign}} Die Ziffern ①–⑧ in der Liste stehen für das Hauptthema der Veranstaltung (monochrom dargestellt). Unterstrichene Veranstaltungen stehen der allgemeinen Anmeldung offen, sind also nicht nur auf Einladung oder als Call for Papers zugänglich (Veranstaltungen mit Teilnahmegebühren ab etwa 300 € werden nicht unterstrichen).",
   upcoming:"Kommende Veranstaltungen",
   sortDate:"Nach Datum", sortImp:"Nach Wichtigkeit",
   crawlStatus:"Abrufstatus",
@@ -1023,7 +1024,6 @@ de:{
   nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
   nwf_fee:"Gebühr", nwf_reg:"Anmeldung",
   spCoverage:"Erfasste Region",
-  spCoverageText:"Deutschland, Schweiz, Österreich, Mittel- und Osteuropa (PL/CZ/SK/HU/SI), Balkan, Baltikum und Ukraine. Veranstaltungen von Zentralbanken, der EZB oder der BIZ werden unabhängig vom Austragungsland erfasst.",
   spDiscovery:"Websuche",
   spDiscoveryText:"Ergänzend zu den oben genannten Quellen wird täglich im Web nach Geldpolitik, Realwirtschaft (Energie, Verteidigung, Infrastruktur), Finanzregulierung, Geopolitik, Klima & ESG, KI, China, Japan und Ukraine sowie nach Zentralbankseminaren in Mittel- und Osteuropa und großen Politik- und Sicherheitsforen gesucht.",
   og_cb:"Zentralbanken & Aufsicht", og_tt:"Think-Tanks & Forschung",
@@ -1085,12 +1085,107 @@ function detectUiLang(){
 }
 let uiLang = detectUiLang();
 
-/* 辞書引き(現在の uiLang → ja → キー名 の順にフォールバック) */
+/* ================= プロファイル別UI(ドイツモード / 英国モード)=================
+   地域に依存する文言と日帰り圏の都市集合だけをここに持つ。PROFILE.id で選び、
+   t() は PUI.i18n を基本辞書(I18N)より先に引く。 */
+const PROFILE_UI = {
+  de: {
+    /* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
+       基準: DB の標準的なICE所要時間で片道約4時間以内。
+       Kiel(FRA発 約5時間超)・Dresden(約4.5時間)は基準超のため対象外。 */
+    daytripCities: new Set([
+      "Frankfurt am Main","Mainz","Wiesbaden","Darmstadt","Eltville am Rhein",
+      "Bonn","Cologne","Düsseldorf","Essen","Bochum","Dortmund",
+      "Mannheim","Heidelberg","Karlsruhe","Stuttgart","Ulm","Würzburg",
+      "Nürnberg","Munich","Berlin","Hamburg","Hannover","Leipzig",
+      "Halle (Saale)","Kassel","Göttingen","Saarbrücken"
+    ]),
+    i18n: {
+      ja:{
+        docTitle:"Seminar Calendar — ドイツ経済・金融セミナー",
+        mpIntro:"ドイツ語圏と中東欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
+        areaHome:"ドイツ", areaAway:"ドイツ以外",
+        cbDaytrip:"Frankfurt日帰り圏のみ",
+        lgForeign:"◇ ドイツ国外での開催",
+        legnoteForeign:"◇ が付くイベントはドイツ国外での開催。",
+        spCoverageText:"ドイツ・スイス・オーストリア・中東欧(PL/CZ/SK/HU/SI)・バルカン・バルト三国・ウクライナ。中央銀行・ECB・BIS 主催のイベントは開催国を問わず収載。"
+      },
+      en:{
+        docTitle:"Seminar Calendar — German Economics & Finance Seminars",
+        mpIntro:"Economics and finance seminars across the German-speaking region and Central & Eastern Europe, collected automatically once a day by AI agents.",
+        areaHome:"Germany", areaAway:"Outside Germany",
+        cbDaytrip:"Frankfurt day-trip only",
+        lgForeign:"◇ held outside Germany",
+        legnoteForeign:"Events marked ◇ are held outside Germany.",
+        spCoverageText:"Germany, Switzerland, Austria, Central & Eastern Europe (PL/CZ/SK/HU/SI), the Balkans, the Baltic states and Ukraine. Events hosted by central banks, the ECB or the BIS are included regardless of the host country."
+      },
+      de:{
+        docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Deutschland",
+        mpIntro:"Wirtschafts- und Finanzseminare im deutschsprachigen Raum und in Mittel- und Osteuropa, täglich einmal automatisch von KI-Agenten erfasst.",
+        areaHome:"Deutschland", areaAway:"Außerhalb Deutschlands",
+        cbDaytrip:"Nur Umkreis Frankfurt",
+        lgForeign:"◇ Veranstaltung außerhalb Deutschlands",
+        legnoteForeign:"Mit ◇ markierte Veranstaltungen finden außerhalb Deutschlands statt.",
+        spCoverageText:"Deutschland, Schweiz, Österreich, Mittel- und Osteuropa (PL/CZ/SK/HU/SI), Balkan, Baltikum und Ukraine. Veranstaltungen von Zentralbanken, der EZB oder der BIZ werden unabhängig vom Austragungsland erfasst."
+      }
+    }
+  },
+  uk: {
+    /* London(Central line の Bank 駅起点)から鉄道で片道おおむね4時間以内の英国都市(=日帰り圏)。
+       暫定リスト。基準: 標準的な所要時間で片道約4時間以内(Edinburgh・Glasgow は約4.5時間超で対象外)。 */
+    daytripCities: new Set([
+      "London","Oxford","Cambridge","Reading","Brighton","Birmingham","Bristol","Bath",
+      "Cardiff","Manchester","Leeds","Sheffield","Nottingham","Leicester","Coventry",
+      "Warwick","York","Liverpool","Norwich","Southampton","Exeter","Newcastle upon Tyne",
+      "Durham","Milton Keynes"
+    ]),
+    i18n: {
+      ja:{
+        docTitle:"Seminar Calendar — 英国経済・金融セミナー",
+        mpIntro:"英国・アイルランドと北欧の経済・金融関連セミナーを、AIエージェントが毎日1回自動収集して掲載しています。",
+        areaHome:"英国", areaAway:"英国以外",
+        cbDaytrip:"London日帰り圏のみ",
+        lgForeign:"◇ 英国外での開催",
+        legnoteForeign:"◇ が付くイベントは英国外での開催。",
+        spCoverageText:"英国・アイルランド。北欧(DK/SE/NO/FI/IS)は現地開催なら旗艦・大型会議(★3)のみ、オンライン開催は全規模を収載。"
+      },
+      en:{
+        docTitle:"Seminar Calendar — UK Economics & Finance Seminars",
+        mpIntro:"Economics and finance seminars across the UK, Ireland and the Nordics, collected automatically once a day by AI agents.",
+        areaHome:"UK", areaAway:"Outside UK",
+        cbDaytrip:"London day-trip only",
+        lgForeign:"◇ held outside the UK",
+        legnoteForeign:"Events marked ◇ are held outside the UK.",
+        spCoverageText:"United Kingdom and Ireland. For the Nordics (DK/SE/NO/FI/IS) only flagship/large conferences (★3) are included when held on site; online events of any size are included."
+      },
+      de:{
+        docTitle:"Seminar Calendar — Wirtschafts- und Finanzseminare in Großbritannien",
+        mpIntro:"Wirtschafts- und Finanzseminare in Großbritannien, Irland und den nordischen Ländern, täglich einmal automatisch von KI-Agenten erfasst.",
+        areaHome:"Großbritannien", areaAway:"Außerhalb Großbritanniens",
+        cbDaytrip:"Nur Umkreis London",
+        lgForeign:"◇ Veranstaltung außerhalb Großbritanniens",
+        legnoteForeign:"Mit ◇ markierte Veranstaltungen finden außerhalb Großbritanniens statt.",
+        spCoverageText:"Vereinigtes Königreich und Irland. Für die nordischen Länder (DK/SE/NO/FI/IS) werden Präsenzveranstaltungen nur als Flaggschiff-/Großkonferenzen (★3) erfasst; Online-Veranstaltungen unabhängig von der Größe."
+      }
+    }
+  }
+};
+const PUI = PROFILE_UI[PROFILE.id] || PROFILE_UI.de;
+
+/* 辞書引き(プロファイル辞書 PUI.i18n → 基本辞書 I18N の順。各辞書内は現在の uiLang → ja の順)。
+   見つからなければキー名をそのまま返す。文字列中の {{key}} は別キーの参照として再帰的に展開する
+   (地域依存の一文だけをプロファイル側に持たせるため。tf() の {n} 差し込みとは別物)。 */
 function t(k){
-  const d=I18N[uiLang]||I18N.ja;
-  if(d && d[k]!=null) return d[k];
-  if(I18N.ja[k]!=null) return I18N.ja[k];
-  return k;
+  let s;
+  const p=PUI.i18n[uiLang]||PUI.i18n.ja, d=I18N[uiLang]||I18N.ja;
+  if(p && p[k]!=null) s=p[k];
+  else if(PUI.i18n.ja[k]!=null) s=PUI.i18n.ja[k];
+  else if(d && d[k]!=null) s=d[k];
+  else if(I18N.ja[k]!=null) s=I18N.ja[k];
+  else return k;
+  if(typeof s==="string" && s.includes("{{"))
+    s=s.replace(/\{\{(\w+)\}\}/g,(m,key)=>key===k?m:String(t(key)));
+  return s;
 }
 /* {n} 等のプレースホルダ差し込み(HTMLに入れる値は呼び出し側で esc 済みにすること) */
 function tf(k, vals){
@@ -1153,6 +1248,26 @@ function drawUpdated(){
 }
 setInterval(drawUpdated, 60000);
 
+/* ヘッダの DE|UK モード切替を PROFILE から組み立てる(両ページで同じマークアップ)。
+   現在側は押せない <span class="on">、相手側は相対リンク <a>(/ ⇄ /uk/)。
+   title は data-i18n-title 経由で applyStaticText() が UI言語に合わせて付ける。 */
+function buildModeSwitch(){
+  const box=document.getElementById("modesw");
+  if(!box) return;
+  box.textContent="";
+  const other=(PROFILE.other&&PROFILE.other.id)||"", href=(PROFILE.other&&PROFILE.other.href)||"";
+  for(const id of ["de","uk"]){
+    const cur=(id===PROFILE.id), key=(id==="uk"?"modeUk":"modeDe");
+    const el=document.createElement(cur||id!==other ? "span" : "a");
+    el.textContent=id.toUpperCase();
+    el.dataset.mode=id;
+    el.dataset.i18nTitle=key;
+    if(cur){ el.className="on"; el.setAttribute("aria-current","page"); }
+    else if(id===other){ el.href=href; }
+    box.appendChild(el);
+  }
+}
+
 /* HTML静的部分(data-i18n 属性)の一括書き換え */
 function applyStaticText(){
   document.documentElement.lang = uiLang;
@@ -1209,16 +1324,7 @@ function setSkin(sk){
   applySkin();
 }
 
-/* Frankfurt Hbf から ICE 片道おおむね4時間以内で往復できるドイツ都市(=日帰り圏)。
-   基準: DB の標準的なICE所要時間で片道約4時間以内。
-   Kiel(FRA発 約5時間超)・Dresden(約4.5時間)は基準超のため対象外。 */
-const DAYTRIP_CITIES = new Set([
-  "Frankfurt am Main","Mainz","Wiesbaden","Darmstadt","Eltville am Rhein",
-  "Bonn","Cologne","Düsseldorf","Essen","Bochum","Dortmund",
-  "Mannheim","Heidelberg","Karlsruhe","Stuttgart","Ulm","Würzburg",
-  "Nürnberg","Munich","Berlin","Hamburg","Hannover","Leipzig",
-  "Halle (Saale)","Kassel","Göttingen","Saarbrücken"
-]);
+/* 日帰り圏の都市集合はプロファイル別(PROFILE_UI[*].daytripCities → PUI.daytripCities)。 */
 
 const CITY_SHORT = {"Frankfurt am Main":"Frankfurt","Lindau am Bodensee":"Lindau",
                     "Eltville am Rhein":"Eltville"};
@@ -1245,13 +1351,16 @@ const COUNTRY_KANA = {
   BG:"ﾌﾞﾙｶﾞﾘｱ", LT:"ﾘﾄｱﾆｱ", LV:"ﾗﾄﾋﾞｱ", EE:"ｴｽﾄﾆｱ", UA:"ｳｸﾗｲﾅ", BE:"ﾍﾞﾙｷﾞｰ",
   GB:"ｲｷﾞﾘｽ", FR:"ﾌﾗﾝｽ", IT:"ｲﾀﾘｱ", NL:"ｵﾗﾝﾀﾞ", LU:"ﾙｸｾﾝﾌﾞﾙｸ", ES:"ｽﾍﾟｲﾝ",
   GR:"ｷﾞﾘｼｬ", DK:"ﾃﾞﾝﾏｰｸ", SE:"ｽｳｪｰﾃﾞﾝ", FI:"ﾌｨﾝﾗﾝﾄﾞ", NO:"ﾉﾙｳｪｰ",
+  IE:"ｱｲﾙﾗﾝﾄﾞ", IS:"ｱｲｽﾗﾝﾄﾞ", DE:"ﾄﾞｲﾂ",
   TR:"ﾄﾙｺ", US:"ｱﾒﾘｶ", EU:"EU"
 };
 /* 主催者トークン → グループ(g: cb=中銀・規制当局 / tt=シンクタンク・研究機関 /
    uni=大学 / 無指定=その他)と、必要な場合のみ本拠国(c)。
    exempt: ECB等の超有名組織は国名括弧を付けない。
-   c の無い組織は「その組織のイベントの開催国が全て同一かつドイツ以外」の場合だけ
-   自動で括弧が付く(独組織・多国開催・オンラインのみは付かない)。 */
+   c の無い組織は「その組織のイベントの開催国が全て同一かつ本拠国(PROFILE.home)以外」の
+   場合だけ自動で括弧が付く(本拠国の組織・多国開催・オンラインのみは付かない)。
+   表は両モード共用(英国モードでは c:"GB" に括弧が付かず、c 無しのドイツ組織には
+   開催国 DE から自動で括弧が付く)。 */
 const ORG_META = {
   /* 中銀・規制当局 */
   "ECB":{g:"cb",exempt:true}, "EZB":{g:"cb",exempt:true}, "BIS":{g:"cb",exempt:true},
@@ -1262,6 +1371,12 @@ const ORG_META = {
   "Bank of Lithuania":{g:"cb",c:"LT"}, "Latvijas Banka":{g:"cb",c:"LV"},
   "Eesti Pank":{g:"cb",c:"EE"}, "CBBH":{g:"cb",c:"BA"}, "Bank of Albania":{g:"cb",c:"AL"},
   "BaFin":{g:"cb"}, "EIOPA":{g:"cb"}, "ESRB":{g:"cb"}, "SRB":{g:"cb",c:"EU"},
+  /* 英国・アイルランド・北欧(英国モード用。表は共用) */
+  "BoE":{g:"cb",c:"GB"}, "Bank of England":{g:"cb",c:"GB"}, "PRA":{g:"cb",c:"GB"},
+  "FCA":{g:"cb",c:"GB"}, "Central Bank of Ireland":{g:"cb",c:"IE"},
+  "Riksbank":{g:"cb",c:"SE"}, "Norges Bank":{g:"cb",c:"NO"},
+  "Danmarks Nationalbank":{g:"cb",c:"DK"}, "Bank of Finland":{g:"cb",c:"FI"},
+  "Sedlabanki":{g:"cb",c:"IS"},
   /* シンクタンク・研究機関 */
   "ifo":{g:"tt"}, "CESifo":{g:"tt"}, "EconPol":{g:"tt"}, "DIW Berlin":{g:"tt"},
   "IfW Kiel":{g:"tt"}, "RWI":{g:"tt"}, "ZEW":{g:"tt"}, "IWH":{g:"tt"},
@@ -1270,11 +1385,17 @@ const ORG_META = {
   "SUERF":{g:"tt",c:"AT"}, "Bruegel":{g:"tt",c:"BE"}, "OMFIF":{g:"tt",c:"GB"},
   "CEBRA":{g:"tt"}, "CEPR":{g:"tt",c:"GB"}, "ikf Bochum":{g:"tt"},
   "Hohenheimer Kreis":{g:"tt"},
+  "NIESR":{g:"tt",c:"GB"}, "IFS":{g:"tt",c:"GB"}, "Resolution Foundation":{g:"tt",c:"GB"},
+  "Chatham House":{g:"tt",c:"GB"}, "RUSI":{g:"tt",c:"GB"}, "IISS":{g:"tt",c:"GB"},
+  "IfG":{g:"tt",c:"GB"}, "CER":{g:"tt",c:"GB"}, "ESRI":{g:"tt",c:"IE"}, "OBR":{g:"tt",c:"GB"},
   /* 大学・ビジネススクール */
   "Frankfurt School":{g:"uni"}, "FS Forum":{g:"uni"}, "Hertie School":{g:"uni"},
   "House of Finance":{g:"uni"}, "HFM":{g:"uni"}, "Goethe Uni":{g:"uni"},
   "ECONtribute":{g:"uni"}, "Berlin School of Economics":{g:"uni"},
-  "Uni Mannheim":{g:"uni"}, "WU Wien":{g:"uni",c:"AT"}
+  "Uni Mannheim":{g:"uni"}, "WU Wien":{g:"uni",c:"AT"},
+  "LSE":{g:"uni",c:"GB"}, "Oxford":{g:"uni",c:"GB"}, "Cambridge":{g:"uni",c:"GB"},
+  "KCL":{g:"uni",c:"GB"}, "Imperial":{g:"uni",c:"GB"}, "Warwick":{g:"uni",c:"GB"},
+  "Bayes":{g:"uni",c:"GB"}, "TCD":{g:"uni",c:"IE"}
 };
 const ORG_GROUP_ORDER = ["cb","tt","uni","other"];
 /* グループ見出しのラベルは I18N の og_cb / og_tt / og_uni / og_other を引く */
@@ -1289,7 +1410,8 @@ function imp(ev){ const n=ev.importance; return (n===0||n===1||n===2||n===3)?n:1
 /* CSS クラス用のバケツ(i1/i2/i3のみ既存)。importance 0 は新クラスを増やさず
    1(グレー)と同じ見た目に丸める。imp()自体はフィルタ・★表示のため0を維持する。 */
 function impCls(ev){ return imp(ev)||1; }
-function isForeign(ev){ return ev.country!=null && ev.country!=="DE"; }
+/* 本拠国(PROFILE.home)以外での開催か(◇印)。online(country null)は対象外 */
+function isForeign(ev){ return ev.country!=null && ev.country!==PROFILE.home; }
 /* 「Call for Papers・招待制ではなく、登録すれば参加できる」イベントか判定する。
    カレンダー上の下線表示・一覧の「登録参加可」バッジで使う。 */
 function isOpenReg(ev){
@@ -1366,21 +1488,24 @@ function mondayOf(iso){
 /* ---------- 状態 ---------- */
 const TODAY_Y = +TODAY.slice(0,4), TODAY_M = +TODAY.slice(5,7)-1;
 /* デフォルト状態(フィルタ適用中バーの比較基準にもなる。sort/y/m/weekStart は対象外)。 */
-/* Area=DE のときは country も DE をセットで表示する(area変更ハンドラでも連動)。 */
-const DEFAULTS = {area:"DE", country:"DE", city:"", org:"", imp:"2", theme:"", lang:"",
+/* Area=home(本拠国)のときは country も本拠国をセットで表示する(area変更ハンドラでも連動)。 */
+const DEFAULTS = {area:"home", country:PROFILE.home, city:"", org:"", imp:"2", theme:"", lang:"",
                    online:false, daytrip:false, q:""};
 const state = {...DEFAULTS, sort:"date",
                y:TODAY_Y, m:TODAY_M,
                weekStart:isoOf(mondayOf(TODAY))};
 
 /* v7: 既定値変更(Area=DE・Country=DE・★2以上・オンライン除外)を全訪問者に
-   行き渡らせるためキーを更新。旧キーの保存値は読まない(一度だけ既定にリセットされる)。 */
-const LS_KEY = "sr_filters_v7";
+   行き渡らせるためキーを更新。旧キーの保存値は読まない(一度だけ既定にリセットされる)。
+   プロファイル別に別キー(uk は "_uk" 接尾辞。de は従来どおり)。 */
+const LS_KEY = "sr_filters_v7" + (PROFILE.ls_suffix||"");
 function loadState(){
   let s;
   try{ s = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }catch(e){ return; }
   if(!s || typeof s!=="object") return;
-  if(["","DE","nonDE"].includes(s.area)) state.area = s.area;
+  /* 旧保存値 "DE"/"nonDE"(本拠国固定だった頃の値)は "home"/"away" に移行する */
+  if(s.area==="DE") s.area="home"; else if(s.area==="nonDE") s.area="away";
+  if(["","home","away"].includes(s.area)) state.area = s.area;
   if(["","en","de"].includes(s.lang)) state.lang = s.lang;
   /* 旧保存値 ""(当時の「全部表示」)は、現在の既定である★2以上(imp:"2")に移行する */
   if(s.imp==="") state.imp = "2";
@@ -1409,8 +1534,8 @@ function saveState(){
 function passArea(ev, area=state.area){
   if(area==="") return true;
   if(ev.format==="online") return true;               /* 完全オンラインは所在地なし→常に表示 */
-  if(area==="DE")    return ev.country==="DE";
-  if(area==="nonDE") return ev.country!=null && ev.country!=="DE";
+  if(area==="home") return ev.country===PROFILE.home;
+  if(area==="away") return ev.country!=null && ev.country!==PROFILE.home;
   return true;
 }
 function passCountry(ev){
@@ -1443,15 +1568,15 @@ function passOnline(ev){
   return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
 }
 /* 日帰り圏チェックが無効(=グレーアウト)になる条件。
-   AREA=ドイツ以外、または COUNTRY がドイツ以外に固定されているとき、
+   AREA=本拠国以外、または COUNTRY が本拠国以外に固定されているとき、
    物理参加を前提とする日帰り圏フィルタは意味を持たないため無効化する。 */
 function daytripDisabled(){
-  return state.area==="nonDE" || (state.country!=="" && state.country!=="DE");
+  return state.area==="away" || (state.country!=="" && state.country!==PROFILE.home);
 }
 function passDaytrip(ev){
   if(!state.daytrip || daytripDisabled()) return true; /* OFF または無効中は素通し */
-  /* ON: ドイツ国内かつ日帰り圏都市のみ(完全オンライン=city/country null も false=非表示) */
-  return ev.country==="DE" && DAYTRIP_CITIES.has(ev.city);
+  /* ON: 本拠国内かつ日帰り圏都市のみ(完全オンライン=city/country null も false=非表示) */
+  return ev.country===PROFILE.home && PUI.daytripCities.has(ev.city);
 }
 function passQ(ev){
   if(!state.q) return true;
@@ -1490,7 +1615,7 @@ const notEnded = e => (e.date_end||e.date_start) >= TODAY;
 /* ---------- 候補値(ファセット) ---------- */
 /* format==="online" は場所情報を持たない(city/country が null)ため、
    COUNTRY/CITY のファセット母集合から構造的に除外する。将来データが汚れて
-   online イベントに国が付いても「ドイツ以外を選んだのに DE が出る」型のバグを防ぐ。
+   online イベントに国が付いても「本拠国以外を選んだのに本拠国が出る」型のバグを防ぐ。
    ORG は online 主催者も ORGANIZER フィルタ対象なので除外しない。 */
 function facetCountry(){
   /* 地理階層 AREA > COUNTRY > CITY。COUNTRY の候補は下位の CITY 選択に従属させない
@@ -1507,10 +1632,10 @@ function facetOrg(){
   EVENTS.filter(e=>notEnded(e) && passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(tok=>set.add(tok)));
   return [...set].sort((a,b)=>a.localeCompare(b));
 }
-/* AREA の特定選択肢(DE/nonDE)を選んだと仮定した場合に1件以上ヒットするか。
+/* AREA の特定選択肢(home/away)を選んだと仮定した場合に1件以上ヒットするか。
    AREA は地理階層の最上位なので、下位の country・city 選択には従属させない
    (= area/country/city の3軸を無視して評価)。daytrip 等その他ファセットは
-   現状のまま効かせる(日帰り圏ONのとき nonDE がグレーアウトする挙動を維持)。 */
+   現状のまま効かせる(日帰り圏ONのとき away がグレーアウトする挙動を維持)。 */
 function areaOptionEnabled(area){
   return EVENTS.some(e=>notEnded(e) && passExcept(e,["area","country","city"]) && passArea(e,area));
 }
@@ -1528,10 +1653,10 @@ function orgGroupOf(tok){ return (ORG_META[tok]&&ORG_META[tok].g)||"other"; }
 function orgCountryOf(tok){
   const m=ORG_META[tok]||{};
   if(m.exempt) return null;
-  if(m.c) return m.c==="DE"?null:m.c;
+  if(m.c) return m.c===PROFILE.home?null:m.c;
   const cs=[...new Set(EVENTS.filter(e=>orgTokens(e).includes(tok))
               .map(e=>e.country).filter(Boolean))];
-  return (cs.length===1 && cs[0]!=="DE") ? cs[0] : null;
+  return (cs.length===1 && cs[0]!==PROFILE.home) ? cs[0] : null;
 }
 /* 注意: 以下2関数では引数名に t を使わない(辞書引き関数 t() を隠してしまうため) */
 function orgOptionLabel(tok){
@@ -1557,7 +1682,7 @@ function fillOrgSelect(cand){
 }
 function rebuildSelects(){
   /* 選択中の値が候補から消えたら "" にリセット。相互依存があるため最大4回で安定させる
-     (area も含める: 例えば country=AT が選ばれた状態で area=DE が localStorage 等から
+     (area も含める: 例えば country=AT が選ばれた状態で area=home が localStorage 等から
      復元されるなど、area 自体が他の現行フィルタと矛盾して0件になる場合に "" へ戻し、
      他ファセットの再計算ループに載せる。なお area と daytrip 自体が矛盾するケースは
      daytripDisabled()/updateDaytripUI() 側の既存ルールで area 優先のまま解決される) */
@@ -1583,11 +1708,11 @@ function rebuildSelects(){
   document.getElementById("daytrip").checked = state.daytrip;
   updateDaytripUI();
 }
-/* AREA セレクトの DE/nonDE option を、選んでも0件になる場合は disabled にする(「すべて」は常に有効)。 */
+/* AREA セレクトの home/away option を、選んでも0件になる場合は disabled にする(「すべて」は常に有効)。 */
 function updateAreaOptions(){
   const areaSel = document.getElementById("area");
-  areaSel.querySelector('option[value="DE"]').disabled    = !areaOptionEnabled("DE");
-  areaSel.querySelector('option[value="nonDE"]').disabled = !areaOptionEnabled("nonDE");
+  areaSel.querySelector('option[value="home"]').disabled = !areaOptionEnabled("home");
+  areaSel.querySelector('option[value="away"]').disabled = !areaOptionEnabled("away");
 }
 /* 日帰り圏チェックボックスの disabled + 減光を現在の AREA/COUNTRY に合わせて更新。
    チェック状態(state.daytrip)自体は保持し、条件が解ければ復活する。 */
@@ -1917,6 +2042,7 @@ function drawMech(){
   const node=(k,cls)=>`<div class="mnode${cls?" "+cls:""}">${esc(t(k))}</div>`;
   document.getElementById("mechpanel").innerHTML=
     `<div class="srcsec"><p>${esc(t("mpIntro"))}</p></div>`+
+    `<div class="srcsec"><h3>${esc(t("spCoverage"))}</h3><p>${esc(t("spCoverageText"))}</p></div>`+
     `<div class="mflow" aria-hidden="true">`+
       `<div class="mrow">${node("mpFlowSrc")}${node("mpFlowSearch")}</div>`+
       `<div class="marrow">▼</div>`+
@@ -2103,7 +2229,7 @@ function updateFilterBar(){
    URLフラグメント #l=<base64url> への自己完結した埋め込みで行う(送信処理は一切ない)。
    localStorage・共有リンク由来の値は攻撃者が制御しうるものとして扱い、
    表示は textContent か esc() 経由のみ、IDは使用前に必ず16桁hexを検証する。 */
-const LS_LISTS  = "sr_lists_v1";
+const LS_LISTS  = "sr_lists_v1" + (PROFILE.ls_suffix||"");   /* プロファイル別(uk は "_uk") */
 const HEX16     = /^[0-9a-f]{16}$/;
 const DATE_RE   = /^\d{4}-\d{2}-\d{2}$/;
 /* リストキー(uuid)の形。キーを限定して __proto__ 等の特殊キーの混入を防ぐ */
@@ -2627,6 +2753,7 @@ function redraw(){rebuildSelects();renderShare();renderListBar();drawCal();drawL
 /* ---------- 初期化 ---------- */
 loadState();
 initLists();            /* ウォッチリスト復元・URLフラグメント処理(最初の描画より前) */
+buildModeSwitch();      /* ヘッダの DE|UK 切替(applyStaticText が title を付けるので先に組む) */
 applyStaticText();      /* <html lang>・<title>・静的UI文字列を uiLang に合わせる */
 rebuildSelects();
 renderShare();
@@ -2642,10 +2769,10 @@ document.getElementById("area").addEventListener("change",e=>{
   if(picked && picked.disabled){ e.target.value = state.area; return; }
   const prev = state.area;
   state.area = e.target.value;
-  /* エリアと国の連動: ドイツを選んだら国もドイツに。ドイツから離れたら、
-     連動でセットされていた国=ドイツだけを解除する(手動選択の他国は rebuildSelects が整合) */
-  if(state.area==="DE") state.country="DE";
-  else if(prev==="DE" && state.country==="DE") state.country="";
+  /* エリアと国の連動: 本拠国(home)を選んだら国も本拠国に。本拠国から離れたら、
+     連動でセットされていた国=本拠国だけを解除する(手動選択の他国は rebuildSelects が整合) */
+  if(state.area==="home") state.country=PROFILE.home;
+  else if(prev==="home" && state.country===PROFILE.home) state.country="";
   redraw();
 });
 document.getElementById("country").addEventListener("change",e=>{state.country=e.target.value;redraw();});

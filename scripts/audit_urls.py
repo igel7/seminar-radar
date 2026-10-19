@@ -23,13 +23,24 @@ import concurrent.futures
 import gzip
 import io
 import re
-import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
 
+import os
+import sys
+
+# --profile uk  ==  SR_PROFILE=uk  (AGENTS.md「プロファイル」参照)。
+# radar_lib はプロファイルを import 時に確定するため、import より前に環境変数へ写す。
+_argv = sys.argv[1:]
+for _i, _a in enumerate(_argv):
+    if _a == "--profile" and _i + 1 < len(_argv):
+        os.environ["SR_PROFILE"] = _argv[_i + 1]
+    elif _a.startswith("--profile="):
+        os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from radar_lib import parse_sources
+from radar_lib import PROFILE_ID, parse_sources  # noqa: E402
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
@@ -117,7 +128,12 @@ def audit_one(src):
 
 def main():
     sources = parse_sources()["sources"]
-    print(f"audit_urls: {len(sources)} sources を検査中...", file=sys.stderr)
+    print(f"audit_urls [profile={PROFILE_ID}]: {len(sources)} sources を検査中...",
+          file=sys.stderr)
+    if not sources:
+        print(f"[profile={PROFILE_ID}] 検査対象の定点がありません"
+              "(sources.yaml の regions を確認)。")
+        return
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         results = list(ex.map(audit_one, sources))
     order = {"SOFT404": 0, "HTTP-ERR": 1, "OFFSITE": 2, "NET-ERR": 3,

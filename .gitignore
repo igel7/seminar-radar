@@ -3,3 +3,5 @@ __pycache__/
 
 # fetch_all.py のローカル本文キャッシュ(差分検知の状態は data/fetch_state.json 側でコミットされる)
 data/cache/
+# 英国モード(--profile uk)の本文キャッシュ(同上)
+data/uk/cache/

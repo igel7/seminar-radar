@@ -4,21 +4,32 @@
 ingest.py: 実行エージェント(Claude Code / Codex)が書き出した data/new_events.json を取り込み、
 検証・重複排除して data/events.json を更新し、docs/ を再生成する。
 
-使い方:  python3 scripts/ingest.py
+使い方:  python3 scripts/ingest.py [--profile uk]
 入力:    data/new_events.json  … 本日抽出したイベントのJSON配列
          data/status.json      … 巡回ステータスのJSON配列
 出力:    data/events.json, data/archive.json, docs/index.html, docs/calendar.ics
+         (--profile uk では data/uk/・docs/uk/。環境変数 SR_PROFILE=uk と同義)
 標準ライブラリのみで動作する(pip install 不要)。
 """
 
 import json
+import os
 import sys
+
+# --profile uk  ==  SR_PROFILE=uk  (AGENTS.md「プロファイル」参照)。
+# radar_lib はプロファイルを import 時に確定するため、import より前に環境変数へ写す。
+_argv = sys.argv[1:]
+for _i, _a in enumerate(_argv):
+    if _a == "--profile" and _i + 1 < len(_argv):
+        os.environ["SR_PROFILE"] = _argv[_i + 1]
+    elif _a.startswith("--profile="):
+        os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
 
 from radar_lib import (ARCHIVE_FILE, DATA_FILE, NEW_FILE, STATUS_FILE,
                        annotate_notables, apply_aliases, apply_flagship, apply_overrides,
-                       dedupe_events, load_json, load_people, mark_crawl_start, merge,
-                       parse_sources, region_ok, render_html, render_ics, split_archive,
-                       update_changelog)
+                       dedupe_events, importance_ok, load_json, load_people,
+                       mark_crawl_start, merge, parse_sources, region_ok, render_html,
+                       render_ics, split_archive, update_changelog)
 
 KNOWN_FILE = DATA_FILE.parent / "known_events.json"
 
@@ -91,6 +102,12 @@ def main():
     events = [ev for ev in events if region_ok(ev, anywhere_sources)]
     region_removed = before - len(events)
 
+    # プロファイルの重要度下限(英国モードの北欧: 現地開催・ハイブリッドは規模3のみ)を
+    # 満たさないイベントを除去する。ドイツモードでは下限が無いので何も落ちない。
+    before = len(events)
+    events = [ev for ev in events if importance_ok(ev)]
+    importance_removed = before - len(events)
+
     # 要人名簿(data/people.json)と登壇者を照合して派生フィールドを付け直す
     # (名簿の更新が全イベントに遡及する。判断は名簿にあり、ここでは照合だけ)。
     events = annotate_notables(events, load_people())
@@ -122,6 +139,7 @@ def main():
     print(f"完了: 新規 {added} 件 / 掲載中 {len(events)} 件 / "
           f"アーカイブ移動 {len(to_archive)} 件 / 重複除去 {removed} 件 / "
           f"エイリアス統合 {aliased} 件 / 地域外除去 {region_removed} 件 / "
+          f"重要度下限で除去 {importance_removed} 件 / "
           f"履歴記録 追加{len(changes['added'])}件・更新{len(changes['updated'])}件")
 
 

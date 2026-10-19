@@ -54,6 +54,7 @@ fetch_hints.json 連携:
 使い方:
     python3 scripts/fetch_all.py              # 全ソースを取得・判定
     python3 scripts/fetch_all.py --only ECB   # 名前に部分一致するソースだけ(再取得・デバッグ用)
+    python3 scripts/fetch_all.py --profile uk # 英国モード(data/uk/ の定点・状態ファイル)
 """
 
 import argparse
@@ -64,19 +65,31 @@ import html as htmllib
 import io
 import json
 import re
-import sys
 import urllib.error
 import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import urljoin
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from radar_lib import ROOT, STATUS_FILE, TODAY, load_json, parse_sources
+import os
+import sys
 
-STATE_FILE = ROOT / "data" / "fetch_state.json"
-HINTS_FILE = ROOT / "data" / "fetch_hints.json"
-CACHE_DIR = ROOT / "data" / "cache"
+# --profile uk  ==  SR_PROFILE=uk  (AGENTS.md「プロファイル」参照)。
+# radar_lib はプロファイルを import 時に確定するため、import より前に環境変数へ写す。
+_argv = sys.argv[1:]
+for _i, _a in enumerate(_argv):
+    if _a == "--profile" and _i + 1 < len(_argv):
+        os.environ["SR_PROFILE"] = _argv[_i + 1]
+    elif _a.startswith("--profile="):
+        os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from radar_lib import (DATA_DIR, PROFILE_ID, ROOT, STATUS_FILE, TODAY,  # noqa: E402
+                       load_json, parse_sources)
+
+STATE_FILE = DATA_DIR / "fetch_state.json"          # プロファイル別(data/uk/ 等)
+HINTS_FILE = ROOT / "data" / "fetch_hints.json"     # 全プロファイル共用(ソース名がキー)
+CACHE_DIR = DATA_DIR / "cache"                      # プロファイル別(.gitignore 済み)
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
@@ -370,9 +383,12 @@ def process_source(src, hints, prev_state, prev_status_ok):
 def main():
     ap = argparse.ArgumentParser(description="全ソースの一括プリフェッチ+差分検知")
     ap.add_argument("--only", help="名前にこの文字列を含むソースだけ処理(部分一致)")
+    ap.add_argument("--profile", default=PROFILE_ID,
+                    help="プロファイル de/uk(既定 de。SR_PROFILE と同義。冒頭で処理済み)")
     args = ap.parse_args()
 
     sources = parse_sources()["sources"]
+    print(f"fetch_all [profile={PROFILE_ID}]: {len(sources)} sources", file=sys.stderr)
     if args.only:
         sources = [s for s in sources if args.only.lower() in s["name"].lower()]
         if not sources:
@@ -387,7 +403,8 @@ def main():
                       for e in load_json(STATUS_FILE, []) if isinstance(e, dict)}
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"fetch_all: {len(sources)} sources を取得中...", file=sys.stderr)
+    print(f"fetch_all [profile={PROFILE_ID}]: {len(sources)} sources を取得中...",
+          file=sys.stderr)
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         results = {name: (entry, view) for name, entry, view in ex.map(
             lambda s: process_source(s, hints, state, prev_status_ok), sources)}
