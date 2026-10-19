@@ -271,8 +271,9 @@ def match_person(speaker, index):
 
 def annotate_notables(events, people):
     """全イベントの speakers を名簿に照合し、派生フィールドを毎回計算し直す:
-      notables     … [{"person": 名簿id, "name": 名簿上の正規名, "group", "tier"}, ...]
-                     (登壇者の並び順。同一人物は1回)
+      notables     … [{"person": 名簿id, "name": 名簿上の正規名, "group", "tier",
+                       "short": 表示用の短い肩書, "former": 元職者か}, ...]
+                     (tier の高い順→登壇者の並び順。同一人物は1回)
       notable_tier … notables の最小 tier(1 が最上位)。該当なしは None
     名簿が空でもキーは必ず付ける(表示側が存在チェックを省けるように)。"""
     index = build_people_index(people)
@@ -283,7 +284,11 @@ def annotate_notables(events, people):
             if p and p["id"] not in seen:
                 seen.add(p["id"])
                 hits.append({"person": p["id"], "name": p["name"],
-                             "group": p["group"], "tier": p["tier"]})
+                             "group": p["group"], "tier": p["tier"],
+                             "short": p.get("short") or None,
+                             "former": bool(p.get("former"))})
+        # 表示側が「筆頭の要人」を先頭要素で取れるよう、tier の高い順(1→2)・同順位は登壇者の並び
+        hits.sort(key=lambda h: h["tier"])
         ev["notables"] = hits
         ev["notable_tier"] = min((h["tier"] for h in hits), default=None)
     return events
@@ -1253,6 +1258,11 @@ def render_ics(events):
             for s in (ev.get("speakers") or []) if isinstance(s, dict) and s.get("name"))
         if speakers:
             desc += f" / 登壇: {speakers}"
+        notables = ", ".join(
+            n["name"] + (f" ({n['short']})" if n.get("short") else "")
+            for n in (ev.get("notables") or []) if isinstance(n, dict) and n.get("name"))
+        if notables:
+            desc += f" / 要人: {notables}"
         lines += ["BEGIN:VEVENT",
                   f"UID:{ev['id']}@seminar-radar",
                   f"DTSTART;VALUE=DATE:{start}",

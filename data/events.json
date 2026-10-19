@@ -116,31 +116,41 @@
      "person": "isabel-schnabel",
      "name": "Isabel Schnabel",
      "group": "ecb",
-     "tier": 1
+     "tier": 1,
+     "short": "ECB Board member",
+     "former": false
     },
     {
      "person": "pablo-hernandez-de-cos",
      "name": "Pablo Hernández de Cos",
      "group": "bis",
-     "tier": 1
+     "tier": 1,
+     "short": "BIS GM",
+     "former": false
     },
     {
      "person": "philip-lane",
      "name": "Philip R. Lane",
      "group": "ecb",
-     "tier": 1
+     "tier": 1,
+     "short": "ECB Chief Economist",
+     "former": false
     },
     {
      "person": "john-williams",
      "name": "John C. Williams",
      "group": "ncb",
-     "tier": 2
+     "tier": 2,
+     "short": "NY Fed President",
+     "former": false
     },
     {
      "person": "petra-tschudin",
      "name": "Petra Tschudin",
      "group": "ncb",
-     "tier": 2
+     "tier": 2,
+     "short": "SNB Board member",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -363,25 +373,33 @@
      "person": "isabel-schnabel",
      "name": "Isabel Schnabel",
      "group": "ecb",
-     "tier": 1
-    },
-    {
-     "person": "lorenzo-bini-smaghi",
-     "name": "Lorenzo Bini Smaghi",
-     "group": "ecb",
-     "tier": 2
-    },
-    {
-     "person": "claudio-borio",
-     "name": "Claudio Borio",
-     "group": "bis",
-     "tier": 2
+     "tier": 1,
+     "short": "ECB Board member",
+     "former": false
     },
     {
      "person": "boris-vujcic",
      "name": "Boris Vujčić",
      "group": "ecb",
-     "tier": 1
+     "tier": 1,
+     "short": "ECB VP",
+     "former": false
+    },
+    {
+     "person": "lorenzo-bini-smaghi",
+     "name": "Lorenzo Bini Smaghi",
+     "group": "ecb",
+     "tier": 2,
+     "short": "ex-ECB Board member",
+     "former": true
+    },
+    {
+     "person": "claudio-borio",
+     "name": "Claudio Borio",
+     "group": "bis",
+     "tier": 2,
+     "short": "ex-BIS Chief Economist",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -529,22 +547,28 @@
    ],
    "notables": [
     {
-     "person": "carmen-reinhart",
-     "name": "Carmen Reinhart",
-     "group": "intl_org",
-     "tier": 2
-    },
-    {
      "person": "pierre-olivier-gourinchas",
      "name": "Pierre-Olivier Gourinchas",
      "group": "intl_org",
-     "tier": 1
+     "tier": 1,
+     "short": "ex-IMF Chief Economist",
+     "former": true
     },
     {
      "person": "philip-lane",
      "name": "Philip R. Lane",
      "group": "ecb",
-     "tier": 1
+     "tier": 1,
+     "short": "ECB Chief Economist",
+     "former": false
+    },
+    {
+     "person": "carmen-reinhart",
+     "name": "Carmen Reinhart",
+     "group": "intl_org",
+     "tier": 2,
+     "short": "ex-World Bank Chief Economist",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -971,7 +995,9 @@
      "person": "petra-tschudin",
      "name": "Petra Tschudin",
      "group": "ncb",
-     "tier": 2
+     "tier": 2,
+     "short": "SNB Board member",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -1127,22 +1153,28 @@
    ],
    "notables": [
     {
-     "person": "julia-wiens",
-     "name": "Julia Wiens",
-     "group": "supervisor",
-     "tier": 2
-    },
-    {
      "person": "petra-hielkema",
      "name": "Petra Hielkema",
      "group": "supervisor",
-     "tier": 1
+     "tier": 1,
+     "short": "EIOPA Chair",
+     "former": false
+    },
+    {
+     "person": "julia-wiens",
+     "name": "Julia Wiens",
+     "group": "supervisor",
+     "tier": 2,
+     "short": "BaFin Exec. Director",
+     "former": false
     },
     {
      "person": "jorg-asmussen",
      "name": "Jörg Asmussen",
      "group": "ecb",
-     "tier": 2
+     "tier": 2,
+     "short": "ex-ECB Board member",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -1417,7 +1449,9 @@
      "person": "boris-vujcic",
      "name": "Boris Vujčić",
      "group": "ecb",
-     "tier": 1
+     "tier": 1,
+     "short": "ECB VP",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -2135,16 +2169,20 @@
    ],
    "notables": [
     {
-     "person": "achim-wambach",
-     "name": "Achim Wambach",
-     "group": "academia",
-     "tier": 2
-    },
-    {
      "person": "monika-schnitzer",
      "name": "Monika Schnitzer",
      "group": "academia",
-     "tier": 1
+     "tier": 1,
+     "short": "SVR chair",
+     "former": false
+    },
+    {
+     "person": "achim-wambach",
+     "name": "Achim Wambach",
+     "group": "academia",
+     "tier": 2,
+     "short": "ZEW President",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -2300,19 +2338,25 @@
      "person": "mihaly-varga",
      "name": "Mihály Varga",
      "group": "ncb",
-     "tier": 1
-    },
-    {
-     "person": "claudio-borio",
-     "name": "Claudio Borio",
-     "group": "bis",
-     "tier": 2
+     "tier": 1,
+     "short": "MNB Gov.",
+     "former": false
     },
     {
      "person": "helmut-ettl",
      "name": "Helmut Ettl",
      "group": "supervisor",
-     "tier": 1
+     "tier": 1,
+     "short": "FMA Exec. Director",
+     "former": false
+    },
+    {
+     "person": "claudio-borio",
+     "name": "Claudio Borio",
+     "group": "bis",
+     "tier": 2,
+     "short": "ex-BIS Chief Economist",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -2666,7 +2710,9 @@
      "person": "clemens-fuest",
      "name": "Clemens Fuest",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "ifo President",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -2777,13 +2823,17 @@
      "person": "claudia-buch",
      "name": "Claudia Buch",
      "group": "supervisor",
-     "tier": 1
+     "tier": 1,
+     "short": "SSM Chair",
+     "former": false
     },
     {
      "person": "michael-theurer",
      "name": "Michael Theurer",
      "group": "bundesbank",
-     "tier": 2
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -3410,7 +3460,9 @@
      "person": "gediminas-simkus",
      "name": "Gediminas Šimkus",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "Lietuvos bankas Chair",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -4399,7 +4451,9 @@
      "person": "petra-tschudin",
      "name": "Petra Tschudin",
      "group": "ncb",
-     "tier": 2
+     "tier": 2,
+     "short": "SNB Board member",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -4814,22 +4868,28 @@
    ],
    "notables": [
     {
-     "person": "sabine-mauderer",
-     "name": "Sabine Mauderer",
-     "group": "bundesbank",
-     "tier": 2
-    },
-    {
      "person": "joachim-nagel",
      "name": "Joachim Nagel",
      "group": "bundesbank",
-     "tier": 1
+     "tier": 1,
+     "short": "Bundesbank President",
+     "former": false
     },
     {
      "person": "kyriakos-pierrakakis",
      "name": "Kyriakos Pierrakakis",
      "group": "eu_body",
-     "tier": 1
+     "tier": 1,
+     "short": "Eurogroup President",
+     "former": false
+    },
+    {
+     "person": "sabine-mauderer",
+     "name": "Sabine Mauderer",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank VP",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -4893,7 +4953,9 @@
      "person": "veronika-grimm",
      "name": "Veronika Grimm",
      "group": "academia",
-     "tier": 1
+     "tier": 1,
+     "short": "SVR member",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -5621,31 +5683,41 @@
      "person": "martins-kazaks",
      "name": "Mārtiņš Kazāks",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "Latvijas Banka Gov.",
+     "former": false
     },
     {
      "person": "joachim-nagel",
      "name": "Joachim Nagel",
      "group": "bundesbank",
-     "tier": 1
+     "tier": 1,
+     "short": "Bundesbank President",
+     "former": false
     },
     {
      "person": "maria-luis-albuquerque",
      "name": "Maria Luís Albuquerque",
      "group": "eu_body",
-     "tier": 1
-    },
-    {
-     "person": "jeromin-zettelmeyer",
-     "name": "Jeromin Zettelmeyer",
-     "group": "academia",
-     "tier": 2
+     "tier": 1,
+     "short": "EU Commissioner",
+     "former": false
     },
     {
      "person": "klaas-knot",
      "name": "Klaas Knot",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "ex-DNB President",
+     "former": true
+    },
+    {
+     "person": "jeromin-zettelmeyer",
+     "name": "Jeromin Zettelmeyer",
+     "group": "academia",
+     "tier": 2,
+     "short": "Bruegel Director",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -5977,13 +6049,17 @@
      "person": "mark-branson",
      "name": "Mark Branson",
      "group": "supervisor",
-     "tier": 1
+     "tier": 1,
+     "short": "BaFin President",
+     "former": false
     },
     {
      "person": "fritzi-kohler-geib",
      "name": "Fritzi Köhler-Geib",
      "group": "bundesbank",
-     "tier": 2
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -6980,7 +7056,9 @@
      "person": "andrew-bailey",
      "name": "Andrew Bailey",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "BoE Gov.",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -7843,16 +7921,20 @@
    ],
    "notables": [
     {
-     "person": "achim-wambach",
-     "name": "Achim Wambach",
-     "group": "academia",
-     "tier": 2
-    },
-    {
      "person": "monika-schnitzer",
      "name": "Monika Schnitzer",
      "group": "academia",
-     "tier": 1
+     "tier": 1,
+     "short": "SVR chair",
+     "former": false
+    },
+    {
+     "person": "achim-wambach",
+     "name": "Achim Wambach",
+     "group": "academia",
+     "tier": 2,
+     "short": "ZEW President",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -9487,7 +9569,9 @@
      "person": "volker-wieland",
      "name": "Volker Wieland",
      "group": "academia",
-     "tier": 1
+     "tier": 1,
+     "short": "ex-SVR member",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -15059,7 +15143,9 @@
      "person": "reint-gropp",
      "name": "Reint E. Gropp",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "IWH President",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -17003,7 +17089,9 @@
      "person": "marcel-fratzscher",
      "name": "Marcel Fratzscher",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "DIW President",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -17717,7 +17805,9 @@
      "person": "jeromin-zettelmeyer",
      "name": "Jeromin Zettelmeyer",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "Bruegel Director",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -18176,7 +18266,9 @@
      "person": "sabine-mauderer",
      "name": "Sabine Mauderer",
      "group": "bundesbank",
-     "tier": 2
+     "tier": 2,
+     "short": "Bundesbank VP",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -18375,7 +18467,9 @@
      "person": "peter-praet",
      "name": "Peter Praet",
      "group": "ecb",
-     "tier": 1
+     "tier": 1,
+     "short": "ex-ECB Chief Economist",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -19272,19 +19366,25 @@
      "person": "friedrich-merz",
      "name": "Friedrich Merz",
      "group": "government",
-     "tier": 1
+     "tier": 1,
+     "short": "German Chancellor",
+     "former": false
     },
     {
      "person": "katherina-reiche",
      "name": "Katherina Reiche",
      "group": "government",
-     "tier": 1
+     "tier": 1,
+     "short": "German Economy Minister",
+     "former": false
     },
     {
      "person": "lars-klingbeil",
      "name": "Lars Klingbeil",
      "group": "government",
-     "tier": 1
+     "tier": 1,
+     "short": "German Finance Minister",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -20546,13 +20646,17 @@
      "person": "guntram-wolff",
      "name": "Guntram Wolff",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "ex-Bruegel Director",
+     "former": true
     },
     {
      "person": "moritz-schularick",
      "name": "Moritz Schularick",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "IfW Kiel President",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -21002,31 +21106,41 @@
      "person": "dimitar-radev",
      "name": "Dimitar Radev",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "BNB Gov.",
+     "former": false
     },
     {
      "person": "martin-kocher",
      "name": "Martin Kocher",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "OeNB Gov.",
+     "former": false
     },
     {
      "person": "primoz-dolenc",
      "name": "Primož Dolenc",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "Banka Slovenije Gov.",
+     "former": false
     },
     {
      "person": "dominique-laboureix",
      "name": "Dominique Laboureix",
      "group": "supervisor",
-     "tier": 1
+     "tier": 1,
+     "short": "SRB Chair",
+     "former": false
     },
     {
      "person": "yves-mersch",
      "name": "Yves Mersch",
      "group": "ecb",
-     "tier": 2
+     "tier": 2,
+     "short": "ex-ECB Board member",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -21271,7 +21385,9 @@
      "person": "pierre-wunsch",
      "name": "Pierre Wunsch",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "NBB Gov.",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -21783,7 +21899,9 @@
      "person": "martin-kocher",
      "name": "Martin Kocher",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "OeNB Gov.",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -25893,7 +26011,9 @@
      "person": "helene-rey",
      "name": "Hélène Rey",
      "group": "bis",
-     "tier": 2
+     "tier": 2,
+     "short": "BIS Chief Economist",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -27670,7 +27790,9 @@
      "person": "marcel-fratzscher",
      "name": "Marcel Fratzscher",
      "group": "academia",
-     "tier": 2
+     "tier": 2,
+     "short": "DIW President",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -27720,7 +27842,9 @@
      "person": "joachim-nagel",
      "name": "Joachim Nagel",
      "group": "bundesbank",
-     "tier": 1
+     "tier": 1,
+     "short": "Bundesbank President",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -27771,7 +27895,9 @@
      "person": "sabine-mauderer",
      "name": "Sabine Mauderer",
      "group": "bundesbank",
-     "tier": 2
+     "tier": 2,
+     "short": "Bundesbank VP",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -28184,7 +28310,9 @@
      "person": "christian-lindner",
      "name": "Christian Lindner",
      "group": "government",
-     "tier": 1
+     "tier": 1,
+     "short": "ex-German Finance Minister",
+     "former": true
     }
    ],
    "notable_tier": 1
@@ -28411,13 +28539,17 @@
      "person": "martin-kocher",
      "name": "Martin Kocher",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "OeNB Gov.",
+     "former": false
     },
     {
      "person": "olaf-sleijpen",
      "name": "Olaf Sleijpen",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "DNB President",
+     "former": false
     }
    ],
    "notable_tier": 1
@@ -28467,7 +28599,9 @@
      "person": "fritzi-kohler-geib",
      "name": "Fritzi Köhler-Geib",
      "group": "bundesbank",
-     "tier": 2
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
     }
    ],
    "notable_tier": 2
@@ -28718,7 +28852,9 @@
      "person": "martin-kocher",
      "name": "Martin Kocher",
      "group": "ncb",
-     "tier": 1
+     "tier": 1,
+     "short": "OeNB Gov.",
+     "former": false
     }
    ],
    "notable_tier": 1
