@@ -241,6 +241,7 @@ def match_person(speaker, index):
     """登壇者1名を名簿に照合する。一致したエントリ、無ければ None。
     - 氏名キーが一致する候補のうち、所属が矛盾しないものだけ残す
     - require_org のエントリは登壇者側に所属が書かれていなければ一致させない(同姓同名対策)
+    - former(元職者)のエントリは所属が食い違っていても一致させる(現所属は別機関が普通)
     - それでも候補が複数残る(別人の同名)場合は、所属で絞れていなければ一致させない"""
     if not isinstance(speaker, dict):
         return None
@@ -252,7 +253,11 @@ def match_person(speaker, index):
     for p in cands:
         if p.get("require_org") and not norm_org_name(org):
             continue
-        if not _person_org_compatible(org, p):
+        # 元職者(former)は現在の所属が名簿の機関と違うのが普通なので、所属の矛盾では落とさない
+        # (require_org が付いていれば従来どおり所属の一致を求める)
+        if not p.get("former") and not _person_org_compatible(org, p):
+            continue
+        if p.get("former") and p.get("require_org") and not _person_org_compatible(org, p):
             continue
         ok.append(p)
     if len(ok) == 1:
