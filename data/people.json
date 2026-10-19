@@ -81,6 +81,157 @@
    "note": "Still a member. Responsible for DG Market Operations, DG Research, DG Statistics. Term ends 2027-01-03 per terms-of-office page."
   },
   {
+   "id": "jean-claude-trichet",
+   "name": "Jean-Claude Trichet",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former President",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2003-11",
+   "until": "2011-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/11/2003-31/10/2011."
+  },
+  {
+   "id": "jurgen-stark",
+   "name": "Jürgen Stark",
+   "aliases": [
+    "Juergen Stark"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board (Chief Economist)",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2006-06",
+   "until": "2011-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2006-31/12/2011. Chief-economist status: ECB interview ecb.in191112 (2019) calls him an 'ex-ECB chief economist'; ECB press release pr100602 gives him Economics, Information Systems and Statistics."
+  },
+  {
+   "id": "lucas-papademos",
+   "name": "Lucas Papademos",
+   "aliases": [
+    "Loukas Papademos"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Vice-President",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2002-06",
+   "until": "2010-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2002-31/05/2010."
+  },
+  {
+   "id": "luis-de-guindos",
+   "name": "Luis de Guindos",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Vice-President",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2018-06",
+   "until": "2026-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2018-31/05/2026; succeeded by Boris Vujcic (current VP). Not Chief Economist."
+  },
+  {
+   "id": "mario-draghi",
+   "name": "Mario Draghi",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former President",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2011-11",
+   "until": "2019-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/11/2011-31/10/2019."
+  },
+  {
+   "id": "otmar-issing",
+   "name": "Otmar Issing",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board (Chief Economist)",
+   "group": "ecb",
+   "tier": 1,
+   "since": "1998-06",
+   "until": "2006-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/1998-31/05/2006. Chief-economist status: ECB speech sp131121 (2013) says 'our then chief economist Otmar Issing'; ECB interview ecb.in191112 (2019) 'ex-ECB chief economists Otmar Issing and Jürgen Stark'. ECB forum biography: now President of the Center for Financial Studies, Goethe University Frankfurt."
+  },
+  {
+   "id": "peter-praet",
+   "name": "Peter Praet",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board (Chief Economist)",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2011-06",
+   "until": "2019-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2011-31/05/2019. Responsible for Economics (DG Economics) per ECB press release pr121218 (Dec 2012) and the April 2019 allocation PDF (distributionofresp_EB.pdf). The fetched official pages do not use the label 'Chief Economist' for him; tier 1 is set on the Economics portfolio."
+  },
+  {
    "id": "philip-lane",
    "name": "Philip R. Lane",
    "aliases": [
@@ -127,6 +278,53 @@
    "note": "Responsible for DG International and European Relations, DG Market Infrastructure and Payments, Banknotes (digital euro lead)."
   },
   {
+   "id": "vitor-constancio",
+   "name": "Vítor Constâncio",
+   "aliases": [
+    "Vitor Constancio"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Vice-President",
+   "group": "ecb",
+   "tier": 1,
+   "since": "2010-06",
+   "until": "2018-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2010-31/05/2018."
+  },
+  {
+   "id": "benoit-coeure",
+   "name": "Benoît Cœuré",
+   "aliases": [
+    "Benoit Coeure",
+    "Benoît Coeuré"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2012-01",
+   "until": "2019-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/01/2012-31/12/2019. Not Chief Economist (April 2019 allocation: international/European relations, market operations)."
+  },
+  {
    "id": "frank-elderson",
    "name": "Frank Elderson",
    "aliases": [],
@@ -147,6 +345,179 @@
    "source": "https://www.ecb.europa.eu/ecb/orga/decisions/eb/html/index.en.html",
    "checked": "2026-10-19",
    "note": "also SSM Vice-Chair (Vice-Chair of the Supervisory Board, since 2021-02 per https://www.bankingsupervision.europa.eu/about/organisation/leadership/supervisoryboard/html/index.en.html). Board term ends 2028-12-14."
+  },
+  {
+   "id": "gertrude-tumpel-gugerell",
+   "name": "Gertrude Tumpel-Gugerell",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2003-06",
+   "until": "2011-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2003-31/05/2011. Not Chief Economist (June 2010 allocation: HR/budget, payments and market infrastructure)."
+  },
+  {
+   "id": "jose-manuel-gonzalez-paramo",
+   "name": "José Manuel González-Páramo",
+   "aliases": [
+    "Jose Manuel Gonzalez-Paramo",
+    "José Manuel Gonzalez Paramo"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2004-06",
+   "until": "2012-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/press/key/date/2012/html/sp120516.en.html",
+   "checked": "2026-10-19",
+   "note": "NOT listed on the ECB terms-of-office page fetched today (that page omits him). Dates rest on the ECB speech sp120516 (colloquium marking the end of his eight-year term as Board member, 16 May 2012) and ECB press releases pr100602/pr120103; 2004-06 start comes from an ECB page seen only in search results, so month precision is moderate. Not Chief Economist (portfolio: banknotes, market operations, research, statistics)."
+  },
+  {
+   "id": "jorg-asmussen",
+   "name": "Jörg Asmussen",
+   "aliases": [
+    "Joerg Asmussen"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2012-01",
+   "until": "2014-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/01/2012-07/01/2014. Not Chief Economist (Dec 2012 allocation: international/European relations, legal services)."
+  },
+  {
+   "id": "lorenzo-bini-smaghi",
+   "name": "Lorenzo Bini Smaghi",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2005-06",
+   "until": "2011-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 01/06/2005-31/12/2011. Not Chief Economist (June 2010 allocation: international/European relations, legal services)."
+  },
+  {
+   "id": "sabine-lautenschlager",
+   "name": "Sabine Lautenschläger",
+   "aliases": [
+    "Sabine Lautenschlaeger"
+   ],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2014-01",
+   "until": "2019-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 27/01/2014-31/10/2019. Not Chief Economist (April 2019 allocation: banknotes, market infrastructure, risk management, statistics)."
+  },
+  {
+   "id": "yves-mersch",
+   "name": "Yves Mersch",
+   "aliases": [],
+   "org": "ECB",
+   "org_aliases": [
+    "European Central Bank",
+    "Europäische Zentralbank",
+    "EZB"
+   ],
+   "position": "Former Member of the Executive Board",
+   "group": "ecb",
+   "tier": 2,
+   "since": "2012-12",
+   "until": "2020-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ecb.europa.eu/ecb/decisions/eb/html/executive-board-terms-of-office.en.html",
+   "checked": "2026-10-19",
+   "note": "Term 15/12/2012-14/12/2020. Not Chief Economist (April 2019 allocation: Legal Services)."
+  },
+  {
+   "id": "axel-weber",
+   "name": "Axel Weber",
+   "aliases": [
+    "Axel A. Weber"
+   ],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "Former President",
+   "group": "bundesbank",
+   "tier": 1,
+   "since": "2004-04",
+   "until": "2011-04",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundesbank.de/de/service/mediathek/praesidentengalerie-645430",
+   "checked": "2026-10-19",
+   "note": "30.04.2004-30.04.2011."
+  },
+  {
+   "id": "jens-weidmann",
+   "name": "Jens Weidmann",
+   "aliases": [],
+   "org": "Bundesbank",
+   "org_aliases": [
+    "Deutsche Bundesbank"
+   ],
+   "position": "Former President",
+   "group": "bundesbank",
+   "tier": 1,
+   "since": "2011-05",
+   "until": "2021-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundesbank.de/de/service/mediathek/praesidentengalerie-645430",
+   "checked": "2026-10-19",
+   "note": "01.05.2011-31.12.2021; successor Joachim Nagel (since January 2022)."
   },
   {
    "id": "joachim-nagel",
@@ -249,6 +620,70 @@
    "note": "Page title is 'Dr'. Member of the Executive Board since 2018; First Deputy Governor since September 2024. Alternate to the President on the ECB Governing Council."
   },
   {
+   "id": "agustin-carstens",
+   "name": "Agustín Carstens",
+   "aliases": [
+    "Agustin Carstens"
+   ],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "BIZ"
+   ],
+   "position": "Former General Manager",
+   "group": "bis",
+   "tier": 1,
+   "since": "2017-12",
+   "until": "2025-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bis.org/about/formerofficials.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "jaime-caruana",
+   "name": "Jaime Caruana",
+   "aliases": [],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "BIZ"
+   ],
+   "position": "Former General Manager",
+   "group": "bis",
+   "tier": 1,
+   "since": "2009-04",
+   "until": "2017-11",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bis.org/about/formerofficials.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "malcolm-knight",
+   "name": "Malcolm Knight",
+   "aliases": [
+    "Malcolm D Knight"
+   ],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "BIZ"
+   ],
+   "position": "Former General Manager",
+   "group": "bis",
+   "tier": 1,
+   "since": "2003-04",
+   "until": "2008-09",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bis.org/about/formerofficials.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
    "id": "pablo-hernandez-de-cos",
    "name": "Pablo Hernández de Cos",
    "aliases": [
@@ -296,6 +731,46 @@
    "note": null
   },
   {
+   "id": "claudio-borio",
+   "name": "Claudio Borio",
+   "aliases": [],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "BIZ"
+   ],
+   "position": "Former Head of the Monetary and Economic Department",
+   "group": "bis",
+   "tier": 2,
+   "since": "2013-11",
+   "until": "2024-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bis.org/about/formerofficials.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "hyun-song-shin",
+   "name": "Hyun Song Shin",
+   "aliases": [],
+   "org": "BIS",
+   "org_aliases": [
+    "Bank for International Settlements",
+    "BIZ"
+   ],
+   "position": "Former Economic Adviser and Head of the Monetary and Economic Department",
+   "group": "bis",
+   "tier": 2,
+   "since": "2014-05",
+   "until": "2026-03",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bis.org/about/formerofficials.htm",
+   "checked": "2026-10-19",
+   "note": "Economic Adviser 2014-05 to 2026-03; Head of MED from 2025-01. Successor Hélène Rey since 2026-09-01."
+  },
+  {
    "id": "helene-rey",
    "name": "Hélène Rey",
    "aliases": [
@@ -339,6 +814,27 @@
    "source": "https://www.ecb.europa.eu/ecb/orga/decisions/genc/html/index.en.html",
    "checked": "2026-10-19",
    "note": "ECB General Council page (fetched 2026-10-19) lists him as 'Governor, Narodowy Bank Polski'. nbp.pl itself serves a bot challenge."
+  },
+  {
+   "id": "alan-greenspan",
+   "name": "Alan Greenspan",
+   "aliases": [],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System"
+   ],
+   "position": "Former Chair of the Board of Governors",
+   "group": "ncb",
+   "tier": 1,
+   "since": "1987-08",
+   "until": "2006-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/boardmembership.htm",
+   "checked": "2026-10-19",
+   "note": null
   },
   {
    "id": "alexander-demarco",
@@ -450,6 +946,50 @@
    "note": null
   },
   {
+   "id": "ben-bernanke",
+   "name": "Ben Bernanke",
+   "aliases": [
+    "Ben S. Bernanke"
+   ],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System"
+   ],
+   "position": "Former Chair of the Board of Governors",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2006-02",
+   "until": "2014-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/boardmembership.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "bostjan-vasle",
+   "name": "Boštjan Vasle",
+   "aliases": [
+    "Bostjan Vasle"
+   ],
+   "org": "Banka Slovenije",
+   "org_aliases": [
+    "Bank of Slovenia"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2019-01",
+   "until": "2025-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bsi.si/sl/o-nas/nekdanji-guvernerji-banke-slovenije",
+   "checked": "2026-10-19",
+   "note": "9 Jan 2019 - 8 Jan 2025 on the official former-governors page. Primož Dolenc was acting then appointed Governor by the National Assembly on 3 Feb 2026 (bsi.si)."
+  },
+  {
    "id": "christodoulos-patsalides",
    "name": "Christodoulos Patsalides",
    "aliases": [
@@ -470,6 +1010,28 @@
    "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
    "checked": "2026-10-19",
    "note": null
+  },
+  {
+   "id": "constantinos-herodotou",
+   "name": "Constantinos Herodotou",
+   "aliases": [
+    "Konstantinos Herodotou"
+   ],
+   "org": "Central Bank of Cyprus",
+   "org_aliases": [
+    "Bank of Cyprus (central bank)",
+    "Κεντρική Τράπεζα της Κύπρου"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2019-04",
+   "until": "2024-04",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.centralbank.cy/en/the-governor/previous-governors",
+   "checked": "2026-10-19",
+   "note": "April 2019 - April 2024; successor Christodoulos Patsalides."
   },
   {
    "id": "dimitar-radev",
@@ -494,6 +1056,26 @@
    "note": "Confirmed on ECB page only; bnb.bg pages were blocked by a WAF (error page) so the national spot-check failed."
   },
   {
+   "id": "edward-scicluna",
+   "name": "Edward Scicluna",
+   "aliases": [],
+   "org": "Central Bank of Malta",
+   "org_aliases": [
+    "Bank of Malta",
+    "Bank Ċentrali ta' Malta"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2021-01",
+   "until": "2025-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.centralbankmalta.org/governors-past-and-present",
+   "checked": "2026-10-19",
+   "note": "要確認: UNCONFIRMED on a fetched page: centralbankmalta.org returns 403 to curl and WebFetch. Dates are from a search snippet of the governors page, and snippets conflict (Demarco acting Governor Aug 2024-Jul 2025 vs Scicluna to 31 Dec 2025). Successor Alexander Demarco is the current governor on the ECB Governing Council page."
+  },
+  {
    "id": "emmanuel-moulin",
    "name": "Emmanuel Moulin",
    "aliases": [],
@@ -514,6 +1096,26 @@
    "note": "Governor confirmed on the ECB page. Since 2026-06 comes from a WebSearch snippet (took office 2 June 2026, succeeding Villeroy de Galhau), not a fetched page. banque-france.fr returned 403 (Akamai), so the national spot-check failed."
   },
   {
+   "id": "erkki-liikanen",
+   "name": "Erkki Liikanen",
+   "aliases": [],
+   "org": "Suomen Pankki",
+   "org_aliases": [
+    "Bank of Finland",
+    "Finlands Bank"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2004-07",
+   "until": "2018-07",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.suomenpankki.fi/en/bank-of-finland/art-and-history/Board-Members-in-the-history-of-the-Bank-of-Finland/",
+   "checked": "2026-10-19",
+   "note": "Governor from 12 July 2004 until 11 July 2018; successor Olli Rehn."
+  },
+  {
    "id": "fabio-panetta",
    "name": "Fabio Panetta",
    "aliases": [],
@@ -532,6 +1134,27 @@
    "source": "https://www.bancaditalia.it/chi-siamo/funzioni-governance/direttorio/index.html?com.dotmarketing.htmlpage.language=1",
    "checked": "2026-10-19",
    "note": "Also confirmed on the ECB page."
+  },
+  {
+   "id": "francois-villeroy-de-galhau",
+   "name": "François Villeroy de Galhau",
+   "aliases": [
+    "Francois Villeroy de Galhau"
+   ],
+   "org": "Banque de France",
+   "org_aliases": [
+    "Bank of France"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2015",
+   "until": "2026-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.banque-france.fr/fr/communiques-de-presse/emmanuel-moulin-est-nomme-gouverneur-de-la-banque-de-france",
+   "checked": "2026-10-19",
+   "note": "Successor Emmanuel Moulin took office 2 June 2026; Villeroy named honorary governor. Per his own 9 Feb 2026 message (banque-france.fr), moving to preside the Fondation Apprentis d'Auteuil. Start year inferred from 'près de onze années'."
   },
   {
    "id": "gabriel-makhlouf",
@@ -614,6 +1237,136 @@
    "note": "Governor since 5 Feb 2015; re-elected for a second term on 24 Feb 2022."
   },
   {
+   "id": "gyorgy-matolcsy",
+   "name": "György Matolcsy",
+   "aliases": [
+    "Gyorgy Matolcsy",
+    "Matolcsy György"
+   ],
+   "org": "Magyar Nemzeti Bank",
+   "org_aliases": [
+    "MNB",
+    "National Bank of Hungary"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2013-03",
+   "until": "2025-03",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.mnb.hu/letoltes/mnb-eves-jelentes-2025.pdf",
+   "checked": "2026-10-19",
+   "note": "MNB Annual Report 2025: governor 2013-03-04 to 2025-03-03; succeeded by Mihály Varga (in office since 2025-03-04 per mnb.hu)."
+  },
+  {
+   "id": "haruhiko-kuroda",
+   "name": "Haruhiko Kuroda",
+   "aliases": [
+    "黒田東彦"
+   ],
+   "org": "Bank of Japan",
+   "org_aliases": [
+    "BoJ",
+    "日本銀行"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2013-03",
+   "until": "2023-04",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.boj.or.jp/en/about/outline/history/pre_gov/index.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "ignazio-visco",
+   "name": "Ignazio Visco",
+   "aliases": [],
+   "org": "Banca d'Italia",
+   "org_aliases": [
+    "Bank of Italy",
+    "Banca d’Italia"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2011-11",
+   "until": "2023-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bancaditalia.it/chi-siamo/storia/governatori-direttori-generali/index.html?com.dotmarketing.htmlpage.language=1",
+   "checked": "2026-10-19",
+   "note": "1 Nov 2011 - 31 Oct 2023; successor Fabio Panetta."
+  },
+  {
+   "id": "ilmars-rimsevics",
+   "name": "Ilmārs Rimšēvičs",
+   "aliases": [
+    "Ilmars Rimsevics"
+   ],
+   "org": "Latvijas Banka",
+   "org_aliases": [
+    "Bank of Latvia"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2001",
+   "until": "2019",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bank.lv/component/content/article/697-lb100-aktualitates/12993-latvijas-bankas-parvaldiba-kops-1990-gada",
+   "checked": "2026-10-19",
+   "note": "President/Governor 2001-2019 per Latvijas Banka history page; successor Mārtiņš Kazāks (elected 12 Dec 2019). Month precision not on the fetched page."
+  },
+  {
+   "id": "jan-smets",
+   "name": "Jan Smets",
+   "aliases": [],
+   "org": "Nationale Bank van België",
+   "org_aliases": [
+    "National Bank of Belgium",
+    "Banque nationale de Belgique",
+    "NBB"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": null,
+   "until": "2019-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.nbb.be/en/node/207281",
+   "checked": "2026-10-19",
+   "note": "NBB press release: Pierre Wunsch took over from Jan Smets in early January 2019 (Wunsch governor since 2 Jan 2019 per nbb.be governor page); Smets is now Honorary Governor. Start year not stated on a fetched page."
+  },
+  {
+   "id": "janet-yellen",
+   "name": "Janet Yellen",
+   "aliases": [
+    "Janet L. Yellen"
+   ],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System"
+   ],
+   "position": "Former Chair of the Board of Governors",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2014-02",
+   "until": "2018-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/boardmembership.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
    "id": "jasmina-selimovic",
    "name": "Jasmina Selimović",
    "aliases": [
@@ -634,6 +1387,72 @@
    "source": "https://www.cbbh.ba/Content/Read/15",
    "checked": "2026-10-19",
    "note": "Elected 3 Jan 2024 for a six-year term (https://www.cbbh.ba/press/ShowNews/1547?lang=en)."
+  },
+  {
+   "id": "jean-pierre-roth",
+   "name": "Jean-Pierre Roth",
+   "aliases": [],
+   "org": "SNB",
+   "org_aliases": [
+    "Swiss National Bank",
+    "Schweizerische Nationalbank"
+   ],
+   "position": "Former Chairman of the Governing Board",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2001-01",
+   "until": "2009-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.snb.ch/en/the-snb/organisation/history/short-biographies",
+   "checked": "2026-10-19",
+   "note": "Chairman = Department I head in the page's Governing Board table."
+  },
+  {
+   "id": "jerome-powell",
+   "name": "Jerome Powell",
+   "aliases": [
+    "Jerome H. Powell",
+    "Jay Powell"
+   ],
+   "org": "Federal Reserve",
+   "org_aliases": [
+    "Fed",
+    "Federal Reserve Board",
+    "Board of Governors of the Federal Reserve System"
+   ],
+   "position": "Former Chair of the Board of Governors",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2018-02",
+   "until": "2026-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.federalreserve.gov/aboutthefed/bios/board/boardmembership.htm",
+   "checked": "2026-10-19",
+   "note": "Chair term ended 2026-05-22 (Kevin Warsh succeeded); the same page still lists Powell as a sitting Governor of the Board."
+  },
+  {
+   "id": "jiri-rusnok",
+   "name": "Jiří Rusnok",
+   "aliases": [
+    "Jiri Rusnok"
+   ],
+   "org": "Czech National Bank",
+   "org_aliases": [
+    "CNB",
+    "ČNB"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2016-07",
+   "until": "2022-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.historie.cnb.cz/cs/statutarni_organy/rusnok_jiri.html",
+   "checked": "2026-10-19",
+   "note": "Predecessor of current Governor Aleš Michl (CNB history page: 2022 - present)."
   },
   {
    "id": "jorgovanka-tabakovic",
@@ -680,6 +1499,28 @@
    "note": "BdE page says only '2024 to date'; the month 2024-09 comes from a WebSearch result (inauguration ceremony 24 Sep 2024), not from a fetched page. Also confirmed on the ECB page."
   },
   {
+   "id": "jozef-makuch",
+   "name": "Jozef Makúch",
+   "aliases": [
+    "Jozef Makuch"
+   ],
+   "org": "Národná banka Slovenska",
+   "org_aliases": [
+    "National Bank of Slovakia",
+    "NBS"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2010-01",
+   "until": "2019-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://nbs.sk/en/about-the-bank/bank-board-of-the-nbs/the-former-governors-and-members-of-the-bank-board/",
+   "checked": "2026-10-19",
+   "note": "12.01.2010 - 01.06.2019; successor Peter Kažimír."
+  },
+  {
    "id": "kazuo-ueda",
    "name": "Kazuo Ueda",
    "aliases": [
@@ -724,6 +1565,109 @@
    "note": "Official title on the Fed page is 'Chairman'. Took office 2026-05-22 (term to 2030-05-21). Board members page (https://www.federalreserve.gov/aboutthefed/bios/board/default.htm) shows 'Last Update: May 28, 2026'."
   },
   {
+   "id": "klaas-knot",
+   "name": "Klaas Knot",
+   "aliases": [],
+   "org": "De Nederlandsche Bank",
+   "org_aliases": [
+    "DNB",
+    "Dutch Central Bank"
+   ],
+   "position": "Former President",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2011-07",
+   "until": "2025-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.dnb.nl/en/general-news/news-2025/klaas-knot-14-years-in-14-figures-and-5-videos/",
+   "checked": "2026-10-19",
+   "note": "Last working day 30 June 2025; successor Olaf Sleijpen from 1 July 2025 (DNB press release). Fetched via WebFetch because curl got 403."
+  },
+  {
+   "id": "kyrylo-shevchenko",
+   "name": "Kyrylo Shevchenko",
+   "aliases": [
+    "Kirill Shevchenko"
+   ],
+   "org": "National Bank of Ukraine",
+   "org_aliases": [
+    "NBU"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2020-07",
+   "until": "2022-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://bank.gov.ua/en/news/all/verhovna-rada-zvilnila-kirila-shevchenka-z-posadi-golovi-natsionalnogo-banku",
+   "checked": "2026-10-19",
+   "note": "Dismissed 2022-10-06 after resignation letter of 2022-10-04; succeeded by Andriy Pyshnyy (still listed as Governor on bank.gov.ua/en/about/structure)."
+  },
+  {
+   "id": "madis-muller",
+   "name": "Madis Müller",
+   "aliases": [
+    "Madis Muller"
+   ],
+   "org": "Eesti Pank",
+   "org_aliases": [
+    "Bank of Estonia"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2019-06",
+   "until": "2026-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.eestipank.ee/en/press/supervisory-board-eesti-pank-interviewed-candidates-be-next-governor-22102025",
+   "checked": "2026-10-19",
+   "note": "Fetched Eesti Pank page says his term ends 6 June 2026 (seven-year limit); 2019-06 start is derived from that and a search snippet (7 June 2019). Successor Ülo Kaasik is listed as Governor on the ECB Governing Council page (10 Sep 2026)."
+  },
+  {
+   "id": "marek-belka",
+   "name": "Marek Belka",
+   "aliases": [],
+   "org": "Narodowy Bank Polski",
+   "org_aliases": [
+    "NBP",
+    "National Bank of Poland"
+   ],
+   "position": "Former President",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2010-06",
+   "until": "2016-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://nbp.pl/o-nbp/prezes-nbp/poczet-prezesow-narodowego-banku-polskiego-od-1945-r/",
+   "checked": "2026-10-19",
+   "note": "要確認: nbp.pl returned a bot challenge; dates come only from a web-search snippet of the NBP roster page (11 Jun 2010 - 11 Jun 2016), not a fetched page. Predecessor of current President Adam Glapiński."
+  },
+  {
+   "id": "mark-carney",
+   "name": "Mark Carney",
+   "aliases": [
+    "Mark J. Carney"
+   ],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2013",
+   "until": "2020",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/governors",
+   "checked": "2026-10-19",
+   "note": "Current role per pm.gc.ca (fetched today): Prime Minister of Canada. BoE page itself states no current role; page gives years only."
+  },
+  {
    "id": "martin-kocher",
    "name": "Martin Kocher",
    "aliases": [],
@@ -764,6 +1708,49 @@
    "source": "https://www.snb.ch/en/the-snb/organisation/supervisory-management-boards",
    "checked": "2026-10-19",
    "note": "Chairman effective 1 Oct 2024 (Vice Chairman from Aug 2022)."
+  },
+  {
+   "id": "masaaki-shirakawa",
+   "name": "Masaaki Shirakawa",
+   "aliases": [
+    "白川方明"
+   ],
+   "org": "Bank of Japan",
+   "org_aliases": [
+    "BoJ",
+    "日本銀行"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2008-04",
+   "until": "2013-03",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.boj.or.jp/en/about/outline/history/pre_gov/index.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "mervyn-king",
+   "name": "Mervyn King",
+   "aliases": [
+    "Lord King"
+   ],
+   "org": "Bank of England",
+   "org_aliases": [
+    "BoE"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2003",
+   "until": "2013",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bankofengland.co.uk/about/people/governors",
+   "checked": "2026-10-19",
+   "note": "Page lists term as 2003-2013 (years only)."
   },
   {
    "id": "mihaly-varga",
@@ -811,6 +1798,28 @@
    "source": "https://www.bnr.ro/en/1389-the-board-of-directors",
    "checked": "2026-10-19",
    "note": "On the Board for 11 Oct 2024 to 10 Oct 2029 (Parliament Decision 27/2024). The page gives no original start date. The page body loads by AJAX; I read it from the site's own /blocks endpoint, block 2118."
+  },
+  {
+   "id": "mario-centeno",
+   "name": "Mário Centeno",
+   "aliases": [
+    "Mario Centeno"
+   ],
+   "org": "Banco de Portugal",
+   "org_aliases": [
+    "Bank of Portugal",
+    "Eurogroup"
+   ],
+   "position": "Former Governor; Former President of the Eurogroup",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2020-07",
+   "until": "2025-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bportugal.pt/en/membroconselho/mario-centeno",
+   "checked": "2026-10-19",
+   "note": "要確認: UNCONFIRMED on a fetched page: bportugal.pt returns 403 to curl and WebFetch. Dates (20 Jul 2020 - 5 Oct 2025; successor Álvaro Santos Pereira from 6 Oct 2025, who is the current governor on the ECB Governing Council page) come only from search-result snippets of bportugal.pt pages. / consilium.europa.eu returned 403 (browser check) to curl and WebFetch; dates from search-result snippets of consilium pages only. End inferred from Donohoe taking office 2020-07-13."
   },
   {
    "id": "martins-kazaks",
@@ -917,6 +1926,28 @@
    "note": null
   },
   {
+   "id": "philipp-hildebrand",
+   "name": "Philipp Hildebrand",
+   "aliases": [
+    "Philipp M. Hildebrand"
+   ],
+   "org": "SNB",
+   "org_aliases": [
+    "Swiss National Bank",
+    "Schweizerische Nationalbank"
+   ],
+   "position": "Former Chairman of the Governing Board",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2010-01",
+   "until": "2012-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.snb.ch/en/the-snb/organisation/history/short-biographies",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
    "id": "pierre-wunsch",
    "name": "Pierre Wunsch",
    "aliases": [],
@@ -957,6 +1988,89 @@
    "source": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html",
    "checked": "2026-10-19",
    "note": null
+  },
+  {
+   "id": "robert-holzmann",
+   "name": "Robert Holzmann",
+   "aliases": [],
+   "org": "Oesterreichische Nationalbank",
+   "org_aliases": [
+    "OeNB",
+    "Austrian National Bank"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2019-09",
+   "until": "2025-08",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.oenb.at/dam/jcr:f22c2b15-51f0-47de-b30e-343099574ac1/GB-2025.pdf",
+   "checked": "2026-10-19",
+   "note": "1 Sep 2019 (OeNB Corporate Governance Bericht 2021) to 31 Aug 2025; Martin Kocher took over 1 Sep 2025 (OeNB Geschäftsbericht 2025)."
+  },
+  {
+   "id": "thomas-jordan",
+   "name": "Thomas Jordan",
+   "aliases": [
+    "Thomas J. Jordan"
+   ],
+   "org": "SNB",
+   "org_aliases": [
+    "Swiss National Bank",
+    "Schweizerische Nationalbank"
+   ],
+   "position": "Former Chairman of the Governing Board",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2012-04",
+   "until": "2024-09",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.snb.ch/en/the-snb/organisation/history/short-biographies",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "toshihiko-fukui",
+   "name": "Toshihiko Fukui",
+   "aliases": [
+    "福井俊彦"
+   ],
+   "org": "Bank of Japan",
+   "org_aliases": [
+    "BoJ",
+    "日本銀行"
+   ],
+   "position": "Former Governor",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2003-03",
+   "until": "2008-03",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.boj.or.jp/en/about/outline/history/pre_gov/index.htm",
+   "checked": "2026-10-19",
+   "note": null
+  },
+  {
+   "id": "vitas-vasiliauskas",
+   "name": "Vitas Vasiliauskas",
+   "aliases": [],
+   "org": "Lietuvos bankas",
+   "org_aliases": [
+    "Bank of Lithuania"
+   ],
+   "position": "Former Chairman of the Board",
+   "group": "ncb",
+   "tier": 1,
+   "since": "2011-03",
+   "until": "2021-04",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.lb.lt/lt/valdyba",
+   "checked": "2026-10-19",
+   "note": "要確認: UNCONFIRMED on a fetched page: lb.lt is behind a Cloudflare challenge (403 for curl and WebFetch). Dates come only from search snippets (appointed 24 Mar 2011; Gediminas Šimkus appointed chairman April 2021)."
   },
   {
    "id": "yannis-stournaras",
@@ -1590,6 +2704,44 @@
    "note": "Page says he took up current mandate in 2023 (month not stated). Listed as Chair on https://www.srb.europa.eu/en/board"
   },
   {
+   "id": "elke-konig",
+   "name": "Elke König",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht"
+   ],
+   "position": "Former President of BaFin",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2012",
+   "until": "2015",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bafin.de/SharedDocs/Downloads/DE/Jahresbericht/dl_jb_2011.pdf?__blob=publicationFile",
+   "checked": "2026-10-19",
+   "note": "Signs the 2011 annual report as Präsidentin; the Jahresbericht 2015 (https://www.bafin.de/SharedDocs/Downloads/DE/Jahresbericht/dl_jb_2015.pdf?__blob=publicationFile) calls her the former BaFin president, now heading the EU Single Resolution Board. Months not stated on fetched pages."
+  },
+  {
+   "id": "felix-hufeld",
+   "name": "Felix Hufeld",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht"
+   ],
+   "position": "Former President of BaFin",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2015",
+   "until": "2021-07",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bafin.de/DE/DieBaFin/Leitung/Praesident/praesident_node.html",
+   "checked": "2026-10-19",
+   "note": "要確認: President page shows Mark Branson as President since 1 Aug 2021; Hufeld is shown as president in the Jahresbericht 2015. His exact end date is inferred from the successor's start (BaFin's own 2021 handover pages returned 404)."
+  },
+  {
    "id": "francois-louis-michaud",
    "name": "François-Louis Michaud",
    "aliases": [
@@ -1634,6 +2786,25 @@
    "source": "https://www.eba.europa.eu/about-us/organisation-and-governance/governance-structure-and-decision-making/management-board/members",
    "checked": "2026-10-19",
    "note": "Vice-Chair per Management Board members table (Austrian FMA); stand-in while Executive Director post is vacant is NOT stated. Start of Vice-Chair role not stated (Management Board term 2023-07-10 renewed from 2026-01-10). / In office now but steps down 31 Oct 2026 (to become IMF Executive Director from 1 Nov 2026); successor Oliver Schütz appointed (https://www.fma.gv.at/fma-aufsichtskonferenz-europe-financial-future/, 06.10.2026). Page says appointed 2008 (month not given), term ran to 13 Feb 2028."
+  },
+  {
+   "id": "jochen-sanio",
+   "name": "Jochen Sanio",
+   "aliases": [],
+   "org": "BaFin",
+   "org_aliases": [
+    "Bundesanstalt für Finanzdienstleistungsaufsicht"
+   ],
+   "position": "Former President of BaFin",
+   "group": "supervisor",
+   "tier": 1,
+   "since": "2002",
+   "until": "2011",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bafin.de/SharedDocs/Downloads/DE/Jahresbericht/dl_jb_2011.pdf?__blob=publicationFile",
+   "checked": "2026-10-19",
+   "note": "BaFin Jahresbericht 2011: more than nine years at the helm, 2011 was the last year of his presidency. Month not stated."
   },
   {
    "id": "mariana-kuhnel",
@@ -1939,6 +3110,67 @@
    "note": null
   },
   {
+   "id": "angela-merkel",
+   "name": "Angela Merkel",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundeskanzleramt",
+    "Bundeskanzlerin"
+   ],
+   "position": "Former Bundeskanzlerin",
+   "group": "government",
+   "tier": 1,
+   "since": "2005-11",
+   "until": "2021-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundeskanzler.de/bk-en/federal-chancellery/federal-chancellors-since-1949",
+   "checked": "2026-10-19",
+   "note": "22 Nov 2005 to 8 Dec 2021 per the Bundeskanzleramt PDF https://www.bundeskanzler.de/resource/blob/1905334/1844926/2954d25341cdfeb3dea8aea0657de432/kanzler-pdf-data.pdf"
+  },
+  {
+   "id": "brigitte-zypries",
+   "name": "Brigitte Zypries",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Energie",
+    "Bundeswirtschaftsministerium",
+    "BMWi"
+   ],
+   "position": "Former Bundesministerin für Wirtschaft und Energie",
+   "group": "government",
+   "tier": 1,
+   "since": "2017-01",
+   "until": "2018-03",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "From 27.1.2017; Merkel III cabinet ended March 2018."
+  },
+  {
+   "id": "christian-lindner",
+   "name": "Christian Lindner",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium der Finanzen",
+    "BMF"
+   ],
+   "position": "Former Bundesminister der Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "2021-12",
+   "until": "2024-11",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Until 7.11.2024 per Datenhandbuch 6.2."
+  },
+  {
    "id": "friedrich-merz",
    "name": "Friedrich Merz",
    "aliases": [],
@@ -1957,6 +3189,66 @@
    "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett/friedrich-merz-2342660",
    "checked": "2026-10-19",
    "note": "Page: 'Seit dem 6. Mai 2025 Bundeskanzler'. Also listed on https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett"
+  },
+  {
+   "id": "gerhard-schroder",
+   "name": "Gerhard Schröder",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundeskanzleramt",
+    "Bundeskanzler"
+   ],
+   "position": "Former Bundeskanzler",
+   "group": "government",
+   "tier": 1,
+   "since": "1998-10",
+   "until": "2005-11",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundeskanzler.de/bk-en/federal-chancellery/federal-chancellors-since-1949",
+   "checked": "2026-10-19",
+   "note": "Page lists 1998-2005; exact dates (27 Oct 1998 to 22 Nov 2005) from the Bundeskanzleramt PDF https://www.bundeskanzler.de/resource/blob/1905334/1844926/2954d25341cdfeb3dea8aea0657de432/kanzler-pdf-data.pdf"
+  },
+  {
+   "id": "hans-eichel",
+   "name": "Hans Eichel",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium der Finanzen",
+    "BMF"
+   ],
+   "position": "Former Bundesminister der Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "1999-04",
+   "until": "2005-11",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Bundestag Datenhandbuch 6.2 (Stand 5.8.2026): in office from 12.4.1999; Schröder II cabinet ended Nov 2005. BMF's own history pages were blocked by bot protection."
+  },
+  {
+   "id": "jorg-kukies",
+   "name": "Jörg Kukies",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium der Finanzen",
+    "BMF"
+   ],
+   "position": "Former Bundesminister der Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "2024-11",
+   "until": "2025-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "From 7.11.2024; Scholz II cabinet ended 6 May 2025 (Lars Klingbeil is current minister per same document)."
   },
   {
    "id": "karin-keller-sutter",
@@ -1979,6 +3271,29 @@
    "source": "https://www.efd.admin.ch/de/",
    "checked": "2026-10-19",
    "note": "Page: 'seit Januar 2023 Vorsteherin des EFD, seit 2019 im Bundesrat'"
+  },
+  {
+   "id": "karl-theodor-zu-guttenberg",
+   "name": "Karl-Theodor zu Guttenberg",
+   "aliases": [
+    "Karl-Theodor Freiherr zu Guttenberg"
+   ],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Technologie",
+    "Bundeswirtschaftsministerium",
+    "BMWi"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "group": "government",
+   "tier": 1,
+   "since": "2009-02",
+   "until": "2009-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "From 10.2.2009; Merkel I cabinet ended Oct 2009."
   },
   {
    "id": "katherina-reiche",
@@ -2046,6 +3361,175 @@
    "note": "Lebenslauf: 'Bundesminister für Finanzen, seit 3. März 2025'. Staatssekretärin Barbara Eibinger-Miedl is also listed (not requested)."
   },
   {
+   "id": "michael-glos",
+   "name": "Michael Glos",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Technologie",
+    "Bundeswirtschaftsministerium",
+    "BMWi"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "group": "government",
+   "tier": 1,
+   "since": "2005-11",
+   "until": "2009-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Until 10.2.2009 per Datenhandbuch 6.2."
+  },
+  {
+   "id": "olaf-scholz",
+   "name": "Olaf Scholz",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "BMF",
+    "Bundeskanzler",
+    "Bundeskanzleramt",
+    "Bundesministerium der Finanzen"
+   ],
+   "position": "Former Bundeskanzler; Former Bundesminister der Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "2021-12",
+   "until": "2025-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundeskanzler.de/bk-en/federal-chancellery/federal-chancellors-since-1949",
+   "checked": "2026-10-19",
+   "note": "8 Dec 2021 to 6 May 2025 per the Bundeskanzleramt PDF https://www.bundeskanzler.de/resource/blob/1905334/1844926/2954d25341cdfeb3dea8aea0657de432/kanzler-pdf-data.pdf. Also former Finanzminister (separate entry). / Merkel IV cabinet (from 14.3.2018) per Datenhandbuch 6.2; also Vizekanzler. Later Bundeskanzler (separate entry)."
+  },
+  {
+   "id": "peer-steinbruck",
+   "name": "Peer Steinbrück",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium der Finanzen",
+    "BMF"
+   ],
+   "position": "Former Bundesminister der Finanzen",
+   "group": "government",
+   "tier": 1,
+   "since": "2005-11",
+   "until": "2009-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Merkel I cabinet (Nov 2005 to Oct 2009), Bundestag Datenhandbuch 6.2."
+  },
+  {
+   "id": "peter-altmaier",
+   "name": "Peter Altmaier",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Energie",
+    "Bundeswirtschaftsministerium",
+    "BMWi",
+    "Bundesministerium der Finanzen"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Energie",
+   "group": "government",
+   "tier": 1,
+   "since": "2018-03",
+   "until": "2021-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Merkel IV cabinet. Also led the Finanzministerium on a caretaker basis (mdWdGb) from 24.10.2017 to Mar 2018."
+  },
+  {
+   "id": "philipp-rosler",
+   "name": "Philipp Rösler",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Technologie",
+    "Bundeswirtschaftsministerium",
+    "BMWi"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "group": "government",
+   "tier": 1,
+   "since": "2011-05",
+   "until": "2013-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "From 12.5.2011; Merkel II cabinet ended Dec 2013. Also Vizekanzler from 16.5.2011."
+  },
+  {
+   "id": "rainer-bruderle",
+   "name": "Rainer Brüderle",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Technologie",
+    "Bundeswirtschaftsministerium",
+    "BMWi"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Technologie",
+   "group": "government",
+   "tier": 1,
+   "since": "2009-10",
+   "until": "2011-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Until 12.5.2011 per Datenhandbuch 6.2."
+  },
+  {
+   "id": "robert-habeck",
+   "name": "Robert Habeck",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Klimaschutz",
+    "Bundeswirtschaftsministerium",
+    "BMWK"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Klimaschutz",
+   "group": "government",
+   "tier": 1,
+   "since": "2021-12",
+   "until": "2025-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Also Vizekanzler; Scholz II cabinet ended 6 May 2025 (Katherina Reiche is current minister per same document)."
+  },
+  {
+   "id": "sigmar-gabriel",
+   "name": "Sigmar Gabriel",
+   "aliases": [],
+   "org": "Bundesregierung",
+   "org_aliases": [
+    "Bundesministerium für Wirtschaft und Energie",
+    "Bundeswirtschaftsministerium",
+    "BMWi"
+   ],
+   "position": "Former Bundesminister für Wirtschaft und Energie",
+   "group": "government",
+   "tier": 1,
+   "since": "2013-12",
+   "until": "2017-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bundestag.de/resource/blob/196242/026c74538cb9da18a9ef9a0b92149396/Kapitel_06_02_Zusammensetzung_der_Bundeskabinette_-_Namensliste-data.pdf",
+   "checked": "2026-10-19",
+   "note": "Until 27.1.2017, then Bundesminister des Auswärtigen (until Mar 2018)."
+  },
+  {
    "id": "andrius-kubilius",
    "name": "Andrius Kubilius",
    "aliases": [],
@@ -2090,6 +3574,84 @@
    "note": "Energy portfolio. Commissioner 2024-2029."
   },
   {
+   "id": "jean-claude-juncker",
+   "name": "Jean-Claude Juncker",
+   "aliases": [],
+   "org": "Eurogroup",
+   "org_aliases": [],
+   "position": "Former President of the Eurogroup",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2005",
+   "until": "2013-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.consilium.europa.eu/en/eurogroup/former-eurogroup-presidents/",
+   "checked": "2026-10-19",
+   "note": "要確認: consilium.europa.eu returned 403 (browser check) to curl and WebFetch; dates from search-result snippets of consilium pages only."
+  },
+  {
+   "id": "jeroen-dijsselbloem",
+   "name": "Jeroen Dijsselbloem",
+   "aliases": [],
+   "org": "Eurogroup",
+   "org_aliases": [],
+   "position": "Former President of the Eurogroup",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2013-01",
+   "until": "2018-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.consilium.europa.eu/en/eurogroup/former-eurogroup-presidents/summary-of-jeroen-dijsselbloem-presidency/",
+   "checked": "2026-10-19",
+   "note": "要確認: consilium.europa.eu returned 403 (browser check) to curl and WebFetch; dates from search-result snippets of consilium pages only."
+  },
+  {
+   "id": "joaquin-almunia",
+   "name": "Joaquín Almunia",
+   "aliases": [
+    "Joaquin Almunia"
+   ],
+   "org": "European Commission",
+   "org_aliases": [
+    "EC",
+    "Commission"
+   ],
+   "position": "Former Commissioner for Economic and Monetary Affairs",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2004",
+   "until": "2010-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://ec.europa.eu/archives/commission_2004-2009/almunia/index_en.htm",
+   "checked": "2026-10-19",
+   "note": "要確認: Archived page (dated 2010-04-06) shows the EMU portfolio; the Feb 2010 handover is not stated on a fetched page (2010-14 college page lists him as VP Competition)."
+  },
+  {
+   "id": "jonathan-hill",
+   "name": "Jonathan Hill",
+   "aliases": [
+    "Lord Hill"
+   ],
+   "org": "European Commission",
+   "org_aliases": [
+    "EC",
+    "Commission"
+   ],
+   "position": "Former Commissioner for Financial Stability, Financial Services and Capital Markets Union",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2014-11",
+   "until": "2016",
+   "former": true,
+   "require_org": false,
+   "source": "https://ec.europa.eu/commission/presscorner/detail/en/STATEMENT_16_2332",
+   "checked": "2026-10-19",
+   "note": "要確認: Press-corner page is JavaScript-rendered and its body could not be fetched; resignation and transfer of the portfolio to Dombrovskis known only from the statement title in search results."
+  },
+  {
    "id": "kyriakos-pierrakakis",
    "name": "Kyriakos Pierrakakis",
    "aliases": [],
@@ -2109,6 +3671,26 @@
    "source": "https://commission.europa.eu/kyriakos-pierrakakis_en",
    "checked": "2026-10-19",
    "note": "Greek Minister of Economy and Finance; Eurogroup President as of 2025-12-12 (Commission profile; also ESM profile https://www.esm.europa.eu/profile/kyriakos-pierrakakis, which says he is ESM Board of Governors Chairperson). Consilium (Eurogroup's own site) returned a Cloudflare bot-challenge (HTTP 403), so not read directly."
+  },
+  {
+   "id": "mairead-mcguinness",
+   "name": "Mairead McGuinness",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EC",
+    "Commission"
+   ],
+   "position": "Former Commissioner for Financial Services, Financial Stability and Capital Markets Union",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "until": "2024",
+   "former": true,
+   "require_org": false,
+   "source": "https://commissioners.ec.europa.eu/college-commissioners-2019-2024_en",
+   "checked": "2026-10-19",
+   "note": "Archived 2019-2024 college page; start/end months not stated. Replaced in the 2024-29 college (Maria Luis Albuquerque, per search)."
   },
   {
    "id": "maria-luis-albuquerque",
@@ -2157,6 +3739,26 @@
    "note": "Trade portfolio. Commissioner 2024-2029."
   },
   {
+   "id": "michel-barnier",
+   "name": "Michel Barnier",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EC",
+    "Commission"
+   ],
+   "position": "Former Vice-President for Internal Market and Services (financial services regulation)",
+   "group": "eu_body",
+   "tier": 1,
+   "since": null,
+   "until": "2014",
+   "former": true,
+   "require_org": false,
+   "source": "https://ec.europa.eu/archives/commission_2010-2014/members/index_en.htm",
+   "checked": "2026-10-19",
+   "note": "Portfolio title is Internal Market and Services (covered financial regulation); borderline for 'Financial Services' - include only if wanted."
+  },
+  {
    "id": "nadia-calvino",
    "name": "Nadia Calviño",
    "aliases": [
@@ -2180,6 +3782,43 @@
    "note": "Page: 'appointed on 1 January 2024'. Also listed as President on https://www.eib.org/en/about/governance-and-structure/statutory-bodies/management-committee/ (date of situation 18/03/2026)."
   },
   {
+   "id": "paolo-gentiloni",
+   "name": "Paolo Gentiloni",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EC",
+    "Commission"
+   ],
+   "position": "Former Commissioner for Economy",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2019",
+   "until": "2024",
+   "former": true,
+   "require_org": false,
+   "source": "https://commissioners.ec.europa.eu/college-commissioners-2019-2024_en",
+   "checked": "2026-10-19",
+   "note": "Archived 2019-2024 college page; exact start/end months not stated."
+  },
+  {
+   "id": "paschal-donohoe",
+   "name": "Paschal Donohoe",
+   "aliases": [],
+   "org": "Eurogroup",
+   "org_aliases": [],
+   "position": "Former President of the Eurogroup",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2020-07",
+   "until": "2025-11",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.consilium.europa.eu/en/eurogroup/former-eurogroup-presidents/",
+   "checked": "2026-10-19",
+   "note": "要確認: consilium.europa.eu returned 403 (browser check) to curl and WebFetch; dates from search-result snippets of consilium pages only. Resigned 2025-11-18 per snippet."
+  },
+  {
    "id": "pierre-gramegna",
    "name": "Pierre Gramegna",
    "aliases": [],
@@ -2198,6 +3837,26 @@
    "source": "https://www.esm.europa.eu/profile/pierre-gramegna",
    "checked": "2026-10-19",
    "note": "Since 2022-12-01; also EFSF CEO. Listed on https://www.esm.europa.eu/about-us/governance."
+  },
+  {
+   "id": "pierre-moscovici",
+   "name": "Pierre Moscovici",
+   "aliases": [],
+   "org": "European Commission",
+   "org_aliases": [
+    "EC",
+    "Commission"
+   ],
+   "position": "Former Commissioner for Economic and Financial Affairs, Taxation and Customs",
+   "group": "eu_body",
+   "tier": 1,
+   "since": "2014-11",
+   "until": "2019",
+   "former": true,
+   "require_org": false,
+   "source": "https://ec.europa.eu/economy_finance/enewsletter/108_141106/",
+   "checked": "2026-10-19",
+   "note": "Start per ECFIN E-news 108 (Nov 2014); absent from the 2019-2024 college page (https://commissioners.ec.europa.eu/college-commissioners-2019-2024_en), so term ended 2019 (exact month not stated)."
   },
   {
    "id": "teresa-ribera",
@@ -2283,6 +3942,48 @@
    "note": "Took office 2023-06-02 per his bio page (https://www.worldbank.org/ext/en/who-we-are/leadership/ajay-banga). Pages read via WebFetch."
   },
   {
+   "id": "dominique-strauss-kahn",
+   "name": "Dominique Strauss-Kahn",
+   "aliases": [
+    "DSK"
+   ],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Managing Director",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2007-11",
+   "until": "2011-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/en/about/senior-officials/managing-directors",
+   "checked": "2026-10-19",
+   "note": "Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
+   "id": "gita-gopinath",
+   "name": "Gita Gopinath",
+   "aliases": [],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Economic Counsellor and Director of Research (Chief Economist)",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2019-01",
+   "until": "2022-01",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/en/About/Senior-Officials/Bios/gita-gopinath",
+   "checked": "2026-10-19",
+   "note": "Chief Economist 2019-22, then First Deputy Managing Director Jan 2022-Aug 2025; per IMF release (pr25257) she left the IMF for Harvard Economics (Gregory and Ania Coffey Professor). Month of Economic Counsellor end inferred from Gourinchas appointment (Jan 2022). Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
    "id": "kristalina-georgieva",
    "name": "Kristalina Georgieva",
    "aliases": [],
@@ -2321,6 +4022,28 @@
    "source": "https://www.oecd.org/en/about/directorates/office-secretary-general/mathias-cormann.html",
    "checked": "2026-10-19",
    "note": "要確認: NOT confirmed by a page fetched today. oecd.org returned 403 or a Cloudflare challenge to curl and WebFetch. Only WebSearch result snippets from oecd.org pages say he is Secretary-General, with a second term from 2026-06-01. The source URL is the page named in those results and was not read."
+  },
+  {
+   "id": "maurice-obstfeld",
+   "name": "Maurice Obstfeld",
+   "aliases": [
+    "Maury Obstfeld"
+   ],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Economic Counsellor and Director of Research",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2015-09",
+   "until": "2018-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/external/np/bio/eng/mo.htm",
+   "checked": "2026-10-19",
+   "note": "Fetched via WebFetch (curl got 403 from imf.org)."
   },
   {
    "id": "ngozi-okonjo-iweala",
@@ -2363,6 +4086,93 @@
    "note": "Took up role Nov 2020; re-elected 2024-05-16, President until 2028 (https://www.ebrd.com/home/who-we-are/our-organisation/ebrd-governance-leadership/2024-election-of-the-ebrd-president.html)."
   },
   {
+   "id": "olivier-blanchard",
+   "name": "Olivier Blanchard",
+   "aliases": [],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Economic Counsellor and Director of Research",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2008",
+   "until": "2015-09",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/en/news/articles/2015/09/14/01/49/pr15219",
+   "checked": "2026-10-19",
+   "note": "Appointed 2008; retirement effective 2015-09-30. Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
+   "id": "pierre-olivier-gourinchas",
+   "name": "Pierre-Olivier Gourinchas",
+   "aliases": [
+    "Pierre Olivier Gourinchas",
+    "Gourinchas"
+   ],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Economic Counsellor and Director of Research",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2022",
+   "until": "2026-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/en/About/senior-officials/Bios/pierre-olivier-gourinchas",
+   "checked": "2026-10-19",
+   "note": "IMF bio: served 'until June 30, 2026'; IMF Annual Report 2026 page says Silvana Tenreyro succeeded him effective 2026-08-10 (small date mismatch). Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
+   "id": "raghuram-rajan",
+   "name": "Raghuram Rajan",
+   "aliases": [
+    "Raghuram G. Rajan"
+   ],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Economic Counsellor and Director of Research",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2003-10",
+   "until": "2006-12",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/external/np/bio/eng/rr.htm",
+   "checked": "2026-10-19",
+   "note": "IMF bio: Oct 1 2003 - Dec 29 2006. Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
+   "id": "rodrigo-de-rato",
+   "name": "Rodrigo de Rato",
+   "aliases": [
+    "Rodrigo Rato"
+   ],
+   "org": "IMF",
+   "org_aliases": [
+    "International Monetary Fund",
+    "IWF"
+   ],
+   "position": "Former Managing Director",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2004-06",
+   "until": "2007-10",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.imf.org/external/np/omd/bios/rrf.htm",
+   "checked": "2026-10-19",
+   "note": "Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
    "id": "silvana-tenreyro",
    "name": "Silvana Tenreyro",
    "aliases": [],
@@ -2382,6 +4192,94 @@
    "source": "https://www.imf.org/annual-report/2026/who-we-are/executive-directors-and-management-team/",
    "checked": "2026-10-19",
    "note": "Succeeded Pierre-Olivier Gourinchas effective 2026-08-10 (per annual report management page). The title in the 2026-07-07 press release (https://www.imf.org/en/news/articles/2026/07/07/pr26241-imf-md-kristalina-georgieva-names-silvana-tenreyro-economic-counsellor-and-head-of-res-dept) is 'Economic Counsellor and Head of Research Department'. Her own IMF bio page returned HTTP 429 and was not read."
+  },
+  {
+   "id": "simon-johnson",
+   "name": "Simon Johnson",
+   "aliases": [],
+   "org": "IMF",
+   "org_aliases": [
+    "IWF",
+    "International Monetary Fund",
+    "MIT",
+    "MIT Sloan",
+    "Massachusetts Institute of Technology"
+   ],
+   "position": "Former Economic Counsellor and Director of Research",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2007-04",
+   "until": "2008",
+   "former": true,
+   "require_org": true,
+   "source": "https://www.imf.org/external/np/exr/cs/eng/2007/052507.htm",
+   "checked": "2026-10-19",
+   "note": "Start Apr 2007 per IMF Civil Society Newsletter; end only evidenced as 'outgoing' in Finance & Development, Sept 2008 (https://www.imf.org/external/pubs/ft/fandd/2008/09/straight.htm); exact end month not stated. Fetched via WebFetch (curl got 403 from imf.org)."
+  },
+  {
+   "id": "angel-gurria",
+   "name": "Ángel Gurría",
+   "aliases": [
+    "Angel Gurria",
+    "José Ángel Gurría"
+   ],
+   "org": "OECD",
+   "org_aliases": [
+    "Organisation for Economic Co-operation and Development"
+   ],
+   "position": "Former Secretary-General",
+   "group": "intl_org",
+   "tier": 1,
+   "since": "2006-06",
+   "until": "2021-05",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.oecd.org/en/about/organisational-structure/list-of-oecd-secretaries-general-and-deputies-since-1961.html",
+   "checked": "2026-10-19",
+   "note": "要確認: oecd.org returned 403 to curl and WebFetch; dates only from web-search snippets; not confirmed on a fetched official page."
+  },
+  {
+   "id": "carmen-reinhart",
+   "name": "Carmen Reinhart",
+   "aliases": [
+    "Carmen M. Reinhart"
+   ],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "WBG"
+   ],
+   "position": "Former Chief Economist (Senior Vice President)",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2020-06",
+   "until": null,
+   "former": true,
+   "require_org": false,
+   "source": "https://blogs.worldbank.org/en/team/c/carmen-reinhart",
+   "checked": "2026-10-19",
+   "note": "要確認: Fetched page calls her 'Former Senior Vice President and Chief Economist'; appointment effective 2020-06-15; departure date not stated (Gill took office 2022-09-01). Page lists Harvard Kennedy School professorship."
+  },
+  {
+   "id": "catherine-mann",
+   "name": "Catherine Mann",
+   "aliases": [
+    "Catherine L. Mann"
+   ],
+   "org": "OECD",
+   "org_aliases": [
+    "Organisation for Economic Co-operation and Development"
+   ],
+   "position": "Former Chief Economist",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2014",
+   "until": "2017",
+   "former": true,
+   "require_org": false,
+   "source": "https://search.oecd.org/newsroom/oecd-appoints-catherine-l-mann-as-new-chief-economist.htm",
+   "checked": "2026-10-19",
+   "note": "要確認: oecd.org returned 403 to curl and WebFetch; 2014-2017 from search snippet only."
   },
   {
    "id": "dan-katz",
@@ -2405,6 +4303,65 @@
    "source": "https://www.imf.org/en/about/senior-officials/bios/dan-katz",
    "checked": "2026-10-19",
    "note": "Assumed office 2025-10-06. Read via WebFetch."
+  },
+  {
+   "id": "indermit-gill",
+   "name": "Indermit Gill",
+   "aliases": [],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "WBG"
+   ],
+   "position": "Former Chief Economist (Senior Vice President, Development Economics)",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2022-09",
+   "until": "2026-08",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.worldbank.org/en/news/press-release/2026/09/16/michael-kremer-appointed-as-world-bank-group-chief-economist",
+   "checked": "2026-10-19",
+   "note": "要確認: Michael Kremer appointed effective 2026-10-01 (fetched official release). Gill's worldbank.org profile still shows him as current; end 2026-08 is from Bloomberg/Reuters via search only."
+  },
+  {
+   "id": "kaushik-basu",
+   "name": "Kaushik Basu",
+   "aliases": [],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "WBG"
+   ],
+   "position": "Former Chief Economist",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2012",
+   "until": "2016",
+   "former": true,
+   "require_org": false,
+   "source": "https://blogs.worldbank.org/en/team/k/kaushik-basu",
+   "checked": "2026-10-19",
+   "note": "要確認: worldbank.org author page calls him 'Former Chief Economist'; page gives no dates (2012-2016 from a worldbank.org 2023 lecture page seen only in search snippet)."
+  },
+  {
+   "id": "laurence-boone",
+   "name": "Laurence Boone",
+   "aliases": [],
+   "org": "OECD",
+   "org_aliases": [
+    "Organisation for Economic Co-operation and Development"
+   ],
+   "position": "Former Chief Economist",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2018-06",
+   "until": null,
+   "former": true,
+   "require_org": false,
+   "source": "https://search.oecd.org/economy/oecd-appoints-laurence-boone-as-new-chief-economist.htm",
+   "checked": "2026-10-19",
+   "note": "要確認: oecd.org returned 403 to curl and WebFetch; departure date unknown (until left null); appointed 2018 per search snippet only."
   },
   {
    "id": "mateusz-szczurek",
@@ -2446,6 +4403,49 @@
    "source": "https://www.worldbank.org/ext/en/who-we-are/leadership",
    "checked": "2026-10-19",
    "note": "Listed on the leadership page as 'World Bank Group Chief Economist and Senior Vice President for Development Economics'. Press release 2026-09-16 (https://www.worldbank.org/en/news/press-release/2026/09/16/michael-kremer-appointed-as-world-bank-group-chief-economist) says the appointment is effective 2026-10-01. He replaces Indermit Gill, who is no longer on the page."
+  },
+  {
+   "id": "paul-romer",
+   "name": "Paul Romer",
+   "aliases": [],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "WBG"
+   ],
+   "position": "Former Chief Economist",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2016-09",
+   "until": null,
+   "former": true,
+   "require_org": false,
+   "source": "https://www.worldbank.org/en/news/press-release/2016/07/18/world-bank-group-president-appoints-paul-romer-as-chief-economist",
+   "checked": "2026-10-19",
+   "note": "要確認: Appointment effective Sept 2016 confirmed in search snippet; no fetched official page states his departure date (until left null)."
+  },
+  {
+   "id": "pinelopi-goldberg",
+   "name": "Pinelopi Goldberg",
+   "aliases": [
+    "Penny Goldberg",
+    "Pinelopi Koujianou Goldberg"
+   ],
+   "org": "World Bank",
+   "org_aliases": [
+    "World Bank Group",
+    "WBG"
+   ],
+   "position": "Former Chief Economist",
+   "group": "intl_org",
+   "tier": 2,
+   "since": "2018",
+   "until": null,
+   "former": true,
+   "require_org": false,
+   "source": "https://blogs.worldbank.org/en/team/p/pinelopi-goldberg",
+   "checked": "2026-10-19",
+   "note": "要確認: worldbank.org page describes her as former Chief Economist (seen in search snippet); departure date not found (until left null)."
   },
   {
    "id": "stefano-scarpetta",
@@ -2491,6 +4491,79 @@
    "note": "Affiliation: Professor für Sozioökonomie (Staatstätigkeit und Staatsfinanzen), Universität Duisburg-Essen (since Apr 2019)."
   },
   {
+   "id": "beatrice-weder-di-mauro",
+   "name": "Beatrice Weder di Mauro",
+   "aliases": [
+    "Beatrice Weder"
+   ],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise",
+    "CEPR",
+    "Graduate Institute Geneva"
+   ],
+   "position": "Former Member of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2004-08",
+   "until": "2012-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Affiliation as stated on https://www.graduateinstitute.ch/communications/events/economic-consequences-second-trump-administration (event dated 2025-09-22): André Hoffmann Chair in Climate and Nature Finance, Geneva Graduate Institute; President of CEPR; Visiting Professor at INSEAD."
+  },
+  {
+   "id": "bert-rurup",
+   "name": "Bert Rürup",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise"
+   ],
+   "position": "Former Chair of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2000-03",
+   "until": "2009-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Member 2000-03 to 2009-02, chair 2005-03 to 2009-02. No current affiliation confirmed on a fetched official page."
+  },
+  {
+   "id": "christoph-schmidt",
+   "name": "Christoph M. Schmidt",
+   "aliases": [
+    "Christoph Schmidt"
+   ],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "German Council of Economic Experts",
+    "Leibniz-Gemeinschaft",
+    "RWI",
+    "RWI Essen",
+    "RWI – Leibniz-Institut für Wirtschaftsforschung",
+    "SVR",
+    "Wirtschaftsweise"
+   ],
+   "position": "Former Chair of the Sachverständigenrat; Former President",
+   "group": "academia",
+   "tier": 1,
+   "since": "2009-03",
+   "until": "2020-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Member 2009-03 to 2020-02, chair 2013-03 to 2020-02. President of the Leibniz-Gemeinschaft since 2026-07-01 per https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/christoph-m-schmidt-wechselt-an-die-spitze-der-leibniz-gemeinschaft / Last day as RWI president 30 Jun 2026; President of the Leibniz-Gemeinschaft since 1 Jul 2026. Former SVR chair, hence tier 1. RWI board page (https://www.rwi-essen.de/en/rwi/organisation/board-of-directors) names no successor president (Thomas K. Bauer listed as Vice-President)."
+  },
+  {
    "id": "gabriel-felbermayr",
    "name": "Gabriel Felbermayr",
    "aliases": [],
@@ -2516,6 +4589,31 @@
    "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/prof-gabriel-felbermayr-phd.html",
    "checked": "2026-10-19",
    "note": "Member since Mar 2026. Affiliation: Director of WIFO (Vienna) and Professor at WU Wien. Same person as the WIFO entry below. / 'seit 1. Oktober 2021 Direktor'. Tier 1 because he has been an SVR member since Mar 2026 (SVR page and WIFO news of 15.09.2026)."
+  },
+  {
+   "id": "lars-feld",
+   "name": "Lars P. Feld",
+   "aliases": [
+    "Lars Feld"
+   ],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise",
+    "Walter Eucken Institut",
+    "Universität Freiburg"
+   ],
+   "position": "Former Chair of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2011-03",
+   "until": "2021-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Member 2011-03 to 2021-02, chair 2020-03 to 2021-02. Current affiliation per https://www.eucken.de/en/employee/prof-dr-lars-p-feld/ : director of the Walter Eucken Institut; chair at University of Freiburg since 2010."
   },
   {
    "id": "martin-werding",
@@ -2567,6 +4665,51 @@
    "note": "Chair since Oct 2022, member since Apr 2020. Affiliation: Professorin für Komparative Wirtschaftsforschung, LMU München."
   },
   {
+   "id": "peter-bofinger",
+   "name": "Peter Bofinger",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise",
+    "Universität Würzburg"
+   ],
+   "position": "Former Member of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2004-03",
+   "until": "2019-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Current affiliation per https://wiwi.uni-wuerzburg.de/en/lehrstuhl/vwl1/team/professor-dr-bofinger : Senior Professorship for Economics, Money and International Economic Relations, University of Würzburg."
+  },
+  {
+   "id": "ulrike-malmendier",
+   "name": "Ulrike Malmendier",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise",
+    "UC Berkeley",
+    "Berkeley Haas"
+   ],
+   "position": "Former Member of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2022-09",
+   "until": "2026-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Current affiliation per https://haas.berkeley.edu/faculty/ulrike-malmendier/ : Cora Jane Flood Professor of Finance, Berkeley Haas; Professor of Economics, UC Berkeley."
+  },
+  {
    "id": "veronika-grimm",
    "name": "Veronika Grimm",
    "aliases": [],
@@ -2592,6 +4735,71 @@
    "note": "Affiliation: Professorin, Technische Universität Nürnberg (UTN), Leiterin Energy Systems und Market Design Lab (was FAU Erlangen-Nürnberg until 2024)."
   },
   {
+   "id": "volker-wieland",
+   "name": "Volker Wieland",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise",
+    "Goethe-Universität Frankfurt",
+    "IMFS"
+   ],
+   "position": "Former Member of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2013-03",
+   "until": "2022-04",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Current affiliation per https://www.imfs-frankfurt.de/en/chairs/prof-volker-wieland : Endowed Chair of Monetary Economics and Managing Director, IMFS, Goethe University Frankfurt."
+  },
+  {
+   "id": "wolfgang-franz",
+   "name": "Wolfgang Franz",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise"
+   ],
+   "position": "Former Chair of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "1994-05",
+   "until": "2013-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Member 1994-05 to 1999-02 and 2003-03 to 2013-02; chair 2009-03 to 2013-02. ZEW (https://www.zew.de/en/zew/news/professor-wolfgang-franz-turns-80) describes him as former ZEW president 1997-2013 and former professor at Mannheim, now retired."
+  },
+  {
+   "id": "wolfgang-wiegard",
+   "name": "Wolfgang Wiegard",
+   "aliases": [],
+   "org": "Sachverständigenrat",
+   "org_aliases": [
+    "SVR",
+    "German Council of Economic Experts",
+    "Wirtschaftsweise"
+   ],
+   "position": "Former Chair of the Sachverständigenrat",
+   "group": "academia",
+   "tier": 1,
+   "since": "2001-03",
+   "until": "2011-02",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.sachverstaendigenrat-wirtschaft.de/ueber-uns/ratsmitglieder/ehemalige-ratsmitglieder.html",
+   "checked": "2026-10-19",
+   "note": "Member 2001-03 to 2011-02, chair 2002-03 to 2005-02. No current affiliation confirmed on a fetched official page."
+  },
+  {
    "id": "achim-wambach",
    "name": "Achim Wambach",
    "aliases": [],
@@ -2611,6 +4819,26 @@
    "source": "https://www.zew.de/das-zew/organisation/praesident-und-kaufmaennische-direktorin",
    "checked": "2026-10-19",
    "note": "Also confirmed at https://www.zew.de/das-zew/ueber-das-zew ('Institutsleitung'). Commercial director: Claudia von Schuttenbach. No since-date. Not an SVR member, so tier 2."
+  },
+  {
+   "id": "christoph-badelt",
+   "name": "Christoph Badelt",
+   "aliases": [],
+   "org": "WIFO",
+   "org_aliases": [
+    "Österreichisches Institut für Wirtschaftsforschung",
+    "Austrian Institute of Economic Research"
+   ],
+   "position": "Former Director",
+   "group": "academia",
+   "tier": 2,
+   "since": "2016",
+   "until": "2021-09",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.wifo.ac.at/en/news/wifo-says-goodbye-to-christoph-badelt/",
+   "checked": "2026-10-19",
+   "note": "Farewell 27 Sep 2021; successor Gabriel Felbermayr from 1 Oct 2021. Appointed President of the Austrian Fiscal Advisory Council in 2021 (term to 2025, per https://www.wifo.ac.at/en/news/christoph-badelt-appointed-president-of-the-fiscal-advisory-council/); current status not verified."
   },
   {
    "id": "clemens-fuest",
@@ -2634,6 +4862,27 @@
    "note": "Page lists Fuest as Präsident, Stephanie Dittmer as Vorstandsmitglied; no since-date given. Not in SVR current/former lists, so tier 2. Page blocks curl (client challenge); read via WebFetch."
   },
   {
+   "id": "guntram-wolff",
+   "name": "Guntram Wolff",
+   "aliases": [
+    "Guntram B. Wolff"
+   ],
+   "org": "Bruegel",
+   "org_aliases": [
+    "Bruegel think tank"
+   ],
+   "position": "Former Director",
+   "group": "academia",
+   "tier": 2,
+   "since": "2013",
+   "until": "2022-06",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.bruegel.org/news/jeromin-zettelmeyer-new-director-bruegel",
+   "checked": "2026-10-19",
+   "note": "Term ended end of June 2022; Jeromin Zettelmeyer director since 1 Sep 2022 and still listed as Director on https://www.bruegel.org/about/staff . Per https://www.bruegel.org/people/guntram-b-wolff : director 2013-22; DGAP director 2022-24; now Senior Fellow at Bruegel and professor at ULB."
+  },
+  {
    "id": "hans-gersbach",
    "name": "Hans Gersbach",
    "aliases": [],
@@ -2654,6 +4903,27 @@
    "source": "https://kof.ethz.ch/en/the-institute/our-history.html",
    "checked": "2026-10-19",
    "note": "'member of the KOF Directorate as Director of Research since 2023' (month not given). Added because KOF is co-led; drop if only one head is wanted."
+  },
+  {
+   "id": "hans-werner-sinn",
+   "name": "Hans-Werner Sinn",
+   "aliases": [],
+   "org": "ifo",
+   "org_aliases": [
+    "ifo Institut",
+    "ifo Institute",
+    "Leibniz-Institut für Wirtschaftsforschung an der Universität München"
+   ],
+   "position": "Former President",
+   "group": "academia",
+   "tier": 2,
+   "since": null,
+   "until": "2016",
+   "former": true,
+   "require_org": false,
+   "source": "https://www.ifo.de/en/sinn-hw",
+   "checked": "2026-10-19",
+   "note": "ifo lists him as Retired President; page shows his retirement ceremony on 22 Jan 2016; Clemens Fuest is President since April 2016 (https://www.ifo.de/en/fuest-c)."
   },
   {
    "id": "holger-bonin",
