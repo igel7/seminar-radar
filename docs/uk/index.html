@@ -1275,6 +1275,51 @@ function countryParen(code){
   if(uiLang==="ja") return COUNTRY_KANA[code]||code;
   return countryName(code);
 }
+/* 要人の短い肩書(名簿 data/people.json の short。英語の統制語彙 "<ex-><機関> <役職>")を
+   日本語UIでは日本語に変換して表示する(例 "ex-SVR chair" → "元五賢人議長"、"BoE Dep. Gov." → "BoE副総裁")。
+   変換できない形はそのまま英語で出す。名簿側は英語のまま(表示だけを変える)。 */
+const SHORT_JA_ORG = {"SVR":"五賢人","German":"独","Austrian":"墺","Swiss":"スイス","Fed":"FRB","NY Fed":"NY連銀",
+  "Commission":"欧州委員会","EU":"EU","Eurogroup":"ユーログループ","World Bank":"世銀","CB Cyprus":"キプロス中銀",
+  "CB Malta":"マルタ中銀","CB Ireland":"アイルランド中銀","Lietuvos bankas":"リトアニア銀行","Eesti Pank":"エストニア銀行",
+  "Latvijas Banka":"ラトビア銀行","Banka Slovenije":"スロベニア銀行","Bank of Albania":"アルバニア銀行","NBS Serbia":"セルビア中銀",
+  "PBoC":"人民銀行","IfW Kiel":"IfW Kiel","IW Köln":"IW Köln"};
+const SHORT_JA_ROLE = [
+  [/^Gov\.$/, "総裁"], [/^First Dep\. Gov\.$/, "第一副総裁"], [/^Dep\. Gov\.$/, "副総裁"], [/^Vice Gov\.$/, "副総裁"],
+  [/^VP$/, "副総裁"], [/^Chairman$/, "総裁"], [/^Vice Chair$/, "副総裁"], [/^Board member$/, "理事"],
+  [/^Chief Economist$/, "チーフエコノミスト"], [/^GM$/, "総支配人"], [/^Deputy GM$/, "副総支配人"],
+  [/^MD$/, "専務理事"], [/^FDMD$/, "筆頭副専務理事"], [/^DG$/, "事務局長"], [/^SG$/, "事務総長"],
+  [/^Exec\. Director$/, "執行理事"], [/^CEO$/, "CEO"], [/^Board Chair$/, "理事会議長"], [/^Chair$/, "議長"],
+  [/^chair$/, "議長"], [/^member$/, ""], [/^Finance Minister$/, "財務相"], [/^Economy Minister$/, "経済相"],
+  [/^Chancellor$/, "首相"], [/^Commissioner$/, "欧州委員"], [/^Exec\. Vice-President$/, "上級副委員長"],
+  [/^Europe Dept\. Director$/, "欧州局長"], [/^Vice-President$/, "副所長"], [/^Vice-Chair$/, "副議長"],
+];
+/* 「President」は機関によって訳語が変わる */
+const CB_PRESIDENT = new Set(["ECB","Bundesbank","NBP","DNB","BaFin","NY Fed","EBRD","EIB","World Bank","ESM"]);
+const SHORT_JA_FIXED = {"Commission President":"欧州委員長","Eurogroup President":"ユーログループ議長","Fed Chair":"FRB議長",
+  "Fed Vice Chair":"FRB副議長","Fed Vice Chair (Supervision)":"FRB副議長(監督担当)","SNB Chairman":"SNB総裁",
+  "SNB Vice Chair":"SNB副総裁","FINMA Board Chair":"FINMA理事会議長","SVR member":"五賢人","SVR chair":"五賢人議長",
+  "Lietuvos bankas Chair":"リトアニア銀行総裁","EU Commissioner":"欧州委員","EU Exec. Vice-President":"欧州委員会上級副委員長",
+  "German Chancellor":"独首相","Bundesbank VP":"Bundesbank副総裁","ECB VP":"ECB副総裁","BaFin President":"BaFin長官",
+  "ESM MD":"ESM専務理事","OECD SG":"OECD事務総長","WTO DG":"WTO事務局長","IMF MD":"IMF専務理事","IMF FDMD":"IMF筆頭副専務理事"};
+function shortJa(s){
+  if(!s) return s;
+  let ex = false, v = s;
+  if(v.startsWith("ex-")){ ex = true; v = v.slice(3); }
+  const fixed = SHORT_JA_FIXED[v];
+  if(fixed) return (ex?"元":"") + fixed;
+  const m = v.match(/^(.*?\S)\s+(Gov\.|First Dep\. Gov\.|Dep\. Gov\.|Vice Gov\.|VP|Chairman|Vice Chair|Board member|Chief Economist|GM|Deputy GM|MD|FDMD|DG|SG|Exec\. Director|CEO|Board Chair|Chair|chair|member|Finance Minister|Economy Minister|Chancellor|Commissioner|Exec\. Vice-President|Europe Dept\. Director|Vice-President|Vice-Chair|President|Director)$/);
+  if(!m) return s;
+  const org0 = m[1], role = m[2];
+  const org = SHORT_JA_ORG[org0] ?? org0;
+  let r;
+  if(role === "President") r = CB_PRESIDENT.has(org0) ? "総裁" : "所長";
+  else if(role === "Director") r = "所長";
+  else { const hit = SHORT_JA_ROLE.find(([re]) => re.test(role)); r = hit ? hit[1] : role; }
+  const sep = /^[A-Za-z]/.test(r) ? " " : "";
+  return (ex?"元":"") + org + sep + r;
+}
+function shortDisp(s){ return uiLang==="ja" ? shortJa(s) : s; }
+
 /* organizer_short に混じる日本語「他」は en/de では "+" に置換して表示する。
    ※ フィルタ/ファセットは orgShort() の生の値のまま扱い、表示だけを変える。 */
 function orgDisp(s){
@@ -1560,7 +1605,7 @@ function evLabel(ev){
     const first = vip[0] || {};
     const full = String(first.name||first.person||"").trim();
     const lead0 = full.length>18 ? full.split(/\s+/).pop() : full;
-    const lead = lead0 + (first.short ? ` · ${first.short}` : "");
+    const lead = lead0 + (first.short ? ` · ${shortDisp(first.short)}` : "");
     const rest = vip.length>1 ? ` +${vip.length-1}` : "";
     return `${isForeign(ev)?"◇ ":""}[${cityShort(ev)}] ${lead}${rest} — ${theme}`;
   }
@@ -1571,7 +1616,7 @@ function evFull(ev){
   const segs = [ev.title, ev.organizer, ev.city];
   if(Array.isArray(ev.notables) && ev.notables.length){
     segs.push(t("notablesLbl")+" "+ev.notables
-      .map(n=>n.short ? `${n.name} (${n.short})` : n.name).join(", "));
+      .map(n=>n.short ? `${n.name} (${shortDisp(n.short)})` : n.name).join(", "));
   }
   return segs.filter(Boolean).join(" / ");
 }
@@ -2045,7 +2090,7 @@ function speakersHtml(ev){
   if(!Array.isArray(ev.speakers)) return "";
   const nots=(Array.isArray(ev.notables)?ev.notables:[])
     .filter(n=>n && typeof n==="object")
-    .map(n=>({short:n.short, key:normName(n.name)})).filter(n=>n.key);
+    .map(n=>({short:shortDisp(n.short), key:normName(n.name)})).filter(n=>n.key);
   const find=nm=>{
     const k=normName(nm); if(!k) return null;
     const kt=k.split(" ");
