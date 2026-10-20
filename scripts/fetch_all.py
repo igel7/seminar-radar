@@ -177,9 +177,14 @@ def decode(body, charset):
     return body.decode("utf-8", "replace")
 
 
-def html_to_text(raw, base_url):
+def html_to_text(raw, base_url, _allow_main_fallback=True):
     """HTML/XML → 読みやすいプレーンテキスト。リンクは「テキスト [絶対URL]」として保持する
-    (イベント詳細ページのURLを抽出できるようにするため)。"""
+    (イベント詳細ページのURLを抽出できるようにするため)。
+
+    変換後が CACHE_MAX_CHARS を超えるページ(巨大なメガメニューをHTMLに全展開しているサイト。
+    例: riksbank.se は約600本のナビリンクだけで10万字を超え、本文がキャッシュ上限の外に
+    出てしまう)は、<main> 要素があればその中身だけを変換し直して使う。"""
+    orig = raw
     # コメント・不可視要素を除去
     raw = re.sub(r"(?s)<!--.*?-->", " ", raw)
     raw = re.sub(r"(?is)<(script|style|noscript|template|svg|iframe)\b.*?</\1>", " ", raw)
@@ -212,7 +217,32 @@ def html_to_text(raw, base_url):
     text = re.sub(r"\n{3,}", "\n\n", text).strip()
     if title:
         text = f"{title}\n\n{text}"
+    if _allow_main_fallback and len(text) > CACHE_MAX_CHARS:
+        mm = re.search(r"(?is)<main\b[^>]*>.*?</main>", orig)
+        if mm:
+            inner = html_to_text(mm.group(0), base_url, _allow_main_fallback=False)
+            if len(inner) >= MIN_TEXT_CHARS:
+                text = (f"{title}\n\n" if title else "") + \
+                       "# note: ページが巨大なため <main> の中身だけを変換した(ナビゲーション除去)\n\n" + inner
     return text
+
+
+def render_with_chromium(url):
+    """fetch_hints.json で "render": "chromium" が付いたソース用。scripts/fetch_page.py
+    (headless Chromium)で描画後のHTMLを取り、(200, url, bytes, "utf-8") の形で返す。
+    失敗(環境でChromiumが使えない・タイムアウト・空応答)なら None(呼び出し側が通常取得に戻す)。
+    JS描画の一覧(Bank of England の Events 等)を日次で読むための手段。トークンは使わない。"""
+    import subprocess
+    try:
+        r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetch_page.py"), url,
+                            "--html", "--max-chars", "2000000"],
+                           capture_output=True, timeout=150)
+    except (subprocess.TimeoutExpired, OSError):
+        return None
+    out = r.stdout or b""
+    if r.returncode != 0 or len(out) < 200:
+        return None
+    return 200, url, out, "utf-8"
 
 
 def classify_failure(code, body_text):
@@ -301,8 +331,16 @@ def process_source(src, hints, prev_state, prev_status_ok):
     pages = dict(prev_pages)     # 失敗したページは前回の記録を保持する
     failures = []
     page_verdicts = []
+    use_chromium = (hint.get("render") == "chromium")
     for u in candidates:
-        code, final_url, body, charset = fetch(u)
+        got = render_with_chromium(u) if use_chromium else None
+        if got is None:
+            if use_chromium:
+                view["notes"].append(f"Chromium 描画に失敗したため通常取得に戻した: {u}")
+            code, final_url, body, charset = fetch(u)
+        else:
+            code, final_url, body, charset = got
+            view["notes"].append(f"Chromium で描画して取得: {u}")
         if code is not None and code < 400:
             text = html_to_text(decode(body, charset), final_url)
             failure = classify_failure(code, text)

@@ -28,7 +28,7 @@
 
 | | ドイツモード `de`(既定) | 英国モード `uk` |
 |---|---|---|
-| 対象地域 | 下記「抽出ルール」のとおり(ドイツ・スイス・オーストリア・中東欧・バルカン・バルト・ウクライナ。ECB・BIS 主催は開催国不問) | **英国(GB)・アイルランド(IE)は全規模**。**北欧(DK/SE/NO/FI/IS)は現地開催・ハイブリッドなら importance 3 のみ、完全オンラインは全規模**。ECB・BIS の開催国不問の例外は**適用しない**(ドイツモードで扱う)。それ以外の国での開催は収載しない |
+| 対象地域 | 下記「抽出ルール」のとおり(ドイツ・スイス・オーストリア・中東欧・バルカン・バルト・ウクライナ。ECB・BIS 主催は開催国不問) | **英国(GB)・アイルランド(IE)は全規模**。**北欧(DK/SE/NO/FI/IS)は現地開催・ハイブリッドなら importance 2 以上、完全オンラインは全規模**。ECB・BIS の開催国不問の例外は**適用しない**(ドイツモードで扱う)。それ以外の国での開催は収載しない |
 | 定点 | `sources.yaml` で `regions:` 未記載、または `de` を含むもの | `sources.yaml` で `regions:` に `uk` を含むもの |
 | 検索観点 | `discovery_topics` | `discovery_topics_uk`(英語クエリ中心。ドイツ語クエリは使わない) |
 | 状態ファイル | `data/` 直下 | **`data/uk/` 配下**(`events.json`・`new_events.json`・`status.json`・`known_events.json`・`fetch_state.json`・`detail_state.json`・`changelog.json`・`token_usage.json`・`meta.json`・`archive.json`・`overrides.json`・`aliases.json`・`cache/`・`manual/`) |
@@ -53,13 +53,13 @@
 - `sources.yaml` の定点はスクリプトが自動で英国プロファイル分に絞る。`anywhere: true` は
   英国モードでは無効(ドイツモード専用)。
 - 抽出ルールの地域判定は上表の英国モード列に従う。スクリプト(`ingest.py`)も同じ規則を強制する
-  (地域外と、北欧の現地開催で importance 3 未満のものを除去する)。
+  (地域外と、北欧の現地開催で importance 2 未満のものを除去する)。
   - **北欧の旗艦シリーズは importance 3 として収載する**: Bank of Finland–CEPR Joint Conference、
     Riksbank Annual Research Conference、Reykjavik Economic Conference(Seðlabanki)、CEBRA Annual
     Meeting(北欧中銀が主催・共催の回)。スクリプト側でも下限3を強制する(`FLAGSHIP_PATTERNS_BY_PROFILE`)。
   - **開催都市が書かれていれば、形式(現地/オンライン)が明記されていなくても現地開催として扱う**
     (`format: "onsite"`、`city`・`country` を記録)。「形式不明だから保留」にしない。北欧の現地開催は
-    importance 3 なら収載、3 未満なら収載しない、で判断を完結させる。
+    importance 2 以上なら収載、1 以下(定例セミナー等)なら収載しない、で判断を完結させる。
 - 有料の業界会議(UK Finance 等の業界団体・商用カンファレンス)は **importance 3 相当のものだけ**
   収載する。Call for Papers が参加要件のイベントは通常どおり収載する(開催日未定の CfP は従来どおり除外)。
 - 要約・申込メモは従来どおり ja/en/de の3言語セット。
@@ -81,7 +81,7 @@
 
 | 環境 | headless Chromium (`scripts/fetch_page.py`) | web検索 | GitHubへのpush | 備考 |
 |---|---|---|---|---|
-| Claude Code Routines | **使用不可**。外向き接続がプロキシに遮断され ERR_CONNECTION_RESET になることを 2026-07 に全パターンで確認済み。**使わず時間を浪費しないこと** | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
+| Claude Code Routines / claude.ai/code のクラウドセッション | **2026-10-20 再検証: 環境のネットワークが Full なら使える**(Default 環境で BoE の JS 描画一覧を取得できた)。2026-07 の ERR_CONNECTION_RESET は当時のネットワーク制限によるもの。`playwright` パッケージが無い環境では `fetch_page.py` が自動で `pip install playwright` する(ブラウザ本体は `/opt/pw-browsers/chromium` に同梱)。**手で使う必要はない**: `fetch_hints.json` に `"render": "chromium"` の付いたソースは `fetch_all.py` が自動で Chromium 描画する(B手順1.5)。描画に失敗したソースは通常取得に戻り、出力に「Chromium 描画に失敗」と出る | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
 | Codex Cloud | **使用不可**(ブラウザ本体が存在しない。2026-08-17 確認) | **使用不可**(`web__run` は存在するが 401。2026-08-17 確認) | **不可能**(2026-08-17 確認) | 静的ページの取得のみ可。`git fetch`/`clone` も不可 |
 
 **このため日次更新は Claude Code Routines で行う。Codex Cloud は日次更新には使わない**
@@ -314,7 +314,8 @@ Claude Code では Task/Agent ツール(軽量モデルを指定)、Codex では
 英国モードでは本手順以降の全スクリプトに `--profile uk` を付ける。A-0)。
 各ソースについて**元URLと `fetch_hints.json` の `alt_urls` をすべて**並列取得して本文を
 テキスト化し(`data/cache/*.txt`。1ソース=複数ページになりうる。リンクは `テキスト [URL]`
-の形で保持される)、ページごとの内容ハッシュを前回実行時(`data/fetch_state.json`)と
+の形で保持される。`fetch_hints.json` に `"render": "chromium"` が付いたソースは headless
+Chromium で描画してから同じ形式にする。巨大ページは `<main>` の中身だけに絞る)、ページごとの内容ハッシュを前回実行時(`data/fetch_state.json`)と
 比較して、ソースごとの判定を出力する。alt_urls は補助ページにすぎないことが多いため、
 **最初に成功した1ページで打ち切らない**(単一イベントページが一覧の代わりに固定化して
 新規イベントの入口が塞がるのを防ぐ)。手順2はこの判定に従って進める:

@@ -36,7 +36,7 @@ REGION = {
 #   data_dir / docs_dir : 巡回状態ファイル・出力ページの置き場
 #   region              : 開催国がこの集合に含まれれば収載(country None=オンラインは常に可)
 #   min_importance      : 開催国がこれらの国のイベントは importance がこの値未満なら除去
-#                         (北欧の現地開催は規模3のみ。完全オンラインは対象外)
+#                         (北欧の現地開催は規模2以上。完全オンラインは対象外)
 #   anywhere_orgs       : ECB・BIS 主催の「開催国不問」例外を適用するか
 #   ics_name            : ICS の X-WR-CALNAME
 #   topics_key          : sources.yaml の発見検索観点のキー
@@ -49,7 +49,7 @@ PROFILES = {
                home="DE", other="uk", other_href="uk/", ls_suffix=""),
     "uk": dict(data_dir=ROOT / "data" / "uk", docs_dir=ROOT / "docs" / "uk",
                region={"GB", "IE", "DK", "SE", "NO", "FI", "IS"},
-               min_importance={"DK": 3, "SE": 3, "NO": 3, "FI": 3, "IS": 3},
+               min_importance={"DK": 2, "SE": 2, "NO": 2, "FI": 2, "IS": 2},   # 2026-10-20 ユーザー指示で 3→2
                anywhere_orgs=False,
                ics_name="UK Econ/Fin Seminars", topics_key="discovery_topics_uk",
                home="GB", other="de", other_href="../", ls_suffix="_uk"),

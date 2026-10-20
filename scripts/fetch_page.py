@@ -30,13 +30,23 @@ import sys
 try:
     from playwright.sync_api import sync_playwright
 except ImportError:
-    print(
-        "playwright がインストールされていません。"
-        "pip install playwright を実行せよ"
-        "(ブラウザのダウンロードは不要。playwright install は実行しないこと)。",
-        file=sys.stderr,
-    )
-    sys.exit(2)
+    # 2026-10-20: クラウド環境のうち片方は playwright の Python パッケージだけが無い
+    # (ブラウザ本体 /opt/pw-browsers/chromium は同梱)。日次の fetch_all.py から呼ばれても
+    # 止まらないよう、一度だけ pip でパッケージを入れて再試行する(ブラウザはダウンロードしない)。
+    try:
+        subprocess.run([sys.executable, "-m", "pip", "install", "--quiet", "--disable-pip-version-check",
+                        "playwright"], check=True, timeout=180,
+                       env={**os.environ, "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "1"},
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        from playwright.sync_api import sync_playwright
+    except Exception:
+        print(
+            "playwright がインストールされていません(自動導入も失敗)。"
+            "pip install playwright を実行せよ"
+            "(ブラウザのダウンロードは不要。playwright install は実行しないこと)。",
+            file=sys.stderr,
+        )
+        sys.exit(2)
 
 DEFAULT_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
