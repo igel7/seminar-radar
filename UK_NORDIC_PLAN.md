@@ -202,3 +202,7 @@
   icmagroup.org, isda.org, dajf.org.uk, japansociety.org.uk, jetro.go.jp, soas.ac.uk, cbbc.org,
   riksbank.se, norges-bank.no, nationalbanken.dk, cb.is(suomenpankki.fi・omfif.org・unpri.org・
   suerf.org・unepfi.org は既存)。
+- **2026-10-20 変更**: `fetch_all.py` に (a) 巨大ページの `<main>` 抽出(Riksbank の一覧はメガメニューだけで10万字を
+  超えキャッシュ上限で本文が切れていた)、(b) `fetch_hints.json` の `"render": "chromium"` による headless Chromium
+  描画(BoE の Events 一覧に適用)を追加。Chromium は Default 環境(Full)で動作することを確認。
+- **2026-10-20 変更**: 北欧の現地開催の下限を ★3 → **★2** に引き下げ(ユーザー指示)。`PROFILES["uk"]["min_importance"]`・AGENTS.md A-0・画面の対象地域文言を更新。
