@@ -30,21 +30,19 @@
   "name": "Bank of England – Events",
   "url": "https://www.bankofengland.co.uk/news/events",
   "ok": true,
-  "found": 8,
-  "note": "2026-10-20 Chromium 描画で一覧取得(render: chromium)。今後のワークショップ・会議6件(うち BdF-BoE-BdI は既載)と Citizens' Forum 2件。博物館ツアー・家族向け行事は除外"
+  "found": 13
  },
  {
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 6,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 7
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
-  "found": 5
+  "found": 0
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
@@ -64,8 +62,7 @@
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 13,
-  "error": "リトライで回復: 別ドメイン hub.cepr.org/events/upcoming-events?page=0..5(UA付きcurl)"
+  "found": 13
  },
  {
   "name": "Resolution Foundation – Events",
@@ -78,13 +75,13 @@
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
-  "found": 2
+  "found": 1
  },
  {
   "name": "CER – Centre for European Reform – Events",
   "url": "https://www.cer.eu/events",
   "ok": true,
-  "found": 10
+  "found": 0
  },
  {
   "name": "Chatham House – Events",
@@ -98,7 +95,7 @@
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": true,
-  "found": 10
+  "found": 8
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
@@ -118,14 +115,13 @@
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
-  "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 2
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
-  "found": 1
+  "found": 0
  },
  {
   "name": "LSE – Public events (Search)",
@@ -137,8 +133,7 @@
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
   "url": "https://www.centreformacroeconomics.ac.uk/events",
   "ok": true,
-  "found": 25,
-  "error": "リトライで回復: 実体ホスト www.lse.ac.uk/CFM/events-and-seminars/(UA付きcurl)"
+  "found": 6
  },
  {
   "name": "LSE – Financial Markets Group (FMG) – Events",
@@ -171,22 +166,19 @@
   "name": "Oxford Martin School – Events",
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
   "ok": true,
-  "found": 10,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 1
  },
  {
   "name": "Cambridge Judge Business School – Events",
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
   "url": "https://www.bennettschool.cam.ac.uk/events/",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3
  },
  {
   "name": "KCL – Qatar Centre for Global Banking & Finance – Event series",
@@ -199,8 +191,7 @@
   "name": "Imperial College Business School – Events",
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
-  "found": 12,
-  "note": "代替取得: 実ブラウザUA付きcurl"
+  "found": 1
  },
  {
   "name": "Warwick – Department of Economics – Events",
@@ -245,8 +236,7 @@
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 6
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -287,15 +277,13 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3
  },
  {
   "name": "ISDA – Events",
   "url": "https://www.isda.org/events/",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0
  },
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
@@ -320,8 +308,7 @@
   "name": "SOAS – What's on (SOAS China Institute を含む)",
   "url": "https://www.soas.ac.uk/about/whats-on",
   "ok": true,
-  "found": 0,
-  "note": "キャッシュはナビのみでイベント一覧なし(found 0)"
+  "found": 0
  },
  {
   "name": "CBBC – China-Britain Business Council – Events",
@@ -355,8 +342,7 @@
   "name": "Suomen Pankki – Bank of Finland – Events calendar",
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
   "ok": true,
-  "found": 9,
-  "note": "2026-10-20 手動セッションで詳細ページを確認: BoF–CEPR 共同会議(12/17-18 Saariselkä、★3)と AI セミナー(11/11-12 Helsinki、★2)を収載(北欧の下限を★2に変更)"
+  "found": 2
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
@@ -368,14 +354,13 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 20,
-  "note": "約20候補を確認、新規採用1件(Chatham House)。他は既知・過去・地域外・条件外"
+  "found": 9,
+  "note": "候補9件・新規採用2件(Sidley, Westminster Forum)・既知3件。ブロック定点の補完検索を実施"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
-  "found": 7,
-  "note": "2026-10-20 INBOX_UK: Chatham House 一覧(1ページ目)を取込。該当7件(うち Competition policy conference は既載)。テーマ外(イスラエル・ブラジル選挙、和平、映画上映、Prize、読書会)は除外"
+  "found": 0
  }
 ]

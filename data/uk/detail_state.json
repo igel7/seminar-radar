@@ -13,6 +13,27 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.bankofengland.co.uk/events/2026/october/5th-annual-workshop-of-the-escb-research-cluster-on-climate-change": {
+  "event_id": "929a7e95c77d46db",
+  "http": 200,
+  "last": "2026-10-20",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.bankofengland.co.uk/events/2026/october/call-for-papers-boe-growth-workshop": {
+  "event_id": "b3e695de2452ddc2",
+  "http": 200,
+  "last": "2026-10-20",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.cbbc.org/events/partner-event-kings-college-london-lau-china-institute-china-week-2026": {
+  "event_id": "1309d642d9dcfc9d",
+  "http": 403,
+  "last": "2026-10-20",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://www.centralbank.ie/events/upcoming-events/2026/11/02/default-calendar/financial-system-conference-2026": {
   "event_id": "2f3cca5510240795",
   "http": 200,
@@ -32,6 +53,20 @@
   "http": 200,
   "last": "2026-10-20",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.ukfinance.org.uk/events-training/digital-innovation-summit-2027": {
+  "event_id": "61ec174eb0d8c70a",
+  "http": 403,
+  "last": "2026-10-20",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.ukfinance.org.uk/events-training/economic-crime-congress-2026-leading-collective-response-global-threat": {
+  "event_id": "bd8486a733bb96dd",
+  "http": 403,
+  "last": "2026-10-20",
+  "result": "FAIL-BLOCKED",
   "tries": 1
  }
 }
