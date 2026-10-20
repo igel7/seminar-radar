@@ -789,7 +789,9 @@ python3 scripts/audit_urls.py
 3. サブエージェントへの並列委譲は A-3 の範囲で可(1エージェント=3〜4ソース。
    計画・成果物の検証・採否の判断はメインモデルが自分で行う)。
 4. 回収できたイベントは通常のイベントスキーマで `data/new_events.json` に書き出し、
-   `python3 scripts/ingest.py` を実行する(日次更新と同じ検証基準を適用する。
+   **`python3 scripts/ingest.py --label retry`**(英国モードは `--profile uk --label retry`)を実行する
+   (`--label` でサイトの更新履歴に日次とは別の実行として記録される。手動セッションで個別に
+   取り込む場合は `--label manual`。日次更新と同じ検証基準を適用する。
    特に捏造チェック: ページで確認できない日付を埋めない)。
 5. `data/status.json` の該当行を更新する:
    - 回復したソース: `ok: true` にし、`found` を更新、`error` は

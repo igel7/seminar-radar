@@ -893,7 +893,7 @@ ja:{
   stFilterTip:"この主催団体でカレンダーを絞り込む",
   /* 更新履歴(News) */
   nwTitle:"📰 更新履歴", nwAdded:"新規 {n}件", nwUpdated:"更新 {n}件", nwNone:"更新なし",
-  nwRange:"〜", nwTokens:"({n}トークン使用)",
+  nwRange:"〜", nwTokens:"({n}トークン使用)", nwRun_retry:"再挑戦", nwRun_manual:"手動取込",
   nwTokensTip:"この日の巡回でAIエージェントが消費したトークン数(ほぼ全量)",
   nwPinned:"フィルタで非表示のイベントを一時的に表示しています(フィルタ操作で解除)",
   nwf_date:"日程", nwf_time:"時刻", nwf_venue:"会場", nwf_format:"開催形式",
@@ -987,7 +987,7 @@ en:{
   stFilterTip:"Filter the calendar by this organizer",
   /* Change log (News) */
   nwTitle:"📰 What's new", nwAdded:"{n} new", nwUpdated:"{n} updated",
-  nwNone:"no changes", nwRange:"–", nwTokens:"({n} tokens used)",
+  nwNone:"no changes", nwRange:"–", nwTokens:"({n} tokens used)", nwRun_retry:"retry run", nwRun_manual:"manual intake",
   nwTokensTip:"Tokens consumed by the AI agent on this day's crawl (near-complete total)",
   nwPinned:"Temporarily showing an event hidden by your filters (cleared on any filter change)",
   nwf_date:"Dates", nwf_time:"Time", nwf_venue:"Venue", nwf_format:"Format",
@@ -1086,7 +1086,7 @@ de:{
   stFilterTip:"Kalender nach diesem Veranstalter filtern",
   /* Änderungen (News) */
   nwTitle:"📰 Neuigkeiten", nwAdded:"{n} neu", nwUpdated:"{n} aktualisiert",
-  nwNone:"keine Änderungen", nwRange:"–", nwTokens:"({n} Token verbraucht)",
+  nwNone:"keine Änderungen", nwRange:"–", nwTokens:"({n} Token verbraucht)", nwRun_retry:"Nachlauf", nwRun_manual:"manuelle Aufnahme",
   nwTokensTip:"Vom KI-Agenten an diesem Tag verbrauchte Token (nahezu vollständig)",
   nwPinned:"Ein durch Filter verborgenes Event wird vorübergehend angezeigt (Filteränderung hebt dies auf)",
   nwf_date:"Termin", nwf_time:"Uhrzeit", nwf_venue:"Ort", nwf_format:"Format",
@@ -2372,6 +2372,14 @@ function newsRow(it, kind){
 /* 巡回の開始・終了時刻(ISO文字列、Europe/Berlin ローカル)を「 17:05〜17:09」の形に。
    記録がある日のみ表示し、開始が無ければ「 〜17:09」、両方無ければ空文字。 */
 const NWT_RE=/^\d{4}-\d{2}-\d{2}T(\d{2}:\d{2})/;
+/* 実行の種類(run: retry=再挑戦ジョブ / manual=手動取込)。日次は無印 */
+function nwRun(d){
+  const r=d && d.run ? String(d.run) : "";
+  if(!r || r==="daily") return "";
+  const k="nwRun_"+r;
+  const lbl = (I18N[uiLang]&&I18N[uiLang][k]) || (I18N.ja&&I18N.ja[k]) || r;
+  return ` (${lbl})`;
+}
 function nwTimes(d){
   const s=NWT_RE.exec(String(d.start||"")), e=NWT_RE.exec(String(d.end||""));
   if(s&&e) return ` ${s[1]}${t("nwRange")}${e[1]}`;
@@ -2411,12 +2419,12 @@ function drawNews(){
   if(nU) cnt.push(tf("nwUpdated",{n:nU}));
   const topTok=nwTokenText(top);
   document.getElementById("newssum").textContent =
-    `${t("nwTitle")} — ${md(top.date)}${nwTimes(top)}: `+
+    `${t("nwTitle")} — ${md(top.date)}${nwTimes(top)}${nwRun(top)}: `+
     `${cnt.length?cnt.join(t("sep")):t("nwNone")}${topTok?" "+topTok:""}`;
   let html="";
   for(const d of days){
     const tok=nwTokenText(d);
-    html+=`<div class="nwday">${esc(md(d.date)+nwTimes(d))}`+
+    html+=`<div class="nwday">${esc(md(d.date)+nwTimes(d)+nwRun(d))}`+
       (tok?` <span class="nwtok" title="${esc(t("nwTokensTip"))}">${esc(tok)}</span>`:"")+
       `</div>`;
     if(Array.isArray(d.added))   for(const it of d.added)   html+=newsRow(it,"add");

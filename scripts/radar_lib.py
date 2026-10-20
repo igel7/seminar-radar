@@ -910,8 +910,12 @@ def mark_crawl_start():
     print(f"巡回開始時刻を記録: {meta['crawl_started']}")
 
 
-def update_changelog(changes):
-    """data/changelog.json (追加・実質更新の日次履歴)を更新する。
+def update_changelog(changes, label="daily"):
+    """data/changelog.json (追加・実質更新の履歴。実行=run 単位)を更新する。
+    label は実行の種類: "daily"(日次更新。既定)/ "retry"(失敗ソース再挑戦ジョブ)/
+    "manual"(手動セッションでの取込)。同じ日でも label が違えば別エントリにし、
+    サイトの更新履歴で「日次 06:46〜06:50」と「再挑戦 09:50〜11:52」を区別できるようにする。
+    label を省くと従来どおり当日の日次エントリに合流する。
     changes は merge() が返す差分情報 {"added": [...], "updated": {id: (ev, fields), ...}}。
     added・updated が両方空でも呼んでよく、その場合は保持期限切れエントリの掃除だけが走る。
 
@@ -928,9 +932,13 @@ def update_changelog(changes):
         log = []
 
     today_str = TODAY.isoformat()
-    entry = next((e for e in log if isinstance(e, dict) and e.get("date") == today_str), None)
+    label = str(label or "daily")
+    entry = next((e for e in log if isinstance(e, dict) and e.get("date") == today_str
+                  and (e.get("run") or "daily") == label), None)
     if entry is None:
         entry = {"date": today_str, "added": [], "updated": []}
+        if label != "daily":
+            entry["run"] = label
         log.append(entry)
 
     # 巡回時刻の記録。実際に追加・更新があった実行(=巡回)でのみ書く。
@@ -945,6 +953,9 @@ def update_changelog(changes):
     if changes.get("added") or changes.get("updated"):
         now = datetime.now(TZ)
         entry["end"] = now.isoformat(timespec="seconds")
+        if not entry.get("start") and label != "daily":
+            # 再挑戦・手動は --mark-start を打たないので、その run の最初の取込時刻を開始とする
+            entry["start"] = entry["end"]
         if not entry.get("start"):
             meta = load_json(META_FILE, {})
             if not isinstance(meta, dict):
@@ -998,7 +1009,8 @@ def update_changelog(changes):
     cutoff = (TODAY - timedelta(days=CHANGELOG_KEEP_DAYS)).isoformat()
     log = [e for e in log if isinstance(e, dict) and valid_date(e.get("date"))
            and e["date"] >= cutoff]
-    log.sort(key=lambda e: e["date"], reverse=True)
+    # 日付降順、同日は終了時刻の新しい順(直近の実行が先頭=サマリー行に出る)
+    log.sort(key=lambda e: (e["date"], str(e.get("end") or "")), reverse=True)
 
     CHANGELOG_FILE.write_text(json.dumps(log, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -1299,8 +1311,10 @@ def render_html(events, statuses, changelog=None, maintenance=False):
     # 当日分の記録は ingest.py より後(手順5.5の log_tokens.py)に付くため、
     # 当日の数字は log_tokens.py 側の再生成で入る。
     token_totals = load_token_totals()
+    # トークン数は日次 Routine の記録なので、日次(run 無し)のエントリにだけ付ける
     changelog = [dict(e, tokens=token_totals[e["date"]])
-                 if isinstance(e, dict) and e.get("date") in token_totals else e
+                 if isinstance(e, dict) and e.get("date") in token_totals
+                 and (e.get("run") or "daily") == "daily" else e
                  for e in changelog]
     # 置換はシングルパスで行う(データ内にプレースホルダ文字列を仕込む注入への対策)
     mapping = {

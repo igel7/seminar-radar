@@ -4,7 +4,7 @@
 ingest.py: 実行エージェント(Claude Code / Codex)が書き出した data/new_events.json を取り込み、
 検証・重複排除して data/events.json を更新し、docs/ を再生成する。
 
-使い方:  python3 scripts/ingest.py [--profile uk]
+使い方:  python3 scripts/ingest.py [--profile uk] [--label retry|manual]
 入力:    data/new_events.json  … 本日抽出したイベントのJSON配列
          data/status.json      … 巡回ステータスのJSON配列
 出力:    data/events.json, data/archive.json, docs/index.html, docs/calendar.ics
@@ -76,6 +76,13 @@ def main():
     # --maintenance: 巡回を伴わない保守作業(UI改修など)での再生成。
     # サイトの LAST UPDATE(最終巡回時刻)を進めない。日次更新ではフラグなしで実行する。
     maintenance = "--maintenance" in sys.argv[1:]
+    # --label retry|manual: 日次以外の取込を更新履歴で別の実行として記録する(AGENTS.md C 手順4)
+    label = "daily"
+    for i, a in enumerate(sys.argv[1:]):
+        if a == "--label" and i + 1 < len(sys.argv[1:]):
+            label = sys.argv[1:][i + 1]
+        elif a.startswith("--label="):
+            label = a.split("=", 1)[1]
     new_events = load_json(NEW_FILE, [])
     if not isinstance(new_events, list):
         sys.exit("data/new_events.json はJSON配列である必要があります。")
@@ -125,7 +132,7 @@ def main():
     write_known_digest(events)
 
     # 追加・実質更新の履歴(data/changelog.json)を更新し、HTML埋め込み用の窓を得る。
-    changelog = update_changelog(changes)
+    changelog = update_changelog(changes, label=label)
 
     # レンダリング直前にユーザー管理の手動上書き(data/overrides.json)を適用する。
     # events (data/events.json への保存分)には反映しない = オーバーライドは表示専用。
