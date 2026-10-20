@@ -1543,9 +1543,11 @@ function orgShort(ev){
   if(org.length<=12) return org || "?";
   return org.slice(0,12)+"…";
 }
-/* 主催者を "+" で分解したトークン集合(例 "SAFE+CEPR" → ["SAFE","CEPR"]) */
+/* 主催者を "+" と "/" で分解したトークン集合(例 "SAFE+CEPR" → ["SAFE","CEPR"]、
+   共催表記 "BoE/BdF/BdI" → ["BoE","BdF","BdI"]、"Bundesbank/ECB+" → ["Bundesbank","ECB"])。
+   共催イベントが各機関の主催フィルタで引けるようにする(機関別の件数は共催分だけ重複して数える)。 */
 function orgTokens(ev){
-  return String(orgShort(ev)||"").split("+").map(s=>s.trim()).filter(Boolean);
+  return String(orgShort(ev)||"").split(/[+\/]/).map(s=>s.trim()).filter(Boolean);
 }
 function evLabel(ev){
   const lang = ev.language ? langShort(ev.language) : "";
