@@ -102,7 +102,8 @@
   .regtabs>a:hover{color:var(--amber)}
   .regtabs>.on{color:var(--amber);border-bottom-color:var(--amber);font-weight:700}
   .regtabs>a:focus-visible{outline:none;box-shadow:inset 0 0 0 1px var(--amber)}
-  .regtabs .flag{margin-right:6px}
+  .regtabs .flag{margin-right:7px;display:inline-block;vertical-align:-1px;line-height:0}
+  .regtabs .flag svg{border-radius:1px;box-shadow:0 0 0 1px rgba(127,127,127,.35)}
   /* 言語切替の小見出し(「表示言語」)。切替枠の上に小さく置く */
   .langwrap{display:inline-flex;flex-direction:column;align-items:flex-start;flex:0 0 auto}
   .hdcap{font-size:9px;letter-spacing:.12em;color:var(--sub);margin:0 0 2px 1px;
@@ -1304,12 +1305,15 @@ function buildModeSwitch(){
   if(!box) return;
   box.textContent="";
   const other=(PROFILE.other&&PROFILE.other.id)||"", href=(PROFILE.other&&PROFILE.other.href)||"";
-  const FLAG={de:"\u{1F1E9}\u{1F1EA}", uk:"\u{1F1EC}\u{1F1E7}"};   /* 🇩🇪 🇬🇧(地域の記号。言語には使わない) */
+  /* 国旗はインラインSVG(絵文字の国旗は Windows では文字 "DE"/"GB" に化けるため)。地域の記号であり言語には使わない */
+  const FLAG={
+    de:'<svg viewBox="0 0 5 3" width="16" height="10" aria-hidden="true"><rect width="5" height="1" y="0" fill="#000"/><rect width="5" height="1" y="1" fill="#d00"/><rect width="5" height="1" y="2" fill="#ffce00"/></svg>',
+    uk:'<svg viewBox="0 0 60 30" width="16" height="8" aria-hidden="true"><clipPath id="fuk"><rect width="60" height="30"/></clipPath><g clip-path="url(#fuk)"><rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#c8102e" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></g></svg>'};
   for(const id of ["de","uk"]){
     const cur=(id===PROFILE.id), key=(id==="uk"?"regionUk":"regionDe");
     const el=document.createElement(cur||id!==other ? "span" : "a");
     el.dataset.mode=id;
-    const fl=document.createElement("span"); fl.className="flag"; fl.setAttribute("aria-hidden","true"); fl.textContent=FLAG[id];
+    const fl=document.createElement("span"); fl.className="flag"; fl.setAttribute("aria-hidden","true"); fl.innerHTML=FLAG[id];
     const lb=document.createElement("span"); lb.dataset.i18n=key; lb.textContent=t(key);
     el.appendChild(fl); el.appendChild(lb);
     if(cur){ el.className="on"; el.setAttribute("aria-current","page"); }
