@@ -16,9 +16,9 @@
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
-  "ok": false,
-  "found": 0,
-  "error": "JSシェル(thin/405); tried: fetch, ua-curl, hints, search"
+  "ok": true,
+  "found": 2,
+  "error": "リトライで回復: Chromium で一覧描画(scripts/fetch_page.py。Routines では不可)"
  },
  {
   "name": "UNEP FI – Events",
@@ -58,14 +58,14 @@
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, api, chromium, co-host, search"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
-  "ok": false,
-  "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "ok": true,
+  "found": 13,
+  "error": "リトライで回復: 別ドメイン hub.cepr.org/events/upcoming-events?page=0..5(UA付きcurl)"
  },
  {
   "name": "Resolution Foundation – Events",
@@ -91,7 +91,7 @@
   "url": "https://www.chathamhouse.org/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search",
+  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, api, chromium, co-host, search",
   "note": "検索経由で1件回収(Competition Policy Conference)"
  },
  {
@@ -105,14 +105,14 @@
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, chromium, search"
  },
  {
   "name": "Policy Exchange – Events",
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "NET-ERR; tried: fetch, ua-curl, hints, search"
+  "error": "NET-ERR; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: curl UA https://www.policyexchange.org.uk/events/ (HTTP/2 PROTOCOL_ERROR), curl /feed/, /wp-json/wp/v2/posts, /sitemap.xml (HTTP/2 PROTOCOL_ERROR), curl --http1.1 /events/, www /wp-json/tribe/events/v1/events, /feed/ (Empty reply), http://policyexchange.org.uk/events/ -> meta refresh to /.well-known"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
@@ -136,9 +136,9 @@
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
   "url": "https://www.centreformacroeconomics.ac.uk/events",
-  "ok": false,
-  "found": 0,
-  "error": "NET-ERR; tried: fetch, ua-curl, hints, search"
+  "ok": true,
+  "found": 25,
+  "error": "リトライで回復: 実体ホスト www.lse.ac.uk/CFM/events-and-seminars/(UA付きcurl)"
  },
  {
   "name": "LSE – Financial Markets Group (FMG) – Events",
@@ -165,7 +165,7 @@
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: curl UA /sitemap.xml, /events/feed (403 Cloudflare 'Just a moment'), curl talks.ox.ac.uk api/search -> redirects to events.ox.ac.uk (403 CloudFront 'Request blocked'), WebFetch /events (403), WebFetch events.ox.ac.uk search (429), curl enspire.ox.ac.uk OSEF page (404), events.ox.ac.uk/oxford_event/d"
  },
  {
   "name": "Oxford Martin School – Events",
@@ -220,7 +220,7 @@
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: curl UA /sitemap.xml, /events/rss (403 Cloudflare), curl www.citystgeorges.ac.uk/news-and-events/events (403 Cloudflare), curl + Chromium + WebFetch https://www.bayes.citystgeorges.ac.uk/news-and-events/events (403 / 'Performing security verification'), curl conftool IFABS 2026 London about page (20"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
@@ -265,9 +265,9 @@
  {
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
-  "ok": false,
-  "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "ok": true,
+  "found": 3,
+  "error": "リトライで回復: Chromium で一覧・詳細描画(Routines では不可)"
  },
  {
   "name": "TheCityUK – Events",
@@ -300,9 +300,9 @@
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
-  "ok": false,
-  "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "ok": true,
+  "found": 1,
+  "error": "リトライで回復: Chromium で一覧描画(Routines では不可)"
  },
  {
   "name": "Japan Society (London) – Events",
@@ -326,9 +326,9 @@
  {
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
-  "ok": false,
-  "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search"
+  "ok": true,
+  "found": 5,
+  "error": "リトライで回復: Chromium で一覧・詳細描画(Routines では不可)"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
