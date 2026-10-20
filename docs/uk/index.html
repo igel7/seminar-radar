@@ -715,7 +715,7 @@
         <option value="en" data-i18n="langEn">英語</option>
         <option value="de" data-i18n="langDe">ドイツ語</option>
       </select></label>
-    <label class="fld cbfld"><span class="cbrow">
+    <label class="fld cbfld"><span class="cbrow" id="onlinerow">
       <input type="checkbox" id="online"><span class="cblbl" data-i18n="cbOnline">オンライン開催を含む</span></span></label>
     <label class="fld cbfld"><span class="cbrow" id="daytriprow">
       <input type="checkbox" id="daytrip"><span class="cblbl" data-i18n="cbDaytrip">Frankfurt日帰り圏のみ</span></span></label>
@@ -843,6 +843,8 @@ ja:{
   capTheme:"テーマ", capImp:"重要度", capLang:"言語",
   capVip:"要人登壇", vipAll:"指定なし", vip1:"tier 1 のみ", vip2:"tier 1+2",
   impOverridden:"要人フィルタ有効中は重要度の下限は適用されません",
+  impOrgOverridden:"主催者を選択中は重要度の下限は適用されません(その機関の全イベントを表示)",
+  onlineOrgOverridden:"主催者を選択中はオンライン開催も常に表示します",
   notablesLbl:"要人:",
   mech:"仕組み",
   mpAgentT:"AIエージェント",
@@ -934,6 +936,8 @@ en:{
   capTheme:"Theme", capImp:"Importance", capLang:"Lang",
   capVip:"Notable speakers", vipAll:"Any", vip1:"tier 1 only", vip2:"tier 1+2",
   impOverridden:"Importance floor is not applied while the notable-speaker filter is active",
+  impOrgOverridden:"Importance floor is not applied while an organizer is selected (all of its events are shown)",
+  onlineOrgOverridden:"Online events are always shown while an organizer is selected",
   notablesLbl:"Notable:",
   mech:"How it works",
   mpAgentT:"AI agents",
@@ -1030,6 +1034,8 @@ de:{
   capTheme:"Thema", capImp:"Relevanz", capLang:"Sprache",
   capVip:"Prominente Redner", vipAll:"Alle", vip1:"nur Tier 1", vip2:"Tier 1+2",
   impOverridden:"Die Wichtigkeitsschwelle gilt nicht, solange der Redner-Filter aktiv ist",
+  impOrgOverridden:"Die Wichtigkeitsschwelle gilt nicht, solange ein Veranstalter ausgewählt ist (alle seine Veranstaltungen werden angezeigt)",
+  onlineOrgOverridden:"Online-Veranstaltungen werden immer angezeigt, solange ein Veranstalter ausgewählt ist",
   notablesLbl:"Prominent:",
   mech:"Funktionsweise",
   mpAgentT:"KI-Agenten",
@@ -1706,8 +1712,9 @@ function passOrg(ev){
   return orgTokens(ev).includes(state.org);
 }
 function passImp(ev){
-  /* 要人フィルタ有効時は重要度の下限を適用しない(要人登壇自体が重要度の根拠) */
-  if(state.vip!=="") return true;
+  /* 要人フィルタ有効時は重要度の下限を適用しない(要人登壇自体が重要度の根拠)。
+     主催者を選んだときも適用しない(「この機関のものが見たい」が指定された時点で規模で間引かない) */
+  if(state.vip!=="" || state.org!=="") return true;
   return imp(ev) >= +state.imp;      /* state.imp="0"なら全部通る。既定"1"で★0(imp0)を隠す */
 }
 function passVip(ev){
@@ -1725,6 +1732,7 @@ function passLang(ev){
   return true;
 }
 function passOnline(ev){
+  if(state.org!=="") return true;                     /* 主催者選択中はオンライン除外も適用しない */
   if(state.online) return true;                       /* オン: 完全オンラインも含める */
   return ev.format!=="online";                        /* オフ: 完全オンラインを除外(hybrid/onsiteは影響なし) */
 }
@@ -1791,7 +1799,9 @@ function facetCity(){
 }
 function facetOrg(){
   const set=new Set();
-  EVENTS.filter(e=>notEnded(e) && passExcept(e,"org")).forEach(e=>orgTokens(e).forEach(tok=>set.add(tok)));
+  /* 主催者を選べば重要度の下限とオンライン除外が外れるので、候補も両者を無視して集める
+     (★1のオンラインウェビナーしか無い機関も選択肢に出す) */
+  EVENTS.filter(e=>notEnded(e) && passExcept(e,["org","imp","online"])).forEach(e=>orgTokens(e).forEach(tok=>set.add(tok)));
   return [...set].sort((a,b)=>a.localeCompare(b));
 }
 /* AREA の特定選択肢(home/away)を選んだと仮定した場合に1件以上ヒットするか。
@@ -1863,10 +1873,20 @@ function rebuildSelects(){
   updateAreaOptions();
   document.getElementById("imp").value    = state.imp;
   document.getElementById("vip").value    = state.vip;
-  /* 要人フィルタ有効中は重要度セレクトを減光し、理由をツールチップで示す(操作は可能) */
+  /* 要人フィルタ有効中は重要度セレクトを減光し、理由をツールチップで示す(操作は可能)。
+     主催者選択中は重要度セレクトとオンラインのチェックを無効化(グレーアウト)する:
+     どちらも適用されないため。主催を「すべて」に戻すと復活する。 */
   const impFld = document.getElementById("imp").closest(".fld");
-  impFld.classList.toggle("dimmed", state.vip!=="");
-  if(state.vip!=="") impFld.title = t("impOverridden"); else impFld.removeAttribute("title");
+  const orgOn = state.org!=="";
+  impFld.classList.toggle("dimmed", state.vip!=="" || orgOn);
+  document.getElementById("imp").disabled = orgOn;
+  if(orgOn) impFld.title = t("impOrgOverridden");
+  else if(state.vip!=="") impFld.title = t("impOverridden");
+  else impFld.removeAttribute("title");
+  document.getElementById("online").disabled = orgOn;
+  const onlineRow = document.getElementById("onlinerow");
+  onlineRow.classList.toggle("dis", orgOn);
+  if(orgOn) onlineRow.title = t("onlineOrgOverridden"); else onlineRow.removeAttribute("title");
   document.getElementById("theme").value  = state.theme;
   document.getElementById("lang").value   = state.lang;
   document.getElementById("q").value      = state.q;
