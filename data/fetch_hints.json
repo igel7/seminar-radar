@@ -321,5 +321,10 @@
  "Bank of England – Events": {
   "render": "chromium",
   "note": "2026-10-20: 一覧はJS描画で静的HTMLは0件。fetch_all が headless Chromium(scripts/fetch_page.py)で描画して取得する(render: chromium)。個別イベントページは静的で fetch_details.py で登壇者を補完できる。Chromium が使えない環境では通常取得に戻り FAIL-THIN になる(その場合は site: 検索で補完)"
+ },
+ "NIESR – National Institute of Economic and Social Research – Events": {
+  "method": "fetch",
+  "last_ok": "2026-10-20",
+  "note": "一覧(WordPress Tribe Events)は『N events found.』の後に月別で今後のイベントが並ぶ(静的・通常5件前後)。/event/<slug> の詳細ページに日時・形式(Virtual Event=オンライン)・参加費・登壇者が明記される。AGM(理事限定)・懇親会は除外。2026-10-19 に『該当0件』と誤判定した実績があるので、一覧に日付付きの項目があれば必ず抽出すること"
  }
 }
