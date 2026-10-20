@@ -83,9 +83,22 @@
   header{border:1px solid var(--line2);background:var(--panel);
     border-radius:6px;padding:8px 14px;margin-bottom:14px}
   .statusbar{display:flex;align-items:center;gap:5px 14px;flex-wrap:wrap}
-  /* 広いデスクトップ幅ではタイトル・地域名・LIVE・更新時刻・右端ツールを1行に収める
-     (地域名と「表示言語」ラベルを足した分、境界を 1140→1300px に上げた。未満では右端ツールが2行目に折り返す) */
-  @media(min-width:1300px){ .statusbar{flex-wrap:nowrap} }
+  /* PC幅(1024px以上)ではタイトル・地域名・LIVE・更新時刻・右端ツールを常に1行に収める。
+     収まらない場合は fitHeader()(JS)が header に hd-c1 → hd-c2 → hd-c3 を段階的に付けて
+     幅を詰める(言語ラベル短縮と LAST UPDATE 文字省略 → タイトル横の地域名を隠す → 見出し縮小)。
+     コンテナ幅は最大 1120px なので、UI言語がドイツ語のときは広い画面でも hd-c2 まで入る。 */
+  @media(min-width:1024px){ .statusbar{flex-wrap:nowrap} }
+  .langsw .lb-short{display:none}
+  header.hd-c1 .langsw .lb-full{display:none}
+  header.hd-c1 .langsw .lb-short{display:inline}
+  header.hd-c1 .updated .upd-lbl{display:none}
+  .updated .upd-lbl-s{display:none}
+  header.hd-c1 .updated .upd-lbl-s{display:inline}
+  header.hd-c1 .hdtools input[type=search]{flex:1 1 90px;min-width:80px;max-width:150px}
+  header.hd-c1 .srcbtn{padding:6px 8px;letter-spacing:.04em}
+  header.hd-c2 h1 .hdreg{display:none}
+  header.hd-c3 h1{font-size:21px}
+  header.hd-c3 .live{display:none}
   h1{margin:0;font-size:25px;letter-spacing:.055em;font-family:var(--mono);
     font-weight:700;color:var(--ink);line-height:1.05;white-space:nowrap}
   h1::before{content:"▸ ";color:var(--amber)}
@@ -116,7 +129,7 @@
     animation:liveblink 1.15s steps(1,end) infinite}
   @keyframes liveblink{0%,55%{opacity:1}56%,100%{opacity:.15}}
   .updated{font-family:var(--mono);font-size:10.5px;color:var(--sub);
-    letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    letter-spacing:.02em;white-space:nowrap;flex:0 0 auto}
   .updated b{color:var(--amber-dim);font-weight:600}
   /* ---------- ヘッダー右端ツール(仕組み・調査対象ボタン + 検索) ---------- */
   .hdtools{display:flex;align-items:center;gap:8px;margin-left:auto;min-width:0}
@@ -613,14 +626,14 @@
   <div class="statusbar">
     <h1>Seminar Calendar<span class="hdreg" id="hdreg"></span></h1>
     <span class="live"><span class="ld"></span>LIVE</span>
-    <span class="updated"><span data-i18n="lastUpdate">LAST UPDATE:</span> <b id="updrel" data-iso="2026-10-20T11:00:01+02:00" title="2026-10-20 11:00 (CEST)">2026-10-20 11:00 (CEST)</b></span>
+    <span class="updated"><span class="upd-lbl" data-i18n="lastUpdate">LAST UPDATE:</span><span class="upd-lbl-s" data-i18n="lastUpdateShort">更新:</span> <b id="updrel" data-iso="2026-10-20T11:00:01+02:00" title="2026-10-20 11:00 (CEST)">2026-10-20 11:00 (CEST)</b></span>
     <div class="hdtools">
       <div class="langwrap">
         <span class="hdcap" data-i18n="capUiLang">表示言語</span>
         <div class="langsw" id="langsw" role="group" aria-label="Language" data-i18n-aria="capUiLang">
-          <button type="button" data-ui="ja">日本語</button>
-          <button type="button" data-ui="en">English</button>
-          <button type="button" data-ui="de">Deutsch</button>
+          <button type="button" data-ui="ja"><span class="lb-full">日本語</span><span class="lb-short">日本語</span></button>
+          <button type="button" data-ui="en"><span class="lb-full">English</span><span class="lb-short">EN</span></button>
+          <button type="button" data-ui="de"><span class="lb-full">Deutsch</span><span class="lb-short">DE</span></button>
         </div>
       </div>
       <div class="skinwrap">
@@ -822,7 +835,7 @@ const LS_UILANG = "sr_uilang";          /* フィルタ保存キー(LS_KEY)と�
 const I18N = {
 ja:{
   modeDe:"ドイツ版(ドイツ・中東欧)に切り替える", modeUk:"英国版(英国・北欧)に切り替える", modeSwitch:"地域の切替",
-  regionDe:"ドイツ・中東欧", regionUk:"英国・北欧", capUiLang:"表示言語",
+  regionDe:"ドイツ・中東欧", regionUk:"英国・北欧", capUiLang:"表示言語", lastUpdateShort:"更新:",
   lastUpdate:"LAST UPDATE:",
   sources:"調査対象",
   skinToLight:"明るいテーマに切り替え", skinToDark:"暗いテーマに切り替え",
@@ -913,7 +926,7 @@ ja:{
 },
 en:{
   modeDe:"Switch to the Germany & CEE edition", modeUk:"Switch to the UK & Nordics edition", modeSwitch:"Region",
-  regionDe:"Germany & CEE", regionUk:"UK & Nordics", capUiLang:"Language",
+  regionDe:"Germany & CEE", regionUk:"UK & Nordics", capUiLang:"Language", lastUpdateShort:"UPDATED",
   lastUpdate:"LAST UPDATE:",
   sources:"Sources",
   skinToLight:"Switch to light theme", skinToDark:"Switch to dark theme",
@@ -1009,7 +1022,7 @@ en:{
 },
 de:{
   modeDe:"Zur Ausgabe Deutschland & MOE wechseln", modeUk:"Zur Ausgabe UK & Nordeuropa wechseln", modeSwitch:"Region",
-  regionDe:"Deutschland & MOE", regionUk:"UK & Nordeuropa", capUiLang:"Sprache",
+  regionDe:"Deutschland & MOE", regionUk:"UK & Nordeuropa", capUiLang:"Sprache", lastUpdateShort:"STAND:",
   lastUpdate:"LETZTES UPDATE:",
   sources:"Quellen",
   skinToLight:"Zum hellen Design wechseln", skinToDark:"Zum dunklen Design wechseln",
@@ -1340,7 +1353,21 @@ function applyStaticText(){
   });
   applySkin();     /* 配色トグルのラベル・吹き出しもUI言語に追随させる */
   drawUpdated();   /* 相対時刻もUI言語に追随させる */
+  fitHeader();     /* ラベル長が変わるので1行に収まるか測り直す */
 }
+/* ヘッダを1行に収める(PC幅)。はみ出していれば hd-c1→c2→c3 を順に付けて幅を詰める。
+   狭幅(1024px未満)は折り返しに任せるので何も付けない。 */
+function fitHeader(){
+  const hd=document.querySelector("header"), sb=document.querySelector(".statusbar");
+  if(!hd||!sb) return;
+  hd.classList.remove("hd-c1","hd-c2","hd-c3");
+  if(window.innerWidth<1024) return;
+  for(const c of ["hd-c1","hd-c2","hd-c3"]){
+    if(sb.scrollWidth<=sb.clientWidth) break;
+    hd.classList.add(c);
+  }
+}
+(function(){ let tm=null; window.addEventListener("resize",()=>{ clearTimeout(tm); tm=setTimeout(fitHeader,120); }); })();
 /* UI言語の切替(state.lang=開催言語フィルタには一切触れない) */
 function setUiLang(l){
   if(!UI_LANGS.includes(l)) return;
