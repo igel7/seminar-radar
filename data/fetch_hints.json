@@ -156,12 +156,12 @@
   "note": "2026-10-03: 直接取得・WebFetchとも403継続。web検索でも新規確認できず。 2026-10-11: 403継続、web検索でも日程付きの新規イベント確認できず。"
  },
  "PRI – Principles for Responsible Investment – Events": {
-  "method": "search",
+  "method": "chromium",
   "alt_urls": [
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
-  "last_ok": "2026-10-17",
-  "note": "2026-10-03: 主要ウェビナーは対象地域外(Amsterdam)。Africa向けMasterclassはテーマ適合性に疑義があり不採用。 2026-10-11: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。 2026-10-15: web検索で対象地域・オンラインの新規ウェビナーなし(JSシェル継続)。 2026-10-16: JSシェル継続。web検索で対象地域・オンラインの新規ウェビナーなし。 2026-10-17: JSシェル継続。web検索で対象地域・オンラインの新規無料ウェビナーなし。"
+  "last_ok": "2026-10-20",
+  "note": "2026-10-20: unpri.org/events は curl では JS殻だが headless Chromium(scripts/fetch_page.py)で一覧が描画できる(手動の再挑戦ジョブ用。Routines では Chromium 不可)。public.unpri.org の個別ページは Chromium でも Cloudflare。日次は search 補完。"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
@@ -256,5 +256,66 @@
   "alt_urls": [],
   "last_ok": null,
   "note": "2026-10-16: ドメイン全体が503(トップページ・research-seminars・calendar・sitemap.xmlすべて503)。サイト側障害の可能性。web検索でも今後の日程付きイベント確認できず(Tuulelohe lend・30周年記念・理事会セミナー等いずれも過去開催)。"
+ },
+ "CEPR – Centre for Economic Policy Research – Events": {
+  "method": "alt-domain",
+  "last_ok": "2026-10-20",
+  "alt_urls": [
+   "https://hub.cepr.org/events/upcoming-events?page=0",
+   "https://hub.cepr.org/events/upcoming-events?page=1",
+   "https://hub.cepr.org/events/upcoming-events?page=2",
+   "https://hub.cepr.org/events/upcoming-events?page=3",
+   "https://hub.cepr.org/events/upcoming-events?page=4",
+   "https://hub.cepr.org/events/upcoming-events?page=5"
+  ],
+  "note": "2026-10-20: cepr.org 本体は Cloudflare 403(sitemap/RSS/jsonapi も)。別ドメイン hub.cepr.org の今後イベント一覧(page=0..5)は UA付きcurl で200。一覧に日付・時刻・種別はあるが会場は原則なし(詳細はログイン要)。会場は共催先ページで確認する。"
+ },
+ "LSE – Centre for Macroeconomics (CFM) – Events": {
+  "method": "alt-domain",
+  "last_ok": "2026-10-20",
+  "alt_urls": [
+   "https://www.lse.ac.uk/CFM/events-and-seminars/Upcoming-Events",
+   "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars"
+  ],
+  "note": "2026-10-20: centreformacroeconomics.ac.uk はプロキシ経由で TLS 不可。実体は www.lse.ac.uk/CFM/ 配下(og:url)で UA付きcurl で200。Seminars ページに学期の全日程(Money-Macro Seminar 火14:30)。"
+ },
+ "UK Finance – Events": {
+  "method": "chromium",
+  "last_ok": "2026-10-20",
+  "note": "2026-10-20: curl は 403(/events/feed も)だが headless Chromium で一覧(/events/events-training-schedule)と詳細が描画できる(手動の再挑戦ジョブ用)。業界団体のため旗艦会議(★3)と無料公開ウェビナーのみ収載。"
+ },
+ "Daiwa Anglo-Japanese Foundation – Events": {
+  "method": "chromium",
+  "last_ok": "2026-10-20",
+  "note": "2026-10-20: 10/19 まで curl で取れていたが 10/20 から 403。headless Chromium では一覧が描画できる(個別ページは不可)。"
+ },
+ "CBBC – China-Britain Business Council – Events": {
+  "method": "chromium",
+  "last_ok": "2026-10-20",
+  "note": "2026-10-20: curl 403。headless Chromium で一覧(?page=1 も)と詳細が描画できる(手動の再挑戦ジョブ用)。日次は search 補完。"
+ },
+ "IFS – Institute for Fiscal Studies – Events": {
+  "method": "search",
+  "note": "2026-10-20 再挑戦: sitemap/RSS/wp-json/サブページ/Chromium/WebFetch すべて Cloudflare 403。検索で見つかる今後の案件は有料研修コースのみ。"
+ },
+ "Chatham House – Events": {
+  "method": "search",
+  "note": "2026-10-20 再挑戦: /events/upcoming・sitemap・RSS・jsonapi・Chromium すべて Cloudflare。検索スニペットで日付は分かる(11/11 Iraq Initiative Conference 等)が本文未取得のため収載せず。日次は search 補完(10/20 に1件採用実績)。"
+ },
+ "IISS – International Institute for Strategic Studies – Events": {
+  "method": "search",
+  "note": "2026-10-20 再挑戦: 一覧・sitemap・RSS・詳細ページとも Cloudflare。検索では域外(Manama・Prague)のみ。"
+ },
+ "Policy Exchange – Events": {
+  "method": "search",
+  "note": "2026-10-20 再挑戦: HTTPS は HTTP/2・1.1 とも接続断、HTTP は sgcaptcha のボット認証、Chromium も不可。検索は過去イベントのみ。"
+ },
+ "Oxford – Saïd Business School – Events": {
+  "method": "search",
+  "note": "2026-10-20 再挑戦: sitemap/RSS/Chromium すべて Cloudflare。OxTalks 後継の events.ox.ac.uk は CloudFront 403。"
+ },
+ "Bayes Business School – Events": {
+  "method": "search",
+  "note": "2026-10-20 再挑戦: Cloudflare(Chromium も不可)。実際の一覧は /news-and-events/events。"
  }
 }
