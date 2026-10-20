@@ -54,6 +54,12 @@
   英国モードでは無効(ドイツモード専用)。
 - 抽出ルールの地域判定は上表の英国モード列に従う。スクリプト(`ingest.py`)も同じ規則を強制する
   (地域外と、北欧の現地開催で importance 3 未満のものを除去する)。
+  - **北欧の旗艦シリーズは importance 3 として収載する**: Bank of Finland–CEPR Joint Conference、
+    Riksbank Annual Research Conference、Reykjavik Economic Conference(Seðlabanki)、CEBRA Annual
+    Meeting(北欧中銀が主催・共催の回)。スクリプト側でも下限3を強制する(`FLAGSHIP_PATTERNS_BY_PROFILE`)。
+  - **開催都市が書かれていれば、形式(現地/オンライン)が明記されていなくても現地開催として扱う**
+    (`format: "onsite"`、`city`・`country` を記録)。「形式不明だから保留」にしない。北欧の現地開催は
+    importance 3 なら収載、3 未満なら収載しない、で判断を完結させる。
 - 有料の業界会議(UK Finance 等の業界団体・商用カンファレンス)は **importance 3 相当のものだけ**
   収載する。Call for Papers が参加要件のイベントは通常どおり収載する(開催日未定の CfP は従来どおり除外)。
 - 要約・申込メモは従来どおり ja/en/de の3言語セット。
