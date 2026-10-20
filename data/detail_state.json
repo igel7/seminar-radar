@@ -41,6 +41,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://rebuildukraine.in.ua/en": {
+  "event_id": "7bf66b856dd2946a",
+  "http": 200,
+  "last": "2026-10-20",
+  "result": "ok",
+  "tries": 1
+ },
  "https://warsawsecurityforum.org/wsf-2026": {
   "event_id": "873bf74df6b65306",
   "http": 200,
@@ -118,6 +125,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.fid.gov.lv/en/news/save-the-date-international-sanctions-conference-in-riga-to-focus-on-measures-degrading-russias-war-machine": {
+  "event_id": "0694f8b9f2cf7591",
+  "http": 200,
+  "last": "2026-10-20",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.forum-ng.org/en/termine/veranstaltung/die-politischen-dimensionen-des-investierens-wofuer-sind-wir-verantwortlich": {
   "event_id": "50688d253e6f294d",
   "http": 200,
@@ -164,6 +178,20 @@
   "event_id": "89bd0bb53d198344",
   "http": 200,
   "last": "2026-10-17",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.lb.lt/en/events/economics-conference-breakthrough-in-advanced-sectors-from-global-ideas-to-solutions-for-lithuania": {
+  "event_id": "56766b927f09115b",
+  "http": 403,
+  "last": "2026-10-20",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.mnb.hu/en/the-central-bank/conferences/budapest-renminbi-initiative-conference/budapest-renminbi-initiative-conference-2026": {
+  "event_id": "8e6745d3afb58874",
+  "http": 200,
+  "last": "2026-10-20",
   "result": "ok",
   "tries": 1
  },
@@ -235,6 +263,13 @@
   "http": 200,
   "last": "2026-10-13",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/15-macci-law-economics-conference/4999": {
+  "event_id": "8ad17c8526b51bee",
+  "http": 200,
+  "last": "2026-10-20",
+  "result": "FAIL-SOFT404",
   "tries": 1
  },
  "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/das-jahresgutachten-2026-27-des-sachverstaendigenrates-zur-begutachtung-der-gesamtwirtschaftlichen-entwicklung/4954": {

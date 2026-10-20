@@ -2449,7 +2449,7 @@ DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:Budapest Renminbi Initiative Conference 2026
 LOCATION:Budapest
-DESCRIPTION:ハンガリー中銀(MNB)主催、人民元の国際化と中国・中東欧の金融回廊をテーマにした会議。政府・中銀高官による基調講演とパネル討論を予定。 / 主催: Magyar Nemzeti Bank (MNB) / https://www.mnb.hu/en/the-central-bank/conferences/budapest-renminbi-initiative-conference/budapest-renminbi-initiative-conference-2026
+DESCRIPTION:ハンガリー中銀(MNB)主催、人民元の国際化と中国・中東欧の金融回廊をテーマにした会議。政府・中銀高官による基調講演とパネル討論を予定。 / 主催: Magyar Nemzeti Bank (MNB) / https://www.mnb.hu/en/the-central-bank/conferences/budapest-renminbi-initiative-conference/budapest-renminbi-initiative-conference-2026 / 登壇: Mihály VARGA (MNB)\, Tao GONG (PRC Embassy)\, Wenjian YU (PBOC)\, Xueling HUANG (BOC)\, Dániel PALOTAI (MNB)\, Huiyao WANG (CCG)\, Xuanyang XIE (CIPS)\, Jie JIAO (Tsinghua) / 要人: Mihály Varga (MNB Gov.)\, Dániel Palotai (MNB Dep. Gov.)
 END:VEVENT
 BEGIN:VEVENT
 UID:a291c0e4c0aecbd7@seminar-radar
@@ -4082,5 +4082,45 @@ DTEND;VALUE=DATE:20261114
 SUMMARY:World Class Sustainability Management 2026
 LOCATION:Frankfurt am Main
 DESCRIPTION:サプライチェーンの持続可能性、ESG報告、カーボン会計をテーマとする企業向けサステナビリティ会議。 / 主催: World Class Business Leaders / https://netzerocompare.com/events/world-class-sustainability-management-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:3b68aa2df200d2ee@seminar-radar
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:Frankfurt Financial Intermediation Workshop
+LOCATION:Frankfurt am Main
+DESCRIPTION:金融仲介をテーマとする研究ワークショップ。SAFE(Leibniz Institute for Financial Research SAFE)がフランクフルトで開催する。 / 主催: Leibniz Institute for Financial Research SAFE / https://safe-frankfurt.de/news-media/events/event-view/frankfurt-financial-intermediation-workshop.html
+END:VEVENT
+BEGIN:VEVENT
+UID:68985ecff766d1ea@seminar-radar
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:Barriers to a European Banking Union
+LOCATION:Riga
+DESCRIPTION:欧州銀行同盟の完成を妨げる障壁を論じる、ラトビア銀行の研究セミナー。 / 主催: Latvijas Banka / https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026 / 登壇: Jan Jakob Krüger (Imperial)
+END:VEVENT
+BEGIN:VEVENT
+UID:bf37270a1d648444@seminar-radar
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270201
+SUMMARY:ICMA Switzerland and Liechtenstein Region Winter Event 2027
+LOCATION:Zermatt
+DESCRIPTION:ICMAスイス・リヒテンシュタイン地域による2027年の冬季イベント(ツェルマット、1月29〜31日)。一般参加可と表示されているが、プログラムの詳細は一覧ページからは読み取れない。 / 主催: ICMA Switzerland and Liechtenstein Region / https://www.icmagroup.org/events/icma-switzerland-and-liechtenstein-region-winter-event-2027/
+END:VEVENT
+BEGIN:VEVENT
+UID:e58c806526f614a6@seminar-radar
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:Who Benefits from Reduced VAT Rates? Welfare Effects of Consumption Tax Differentiation
+LOCATION:Riga
+DESCRIPTION:消費税の軽減税率から誰が恩恵を受けるのか、そして税率の差別化が厚生にどう影響するかを分析する研究セミナー。 / 主催: Latvijas Banka / https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026 / 登壇: Myroslav Pidkuyko (JRC)
+END:VEVENT
+BEGIN:VEVENT
+UID:ee97949bd6adc06e@seminar-radar
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:Fiscal Policy During the Cost-of-Living Crisis
+LOCATION:Riga
+DESCRIPTION:生計費危機の局面で財政政策が果たす役割と効果を論じる、ラトビア銀行の研究セミナー。 / 主催: Latvijas Banka / https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026 / 登壇: Raffaele Rossi (Birmingham)
 END:VEVENT
 END:VCALENDAR
