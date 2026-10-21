@@ -13,6 +13,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://my.rusi.org/events/the-long-war-conference-2026.html": {
+  "event_id": "a6ef107b932e561d",
+  "http": 200,
+  "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.bankofengland.co.uk/events/2026/october/5th-annual-workshop-of-the-escb-research-cluster-on-climate-change": {
   "event_id": "929a7e95c77d46db",
   "http": 200,
@@ -41,6 +48,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026": {
+  "event_id": "fc50007b778ed08a",
+  "http": 403,
+  "last": "2026-10-21",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://www.fmg.ac.uk/events/how-make-impact-investing-work": {
   "event_id": "b792a359a3679405",
   "http": 200,
@@ -52,6 +66,27 @@
   "event_id": "2e9c9c8775b854b9",
   "http": 200,
   "last": "2026-10-20",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/defence-forum-2026": {
+  "event_id": "1a53c5f908cc58a2",
+  "http": 200,
+  "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.oxfordmartin.ox.ac.uk/events/china-us": {
+  "event_id": "59a469f792916f26",
+  "http": 200,
+  "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.thecityuk.com/events/thecityuk-national-conference": {
+  "event_id": "6f8e17a18a3d6033",
+  "http": 200,
+  "last": "2026-10-21",
   "result": "ok",
   "tries": 1
  },

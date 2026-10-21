@@ -16,27 +16,28 @@
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
-  "ok": true,
-  "found": 2,
-  "error": "リトライで回復: Chromium で一覧描画(scripts/fetch_page.py。Routines では不可)"
+  "ok": false,
+  "found": 0,
+  "error": "JS殻(本文は題名のみ、WebFetch空)。tried: fetch, ua-curl, hints, alt-paths, search",
+  "note": "Chromium不可環境"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 5
+  "found": 2
  },
  {
   "name": "Bank of England – Events",
   "url": "https://www.bankofengland.co.uk/news/events",
   "ok": true,
-  "found": 13
+  "found": 6
  },
  {
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 7
+  "found": 4
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
@@ -56,13 +57,14 @@
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, api, chromium, co-host, search"
+  "error": "403 (curl UA, WebFetch). tried: fetch, ua-curl, hints, alt-paths, search",
+  "note": "site:検索はifs.org.ukを返さず"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 13
+  "found": 7
  },
  {
   "name": "Resolution Foundation – Events",
@@ -88,28 +90,29 @@
   "url": "https://www.chathamhouse.org/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, api, chromium, co-host, search",
-  "note": "検索経由で1件回収(Competition Policy Conference)"
+  "error": "403 (curl UA, WebFetch). tried: fetch, ua-curl, hints, alt-paths, search",
+  "note": "site:検索で11月の経済系イベント見つからず"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": true,
-  "found": 8
+  "found": 7
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, chromium, search"
+  "error": "403 (curl UA, WebFetch). tried: fetch, ua-curl, hints, alt-paths, search",
+  "note": "検索では域外(Hamburg GSIS 12/9-10)のみ"
  },
  {
   "name": "Policy Exchange – Events",
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "NET-ERR; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: curl UA https://www.policyexchange.org.uk/events/ (HTTP/2 PROTOCOL_ERROR), curl /feed/, /wp-json/wp/v2/posts, /sitemap.xml (HTTP/2 PROTOCOL_ERROR), curl --http1.1 /events/, www /wp-json/tribe/events/v1/events, /feed/ (Empty reply), http://policyexchange.org.uk/events/ -> meta refresh to /.well-known"
+  "error": "curl接続断(HTTPS)。WebFetch失敗。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
@@ -127,7 +130,7 @@
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 12
+  "found": 5
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -153,14 +156,14 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 26
+  "found": 25
  },
  {
   "name": "Oxford – Saïd Business School – Events",
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: curl UA /sitemap.xml, /events/feed (403 Cloudflare 'Just a moment'), curl talks.ox.ac.uk api/search -> redirects to events.ox.ac.uk (403 CloudFront 'Request blocked'), WebFetch /events (403), WebFetch events.ox.ac.uk search (429), curl enspire.ox.ac.uk OSEF page (404), events.ox.ac.uk/oxford_event/d"
+  "error": "403 (curl UA, WebFetch). tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "Oxford Martin School – Events",
@@ -178,7 +181,7 @@
   "name": "Bennett School of Public Policy (Cambridge) – Events",
   "url": "https://www.bennettschool.cam.ac.uk/events/",
   "ok": true,
-  "found": 3
+  "found": 1
  },
  {
   "name": "KCL – Qatar Centre for Global Banking & Finance – Event series",
@@ -191,13 +194,13 @@
   "name": "Imperial College Business School – Events",
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
-  "found": 1
+  "found": 0
  },
  {
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 31
+  "found": 25
  },
  {
   "name": "Warwick Business School – Events",
@@ -211,7 +214,8 @@
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403; tried: fetch, ua-curl, hints, search / retry 2026-10-20 tried: curl UA /sitemap.xml, /events/rss (403 Cloudflare), curl www.citystgeorges.ac.uk/news-and-events/events (403 Cloudflare), curl + Chromium + WebFetch https://www.bayes.citystgeorges.ac.uk/news-and-events/events (403 / 'Performing security verification'), curl conftool IFABS 2026 London about page (20"
+  "error": "403 Cloudflare (curl UA, WebFetch, /news-and-events/events). tried: fetch, ua-curl, hints, alt-paths, search",
+  "note": "site:検索ではCEFARR 2026 Accounting PhD conference(15 Oct、過去)のみ"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
@@ -256,8 +260,8 @@
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
-  "found": 3,
-  "error": "リトライで回復: Chromium で一覧・詳細描画(Routines では不可)"
+  "found": 0,
+  "note": "curl 403だが WebFetch で /2026-events 取得可(Tokenised Markets 10/19過去、Economic Crime Congress 12/3は既知、Mortgage Dinner 12/9は旗艦でなく除外)。新規0。hints更新推奨: method=webfetch /2026-events"
  },
  {
   "name": "TheCityUK – Events",
@@ -296,13 +300,14 @@
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
-  "found": 8
+  "found": 0
  },
  {
   "name": "JETRO London – Events",
   "url": "https://www.jetro.go.jp/uk/events.html",
   "ok": true,
-  "found": 48
+  "found": 0,
+  "note": "/events.html は403、https://www.jetro.go.jp/uk/ トップは200で取得可(トピックはRFPのみ)。検索でも2026年の今後のロンドン開催セミナーなし。tried: fetch, ua-curl, alt-paths, search"
  },
  {
   "name": "SOAS – What's on (SOAS China Institute を含む)",
@@ -314,8 +319,8 @@
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
   "ok": true,
-  "found": 5,
-  "error": "リトライで回復: Chromium で一覧・詳細描画(Routines では不可)"
+  "found": 1,
+  "note": "curl UA は403だが WebFetch で一覧(page 0/1)取得可。新規は UK-China Spring Business Forum 2027(3/16)のみ、他は既知か会員限定/中国開催。hints更新推奨: method=webfetch"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
@@ -354,8 +359,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 9,
-  "note": "候補9件・新規採用2件(Sidley, Westminster Forum)・既知3件。ブロック定点の補完検索を実施"
+  "found": 22,
+  "note": "英語クエリ約16回(基本10+深掘り: topics#7 free webinar, #8 AI)。候補約22件を確認、新規採用は CBBC Spring Forum 2027 の1件のみ(blocked sources経由)。他は既知(BoE Watchers 11/10, CBI Winter Workshop 12/21, Economic Crime Congress)・会員限定/招待制(IoD+BoE 11/10, NIESR Embassies 11/6)・有料商用(FinTech Connect, C5 Sanctions Forum)・域外(Munich, Hamburg)・過去分。IoD等は未採用。"
  },
  {
   "name": "手動取込",

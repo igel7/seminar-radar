@@ -468,7 +468,48 @@
    "organizer_short": "OMFIF",
    "title_short": "Defence Capability and Rearmament",
    "importance": 2,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Sophia Besche",
+     "org": "GMF",
+     "role": "Research Director and Managing Director for Transatlantic Security"
+    },
+    {
+     "name": "Margarita Mathiopoulos",
+     "org": "Aspide Technology",
+     "role": "Founder and Chief Executive Officer"
+    },
+    {
+     "name": "Bill Matthews",
+     "org": "TBS",
+     "role": "Secretary of the Treasury Board"
+    },
+    {
+     "name": "Leena Mörttinen",
+     "org": "Ministry of Finance (Finland)",
+     "role": "Permanent Under-Secretary"
+    },
+    {
+     "name": "Rob Murray",
+     "org": null,
+     "role": "Chairman, DSRB Charter Negotiations"
+    },
+    {
+     "name": "Richard Shirreff",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Andrew Thomis",
+     "org": "Cohort",
+     "role": "Chief Executive Officer"
+    },
+    {
+     "name": "Jeanette Vitasp",
+     "org": "NIB",
+     "role": "Vice-President and Head of Lending"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "1a53c5f908cc58a2",
    "first_seen": "2026-10-19",
@@ -686,33 +727,32 @@
   },
   {
    "title": "Sea change: the new great game in the Arctic circle",
-   "title_ja": "海洋の変化:北極圏をめぐる新たな大競争",
-   "organizer": "London School of Economics and Political Science (LSE)",
+   "title_ja": "北極圏をめぐる新たなグレートゲーム",
+   "organizer": "London School of Economics and Political Science",
    "date_start": "2026-10-22",
    "date_end": null,
    "time": "18:30",
    "time_end": "20:00",
    "city": "London",
-   "venue": null,
+   "venue": "MAR 1.08 Marshall Building",
    "format": "onsite",
    "themes": [
-    "geopolitics",
-    "real_economy"
+    "geopolitics"
    ],
    "fee": "unknown",
    "fee_amount": null,
-   "open_to_public": null,
+   "open_to_public": true,
    "registration_note": null,
    "registration_note_en": null,
    "registration_note_de": null,
    "url": "https://www.lse.ac.uk/international-relations/events/2026/sea-change-the-new-great-game-in-the-arctic-circle",
-   "summary_ja": "LSEの公開講演。ラナ・フォルーハー氏が、北極圏をめぐる新たな大国間競争を論じる。",
-   "summary_en": "Public LSE lecture in which Rana Foroohar discusses the new great-power contest in the Arctic.",
-   "summary_de": "Öffentlicher LSE-Vortrag, in dem Rana Foroohar den neuen Wettbewerb der Großmächte in der Arktis erörtert.",
+   "summary_ja": "北極圏をめぐる大国間の競争と新たな争点を論じるLSEの公開講演。",
+   "summary_en": "A public LSE lecture on the new great-power competition in the Arctic circle.",
+   "summary_de": "Öffentlicher Vortrag der LSE über den neuen Wettstreit der Großmächte im arktischen Raum.",
    "language": "en",
    "country": "GB",
    "organizer_short": "LSE",
-   "title_short": "Arctic New Great Game",
+   "title_short": "Arctic Great Power Rivalry",
    "importance": 1,
    "registration_url": null,
    "speakers": [
@@ -1769,7 +1809,28 @@
    "title_short": "China-US Relations Panel",
    "importance": 2,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Rana Mitter",
+     "org": "Harvard Kennedy School",
+     "role": "Professor of Modern History and Politics of China"
+    },
+    {
+     "name": "Gillian Tett",
+     "org": "King's College Cambridge",
+     "role": "Provost"
+    },
+    {
+     "name": "Yeling Tan",
+     "org": "Blavatnik School of Government",
+     "role": "Professor of Public Policy"
+    },
+    {
+     "name": "Ricardo Soares de Oliveira",
+     "org": "Oxford Martin",
+     "role": "Co-Director (Chair)"
+    }
+   ],
    "source": "Oxford Martin School – Events",
    "id": "59a469f792916f26",
    "first_seen": "2026-10-19",
@@ -2023,12 +2084,62 @@
    "organizer_short": "TheCityUK",
    "title_short": "Devolution and UK Growth",
    "importance": 2,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Miles Celic",
+     "org": "TheCityUK",
+     "role": "Chief Executive Officer"
+    },
+    {
+     "name": "Sarah Pritchard",
+     "org": "FCA",
+     "role": "Deputy Chief Executive"
+    },
+    {
+     "name": "David Williams",
+     "org": "KPMG",
+     "role": "Office Senior Partner, Bristol"
+    },
+    {
+     "name": "Alice Perry",
+     "org": "Aviva",
+     "role": "Director of Political Advocacy"
+    },
+    {
+     "name": "Carol McNaughton Nicholls",
+     "org": "Thinks Insight",
+     "role": "Managing Partner"
+    },
+    {
+     "name": "Mahrie Webb",
+     "org": "Simmons & Simmons",
+     "role": "Partner"
+    },
+    {
+     "name": "Michael Buchanan",
+     "org": "CMS",
+     "role": "Partner, Real Estate"
+    },
+    {
+     "name": "Stacey Parsons",
+     "org": "RetailBook",
+     "role": "Managing Director"
+    }
+   ],
    "source": "TheCityUK – Events",
    "id": "6f8e17a18a3d6033",
    "first_seen": "2026-10-19",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "sarah-pritchard",
+     "name": "Sarah Pritchard",
+     "group": "supervisor",
+     "tier": 2,
+     "short": null,
+     "former": false
+    }
+   ],
+   "notable_tier": 2
   },
   {
    "title": "Applied & Development Economics Seminar - David Yanagizawa (Zurich)",
@@ -8821,6 +8932,639 @@
    "source": "手動取込: INBOX",
    "id": "fc50007b778ed08a",
    "first_seen": "2026-10-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Building Inclusive Heat Resilience: Strengthening Action for a Hotter UK",
+   "title_ja": "包摂的な熱レジリエンス:暑くなる英国での行動強化",
+   "organizer": "Grantham Research Institute on climate change and the environment, LSE",
+   "date_start": "2026-11-03",
+   "date_end": null,
+   "time": null,
+   "city": "London",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.lse.ac.uk/granthaminstitute/events/building-inclusive-heat-resilience-strengthening-action-for-a-hotter-uk/",
+   "summary_ja": "英国の高温化に備えた包摂的な熱レジリエンス対策を取り上げる公開講演。Adeline Stuart-Watt賞の初代受賞者を発表し、その後パネル討論が行われる。",
+   "summary_en": "A public lecture on building inclusive heat resilience for a hotter UK. The inaugural Adeline Stuart-Watt Award winner will be announced, followed by a panel discussion.",
+   "summary_de": "Öffentlicher Vortrag zu inklusiver Hitzeresilienz für ein wärmeres Großbritannien. Die erste Preisträgerin bzw. der erste Preisträger des Adeline Stuart-Watt Award wird bekanntgegeben, danach folgt eine Paneldiskussion.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Grantham",
+   "title_short": "Inclusive Heat Resilience",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "Grantham Research Institute (LSE) – Events",
+   "id": "181d6b6fdd967839",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Labour Economics Workshops",
+   "title_ja": "労働経済ワークショップ",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-03",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10993",
+   "summary_ja": "LSE・CEP の労働経済ワークショップ(演題は未定)。Jakob Wall 氏(University of Zurich)と Thomas Crol 氏(Uppsala University)が報告する予定。",
+   "summary_en": "LSE CEP labour economics workshop (title to be announced). Jakob Wall (University of Zurich) and Thomas Crol (Uppsala University) are scheduled to present.",
+   "summary_de": "LSE/CEP-Workshop zur Arbeitsmarktökonomik (Titel noch offen). Jakob Wall (Universität Zürich) und Thomas Crol (Universität Uppsala) sollen vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Labour Economics Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Jakob Wall",
+     "org": "UZH",
+     "role": null
+    },
+    {
+     "name": "Thomas Crol",
+     "org": "Uppsala",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "1a8ed211c233136f",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Search in an Emerging Market",
+   "title_ja": "新興市場における探索",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-10-22",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "city": "London",
+   "venue": "MAR 6.33, The Marshall Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11006",
+   "summary_ja": "LSE・CEP の Capabilities, Competition and Innovation 研究セミナー。新興市場における探索をテーマに、Anna Sanktjohanser 氏(Toulouse School of Economics)が報告する。",
+   "summary_en": "LSE CEP Capabilities, Competition and Innovation research seminar. Anna Sanktjohanser (Toulouse School of Economics) presents on search in an emerging market.",
+   "summary_de": "LSE/CEP-Forschungsseminar zu Capabilities, Competition and Innovation. Anna Sanktjohanser (Toulouse School of Economics) referiert über Suchprozesse in einem Schwellenmarkt.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Search in Emerging Markets",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Anna Sanktjohanser",
+     "org": "TSE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "1f7fca32e27c2824",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "International Economics Workshops",
+   "title_ja": "国際経済ワークショップ",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-11",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11000",
+   "summary_ja": "LSE・CEP の国際経済ワークショップ(演題は未定)。Xavier Tierney 氏(LSE・CEP)が報告する予定。",
+   "summary_en": "LSE CEP international economics workshop (title to be announced). Xavier Tierney (LSE, CEP) is scheduled to present.",
+   "summary_de": "LSE/CEP-Workshop zur Internationalen Ökonomik (Titel noch offen). Xavier Tierney (LSE, CEP) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "International Economics Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Xavier Tierney",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "5392e022fd2b94e1",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "International Macro History Online Seminar Series 120",
+   "title_ja": "国際マクロ経済史オンラインセミナー(第120回)",
+   "organizer": "Centre for Economic Policy Research (CEPR)",
+   "date_start": "2026-12-16",
+   "date_end": null,
+   "time": "17:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://hub.cepr.org/events/international-macro-history-online-seminar-series-120",
+   "summary_ja": "CEPR が主催するオンラインセミナーシリーズの第120回。国際的な視点からマクロ経済史を扱う。",
+   "summary_en": "Session 120 of CEPR's online seminar series on international macroeconomic history.",
+   "summary_de": "120. Online-Seminar der CEPR-Reihe zur internationalen makroökonomischen Geschichte.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "CEPR",
+   "title_short": "International Macro History",
+   "importance": 0,
+   "speakers": [],
+   "source": "CEPR – Centre for Economic Policy Research – Events",
+   "id": "568b77eb949326cc",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "International Economics Workshops",
+   "title_ja": "国際経済ワークショップ",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-04",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10999",
+   "summary_ja": "LSE・CEP の国際経済ワークショップ(演題は未定)。Animesh Jayant 氏(CEP)が報告する予定。",
+   "summary_en": "LSE CEP international economics workshop (title to be announced). Animesh Jayant (CEP) is scheduled to present.",
+   "summary_de": "LSE/CEP-Workshop zur Internationalen Ökonomik (Titel noch offen). Animesh Jayant (CEP) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "International Economics Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Animesh Jayant",
+     "org": "CEP",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "5dba5e44ca640346",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Labour Economics Workshops",
+   "title_ja": "労働経済ワークショップ",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10994",
+   "summary_ja": "LSE・CEP の労働経済ワークショップ(演題は未定)。Luca Barbato 氏(LSE)が報告する予定。",
+   "summary_en": "LSE CEP labour economics workshop (title to be announced). Luca Barbato (LSE) is scheduled to present.",
+   "summary_de": "LSE/CEP-Workshop zur Arbeitsmarktökonomik (Titel noch offen). Luca Barbato (LSE) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Labour Economics Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Luca Barbato",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "67d9d7f63457db68",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "SAWP (Seminar Applied Work in Progress - formerly CWIP) - Titir Bhattacharya (Warwick)",
+   "title_ja": "応用研究の進捗セミナー（Bhattacharya 氏）",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c5a0803c1901a0a013b8642f2f",
+   "summary_ja": "ウォーリック大学経済学部のSAWP（応用研究の進捗セミナー）で、Titir Bhattacharya 氏（Warwick）が研究報告を行う。演題は未発表。",
+   "summary_en": "Warwick Economics SAWP seminar (Seminar Applied Work in Progress), with a presentation by Titir Bhattacharya (Warwick). Title to be announced.",
+   "summary_de": "SAWP-Seminar (Applied Work in Progress) der Volkswirtschaftlichen Fakultät Warwick mit einem Vortrag von Titir Bhattacharya (Warwick). Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Applied Work in Progress",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Titir Bhattacharya",
+     "org": "Warwick",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "85488fd530c38f09",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Capabilities, Competition and Innovation Seminars",
+   "title_ja": "能力・競争・イノベーション研究セミナー",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "city": "London",
+   "venue": "MAR 6.33, The Marshall Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11008",
+   "summary_ja": "LSE・CEP の研究セミナー(演題は未定)。Jonas Hjort 氏(UCL)が報告する予定。",
+   "summary_en": "LSE CEP research seminar (title to be announced). Jonas Hjort (UCL) is scheduled to present.",
+   "summary_de": "LSE/CEP-Forschungsseminar (Titel noch offen). Jonas Hjort (UCL) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Capabilities, Competition and Innovation",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Jonas Hjort",
+     "org": "UCL",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "9871788c3d30a5c1",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Capabilities, Competition and Innovation Seminars",
+   "title_ja": "能力・競争・イノベーション研究セミナー",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-19",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "city": "London",
+   "venue": "MAR 6.33, The Marshall Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11009",
+   "summary_ja": "LSE・CEP の研究セミナー(演題は未定)。Antoinette Schoar 氏(MIT)が報告する予定。",
+   "summary_en": "LSE CEP research seminar (title to be announced). Antoinette Schoar (MIT) is scheduled to present.",
+   "summary_de": "LSE/CEP-Forschungsseminar (Titel noch offen). Antoinette Schoar (MIT) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Capabilities, Competition and Innovation",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Antoinette Schoar",
+     "org": "MIT",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "aa9897fd5863434a",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Macro/International Economics Seminar - Nicolas Crouzet (Kellogg)",
+   "title_ja": "マクロ・国際経済セミナー（Crouzet 氏）",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c79ffae2c101a00f11cc8c25f5",
+   "summary_ja": "ウォーリック大学経済学部のマクロ・国際経済セミナーで、Nicolas Crouzet 氏（Kellogg）が研究報告を行う。演題は未発表。",
+   "summary_en": "Macro/International seminar of the Warwick Economics department, with a research presentation by Nicolas Crouzet (Kellogg). Title to be announced.",
+   "summary_de": "Makro-/Internationales Seminar der Volkswirtschaftlichen Fakultät Warwick mit einem Forschungsvortrag von Nicolas Crouzet (Kellogg). Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "International Macroeconomics Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Nicolas Crouzet",
+     "org": "Kellogg",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "c942d2ec1b3e25ad",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Labour Economics Workshops",
+   "title_ja": "労働経済ワークショップ",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10995",
+   "summary_ja": "LSE・CEP の労働経済ワークショップ(演題は未定)。Jeongkyung Won 氏(LSE)が報告する予定。",
+   "summary_en": "LSE CEP labour economics workshop (title to be announced). Jeongkyung Won (LSE) is scheduled to present.",
+   "summary_de": "LSE/CEP-Workshop zur Arbeitsmarktökonomik (Titel noch offen). Jeongkyung Won (LSE) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Labour Economics Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Jeongkyung Won",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "d4c258d9464e3e88",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "International Economics Workshops",
+   "title_ja": "国際経済ワークショップ",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11001",
+   "summary_ja": "LSE・CEP の国際経済ワークショップ(演題は未定)。Mateus Morais 氏(CEP)が報告する予定。",
+   "summary_en": "LSE CEP international economics workshop (title to be announced). Mateus Morais (CEP) is scheduled to present.",
+   "summary_de": "LSE/CEP-Workshop zur Internationalen Ökonomik (Titel noch offen). Mateus Morais (CEP) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "International Economics Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Mateus Morais",
+     "org": "CEP",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "e150ed7512d1d0c2",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "UK-China Spring Business Forum 2027",
+   "title_ja": "英中春季ビジネスフォーラム2027",
+   "organizer": "China-Britain Business Council",
+   "date_start": "2027-03-16",
+   "date_end": null,
+   "time": "14:00",
+   "city": "London",
+   "venue": "One Great George Street, Westminster",
+   "format": "onsite",
+   "themes": [
+    "china",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "詳細は後日発表(参加費・申込方法は未公表)",
+   "registration_note_en": "Further details to be announced (fee and registration not yet published)",
+   "registration_note_de": "Weitere Details folgen (Gebühr und Anmeldung noch nicht veröffentlicht)",
+   "url": "https://www.cbbc.org/events/uk-china-spring-business-forum-2027",
+   "summary_ja": "中国の経済優先課題の変化が英国企業の機会とリスクにどう影響するかを検討するフォーラム。終了後にスプリング・レセプションを開催。",
+   "summary_en": "A forum examining how China's changing economic priorities affect opportunities and risks for UK companies, followed by a Spring Reception.",
+   "summary_de": "Forum zu den Auswirkungen der sich wandelnden wirtschaftlichen Prioritäten Chinas auf Chancen und Risiken für britische Unternehmen, anschließend Frühlingsempfang.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CBBC",
+   "title_short": "China Economic Priorities and UK Business",
+   "importance": 2,
+   "registration_url": null,
+   "time_end": "18:00",
+   "speakers": [],
+   "source": "CBBC – China-Britain Business Council – Events",
+   "id": "f641c64e7835ba24",
+   "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Capabilities, Competition and Innovation Seminars",
+   "title_ja": "能力・競争・イノベーション研究セミナー",
+   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "organizer_short": "CEP",
+   "date_start": "2026-10-29",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "city": "London",
+   "venue": "MAR 6.33, The Marshall Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11007",
+   "summary_ja": "LSE・CEP の研究セミナー(演題は未定)。Alejandro Sabal 氏(University of Chicago)が報告する予定。",
+   "summary_en": "LSE CEP research seminar (title to be announced). Alejandro Sabal (University of Chicago) is scheduled to present.",
+   "summary_de": "LSE/CEP-Forschungsseminar (Titel noch offen). Alejandro Sabal (University of Chicago) soll vortragen.",
+   "language": "en",
+   "country": "GB",
+   "title_short": "Capabilities, Competition and Innovation",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Alejandro Sabal",
+     "org": "UChicago",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "fdd5ec8c536d6e08",
+   "first_seen": "2026-10-21",
    "notables": [],
    "notable_tier": null
   }
