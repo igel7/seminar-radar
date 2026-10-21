@@ -18,8 +18,7 @@
   "url": "https://www.unpri.org/events",
   "ok": false,
   "found": 0,
-  "error": "JS殻(本文は題名のみ、WebFetch空)。tried: fetch, ua-curl, hints, alt-paths, search",
-  "note": "Chromium不可環境"
+  "error": "JS殻(curl/WebFetch では題名のみ)。Chromium 描画の試行記録なし(fetch_hints の古い『Routines では不可』注記が残っていた。10/21 に注記を修正し render: chromium を設定)"
  },
  {
   "name": "UNEP FI – Events",
@@ -294,7 +293,7 @@
   "url": "https://dajf.org.uk/events",
   "ok": true,
   "found": 1,
-  "error": "リトライで回復: Chromium で一覧描画(Routines では不可)"
+  "error": "リトライで回復: Chromium で一覧描画"
  },
  {
   "name": "Japan Society (London) – Events",

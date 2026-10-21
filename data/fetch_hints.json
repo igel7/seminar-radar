@@ -161,7 +161,8 @@
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
   ],
   "last_ok": "2026-10-20",
-  "note": "2026-10-20: unpri.org/events は curl では JS殻だが headless Chromium(scripts/fetch_page.py)で一覧が描画できる(手動の再挑戦ジョブ用。Routines では Chromium 不可)。public.unpri.org の個別ページは Chromium でも Cloudflare。日次は search 補完。"
+  "note": "2026-10-20: unpri.org/events は curl では JS殻だが headless Chromium で一覧が描画できる。2026-10-21: Routines でも Chromium は使える(同日の英国モード Routine が BoE を描画取得)ことを確認し、render: chromium で fetch_all が日次に自動描画するよう変更。public.unpri.org の個別ページは Chromium でも Cloudflare。描画に失敗した日は search 補完。",
+  "render": "chromium"
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "method": "search",
@@ -282,7 +283,11 @@
  "UK Finance – Events": {
   "method": "chromium",
   "last_ok": "2026-10-20",
-  "note": "2026-10-20: curl は 403(/events/feed も)だが headless Chromium で一覧(/events/events-training-schedule)と詳細が描画できる(手動の再挑戦ジョブ用)。業界団体のため旗艦会議(★3)と無料公開ウェビナーのみ収載。"
+  "note": "2026-10-20: curl は 403(/events/feed も)だが headless Chromium で一覧(/events/events-training-schedule)と詳細が描画できる。2026-10-21: Routines でも Chromium は使えることを確認し、render: chromium + alt_urls で日次に自動描画するよう変更。業界団体のため旗艦会議(★3)と無料公開ウェビナーのみ収載。",
+  "render": "chromium",
+  "alt_urls": [
+   "https://www.ukfinance.org.uk/events/events-training-schedule"
+  ]
  },
  "Daiwa Anglo-Japanese Foundation – Events": {
   "method": "chromium",
@@ -292,7 +297,8 @@
  "CBBC – China-Britain Business Council – Events": {
   "method": "chromium",
   "last_ok": "2026-10-20",
-  "note": "2026-10-20: curl 403。headless Chromium で一覧(?page=1 も)と詳細が描画できる(手動の再挑戦ジョブ用)。日次は search 補完。"
+  "note": "2026-10-20: curl 403。headless Chromium で一覧(?page=1 も)と詳細が描画できる。2026-10-21: Routines でも Chromium は使えることを確認し、render: chromium で日次に自動描画するよう変更(10/21 は WebFetch でも一覧が取れた)。描画に失敗した日は search 補完。",
+  "render": "chromium"
  },
  "IFS – Institute for Fiscal Studies – Events": {
   "method": "search",

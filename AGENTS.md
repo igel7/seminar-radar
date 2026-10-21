@@ -81,7 +81,7 @@
 
 | 環境 | headless Chromium (`scripts/fetch_page.py`) | web検索 | GitHubへのpush | 備考 |
 |---|---|---|---|---|
-| Claude Code Routines / claude.ai/code のクラウドセッション | **2026-10-20 再検証: 環境のネットワークが Full なら使える**(Default 環境で BoE の JS 描画一覧を取得できた)。2026-07 の ERR_CONNECTION_RESET は当時のネットワーク制限によるもの。`playwright` パッケージが無い環境では `fetch_page.py` が自動で `pip install playwright` する(ブラウザ本体は `/opt/pw-browsers/chromium` に同梱)。**手で使う必要はない**: `fetch_hints.json` に `"render": "chromium"` の付いたソースは `fetch_all.py` が自動で Chromium 描画する(B手順1.5)。描画に失敗したソースは通常取得に戻り、出力に「Chromium 描画に失敗」と出る | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
+| Claude Code Routines / claude.ai/code のクラウドセッション | **2026-10-20 再検証: 環境のネットワークが Full なら使える**(Default 環境で BoE の JS 描画一覧を取得できた。**2026-10-21 の英国モード Routine 本番でも BoE を Chromium 描画で取得できたことを確認済み**。`fetch_hints.json` の `note` や `status.json` に「Routines では Chromium 不可」等の古い記述が残っていても、この表を正とする)。2026-07 の ERR_CONNECTION_RESET は当時のネットワーク制限によるもの。`playwright` パッケージが無い環境では `fetch_page.py` が自動で `pip install playwright` する(ブラウザ本体は `/opt/pw-browsers/chromium` に同梱)。**手で使う必要はない**: `fetch_hints.json` に `"render": "chromium"` の付いたソースは `fetch_all.py` が自動で Chromium 描画する(B手順1.5)。描画に失敗したソースは通常取得に戻り、出力に「Chromium 描画に失敗」と出る | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
 | Codex Cloud | **使用不可**(ブラウザ本体が存在しない。2026-08-17 確認) | **使用不可**(`web__run` は存在するが 401。2026-08-17 確認) | **不可能**(2026-08-17 確認) | 静的ページの取得のみ可。`git fetch`/`clone` も不可 |
 
 **このため日次更新は Claude Code Routines で行う。Codex Cloud は日次更新には使わない**
@@ -439,6 +439,9 @@ Chromium で描画してから同じ形式にする。巨大ページは `<main>
   (200+「システムエラー」ページを「アクセス可」と誤判定していた)。
 - **headless Chromium(`scripts/fetch_page.py`)が使えるかは実行環境による。A-1の表を参照し、
   「使用不可」と記載のある環境では使わず、時間を浪費しないこと。**
+  判断の根拠は A-1 の表だけとし、`fetch_hints.json` の `note` 等に残る「Routines では不可」のような
+  古い記述を根拠に「Chromium不可環境」と記録しない(2026-10-21 に PRI で実例あり)。使える環境で
+  JS殻のソースに当たったら、`render: chromium` を `fetch_hints.json` に付けて翌日から fetch_all に任せる。
 - **恒常ブロックの登録**: ラダーを完遂しても取れない状態が3回連続に達し、原因がボット対策
   (Cloudflare・WAFのチャレンジ/CAPTCHA・実ブラウザUAでもJS描画の空殻)である場合は、
   `data/fetch_hints.json` の該当ソースに
