@@ -64,7 +64,8 @@
   "method": "ua-curl",
   "alt_urls": [],
   "last_ok": "2026-08-27",
-  "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完"
+  "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完 2026-10-21: 一覧(forum.frankfurt-school.de/konferenzen/)にはイベント個別ページへのリンクが無く、登壇者も載らない。url は一覧のままでよい(no_detail_pages)。登壇者は検索(イベント名 + Referenten)で補完するか諦める。",
+  "no_detail_pages": true
  },
  "Bank of Albania – Events": {
   "method": "search",
@@ -337,5 +338,8 @@
   "method": "fetch",
   "last_ok": "2026-10-21",
   "note": "2026-10-21 追加。静的 RSS(XML)。fetch_all の html_to_text で項目ごとに URL・題名・要約・日付のテキストになる。ほとんどは CP/PS/SS 等の文書で、イベント告知(roundtable/seminar/webinar)は年に数件。告知を見つけたらリンク先を開いて開催日・形式(hybrid/online/onsite)・申込方法を確認してから収載する。organizer_short は \"PRA\"。"
+ },
+ "ZEW Mannheim – Veranstaltungen": {
+  "note": "2026-10-21: 収載済みの詳細URL(/veranstaltungen-und-weiterbildung/detail/<slug>/<id>・/VA<id>)が404。一覧のリンクをそのまま使い、URLを推測・創作しないこと。個別リンクが取れない場合は一覧URLにする。"
  }
 }
