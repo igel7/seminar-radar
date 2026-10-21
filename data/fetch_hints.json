@@ -332,5 +332,10 @@
   "method": "fetch",
   "last_ok": "2026-10-20",
   "note": "一覧(WordPress Tribe Events)は『N events found.』の後に月別で今後のイベントが並ぶ(静的・通常5件前後)。/event/<slug> の詳細ページに日時・形式(Virtual Event=オンライン)・参加費・登壇者が明記される。ユーザー指示(2026-10-20): この団体はレセプション・懇親会もパネル討論付きなら収載する(招待制として記録)。AGM(理事限定の総会)のみ除外。2026-10-19 に『該当0件』と誤判定した実績があるので、一覧に日付付きの項目があれば必ず抽出すること"
+ },
+ "PRA – Prudential Regulation Authority – Publications RSS": {
+  "method": "fetch",
+  "last_ok": "2026-10-21",
+  "note": "2026-10-21 追加。静的 RSS(XML)。fetch_all の html_to_text で項目ごとに URL・題名・要約・日付のテキストになる。ほとんどは CP/PS/SS 等の文書で、イベント告知(roundtable/seminar/webinar)は年に数件。告知を見つけたらリンク先を開いて開催日・形式(hybrid/online/onsite)・申込方法を確認してから収載する。organizer_short は \"PRA\"。"
  }
 }

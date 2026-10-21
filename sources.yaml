@@ -463,7 +463,9 @@ sources:
     url: "https://www.bankofengland.co.uk/news/events"
     category: cb
     regions: [uk]
-    verified: false   # 一覧はJS描画(静的HTMLは「0 results」)。個別ページ /events/YYYY/month/… は静的。site:bankofengland.co.uk/events 検索で補完
+    verified: true    # 一覧はJS描画(静的HTMLは「0 results」)。fetch_hints の render: chromium で fetch_all が描画取得する
+                      # (2026-10-21 Routine 本番で確認)。個別ページ /events/YYYY/month/… は静的。
+                      # 静的な RSS(https://www.bankofengland.co.uk/rss/events、今後分も含む)もあり、描画不可時の代替になる
   - name: "Bank of England – Upcoming external events involving Bank staff"
     url: "https://www.bankofengland.co.uk/events/upcoming-events"
     category: cb
@@ -475,7 +477,18 @@ sources:
     category: cb
     regions: [uk]
     verified: true    # 静的だが掲載は開催済み中心。今後のウェビナーは webinars.fca.org.uk(JS描画): site:fca.org.uk 検索で補完
-  # HM Treasury・OBR・PRA は公開イベント一覧を持たないため定点にしない(discovery で補完。PRA の会議は BoE Events に載る)
+  - name: "PRA – Prudential Regulation Authority – Publications RSS"
+    url: "https://www.bankofengland.co.uk/rss/prudential-regulation-publications"
+    category: cb
+    regions: [uk]
+    verified: true    # 静的RSS(2026-10-21 確認)。PRA は専用のイベント一覧を持たず、業界ラウンドテーブル・
+                      # セミナーが「刊行物」として告知される(例: 2026-09-17 の captive insurance 業界ラウンドテーブル、
+                      # /prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable)。
+                      # CP/PS/SS/書簡/年次報告などの文書は収載しない。題名や本文に roundtable・seminar・webinar・
+                      # conference 等があり、リンク先で開催日と形式が確認できる告知だけ収載する(年に数件の見込み)
+  # HM Treasury・OBR は公開イベント一覧を持たないため定点にしない(discovery で補完)。PRA も一覧は持たないが、
+  # 業界セミナーは BoE Events に載り(例: 2026-06-17 PRA and FCA Dual Regulated VoP Industry Seminar)、
+  # ラウンドテーブルは上の刊行物 RSS で告知されるため、後者を定点にした
 
   # --- 研究所・シンクタンク ---
   - name: "NIESR – National Institute of Economic and Social Research – Events"
