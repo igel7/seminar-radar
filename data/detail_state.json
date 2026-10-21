@@ -20,6 +20,13 @@
   "result": "FAIL-HTTP",
   "tries": 1
  },
+ "https://gfk-cfs.de/events/presidential-lectures/the-global-euro-starts-at-home-advancing-the-global-euro-by-completing-europes-monetary-union": {
+  "event_id": "1ca303030ed1ebae",
+  "http": 200,
+  "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
  "https://industry.sfi.ch/en/sfi-event": {
   "event_id": "1ace20c75b6ca7de",
   "http": 200,
@@ -31,6 +38,13 @@
   "event_id": "461e76331fdd1722",
   "http": 200,
   "last": "2026-10-18",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://live.handelsblatt.com/event/handelsblatt-ki-summit": {
+  "event_id": "0330d56775827ed9",
+  "http": 200,
+  "last": "2026-10-21",
   "result": "ok",
   "tries": 1
  },
@@ -97,11 +111,25 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.dfv-eurofinance.com/events/12th-green-finance-forum": {
+  "event_id": "b633120687b2514f",
+  "http": 200,
+  "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.diw.de/de/diw_01.c.1010628.de/veranstaltungen/the_economics_of_crime_and_criminal_justice.html": {
   "event_id": "547288cd84fd6bd7",
   "http": 403,
   "last": "2026-10-16",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.eba.europa.eu/publications-and-media/events/15th-annual-research-workshop-efficient-and-proportionate-regulation-competitive-financial-sector": {
+  "event_id": "cbb7541271c9a4b0",
+  "http": 200,
+  "last": "2026-10-21",
+  "result": "ok",
   "tries": 1
  },
  "https://www.ecb.europa.eu/press/conferences/html/20261029_bdi_ecb_conference.en.html": {
@@ -115,6 +143,13 @@
   "event_id": "101c02b611f5c100",
   "http": 200,
   "last": "2026-10-13",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ecb.europa.eu/press/conferences/html/20261113_expectationssurveys.en.html": {
+  "event_id": "3bd4950626b09b69",
+  "http": 200,
+  "last": "2026-10-21",
   "result": "ok",
   "tries": 1
  },
