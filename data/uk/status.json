@@ -18,7 +18,7 @@
   "url": "https://www.unpri.org/events",
   "ok": false,
   "found": 0,
-  "error": "JS殻(curl/WebFetch では題名のみ)。Chromium 描画の試行記録なし(fetch_hints の古い『Routines では不可』注記が残っていた。10/21 に注記を修正し render: chromium を設定)"
+  "error": "JS殻(curl/WebFetch では題名のみ)。tried: fetch, ua-curl, hints, alt-paths, search(Chromium は未試行: fetch_hints の古い『Routines では不可』注記が残っていた。10/21 に注記を修正し render: chromium を設定)"
  },
  {
   "name": "UNEP FI – Events",

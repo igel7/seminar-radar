@@ -12,6 +12,9 @@ check_status.py: 巡回ステータスの品質ゲート(AGENTS.md B手順5)。
   (d) 本日の fetch_all.py で NEW/CHANGED と判定されたのに status.json に記録がない
       ソース(=抽出の取りこぼし。このままコミットすると fetch_state.json のハッシュ
       更新により、次にページが変わるまでそのソースのイベントを拾えなくなる)
+  (e) 本日初収載の importance 2 以上のイベントで url が一覧ページ/サイトトップのもの
+      (=詳細ページが読めず、fetch_details.py の登壇者補完が構造的に不可能。
+      fetch_hints.json の該当ソースに no_detail_pages: true があれば除外)
 
 警告が1件でもあれば終了コード1(なければ0)。警告が出た場合の対応は AGENTS.md B手順5を
 参照(該当ソースの巡回をやり直すか、やり直し不要と判断した理由を実行報告に書く)。
@@ -37,7 +40,7 @@ for _i, _a in enumerate(_argv):
         os.environ["SR_PROFILE"] = _a.split("=", 1)[1]
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from radar_lib import DATA_DIR, PROFILE_ID, ROOT, STATUS_FILE  # noqa: E402
+from radar_lib import DATA_DIR, DATA_FILE, PROFILE_ID, ROOT, STATUS_FILE  # noqa: E402
 
 FETCH_STATE_FILE = DATA_DIR / "fetch_state.json"
 # git show HEAD:<path> 用のリポジトリ相対パス(de: data/status.json / uk: data/uk/status.json)
@@ -120,6 +123,31 @@ def main():
             "fetch_all.py が本日 NEW/CHANGED と判定したのに status.json に記録がない"
             "ソースが {} 件ある。抽出を取りこぼしたまま commit しないこと:\n    - "
             .format(len(unrecorded)) + "\n    - ".join(unrecorded))
+
+    # (e) 本日初収載の importance>=2 イベントで url が一覧ページ/サイトトップのもの
+    #     (詳細ページが読めず、手順1.6 の登壇者補完が構造的に不可能になる。AGENTS.md スキーマ `url`)
+    try:
+        from fetch_details import is_site_root, listing_urls, norm_url, source_hint
+        store = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+        listing = listing_urls()
+        bad_url = []
+        for e in (store.get("events", []) if isinstance(store, dict) else []):
+            if (e.get("importance") or 0) < 2 or e.get("first_seen") != TODAY:
+                continue
+            nu = norm_url(e.get("url"))
+            if nu in listing or is_site_root(e.get("url")):
+                if source_hint(e.get("source") or "").get("no_detail_pages"):
+                    continue
+                bad_url.append("{} ({}): {}".format(e.get("title"), e.get("source"), e.get("url")))
+    except Exception as ex:  # 台帳や設定の不備で品質ゲート自体を止めない
+        print("check_status: (e) url チェックをスキップ: {}".format(ex))
+        bad_url = []
+    if bad_url:
+        warnings.append(
+            "本日初収載の importance 2 以上のイベント {} 件で、url が一覧ページまたはサイトトップに"
+            "なっている(詳細ページが読めず登壇者補完ができない)。一覧にある個別ページのURLに直すこと。"
+            "サイトに個別ページが無い場合だけ fetch_hints.json の該当ソースに "
+            "\"no_detail_pages\": true を付ける:\n    - ".format(len(bad_url)) + "\n    - ".join(bad_url))
 
     prev_raw = load_previous()
     if prev_raw is None:
