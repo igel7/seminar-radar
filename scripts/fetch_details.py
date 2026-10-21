@@ -19,6 +19,8 @@ fetch_details.py: 登壇者補完のためのイベント詳細ページ取得(A
   - 本文が薄いページ(THIN_CHARS 未満)は「Programme / Agenda / Conference details」等の
     リンクを 1 ホップだけ辿る(Gerzensee → CEPR のように本体が別サイトにある場合)
   - 403/JS殻は headless Chromium で 1 回だけ描画を試す(使えない環境では自動で諦める)
+  - 本文に「Programme / Agenda / Speakers」等のプログラム PDF へのリンクがあれば 1 件だけ
+    取り込み(先頭 PDF_MAX_PAGES 頁、pdftotext または pypdf)、同じ要領で抜粋を末尾に付ける
 
 候補の条件(すべて満たすもの):
   - data/events.json に収載済みで、まだ終わっていない(date_end または date_start が今日以降)
@@ -66,8 +68,9 @@ for _i, _a in enumerate(_argv):
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from radar_lib import DATA_DIR, DATA_FILE, PROFILE_ID, ROOT, TODAY, load_json, parse_sources  # noqa: E402
-from fetch_all import (CACHE_DIR, HINTS_FILE, MIN_TEXT_CHARS, classify_failure, decode,  # noqa: E402
-                       fetch, html_to_text, render_with_chromium)
+from fetch_all import (CACHE_DIR, HINTS_FILE, MIN_TEXT_CHARS, TIMEOUT, UA, classify_failure,  # noqa: E402
+                       decode, fetch, html_to_text, render_with_chromium)
+import threading  # noqa: E402
 
 STATE_FILE = DATA_DIR / "detail_state.json"     # プロファイル別(data/uk/ 等)
 MANIFEST_FILE = CACHE_DIR / "detail_manifest.json"
@@ -81,6 +84,10 @@ EXCERPT_MAX_CHARS = 8_000   # 抜粋の上限
 THIN_CHARS = 3_000          # 本文がこれ未満なら「薄いページ」として 1 ホップ辿る
 WINDOW_LINES = 6            # キーワード行の前後に残す行数
 MAX_CHROMIUM = 5            # 1 回の実行で Chromium 描画を試す上限(1 件 10〜20 秒かかる)
+MAX_PDF = 8                 # 1 回の実行で取り込むプログラム PDF の上限(1 イベント 1 件)
+PDF_MAX_BYTES = 8_000_000   # これより大きい PDF は取らない
+PDF_MAX_PAGES = 12          # 先頭この頁数だけテキスト化する
+PDF_EXCERPT_CHARS = 4_000   # PDF 抜粋の上限(ページ本文の抜粋とは別枠)
 STATE_KEEP_DAYS = 180       # 収載から外れたイベントの台帳エントリを残す日数
 
 # 登壇者が書かれている箇所の目印(英・独・仏・伊)。行単位で照合する
@@ -94,6 +101,10 @@ SPEAKER_KW = re.compile(
 # リンクだけの行(ナビゲーション項目)で有効とみなす強い目印
 STRONG_KW = re.compile(
     r"(speakers?\b|keynote|panel|moderat|discussant|referent|vortragende|redner|sprecher|podium)", re.I)
+# プログラム PDF のリンクの目印(リンク文言または URL のファイル名)
+PDF_KW = re.compile(
+    r"(programme|program\b|programm|agenda|speakers|schedule|ablauf|einladung|flyer|"
+    r"konferenzinformation|conference information)", re.I)
 # 薄いページから辿るリンクの目印(リンク文言または URL)
 FOLLOW_KW = re.compile(
     r"(programme|program\b|agenda|conference details|event details|details|schedule|"
@@ -223,7 +234,7 @@ def cut_to_title(text, title):
     return text
 
 
-def excerpt(text, title):
+def excerpt(text, title, cap=EXCERPT_MAX_CHARS):
     """登壇者系キーワードを含む行の前後 WINDOW_LINES 行だけを残し、EXCERPT_MAX_CHARS に収める。
     キーワードが無いページは先頭から EXCERPT_MAX_CHARS 字。戻り値 (抜粋, 元の字数, 抜粋前の字数)。"""
     full_len = len(text)
@@ -251,7 +262,53 @@ def excerpt(text, title):
         joined = "\n".join(out)
     else:
         joined = "\n".join(ln for ln in lines if ln.strip())
-    return joined[:EXCERPT_MAX_CHARS], full_len, len(joined)
+    return joined[:cap], full_len, len(joined)
+
+
+# ---------------------------------------------------------------- プログラム PDF
+
+def find_pdf_link(text):
+    """本文中の「テキスト [URL.pdf]」からプログラム/登壇者一覧らしい PDF を 1 本選ぶ。"""
+    for m in re.finditer(r"([^\n\[\]]{0,80})\[(https?://[^\]\s]+?\.pdf(?:\?[^\]\s]*)?)\]", text, re.I):
+        label, url = m.group(1).strip(), m.group(2)
+        name = url.rsplit("/", 1)[-1]
+        if PDF_KW.search(label) or PDF_KW.search(name):
+            return url
+    return None
+
+
+def fetch_pdf(url):
+    """PDF をダウンロードして bytes を返す。大きすぎる・PDF でない・失敗なら None。"""
+    import urllib.request
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/pdf,*/*;q=0.8"})
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+            data = r.read(PDF_MAX_BYTES + 1)
+    except Exception:
+        return None
+    if len(data) > PDF_MAX_BYTES or not data.startswith(b"%PDF"):
+        return None
+    return data
+
+
+def pdf_to_text(data):
+    """PDF → テキスト。pdftotext(poppler)があればそれを使い、無ければ pypdf。
+    どちらも無ければ空文字(PDF は諦める。pip install はしない)。"""
+    import subprocess
+    try:
+        r = subprocess.run(["pdftotext", "-l", str(PDF_MAX_PAGES), "-layout", "-", "-"],
+                           input=data, capture_output=True, timeout=60)
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.decode("utf-8", "ignore")
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+    try:
+        import io
+        import pypdf
+        reader = pypdf.PdfReader(io.BytesIO(data))
+        return "\n".join((pg.extract_text() or "") for pg in reader.pages[:PDF_MAX_PAGES])
+    except Exception:
+        return ""
 
 
 def follow_link(text, base_url, listing):
@@ -270,7 +327,28 @@ def follow_link(text, base_url, listing):
 class Fetcher:
     def __init__(self):
         self.chromium_left = MAX_CHROMIUM
+        self.pdf_left = MAX_PDF
+        self.lock = threading.Lock()
         self.listing = listing_urls()
+
+    def pdf_excerpt(self, text, title):
+        """本文にプログラム PDF のリンクがあれば 1 本だけ取り込み、抜粋を返す(無ければ None)。"""
+        url = find_pdf_link(text)
+        if not url:
+            return None, None
+        with self.lock:
+            if self.pdf_left <= 0:
+                return None, None
+            self.pdf_left -= 1
+        data = fetch_pdf(url)
+        if not data:
+            return url, ""
+        ptxt = pdf_to_text(data)
+        if len(ptxt.strip()) < 200:
+            return url, ""
+        ptxt = re.sub(r"[ \t]{2,}", " ", ptxt)
+        ex, _, _ = excerpt(ptxt, "", cap=PDF_EXCERPT_CHARS)
+        return url, ex
 
     def get(self, url):
         code, final_url, body, charset = fetch(url)
@@ -309,7 +387,14 @@ class Fetcher:
                 if not classify_failure(c2, t2) and len(t2) > len(text):
                     notes.append(f"本文が薄いため 1 ホップ辿った: {f2}")
                     text, mode, final_url = t2, m2, f2
-        return ev, code, final_url, text, mode, fail, notes
+        pdf_url, pdf_ex = (None, None)
+        if not fail:
+            pdf_url, pdf_ex = self.pdf_excerpt(text, ev.get("title") or "")
+            if pdf_url and pdf_ex:
+                notes.append(f"プログラム PDF を取り込んだ: {pdf_url}")
+            elif pdf_url:
+                notes.append(f"プログラム PDF が読めなかった(大きすぎる・画像のみ等): {pdf_url}")
+        return ev, code, final_url, text, mode, fail, notes, pdf_ex
 
 
 def main():
@@ -348,7 +433,7 @@ def main():
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:
         results = list(ex.map(fetcher.run, [ev for ev, _ in chosen]))
     total_chars = 0
-    for ev, code, final_url, text, mode, fail, notes in results:
+    for ev, code, final_url, text, mode, fail, notes, pdf_ex in results:
         nu = norm_url(ev["url"])
         entry = state.get(nu) or {}
         entry.update({"event_id": ev["id"], "last": TODAY.isoformat(),
@@ -369,14 +454,20 @@ def main():
                 f"# note: 本文({mode}、{full_len:,}字)から登壇者関連の行を抜粋({len(ex_text):,}字)。"
                 "抜粋に無い名前を補わないこと"]
         head += [f"# note: {n}" for n in notes]
-        cache.write_text("\n".join(head) + "\n\n" + ex_text + "\n", encoding="utf-8")
+        body = ex_text
+        if pdf_ex:
+            body += (f"\n\n# ---- プログラム PDF(先頭{PDF_MAX_PAGES}頁から登壇者関連の行を抜粋"
+                     f"、{len(pdf_ex):,}字)----\n" + pdf_ex)
+            total_chars += len(pdf_ex)
+        cache.write_text("\n".join(head) + "\n\n" + body + "\n", encoding="utf-8")
         manifest.append({"cache": str(cache.relative_to(ROOT)),
                          "excerpt_chars": len(ex_text),
                          "record": {"id": ev["id"], "title": ev.get("title"),
                                     "date_start": ev.get("date_start"),
                                     "themes": ev.get("themes"), "source": ev.get("source"),
                                     "url": ev.get("url"), "speakers": []}})
-        extra = f"  [{mode} {full_len:,}→{len(ex_text):,}字]" + ("" if not notes else "  " + "; ".join(notes))
+        extra = f"  [{mode} {full_len:,}→{len(ex_text):,}字" + (f" + PDF {len(pdf_ex):,}字]" if pdf_ex else "]") \
+            + ("" if not notes else "  " + "; ".join(notes))
         print(line + f"  -> {cache.relative_to(ROOT)}" + extra)
     print(f"  抜粋合計 {total_chars:,} 字(キャッシュ {len(manifest)} 件)")
 
