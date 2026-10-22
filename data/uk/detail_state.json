@@ -1,4 +1,11 @@
 {
+ "https://cep.lse.ac.uk/_new/events/event.asp": {
+  "event_id": "ac960e7c5796f828",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://mmf.ac.uk/maxwell-fry": {
   "event_id": "d81db8c38bb16061",
   "http": 200,
@@ -17,6 +24,13 @@
   "event_id": "a6ef107b932e561d",
   "http": 200,
   "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://warwick.ac.uk/fac/soc/economics/research/centres/cage/events/22-10-26-digital_history_workshop_methodological_advances_in_quantitative_economic_history": {
+  "event_id": "a0906818b4f92925",
+  "http": 200,
+  "last": "2026-10-22",
   "result": "ok",
   "tries": 1
  },
@@ -41,6 +55,13 @@
   "result": "FAIL-BLOCKED",
   "tries": 1
  },
+ "https://www.cbbc.org/events/supported-event-chinas-policy-goal-building-unified-national-market-staying-dialogue-china": {
+  "event_id": "76c9a4aa095ac7e6",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.centralbank.ie/events/upcoming-events/2026/11/02/default-calendar/financial-system-conference-2026": {
   "event_id": "2f3cca5510240795",
   "http": 200,
@@ -53,6 +74,20 @@
   "http": 403,
   "last": "2026-10-21",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.chathamhouse.org/events/upcoming": {
+  "event_id": "69110a3fdcc59570",
+  "http": 403,
+  "last": "2026-10-22",
+  "result": "FAIL-BLOCKED",
+  "tries": 2
+ },
+ "https://www.esri.ie/events/19th-irish-economics-psychology-and-policy-conference": {
+  "event_id": "9dfcf1249f6e8347",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
   "tries": 1
  },
  "https://www.fmg.ac.uk/events/how-make-impact-investing-work": {
@@ -69,6 +104,20 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.icmagroup.org/events/icma-secondary-markets-and-amic-buyside-forum": {
+  "event_id": "76c1152ec732654d",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.instituteforgovernment.org.uk/event/budget-2026-john-healey-economy-and-government": {
+  "event_id": "d651b52c78b0a15b",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/defence-forum-2026": {
   "event_id": "1a53c5f908cc58a2",
   "http": 200,
@@ -76,10 +125,59 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/insurance-a-catalyst-for-financial-resilience": {
+  "event_id": "d42d370a4207f0c9",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/mainstreaming-disclosing-and-mobilising-nature-finance": {
+  "event_id": "a595a97c159f6cc5",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/mapping-the-imfs-mandate-in-a-changing-global-economy": {
+  "event_id": "3c39607bb57052ae",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/us-midterm-elections-and-economic-outlook": {
+  "event_id": "ebade45479f94062",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.oxfordmartin.ox.ac.uk/events/china-us": {
   "event_id": "59a469f792916f26",
   "http": 200,
   "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.resolutionfoundation.org/events/pleasing-people-and-satisfying-markets": {
+  "event_id": "05f55e1e65367d3f",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.resolutionfoundation.org/events/the-big-baby-bust": {
+  "event_id": "b6021c9a70dcfd3a",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor": {
+  "event_id": "2b43d5f63ab23e68",
+  "http": 200,
+  "last": "2026-10-22",
   "result": "ok",
   "tries": 1
  },

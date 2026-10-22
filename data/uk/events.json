@@ -1154,12 +1154,32 @@
    "organizer_short": "OMFIF",
    "title_short": "IMF Mandate in Global Economy",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Dan Katz",
+     "org": "IMF",
+     "role": "First Deputy Managing Director"
+    },
+    {
+     "name": "Mark Sobel",
+     "org": "OMFIF",
+     "role": "Vice Chair and Chief Economist"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "3c39607bb57052ae",
    "first_seen": "2026-10-19",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "dan-katz",
+     "name": "Dan Katz",
+     "group": "intl_org",
+     "tier": 2,
+     "short": "IMF FDMD",
+     "former": false
+    }
+   ],
+   "notable_tier": 2
   },
   {
    "title": "EBER Seminar - Nicolas Ajzenman (McGill)",
@@ -2343,7 +2363,48 @@
    "organizer_short": "ICMA",
    "title_short": "Secondary Bond Markets Forum",
    "importance": 2,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Bryan Pascoe",
+     "org": "ICMA",
+     "role": "Chief Executive"
+    },
+    {
+     "name": "Jon Peberdy",
+     "org": "NatWest Markets",
+     "role": "CEO"
+    },
+    {
+     "name": "Matt Roberts-Sklar",
+     "org": "BoE",
+     "role": "Head of Sterling Markets"
+    },
+    {
+     "name": "Chris Williamson",
+     "org": "S&P Global",
+     "role": "Chief Business Economist"
+    },
+    {
+     "name": "Jon Relleen",
+     "org": "FCA",
+     "role": "Director of Infrastructure & Exchanges"
+    },
+    {
+     "name": "Tajinder Singh",
+     "org": "IOSCO",
+     "role": "Deputy Secretary General"
+    },
+    {
+     "name": "Marco Zwick",
+     "org": "CSSF",
+     "role": "Director"
+    },
+    {
+     "name": "Andrew Douglas",
+     "org": null,
+     "role": "Chair, UK Accelerated Settlement Taskforce"
+    }
+   ],
    "source": "ICMA – International Capital Market Association – Events",
    "id": "76c1152ec732654d",
    "first_seen": "2026-10-19",
@@ -3202,7 +3263,43 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Mirko Draca",
+     "org": "Warwick",
+     "role": null
+    },
+    {
+     "name": "Vitalia Eliseeva",
+     "org": "PSE",
+     "role": null
+    },
+    {
+     "name": "Guohui Jiang",
+     "org": "Cologne",
+     "role": null
+    },
+    {
+     "name": "Julius Koschnick",
+     "org": "SDU",
+     "role": null
+    },
+    {
+     "name": "Nurlan Lalayev",
+     "org": "Warwick",
+     "role": null
+    },
+    {
+     "name": "Alexis Litvine",
+     "org": "Cambridge",
+     "role": null
+    },
+    {
+     "name": "Yanos Zylberberg",
+     "org": "Bristol",
+     "role": null
+    }
+   ],
    "source": "Warwick – Department of Economics – Events",
    "id": "a0906818b4f92925",
    "first_seen": "2026-10-19",
@@ -3327,7 +3424,23 @@
    "organizer_short": "OMFIF",
    "title_short": "Mainstreaming Nature Finance",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Maud Abdelli",
+     "org": "WWF",
+     "role": "Initiative Lead, Greening Financial Regulation, Sustainable Finance"
+    },
+    {
+     "name": "Maha Cziesielski",
+     "org": "MSCI",
+     "role": "Vice President, Nature and Supply Chain Products"
+    },
+    {
+     "name": "Renée Pichard",
+     "org": null,
+     "role": "Board Member"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "a595a97c159f6cc5",
    "first_seen": "2026-10-19",
@@ -3492,7 +3605,48 @@
    "title_short": "Industrial Relations Memorial Conference",
    "importance": 2,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Richard Freeman",
+     "org": "Harvard",
+     "role": null
+    },
+    {
+     "name": "Morris Kleiner",
+     "org": "Minnesota",
+     "role": null
+    },
+    {
+     "name": "Richard Dickens",
+     "org": "Sussex",
+     "role": null
+    },
+    {
+     "name": "Tim Butcher",
+     "org": "Low Pay Commission",
+     "role": null
+    },
+    {
+     "name": "Tim Harrison",
+     "org": "Labour Market Enforcement and Migration Committee",
+     "role": null
+    },
+    {
+     "name": "Maria Balgova",
+     "org": "BoE",
+     "role": null
+    },
+    {
+     "name": "Jonathan Portes",
+     "org": "KCL",
+     "role": null
+    },
+    {
+     "name": "David Blanchflower",
+     "org": "Dartmouth",
+     "role": null
+    }
+   ],
    "source": "LSE – Centre for Economic Performance (CEP) – Events",
    "id": "ac960e7c5796f828",
    "first_seen": "2026-10-19",
@@ -3825,7 +3979,18 @@
    "organizer_short": "Resolution Foundation",
    "title_short": "Falling Fertility Worldwide",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Camilla Cavendish",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "David Willetts",
+     "org": "Resolution Foundation",
+     "role": "President"
+    }
+   ],
    "source": "Resolution Foundation – Events",
    "id": "b6021c9a70dcfd3a",
    "first_seen": "2026-10-19",
@@ -4325,7 +4490,18 @@
    "organizer_short": "OMFIF",
    "title_short": "Insurance and Financial Resilience",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Jaclyn de Medicci Bruneau",
+     "org": "Ceres",
+     "role": "Director, Insurance"
+    },
+    {
+     "name": "David McNeil",
+     "org": "PGIM",
+     "role": "Vice President, Climate Research & Nature Strategy"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "d42d370a4207f0c9",
    "first_seen": "2026-10-19",
@@ -4503,7 +4679,23 @@
    "title_short": "Budget 2026 Analysis",
    "importance": 1,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Dan Haile",
+     "org": "IfG",
+     "role": "Senior Economist"
+    },
+    {
+     "name": "Jill Rutter",
+     "org": "IfG",
+     "role": "Senior Fellow"
+    },
+    {
+     "name": "Giles Wilkes",
+     "org": "IfG",
+     "role": "Senior Fellow"
+    }
+   ],
    "source": "Institute for Government – Events",
    "id": "d651b52c78b0a15b",
    "first_seen": "2026-10-19",
@@ -4902,7 +5094,18 @@
    "organizer_short": "OMFIF",
    "title_short": "US Midterms and Outlook",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Wendy Edelberg",
+     "org": "Brookings",
+     "role": "Non-resident senior fellow in Economic Studies"
+    },
+    {
+     "name": "Mark Sobel",
+     "org": "OMFIF",
+     "role": "Vice Chair and Chief Economist"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "ebade45479f94062",
    "first_seen": "2026-10-19",
@@ -9565,6 +9768,434 @@
    "source": "LSE – Centre for Economic Performance (CEP) – Events",
    "id": "fdd5ec8c536d6e08",
    "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "AI-Assisted Investigations: How Inference Models Crack Cross-Border Fraud Cases",
+   "title_ja": "AI支援の捜査: 越境詐欺事件を推論モデルで解明",
+   "organizer": "UK Finance",
+   "date_start": "2026-10-22",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ai",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録(残席あり)",
+   "registration_note_en": "Advance registration required (spaces available)",
+   "registration_note_de": "Anmeldung erforderlich (Plätze verfügbar)",
+   "registration_url": null,
+   "url": "https://www.ukfinance.org.uk/events-training/ai-assisted-investigations-how-inference-models-crack-cross-border-fraud-cases",
+   "summary_ja": "国境をまたぐ詐欺事件を題材に、推論モデルでアイデンティティ情報を突き合わせ、捜査や事前のリスク判断に活かす実務を扱うオンラインウェビナー。",
+   "summary_en": "Online webinar walking through a cross-border fraud case to show how inference models link identity signals for investigations and earlier risk decisions.",
+   "summary_de": "Online-Webinar, das anhand eines grenzüberschreitenden Betrugsfalls zeigt, wie Inferenzmodelle Identitätssignale für Ermittlungen und frühere Risikoentscheidungen verknüpfen.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UK Finance",
+   "title_short": "AI in Fraud Investigations",
+   "importance": 1,
+   "speakers": [],
+   "source": "UK Finance – Events",
+   "id": "09df300ed02c1c99",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Blended finance in the sustainable blue economy",
+   "title_ja": "ブルーエコノミーにおけるブレンデッドファイナンス",
+   "organizer": "UNEP Finance Initiative",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.unepfi.org/events/blended-finance-in-the-sustainable-blue-economy/",
+   "summary_ja": "海洋が気候調整・生物多様性・食料安全保障・貿易に果たす役割を踏まえ、ブルーエコノミーへの民間資金動員におけるブレンデッドファイナンスを扱うオンラインウェビナー。",
+   "summary_en": "Online webinar by UNEP FI on blended finance for the sustainable blue economy, drawing on the ocean's role in climate regulation, biodiversity, food security and trade.",
+   "summary_de": "Online-Webinar der UNEP FI zur Blended Finance für eine nachhaltige Blue Economy, mit Blick auf die Rolle der Ozeane für Klimaregulierung, Biodiversität, Ernährungssicherheit und Handel.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UNEP FI",
+   "title_short": "Blended Finance for Blue Economy",
+   "importance": 1,
+   "speakers": [],
+   "source": "UNEP FI – Events",
+   "id": "38ce929b41291aec",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Mapping Concentration Risks in Financial Services Supply Chains",
+   "title_ja": "金融サービスのサプライチェーンにおける集中リスク",
+   "organizer": "UK Finance",
+   "date_start": "2026-11-19",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録(残席あり)",
+   "registration_note_en": "Advance registration required (spaces available)",
+   "registration_note_de": "Anmeldung erforderlich (Plätze verfügbar)",
+   "registration_url": null,
+   "url": "https://www.ukfinance.org.uk/events-training/mapping-concentration-risks-in-financial-services-supply-chains",
+   "summary_ja": "金融機関が依存する少数の重要な外部委託先と、業界全体に及ぶ集中リスクを把握する手法を扱うオンラインウェビナー。英国のオペレーショナル・レジリエンス(OPRes)の枠組みを背景とする。",
+   "summary_en": "Online webinar on identifying concentration risks across financial services supply chains, including critical third parties, in the context of the UK Operational Resilience (OPRes) framework.",
+   "summary_de": "Online-Webinar zur Identifikation von Konzentrationsrisiken in Lieferketten der Finanzbranche, etwa bei kritischen Drittparteien, im Kontext des britischen Operational-Resilience-Rahmens (OPRes).",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UK Finance",
+   "title_short": "Concentration Risk in Supply Chains",
+   "importance": 1,
+   "speakers": [],
+   "source": "UK Finance – Events",
+   "id": "3a070cfbca9383bb",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Applied & Development Economics Seminar - Evan Soltas (Princeton)",
+   "title_ja": "応用・開発経済学セミナー（Evan Soltas）",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00ed5d80e0071",
+   "summary_ja": "応用・開発経済学セミナー。Evan Soltas（Princeton）が報告する（演題は未定）。",
+   "summary_en": "Applied and Development Economics Seminar with Evan Soltas (Princeton); title to be advised.",
+   "summary_de": "Seminar zur angewandten Volkswirtschaftslehre und Entwicklungsökonomik mit Evan Soltas (Princeton); Titel noch offen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Applied and Development Economics",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Evan Soltas",
+     "org": "Princeton",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "40ec68d1219de4d8",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Climate change and liberal political economy",
+   "title_ja": "気候変動と自由主義の政治経済",
+   "organizer": "LSE Hayek Programme",
+   "date_start": "2026-10-27",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:15",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/hayek/events/climate-change-and-liberal-political-economy",
+   "summary_ja": "気候変動政策を自由主義的な政治経済の枠組みから論じるオンラインの公開イベント。",
+   "summary_en": "A public online event examining climate change policy through the lens of liberal political economy.",
+   "summary_de": "Eine öffentliche Online-Veranstaltung, die Klimapolitik aus der Perspektive der liberalen politischen Ökonomie betrachtet.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "LSE",
+   "title_short": "Climate Change Political Economy",
+   "importance": 1,
+   "speakers": [],
+   "source": "LSE – Public events (Search)",
+   "id": "52a3d7993d6a8d34",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "A Briefing with British Ambassador to China and HMTC for China",
+   "title_ja": "英国大使・HMTCによる対中ブリーフィング",
+   "organizer": "China-Britain Business Council",
+   "date_start": "2026-10-23",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "china"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.cbbc.org/events/briefing-british-ambassador-china-and-hmtc-china",
+   "summary_ja": "英国の駐中国大使と中国担当の英国貿易代表(HMTC)によるブリーフィング。英中ビジネス関係がテーマ。",
+   "summary_en": "A briefing by the British Ambassador to China and the HMTC for China on UK-China business relations.",
+   "summary_de": "Briefing des britischen Botschafters in China und des HMTC für China zu den britisch-chinesischen Wirtschaftsbeziehungen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CBBC",
+   "title_short": "UK Ambassador China Briefing",
+   "importance": 1,
+   "speakers": [],
+   "source": "CBBC – China-Britain Business Council – Events",
+   "id": "6801f5e2886544a3",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The science of second chances",
+   "title_ja": "二度目のチャンスの科学",
+   "organizer": "Centre for Economic Performance (CEP), LSE",
+   "date_start": "2026-12-09",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10846",
+   "summary_ja": "Jennifer Doleac が、小規模な介入によって再犯の可能性を下げられることを示す、刑事司法改革への新しいアプローチを紹介する。",
+   "summary_en": "Jennifer Doleac presents an approach to criminal justice reform, showing how small-scale interventions can reduce the chances of reoffending.",
+   "summary_de": "Jennifer Doleac stellt einen neuen Ansatz zur Reform der Strafjustiz vor und zeigt, wie kleine Interventionen die Rückfallwahrscheinlichkeit senken können.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "CEP",
+   "title_short": "Science of Second Chances",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Jennifer Doleac",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "690d2dcaacde0b3a",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Key takeaways from the ECB November 2026 Financial Stability Review",
+   "title_ja": "ECB 2026年11月金融安定報告書の要点",
+   "organizer": "SUERF BAFFI Bocconi",
+   "date_start": "2026-11-23",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "central_bank",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.suerf.org/events/key-takeaways-from-the-ecb-november-2026-financial-stability-review/",
+   "summary_ja": "ECBの2026年11月金融安定報告書の主要なポイントを解説するオンラインのe-lectureです。",
+   "summary_en": "An online e-lecture on the key takeaways from the ECB's November 2026 Financial Stability Review.",
+   "summary_de": "Online-E-Lecture zu den wichtigsten Erkenntnissen aus dem Finanzstabilitätsbericht der EZB vom November 2026.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "SUERF/BAFFI",
+   "title_short": "ECB Financial Stability Review",
+   "importance": 1,
+   "speakers": [],
+   "source": "SUERF – Events",
+   "id": "a9e8fa8aee46513a",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "CEPR IO Virtual Gathering 2026",
+   "title_ja": "CEPR産業組織論バーチャル会合2026",
+   "organizer": "CEPR",
+   "date_start": "2026-11-20",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://hub.cepr.org/events/cepr-io-virtual-gathering-2026",
+   "summary_ja": "CEPRの産業組織論(Industrial Organization)分野によるバーチャル会合。",
+   "summary_en": "A virtual meeting of CEPR's Industrial Organization research community.",
+   "summary_de": "Virtuelles Treffen der CEPR-Forschungsgemeinschaft für Industrieökonomik.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "CEPR",
+   "title_short": "Industrial Organization Virtual Gathering",
+   "importance": 1,
+   "speakers": [],
+   "source": "CEPR – Centre for Economic Policy Research – Events",
+   "id": "bb38fb526b8bf94b",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "CRETA Theory Seminar - Fedor Sandomirskiy (Princeton)",
+   "title_ja": "CRETA理論セミナー（Fedor Sandomirskiy）",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": "16:00",
+   "time_end": "17:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00ee7010a015e",
+   "summary_ja": "CRETA理論セミナー。Fedor Sandomirskiy（Princeton）が報告する（演題は未定）。",
+   "summary_en": "CRETA Theory Seminar with Fedor Sandomirskiy (Princeton); title to be advised.",
+   "summary_de": "CRETA-Theorieseminar mit Fedor Sandomirskiy (Princeton); Titel noch offen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Economic Theory Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Fedor Sandomirskiy",
+     "org": "Princeton",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "d296ef21c29f9964",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Financial Crime's Blind Spot: Why Better AI Isn't Enough",
+   "title_ja": "金融犯罪の死角: AIを高度化しても足りない理由",
+   "organizer": "UK Finance",
+   "date_start": "2026-10-28",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ai",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録(残席あり)",
+   "registration_note_en": "Advance registration required (spaces available)",
+   "registration_note_de": "Anmeldung erforderlich (Plätze verfügbar)",
+   "registration_url": null,
+   "url": "https://www.ukfinance.org.uk/events-training/financial-crimes-blind-spot-why-better-ai-isnt-enough",
+   "summary_ja": "AI投資が増えても金融犯罪対策の成果が上がらない理由を、分断されたシステム・不統一なデータ・モデルの挙動把握の不足の観点から検討するオンラインウェビナー。",
+   "summary_en": "Online webinar examining why financial crime operations still lag despite AI investment, focusing on fragmented systems, inconsistent data and limited visibility into model behaviour.",
+   "summary_de": "Online-Webinar zur Frage, warum die Finanzkriminalitätsabwehr trotz KI-Investitionen zurückbleibt, mit Schwerpunkt auf fragmentierten Systemen, uneinheitlichen Daten und mangelnder Transparenz der Modelle.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UK Finance",
+   "title_short": "AI and Financial Crime",
+   "importance": 1,
+   "speakers": [],
+   "source": "UK Finance – Events",
+   "id": "f9374725db0f93d0",
+   "first_seen": "2026-10-22",
    "notables": [],
    "notable_tier": null
   }

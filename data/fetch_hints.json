@@ -292,8 +292,9 @@
  },
  "Daiwa Anglo-Japanese Foundation – Events": {
   "method": "chromium",
-  "last_ok": "2026-10-20",
-  "note": "2026-10-20: 10/19 まで curl で取れていたが 10/20 から 403。headless Chromium では一覧が描画できる(個別ページは不可)。"
+  "last_ok": "2026-10-22",
+  "note": "2026-10-22: ua-curl 403, Chromium (--wait 5000) renders upcoming list incl. detail links (/event/<slug>). Confirmed again.",
+  "render": "chromium"
  },
  "CBBC – China-Britain Business Council – Events": {
   "method": "chromium",
@@ -307,7 +308,7 @@
  },
  "Chatham House – Events": {
   "method": "search",
-  "note": "2026-10-20 再挑戦: /events/upcoming・sitemap・RSS・jsonapi・Chromium すべて Cloudflare。検索スニペットで日付は分かる(11/11 Iraq Initiative Conference 等)が本文未取得のため収載せず。日次は search 補完(10/20 に1件採用実績)。"
+  "note": "2026-10-22: all direct routes Cloudflare-blocked; searching the event title (e.g. 'Chatham House Iraq Initiative Conference 2026 date') returns the official event page snippet with date/time - title-specific queries work better than site: queries."
  },
  "IISS – International Institute for Strategic Studies – Events": {
   "method": "search",
@@ -341,5 +342,18 @@
  },
  "ZEW Mannheim – Veranstaltungen": {
   "note": "2026-10-21: 収載済みの詳細URL(/veranstaltungen-und-weiterbildung/detail/<slug>/<id>・/VA<id>)が404。一覧のリンクをそのまま使い、URLを推測・創作しないこと。個別リンクが取れない場合は一覧URLにする。"
+ },
+ "JETRO London – Events": {
+  "method": "alt-url",
+  "alt_urls": [
+   "https://www.jetro.go.jp/uk/topics.html",
+   "https://www.jetro.go.jp/uk/"
+  ],
+  "last_ok": "2026-10-22",
+  "note": "2026-10-22: /uk/events.html is AccessDenied (dead); topics page via ua-curl works but lists only RFPs and a past June 2026 event. Candidate for sources.yaml url replacement (2b) - human/main-agent decision."
+ },
+ "Grantham Research Institute (LSE) – Events": {
+  "method": "search",
+  "note": "2026-10-22: lse.ac.uk returns Cloudflare 522 (origin timeout) for ua-curl and Chromium - likely transient, retry. Search snippet suggests Stern Review event on 30 Oct vs known 28 Oct; verify."
  }
 }
