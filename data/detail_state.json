@@ -20,6 +20,13 @@
   "result": "FAIL-HTTP",
   "tries": 1
  },
+ "https://gfk-cfs.de/events/conferences/the-ssm-reform-agenda-on-the-path-toward-efficient-and-competitive-supervision": {
+  "event_id": "1b4a9b2120fb2bf4",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://gfk-cfs.de/events/presidential-lectures/the-global-euro-starts-at-home-advancing-the-global-euro-by-completing-europes-monetary-union": {
   "event_id": "1ca303030ed1ebae",
   "http": 200,
@@ -69,6 +76,20 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.atlanticcouncil.org": {
+  "event_id": "a367a458693adebb",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.bafin.de/shareddocs/veranstaltungen/de/261120_praktikerdialog_wphg_compliance.html": {
+  "event_id": "3b9bef55ae580ce9",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.bafin.de/shareddocs/veranstaltungen/de/261201_jahreskonferenz_versicherungsaufsicht.html": {
   "event_id": "668aac3cb6ea0eba",
   "http": 200,
@@ -104,6 +125,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.chathamhouse.org/events/all/standard-event/chatham-house-berlin-conference-2026": {
+  "event_id": "c731effbf651a308",
+  "http": 403,
+  "last": "2026-10-22",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://www.dfv-eurofinance.com/events/12th-china-day": {
   "event_id": "037996026ee766a1",
   "http": 200,
@@ -118,11 +146,32 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.dfv-eurofinance.com/events/by-invitation-only/hq-trust-investors-forum-2026": {
+  "event_id": "bae3dbfdef32499b",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.dfv-eurofinance.com/events/euro-finance-tech-day-2026": {
+  "event_id": "36aecccc5eeaa075",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.diw.de/de/diw_01.c.1010628.de/veranstaltungen/the_economics_of_crime_and_criminal_justice.html": {
   "event_id": "547288cd84fd6bd7",
   "http": 403,
   "last": "2026-10-16",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.drsc.de/en/news/save-the-date-hamburg-sustainability-reporting-forum-2026-registration-opens-in-september": {
+  "event_id": "b0e5bd823d952597",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
   "tries": 1
  },
  "https://www.eba.europa.eu/publications-and-media/events/15th-annual-research-workshop-efficient-and-proportionate-regulation-competitive-financial-sector": {
@@ -153,6 +202,20 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.ecb.europa.eu/press/conferences/html/20261123_escb_research_cluster3.en.html": {
+  "event_id": "8e10ccb23e6ae387",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.eflab.de/events/detail/efl-annual-conference-2026": {
+  "event_id": "b68ebaad5c315186",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.fch-gruppe.de/seminar/19-hamburger-bankenaufsicht-tage-2026-": {
   "event_id": "042b5db5409b6ca1",
   "http": 200,
@@ -165,6 +228,13 @@
   "http": 200,
   "last": "2026-10-20",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.forum-ng.org/en/termine/veranstaltung/cric-ev-konferenz-zur-klimagerechtigkeit-in-frankfurt-am-main": {
+  "event_id": "400118719d35f837",
+  "http": 503,
+  "last": "2026-10-22",
+  "result": "FAIL-HTTP",
   "tries": 1
  },
  "https://www.forum-ng.org/en/termine/veranstaltung/die-politischen-dimensionen-des-investierens-wofuer-sind-wir-verantwortlich": {
@@ -188,6 +258,27 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.ifo.de/en/cesifo/event/2026-11-19/ces-munich-lectures-economics-2026": {
+  "event_id": "829aaa238bf32a96",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ifo.de/en/cesifo/event/2026-11-20/20th-workshop-political-economy": {
+  "event_id": "57cb841c1d0b1ee1",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ifo.de/en/cesifo/event/2026-11-20/munich-lectures-workshop-cities-housing-and-infrastructure": {
+  "event_id": "e2b806902699eca7",
+  "http": 200,
+  "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.ifo.de/veranstaltung/2026-11-11/ifo-wirtschaftsdialog-2026-startups": {
   "event_id": "39f246f3ebb3c4ae",
   "http": 200,
@@ -206,6 +297,13 @@
   "event_id": "8d822f20475ff9a9",
   "http": 200,
   "last": "2026-10-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.kielinstitut.de/de/veranstaltungen/konferenzen/2-industrial-policy-lab-annual-conference-industrial-policy-in-an-age-of-geostrategic-competition": {
+  "event_id": "dfe14d84636e87aa",
+  "http": 200,
+  "last": "2026-10-22",
   "result": "ok",
   "tries": 1
  },
@@ -241,6 +339,13 @@
   "event_id": "990601f6594bb548",
   "http": 200,
   "last": "2026-10-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-19-global-payment-fraud-financial-crime-summit.html": {
+  "event_id": "ca692364653fc4bf",
+  "http": 200,
+  "last": "2026-10-22",
   "result": "ok",
   "tries": 1
  },

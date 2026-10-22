@@ -473,7 +473,49 @@
    "registration_note_en": "Free participation; valid ID required for venue access.",
    "registration_note_de": "Kostenlose Teilnahme; gültiger Ausweis für den Zutritt erforderlich.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Thomas Book",
+     "org": "Deutsche Börse",
+     "role": "Member of the Executive Board"
+    },
+    {
+     "name": "Peter Gomber",
+     "org": "efl",
+     "role": null
+    },
+    {
+     "name": "Tanya Panova",
+     "org": "European Commission",
+     "role": "Head of the Securities Markets Unit"
+    },
+    {
+     "name": "Philippe Guillot",
+     "org": "AMF",
+     "role": "Managing Director, Data and Markets Directorate"
+    },
+    {
+     "name": "Eglantine Desautel",
+     "org": "EuroCTP",
+     "role": "CEO"
+    },
+    {
+     "name": "Henriette Peucker",
+     "org": "Deutsches Aktieninstitut",
+     "role": "Chief Executive and Member of the Board"
+    },
+    {
+     "name": "Björn Hagströmer",
+     "org": "Stockholm University",
+     "role": "Professor"
+    },
+    {
+     "name": "Eric Böss",
+     "org": "Allianz Global Investors",
+     "role": "Global Head of Trading"
+    }
+   ]
   },
   {
    "title": "5th Kiel-CEPR Conference on Geoeconomics",
@@ -1827,8 +1869,7 @@
    "venue": "IWH",
    "format": "onsite",
    "themes": [
-    "real_economy",
-    "central_bank"
+    "real_economy"
    ],
    "fee": "paid",
    "open_to_public": true,
@@ -1851,7 +1892,19 @@
    "registration_note_de": "Internationales Forum für empirische und angewandte Makroökonometrie mit Schwerpunkt auf Fortschritten bei VAR-Methoden; Keynotes von Martin Bruns und Daniel J. Lewis.",
    "fee_amount": 125,
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Martin Bruns",
+     "org": "St Andrews",
+     "role": "Keynote Speaker"
+    },
+    {
+     "name": "Daniel J. Lewis",
+     "org": "UCL",
+     "role": "Keynote Speaker"
+    }
+   ]
   },
   {
    "title": "CNB Research Seminar by Marta Cota (Nova SBE)",
@@ -2120,8 +2173,59 @@
    "registration_note_en": "Free of charge; limited capacity, one attendee per institution. Registration deadline 11 September 2026. Restricted to WpHG compliance officers.",
    "registration_note_de": "Kostenlos; begrenzte Plätze, pro Institut nur eine Person. Anmeldeschluss 11. September 2026. Nur für WpHG-Compliance-Beauftragte.",
    "fee_amount": 0,
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "thorsten-potzsch",
+     "name": "Thorsten Pötzsch",
+     "group": "supervisor",
+     "tier": 2,
+     "short": "BaFin Exec. Director",
+     "former": false
+    }
+   ],
+   "notable_tier": 2,
+   "speakers": [
+    {
+     "name": "Thorsten Pötzsch",
+     "org": "BaFin",
+     "role": null
+    },
+    {
+     "name": "Ira Kosche-Steinbrecher",
+     "org": "BaFin",
+     "role": null
+    },
+    {
+     "name": "Thomas Mayer",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Christian Sievert",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Sabine Saemann",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Pranjal Kothari",
+     "org": "Sparkasse Bremen",
+     "role": null
+    },
+    {
+     "name": "Florian Müllner",
+     "org": "Scalable Capital Bank",
+     "role": null
+    },
+    {
+     "name": "Stephan Fischle",
+     "org": "Deutsche Bank",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Das Jahresgutachten 2026/27 des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung",
@@ -5352,7 +5456,14 @@
    "registration_note_en": "Hybrid, free",
    "registration_note_de": "Hybrid, kostenlos",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Jillian Grennan",
+     "org": "Emory",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Bundeskongress Öffentliche Infrastruktur 2027",
@@ -6457,41 +6568,6 @@
    "summary_de": "4. European Sustainability Week zu Energiewende, messbarer ESG-Performance und Impact Investing, bestehend aus Environmental Forum und ESG Summit mit Preisverleihungen.",
    "registration_note_en": "Registration required (see official website for details)",
    "registration_note_de": "Anmeldung erforderlich (Details siehe offizielle Website)",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Macro CRC TR 224 Seminar: Kyle Herkenhoff",
-   "title_ja": "マクロ経済学セミナー:Kyle Herkenhoff",
-   "organizer": "Universität Mannheim",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": "12:15",
-   "city": "Mannheim",
-   "venue": "L 7, 3–5, Lecture room 001",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "参加無料",
-   "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/macro-crc-tr-224-seminar/",
-   "summary_ja": "マクロ経済学研究セミナー。University of MinnesotaのKyle Herkenhoffが登壇。",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "Mannheim",
-   "title_short": "Macro Seminar",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": "13:15",
-   "source": "Universität Mannheim – 経済学部イベント/セミナー",
-   "id": "cfd1f4da7983f9eb",
-   "first_seen": "2026-07-27",
-   "summary_en": "Macroeconomics research seminar. Speaker: Kyle Herkenhoff (University of Minnesota).",
-   "summary_de": "Forschungsseminar zu Makroökonomie. Sprecher: Kyle Herkenhoff (University of Minnesota).",
-   "registration_note_en": "Free admission",
-   "registration_note_de": "Kostenloses Seminar",
    "notables": [],
    "notable_tier": null
   },
@@ -7699,7 +7775,14 @@
    "id": "829aaa238bf32a96",
    "first_seen": "2026-07-30",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Edward Glaeser",
+     "org": "Harvard",
+     "role": "Fred and Eleanor Glimp Professor of Economics"
+    }
+   ]
   },
   {
    "title": "Sustainable Investing Platform Meeting",
@@ -7770,8 +7853,67 @@
    "source": "dfv Euro Finance Group (Frankfurt) – Executive Events",
    "id": "bae3dbfdef32499b",
    "first_seen": "2026-07-30",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "jean-claude-trichet",
+     "name": "Jean-Claude Trichet",
+     "group": "ecb",
+     "tier": 1,
+     "short": "ex-ECB President",
+     "former": true
+    },
+    {
+     "person": "lars-feld",
+     "name": "Lars P. Feld",
+     "group": "academia",
+     "tier": 1,
+     "short": "ex-SVR chair",
+     "former": true
+    }
+   ],
+   "notable_tier": 1,
+   "speakers": [
+    {
+     "name": "Jean-Claude Trichet",
+     "org": "ECB",
+     "role": "ehem. Präsident EZB"
+    },
+    {
+     "name": "Andreas G. Scholz",
+     "org": "dfv Euro Finance Group",
+     "role": "Vorsitzender der Geschäftsführung"
+    },
+    {
+     "name": "Lars P. Feld",
+     "org": "Walter Eucken Institut",
+     "role": "Direktor"
+    },
+    {
+     "name": "Michael Heise",
+     "org": "HQ Trust",
+     "role": "Chefökonom"
+    },
+    {
+     "name": "Christian Subbe",
+     "org": "HQ Trust",
+     "role": "Geschäftsführer, CIO"
+    },
+    {
+     "name": "Mathias Heiß",
+     "org": "Universal Investment",
+     "role": "CEO"
+    },
+    {
+     "name": "Alicia von Schenk",
+     "org": "JMU Würzburg",
+     "role": "Professorin für Economics of AI and Human Behavior"
+    },
+    {
+     "name": "Paul Ronzheimer",
+     "org": "BILD",
+     "role": "Global Reporter"
+    }
+   ]
   },
   {
    "title": "AMAS/SSF Roundtable Pass-through Voting",
@@ -7841,42 +7983,6 @@
    "importance": 1,
    "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
    "id": "c96f12ef99cf49f1",
-   "first_seen": "2026-07-30",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Nature Exchange Group",
-   "title_ja": "ネイチャー・エクスチェンジ・グループ会合",
-   "organizer": "Swiss Sustainable Finance",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "climate_esg"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": false,
-   "registration_note": "自然・生物多様性金融に関する会員限定のオンライン意見交換会。",
-   "registration_note_en": "Members-only online exchange group meeting on nature and biodiversity finance.",
-   "registration_note_de": "Mitgliederexklusive Online-Austauschgruppe zu Natur- und Biodiversitätsfinanzierung.",
-   "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
-   "registration_url": null,
-   "summary_ja": "自然・生物多様性ファイナンスをテーマとするSSF会員限定のオンライン意見交換グループ。",
-   "summary_en": "An SSF members-only online group discussing nature and biodiversity finance topics.",
-   "summary_de": "Eine mitgliederexklusive SSF-Austauschgruppe zu Themen der Natur- und Biodiversitätsfinanzierung, online.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "SSF",
-   "title_short": "Nature and Biodiversity Finance",
-   "importance": 1,
-   "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
-   "id": "cf2558f0b80b6347",
    "first_seen": "2026-07-30",
    "notables": [],
    "notable_tier": null
@@ -8017,7 +8123,49 @@
    "id": "e2b806902699eca7",
    "first_seen": "2026-07-31",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Oliver Falck",
+     "org": null,
+     "role": "Scientific Organizer"
+    },
+    {
+     "name": "Davide Cantoni",
+     "org": "LMU",
+     "role": null
+    },
+    {
+     "name": "Henry Overman",
+     "org": "LSE",
+     "role": null
+    },
+    {
+     "name": "Stephan Heblich",
+     "org": "University of Toronto",
+     "role": null
+    },
+    {
+     "name": "Elisabet Viladecans Marsal",
+     "org": "University of Barcelona",
+     "role": null
+    },
+    {
+     "name": "Martina Kirchberger",
+     "org": "Trinity College Dublin",
+     "role": null
+    },
+    {
+     "name": "Yanos Zylberberg",
+     "org": "University of Bristol",
+     "role": null
+    },
+    {
+     "name": "Luca Perdoni",
+     "org": "ifo Institute",
+     "role": null
+    }
+   ]
   },
   {
    "title": "21st SFI Annual Meeting: AI and Its Impact on Finance",
@@ -8352,7 +8500,19 @@
    "id": "57cb841c1d0b1ee1",
    "first_seen": "2026-08-03",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Tommaso Nannicini",
+     "org": "EUI",
+     "role": "Keynote Speaker"
+    },
+    {
+     "name": "Raphaël Franck",
+     "org": "Tel-Hai University",
+     "role": "Keynote Speaker"
+    }
+   ]
   },
   {
    "title": "Economics Research Seminar: Simone Häckl (University of Salzburg) – Lecture title to be announced",
@@ -11500,8 +11660,59 @@
    "source": "dfv Euro Finance Group (Frankfurt) – Executive Events",
    "id": "36aecccc5eeaa075",
    "first_seen": "2026-08-23",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "michael-theurer",
+     "name": "Michael Theurer",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
+    }
+   ],
+   "notable_tier": 2,
+   "speakers": [
+    {
+     "name": "Michael Theurer",
+     "org": "Bundesbank",
+     "role": "Member of the Executive Board"
+    },
+    {
+     "name": "Nicolas Sölter",
+     "org": "Hesse",
+     "role": "State Secretary for Digitalization and Innovation"
+    },
+    {
+     "name": "Kartik Anand",
+     "org": "Bundesbank",
+     "role": "Senior Economist"
+    },
+    {
+     "name": "Heike Riel",
+     "org": "IBM",
+     "role": "IBM Fellow, Head of Science of Quantum and Information Technology"
+    },
+    {
+     "name": "Christina E. Bannier",
+     "org": "JLU Gießen",
+     "role": "Professor of Banking and Finance"
+    },
+    {
+     "name": "Yasser Jadidi",
+     "org": "Aleph Alpha",
+     "role": "Co-Chief Research Officer, Technology"
+    },
+    {
+     "name": "Stephan A. Paxmann",
+     "org": "LBBW",
+     "role": "Chief Innovation Officer"
+    },
+    {
+     "name": "Markus Neukirch",
+     "org": "Deutsche WertpapierService Bank",
+     "role": "Chief Operating Officer, Member of the Board"
+    }
+   ]
   },
   {
    "title": "Macroeconometric Workshop",
@@ -12682,7 +12893,19 @@
    "id": "8e10ccb23e6ae387",
    "first_seen": "2026-08-27",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Vasso Ioannidou",
+     "org": "Bayes Business School",
+     "role": "Keynote Speaker"
+    },
+    {
+     "name": "José-Luis Peydró",
+     "org": "Luiss",
+     "role": "Keynote Speaker"
+    }
+   ]
   },
   {
    "title": "10th Sustainable Finance Summit: Sustainable Finance – Bridging the Gap Between Finance and the Real Economy",
@@ -13017,42 +13240,6 @@
    "notable_tier": null
   },
   {
-   "title": "Getting started in nature, biodiversity and finance",
-   "title_ja": "自然・生物多様性とファイナンス入門ウェビナー",
-   "organizer": "PRI (Principles for Responsible Investment)",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "climate_esg"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "要事前登録のオンラインウェビナー",
-   "registration_note_en": "Online webinar, advance registration required",
-   "registration_note_de": "Online-Webinar, Anmeldung erforderlich",
-   "url": "https://public.unpri.org/getting-started-in-nature-biodiversity-and-finance/9510.article",
-   "summary_ja": "PRI(責任投資原則)が開催する、自然・生物多様性とファイナンスの関係を基礎から学ぶオンラインウェビナー。",
-   "summary_en": "A PRI webinar introducing the basics of nature, biodiversity and finance for responsible investors.",
-   "summary_de": "PRI-Webinar zur Einführung in die Zusammenhänge zwischen Natur, Biodiversität und Finanzwesen für verantwortungsbewusste Investoren.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "PRI",
-   "title_short": "Nature and Biodiversity Finance",
-   "importance": 0,
-   "registration_url": "https://public.unpri.org/getting-started-in-nature-biodiversity-and-finance/9510.article",
-   "time_end": null,
-   "source": "PRI – Principles for Responsible Investment – Events",
-   "id": "62af0fa7bce441fe",
-   "first_seen": "2026-08-28",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Bundeshaushalt und Schuldenbremse: Wohin geht die Reise?",
    "title_ja": "連邦予算と債務ブレーキの行方",
    "organizer": "Deutsche Bundesbank, Hauptverwaltung Bayern",
@@ -13201,78 +13388,6 @@
    "source": "web検索(discovery)",
    "id": "825ea43b9f47c28c",
    "first_seen": "2026-08-30",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "BS|EF seminar \"Smart Contracting in Network Markets\"",
-   "title_ja": "ネットワーク市場におけるスマート・コントラクティング",
-   "organizer": "Banka Slovenije / Ekonomska fakulteta",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": "Ljubljana",
-   "venue": null,
-   "format": "onsite",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.bsi.si/en/upcoming-events/bs-ef-seminar-smart-contracting-in-network-markets",
-   "summary_ja": "ネットワーク市場における契約設計に関する研究セミナー。",
-   "summary_en": "Research seminar on contract design in network markets.",
-   "summary_de": "Forschungsseminar über Vertragsgestaltung in Netzwerkmärkten.",
-   "language": "en",
-   "country": "SI",
-   "organizer_short": "Banka Slovenije",
-   "title_short": "Contracting in Network Markets",
-   "importance": 0,
-   "registration_url": null,
-   "source": "Banka Slovenije – Events",
-   "id": "2040aff46dd8658f",
-   "first_seen": "2026-09-01",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "In conversation with Austan Goolsbee: Monetary policy in an uncertain world",
-   "title_ja": "グールズビー氏との対話:不確実な情勢下の金融政策",
-   "organizer": "OMFIF",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "central_bank"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.omfif.org/meetings/in-conversation-with-austan-goolsbee-monetary-policy-in-an-uncertain-world/",
-   "summary_ja": "OMFIFの「Conversations with the governor」シリーズとして、Austan Goolsbee氏を招き、インフレリスク下での金融政策運営について語り合う。",
-   "summary_en": "As part of OMFIF's Conversations with the governor series, Austan Goolsbee joins to discuss how policy-makers are balancing inflation risks amid an uncertain outlook for the US economy.",
-   "summary_de": "Im Rahmen der OMFIF-Reihe „Conversations with the governor“ spricht Austan Goolsbee darüber, wie die Geldpolitik Inflationsrisiken in einem unsicheren wirtschaftlichen Umfeld austariert.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "OMFIF",
-   "title_short": "US Monetary Policy Outlook",
-   "importance": 1,
-   "registration_url": "https://www.omfif.org/meetings/in-conversation-with-austan-goolsbee-monetary-policy-in-an-uncertain-world/",
-   "source": "OMFIF – Events/Meetings",
-   "id": "4cfd5e58bc5c00da",
-   "first_seen": "2026-09-01",
    "notables": [],
    "notable_tier": null
   },
@@ -14418,42 +14533,6 @@
      "role": null
     }
    ],
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "The Paris Agreement Ten Years Later: Navigating Climate Uncertainty and Tipping Points",
-   "title_ja": "パリ協定から10年：気候不確実性と転換点に対応する",
-   "organizer": "Law and Finance Research Institute (LawFin)",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": "Frankfurt am Main",
-   "venue": "House of Finance, Goethe University",
-   "format": "onsite",
-   "themes": [
-    "climate_esg"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "無料。セミナー形式。",
-   "registration_note_en": "Free admission. Seminar format.",
-   "registration_note_de": "Kostenlos. Seminarformat.",
-   "url": "https://www.lawfin.uni-frankfurt.de/events/event?tx_calendarize_calendar%5Baction%5D=detail&tx_calendarize_calendar%5Bcontroller%5D=Calendar&tx_calendarize_calendar%5Bindex%5D=312",
-   "registration_url": null,
-   "summary_ja": "パリ協定採択から10年。気候危機の経済・法的影響とリスク管理を討議するセミナー。",
-   "summary_en": "Seminar marking 10 years since Paris Agreement. Discusses economic and legal impacts of climate crisis, climate risks and financial resilience.",
-   "summary_de": "Seminar zum 10-jährigen Jahrestag des Pariser Abkommens. Erörtert wirtschaftliche, rechtliche Folgen der Klimakrise und Finanzstabilität.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "LawFin",
-   "title_short": "Paris Agreement & Climate Risks",
-   "importance": 1,
-   "source": "House of Finance (Goethe大) – Veranstaltungen",
-   "id": "fdb41eba5d4e8c77",
-   "first_seen": "2026-09-10",
    "notables": [],
    "notable_tier": null
   },
@@ -17576,44 +17655,6 @@
    "notable_tier": null
   },
   {
-   "title": "Foreign bonds, Territorial Change and Repudiation: The Silesian Bonds Saga",
-   "title_ja": "外債・領土変更・債務不履行:シレジア債券の事例",
-   "organizer": "CFS, House of Finance",
-   "date_start": "2026-09-21",
-   "date_end": null,
-   "time": null,
-   "city": "Frankfurt am Main",
-   "venue": "Goethe University",
-   "format": "onsite",
-   "themes": [
-    "fin_markets",
-    "geopolitics"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://gfk-cfs.de/events/lectures/foreign-bonds-territorial-change-and-repudiation-the-silesian-bonds-saga/",
-   "summary_ja": "領土紛争と国家債務の後継性に関する歴史的事例研究。シレジア債券の実例から国際金融の複雑な問題を分析する。",
-   "summary_en": "A lecture examining territorial conflict and sovereign debt succession through the historical case of the Silesian Bonds.",
-   "summary_de": "Ein Vortrag zu Fragen der Staatsschuldennachfolge bei Territorialkonflikten am Beispiel der schlesischen Anleihen.",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "CFS",
-   "title_short": "Silesian Bonds Saga",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "speakers": [],
-   "source": "House of Finance (Goethe大) – Veranstaltungen",
-   "id": "d9c76179cab2408d",
-   "first_seen": "2026-09-20",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "AI Week Frankfurt 2026",
    "title_ja": "AIウィーク・フランクフルト2026",
    "organizer": "AI Hub Frankfurt (AI Hub GmbH)",
@@ -18829,14 +18870,64 @@
    "title_short": "Payment Fraud and Financial Crime",
    "importance": 2,
    "registration_url": "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-19-global-payment-fraud-financial-crime-summit.html",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Martin Kocher",
+     "org": "OeNB",
+     "role": "Governor"
+    },
+    {
+     "name": "Andreas Holzer",
+     "org": "BMI",
+     "role": "Director, Criminal Intelligence Service Austria"
+    },
+    {
+     "name": "Giuseppe Lopez",
+     "org": "Europol",
+     "role": "Head of the European Financial and Economic Crime Centre"
+    },
+    {
+     "name": "Thomas Lammer",
+     "org": "BIS",
+     "role": "Deputy Head of Secretariat"
+    },
+    {
+     "name": "Patrick Papsdorf",
+     "org": "ECB",
+     "role": "Head of the Rulebook Division"
+    },
+    {
+     "name": "Francesca Hopwood Road",
+     "org": "BIS",
+     "role": "Head of the BIS Innovation Centre London"
+    },
+    {
+     "name": "Julien Lasalle",
+     "org": "Banque de France",
+     "role": "Deputy Director, Cash & Retail Payments Policy and Oversight"
+    },
+    {
+     "name": "Karina Kubelková",
+     "org": "CNB",
+     "role": "Bank Board member"
+    }
+   ],
    "source": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
    "title_ja": "決済詐欺・金融犯罪サミット(ウィーン2026)",
    "id": "ca692364653fc4bf",
    "first_seen": "2026-09-24",
    "organizer": "Oesterreichische Nationalbank",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "martin-kocher",
+     "name": "Martin Kocher",
+     "group": "ncb",
+     "tier": 1,
+     "short": "OeNB Gov.",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
   },
   {
    "title": "BS|EF seminar \"The Deference Graft: The Making of the Canadian Business Judgment Rule\"",
@@ -24269,9 +24360,9 @@
    "notable_tier": null
   },
   {
-   "title": "Michaela Pagel (WUSTL): \"tba\"",
-   "title_ja": "ECONtribute講演：Pagel",
-   "organizer": "ECONtribute – Cluster of Excellence \"Markets & Public Policy\"",
+   "title": "Michaela Pagel (WUSTL): \"Opportunistic Borrowing in the Credit Card Market\"",
+   "title_ja": "クレジットカード市場での機会主義的借入",
+   "organizer": "ECONtribute",
    "date_start": "2026-10-28",
    "date_end": null,
    "time": "12:00",
@@ -24288,20 +24379,20 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "url": "https://econtribute.de/event/michaela-pagel-wustl-tba/",
-   "summary_ja": "Michaela Pagel氏（Washington University in St. Louis）が報告するECONtributeの定例研究セミナー（報告テーマは未公表）。",
-   "summary_en": "Michaela Pagel (Washington University in St. Louis) gives a talk at this regular ECONtribute research seminar (topic not yet announced).",
-   "summary_de": "Michaela Pagel (Washington University in St. Louis) hält einen Vortrag im Rahmen dieses regelmäßigen ECONtribute-Forschungsseminars (Thema noch nicht bekannt gegeben).",
+   "summary_ja": "WUSTLのMichaela Pagel氏による研究セミナー。クレジットカード市場における機会主義的な借入行動を扱う。",
+   "summary_en": "Research seminar by Michaela Pagel (WUSTL) on opportunistic borrowing in the credit card market.",
+   "summary_de": "Forschungsseminar von Michaela Pagel (WUSTL) zu opportunistischer Kreditaufnahme auf dem Kreditkartenmarkt.",
    "language": "en",
    "country": "DE",
    "organizer_short": "ECONtribute",
-   "title_short": "Economics Research Seminar",
+   "title_short": "Credit Card Borrowing",
    "importance": 0,
    "registration_url": null,
    "time_end": "13:15",
    "speakers": [
     {
      "name": "Michaela Pagel",
-     "org": "Washington University in St. Louis",
+     "org": "WUSTL",
      "role": null
     }
    ],
@@ -26552,15 +26643,15 @@
   },
   {
    "title": "The SSM Reform Agenda: On the Path toward Efficient and Competitive Supervision?",
-   "title_ja": "SSMの改革課題と効率的な監督への道",
+   "title_ja": "SSM改革アジェンダ：効率的で競争力ある監督への道",
    "organizer": "Center for Financial Studies (CFS)",
    "date_start": "2026-11-26",
    "date_end": null,
    "time": null,
    "time_end": null,
    "city": "Frankfurt am Main",
-   "venue": null,
-   "format": null,
+   "venue": "Campus Westend, Goethe University Frankfurt",
+   "format": "onsite",
    "themes": [
     "fin_markets"
    ],
@@ -26571,16 +26662,47 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "url": "https://gfk-cfs.de/events/conferences/the-ssm-reform-agenda-on-the-path-toward-efficient-and-competitive-supervision/",
-   "summary_ja": "単一監督メカニズム(SSM)の改革課題と、効率的で競争力のある銀行監督の在り方を論じる会議。",
-   "summary_en": "A conference on the reform agenda of the Single Supervisory Mechanism (SSM) and how to achieve efficient and competitive bank supervision.",
-   "summary_de": "Konferenz zur Reformagenda des Einheitlichen Aufsichtsmechanismus (SSM) und zu effizienter, wettbewerbsfaehiger Bankenaufsicht.",
+   "summary_ja": "欧州中央銀行の単一監督メカニズム(SSM)の改革課題を、効率性と競争力の観点から専門家パネルで議論する会議。",
+   "summary_en": "A conference with an expert panel on the reform agenda of the ECB's Single Supervisory Mechanism, focusing on the efficiency and competitiveness of supervision.",
+   "summary_de": "Expertenkonferenz zur Reformagenda des einheitlichen Aufsichtsmechanismus (SSM) der EZB mit Blick auf Effizienz und Wettbewerbsfähigkeit der Aufsicht.",
    "language": "en",
    "country": "DE",
    "organizer_short": "CFS",
-   "title_short": "SSM Reform Agenda",
+   "title_short": "SSM Supervision Reform",
    "importance": 2,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Volker Brühl",
+     "org": "Center for Financial Studies",
+     "role": "Managing Director"
+    },
+    {
+     "name": "Henning Dankenbring",
+     "org": "KPMG",
+     "role": "Partner, Head of KPMG ECB Office"
+    },
+    {
+     "name": "Patrick Amis",
+     "org": "ECB",
+     "role": "Director General Horizontal Line Supervision"
+    },
+    {
+     "name": "Maya Atig",
+     "org": "FBF",
+     "role": "Chief Executive Officer"
+    },
+    {
+     "name": "Denise Bauer-Weiler",
+     "org": "UBS",
+     "role": "Head EMEA Group Compliance, Regulatory & Governance"
+    },
+    {
+     "name": "Hilmar Zettler",
+     "org": "Association of German Banks",
+     "role": "Member of the Executive Board"
+    }
+   ],
    "source": "House of Finance (Goethe大) – Veranstaltungen",
    "id": "1b4a9b2120fb2bf4",
    "first_seen": "2026-10-14",
@@ -26589,17 +26711,18 @@
   },
   {
    "title": "The Global Euro Starts at Home – Advancing the Global Euro by Completing Europe's Monetary Union",
-   "title_ja": "グローバル・ユーロの推進と通貨同盟の完成",
+   "title_ja": "ユーロの国際化は域内から：通貨同盟の完成",
    "organizer": "Center for Financial Studies (CFS)",
    "date_start": "2026-11-16",
    "date_end": null,
-   "time": null,
-   "time_end": null,
+   "time": "09:30",
+   "time_end": "17:30",
    "city": "Frankfurt am Main",
-   "venue": null,
-   "format": null,
+   "venue": "Casino Building, Campus Westend, Goethe University Frankfurt",
+   "format": "onsite",
    "themes": [
-    "central_bank"
+    "central_bank",
+    "fin_markets"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -26607,21 +26730,21 @@
    "registration_note": null,
    "registration_note_en": null,
    "registration_note_de": null,
-   "url": "https://gfk-cfs.de/events/presidential-lectures/the-global-euro-starts-at-home-advancing-the-global-euro-by-completing-europes-monetary-union/",
-   "summary_ja": "欧州通貨同盟を完成させ、ユーロの国際的役割を高める方策を論じるCFSの大統領講演会。",
-   "summary_en": "CFS presidential lecture on completing Europe's monetary union to advance the global role of the euro.",
-   "summary_de": "Presidential Lecture des CFS zur Vollendung der Europaeischen Waehrungsunion und zur Staerkung des Euro als globaler Waehrung.",
+   "url": "https://gfk-cfs.de/en/events/presidential-lectures/the-global-euro-starts-at-home-advancing-the-global-euro-by-completing-europes-monetary-union/",
+   "summary_ja": "CFS、LSE欧州研究所、EuroForwardの共催による会議。欧州の非ユーロ加盟EU国での通貨同盟の完成が、ユーロの国際的な信認と役割をどう強めるかを議論する。",
+   "summary_en": "Conference co-hosted by CFS, the LSE European Institute and EuroForward on how completing monetary union in the non-euro EU member states would strengthen the euro's international role.",
+   "summary_de": "Konferenz von CFS, LSE European Institute und EuroForward zur Frage, wie die Vollendung der Währungsunion in den übrigen EU-Mitgliedstaaten die internationale Rolle des Euro stärkt.",
    "language": "en",
    "country": "DE",
    "organizer_short": "CFS+",
-   "title_short": "Global Euro and Monetary Union",
+   "title_short": "Global Euro Monetary Union",
    "importance": 2,
    "registration_url": null,
    "speakers": [
     {
      "name": "Axel A. Weber",
      "org": "CFS",
-     "role": "President"
+     "role": "CFS President"
     },
     {
      "name": "Marek Belka",
@@ -26631,7 +26754,7 @@
     {
      "name": "Rainer Klump",
      "org": "CFS",
-     "role": "Director"
+     "role": "CFS Director"
     },
     {
      "name": "Ludovic Subran",
@@ -26647,11 +26770,6 @@
      "name": "Massimiliano Castelli",
      "org": "UBS",
      "role": null
-    },
-    {
-     "name": "Chris Giles",
-     "org": "FT",
-     "role": "Moderator"
     }
    ],
    "source": "House of Finance (Goethe大) – Veranstaltungen",
@@ -29832,6 +29950,431 @@
    ],
    "id": "d2200f294243d87b",
    "first_seen": "2026-10-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "New York Fed-ECB Conference on Nonbank Financial Institutions 2026",
+   "title_ja": "NY連銀・ECB ノンバンク金融機関会議",
+   "organizer": "New York Fed and European Central Bank",
+   "date_start": "2026-11-13",
+   "date_end": null,
+   "time": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.ecb.europa.eu/press/conferences/html/20261113_ny_fed_ecb.en.html",
+   "summary_ja": "ニューヨーク連銀とECBが共催する、ノンバンク金融機関(NBFI)をテーマとした会議。",
+   "summary_en": "Conference co-organised by the New York Fed and the ECB on nonbank financial institutions (NBFIs).",
+   "summary_de": "Konferenz der New York Fed und der EZB zu Nichtbank-Finanzinstituten (NBFI).",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "NY Fed/ECB",
+   "title_short": "Nonbank Financial Institutions",
+   "importance": 2,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "ECB – Conferences & seminars",
+   "id": "0113b7786203d113",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Fight, flight or freeze? Anticipating responses to physical climate risk",
+   "title_ja": "闘争・逃走・凍結？物理的気候リスクへの反応を予測",
+   "organizer": "PRI – Principles for Responsible Investment",
+   "date_start": "2026-11-04",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://public.unpri.org/all-events-and-webinars/fight-flight-or-freeze-anticipating-responses-to-physical-climate-risk/13688.article",
+   "summary_ja": "PRIのオンラインウェビナー。物理的な気候リスクに対して市場参加者がどう反応するかを見通すことをテーマとする。",
+   "summary_en": "Online PRI webinar on anticipating how market participants may respond to physical climate risk.",
+   "summary_de": "Online-Webinar der PRI zur Vorhersage, wie Marktteilnehmer auf physische Klimarisiken reagieren könnten.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "PRI",
+   "title_short": "Responses to Physical Climate Risk",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "PRI – Principles for Responsible Investment – Events",
+   "id": "2a8f4fcfe2e23283",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Blended finance in the sustainable blue economy",
+   "title_ja": "持続可能なブルーエコノミーのブレンデッドファイナンス",
+   "organizer": "UNEP Finance Initiative",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.unepfi.org/events/blended-finance-in-the-sustainable-blue-economy/",
+   "summary_ja": "海洋は気候調整・生物多様性・食料安全保障・生計を支える基盤であり、ブルーエコノミーへの資金動員(ブレンデッドファイナンス)を扱うウェビナー。",
+   "summary_en": "A UNEP FI webinar on blended finance for the sustainable blue economy, where ocean-based activity underpins climate regulation, biodiversity, food security and livelihoods.",
+   "summary_de": "UNEP-FI-Webinar zu Blended Finance für die nachhaltige Blaue Wirtschaft, die Klimaregulierung, Biodiversität, Ernährungssicherheit und Lebensgrundlagen trägt.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UNEP FI",
+   "title_short": "Blended Finance for Blue Economy",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "UNEP FI – Events",
+   "id": "38ce929b41291aec",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "LinkedIn for Japanese Expats",
+   "title_ja": "在独日本人向けLinkedInセミナー",
+   "organizer": "Deutsch-Japanischer Wirtschaftskreis (DJW)",
+   "organizer_short": "DJW",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "18:00",
+   "time_end": "22:00",
+   "city": "Hamburg",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "japan"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/linkedin-for-japanese-expats",
+   "summary_ja": "在独の日本人を対象に、LinkedInのプロフィール作成とブランディングを実践的に学ぶDJWのイベント。",
+   "summary_en": "DJW event for Japanese expats in Germany on building LinkedIn profiles and personal branding in a hands-on format.",
+   "summary_de": "DJW-Veranstaltung für japanische Expats in Deutschland zu LinkedIn-Profilen und Personal Branding mit praxisnahem Vorgehen.",
+   "language": null,
+   "country": "DE",
+   "title_short": "Career Branding for Expats",
+   "importance": 1,
+   "speakers": [],
+   "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
+   "id": "420b12c9f96d5b8a",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Tax Cuts and the Rise in Intangibles",
+   "title_ja": "減税と無形資産の増加",
+   "organizer": "Leibniz-Institut für Wirtschaftsforschung Halle (IWH)",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:45",
+   "city": "Halle (Saale)",
+   "venue": "IWH, conference room and via Zoom",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/tax-cuts-and-the-rise-in-intangibles",
+   "summary_ja": "フランクフルト・スクール・オブ・ファイナンス&マネジメントのThorsten Martin氏による研究報告。減税と無形資産投資の拡大の関係を扱う。",
+   "summary_en": "Research seminar by Thorsten Martin (Frankfurt School of Finance & Management) on the link between tax cuts and the rise in intangible assets.",
+   "summary_de": "Forschungsseminar von Thorsten Martin (Frankfurt School of Finance & Management) zum Zusammenhang zwischen Steuersenkungen und dem Anstieg immaterieller Vermögenswerte.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IWH",
+   "title_short": "Tax Cuts and Intangibles",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Thorsten Martin",
+     "org": "Frankfurt School",
+     "role": null
+    }
+   ],
+   "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+   "id": "4f396151f9967231",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Sustainable Finance Webinar Series | Beyond single company climate risk disclosure: event-based physical risk reporting",
+   "title_ja": "単一企業を超える気候リスク開示:事象ベースの物理リスク報告",
+   "organizer": "Swiss Bankers Association",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": "11:00",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "会員機関の従業員のみ登録可",
+   "registration_note_en": "Open only to employees of member institutions",
+   "registration_note_de": "Nur für Mitarbeitende von Mitgliedsinstituten",
+   "url": "https://www.swissbanking.ch/en/services/events/sustainable-finance-webinar-series-beyond-single-company-climate-risk-disclosure-event-based-physical-risk-reporting",
+   "summary_ja": "スイス銀行協会のサステナブルファイナンス・ウェビナー連続企画の1回。事象ベースの物理的気候リスク報告という新たな手法を紹介する。",
+   "summary_en": "Part of the Swiss Bankers Association's sustainable finance webinar series, presenting a new event-based approach to physical climate risk reporting to support investment decisions and portfolio resilience.",
+   "summary_de": "Teil der Webinarreihe zu Sustainable Finance der Schweizerischen Bankiervereinigung: Vorgestellt wird ein neuer ereignisbasierter Ansatz zur Berichterstattung über physische Klimarisiken.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "SBA",
+   "title_short": "Event-Based Physical Climate Risk",
+   "importance": 1,
+   "registration_url": "https://events.swissbanking.ch/en/event/beyond-single-company-climate-risk-disclosure",
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Bresch",
+     "org": "ETH Zurich",
+     "role": null
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "60b6796b33c48358",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Hohe Bewertungen, steigende Kreditrisiken – wie stabil ist das deutsche Finanzsystem?",
+   "title_ja": "高評価・信用リスク増、独金融システムは安定か",
+   "organizer": "ECONtribute",
+   "date_start": "2026-11-16",
+   "date_end": null,
+   "time": "18:00",
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets",
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://econtribute.de/",
+   "summary_ja": "資産評価が高水準にある中で信用リスクが高まる状況を踏まえ、ドイツの金融システムがどの程度安定しているかを問う一般公開イベント。",
+   "summary_en": "Public event asking how stable the German financial system is, given high valuations and rising credit risks.",
+   "summary_de": "Öffentliche Veranstaltung zur Frage, wie stabil das deutsche Finanzsystem angesichts hoher Bewertungen und steigender Kreditrisiken ist.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "ECONtribute",
+   "title_short": "German Financial Stability",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": "19:30",
+   "speakers": [],
+   "source": "ECONtribute (Bonn/Köln) – Events",
+   "id": "69377c95f2b34d3a",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "AI data centres and responsible investment: tools to navigate a rapidly changing landscape",
+   "title_ja": "AIデータセンターと責任投資:急変する環境を読み解くツール",
+   "organizer": "PRI – Principles for Responsible Investment",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": "15:00",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ai",
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.unpri.org/events/webinar-ai-data-centres",
+   "summary_ja": "PRIのオンラインウェビナー。AIデータセンターと責任投資をテーマに、急速に変化する環境に対応するためのツールを扱う。",
+   "summary_en": "Online PRI webinar on AI data centres and responsible investment, presenting tools for a rapidly changing landscape.",
+   "summary_de": "Online-Webinar der PRI zu KI-Rechenzentren und verantwortungsvollen Investments, mit Werkzeugen für ein sich schnell änderndes Umfeld.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "PRI",
+   "title_short": "AI Data Centres and Investment",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "PRI – Principles for Responsible Investment – Events",
+   "id": "79820f8703aeaba0",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Key takeaways from the ECB November 2026 Financial Stability Review",
+   "title_ja": "ECB 2026年11月金融安定報告書の要点",
+   "organizer": "SUERF BAFFI Bocconi",
+   "date_start": "2026-11-23",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets",
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.suerf.org/events/key-takeaways-from-the-ecb-november-2026-financial-stability-review/",
+   "summary_ja": "SUERF・ボッコーニ大学BAFFIセンターによるオンラインのe-lecture。ECBの2026年11月金融安定報告書(Financial Stability Review)の要点を取り上げる。",
+   "summary_en": "Online e-lecture by SUERF and the BAFFI Centre at Bocconi University on the key takeaways from the ECB's November 2026 Financial Stability Review.",
+   "summary_de": "Online-E-Lecture von SUERF und dem BAFFI-Zentrum der Bocconi-Universität zu den wichtigsten Erkenntnissen aus dem Finanzstabilitätsbericht der EZB vom November 2026.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "SUERF",
+   "title_short": "ECB Financial Stability Review",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "SUERF – Events",
+   "id": "a9e8fa8aee46513a",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Japan meets Berlin-Brandenburg",
+   "title_ja": "Japan meets ベルリン・ブランデンブルク",
+   "organizer": "Deutsch-Japanischer Wirtschaftskreis (DJW)",
+   "organizer_short": "DJW",
+   "date_start": "2026-12-02",
+   "date_end": null,
+   "time": "18:00",
+   "time_end": "21:00",
+   "city": "Berlin",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "japan"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/japan-meets-berlin-brandenburg-202612",
+   "summary_ja": "ベルリン・ブランデンブルク地域で開かれる、DJWによる日独のネットワーキング・情報交換イベント。",
+   "summary_en": "DJW networking and information event on German-Japanese business exchange in the Berlin-Brandenburg region.",
+   "summary_de": "DJW-Netzwerkveranstaltung mit Information und Austausch zu den deutsch-japanischen Wirtschaftsbeziehungen in Berlin-Brandenburg.",
+   "language": null,
+   "country": "DE",
+   "title_short": "Japan-Berlin Business Networking",
+   "importance": 1,
+   "speakers": [],
+   "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
+   "id": "e7cf1898ac72e68d",
+   "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Frankfurter Gespräche 2026: Ökonomische Bildung: Orientierung geben, Stabilität vermitteln, Vertrauen schaffen",
+   "title_ja": "フランクフルター対話2026：経済教育の議論",
+   "organizer": "Ludwig-Erhard-Stiftung mit der Deutschen Bundesbank",
+   "date_start": "2026-10-26",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bundesbank.de/de/service/termine/frankfurter-gespraeche-2026-1009886",
+   "summary_ja": "ルートヴィヒ・エアハルト財団とブンデスバンクの共催によるパネル討論。テーマは経済教育で、方向性を示すこと、安定を伝えること、信頼を築くことを取り上げる。",
+   "summary_en": "A panel discussion co-hosted by the Ludwig-Erhard-Stiftung and the Deutsche Bundesbank on economic education: giving orientation, conveying stability and building trust.",
+   "summary_de": "Podiumsdiskussion der Ludwig-Erhard-Stiftung mit der Deutschen Bundesbank zur ökonomischen Bildung: Orientierung geben, Stabilität vermitteln, Vertrauen schaffen.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "LE-Stiftung/Bundesbank",
+   "title_short": "Economic Education and Trust",
+   "importance": 1,
+   "speakers": [],
+   "source": "Bundesbank – Termine",
+   "id": "fa3e0a22ef873c0a",
+   "first_seen": "2026-10-22",
    "notables": [],
    "notable_tier": null
   }
