@@ -148,7 +148,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-08-17",
-  "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い 2026-10-22 調査: 一覧は独自ウィジェットが /o/hnb-content/v1/search(GET、structureId=3820166、assetCategoryIds 等)を呼んで描画するが、実ブラウザ(Playwright)でもこの API がトップページの HTML を 404 で返し、一覧は空のまま。Chromium 描画(--wait 15000)も本文 1,136 字で無意味。Liferay の asset publisher ページ送り(cur=1..5)はページネータだけでエントリ本体を含まない。headless-delivery API は 403。sitemap.xml は空。サイト側の不具合と判断し、描画・待ち時間の調整では解決しない。復旧確認は月1回程度 API を叩けばよい。日次は従来どおり検索補完。"
+  "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い 2026-10-22 調査: 一覧は独自ウィジェットが /o/hnb-content/v1/search(GET、structureId=3820166、assetCategoryIds 等)を呼んで描画するが、実ブラウザ(Playwright)でもこの API がトップページの HTML を 404 で返し、一覧は空のまま。Chromium 描画(--wait 15000)も本文 1,136 字で無意味。Liferay の asset publisher ページ送り(cur=1..5)はページネータだけでエントリ本体を含まない。headless-delivery API は 403。sitemap.xml は空。サイト側の不具合と判断し、描画・待ち時間の調整では解決しない。復旧確認は月1回程度 API を叩けばよい。日次は従来どおり検索補完。 2026-10-22: discovery_topics に INOMICS 経由(site:inomics.com Dubrovnik Economic Conference / Young Economists' Seminar)の検索観点を追加。"
  },
  "Jacques Delors Centre (Hertie School, Berlin) – Events": {
   "method": "search",
