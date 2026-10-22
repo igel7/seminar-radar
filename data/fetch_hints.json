@@ -293,7 +293,7 @@
  "Daiwa Anglo-Japanese Foundation – Events": {
   "method": "chromium",
   "last_ok": "2026-10-22",
-  "note": "2026-10-22: ua-curl 403, Chromium (--wait 5000) renders upcoming list incl. detail links (/event/<slug>). Confirmed again.",
+  "note": "2026-10-22: ua-curl 403, Chromium (--wait 5000) renders upcoming list incl. detail links (/event/<slug>). Confirmed again. 2026-10-22: Routine 本番で curl 403・Chromium 描画は成功(--wait 5000)と記録されたため render: chromium を付与(描画に失敗した環境では通常取得に戻る)。",
   "render": "chromium"
  },
  "CBBC – China-Britain Business Council – Events": {
