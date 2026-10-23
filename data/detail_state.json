@@ -34,6 +34,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://hpi.de/en/ai-hpi-conference": {
+  "event_id": "e1ddfb6cb97f8733",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://industry.sfi.ch/en/sfi-event": {
   "event_id": "1ace20c75b6ca7de",
   "http": 200,
@@ -83,6 +90,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.bafin.de/shareddocs/veranstaltungen/de/261110_fachtagung_geldwaesche_terrorismusfinanzierung.html": {
+  "event_id": "bafad36148ace94d",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.bafin.de/shareddocs/veranstaltungen/de/261120_praktikerdialog_wphg_compliance.html": {
   "event_id": "3b9bef55ae580ce9",
   "http": 200,
@@ -97,11 +111,25 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.bafin.de/shareddocs/veranstaltungen/de/261208_it_finanzsektor.html": {
+  "event_id": "e12e39ad936ce0bb",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.bankofalbania.org/shtypi/njoftimet_per_shtyp/thirrje_p_e_r_aplikime_workshop-i_xx_i_k_e_rkimeve_ekonomike_p_e_r_evrop_e_n_juglindore_tiran_e_24-25_n_e_ntor_2026.html": {
   "event_id": "03e546d2b3b3c65c",
   "http": 200,
   "last": "2026-10-14",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.bis.org/events/cfp_261210-bis.htm": {
+  "event_id": "e4325a00146e4b38",
+  "http": 404,
+  "last": "2026-10-23",
+  "result": "FAIL-HTTP",
   "tries": 1
  },
  "https://www.bundesbank.de/de/service/termine/3-fachtagung-zur-regulierung-von-wertpapierinstituten-in-der-kapitalmarktunion-964146": {
@@ -160,6 +188,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.dfv-eurofinance.com/events/frankfurt-meets-davos-the-summit-2027": {
+  "event_id": "53114f4d62f74bab",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.diw.de/de/diw_01.c.1010628.de/veranstaltungen/the_economics_of_crime_and_criminal_justice.html": {
   "event_id": "547288cd84fd6bd7",
   "http": 403,
@@ -202,10 +237,24 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.ecb.europa.eu/press/conferences/html/20261113_ny_fed_ecb.en.html": {
+  "event_id": "0113b7786203d113",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.ecb.europa.eu/press/conferences/html/20261123_escb_research_cluster3.en.html": {
   "event_id": "8e10ccb23e6ae387",
   "http": 200,
   "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ecb.europa.eu/press/conferences/html/20261201_cb_econ_model_frontiers.en.html": {
+  "event_id": "c843b7cc6d285253",
+  "http": 200,
+  "last": "2026-10-23",
   "result": "ok",
   "tries": 1
  },
@@ -244,10 +293,31 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.forum-ng.org/en/termine/veranstaltung/eurosif-policy-capacity-building-webinar-1-1-1": {
+  "event_id": "2d173f63acea8db3",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.govevents.com/event/25877/global-security-and-innovation-summit": {
+  "event_id": "db5ad10064cff934",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.hojinkai.de/activities/327": {
   "event_id": "b5d1ac6c404291ca",
   "http": 200,
   "last": "2026-10-16",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.hslu.ch/de-ch/wirtschaft/agenda/veranstaltungen/2026/12/01/ifz-swiss-stewardship-forum": {
+  "event_id": "3ed10ec79d99d74b",
+  "http": 200,
+  "last": "2026-10-23",
   "result": "ok",
   "tries": 1
  },
@@ -276,6 +346,13 @@
   "event_id": "e2b806902699eca7",
   "http": 200,
   "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ifo.de/en/cesifo/event/2026-12-03/cesifo-transform-workshop-economic-and-societal-impacts-ai-2026": {
+  "event_id": "3ff2ed33a5bd304f",
+  "http": 200,
+  "last": "2026-10-23",
   "result": "ok",
   "tries": 1
  },
@@ -349,10 +426,24 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/european-digital-sovereignty-forum-2": {
+  "event_id": "8b2b88016035d75e",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/european-sub-sovereign-and-agency-forum-3": {
   "event_id": "8f966184b58a3c7b",
   "http": 200,
   "last": "2026-10-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/japans-new-policy-era": {
+  "event_id": "921a2fe576dc2f9d",
+  "http": 200,
+  "last": "2026-10-23",
   "result": "ok",
   "tries": 1
  },
@@ -388,6 +479,20 @@
   "event_id": "0e1568aa6f8f5242",
   "http": 200,
   "last": "2026-10-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.world-finance-conference.com/conference.php": {
+  "event_id": "a6fa9fe88d3add30",
+  "http": 200,
+  "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.wu.ac.at/en/isk": {
+  "event_id": "4a9f2d7306f59be8",
+  "http": 200,
+  "last": "2026-10-23",
   "result": "ok",
   "tries": 1
  },

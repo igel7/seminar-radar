@@ -405,42 +405,6 @@
    "notable_tier": 1
   },
   {
-   "title": "Der Digitale Euro: Das Geld der Zukunft?",
-   "title_ja": "デジタルユーロ:未来のお金か",
-   "organizer": "Deutsche Bundesbank",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "17:30",
-   "city": "Saarbrücken",
-   "venue": "Hauptverwaltung Rheinland-Pfalz und Saarland",
-   "format": "onsite",
-   "themes": [
-    "central_bank"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "連邦銀行地方本部主催の一般向け公開講演。詳細は開催ページを参照。",
-   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/der-digitale-euro-das-geld-der-zukunft--814728",
-   "summary_ja": "デジタルユーロについてのブンデスバンクの講演。",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "Bundesbank",
-   "title_short": "Digital Euro: Future Money?",
-   "importance": 1,
-   "registration_url": "https://em.bundesbank.de/microsite/index.cfm?l=14979",
-   "time_end": null,
-   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
-   "id": "b2216992f550a9a4",
-   "first_seen": "2026-07-14",
-   "summary_en": "A Bundesbank talk on whether the digital euro is the money of the future.",
-   "summary_de": "Ein Vortrag der Bundesbank zur Frage, ob der digitale Euro das Geld der Zukunft ist.",
-   "registration_note_en": "A public lecture hosted by a Bundesbank regional head office; see the event page for details.",
-   "registration_note_de": "Ein von einer Bundesbank-Hauptverwaltung veranstalteter öffentlicher Vortrag; Details siehe Veranstaltungsseite.",
-   "fee_amount": 0,
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "efl Annual Conference 2026: Better Data, Less Fragmentation & More Retail – Success Factors for European Financial Markets?",
    "title_ja": "eflアニュアルカンファレンス2026",
    "organizer": "efl (Institute Center for Financial Services Innovation and Digitalization), Deutsche Börse AG",
@@ -949,42 +913,6 @@
      "role": "speaker"
     }
    ],
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "NBU Annual Research Conference: Central Banks' Response to Future Challenges – Resilience, Credibility, and Innovation",
-   "title_ja": "NBU年次リサーチ会議:将来の課題への中央銀行の対応",
-   "organizer": "National Bank of Ukraine",
-   "date_start": "2026-09-21",
-   "date_end": "2026-09-22",
-   "time": "10:00",
-   "city": "Kyiv",
-   "venue": "National Bank of Ukraine",
-   "format": "hybrid",
-   "themes": [
-    "central_bank",
-    "ukraine"
-   ],
-   "fee": "free",
-   "open_to_public": false,
-   "registration_note": "要事前登録。ウクライナ中銀の研究イベント。",
-   "url": "https://bank.gov.ua/en/research/events",
-   "summary_ja": "レジリエンス・信認・イノベーションをテーマとするウクライナ国立銀行の年次リサーチ会議。",
-   "language": "en",
-   "country": "UA",
-   "organizer_short": "NBU",
-   "title_short": "Central Bank Resilience Conference",
-   "importance": 3,
-   "registration_url": "https://bank.gov.ua/en/research/events/330",
-   "time_end": "18:00",
-   "source": "NBU – National Bank of Ukraine – Research Events",
-   "id": "4df6eb6df620a715",
-   "first_seen": "2026-07-16",
-   "summary_en": "The National Bank of Ukraine's annual research conference on how central banks respond to future challenges: resilience, credibility and innovation.",
-   "summary_de": "Die Jahresforschungskonferenz der Nationalbank der Ukraine zur Reaktion von Zentralbanken auf künftige Herausforderungen: Resilienz, Glaubwürdigkeit und Innovation.",
-   "registration_note_en": "Advance registration required. NBU research event.",
-   "registration_note_de": "Anmeldung erforderlich. NBU-Forschungsevent.",
    "notables": [],
    "notable_tier": null
   },
@@ -1673,8 +1601,59 @@
    "registration_note_en": "Free of charge with limited capacity; programme and registration details expected around September 2026. Restricted to financial sector and audit professionals.",
    "registration_note_de": "Kostenlos mit begrenzter Kapazität; Programm- und Anmeldedetails voraussichtlich ab September 2026. Nur für Finanzsektor- und Prüfungsvertreter.",
    "fee_amount": 0,
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "birgit-rodolphe",
+     "name": "Birgit Rodolphe",
+     "group": "supervisor",
+     "tier": 2,
+     "short": "BaFin Exec. Director",
+     "former": false
+    }
+   ],
+   "notable_tier": 2,
+   "speakers": [
+    {
+     "name": "Birgit Rodolphe",
+     "org": "Bafin",
+     "role": "Exekutivdirektorin Anti-Financial Crime"
+    },
+    {
+     "name": "Alexander Michels",
+     "org": "Bafin",
+     "role": null
+    },
+    {
+     "name": "Andreas Eichelberg",
+     "org": "Bafin",
+     "role": null
+    },
+    {
+     "name": "Thomas Lang",
+     "org": "Bafin",
+     "role": null
+    },
+    {
+     "name": "Philipp Thiel",
+     "org": "Bafin",
+     "role": null
+    },
+    {
+     "name": "Christoph Kuhn",
+     "org": "Bundesministerium der Finanzen",
+     "role": null
+    },
+    {
+     "name": "Jan Kupka",
+     "org": "Deutsche Bank",
+     "role": null
+    },
+    {
+     "name": "Thora Funken",
+     "org": "FIU",
+     "role": null
+    }
+   ]
   },
   {
    "title": "19. Jahreskonferenz Nachhaltige Geldanlagen",
@@ -1819,8 +1798,57 @@
    "registration_note_en": "Free of charge with limited capacity; advance sign-up is not possible, details expected mid-September 2026. Restricted to ICT leaders/experts at supervised institutions.",
    "registration_note_de": "Kostenlos mit begrenzter Kapazität; eine Vormerkung ist nicht möglich, Details voraussichtlich ab Mitte September 2026. Nur für IKT-Führungskräfte und -Experten beaufsichtigter Unternehmen.",
    "fee_amount": 0,
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "mark-branson",
+     "name": "Mark Branson",
+     "group": "supervisor",
+     "tier": 1,
+     "short": "BaFin President",
+     "former": false
+    },
+    {
+     "person": "nikolas-speer",
+     "name": "Nikolas Speer",
+     "group": "supervisor",
+     "tier": 2,
+     "short": "BaFin Exec. Director",
+     "former": false
+    }
+   ],
+   "notable_tier": 1,
+   "speakers": [
+    {
+     "name": "Mark Branson",
+     "org": "Bafin",
+     "role": "Präsident"
+    },
+    {
+     "name": "Nikolas Speer",
+     "org": "Bafin",
+     "role": "Exekutivdirektor Bankenaufsicht"
+    },
+    {
+     "name": "Daniela Mucha",
+     "org": "Bafin",
+     "role": null
+    },
+    {
+     "name": "Michael Spreitzenbarth",
+     "org": "Munich Re",
+     "role": null
+    },
+    {
+     "name": "Christoph Ruckert",
+     "org": "Bafin",
+     "role": null
+    },
+    {
+     "name": "Jörg Cornelius Schneider",
+     "org": "Deutsche Bank",
+     "role": null
+    }
+   ]
   },
   {
    "title": "International Macroeconomics and Finance Annual Meeting 2026",
@@ -3068,8 +3096,59 @@
    "summary_de": "In Zusammenarbeit mit der Deutschen Bundesbank bringt dieses Forum auf Einladung rund 40 hochrangige Vertreter aus Zentralbanken, Aufsichtsbehörden, Regierungen, Banken und Technologieanbietern zusammen, um die Stärkung der europäischen digitalen Souveränität in den Bereichen KI, Cloud Computing, Dateninfrastruktur und Zahlungsverkehr zu diskutieren.",
    "registration_note_en": "Invitation-only; interested parties may register their interest via the online form.",
    "registration_note_de": "Nur auf Einladung; Interessierte können über das Online-Formular ihr Interesse bekunden.",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "fritzi-kohler-geib",
+     "name": "Fritzi Köhler-Geib",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
+    }
+   ],
+   "notable_tier": 2,
+   "speakers": [
+    {
+     "name": "Ulf Slopek",
+     "org": "Bundesbank",
+     "role": "President of the Regional Office in Hesse"
+    },
+    {
+     "name": "Matthias Hauer",
+     "org": "Ministry of Research, Technology and Space",
+     "role": "Parliamentary State Secretary"
+    },
+    {
+     "name": "Fritzi Köhler-Geib",
+     "org": "Bundesbank",
+     "role": "Member of the Executive Board"
+    },
+    {
+     "name": "Louisa Solonar-Unterasinger",
+     "org": "Hessian Ministry for Digitalisation and Innovation",
+     "role": "Chief Information Officer and Commissioner for E-Government and Information Technology"
+    },
+    {
+     "name": "Nadja Baulecke",
+     "org": "Schwarz Digits",
+     "role": "VP Financial Services and Insurance"
+    },
+    {
+     "name": "Nicola Beer",
+     "org": "EIB",
+     "role": "Vice-President"
+    },
+    {
+     "name": "Thomas Hellmann",
+     "org": "University of Oxford",
+     "role": "DP World Professor of Entrepreneurship and Innovation"
+    },
+    {
+     "name": "Menno Broos",
+     "org": "DNB",
+     "role": "Project Lead, Digital Euro"
+    }
+   ]
   },
   {
    "title": "RWI Impulse: Affordable Housing in times of Demographic Change and the Green Transition",
@@ -4105,42 +4184,6 @@
    "notable_tier": null
   },
   {
-   "title": "Turkish Banking Evening 26",
-   "title_ja": "トルコ銀行イブニング26",
-   "organizer": "Frankfurt School of Finance &amp; Management",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "17:15",
-   "city": "Frankfurt am Main",
-   "venue": "Frankfurt School of Finance &amp; Management, Adickesallee 32-34",
-   "format": "onsite",
-   "themes": [
-    "fin_markets",
-    "geopolitics"
-   ],
-   "fee": "paid",
-   "open_to_public": false,
-   "registration_note": "招待制のレセプション形式イベント",
-   "url": "https://forum.frankfurt-school.de/konferenzen/turkish-banking-evening/",
-   "summary_ja": "欧州で活動するトルコ系銀行のための外交・経済レセプション。",
-   "language": "en+de",
-   "country": "DE",
-   "organizer_short": "Frankfurt School",
-   "title_short": "Turkish Banking Evening",
-   "importance": 1,
-   "registration_url": "https://tbe26.eventbrite.de",
-   "time_end": null,
-   "source": "Frankfurt School of Finance & Management – Events",
-   "id": "d9db91eb897ccdff",
-   "first_seen": "2026-07-24",
-   "summary_en": "Diplomatic and economic reception for Turkish banks operating across Europe.",
-   "summary_de": "Diplomatischer und wirtschaftlicher Empfang für in Europa tätige türkische Banken.",
-   "registration_note_en": "Invitation-only reception-style event",
-   "registration_note_de": "Veranstaltung nur auf Einladung",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "6. Jahreskonferenz der Marktoffensive Erneuerbare Energien",
    "title_ja": "再生可能エネルギー市場攻勢 第6回年次会議",
    "organizer": "dena (Deutsche Energie-Agentur)",
@@ -4740,42 +4783,6 @@
    "summary_de": "Schulungsprogramm für Kommunalverwaltungen zur Energieeffizienz und Erreichung von Klimazielen.",
    "registration_note_en": "Online seminar, registration required",
    "registration_note_de": "Online-Seminar, Anmeldung erforderlich",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Energiesprong Kick-off-Workshop: \"Einführung in die serielle Sanierung\"",
-   "title_ja": "エネルギースプロング導入ワークショップ",
-   "organizer": "dena – Deutsche Energie-Agentur",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "10:30",
-   "city": null,
-   "venue": "Zoom",
-   "format": "online",
-   "themes": [
-    "climate_esg",
-    "real_economy"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "オンライン開催(Zoom)、無料",
-   "url": "https://veranstaltungen.dena.de/",
-   "summary_ja": "建築物の連続的エネルギー改修手法(Energiesprong)についての導入ワークショップ。",
-   "language": "de",
-   "country": null,
-   "organizer_short": "dena",
-   "title_short": "Serial Building Renovation",
-   "importance": 1,
-   "registration_url": "https://veranstaltungen.dena.de/",
-   "time_end": "12:00",
-   "source": "dena – Deutsche Energie-Agentur (Berlin)",
-   "id": "bb756c352da2c12b",
-   "first_seen": "2026-07-25",
-   "summary_en": "Introductory workshop on the Energiesprong serial building renovation method.",
-   "summary_de": "Einführungsworkshop zur seriellen Sanierungsmethode Energiesprong.",
-   "registration_note_en": "Online via Zoom, free",
-   "registration_note_de": "Online via Zoom, kostenlos",
    "notables": [],
    "notable_tier": null
   },
@@ -5421,7 +5428,19 @@
    "registration_note_en": "Invitation/paper-selection based academic workshop on AI's impact on labor markets, productivity and firm organization.",
    "registration_note_de": "Akademischer Workshop mit Papierauswahl zu den Auswirkungen von KI auf Arbeitsmarkt, Produktivität und Unternehmensorganisation.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Joshua Gans",
+     "org": "University of Toronto",
+     "role": null
+    },
+    {
+     "name": "Eleonora Alabrese",
+     "org": "University of Bath",
+     "role": null
+    }
+   ]
   },
   {
    "title": "IWH Research Seminar - Jillian Grennan",
@@ -6424,42 +6443,6 @@
    "notable_tier": null
   },
   {
-   "title": "EBS Executive School / Sustainable & Responsible Investments (SRI) / 14. Jahrgang",
-   "title_ja": "EBS Executive School ESG関連投資",
-   "organizer": "EBS Executive School",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "11:00",
-   "city": "Oestrich-Winkel",
-   "venue": "EBS Executive School",
-   "format": "onsite",
-   "themes": [
-    "climate_esg"
-   ],
-   "fee": "paid",
-   "open_to_public": true,
-   "registration_note": "全7日間の認定コース。受講料4,950ユーロ。詳細はwww.ebs.edu/sriを参照。",
-   "url": "https://www.forum-ng.org/en/termine/veranstaltung/ebs-executive-school-sustainable-responsible-investments-sri-14-jahrgang",
-   "summary_ja": "EBSエグゼクティブスクールによる持続可能で責任ある投資に関する教育プログラム。第14期。",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "EBS",
-   "title_short": "SRI Executive Program",
-   "importance": 1,
-   "registration_url": "https://www.ebs.edu/sri",
-   "time_end": null,
-   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
-   "id": "bc65eba18c36f43f",
-   "first_seen": "2026-07-27",
-   "summary_en": "Executive education program on sustainable and responsible investments in its 14th year.",
-   "summary_de": "Executive-Ausbildungsprogramm zu nachhaltige und verantwortungsvolle Investments, 14. Jahrgang.",
-   "registration_note_en": "Seven-day certificate programme; total cost EUR 4,950. Details at www.ebs.edu/sri.",
-   "registration_note_de": "Siebentägiger Zertifikatslehrgang; Gesamtkosten 4.950 Euro. Details unter www.ebs.edu/sri.",
-   "fee_amount": 4950,
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Macro CRC TR 224 Seminar: Leonard Bocquet",
    "title_ja": "マクロ経済学セミナー:Leonard Bocquet",
    "organizer": "Universität Mannheim",
@@ -6940,41 +6923,6 @@
    "summary_de": "Networking-Gipfel in Davos mit Führungspersönlichkeiten aus Wirtschaft, Politik und Finanzen.",
    "registration_note_en": "Summit for around 100 top decision-makers from business, politics, finance and academia",
    "registration_note_de": "Gipfeltreffen für rund 100 Entscheidungsträger aus Wirtschaft, Politik, Finanzen und Wissenschaft",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "RWI Environmental and Behavioral Economics Seminar: Niels Mede",
-   "title_ja": "RWI環境・行動経済学セミナー(Niels Mede)",
-   "organizer": "RWI Essen",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "11:00",
-   "city": "Essen",
-   "venue": "RWI Essen",
-   "format": "onsite",
-   "themes": [
-    "climate_esg"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "RWI Research Seminarの定例回。通常火曜開催、演題は未掲載(講演者名のみ確認)。",
-   "url": "https://www.rwi-essen.de/veranstaltungen",
-   "summary_ja": "ワーヘニンゲン大学のNiels Mede氏を招いたRWIの環境・行動経済学セミナー。",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "RWI Essen",
-   "title_short": "Environmental Economics Seminar",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": "12:00",
-   "source": "RWI Essen – Veranstaltungen",
-   "id": "60fb4668ca8a4d30",
-   "first_seen": "2026-07-28",
-   "summary_en": "An RWI Environmental and Behavioral Economics Seminar with speaker Niels Mede (Wageningen University & Research).",
-   "summary_de": "Ein RWI-Seminar zu Umwelt- und Verhaltensökonomie mit dem Referenten Niels Mede (Wageningen University & Research).",
-   "registration_note_en": "Regular RWI Research Seminar session, usually held on Tuesdays; talk title not published, only the speaker's name.",
-   "registration_note_de": "Reguläre Sitzung des RWI Research Seminar, meist dienstags; Vortragstitel nicht veröffentlicht, nur Name des Vortragenden bekannt.",
    "notables": [],
    "notable_tier": null
   },
@@ -10497,49 +10445,6 @@
    "notable_tier": null
   },
   {
-   "title": "International Health Economics",
-   "title_ja": "国際保健経済学ワークショップ",
-   "organizer": "ZEW Mannheim",
-   "date_start": "2026-09-21",
-   "date_end": "2026-09-22",
-   "time": null,
-   "city": "Mannheim",
-   "venue": "ZEW",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "要事前登録",
-   "registration_note_en": "Advance registration required",
-   "registration_note_de": "Anmeldung erforderlich",
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/international-health-economics/4894",
-   "summary_ja": "国際的な保健経済学の研究と政策に関するワークショップ。",
-   "summary_en": "Workshop on international health economics research and policy.",
-   "summary_de": "Workshop zur internationalen Gesundheitsökonomie und -politik.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ZEW",
-   "title_short": "International Health Economics",
-   "importance": 2,
-   "registration_url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/international-health-economics/4894",
-   "time_end": null,
-   "source": "ZEW Mannheim – Veranstaltungen",
-   "id": "51fdd673e6516388",
-   "first_seen": "2026-08-20",
-   "speakers": [
-    {
-     "name": "Jonathan Skinner",
-     "org": "Dartmouth College",
-     "role": "Professor"
-    }
-   ],
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "AWA Export Control Conference 2027",
    "title_ja": "AWA輸出管理会議2027",
    "organizer": "AWA Außenwirtschafts-Akademie GmbH",
@@ -10609,79 +10514,6 @@
    "source": "Bitkom (Berlin) – Veranstaltungen",
    "id": "c8b0a72fe78e15e8",
    "first_seen": "2026-08-20",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "SAFE-IBF Lecture: Thirty Years of Utilising Financial History To Forecast the Future",
-   "title_ja": "金融史と予測セミナー",
-   "organizer": "SAFE, Institute for Banking and Financial History",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "無料オンラインセミナー",
-   "registration_note_en": "Free online lecture",
-   "registration_note_de": "Kostenloses Online-Seminar",
-   "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-ibf-lecture-thirty-years-of-utilising-financial-history-to-forecast-the-future-the-good-the-bad-the-ugly.html",
-   "summary_ja": "金融史を用いた経済予測と今後の展望について、専門家による講演。",
-   "summary_en": "Lecture on using financial history lessons to understand and forecast economic developments.",
-   "summary_de": "Vortrag über die Nutzung von Finanzgeschichte zur Prognose wirtschaftlicher Entwicklungen.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "SAFE",
-   "title_short": "Financial History",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "House of Finance (Goethe大) – Veranstaltungen",
-   "id": "fa942712cbf9aca7",
-   "first_seen": "2026-08-20",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Nachhaltige Geldanlagen 26 – Investing in Transformation | Next Generation ESG",
-   "title_ja": "サステナブルファイナンス・ESGカンファレンス",
-   "title_short": "Sustainable Finance and ESG",
-   "organizer": "Frankfurt School of Finance & Management",
-   "organizer_short": "Frankfurt School",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": "Frankfurt am Main",
-   "venue": null,
-   "format": "onsite",
-   "country": "DE",
-   "themes": [
-    "climate_esg",
-    "fin_markets"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://forum.frankfurt-school.de/konferenzen/",
-   "registration_url": null,
-   "summary_ja": "サステナブルファイナンス、ESG投資、気候リスク規制、カーボン市場について論じる国際カンファレンス。",
-   "summary_en": "Frankfurt School conference on sustainable finance, ESG investing, climate risk regulation, and carbon markets.",
-   "summary_de": "Konferenz zu nachhaltigen Geldanlagen, ESG-Kriterien, Klimarisikoregulierung und Kohlenstoffmärkten.",
-   "language": "de",
-   "importance": 2,
-   "source": "Frankfurt School of Finance & Management – Events",
-   "id": "18da6d83d83a3fb7",
-   "first_seen": "2026-08-21",
    "notables": [],
    "notable_tier": null
   },
@@ -11331,42 +11163,6 @@
    "time_end": null,
    "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
    "id": "8d912a8c6ff11a7f",
-   "first_seen": "2026-08-22",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "SAFE-IBF Lecture: Financial History",
-   "title_ja": "金融史講演会",
-   "organizer": "SAFE and IBF",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "city": "Frankfurt am Main",
-   "venue": null,
-   "format": "onsite",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://safe-frankfurt.de",
-   "summary_ja": "金融予測の歴史に関する講演。",
-   "summary_en": "Lecture on the history of financial forecasting.",
-   "summary_de": "Vortrag zur Geschichte der Finanzprognose.",
-   "language": null,
-   "country": "DE",
-   "organizer_short": "SAFE",
-   "title_short": "Financial History",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "House of Finance (Goethe大) – Veranstaltungen",
-   "id": "aa4d2f9ed4e9a06e",
    "first_seen": "2026-08-22",
    "notables": [],
    "notable_tier": null
@@ -12087,8 +11883,24 @@
    "source": "Bundesbank – Termine",
    "id": "ce93262e94ea5209",
    "first_seen": "2026-08-23",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "lutz-lienenkamper",
+     "name": "Lutz Lienenkämper",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
+    }
+   ],
+   "notable_tier": 2,
+   "speakers": [
+    {
+     "name": "Lutz Lienenkämper",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Ökofinanz-21 Herbsttagung 2026: Die politischen Dimensionen des Investierens",
@@ -12674,42 +12486,6 @@
    "time_end": null,
    "source": "SSF",
    "id": "d1ae0a5eeb86b3e8",
-   "first_seen": "2026-08-26",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Turkish Banking Evening 26",
-   "title_ja": "トルコ銀行業界イブニング26",
-   "organizer": "Frankfurt School of Finance & Management",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": null,
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": "詳細ページから要事前登録。トルコの銀行関係者を招くレセプション形式の催し。",
-   "registration_note_en": "Advance registration via the event page; a reception-style gathering hosted with Turkish banks.",
-   "registration_note_de": "Anmeldung über die Veranstaltungsseite; internationaler Empfang mit türkischen Banken.",
-   "url": "https://forum.frankfurt-school.de/konferenzen/",
-   "summary_ja": "トルコの銀行関係者を招いたフランクフルト・スクール主催のレセプション。",
-   "summary_en": "A reception hosted by Frankfurt School for representatives of Turkish banks.",
-   "summary_de": "Von der Frankfurt School ausgerichteter Empfang für Vertreter türkischer Banken.",
-   "language": null,
-   "country": "DE",
-   "organizer_short": "Frankfurt School",
-   "title_short": "Turkish Banking Reception",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "Frankfurt School of Finance & Management – Events",
-   "id": "dcfcb070cde0795a",
    "first_seen": "2026-08-26",
    "notables": [],
    "notable_tier": null
@@ -15133,42 +14909,6 @@
    "notable_tier": null
   },
   {
-   "title": "Building AI Capabilities: The Path to an Agent-Native Organization",
-   "title_ja": "AI能力構築：エージェント・ネイティブ組織への道",
-   "organizer": "appliedAI Institute",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "10:10",
-   "city": "Munich",
-   "venue": null,
-   "format": "onsite",
-   "themes": [
-    "ai"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "要事前登録",
-   "registration_note_en": "Advance registration required",
-   "registration_note_de": "Anmeldung erforderlich",
-   "url": "https://www.appliedai-institute.de/en/workshops-trainings/ki-kompetenzen-aufbauen-der-weg-zur-agent-native-organisation/",
-   "summary_ja": "EU AI Act第4条の要件を踏まえ、組織がエージェント型AIを活用できる体制を構築する方法を学ぶワークショップ(ドイツ語)。",
-   "summary_en": "Workshop (in German) giving a comprehensive overview of Article 4 of the EU AI Act and the resulting requirements for building agent-native AI capabilities.",
-   "summary_de": "Workshop (auf Deutsch) mit einem umfassenden Überblick über Artikel 4 des EU-AI-Acts und die daraus resultierenden Anforderungen für den Aufbau agentenfähiger KI-Kompetenzen.",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "appliedAI",
-   "title_short": "AI Act Article 4",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "appliedAI Institute (München) – Events",
-   "id": "86dd3c5b05fc6dbf",
-   "first_seen": "2026-09-11",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Exploring Nature Data #2 | Understanding the Updates to the WWF Risk Filter Suite 3.0",
    "title_ja": "自然データ探索#2",
    "organizer": "Swiss Sustainable Finance",
@@ -15508,49 +15248,6 @@
    "source": "web検索(discovery)",
    "id": "cc3948a61fc73e38",
    "first_seen": "2026-09-11",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Using Preferential Trade Agreements: Evidence from Colombian Firms",
-   "title_ja": "特恵的貿易協定の活用 — コロンビア企業の事例",
-   "organizer": "Kiel Institut für Weltwirtschaft",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "city": "Kiel",
-   "venue": "Kiel Institut für Weltwirtschaft",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "無料。一般向けセミナー",
-   "registration_note_en": "Free, open seminar",
-   "registration_note_de": "Kostenloses Seminar für die Öffentlichkeit",
-   "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/using-preferential-trade-agreements-carsten-brockhaus/",
-   "summary_ja": "国際貿易協定がコロンビア企業の国際競争力に与える影響についての研究発表。",
-   "summary_en": "Research seminar on how preferential trade agreements affect firm-level export behavior.",
-   "summary_de": "Forschungsseminar über die Auswirkungen von Handelspräferenzen auf Unternehmensexporte.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "IfW Kiel",
-   "title_short": "Trade Agreements and Exports",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "IfW Kiel – Veranstaltungen",
-   "id": "cdb5307e50ed6fd8",
-   "first_seen": "2026-09-11",
-   "speakers": [
-    {
-     "name": "Carsten Brockhaus",
-     "org": null,
-     "role": null
-    }
-   ],
    "notables": [],
    "notable_tier": null
   },
@@ -16104,7 +15801,48 @@
    "importance": 2,
    "registration_url": "https://hpi.de/en/registration/2026/aihpi-conference-2026/",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Thomas Jarzombek",
+     "org": "Federal Ministry for Digital Transformation",
+     "role": "Parliamentary State Secretary"
+    },
+    {
+     "name": "Rolf-Dieter Jungk",
+     "org": "Federal Ministry of Research, Technology and Space",
+     "role": "State Secretary"
+    },
+    {
+     "name": "Agnes Heftberger",
+     "org": "Microsoft",
+     "role": "Corporate Vice President & CEO"
+    },
+    {
+     "name": "Daniela Rittmeier",
+     "org": "Rittmeier.AI",
+     "role": "CEO"
+    },
+    {
+     "name": "Gina Vargiu-Breuer",
+     "org": "SAP",
+     "role": "Chief People and Culture Officer, Member of the Executive Board"
+    },
+    {
+     "name": "Ranga Yogeshwar",
+     "org": null,
+     "role": "Physicist & Speaker"
+    },
+    {
+     "name": "Friederike Hoffmann",
+     "org": "b2venture",
+     "role": "Partner"
+    },
+    {
+     "name": "Klaus-Robert Müller",
+     "org": "TU Berlin",
+     "role": "Professor of Machine Learning"
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "e1ddfb6cb97f8733",
    "first_seen": "2026-09-14",
@@ -16932,86 +16670,6 @@
    "notable_tier": null
   },
   {
-   "title": "Straflose Hetzer",
-   "title_ja": "罰せられないヘイトスピーチ扇動者",
-   "organizer": "Junge DGAP",
-   "organizer_short": "Junge DGAP",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": "19:00",
-   "time_end": "21:00",
-   "city": null,
-   "country": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "geopolitics"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "無料",
-   "registration_note_en": "Free",
-   "registration_note_de": "Kostenlos",
-   "url": "https://dgap.org/de/veranstaltungen/straflose-hetzer",
-   "registration_url": null,
-   "summary_ja": "情報機関、警察、民主的レジリエンスの緊張関係を扱うイベント。ヘイトスピーチへの対処を検討。",
-   "summary_en": "Event exploring tensions between intelligence services, police, and democratic resilience in combating hate speech.",
-   "summary_de": "Veranstaltung zur Auseinandersetzung mit Spannungen zwischen Geheimdiensten, Polizei und demokratischer Resilienz.",
-   "language": "de",
-   "speakers": [],
-   "source": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
-   "title_short": "Hate Speech and Democracy",
-   "importance": 0,
-   "id": "78ee25ce4f9c5ca6",
-   "first_seen": "2026-09-17",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Demografischer Wandel und Migrationswende – qualifizierte Zuwanderer gewinnen und junge Menschen binden",
-   "title_ja": "人口動態変化と移民政策",
-   "organizer": "Institut der deutschen Wirtschaft Köln",
-   "organizer_short": "IW Köln",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": null,
-   "country": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.iwkoeln.de/institut/veranstaltungen/axel-pluennecke-demografischer-wandel-und-migrationswende-qualifizierte-zuwanderer-gewinnen-und-junge-menschen-binden.html",
-   "registration_url": null,
-   "summary_ja": "IWケルンのオンライン講演シリーズの一環として、人口動態の変化と移民政策をテーマに議論する。",
-   "summary_en": "Part of IW Köln's online lecture series, discussing demographic change and the shift in migration policy toward attracting skilled migrants.",
-   "summary_de": "Im Rahmen der virtuellen Vortragsreihe des IW Köln geht es um demografischen Wandel und Migrationswende.",
-   "language": "de",
-   "speakers": [
-    {
-     "name": "Axel Plünnecke",
-     "org": "IW Köln",
-     "role": null
-    }
-   ],
-   "source": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
-   "title_short": "Demographic Change and Migration",
-   "importance": 1,
-   "id": "8918b0e2efc48a81",
-   "first_seen": "2026-09-17",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "What makes Europe resilient? Security, social cohesion, and state capacity in an age of geopolitical conflict",
    "title_ja": "ヨーロッパのレジリエンスを支えるもの",
    "organizer": "Jacques Delors Centre",
@@ -17684,12 +17342,27 @@
    "importance": 2,
    "registration_url": "https://ai-week-frankfurt.com/tickets",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Fritzi Köhler-Geib",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "22292ea36b21649e",
    "first_seen": "2026-09-21",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "fritzi-kohler-geib",
+     "name": "Fritzi Köhler-Geib",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
+    }
+   ],
+   "notable_tier": 2
   },
   {
    "title": "Free Lunch in Banking",
@@ -18059,50 +17732,6 @@
    "registration_url": null,
    "source": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
    "id": "5d5c25a3ea62544d",
-   "first_seen": "2026-09-22",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Oil Price Elasticity of GDP and Exchange Rate Transmission: Cross-Country Evidence and Russia's Two Sanctions Waves",
-   "title_ja": "石油価格弾力性と為替転嫁:対ロシア制裁の実証分析",
-   "organizer": "Bank of Finland Institute for Emerging Economies (BOFIT)",
-   "date_start": "2026-09-22",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "central_bank",
-    "real_economy"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.bofit.fi/en/research/seminars/",
-   "summary_ja": "本セミナーでは、石油価格ショックの為替相場への転嫁について各国比較の実証分析を行い、対ロシア制裁の2つの波が及ぼした影響を事例として検討する。",
-   "summary_en": "This BOFIT research seminar presents cross-country evidence on the transmission of oil price shocks to exchange rates, examining Russia's two waves of sanctions as a case study.",
-   "summary_de": "Dieses BOFIT-Forschungsseminar untersucht länderübergreifend die Übertragung von Ölpreisschocks auf Wechselkurse und betrachtet dabei die beiden russischen Sanktionswellen als Fallstudie.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "BOFIT",
-   "title_short": "Oil Shocks and Sanctions Transmission",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": null,
-   "speakers": [
-    {
-     "name": "Eugene Nivorozhkin",
-     "org": "UCL",
-     "role": null
-    }
-   ],
-   "source": "BOFIT – Bank of Finland Institute for Emerging Economies – Events",
-   "id": "720098097b312ade",
    "first_seen": "2026-09-22",
    "notables": [],
    "notable_tier": null
@@ -19427,9 +19056,9 @@
    "notable_tier": null
   },
   {
-   "title": "State Censorship and Global Demand: Evidence from China's Book Bans",
-   "title_ja": "国家検閲と世界需要:中国の書籍発禁の実証",
-   "organizer": "BOFIT",
+   "title": "Key insights from the IMF’s October 2026 World Economic Outlook, Global Financial Stability Report and Fiscal Monitor",
+   "title_ja": "IMF 2026年10月版WEO・GFSR・財政モニターの要点",
+   "organizer": "SUERF BAFFI Bocconi",
    "date_start": "2026-10-27",
    "date_end": null,
    "time": "10:30",
@@ -19439,22 +19068,23 @@
    "format": "online",
    "country": null,
    "themes": [
-    "china"
+    "real_economy",
+    "fin_markets"
    ],
    "fee": "free",
    "fee_amount": 0,
    "open_to_public": true,
-   "registration_note": "要事前登録・オンライン",
-   "registration_note_en": "Advance registration required, online",
-   "registration_note_de": "Anmeldung erforderlich, online",
-   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/2026/2026-10-27-li/",
+   "registration_note": "事前登録あり",
+   "registration_note_en": "Advance registration available",
+   "registration_note_de": "Anmeldung möglich",
+   "url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/",
    "registration_url": "https://www.suerf.org/events/key-insights-from-the-imfs-october-2026-world-economic-outlook-global-financial-stability-report-and-fiscal-monitor/registration",
-   "summary_ja": "BOFITのオンラインセミナー。Duke Kunshan UniversityのPeiyuan Li氏が、中国の書籍発禁を用いて国家検閲がグローバルな需要に与える影響を報告する。",
-   "summary_en": "BOFIT online seminar where Peiyuan Li (Duke Kunshan University) presents evidence from China's book bans on how state censorship affects global demand.",
-   "summary_de": "Online-Seminar des BOFIT, in dem Peiyuan Li (Duke Kunshan University) anhand der Buecherverbote in China untersucht, wie staatliche Zensur die globale Nachfrage beeinflusst.",
+   "summary_ja": "SUERF BAFFI Bocconi によるオンラインのe-lecture。IMFの2026年10月版『世界経済見通し』『国際金融安定報告書』『財政モニター』の主要な論点を解説する。",
+   "summary_en": "Online SUERF BAFFI Bocconi e-lecture presenting the key takeaways from the IMF’s October 2026 World Economic Outlook, Global Financial Stability Report and Fiscal Monitor.",
+   "summary_de": "Online-E-Lecture der SUERF BAFFI Bocconi mit den wichtigsten Erkenntnissen aus dem Weltwirtschaftsausblick, dem Global Financial Stability Report und dem Fiscal Monitor des IWF vom Oktober 2026.",
    "language": "en",
-   "organizer_short": "BOFIT",
-   "title_short": "Censorship and Global Demand",
+   "organizer_short": "SUERF",
+   "title_short": "IMF Outlook Key Insights",
    "importance": 1,
    "speakers": [
     {
@@ -26950,7 +26580,48 @@
    "title_short": "Swiss Stewardship Forum",
    "importance": 2,
    "registration_url": "https://www.hslu.ch/de-ch/wirtschaft/agenda/veranstaltungen/2026/12/01/ifz-swiss-stewardship-forum/",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Stefan Behringer",
+     "org": "IFZ",
+     "role": "Head of CC Controlling"
+    },
+    {
+     "name": "Christina Böck",
+     "org": "Boeck Consulting",
+     "role": "Managing Partner"
+    },
+    {
+     "name": "Silvia Gatti",
+     "org": "Glass Lewis",
+     "role": "Senior Director of Research"
+    },
+    {
+     "name": "Manuel Gesslein",
+     "org": "IFZ",
+     "role": "Wissenschaftlicher Mitarbeiter"
+    },
+    {
+     "name": "Tamara Hardegger",
+     "org": "SVVK-ASIR",
+     "role": "Geschäftsführerin"
+    },
+    {
+     "name": "Timo Heroth",
+     "org": "IFZ",
+     "role": "Stewardship Lead"
+    },
+    {
+     "name": "David Mondl",
+     "org": "Inrate",
+     "role": "Head of Active Ownership"
+    },
+    {
+     "name": "Matthias Narr",
+     "org": "Ethos",
+     "role": "Head Engagement"
+    }
+   ],
    "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
    "id": "3ed10ec79d99d74b",
    "first_seen": "2026-10-14",
@@ -27584,11 +27255,11 @@
   },
   {
    "title": "Fundamentals of AI: From Machine Learning to AI Agents",
-   "title_ja": "AIの基礎: 機械学習からAIエージェントまで",
-   "organizer": "appliedAI Institute",
+   "title_ja": "AIの基礎：機械学習からAIエージェントまで",
+   "organizer": "appliedAI Institute for Europe gGmbH",
    "date_start": "2026-10-26",
    "date_end": null,
-   "time": null,
+   "time": "10:10",
    "time_end": null,
    "city": "Munich",
    "venue": null,
@@ -27604,13 +27275,13 @@
    "registration_note_de": null,
    "registration_url": null,
    "url": "https://www.appliedai-institute.de/en/workshops-trainings/grundlagen-der-ki-von-maschinellem-lernen-bis-zu-ki-agenten-2/",
-   "summary_ja": "AIの学習の仕組み、言語モデルの働き、エージェント型システムの現在の能力を学ぶ基礎講座。",
-   "summary_en": "A foundational course on how AI learns, how language models work, and what agent-based systems can do today.",
-   "summary_de": "Grundlagenkurs: wie KI lernt, wie Sprachmodelle funktionieren und was agentenbasierte Systeme heute leisten.",
+   "summary_ja": "AIがどのように学習し、言語モデルがどう動き、エージェント型システムが今何をできるのかを学ぶ入門ワークショップ（ドイツ語）。",
+   "summary_en": "An introductory workshop (in German) on how AI learns, how language models work, and what agent-based systems can do today.",
+   "summary_de": "Einführungsworkshop (auf Deutsch) zu den Grundlagen der KI: wie KI lernt, wie Sprachmodelle funktionieren und was agentenbasierte Systeme heute leisten.",
    "language": "de",
    "country": "DE",
    "organizer_short": "appliedAI",
-   "title_short": "AI Fundamentals and Agents",
+   "title_short": "Fundamentals of AI Agents",
    "importance": 1,
    "speakers": [],
    "source": "appliedAI Institute (München) – Events",
@@ -27659,11 +27330,11 @@
   },
   {
    "title": "Understanding AI Agents: From ML, LLMs to Autonomous Systems",
-   "title_ja": "AIエージェントの理解: MLからLLM・自律システムまで",
-   "organizer": "appliedAI Institute",
+   "title_ja": "AIエージェントの理解：ML・LLMから自律システムまで",
+   "organizer": "appliedAI Institute for Europe gGmbH",
    "date_start": "2026-11-05",
    "date_end": null,
-   "time": null,
+   "time": "13:01",
    "time_end": null,
    "city": "Heilbronn",
    "venue": null,
@@ -27678,11 +27349,11 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "registration_url": null,
-   "url": "https://www.appliedai-institute.de/en/participate/events/",
-   "summary_ja": "機械学習と大規模言語モデルの基礎から、エージェント型システムの特徴、業務プロセスへの適用可否の判断までを学ぶ研修。",
-   "summary_en": "Training that moves from ML and LLM basics to what sets agentic systems apart and how to judge which processes suit an agentic approach.",
-   "summary_de": "Schulung von den Grundlagen des maschinellen Lernens und von LLMs bis zu agentischen Systemen und zur Einschätzung geeigneter Prozesse.",
-   "language": "de",
+   "url": "https://www.appliedai-institute.de/en/workshops-trainings/understanding-ai-agents-from-ml-llms-to-autonomous-systems/",
+   "summary_ja": "機械学習とLLMから自律型システムまでを概観し、どの業務プロセスがエージェント型アプローチに向くかを判断する研修。",
+   "summary_en": "A training that moves from machine learning and LLMs to autonomous systems, helping participants judge which processes suit an agentic approach.",
+   "summary_de": "Training von maschinellem Lernen und LLMs bis zu autonomen Systemen, mit Kriterien dafür, welche Prozesse sich für einen agentenbasierten Ansatz eignen.",
+   "language": "en",
    "country": "DE",
    "organizer_short": "appliedAI",
    "title_short": "Understanding AI Agents",
@@ -29025,7 +28696,18 @@
    "organizer_short": "OMFIF",
    "title_short": "Japan's Monetary Policy Transition",
    "importance": 2,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Kazuhiro Masaki",
+     "org": "BOJ",
+     "role": "Assistant governor"
+    },
+    {
+     "name": "Mark Sobel",
+     "org": "OMFIF",
+     "role": "Vice Chair and Chief Economist"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "921a2fe576dc2f9d",
    "first_seen": "2026-10-18",
@@ -29715,11 +29397,11 @@
   {
    "source": "appliedAI Institute (München) – Events",
    "title": "KI Fahrstunde: Prompting & LLMs",
-   "title_ja": "KI Fahrstunde: プロンプトとLLM",
-   "organizer": "appliedAI Institute for Europe",
+   "title_ja": "KI Fahrstunde：プロンプトとLLM",
+   "organizer": "appliedAI Institute for Europe gGmbH",
    "date_start": "2026-11-12",
    "date_end": null,
-   "time": null,
+   "time": "13:01",
    "time_end": null,
    "city": "Munich",
    "venue": null,
@@ -29735,13 +29417,13 @@
    "registration_note_de": "Anmeldung über die Detailseite",
    "registration_url": null,
    "url": "https://www.appliedai-institute.de/en/workshops-trainings/ki-fahrstunde-prompting-llms-3/",
-   "summary_ja": "大規模言語モデルから成果を引き出すためのプロンプト設計を、気軽で実践的な形で学ぶ入門講座。",
-   "summary_en": "A relaxed, practical introduction to getting the most out of large language models through smart prompting.",
-   "summary_de": "Eine lockere, praxisnahe Einführung, wie man mit gezielten Prompts das Beste aus großen Sprachmodellen herausholt.",
+   "summary_ja": "スマートなプロンプトで大規模言語モデルを使いこなすための、気軽で実践的な講座（ドイツ語）。",
+   "summary_en": "A relaxed, practical session (in German) on getting more out of large language models with smart prompts.",
+   "summary_de": "Lockere, praxisnahe Einführung (auf Deutsch), wie sich große Sprachmodelle mit guten Prompts besser nutzen lassen.",
    "language": "de",
    "country": "DE",
    "organizer_short": "appliedAI",
-   "title_short": "Prompting and LLM Basics",
+   "title_short": "Prompting and LLMs",
    "importance": 1,
    "speakers": [],
    "id": "8bcc144b5170b225",
@@ -29983,7 +29665,48 @@
    "importance": 2,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Jing Huang",
+     "org": "Texas A&M",
+     "role": null
+    },
+    {
+     "name": "Isha Agarwal",
+     "org": "UBC",
+     "role": null
+    },
+    {
+     "name": "Matteo Leombroni",
+     "org": "Boston College",
+     "role": null
+    },
+    {
+     "name": "Thierry Foucault",
+     "org": "HEC Paris",
+     "role": null
+    },
+    {
+     "name": "Laura Blattner",
+     "org": "FinRegLab",
+     "role": null
+    },
+    {
+     "name": "Randall Guynn",
+     "org": "Federal Reserve Board",
+     "role": null
+    },
+    {
+     "name": "Luc Laeven",
+     "org": "ECB",
+     "role": null
+    },
+    {
+     "name": "Shohini Kundu",
+     "org": "UCLA",
+     "role": null
+    }
+   ],
    "source": "ECB – Conferences & seminars",
    "id": "0113b7786203d113",
    "first_seen": "2026-10-22",
@@ -30375,6 +30098,226 @@
    "source": "Bundesbank – Termine",
    "id": "fa3e0a22ef873c0a",
    "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Fuels Conference 2026: Germany's Perspectives in the Global Molecular Market",
+   "title_ja": "燃料会議2026:世界の分子市場とドイツ",
+   "organizer": "World Energy Council Germany / en2x",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "17:00",
+   "city": "Berlin",
+   "venue": "Hotel Telegraphenamt, Monbijoustraße 11",
+   "format": "onsite",
+   "themes": [
+    "real_economy",
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "申込詳細は主催者ページ参照(ページ上に記載なし)",
+   "registration_note_en": "See organiser page for registration details (not stated on event page)",
+   "registration_note_de": "Anmeldedetails siehe Veranstalterseite (auf der Eventseite nicht angegeben)",
+   "registration_url": null,
+   "url": "https://www.worldenergy.org/experiences-events/events/entry/world-energy-council-germany-fuels-conference-2026",
+   "summary_ja": "ドイツ・欧州の炭化水素経済の将来を扱い、製油所・輸入・貿易を気候中立へ移行させる道筋と、投資や新技術を促す政策条件を議論する。",
+   "summary_en": "Covers the future of Germany's and Europe's hydrocarbon economy: how refineries, imports and trade can move toward climate neutrality and which policy and infrastructure conditions spur investment.",
+   "summary_de": "Behandelt die Zukunft der deutschen und europäischen Kohlenwasserstoffwirtschaft: Wege von Raffinerien, Importen und Handel zur Klimaneutralität sowie Rahmenbedingungen für Investitionen.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "WEC Germany/en2x",
+   "title_short": "Fuels in Global Molecule Market",
+   "importance": 1,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "1cf0e5b8c76cf824",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "熊谷徹氏講演会ご案内",
+   "title_ja": "熊谷徹氏講演会：メルツ政権と社会保障改革",
+   "organizer": "フランクフルト日本法人会",
+   "date_start": "2026-11-06",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.hojinkai.de/activities/332",
+   "summary_ja": "在独ジャーナリストの熊谷徹氏が、社会保障制度改革と右翼勢力の台頭がメルツ政権に投げかける課題を論じる講演会。",
+   "summary_en": "A talk by German-based journalist Toru Kumagai on the challenges that social security reform and the rise of the far right pose for the Merz government.",
+   "summary_de": "Vortrag des in Deutschland lebenden Journalisten Toru Kumagai über die Herausforderungen, die Reformen der Sozialsysteme und der Aufstieg der Rechten für die Regierung Merz mit sich bringen.",
+   "language": null,
+   "country": null,
+   "organizer_short": "Hojinkai Frankfurt",
+   "title_short": "German Politics and Social Reform",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "熊谷徹",
+     "org": null,
+     "role": "在独ジャーナリスト"
+    }
+   ],
+   "source": "フランクフルト日本法人会 – 行事・活動",
+   "id": "332f29a21cea5bf3",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "AI data centres and responsible investment: tools to navigate a rapidly changing landscape",
+   "title_ja": "AIデータセンターと責任投資：変化する環境への対応ツール",
+   "organizer": "PRI (Principles for Responsible Investment)",
+   "date_start": "2026-12-03",
+   "date_end": null,
+   "time": "15:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.unpri.org/events/webinar-ai-data-centres",
+   "summary_ja": "PRIのオンラインウェビナー。AIデータセンターと責任投資をテーマに、急速に変化する領域を見極めるためのツールを紹介する。",
+   "summary_en": "Online PRI webinar on AI data centres and responsible investment, presenting tools to navigate a rapidly changing landscape.",
+   "summary_de": "Online-Webinar der PRI zu KI-Rechenzentren und verantwortungsvollen Investments, mit Werkzeugen für ein sich rasch wandelndes Umfeld.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "PRI",
+   "title_short": "AI Data Centres and Investment",
+   "importance": 1,
+   "speakers": [],
+   "source": "PRI – Principles for Responsible Investment – Events",
+   "id": "509c00b9aa56b993",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Webinarreihe: EU Budget Talks",
+   "title_ja": "EU予算協議ウェビナーシリーズ",
+   "organizer": "ZEW Mannheim",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": "Online (Webinar)",
+   "format": "online",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/webinarreihe-eu-budget-talks/4906?cHash=75a21b40a7fd61bd2ea32427171b7f30",
+   "summary_ja": "EUの予算交渉を取り上げるウェビナーシリーズ（#ZEWlive）。",
+   "summary_en": "A #ZEWlive webinar series on the EU budget negotiations.",
+   "summary_de": "Webinarreihe (#ZEWlive) zu den Verhandlungen über den EU-Haushalt.",
+   "language": null,
+   "country": null,
+   "organizer_short": "ZEW",
+   "title_short": "EU Budget Talks",
+   "importance": 1,
+   "speakers": [],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "f6d50e6486e9417d",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Energy Day 2026: Energy under Stress – How do we respond to geopolitical shifts?",
+   "title_ja": "エネルギーデー2026:地政学とエネルギー安全保障",
+   "organizer": "World Energy Council Germany (Weltenergierat – Deutschland)",
+   "date_start": "2026-12-09",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "Berlin-Brandenburgische Akademie der Wissenschaften, Gendarmenmarkt",
+   "format": "onsite",
+   "themes": [
+    "geopolitics",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "オンライン登録フォームあり(参加費・対象は未記載)",
+   "registration_note_en": "Online registration form available (fee and eligibility not stated)",
+   "registration_note_de": "Online-Anmeldeformular vorhanden (Gebühr und Teilnahmekreis nicht angegeben)",
+   "registration_url": "https://flow.cleverreach.com/fl/1707553f-49e1-4775-8e2a-e4d97b26904e/",
+   "url": "https://www.worldenergy.org/experiences-events/events/entry/world-energy-council-germany-energy-day-2026",
+   "summary_ja": "地政学的な対立・安全保障上の緊張がエネルギーシステムに与える影響を議論する。供給安全保障、重要インフラ保護、電化に伴う系統拡張などを扱う。",
+   "summary_en": "Examines how geopolitical conflicts and security tensions affect energy systems, covering supply security, critical infrastructure protection and grid expansion amid rising electrification.",
+   "summary_de": "Diskutiert, wie geopolitische Konflikte und Sicherheitsspannungen die Energiesysteme beeinflussen: Versorgungssicherheit, Schutz kritischer Infrastruktur und Netzausbau bei zunehmender Elektrifizierung.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "WEC Germany",
+   "title_short": "Energy Security Under Stress",
+   "importance": 2,
+   "speakers": [
+    {
+     "name": "Jun Arima",
+     "org": "JOGMEC",
+     "role": "Chief Sustainability Officer"
+    },
+    {
+     "name": "Severin Fischer",
+     "org": null,
+     "role": "State Secretary, Senate Department for Economics, Energy and Public Enterprises, Berlin"
+    },
+    {
+     "name": "Stefan Kapferer",
+     "org": "50Hertz",
+     "role": "CEO; President, World Energy Council Germany"
+    },
+    {
+     "name": "Volker Perthes",
+     "org": "SWP",
+     "role": "Senior Distinguished Fellow"
+    },
+    {
+     "name": "Frank Wetzel",
+     "org": "BMWE",
+     "role": "State Secretary, Federal Ministry for Economic Affairs and Energy"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "fb7377a5bea8d8b2",
+   "first_seen": "2026-10-23",
    "notables": [],
    "notable_tier": null
   }
