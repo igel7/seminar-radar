@@ -136,8 +136,7 @@
    "venue": "Oxford Martin School",
    "format": "hybrid",
    "themes": [
-    "ai",
-    "real_economy"
+    "ai"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -158,6 +157,11 @@
    "speakers": [
     {
      "name": "Daniel Susskind",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Ian Goldin",
      "org": null,
      "role": null
     }
@@ -1116,7 +1120,13 @@
    "organizer_short": "OMFIF",
    "title_short": "Europe's Competitiveness and Security",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Rasmus Kattai",
+     "org": "Eesti Pank",
+     "role": "Head, Economics and Research Department"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "35c49c778013342a",
    "first_seen": "2026-10-19",
@@ -1715,12 +1725,37 @@
    "organizer_short": "OMFIF",
    "title_short": "US Policy and Emerging Markets",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Gita Gopinath",
+     "org": "Harvard",
+     "role": "Gregory and Ania Coffey Professor of Economics"
+    },
+    {
+     "name": "Steven Kamin",
+     "org": "AEI",
+     "role": "Senior Fellow"
+    },
+    {
+     "name": "Mark Sobel",
+     "org": "OMFIF",
+     "role": "Vice Chair and Chief Economist"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "50dcabc24a70ceaf",
    "first_seen": "2026-10-19",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "gita-gopinath",
+     "name": "Gita Gopinath",
+     "group": "intl_org",
+     "tier": 1,
+     "short": "ex-IMF Chief Economist",
+     "former": true
+    }
+   ],
+   "notable_tier": 1
   },
   {
    "title": "Principles for Responsible Banking Data Centres and AI Services Sector Brief",
@@ -2571,12 +2606,47 @@
    "importance": 1,
    "registration_url": "https://www.suerf.org/events/financial-markets-too-many-faultlines/registration",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Martin Scheicher",
+     "org": "ECB",
+     "role": "Adviser, DG Horizontal Line Supervision"
+    },
+    {
+     "name": "Viral V. Acharya",
+     "org": "NYU",
+     "role": "CV Starr Professor of Economics"
+    },
+    {
+     "name": "Paul Hiebert",
+     "org": "FSB",
+     "role": "Director of Financial Stability Analysis"
+    },
+    {
+     "name": "Peter Praet",
+     "org": "ECB",
+     "role": "Former Member of the Executive Board"
+    },
+    {
+     "name": "Til Schuermann",
+     "org": "Oliver Wyman",
+     "role": "Global Head of the Finance and Risk Practice"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "7f187cb132760170",
    "first_seen": "2026-10-19",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "peter-praet",
+     "name": "Peter Praet",
+     "group": "ecb",
+     "tier": 1,
+     "short": "ex-ECB Chief Economist",
+     "former": true
+    }
+   ],
+   "notable_tier": 1
   },
   {
    "title": "CEP/STICERD Applications Seminars",
@@ -2666,11 +2736,11 @@
   },
   {
    "title": "AMES Workshop - Emma Thill & Tze Yong Tan (PGRs)",
-   "title_ja": "AMESワークショップ（Emma Thill・Tze Yong Tan）",
-   "organizer": "Department of Economics, University of Warwick",
+   "title_ja": "AMESワークショップ:博士課程研究者発表",
+   "organizer": "University of Warwick, Department of Economics",
    "date_start": "2026-11-05",
    "date_end": null,
-   "time": "13:00",
+   "time": "12:00",
    "city": "Coventry",
    "venue": "S1.50",
    "format": "onsite",
@@ -2684,16 +2754,16 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c7a10f2c9001a110eddd7514db",
-   "summary_ja": "AMESワークショップ。博士課程学生の Emma Thill と Tze Yong Tan が報告する（演題は未定）。",
-   "summary_en": "AMES workshop presented by PhD students Emma Thill and Tze Yong Tan; title to be advised.",
-   "summary_de": "AMES-Workshop mit den Promotionsstudierenden Emma Thill und Tze Yong Tan; Titel noch offen.",
+   "summary_ja": "Emma Thill氏とTze Yong Tan氏(PGR)によるAMESワークショップ。演題は未定。",
+   "summary_en": "AMES workshop presented by Emma Thill and Tze Yong Tan (PGRs). Title to be advised.",
+   "summary_de": "AMES-Workshop mit Emma Thill und Tze Yong Tan (Doktorand/innen). Titel noch nicht festgelegt.",
    "language": "en",
    "country": "GB",
    "organizer_short": "Warwick",
-   "title_short": "AMES Workshop",
+   "title_short": "Applied Economics Research",
    "importance": 0,
    "registration_url": null,
-   "time_end": "14:00",
+   "time_end": "13:00",
    "speakers": [
     {
      "name": "Emma Thill",
@@ -3021,11 +3091,11 @@
   },
   {
    "title": "AMES Workshop - Carole Gao & Yanjun Gao (PGR)",
-   "title_ja": "AMESワークショップ（Carole Gao・Yanjun Gao）",
-   "organizer": "Department of Economics, University of Warwick",
+   "title_ja": "AMESワークショップ:博士課程研究者発表",
+   "organizer": "University of Warwick, Department of Economics",
    "date_start": "2026-11-12",
    "date_end": null,
-   "time": "13:00",
+   "time": "12:00",
    "city": "Coventry",
    "venue": "S1.50",
    "format": "onsite",
@@ -3039,16 +3109,16 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c7a10f2c9001a1114a0c493d71",
-   "summary_ja": "AMESワークショップ。博士課程学生の Carole Gao と Yanjun Gao が報告する（演題は未定）。",
-   "summary_en": "AMES workshop presented by PhD students Carole Gao and Yanjun Gao; title to be advised.",
-   "summary_de": "AMES-Workshop mit den Promotionsstudierenden Carole Gao und Yanjun Gao; Titel noch offen.",
+   "summary_ja": "Carole Gao氏とYanjun Gao氏(PGR)によるAMESワークショップ。演題は未定。",
+   "summary_en": "AMES workshop presented by Carole Gao and Yanjun Gao (PGR). Title to be advised.",
+   "summary_de": "AMES-Workshop mit Carole Gao und Yanjun Gao (Doktorand/innen). Titel noch nicht festgelegt.",
    "language": "en",
    "country": "GB",
    "organizer_short": "Warwick",
-   "title_short": "AMES Workshop",
+   "title_short": "Applied Economics Research",
    "importance": 0,
    "registration_url": null,
-   "time_end": "14:00",
+   "time_end": "13:00",
    "speakers": [
     {
      "name": "Carole Gao",
@@ -5272,7 +5342,13 @@
    "importance": 1,
    "registration_url": "https://www.suerf.org/events/challenges-for-monetary-policy-transmission-in-a-changing-world/registration",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Emmanuel Dhyne",
+     "org": null,
+     "role": null
+    }
+   ],
    "source": "SUERF – Events",
    "id": "f878a6971edc6900",
    "first_seen": "2026-10-19",
@@ -7378,7 +7454,28 @@
    "organizer_short": "UKICE",
    "title_short": "Autumn Budget 2026 Economics",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ben Chu",
+     "org": "BBC",
+     "role": null
+    },
+    {
+     "name": "Jill Rutter",
+     "org": "IfG",
+     "role": null
+    },
+    {
+     "name": "Jonathan Portes",
+     "org": "KCL",
+     "role": null
+    },
+    {
+     "name": "Sarah Hall",
+     "org": "Cambridge",
+     "role": null
+    }
+   ],
    "source": "UK in a Changing Europe (UKICE) – Events",
    "id": "9812230a5de11f12",
    "first_seen": "2026-10-20",
@@ -9168,7 +9265,38 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Swenja Surminski",
+     "org": "Grantham",
+     "role": "Professor in Practice"
+    },
+    {
+     "name": "Candice Howarth",
+     "org": "Quadrature",
+     "role": "Research Director"
+    },
+    {
+     "name": "Ashok Sinha",
+     "org": "Ashden",
+     "role": "CEO"
+    },
+    {
+     "name": "Jane Davidson",
+     "org": "Wales Net Zero 2035",
+     "role": "Chair"
+    },
+    {
+     "name": "Sally Uren",
+     "org": "Forum for the Future",
+     "role": "Executive Director"
+    },
+    {
+     "name": "Yetunde Abdul",
+     "org": "WGBC",
+     "role": "Programmes Director"
+    }
+   ],
    "source": "Grantham Research Institute (LSE) – Events",
    "id": "181d6b6fdd967839",
    "first_seen": "2026-10-21",
@@ -9956,7 +10084,13 @@
    "organizer_short": "LSE",
    "title_short": "Climate Change Political Economy",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Jordan K Lofthouse",
+     "org": "Mercatus Center",
+     "role": "Senior Research Fellow"
+    }
+   ],
    "source": "LSE – Public events (Search)",
    "id": "52a3d7993d6a8d34",
    "first_seen": "2026-10-22",
@@ -9993,7 +10127,18 @@
    "organizer_short": "CBBC",
    "title_short": "UK Ambassador China Briefing",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Peter Wilson",
+     "org": null,
+     "role": "British Ambassador to China"
+    },
+    {
+     "name": "Kate Harrisson",
+     "org": null,
+     "role": "His Majesty's Trade Commissioner (HMTC) for China"
+    }
+   ],
    "source": "CBBC – China-Britain Business Council – Events",
    "id": "6801f5e2886544a3",
    "first_seen": "2026-10-22",
@@ -10196,6 +10341,529 @@
    "source": "UK Finance – Events",
    "id": "f9374725db0f93d0",
    "first_seen": "2026-10-22",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "Coventry",
+   "venue": "S1.50",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Shruti Agarwal",
+     "org": null,
+     "role": "PGR"
+    },
+    {
+     "name": "Hayden Harris",
+     "org": null,
+     "role": "PGR"
+    }
+   ],
+   "title": "AMES Workshop - Shruti Agarwal & Hayden Harris (PGRs)",
+   "title_ja": "AMESワークショップ:博士課程研究者発表",
+   "organizer": "University of Warwick, Department of Economics",
+   "organizer_short": "Warwick",
+   "date_start": "2026-11-19",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Applied Economics Research",
+   "importance": 0,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a10bbfe401a1114af84734a0",
+   "source": "Warwick – Department of Economics – Events",
+   "summary_ja": "Shruti Agarwal氏とHayden Harris氏(PGR)によるAMESワークショップ。演題は未定。",
+   "summary_en": "AMES workshop presented by Shruti Agarwal and Hayden Harris (PGRs). Title to be advised.",
+   "summary_de": "AMES-Workshop mit Shruti Agarwal und Hayden Harris (Doktorand/innen). Titel noch nicht festgelegt.",
+   "id": "05f22bddbed5dc1d",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Wallace Inocencio",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "title": "Labour Economics Workshops",
+   "title_ja": "労働経済学ワークショップ",
+   "organizer": "Centre for Economic Performance, LSE",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-24",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Labour Market Research",
+   "importance": 0,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10996",
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "summary_ja": "CEPの定例労働経済ワークショップ。報告者はWallace Inocencio(LSE)、演題は未定。",
+   "summary_en": "Regular CEP labour economics workshop. Speaker: Wallace Inocencio (LSE); title to be announced.",
+   "summary_de": "Regelmäßiger CEP-Workshop zur Arbeitsökonomie. Referent: Wallace Inocencio (LSE); Titel noch offen.",
+   "id": "4798226572521f5b",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "11:15",
+   "time_end": "12:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Ruben Durante",
+     "org": "NUS",
+     "role": null
+    }
+   ],
+   "title": "PEPE (Political Economy & Public Economics) Seminar - Ruben Durante (National U of Singapore)",
+   "title_ja": "PEPE(政治経済学・公共経済学)セミナー:Ruben Durante",
+   "organizer": "University of Warwick, Department of Economics",
+   "organizer_short": "Warwick",
+   "date_start": "2026-11-19",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Political Economy Research",
+   "importance": 0,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c79ffae2c101a00f016f1f25db",
+   "source": "Warwick – Department of Economics – Events",
+   "summary_ja": "Ruben Durante氏(National University of Singapore)による政治経済学・公共経済学セミナー。演題は未定。",
+   "summary_en": "Political economy and public economics seminar by Ruben Durante (National University of Singapore). Title to be advised.",
+   "summary_de": "Seminar zu Politischer Ökonomie und Public Economics mit Ruben Durante (National University of Singapore). Titel noch nicht festgelegt.",
+   "id": "49aebeb3fba2ab40",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "15:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "AI data centres and responsible investment: tools to navigate a rapidly changing landscape",
+   "title_ja": "AIデータセンターと責任投資: 変化する環境への対応ツール",
+   "organizer": "Principles for Responsible Investment (PRI)",
+   "organizer_short": "PRI",
+   "date_start": "2026-12-03",
+   "themes": [
+    "ai",
+    "climate_esg"
+   ],
+   "title_short": "AI Data Centres: Responsible Investment",
+   "importance": 1,
+   "url": "https://www.unpri.org/events/webinar-ai-data-centres",
+   "source": "PRI – Principles for Responsible Investment – Events",
+   "summary_ja": "AIデータセンターの拡大を踏まえ、責任投資の観点からリスクを見極めるためのツールを紹介するPRIのオンラインウェビナー。",
+   "summary_en": "A PRI online webinar presenting tools for responsible investors to navigate AI data centres and the rapidly changing landscape around them.",
+   "summary_de": "PRI-Online-Webinar mit Werkzeugen für verantwortliche Investoren, um sich in der rasch wandelnden Landschaft rund um KI-Rechenzentren zurechtzufinden.",
+   "id": "509c00b9aa56b993",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "venue": "Queen Elizabeth II Centre",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [],
+   "title": "Nature Finance UK Conference 2026",
+   "title_ja": "英国ネイチャーファイナンス会議2026",
+   "organizer": "Ecosystems Knowledge Network",
+   "organizer_short": "EKN",
+   "date_start": "2026-11-12",
+   "themes": [
+    "climate_esg"
+   ],
+   "title_short": "Nature Finance",
+   "importance": 1,
+   "url": "https://netzerocompare.com/events/nature-finance-uk-conference-2026",
+   "source": "web検索(discovery)",
+   "summary_ja": "ロンドンで開催される英国のネイチャーファイナンス(自然資本・生物多様性への資金)に関する会議。",
+   "summary_en": "A London conference on nature finance in the UK, covering funding for natural capital and biodiversity.",
+   "summary_de": "Konferenz in London zur Naturfinanzierung im Vereinigten Königreich (Finanzierung von Naturkapital und Biodiversität).",
+   "id": "5525de4461c0fc2e",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "17:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "The Impact of Google AI Overviews on Publisher Traffic and User Experience: Evidence from a Field Experiment - Media Plurality Webinar Series",
+   "title_ja": "Google AI Overviewsと出版社トラフィック",
+   "organizer": "CEPR",
+   "organizer_short": "CEPR",
+   "date_start": "2026-11-17",
+   "themes": [
+    "ai"
+   ],
+   "title_short": "Google AI Overviews Publisher Traffic",
+   "importance": 1,
+   "url": "https://hub.cepr.org/events/the-impact-of-google-ai-overviews-on-publisher-traffic-and-user-experience-evidence-from-a-field-experiment-media-plurality-webinar-series",
+   "source": "CEPR – Centre for Economic Policy Research – Events",
+   "summary_ja": "Google AI Overviewsがニュース出版社のウェブトラフィックと利用者の体験に与える影響を、フィールド実験で検証するメディア多元性ウェビナー。",
+   "summary_en": "A Media Plurality webinar presenting field-experiment evidence on how Google AI Overviews affect publisher traffic and user experience.",
+   "summary_de": "Ein Webinar der Media-Plurality-Reihe mit Feldexperiment-Befunden zu den Auswirkungen von Google AI Overviews auf den Traffic von Verlagen und das Nutzererlebnis.",
+   "id": "5a503e5bd20a06c9",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "venue": null,
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [],
+   "title": "Trading Book Capital",
+   "title_ja": "トレーディング勘定の資本規制",
+   "organizer": "International Swaps and Derivatives Association",
+   "organizer_short": "ISDA",
+   "date_start": "2026-11-30",
+   "themes": [
+    "fin_markets"
+   ],
+   "title_short": "Trading Book Capital Rules",
+   "importance": 1,
+   "url": "https://www.isda.org/event/london/trading-book-capital-basel-3-implementation-and-latest-industry-trends-2026-11-30/",
+   "source": "ISDA – Events",
+   "summary_ja": "ISDAがロンドンで開催するイベントで、トレーディング勘定の資本規制(バーゼル3の実施)と業界の最新動向を扱う。",
+   "summary_en": "ISDA event in London on trading book capital rules, covering Basel 3 implementation and the latest industry trends.",
+   "summary_de": "ISDA-Veranstaltung in London zu den Eigenkapitalvorschriften für das Handelsbuch (Umsetzung von Basel III) und aktuellen Branchentrends.",
+   "id": "6bf5ae3cdc78f98e",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "11:00",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Pol Simpson",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "title": "International Economics Workshops",
+   "title_ja": "国際経済学ワークショップ",
+   "organizer": "Centre for Economic Performance, LSE",
+   "organizer_short": "CEP",
+   "date_start": "2026-11-25",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "International Economics Research",
+   "importance": 0,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11002",
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "summary_ja": "CEPの定例国際経済ワークショップ。報告者はPol Simpson(LSE)、演題は未定。",
+   "summary_en": "Regular CEP international economics workshop. Speaker: Pol Simpson (LSE); title to be announced.",
+   "summary_de": "Regelmäßiger CEP-Workshop zur Internationalen Ökonomie. Referent: Pol Simpson (LSE); Titel noch offen.",
+   "id": "8135b9909f6a8a28",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Kerstin Holzheu",
+     "org": "Sciences Po",
+     "role": null
+    }
+   ],
+   "title": "Macro/International Economics Seminar - Kerstin Holzheu (Science Po)",
+   "title_ja": "マクロ・国際経済学セミナー:Kerstin Holzheu",
+   "organizer": "University of Warwick, Department of Economics",
+   "organizer_short": "Warwick",
+   "date_start": "2026-11-19",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Macro and International Economics",
+   "importance": 0,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c79ffae2c101a00f12814125f9",
+   "source": "Warwick – Department of Economics – Events",
+   "summary_ja": "Kerstin Holzheu氏(Sciences Po)によるマクロ・国際経済学セミナー。演題は未定。",
+   "summary_en": "Macro and international economics seminar by Kerstin Holzheu (Sciences Po). Title to be advised.",
+   "summary_de": "Makro- und Außenwirtschaftsseminar mit Kerstin Holzheu (Sciences Po). Titel noch nicht festgelegt.",
+   "id": "8145c1b27c773839",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "14:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "IFS Public Economics Day 2027",
+   "title_ja": "IFS公共経済学デー2027",
+   "organizer": "Institute for Fiscal Studies",
+   "organizer_short": "IFS",
+   "date_start": "2027-01-08",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Public Economics Talks",
+   "importance": 1,
+   "url": "https://ifs.org.uk/events",
+   "source": "手動取込: INBOX",
+   "summary_ja": "学部生を主な対象に、公共経済学をテーマとした講演が一日にわたり行われる(IFS主催)。",
+   "summary_en": "A day of talks on public economics, mainly aimed at undergraduates, hosted by IFS.",
+   "summary_de": "Ein Tag mit Vorträgen zur Public Economics, vor allem für Studierende der Volkswirtschaftslehre, veranstaltet vom IFS.",
+   "id": "8a793cb79d7ad7e0",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "10:30",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "Autumn Budget 2026: IFS analysis",
+   "title_ja": "2026年秋予算:IFS分析",
+   "organizer": "Institute for Fiscal Studies",
+   "organizer_short": "IFS",
+   "date_start": "2026-10-29",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Autumn Budget 2026 Analysis",
+   "importance": 1,
+   "url": "https://ifs.org.uk/events",
+   "source": "手動取込: INBOX",
+   "summary_ja": "IFS研究者が、John Healey財務相(Chancellor)による2026年秋予算(Autumn Budget)への初期分析を発表する。",
+   "summary_en": "IFS researchers present their initial analysis of Chancellor John Healey's Autumn Budget 2026.",
+   "summary_de": "IFS-Forschende stellen ihre erste Analyse des Herbsthaushalts 2026 von Schatzkanzler John Healey vor.",
+   "id": "a28b058648338c84",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "venue": null,
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [],
+   "title": "Capital markets in transition: promoting growth, innovation and resilience",
+   "title_ja": "資本市場の転換: 成長・イノベーション・強靭性",
+   "organizer": "OMFIF",
+   "organizer_short": "OMFIF",
+   "date_start": "2026-12-02",
+   "themes": [
+    "fin_markets"
+   ],
+   "title_short": "Capital Markets in Transition",
+   "importance": 2,
+   "url": "https://www.omfif.org/meetings/capital-markets-in-transition-promoting-growth-innovation-and-resilience/",
+   "source": "OMFIF – Events/Meetings",
+   "summary_ja": "英国の資本市場改革の進展を踏まえ、成長・イノベーション・金融の強靭性をどう両立させるかを議論するラウンドテーブル。",
+   "summary_en": "A roundtable on how capital markets can promote growth, innovation and resilience as the UK pursues its capital markets reform agenda.",
+   "summary_de": "Ein Roundtable darüber, wie Kapitalmärkte Wachstum, Innovation und Resilienz fördern können, vor dem Hintergrund der britischen Kapitalmarktreform.",
+   "id": "d213b2642f16dffe",
+   "first_seen": "2026-10-23",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Shin Kanaya",
+     "org": "Essex",
+     "role": null
+    }
+   ],
+   "title": "Econometrics Seminar - Shin Kanaya (Essex)",
+   "title_ja": "計量経済学セミナー:Shin Kanaya",
+   "organizer": "University of Warwick, Department of Economics",
+   "organizer_short": "Warwick",
+   "date_start": "2026-11-23",
+   "themes": [
+    "real_economy"
+   ],
+   "title_short": "Econometric Methods Research",
+   "importance": 0,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a0a4cb4901a0aa315bf6125a",
+   "source": "Warwick – Department of Economics – Events",
+   "summary_ja": "Shin Kanaya氏(Essex)による計量経済学セミナー。演題は未定。",
+   "summary_en": "Econometrics seminar by Shin Kanaya (Essex). Title to be advised.",
+   "summary_de": "Ökonometrie-Seminar mit Shin Kanaya (Essex). Titel noch nicht festgelegt.",
+   "id": "eb1601654f2318af",
+   "first_seen": "2026-10-23",
    "notables": [],
    "notable_tier": null
   }

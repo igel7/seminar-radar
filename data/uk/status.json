@@ -4,28 +4,28 @@
   "url": "https://www.suerf.org/events/",
   "ok": true,
   "found": 5,
-  "note": "online の5件(27 Oct・4 Nov・10 Nov・23 Nov・30 Nov)のうち、23 Nov の『Key takeaways from the ECB November 2026 Financial Stability Review』のみ未知のため出力。他4件は既知。除外: Bratislava(17 Nov, in-person)・Rome(19–20 Nov, hybrid)・Luxembourg(3–4 Dec, hybrid)・Milan(2027, CfP)。『Load more』で一覧が途中まで。"
+  "note": "5件とも既知。11/4・11/10 は登壇者追記"
  },
  {
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
   "found": 11,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "既知10件+新規1件(2 Dec Capital markets in transition)。登壇者追記2件"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
   "ok": true,
   "found": 2,
-  "note": "収載条件に合致する2件(4 Nov・26 Nov のオンラインウェビナー)はいずれも既知のため出力なし。除外: PRI in Person 2026(開催済み)・2027(香港)・Unlocking Capital(香港)・Practicum(NY)・Regional Summit(延期)。NBS-PRI-ECGI Public Lecture Series は『online/hybrid』の系列表記で開催地・個別回日程が不明のため除外。cache の e5760a は一覧として読めた。cache の 4df3d7 は『Human Verification』のボット確認画面で本文なし(読めず)。"
+  "note": "AI data centres は日付変更(26 Nov→3 Dec)で再出力。Fight, flight or freeze? は既知"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
   "found": 2,
-  "note": "Online 2件: The Role of Risk in Responsible Banking(03 Nov、既知・変化なし)、Blended finance in the sustainable blue economy(12 Nov、新規)。Antalya 開催の COP31 関連(UNEP FI at COP31 9–20 Nov、COP31 Global Sustainable Insurance Summit 13–14 Nov)は対象外地域の現地開催のため除外。"
+  "note": "既知2件"
  },
  {
   "name": "Bank of England – Events",
@@ -38,64 +38,66 @@
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 1,
+  "note": "Exeter 30 Oct のみ。既知"
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "掲載は Annual Public Meeting 2026(2026-10-06、終了済み)と過去イベントのみ。開催予定なし。webinars.fca.org.uk は未確認"
+  "note": "今後開催予定なし(Annual Public Meeting は終了済み)"
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
   "url": "https://niesr.ac.uk/events",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 7,
+  "note": "既知3件。NiGEM 利用者向け研修ワークショップ4件(11/16-17)は研修扱いで除外。AGMはテーマ外"
  },
  {
   "name": "IFS – Institute for Fiscal Studies – Events",
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 'Just a moment' 403 on /events, /events/upcoming, /sitemap.xml, /feed; hint method search yielded no ifs.org.uk pages (only unrelated IFS entities; Helen Miller listed as speaker at the Secure Research Service Conference 24 Nov 2026, organised by UK Analysis Function, not IFS). tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "Cloudflare 'Just a moment' 403 on /events, /events/upcoming, /sitemap.xml, /feed; hint method search yielded no ifs.org.uk pages (only unrelated IFS entities; Helen Miller listed as speaker at the Secure Research Service Conference 24 Nov 2026, organised by UK Analysis Function, not IFS). tried: fetch, ua-curl, hints, alt-paths, search",
+  "note": "INBOX 手動取込で補完(2件)"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 10,
-  "note": "一覧5ページ分(page=0,1,2,4,5。page=3 はこのハッシュ対象外のため未読)計44件。収載10件のうち新規は IO Virtual Gathering の1件、他9件は既知。除外: 開催地が一覧に無く未確認(Geoeconomics of Conflict, Demographic Shocks, IMF Programme Meeting, Stigler Conference, Industrial Policy, RPN Fintech, Empirical Monetary Economics, Franco-German, Economic Policy Papers, Ghazala Azmat Award, Central Banking Research Workshop, Applied Micro-Economic History, TRIO, FYI Workshop, Financial Stability in the Era of AI, PE Symposium, Macro and Population, BIS-CEPR-Gerzensee, WEFIDEV, ISoT, CEPR-JIE, Subjective Expectations)。独開催(Kiel Geoeconomics, Bonn-Oxford-EC Macro Workshop)・仏開催(ESOC-ReCIPE Paris)は除外。講演者・演題の無い定例シリーズ(VIOS 56-59, CAFFE 52-53, International Macro History 117-119)は除外。"
+  "found": 11,
+  "note": "全6ページ照合。新規1件(11/17 オンライン Media Plurality ウェビナー)。他は既知または域外/判定不能"
  },
  {
   "name": "Resolution Foundation – Events",
   "url": "https://www.resolutionfoundation.org/events/",
   "ok": true,
   "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "3件とも既知"
  },
  {
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
   "found": 1,
-  "note": "Upcoming は1件: 28 Oct 2026 15:00 オンライン 'Budget 2026: What do John Healey's choices mean for the economy and the government?'。台帳と日付・時刻・URLが一致する既知イベントのため出力なし。"
+  "note": "既知で変化なし"
  },
  {
   "name": "CER – Centre for European Reform – Events",
   "url": "https://www.cer.eu/events",
-  "ok": true,
+  "ok": false,
   "found": 0,
-  "note": "一覧(page=1のみ)に掲載されたイベントは全て2026-09-17〜10-13の開催済みで、収載対象なし。"
+  "note": "一覧(page=1のみ)に掲載されたイベントは全て2026-09-17〜10-13の開催済みで、収載対象なし。",
+  "error": "2026-10-23 NET-ERR(接続不可)。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "Chatham House – Events",
   "url": "https://www.chathamhouse.org/events",
   "ok": true,
   "found": 1,
-  "note": "Direct access remains Cloudflare 403 (ua-curl, /events/upcoming, sitemap, rss, Chromium all blocked). Recovered via WebSearch snippet of the official event page https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026 (11 Nov 2026, 09:00-17:00 GMT, hybrid). Other listed items (London conference, Berlin conference) had no date in snippets and were not adopted."
+  "note": "Direct access remains Cloudflare 403 (ua-curl, /events/upcoming, sitemap, rss, Chromium all blocked). Recovered via WebSearch snippet of the official event page https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026 (11 Nov 2026, 09:00-17:00 GMT, hybrid). Other listed items (London conference, Berlin conference) had no date in snippets and were not adopted. / 本日 403(取得失敗、前回found引継ぎ)"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
@@ -116,14 +118,14 @@
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "HTTPS connection fails (curl 000), HTTP returns sgcaptcha meta-refresh (bot challenge); sitemap/feed unreachable; search returned no policyexchange.org.uk pages. tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "2026-10-23 HTTPS 接続断/HTTP 500・sgcaptcha。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
-  "ok": false,
-  "found": 0,
-  "error": "Cloudflare 522 origin timeout on /granthaminstitute/events/, sitemap, news-and-events and detail page via both ua-curl and Chromium; search gave only a snippet saying the Stern Review 20th anniversary event is on 30 Oct 2026, conflicting with known_events date 2026-10-28 (unverified, not output; recommend re-check). No other dated events. tried: fetch, ua-curl, alt-paths, search (hints: no entry)"
+  "ok": true,
+  "found": 2,
+  "note": "Cloudflare 522 から復旧。Stern Review 20周年(既知)と Heat Resilience(登壇者追記)"
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
@@ -137,7 +139,7 @@
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
   "found": 4,
-  "note": "Of 12 cached items (66 total on site): Madness of Markets (duplicate of FMG, known), The unelectable budget (known), Sea change Arctic (known), Climate change and liberal political economy (new, online). Excluded as off-theme: concert, exhibitions, LSE Chill, sociology, history commemoration, open research, women of the world, nav. Cache shows only the first page of 66."
+  "note": "既知4件"
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -151,7 +153,7 @@
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
   "found": 3,
-  "note": "Madness of Markets (26 Oct), Sustainable investing lecture (12 Nov), Impact Investing conference (13 Nov). All in ledger with unchanged data. Listing gives no city/format; city not written on the page."
+  "note": "3件とも既知"
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -164,8 +166,8 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 26,
-  "note": "Dated seminars 22 Oct-9 Dec 2026 with speaker named; 25 already in ledger with unchanged data (not output); new: Doleac (9 Dec, no time/venue on page). Sourced cities are London. ESRC 'Fixing broken labour markets' (22 Oct) counted once; it is in ledger under the Resolution Foundation URL."
+  "found": 25,
+  "note": "新規2件(11/24・11/25 定例ワークショップ)"
  },
  {
   "name": "Oxford – Saïd Business School – Events",
@@ -178,15 +180,15 @@
   "name": "Oxford Martin School – Events",
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
   "ok": true,
-  "found": 10,
-  "note": "10件すべて既知(台帳と日付・時刻・登壇者が一致)のため出力なし。Oxford の告知はすべて Oxford 現地+オンライン併用。"
+  "found": 9,
+  "note": "全件既知。What Should My Children Do? に登壇者追記"
  },
  {
   "name": "Cambridge Judge Business School – Events",
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "キャッシュにイベント行なし。ページはフィルタUIとナビのみでイベント一覧が取得できていない可能性あり"
+  "note": "キャッシュにイベント本体なし(一覧未描画の可能性)"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -207,21 +209,21 @@
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
   "found": 0,
-  "note": "掲載は入学説明・ネットワーキング・ワンツーワン等の入学/採用系イベントのみ（Vancouver/Tokyo/Toronto/Cologne/Paris/Lagos/Montréal 他、London は Executive MBA Admit dinner と Masters' open day）。研究セミナー・会議の形式ではないため収載対象外。"
+  "note": "page=0 のみキャッシュ。入学・採用系のみ"
  },
  {
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 26,
-  "note": "2026-10-22以降の収載条件適合26件(既知23件・新規3件)。TBA/TBC(演題・登壇者とも未定)の AMES 2件・EBER 1件・Macro 1件・PEPE 1件の計5件は除外。既知分は日時・会場・登壇者に変化なし。Teaching & Learning Seminar(新規)は経済学の研究セミナーとしては周辺的なため、収載判断を要確認。"
+  "found": 30,
+  "note": "新規4件+AMES 2件の時刻修正。TBA 2件・Teaching & Learning 1件は除外"
  },
  {
   "name": "Warwick Business School – Events",
   "url": "https://www.wbs.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "キャッシュ本文はナビゲーションとサイト共通要素のみで、イベント一覧(日付・演題)は含まれていない。取得失敗ではないが、掲載0件として扱った。要確認: キャッシュ取得方法(動的描画の可能性)"
+  "note": "一覧にイベントなし"
  },
  {
   "name": "Bayes Business School – Events",
@@ -241,22 +243,22 @@
   "name": "IEA – Institute of Economic Affairs – Upcoming events",
   "url": "https://iea.org.uk/events-upcoming/",
   "ok": true,
-  "found": 6,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 1,
+  "note": "The Madness of Markets のみ既知。他はテーマ判定不能/テーマ外"
  },
  {
   "name": "UK in a Changing Europe (UKICE) – Events",
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
   "found": 1,
-  "note": "掲載は Autumn Budget パネル(03 Nov 2026 13:00)1件のみ。既知と同一のため出力なし。形式・会場はページに無く null のまま(台帳と同じ)。"
+  "note": "既知。登壇者追記"
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
   "found": 6,
-  "note": "Upcoming Events 掲載6件(2026-11-02〜12-21)。全件が既知台帳と一致し変化なしのため出力せず。開催地・形式はページ未記載"
+  "note": "6件とも既知"
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -276,8 +278,8 @@
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
-  "found": 6,
-  "note": "収載: Economic Crime Congress 2026(03 Dec、既知)、Digital Innovation Summit 2027(24 Jun 2027、既知)、ウェビナー4件(22 Oct・28 Oct・12 Nov 既知・19 Nov の新規2件含む)。除外: Workshop 系の研修コース、Annual Dinner・Annual Mortgage Dinner・Mortgage Lunch(レセプション・会食で会議でないため)、Associate Member briefing(会員限定の報告会、場所未記載)、Learning and Development Forum(テーマ外)。両ページで重複する掲載は1件として数えた。注: 有料か否かが書かれていない webinar は fee を unknown とし importance 1 で扱った。"
+  "found": 2,
+  "note": "既知2件。研修・ウェビナー・夕食会は除外"
  },
  {
   "name": "TheCityUK – Events",
@@ -291,7 +293,7 @@
   "url": "https://www.lseg.com/en/events",
   "ok": true,
   "found": 0,
-  "note": "Listed: Risk Live Asia (Singapore, 21-22 Oct), Financial Markets Connect New York (22 Oct) and Hong Kong (17 Nov), LSEG Insight Series (no date). None in UK/IE or the northern European scope. No London event listed."
+  "note": "掲載は英国外(香港・ボストン)のみ"
  },
  {
   "name": "ICMA – International Capital Market Association – Events",
@@ -304,43 +306,43 @@
   "name": "ISDA – Events",
   "url": "https://www.isda.org/events/",
   "ok": true,
-  "found": 0,
-  "note": "掲載の注目イベントは Sydney (26 Oct)・Hong Kong (12 Nov)・New York (5 Nov) の3件のみで、いずれも対象地域外の現地開催のため除外。英国・アイルランド・北欧の開催なし。"
+  "found": 1,
+  "note": "新規1件(30 Nov ロンドン Trading Book Capital)"
  },
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
   "ok": true,
-  "found": 0,
-  "note": "ua-curl 403, but headless Chromium (scripts/fetch_page.py https://dajf.org.uk/events --wait 5000) rendered the list with detail links (/event/<slug>). 5 upcoming: Yamasaki webinar 10/22 (arts), Tsukamoto film webinar 10/23 (film), Cherry Trees Ukraine talk 11/3 (humanitarian/culture, not core economic), Japan's Intelligence Reforms 11/11 (already in known_events, unchanged), AI Translation sign language 11/23 (technical, not econ). No new qualifying events."
+  "found": 1,
+  "note": "既知1件。他はテーマ外"
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "対象テーマのイベントなし"
  },
  {
   "name": "JETRO London – Events",
   "url": "https://www.jetro.go.jp/uk/events.html",
   "ok": true,
   "found": 0,
-  "note": "Original URL https://www.jetro.go.jp/uk/events.html returns AccessDenied (dead/non-existent). Reachable via ua-curl: https://www.jetro.go.jp/uk/ and https://www.jetro.go.jp/uk/topics.html. Only past event (Japan-UK Tech Innovation Partnership, 11 Jun 2026) and RFP notices; no upcoming events. Global https://www.jetro.go.jp/en/events.html has no UK events."
+  "note": "一覧は RFP・告知のみで日付付きイベントなし"
  },
  {
   "name": "SOAS – What's on (SOAS China Institute を含む)",
   "url": "https://www.soas.ac.uk/about/whats-on",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "個別イベント掲載なし"
  },
  {
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
   "ok": true,
   "found": 5,
-  "note": "一覧12件のうち中国開催6件(BigOne, FSPA, CIIE Mini-Forum, Trade Booster Roadshow, Whisky Mission, Chongqing)と文化研修1件(CBBC Cultural Training、研修のため除外)は除外。収載5件のうち新規は大使ブリーフィングの1件、他4件は既知。"
+  "note": "5件とも既知。10/23 ブリーフィングに登壇者追記"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
@@ -368,14 +370,14 @@
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
   "ok": true,
   "found": 2,
-  "note": "収載対象2件はいずれも既知・変化なしのため出力なし: Impact of AI on Economy, Finance and Supervision(11–12 Nov)、Bank of Finland and CEPR Joint Conference on Navigating Monetary Policy by the Northern Lights(17–18 Dec、importance 3)。研究セミナー・BOFIT セミナー(週次の定例報告、22 Oct〜12 Jan)は開催地・形式が掲載されておらず、北欧は現地開催 importance 2 以上のみ収載の規則により除外。Statistics・ECB/BIS 会合は対象外。"
+  "note": "既知2件。BOFIT/研究セミナーは形式不明・importance<2 のため除外"
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
   "found": 0,
-  "note": "掲載の Events は Lending survey・Monetary statistics・Other financial corporations(統計公表予定)のみで、セミナー・会議は無し。"
+  "note": "Upcoming は統計公表のみ"
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
@@ -388,13 +390,14 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 9,
-  "note": "12クエリ。候補9件は全て不採用(商用イベント・会場未確認・終了済み)。新規採用0件"
+  "found": 12,
+  "note": "14クエリ・候補12件。新規採用1件(Nature Finance UK Conference 11/12 London。集約サイトのみで確認)。他は既知/会場未確認/テーマ薄"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
-  "found": 0
+  "found": 4,
+  "note": "IFS events 貼付: 2件収載(開催地記載なし)。Zooms In Live は過去、Cemmap 研修は除外"
  }
 ]
