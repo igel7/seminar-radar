@@ -102,12 +102,12 @@
   "note": ".org が503の時は .de ドメインで取れる。イベントは tab-3 フィルタのAJAX一覧に出る"
  },
  "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
-  "method": "alt-url",
+  "method": "ua-curl",
   "alt_urls": [
    "https://sustainablefinancecluster.com/en/events/"
   ],
   "last_ok": "2026-09-24",
-  "note": "2026-09-24: fetch_all.py(alt-url)は本日もCSS/フォント宣言のみ(サブエージェント2回も同様)。メインモデルがWebFetchで直接取得し2件確認(いずれも既知・変化なし)。fetch_allの本文が空/CSSのみの場合はWebFetchを試す運用を継続。"
+  "note": "2026-09-24: fetch_all.py(alt-url)は本日もCSS/フォント宣言のみ(サブエージェント2回も同様)。メインモデルがWebFetchで直接取得し2件確認(いずれも既知・変化なし)。fetch_allの本文が空/CSSのみの場合はWebFetchを試す運用を継続。 2026-10-24: fetch_allのキャッシュは先頭100k字でCSSのみ。実ブラウザUA付きcurlでHTML全体(約93万字)を取得すると本文が読める。"
  },
  "NBP – Narodowy Bank Polski – Conferences": {
   "method": "co-host",
@@ -142,7 +142,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-10-17",
-  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-16: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-17: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)・Fraud conference(11/19)・FinTech conference(11/30)を再確認、既知で変化なし。"
+  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-16: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-17: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)・Fraud conference(11/19)・FinTech conference(11/30)を再確認、既知で変化なし。 2026-10-24: 2026-10-24: 直接403継続(ua-curlも403)。web検索(site:lb.lt)で年次不動産会議 2026-11-24 Vilnius(/lt/renginiai/nekilnojamojo-turto-konferencija-2026)を新規発見。lb.lt個別ページはWebFetch 403だが検索スニペットで内容確認可。"
  },
  "HNB – Croatian National Bank – Conferences": {
   "method": "search",
@@ -169,7 +169,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-10-16",
-  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。"
+  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-24: 2026-10-24: ua-curlでもエラーページ(本文なし)。web検索でBEARS 2026情報なし。"
  },
  "EBA – European Banking Authority – Events": {
   "method": "search",
@@ -209,7 +209,7 @@
    "https://www.ewi.uni-koeln.de/de/termine-sitemap.xml"
   ],
   "last_ok": "2026-10-15",
-  "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。 2026-10-11: termine-sitemap.xmlを再取得、SAPHyR Webinar・Workshop Ammoniakとも既知で変化なし。新規なし。 2026-10-15: termine-sitemap.xmlを再取得、SAPHyR・Workshop Ammoniak・EWI-Insights・EWI-Energietagung 2027とも既知で変化なし。"
+  "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。 2026-10-11: termine-sitemap.xmlを再取得、SAPHyR Webinar・Workshop Ammoniakとも既知で変化なし。新規なし。 2026-10-15: termine-sitemap.xmlを再取得、SAPHyR・Workshop Ammoniak・EWI-Insights・EWI-Energietagung 2027とも既知で変化なし。 2026-10-24: 2026-10-24: termine-sitemap.xmlをua-curlで再取得成功。lastmod最新(10/23)のe-mobilityページは2021年の旧イベントで対象外(lastmodだけで新規と判断しない)。新規なし。"
  },
  "CEP – Council on Economic Policies (Zürich) – Events": {
   "method": "ua-curl",
