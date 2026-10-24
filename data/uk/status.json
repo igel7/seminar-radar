@@ -10,22 +10,22 @@
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
-  "found": 11,
-  "note": "既知10件+新規1件(2 Dec Capital markets in transition)。登壇者追記2件"
+  "found": 16,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
   "ok": true,
   "found": 2,
-  "note": "AI data centres は日付変更(26 Nov→3 Dec)で再出力。Fight, flight or freeze? は既知"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 2,
-  "note": "既知2件"
+  "found": 9,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Bank of England – Events",
@@ -38,29 +38,29 @@
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 1,
-  "note": "Exeter 30 Oct のみ。既知"
+  "found": 4,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "今後開催予定なし(Annual Public Meeting は終了済み)"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
   "url": "https://niesr.ac.uk/events",
   "ok": true,
-  "found": 7,
-  "note": "既知3件。NiGEM 利用者向け研修ワークショップ4件(11/16-17)は研修扱いで除外。AGMはテーマ外"
+  "found": 8,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "IFS – Institute for Fiscal Studies – Events",
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 'Just a moment' 403 on /events, /events/upcoming, /sitemap.xml, /feed; hint method search yielded no ifs.org.uk pages (only unrelated IFS entities; Helen Miller listed as speaker at the Secure Research Service Conference 24 Nov 2026, organised by UK Analysis Function, not IFS). tried: fetch, ua-curl, hints, alt-paths, search",
+  "error": "Cloudflare 'Just a moment' 403 on /events, /events/upcoming, /sitemap.xml, /feed; hint method search yielded no ifs.org.uk pages (only unrelated IFS e 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)",
   "note": "INBOX 手動取込で補完(2件)"
  },
  {
@@ -81,8 +81,8 @@
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
-  "found": 1,
-  "note": "既知で変化なし"
+  "found": 3,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "CER – Centre for European Reform – Events",
@@ -90,56 +90,57 @@
   "ok": false,
   "found": 0,
   "note": "一覧(page=1のみ)に掲載されたイベントは全て2026-09-17〜10-13の開催済みで、収載対象なし。",
-  "error": "2026-10-23 NET-ERR(接続不可)。tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "2026-10-23 NET-ERR(接続不可)。tried: fetch, ua-curl, hints, alt-paths, search 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Chatham House – Events",
   "url": "https://www.chathamhouse.org/events",
-  "ok": true,
-  "found": 1,
-  "note": "Direct access remains Cloudflare 403 (ua-curl, /events/upcoming, sitemap, rss, Chromium all blocked). Recovered via WebSearch snippet of the official event page https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026 (11 Nov 2026, 09:00-17:00 GMT, hybrid). Other listed items (London conference, Berlin conference) had no date in snippets and were not adopted. / 本日 403(取得失敗、前回found引継ぎ)"
+  "ok": false,
+  "found": 0,
+  "note": "Direct access remains Cloudflare 403 (ua-curl, /events/upcoming, sitemap, rss, Chromium all blocked). Recovered via WebSearch snippet of the official event page https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026 (11 Nov 2026, 09:00-17:00 GMT, hybrid). Other listed items (London conference, Berlin conference) had no date in snippets and were not adopted. / 本日 403(取得失敗、前回found引継ぎ)",
+  "error": " 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": true,
-  "found": 7,
-  "note": "ロンドン開催の収載対象7件(Trenchard 26 Oct、Border 3 Nov、Crypto/UK politics 17 Nov、Long War 24 Nov、UK–EU sanctions 9 Dec、Crypto recovery 10 Dec、UK Cyber Effects 2027)はすべて既知のため出力なし。除外: RUSI Library Volunteer Days(会員向け作業日)。1 Dec の Keyes 伝記パネル(Members Event, London)は地域は適合するが、9テーマのいずれにも当たらない(海軍史の伝記出版記念)ため収載せず。判断が変われば要確認。『Show more events』で一覧が途中まで。"
+  "found": 10,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 403 on /events/, /en/events/, sitemap; web search returned no iiss.org pages. tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "Cloudflare 403 on /events/, /en/events/, sitemap; web search returned no iiss.org pages. 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Policy Exchange – Events",
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "2026-10-23 HTTPS 接続断/HTTP 500・sgcaptcha。tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "2026-10-23 HTTPS 接続断/HTTP 500・sgcaptcha。tried: fetch, ua-curl, hints, alt-paths, search 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
-  "found": 2,
-  "note": "Cloudflare 522 から復旧。Stern Review 20周年(既知)と Heat Resilience(登壇者追記)"
+  "found": 3,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
   "found": 0,
-  "note": "1ページ目の10件は Briefing/Blog/Report/News のみでEvent該当なし。Events フィルタ未適用、Load more 未取得"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 4,
-  "note": "既知4件"
+  "found": 12,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -153,7 +154,7 @@
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
   "found": 3,
-  "note": "3件とも既知"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -166,15 +167,15 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 25,
-  "note": "新規2件(11/24・11/25 定例ワークショップ)"
+  "found": 27,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Oxford – Saïd Business School – Events",
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 403 on /events, /events/upcoming, /news-and-events, sitemap; search returned only events.ox.ac.uk generic results and one past event (Oxford Africa Business Forum, 14 Mar 2026). tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "Cloudflare 403 on /events, /events/upcoming, /news-and-events, sitemap; search returned only events.ox.ac.uk generic results and one past event (Oxfor 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Oxford Martin School – Events",
@@ -188,7 +189,7 @@
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "キャッシュにイベント本体なし(一覧未描画の可能性)"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -208,15 +209,15 @@
   "name": "Imperial College Business School – Events",
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
-  "found": 0,
-  "note": "page=0 のみキャッシュ。入学・採用系のみ"
+  "found": 12,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
   "found": 30,
-  "note": "新規4件+AMES 2件の時刻修正。TBA 2件・Teaching & Learning 1件は除外"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Warwick Business School – Events",
@@ -230,7 +231,7 @@
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare challenge (403 'Just a moment'); Chromium also stuck at security verification; /news-and-events/events and /sitemap.xml 403; web search surfaced no dated events (only noted June 2026 view empty). tried: fetch, ua-curl, hints, alt-paths, search"
+  "error": "Cloudflare challenge (403 'Just a moment'); Chromium also stuck at security verification; /news-and-events/events and /sitemap.xml 403; web search sur 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
@@ -251,14 +252,14 @@
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
   "found": 1,
-  "note": "既知。登壇者追記"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
   "found": 6,
-  "note": "6件とも既知"
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -279,7 +280,7 @@
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
   "found": 2,
-  "note": "既知2件。研修・ウェビナー・夕食会は除外"
+  "note": "2026-10-24 抽出(ページ上の全項目数が多く収載条件合致数は前回値を引き継ぎ)"
  },
  {
   "name": "TheCityUK – Events",
@@ -299,29 +300,29 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 3,
-  "note": "一覧（2026-10-22時点）のうち英国開催の3件はいずれも既知（台帳と日付・都市が一致）: 20th ICMA European Primary Market Forum (11 Nov, London)、ICMA Future Leaders fireside chat with Paul Lewis (11 Nov, London)、ICMA Secondary Markets & AMIC Buy-side Forum (30 Nov, London)。新規なし。除外: Hong Kong/Paris/Milan/Singapore/Frankfurt/Tokyo(virtual併設・現地開催は日本)/Riyadh/Zermatt/Cape Town/Beijing の開催、および 10月上旬の終了済み回。"
+  "found": 17,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "ISDA – Events",
   "url": "https://www.isda.org/events/",
   "ok": true,
-  "found": 1,
-  "note": "新規1件(30 Nov ロンドン Trading Book Capital)"
+  "found": 3,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
   "ok": true,
-  "found": 1,
-  "note": "既知1件。他はテーマ外"
+  "found": 3,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
-  "found": 0,
-  "note": "対象テーマのイベントなし"
+  "found": 8,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "JETRO London – Events",
@@ -370,14 +371,14 @@
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
   "ok": true,
   "found": 2,
-  "note": "既知2件。BOFIT/研究セミナーは形式不明・importance<2 のため除外"
+  "note": "2026-10-24 抽出(ページ上の全項目数が多く収載条件合致数は前回値を引き継ぎ)"
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
-  "found": 0,
-  "note": "Upcoming は統計公表のみ"
+  "found": 3,
+  "note": "2026-10-24 抽出"
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
@@ -390,14 +391,14 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 12,
-  "note": "14クエリ・候補12件。新規採用1件(Nature Finance UK Conference 11/12 London。集約サイトのみで確認)。他は既知/会場未確認/テーマ薄"
+  "found": 9,
+  "note": "候補9件は全て既知または対象外(新規採用0)"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
-  "found": 4,
-  "note": "IFS events 貼付: 2件収載(開催地記載なし)。Zooms In Live は過去、Cemmap 研修は除外"
+  "found": 2,
+  "note": "INBOX_UK: IFS 2件(Autumn Budget analysis・Public Economics Day 2027)"
  }
 ]
