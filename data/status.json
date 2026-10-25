@@ -4,7 +4,7 @@
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
   "found": 0,
-  "note": "キャッシュ(--9f2a89)はNews & Eventsの一覧のみで、News/Press Releaseの記事しか無い(最新 2026-10-06)。告知型イベントは無し。"
+  "note": "2026-10-25: ニュース・論説のみで告知型イベントなし。"
  },
  {
   "name": "BIS – Bank for International Settlements – Events",
@@ -89,9 +89,9 @@
  },
  {
   "name": "CESifo (München) – Veranstaltungen",
-  "found": 7,
+  "found": 9,
   "ok": true,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-10-25: 9件すべて既知で変化なし。"
  },
  {
   "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
@@ -115,7 +115,7 @@
   "name": "Deutsche Börse Group – Veranstaltungen",
   "found": 1,
   "ok": true,
-  "note": "ETF-Forum 2026(10/27 Frankfurt)のみ収載、既知と変化なし。Global Fund Summit(Luxemburg)は対象外、Open Day は終了済み。"
+  "note": "2026-10-25: ETF-Forum 2026 のみ(既知)。Global Fund Summit はルクセンブルクで対象外。"
  },
  {
   "name": "EBA – European Banking Authority – Events",
@@ -160,10 +160,10 @@
  },
  {
   "name": "ESMA – Public Hearings",
-  "found": 0,
+  "found": 2,
   "ok": false,
-  "error": "直接403(www/非www、WebFetch・ua-curlとも403) tried: fetch, ua-curl, alt-paths, search",
-  "note": "web検索でも11-12月の新規公聴会は確認できず(最新は9/22 Paris研究会議・7/22公聴会で開催済み)。既知の11/3 Webinar on social media and retail tradingは台帳済み。fetch_hintsにESMAエントリ無し。"
+  "note": "2026-10-25: 検索で Data Day 2026(11/24 Paris ハイブリッド、日付はスニペット由来)を特定、既知の11/3 Webinar と合わせ2件。",
+  "error": "直接403(WebFetch・ua-curlとも)。tried: fetch, ua-curl, alt-paths, search"
  },
  {
   "name": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
@@ -176,7 +176,8 @@
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "error": "一覧がJS描画/検索API不調でイベント本文なし(UA-curlでも同様)。tried: fetch, ua-curl, hints"
+  "error": "一覧がJS描画で空(Showing 1 to 20 of 85 entries のみ)。tried: fetch, ua-curl, hints",
+  "note": "2026-10-25: RECOVER 判定のキャッシュを確認したが件数・本文なし。discovery で INOMICS 等を検索。"
  },
  {
   "name": "House of Finance (Goethe大) – Veranstaltungen",
@@ -262,13 +263,14 @@
   "name": "PIK – Potsdam-Institut für Klimafolgenforschung",
   "found": 0,
   "ok": false,
-  "error": "public-events がログイン画面(PIK Intranet)へ誘導され本文なし。tried: fetch, ua-curl"
+  "error": "public-events がログイン画面へ誘導され本文なし。GCET27 は 9/14-16 開催済み。tried: fetch, ua-curl, hints"
  },
  {
   "name": "RWI Essen – Veranstaltungen",
   "url": "https://www.rwi-essen.de/veranstaltungen",
-  "ok": true,
-  "found": 5
+  "ok": false,
+  "found": 0,
+  "error": "504 が継続(/en/events/・research-seminar・workshops の全 alt を含む)。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "SAFE Frankfurt – Events",
@@ -364,43 +366,43 @@
   "url": "https://www.oenb.at/en/Calendar.html",
   "ok": true,
   "found": 0,
-  "note": "sitemap.xml キャッシュは先頭100,000字のみ(全153,277字)。日付つきのイベントURLは2021〜2024年の過去分のみで、今後のイベントは確認できず。"
+  "note": "2026-10-25: sitemap.xml(先頭10万字のみ)に実行日以降のイベントURLなし。"
  },
  {
   "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
   "url": "https://dgap.org/de/veranstaltungen",
   "ok": false,
   "found": 0,
-  "error": "恒常ブロック(週次再確認待ち)",
-  "note": "週次再確認実施、解除せず(次回再確認2026-10-25)"
+  "note": "2026-10-25: 週次再確認実施。Cloudflare 検証ページのみで解除せず(次回再確認 2026-11-01)",
+  "error": "恒常ブロック(週次再確認待ち)"
  },
  {
   "name": "CEP – Council on Economic Policies (Zürich) – Events",
   "url": "https://www.cepweb.org/events/",
   "ok": true,
   "found": 0,
-  "note": "2ファイルを確認。--c3965c(upcoming)は「Updates coming up shortly」のみで告知無し。--37b846(archive)は 2016〜2024 の過去イベントのみ。今後のイベント無し。"
+  "note": "2026-10-25: upcoming は準備中、archive は過去分のみ。"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "https://www.eu-japan.eu/tags/webinar",
   "ok": true,
   "found": 0,
-  "note": "キャッシュ(tags/webinar)に今後の項目なし。前回foundを引き継ぎ"
+  "note": "2026-10-25: 掲載分は 9/30 までで対象期間内なし。"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "https://www.eestipank.ee/en/events",
   "ok": true,
   "found": 0,
-  "note": "実行日以降のカレンダーで Seminars 区分に該当する収載対象はなし。10-29 の 'Seminar for teachers of financial literacy'(教員研修のため除外)のみ。Board 区分の会合・ECB理事会・統計公表・政策決定公表は対象外。injection-suspected: なし"
+  "note": "2026-10-25: ua-curl で /en/calendar/2026/11 を取得(サイト復旧)。収載対象のセミナーなし。代替URL: https://www.eestipank.ee/en/calendar/2026/11"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "https://forum.frankfurt-school.de/konferenzen/",
   "ok": true,
   "found": 14,
-  "note": "実行日以降の収載対象14件はすべて台帳に既知(変化なし、出力なし)。除外: Advanced Management Programme(2027-04-19〜06-04。経営者向け長期プログラムで seminar/conference/workshop に当たらない)。過去開催(〜10-01)は対象外。injection-suspected: なし"
+  "note": "2026-10-25: 14件すべて既知で変化なし。"
  },
  {
   "name": "Latvijas Banka – Research/Events",
@@ -427,8 +429,8 @@
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "https://www.wu.ac.at/en/the-university/events",
   "ok": true,
-  "found": 5,
-  "note": "収載5件(いずれも既知・変化なし): Investing in a Just Transition、WU Manager of the Year 2026、Austria-Europe-US、The Hidden Cost of Care、Honorary Lecture Taxing Work。除外: Cartoons(展示)、WU x TU、R統計の回、Leadership回(終了日が開始日より前の異常データ)、Symposium(台帳にあるが9テーマ不適合と判断)。"
+  "found": 3,
+  "note": "2026-10-25: 3件とも既知で変化なし。"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
@@ -441,37 +443,37 @@
   "name": "フランクフルト日本法人会 – 行事・活動",
   "url": "https://www.hojinkai.de/activities",
   "ok": true,
-  "found": 1,
-  "note": "該当は熊谷徹氏講演会(11/06, 既知・照合のみ)のみ。除外: 過去の行事(10/16 まで)、コンサート 11/13・フットサル 11/22(セミナー/会議でない)。講演の会場はページ未記載のため city/country null。"
+  "found": 0,
+  "note": "2026-10-25: テーマ該当の行事なし。"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
   "url": "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm",
   "ok": true,
   "found": 0,
-  "note": "alt URL(プレスリリース一覧)をWebFetchで取得成功。10/15以降のリリースはEconomic Review公表のみでセミナー告知0件(通常運用)。"
+  "note": "2026-10-25: alt URL でプレスリリース一覧を確認、セミナー告知0件(通常運用)。"
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
   "ok": true,
   "found": 4,
-  "note": "lb.lt直接403(Cloudflare, ua-curlも403)。web検索で再確認: Economics Conference 11/13・Fraud conference 11/19・FinTech conference 11/30は既知で変化なし。新規: 年次不動産会議 2026-11-24 Vilnius(Samsung Conference Center、現地登録は近日開始、開始時刻・全登壇者は未公表)を1件出力。"
+  "note": "2026-10-25: lb.lt 直接は403。web検索で既知4件を再確認、新規なし。"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
   "found": 26,
-  "note": "diw.de直接403。alt URL(diw-berlin.de)をWebFetchで取得成功(30件)。採用関連/IMF・非公開クラスターセミナー・模擬面接等を除く26件はすべて既知で変化なし(台帳照合)。新規なし。"
+  "note": "2026-10-25: diw.de 直接403。alt URL(diw-berlin.de)で取得成功、26件すべて既知で変化なし。"
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/news-insights/events",
   "ok": false,
   "found": 0,
-  "error": "直接403(ua-curlも403、ボット対策) tried: fetch, ua-curl, hints, search",
-  "note": "web検索で日程付きの新規ウェビナー確認できず(9/15 OCT Instは開催済み、EPC Community Conference Luxembourgは対象外・開催済み)。"
+  "note": "2026-10-25: web検索で日程付き新規ウェビナーなし。",
+  "error": "直接404/403。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
@@ -485,16 +487,16 @@
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": false,
   "found": 0,
-  "error": "直接取得はImperva(Pardon Our Interruption)でブロック tried: fetch, ua-curl, hints, search",
-  "note": "web検索(共催CEBRA等含む)で今後開催の新規なし(CEBRA 9/24-25開催済み、IFC/ECB 5月開催済み、NBP-SNBセミナーは2025年)。"
+  "note": "2026-10-25: 共催先を検索、新規なし。",
+  "error": "Imperva でブロック。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
   "url": "https://www.bnr.ro/en/24077-bears",
   "ok": false,
   "found": 0,
-  "error": "直接取得はエラーページ(This page can't be displayed、本文なし) tried: fetch, ua-curl, hints, search",
-  "note": "web検索でも2026年BEARSセミナー開催情報確認できず。台帳にもBEARSなし。"
+  "note": "2026-10-25: 検索でも2026年BEARS開催情報なし。",
+  "error": "エラーページ(ソフト404)。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
@@ -507,8 +509,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 22,
-  "note": "候補22件確認・新規採用2件(9. Deutsch-Ukrainisches Wirtschaftsforum, KI-Verordnung Werkstattbericht)。HNB/Dubrovnik 2027 の日程は未公表"
+  "found": 17,
+  "note": "2026-10-25: 候補17件確認・新規採用0件(15件は既知、2件は除外)。深掘り観点: デジタルユーロ/ブロック定点補完。"
  },
  {
   "name": "手動取込",

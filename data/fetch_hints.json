@@ -8,7 +8,7 @@
   "permanent_block": {
    "since": "2026-09-27",
    "recheck_days": 7,
-   "last_recheck": "2026-10-18"
+   "last_recheck": "2026-10-25"
   },
   "note": "2026-09-27: 独語版・英語版とも継続してCloudflare系のブラウザ検証ページ(JS空殻)のみで、少なくとも3回連続(2026-09-25, 09-26, 09-27)取得不可を確認。web検索でも2026年10-11月の具体的な日程は確認できず。恒常ブロックとして登録し週次(7日ごと)に再確認する。2026-10-04: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-11)。 2026-10-11: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-18)。 2026-10-18: 週次再確認日。WebFetch(EN alt URL)でも依然Cloudflareブラウザ検証ページのみ、web検索でも日程確認できず。解除せず(次回再確認 2026-10-25)。"
  },
@@ -254,9 +254,11 @@
   "note": "2026-10-09: 通常の/eventsページはJS描画のナビのみ(fetch/ua-curl失敗)。sitemap_index.xml経由でWordPressの未公開REST名前空間 dhsv/v2/eco/events を発見、今後のセミナー(日付・時刻・講演者・リンク)を構造化データで取得できる(per_page=100で全件)。次回以降はこのAPIエンドポイントを優先的に試す。"
  },
  "Eesti Pank (エストニア) – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": null,
+  "method": "ua-curl",
+  "alt_urls": [
+   "https://www.eestipank.ee/en/calendar/2026/11"
+  ],
+  "last_ok": "2026-10-25",
   "note": "2026-10-16: ドメイン全体が503(トップページ・research-seminars・calendar・sitemap.xmlすべて503)。サイト側障害の可能性。web検索でも今後の日程付きイベント確認できず(Tuulelohe lend・30周年記念・理事会セミナー等いずれも過去開催)。"
  },
  "CEPR – Centre for Economic Policy Research – Events": {
