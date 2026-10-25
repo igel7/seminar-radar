@@ -4,63 +4,63 @@
   "url": "https://www.suerf.org/events/",
   "ok": true,
   "found": 5,
-  "note": "5件とも既知。11/4・11/10 は登壇者追記"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
   "found": 16,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
   "ok": true,
   "found": 2,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
   "found": 9,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bank of England – Events",
   "url": "https://www.bankofengland.co.uk/news/events",
   "ok": true,
   "found": 7,
-  "note": "一覧13件のうち美術館・ツアー・家族向け等6件は除外。収載条件に合う7件(growth conference, BdF-BoE-BdI, Behavioural workshop, Bristol/Belfast 意見聴取, Leeds workshop, DEI conference)は全て台帳既知で変化なし。"
+  "note": "2026-10-25 抽出(通常取得は静的0件のため fetch_page.py --wait 8000 で描画し13件確認。全て既知)"
  },
  {
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
   "found": 4,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
   "url": "https://niesr.ac.uk/events",
   "ok": true,
   "found": 8,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "IFS – Institute for Fiscal Studies – Events",
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 'Just a moment' 403 on /events, /events/upcoming, /sitemap.xml, /feed; hint method search yielded no ifs.org.uk pages (only unrelated IFS e 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)",
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)",
   "note": "INBOX 手動取込で補完(2件)"
  },
  {
@@ -68,21 +68,21 @@
   "url": "https://cepr.org/events",
   "ok": true,
   "found": 11,
-  "note": "全6ページ照合。新規1件(11/17 オンライン Media Plurality ウェビナー)。他は既知または域外/判定不能"
+  "note": "2026-10-25 抽出(cepr.org/events は403、hub.cepr.org で取得)"
  },
  {
   "name": "Resolution Foundation – Events",
   "url": "https://www.resolutionfoundation.org/events/",
   "ok": true,
   "found": 3,
-  "note": "3件とも既知"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
   "found": 3,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "CER – Centre for European Reform – Events",
@@ -90,7 +90,7 @@
   "ok": false,
   "found": 0,
   "note": "一覧(page=1のみ)に掲載されたイベントは全て2026-09-17〜10-13の開催済みで、収載対象なし。",
-  "error": "2026-10-23 NET-ERR(接続不可)。tried: fetch, ua-curl, hints, alt-paths, search 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Chatham House – Events",
@@ -98,49 +98,49 @@
   "ok": false,
   "found": 0,
   "note": "Direct access remains Cloudflare 403 (ua-curl, /events/upcoming, sitemap, rss, Chromium all blocked). Recovered via WebSearch snippet of the official event page https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026 (11 Nov 2026, 09:00-17:00 GMT, hybrid). Other listed items (London conference, Berlin conference) had no date in snippets and were not adopted. / 本日 403(取得失敗、前回found引継ぎ)",
-  "error": " 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": true,
   "found": 10,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 403 on /events/, /en/events/, sitemap; web search returned no iiss.org pages. 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Policy Exchange – Events",
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "2026-10-23 HTTPS 接続断/HTTP 500・sgcaptcha。tried: fetch, ua-curl, hints, alt-paths, search 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
   "found": 3,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
   "found": 0,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 12,
-  "note": "2026-10-24 抽出"
+  "found": 5,
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -154,7 +154,7 @@
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
   "found": 3,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -168,28 +168,28 @@
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
   "found": 27,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "Oxford – Saïd Business School – Events",
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare 403 on /events, /events/upcoming, /news-and-events, sitemap; search returned only events.ox.ac.uk generic results and one past event (Oxfor 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Oxford Martin School – Events",
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
   "ok": true,
   "found": 9,
-  "note": "全件既知。What Should My Children Do? に登壇者追記"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Cambridge Judge Business School – Events",
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出(Chromium 8秒待機でも一覧に個別イベントなし。found 0)"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -210,28 +210,28 @@
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
   "found": 12,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出(1ページ目のみ。採用・入学面談のみで対象外)"
  },
  {
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 30,
-  "note": "2026-10-24 抽出"
+  "found": 27,
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "Warwick Business School – Events",
   "url": "https://www.wbs.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "一覧にイベントなし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bayes Business School – Events",
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "Cloudflare challenge (403 'Just a moment'); Chromium also stuck at security verification; /news-and-events/events and /sitemap.xml 403; web search sur 2026-10-24 403/NET-ERR。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
@@ -245,21 +245,21 @@
   "url": "https://iea.org.uk/events-upcoming/",
   "ok": true,
   "found": 1,
-  "note": "The Madness of Markets のみ既知。他はテーマ判定不能/テーマ外"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "UK in a Changing Europe (UKICE) – Events",
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
   "found": 1,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
   "found": 6,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -280,7 +280,7 @@
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
   "found": 2,
-  "note": "2026-10-24 抽出(ページ上の全項目数が多く収載条件合致数は前回値を引き継ぎ)"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "TheCityUK – Events",
@@ -294,56 +294,58 @@
   "url": "https://www.lseg.com/en/events",
   "ok": true,
   "found": 0,
-  "note": "掲載は英国外(香港・ボストン)のみ"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
   "found": 17,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ISDA – Events",
   "url": "https://www.isda.org/events/",
   "ok": true,
   "found": 3,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
-  "ok": true,
-  "found": 3,
-  "note": "2026-10-24 抽出"
+  "ok": false,
+  "found": 0,
+  "note": "2026-10-24 抽出",
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
   "found": 8,
-  "note": "2026-10-24 抽出"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "JETRO London – Events",
   "url": "https://www.jetro.go.jp/uk/events.html",
   "ok": true,
   "found": 0,
-  "note": "一覧は RFP・告知のみで日付付きイベントなし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "SOAS – What's on (SOAS China Institute を含む)",
   "url": "https://www.soas.ac.uk/about/whats-on",
   "ok": true,
   "found": 0,
-  "note": "個別イベント掲載なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
-  "ok": true,
-  "found": 5,
-  "note": "5件とも既知。10/23 ブリーフィングに登壇者追記"
+  "ok": false,
+  "found": 0,
+  "note": "5件とも既知。10/23 ブリーフィングに登壇者追記",
+  "error": "2026-10-25 403/NET-ERR(ボット対策)。tried: fetch, ua-curl(fetch_all), hints, search(discovery site:検索)"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
@@ -371,34 +373,34 @@
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
   "ok": true,
   "found": 2,
-  "note": "2026-10-24 抽出(ページ上の全項目数が多く収載条件合致数は前回値を引き継ぎ)"
+  "note": "2026-10-25 抽出"
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
   "found": 3,
-  "note": "2026-10-24 抽出"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
   "url": "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
   "ok": true,
   "found": 0,
-  "note": "RSSは公表物のみでイベント告知なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 9,
-  "note": "候補9件は全て既知または対象外(新規採用0)"
+  "found": 6,
+  "note": "2026-10-25 確認した候補6件(全て既知・範囲外・期間外)。新規採用0件。site:検索はブロック定点で個別ページに当たらず"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
-  "found": 2,
+  "found": 0,
   "note": "INBOX_UK: IFS 2件(Autumn Budget analysis・Public Economics Day 2027)"
  }
 ]

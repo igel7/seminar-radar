@@ -1366,7 +1366,18 @@
    "importance": 1,
    "registration_url": "https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies/registration",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Stefano Ungaro",
+     "org": "European Commission",
+     "role": "Economic and Policy Analyst"
+    },
+    {
+     "name": "Martin Schmitz",
+     "org": "ECB",
+     "role": "Senior Team Lead Economist-Statistician"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "3ec80de8464fb78a",
    "first_seen": "2026-10-19",
@@ -1489,12 +1500,27 @@
    "organizer_short": "Central Bank of Ireland",
    "title_short": "Cross-Sectoral Financial Stability",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Mary-Elizabeth McMunn",
+     "org": "Central Bank of Ireland",
+     "role": "Deputy Governor, Financial Regulation"
+    }
+   ],
    "source": "Central Bank of Ireland – Upcoming events",
    "id": "40d17776fcbfebcd",
    "first_seen": "2026-10-19",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "mary-elizabeth-mcmunn",
+     "name": "Mary-Elizabeth McMunn",
+     "group": "ncb",
+     "tier": 2,
+     "short": null,
+     "former": false
+    }
+   ],
+   "notable_tier": 2
   },
   {
    "title": "Labour and Education Seminars",
@@ -3105,7 +3131,18 @@
    "organizer_short": "OMFIF",
    "title_short": "Japan's New Policy Era",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Kazuhiro Masaki",
+     "org": "BoJ",
+     "role": "Assistant governor"
+    },
+    {
+     "name": "Mark Sobel",
+     "org": "OMFIF",
+     "role": "Vice Chair and Chief Economist"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "921a2fe576dc2f9d",
    "first_seen": "2026-10-19",
@@ -10964,7 +11001,13 @@
    "organizer_short": "Warwick",
    "title_short": "Economic Consequences of Ukraine Conflict",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Priscilla Toffano",
+     "org": "IMF",
+     "role": "economist and IMF representative in Ukraine"
+    }
+   ],
    "source": "Warwick – Department of Economics – Events",
    "id": "0154008d5b940ce1",
    "first_seen": "2026-10-24",
@@ -11097,7 +11140,18 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Gonzalo Saiz",
+     "org": "RUSI",
+     "role": "Research Fellow"
+    },
+    {
+     "name": "Andrew Mackay",
+     "org": "RUSI",
+     "role": "Associate Fellow"
+    }
+   ],
    "source": "RUSI – Royal United Services Institute – Events",
    "id": "751e6b18066056b5",
    "first_seen": "2026-10-24",
@@ -11171,7 +11225,23 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Marco Annunziata",
+     "org": "Annunziata and Desai Advisors",
+     "role": "Co-Founder"
+    },
+    {
+     "name": "Mark Sobel",
+     "org": "OMFIF",
+     "role": "Vice Chair and Chief Economist"
+    },
+    {
+     "name": "Logan H. Wright",
+     "org": "Rhodium Group",
+     "role": "Partner and Director of China Markets Research"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "c0e7dac5db522830",
    "first_seen": "2026-10-24",
@@ -11212,6 +11282,49 @@
    "source": "UNEP FI – Events",
    "id": "fef25ac4424e1c4b",
    "first_seen": "2026-10-24",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Geography and the wealth of nations",
+   "title_ja": "地理と国の富",
+   "organizer": "London School of Economics and Political Science",
+   "date_start": "2026-10-27",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": "LSE campus (venue tbc to ticketholders)",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "チケット制と記載あり(申込詳細は要確認)",
+   "registration_note_en": "Ticketed according to the listing (registration details to be confirmed)",
+   "registration_note_de": "Laut Angabe ticketpflichtig (Anmeldedetails bitte prüfen)",
+   "url": "https://www.lse.ac.uk/events/geography-wealth-nations",
+   "registration_url": null,
+   "summary_ja": "「地理と国の富」をテーマとする Jeffrey D Sachs 教授の公開講演。",
+   "summary_en": "Public lecture by Professor Jeffrey D Sachs on geography and the wealth of nations.",
+   "summary_de": "Öffentlicher Vortrag von Professor Jeffrey D. Sachs zum Thema Geografie und Wohlstand der Nationen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Geography and National Wealth",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Jeffrey D Sachs",
+     "org": null,
+     "role": "Professor"
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "cc9a43719a2ef335",
+   "first_seen": "2026-10-25",
    "notables": [],
    "notable_tier": null
   }
