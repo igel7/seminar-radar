@@ -50,7 +50,7 @@ except ImportError:
 
 DEFAULT_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
 )
 
 FALLBACK_EXECUTABLE_PATH = "/opt/pw-browsers/chromium"
@@ -94,6 +94,34 @@ def ensure_proxy_ca_in_nss():
         pass
 
 
+INSTALL_MARKER = os.path.join(os.environ.get("PLAYWRIGHT_BROWSERS_PATH") or
+                              os.path.expanduser("~/.cache/ms-playwright"),
+                              ".seminar-radar-install-attempted")
+
+
+def ensure_current_browser():
+    """Playwright が期待する版の Chromium(headless shell)が無ければ 1 回だけダウンロードする。
+
+    2026-10-25: 環境同梱の /opt/pw-browsers/chromium は Chromium 141 で、Headless 向けの
+    セキュリティ修正(CVE-2026-12027 等。149〜151 で修正)より古い。pip の playwright
+    (1.64)は Chromium 156 を要求するので、`playwright install chromium-headless-shell`
+    (約 280 MB・10 秒前後)で揃えると default の launch がそれを使う。巡回先は信頼できない
+    HTML なので、描画に使うブラウザは新しい方がよい(SECURITY_NOTES.md 参照)。
+    ダウンロードできない環境(Codex Cloud 等)では失敗を記録して同梱版に戻る。
+    SR_NO_BROWSER_DOWNLOAD=1 で無効化できる。"""
+    if os.environ.get("SR_NO_BROWSER_DOWNLOAD") or os.path.exists(INSTALL_MARKER):
+        return
+    try:
+        os.makedirs(os.path.dirname(INSTALL_MARKER), exist_ok=True)
+        open(INSTALL_MARKER, "w").close()      # 失敗しても同じセッションで再試行しない
+        env = {k: v for k, v in os.environ.items() if k != "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD"}
+        subprocess.run([sys.executable, "-m", "playwright", "install", "chromium-headless-shell"],
+                       check=False, timeout=240, env=env,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except Exception:
+        pass
+
+
 def launch_browser(p, proxy_url):
     kwargs = {"headless": True}
     if proxy_url:
@@ -101,12 +129,19 @@ def launch_browser(p, proxy_url):
     try:
         return p.chromium.launch(**kwargs)
     except Exception:
-        return p.chromium.launch(executable_path=FALLBACK_EXECUTABLE_PATH, **kwargs)
+        ensure_current_browser()
+        try:
+            return p.chromium.launch(**kwargs)
+        except Exception:
+            print("fetch_page: Playwright 既定の Chromium が使えないため同梱版 "
+                  f"{FALLBACK_EXECUTABLE_PATH} に戻す", file=sys.stderr)
+            return p.chromium.launch(executable_path=FALLBACK_EXECUTABLE_PATH, **kwargs)
 
 
 def try_fetch(p, args, proxy_url, ignore_tls):
     browser = launch_browser(p, proxy_url)
     try:
+        print(f"fetch_page: Chromium {browser.version}", file=sys.stderr)
         context = browser.new_context(user_agent=DEFAULT_UA,
                                       ignore_https_errors=ignore_tls)
         page = context.new_page()

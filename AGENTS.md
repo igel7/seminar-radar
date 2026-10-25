@@ -81,12 +81,13 @@
 
 | 環境 | headless Chromium (`scripts/fetch_page.py`) | web検索 | GitHubへのpush | 備考 |
 |---|---|---|---|---|
-| Claude Code Routines / claude.ai/code のクラウドセッション | **2026-10-20 再検証: 環境のネットワークが Full なら使える**(Default 環境で BoE の JS 描画一覧を取得できた。**2026-10-21 の英国モード Routine 本番でも BoE を Chromium 描画で取得できたことを確認済み**。`fetch_hints.json` の `note` や `status.json` に「Routines では Chromium 不可」等の古い記述が残っていても、この表を正とする)。2026-07 の ERR_CONNECTION_RESET は当時のネットワーク制限によるもの。`playwright` パッケージが無い環境では `fetch_page.py` が自動で `pip install playwright` する(ブラウザ本体は `/opt/pw-browsers/chromium` に同梱)。**手で使う必要はない**: `fetch_hints.json` に `"render": "chromium"` の付いたソースは `fetch_all.py` が自動で Chromium 描画する(B手順1.5)。描画に失敗したソースは通常取得に戻り、出力に「Chromium 描画に失敗」と出る | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
+| Claude Code Routines / claude.ai/code のクラウドセッション | **2026-10-20 再検証: 環境のネットワークが Full なら使える**(Default 環境で BoE の JS 描画一覧を取得できた。**2026-10-21 の英国モード Routine 本番でも BoE を Chromium 描画で取得できたことを確認済み**。`fetch_hints.json` の `note` や `status.json` に「Routines では Chromium 不可」等の古い記述が残っていても、この表を正とする)。2026-07 の ERR_CONNECTION_RESET は当時のネットワーク制限によるもの。`playwright` パッケージが無い環境では `fetch_page.py` が自動で `pip install playwright` する。ブラウザは Playwright が期待する版(2026-10-25 時点で Chromium 156)が無ければ初回に `playwright install chromium-headless-shell` で自動導入し(約 280 MB・10 秒前後)、できなければ同梱の `/opt/pw-browsers/chromium`(141)に戻る(`SECURITY_NOTES.md` 3)。**手で使う必要はない**: `fetch_hints.json` に `"render": "chromium"` の付いたソースは `fetch_all.py` が自動で Chromium 描画する(B手順1.5)。描画に失敗したソースは通常取得に戻り、出力に「Chromium 描画に失敗」と出る | WebSearch ツールで可 | 可 | ページ取得は WebFetch、無ければ `curl -sL` |
 | Codex Cloud | **使用不可**(ブラウザ本体が存在しない。2026-08-17 確認) | **使用不可**(`web__run` は存在するが 401。2026-08-17 確認) | **不可能**(2026-08-17 確認) | 静的ページの取得のみ可。`git fetch`/`clone` も不可 |
 
 **このため日次更新は Claude Code Routines で行う。Codex Cloud は日次更新には使わない**
 (巡回はできるが、新規発見・JS描画ソース・成果物の反映がいずれも不可能なため)。
-判断の根拠は `CODEX_NOTES.md` にある。
+判断の根拠は `CODEX_NOTES.md` にある。セキュリティ上の前提(信頼できない入力と守り・確認済みの
+脆弱性情報・Chromium の自動更新)は **`SECURITY_NOTES.md`** にある。脆弱性情報を調べたらそこに追記する。
 
 - 巡回対象ドメインへの外向き接続が環境側で制限されている場合がある。
   接続が全面的に落ちている場合は、無理に回さず `data/status.json` に失敗として記録する。
