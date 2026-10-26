@@ -937,7 +937,48 @@
    "organizer_short": "ICMA",
    "title_short": "European Primary Bond Markets",
    "importance": 2,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Bryan Pascoe",
+     "org": "ICMA",
+     "role": "Chief Executive"
+    },
+    {
+     "name": "Vera Matser",
+     "org": "Alan Turing Institute",
+     "role": "Head of Strategic Capabilities"
+    },
+    {
+     "name": "Emma Thomas",
+     "org": "ICMA",
+     "role": "Associate Director, Innovation and Digitalisation"
+    },
+    {
+     "name": "Ruari Ewing",
+     "org": "ICMA",
+     "role": "Senior Director, Market Practice and Regulatory Policy"
+    },
+    {
+     "name": "Alex Malitsky",
+     "org": "TD Securities",
+     "role": "Director, Debt Capital Markets for Public Sector & SSAs"
+    },
+    {
+     "name": "Hayley Basterfield",
+     "org": "Lloyds",
+     "role": "Global Head of DCM & Syndicate"
+    },
+    {
+     "name": "Patrick Halpin",
+     "org": "BP",
+     "role": "Head of Capital Markets"
+    },
+    {
+     "name": "Dave McEvoy",
+     "org": "NTMA",
+     "role": "Director, Funding & Debt Management"
+    }
+   ],
    "source": "ICMA – International Capital Market Association – Events",
    "id": "2e9c9c8775b854b9",
    "first_seen": "2026-10-19",
@@ -4158,7 +4199,48 @@
    "title_short": "Making Impact Investing Work",
    "importance": 2,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Laura Starks",
+     "org": "UT Austin",
+     "role": null
+    },
+    {
+     "name": "Michelle Lowry",
+     "org": "Drexel",
+     "role": null
+    },
+    {
+     "name": "Nadya Malenko",
+     "org": "Boston College",
+     "role": null
+    },
+    {
+     "name": "Josh Lerner",
+     "org": "HBS",
+     "role": null
+    },
+    {
+     "name": "Per Strömberg",
+     "org": "SSE",
+     "role": null
+    },
+    {
+     "name": "Constantine Yannelis",
+     "org": "Cambridge",
+     "role": null
+    },
+    {
+     "name": "Paul Voss",
+     "org": "HEC Paris",
+     "role": null
+    },
+    {
+     "name": "Diana Noble",
+     "org": "BoE",
+     "role": "Non-Executive Director and Deputy Chair of the Court"
+    }
+   ],
    "source": "LSE – Financial Markets Group (FMG) – Events",
    "id": "b792a359a3679405",
    "first_seen": "2026-10-19",
@@ -5292,39 +5374,40 @@
   },
   {
    "title": "Japan's Intelligence Reforms",
-   "title_ja": "日本の情報機関改革",
+   "title_ja": "日本のインテリジェンス改革",
    "organizer": "Daiwa Anglo-Japanese Foundation",
    "date_start": "2026-11-11",
    "date_end": null,
-   "time": null,
-   "time_end": null,
+   "time": "18:00",
+   "time_end": "19:00",
    "city": "London",
-   "venue": null,
+   "venue": "Daiwa Foundation Japan House, 13/14 Cornwall Terrace, Outer Circle, London NW1 4QP",
    "format": null,
    "themes": [
-    "geopolitics"
+    "geopolitics",
+    "japan"
    ],
    "fee": "unknown",
    "fee_amount": null,
    "open_to_public": null,
-   "registration_note": "事前予約(Bookページ)あり・参加費は未記載",
-   "registration_note_en": "Booking page available; fee not stated",
-   "registration_note_de": "Buchung über die Veranstaltungsseite; Gebühr nicht angegeben",
+   "registration_note": "「Book your place」の申込ボタンあり",
+   "registration_note_en": "A 'Book your place' button is shown",
+   "registration_note_de": "Schaltfläche 'Book your place' vorhanden",
    "registration_url": null,
    "url": "https://dajf.org.uk/event/japans-intelligence-reforms",
-   "summary_ja": "日本が情報機関の能力を再構築している動きを取り上げ、提案されている法制度・制度改正の内容と、それが示す日本の安全保障上の方向性を解説するセミナー。",
-   "summary_en": "Seminar in which Dr Philip Shetler-Jones explains Japan's proposed legal and institutional intelligence reforms and what they signal about Japan's security direction.",
-   "summary_de": "Seminar, in dem Dr. Philip Shetler-Jones die geplanten rechtlichen und institutionellen Reformen der japanischen Nachrichtendienste erläutert und deren sicherheitspolitische Bedeutung einordnet.",
+   "summary_ja": "日本が進める情報機関の再構築と、法制度・組織の改革案を取り上げるセミナー。日本社会の脅威認識や国家安全保障上の役割の変化も論じる。",
+   "summary_en": "Seminar on Japan's rebuilding of its intelligence capabilities, the proposed legal and institutional changes, and what they reveal about Japanese threat perceptions and national security statecraft.",
+   "summary_de": "Seminar über den Wiederaufbau der japanischen Nachrichtendienste, die geplanten rechtlichen und institutionellen Änderungen und was sie über Japans Bedrohungswahrnehmung und sicherheitspolitische Instrumente aussagen.",
    "language": "en",
    "country": "GB",
    "organizer_short": "DAJF",
-   "title_short": "Japan Intelligence Reforms",
+   "title_short": "Japan's Intelligence Reforms",
    "importance": 1,
    "speakers": [
     {
      "name": "Philip Shetler-Jones",
-     "org": null,
-     "role": null
+     "org": "RUSI",
+     "role": "Senior Research Fellow, International Security team"
     }
    ],
    "source": "Daiwa Anglo-Japanese Foundation – Events",
@@ -10845,22 +10928,22 @@
   {
    "date_end": null,
    "time": "10:30",
-   "time_end": null,
+   "time_end": "12:00",
    "city": null,
    "venue": null,
-   "format": null,
+   "format": "online",
    "fee": "unknown",
    "fee_amount": null,
    "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
+   "registration_note": "ページに「Register」ボタンあり(費用は未確認)",
+   "registration_note_en": "A 'Register' button is shown (fee not verified)",
+   "registration_note_de": "Schaltfläche 'Register' vorhanden (Gebühr nicht geprüft)",
    "registration_url": null,
    "language": "en",
    "country": "GB",
    "speakers": [],
    "title": "Autumn Budget 2026: IFS analysis",
-   "title_ja": "2026年秋季予算：IFS分析",
+   "title_ja": "2026年秋季予算のIFS分析",
    "organizer": "Institute for Fiscal Studies",
    "organizer_short": "IFS",
    "date_start": "2026-10-29",
@@ -10869,11 +10952,11 @@
    ],
    "title_short": "Autumn Budget Analysis",
    "importance": 2,
-   "url": "https://ifs.org.uk/events",
+   "url": "https://ifs.org.uk/events/autumn-budget-2026-ifs-analysis",
    "source": "手動取込: INBOX",
-   "summary_ja": "IFSの研究者が、ヒーリー財務相の秋季予算に対する初期分析を発表する。",
-   "summary_en": "IFS researchers present their initial response to Chancellor John Healey's Autumn Budget.",
-   "summary_de": "IFS-Forscher stellen ihre erste Einschätzung zum Herbsthaushalt von Schatzkanzler John Healey vor.",
+   "summary_ja": "IFSの研究者が秋季予算に対する初期分析を発表するオンラインイベント。",
+   "summary_en": "Online event where IFS researchers present their initial analysis of the Autumn Budget 2026.",
+   "summary_de": "Online-Veranstaltung, bei der IFS-Forschende ihre erste Analyse des Herbsthaushalts 2026 vorstellen.",
    "id": "a28b058648338c84",
    "first_seen": "2026-10-23",
    "notables": [],
