@@ -102,13 +102,12 @@ INSTALL_MARKER = os.path.join(os.environ.get("PLAYWRIGHT_BROWSERS_PATH") or
 def ensure_current_browser():
     """Playwright が期待する版の Chromium(headless shell)が無ければ 1 回だけダウンロードする。
 
-    2026-10-25: 環境同梱の /opt/pw-browsers/chromium は Chromium 141 で、Headless 向けの
-    セキュリティ修正(CVE-2026-12027 等。149〜151 で修正)より古い。pip の playwright
-    (1.64)は Chromium 156 を要求するので、`playwright install chromium-headless-shell`
-    (約 280 MB・10 秒前後)で揃えると default の launch がそれを使う。巡回先は信頼できない
-    HTML なので、描画に使うブラウザは新しい方がよい(SECURITY_NOTES.md 参照)。
+    環境同梱のブラウザは pip の playwright が期待する版より古いことがある。
+    `playwright install chromium-headless-shell`(約 280 MB・10 秒前後)で揃えると default の
+    launch がそれを使う。巡回先は信頼できない HTML なので、描画に使うブラウザは常に
+    Playwright の最新対応版にしておく(SECURITY_NOTES.md 2)。
     ダウンロードできない環境(Codex Cloud 等)では失敗を記録して同梱版に戻る。
-    SR_NO_BROWSER_DOWNLOAD=1 で無効化できる。"""
+    SR_NO_BROWSER_DOWNLOAD=1 で無効化できる(検証用)。"""
     if os.environ.get("SR_NO_BROWSER_DOWNLOAD") or os.path.exists(INSTALL_MARKER):
         return
     try:
