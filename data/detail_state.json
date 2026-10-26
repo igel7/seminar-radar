@@ -34,6 +34,13 @@
   "result": "FAIL-HTTP",
   "tries": 1
  },
+ "https://finanzverlag.at/termine/ki-compliance-2026": {
+  "event_id": "5a0141703e205cbc",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://gfk-cfs.de/events/conferences/the-ssm-reform-agenda-on-the-path-toward-efficient-and-competitive-supervision": {
   "event_id": "1b4a9b2120fb2bf4",
   "http": 200,
@@ -97,10 +104,31 @@
   "result": "ok",
   "tries": 1
  },
+ "https://veranstaltungen.dena.de/event.php": {
+  "event_id": "07b7db5b18ab13dd",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://warsawsecurityforum.org/wsf-2026": {
   "event_id": "873bf74df6b65306",
   "http": 200,
   "last": "2026-10-13",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.appliedai-institute.de/en/workshops-trainings/ai-act-fuer-einsteiger-was-wie-und-warum-wird-reguliert-2": {
+  "event_id": "87b4469ddd10e6bc",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.appliedai-institute.de/en/workshops-trainings/ai-act-umsetzen-ihr-weg-richtung-konformitaet-2": {
+  "event_id": "376109a61e03d055",
+  "http": 200,
+  "last": "2026-10-26",
   "result": "ok",
   "tries": 1
  },
@@ -115,6 +143,13 @@
   "event_id": "c7855e5b021275b2",
   "http": 200,
   "last": "2026-10-25",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.appliedai-institute.de/en/workshops-trainings/ki-systeme-einstufen-risikoklassen-rollen-pflichten-2": {
+  "event_id": "dd31bdc4a0d95a9b",
+  "http": 200,
+  "last": "2026-10-26",
   "result": "ok",
   "tries": 1
  },
@@ -265,6 +300,20 @@
   "result": "FAIL-BLOCKED",
   "tries": 1
  },
+ "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/linkedin-for-japanese-expats": {
+  "event_id": "420b12c9f96d5b8a",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202611": {
+  "event_id": "b399f41ae46d5fd9",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.drsc.de/en/news/save-the-date-hamburg-sustainability-reporting-forum-2026-registration-opens-in-september": {
   "event_id": "b0e5bd823d952597",
   "http": 200,
@@ -283,6 +332,20 @@
   "event_id": "cbb7541271c9a4b0",
   "http": 200,
   "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.eba.europa.eu/publications-and-media/events/annual-data-and-reporting-workshops-2026": {
+  "event_id": "a6ecfd8c8b944b89",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.eba.europa.eu/publications-and-media/events/public-hearing-implementing-technical-standards-joint-decisions-institution-specific-prudential": {
+  "event_id": "b1499b7183c7e19b",
+  "http": 200,
+  "last": "2026-10-26",
   "result": "ok",
   "tries": 1
  },
@@ -398,6 +461,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.forum-ng.org/en/termine/veranstaltung/ebs-executive-school-impact-investing-iiv-7-jahrgang": {
+  "event_id": "4886bd06611b5947",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.forum-ng.org/en/termine/veranstaltung/eurosif-policy-capacity-building-webinar-1-1-1": {
   "event_id": "2d173f63acea8db3",
   "http": 200,
@@ -454,6 +524,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.icmagroup.org/events/webinar-preparing-for-eu-t-1-understanding-the-new-gating-event-for-sfts": {
+  "event_id": "82e18136f2d82080",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.ifo.de/en/cesifo/event/2026-10-23/cesifo-area-conference-behavioral-economics-2026": {
   "event_id": "530fe88251420672",
   "http": 200,
@@ -493,6 +570,13 @@
   "event_id": "3ff2ed33a5bd304f",
   "http": 200,
   "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ifo.de/en/econpol/event/2026-11-09/annual-conference-future-of-work-in-europe": {
+  "event_id": "f2a30630f6a0456a",
+  "http": 200,
+  "last": "2026-10-26",
   "result": "ok",
   "tries": 1
  },
@@ -601,6 +685,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/europes-competitiveness-and-security-a-baltic-central-bank-perspective": {
+  "event_id": "35c49c778013342a",
+  "http": 200,
+  "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/insurance-a-catalyst-for-financial-resilience": {
   "event_id": "d42d370a4207f0c9",
   "http": 200,
@@ -619,6 +710,13 @@
   "event_id": "a595a97c159f6cc5",
   "http": 200,
   "last": "2026-10-24",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/money-disrupted-us-monetary-policy-and-emerging-markets": {
+  "event_id": "50dcabc24a70ceaf",
+  "http": 200,
+  "last": "2026-10-26",
   "result": "ok",
   "tries": 1
  },
@@ -661,6 +759,13 @@
   "event_id": "0e1568aa6f8f5242",
   "http": 200,
   "last": "2026-10-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.unepfi.org/events/turning-sustainability-disclosures-into-risk-insights-new-sustainability-risk-management-tools-and-research": {
+  "event_id": "307b72b626bc033f",
+  "http": 200,
+  "last": "2026-10-26",
   "result": "ok",
   "tries": 1
  },

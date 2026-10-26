@@ -4,7 +4,7 @@
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
   "found": 0,
-  "note": "2026-10-25: ニュース・論説のみで告知型イベントなし。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "BIS – Bank for International Settlements – Events",
@@ -17,7 +17,7 @@
   "name": "BOFIT – Bank of Finland Institute for Emerging Economies – Events",
   "ok": true,
   "found": 4,
-  "note": "新規1件(2026-10-27 Peiyuan Li)を出力。既知3件(2026-11-03 Talavera / 2026-12-08 Aguirre / 2027-01-12 Lai)は台帳と日付・時刻・URL・登壇者が一致し変化なしのため非出力。会場・都市はページに個別記載が無く null(フッターの Bank of Finland 住所は個別会場の根拠にしていない)。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "BaFin – Veranstaltungen",
@@ -29,14 +29,14 @@
   "name": "Bank of Albania – Events",
   "found": 0,
   "ok": true,
-  "note": "/Events/ が本体ページへリダイレクトされ、キャッシュは銀行トップの本文。掲載は2026-08〜10月の既往の報道発表・プレス記事のみで、今後のイベント告知は無し。台帳には同ソースの 2026-11-24/25 Tirana の既知2件があるが本キャッシュには出てこない(取得不完全の可能性あり。/Events/ の再取得を推奨)。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Banka Slovenije – Events",
   "url": "https://www.bsi.si/en/about-us/conferences-and-seminars",
   "ok": true,
   "found": 0,
-  "note": "キャッシュは Upcoming events の12件のみ(2026-10-27〜12-30)。Monthly Bulletin・月次報告・Direct Investment・マクロ予測レビュー等は報告書の公表予定で除外。MGBS(美術ギャラリー)・博物館見学は除外。11-18 の Survey Presentation(家計の資産・債務・不平等)は報告書の公表扱いとして除外(判断が割れる場合は要確認)。台帳には同ソースの BS|EF セミナー(〜10-22)と BIS 主催 16th Workshop on Exchange Rates(2026-12-10, Hong Kong)があるが、このキャッシュには無く、カテゴリ絞り込み等で取得範囲が狭い可能性あり。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Berlin School of Economics – Events",
@@ -47,33 +47,35 @@
  {
   "name": "Bitkom (Berlin) – Veranstaltungen",
   "found": 5,
-  "ok": true
+  "ok": true,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bruegel (Brussels) – Events",
   "url": "https://www.bruegel.org/events",
   "ok": true,
   "found": 2,
-  "note": "今後の2件(10/28 China shock 2.0、11/03 自動車産業)は Brussels 開催で、オンライン参加の明記もないため対象外として除外。他の掲載分は開催日が過去。新規出力0件。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bundesbank – Forschungskonferenzen",
   "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656",
   "ok": true,
-  "found": 2
+  "found": 2,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
   "ok": true,
   "found": 11,
-  "note": "一覧に11件(10/27 Nürnberg 〜 12/09 Spremberg)。既知9件は変化なし。新規: 12/02 Cottbus、12/09 Spremberg。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Bundesbank – Termine",
   "ok": true,
   "found": 4,
-  "note": "キャッシュは1ページ目のみ(10/08〜10/29付近)。収載4件=Fachtagung(時刻 null→10:00 に更新)、Frankfurter Gespräche(既知)、AI Week パネル(新規)、Bundeshaushalt Nürnberg(既知)。Messe・教員向け講座・採用Web会議・EZB理事会記者会見は除外。"
+  "note": "2026-10-26: 新規1(AI & Sovereignty)+既知3の登壇者追記。"
  },
  {
   "name": "CBBH – Central Bank of Bosnia and Herzegovina – Events",
@@ -85,44 +87,46 @@
   "name": "CEBRA – Central Bank Research Association – Events",
   "url": "https://cebra.org/events/upcoming/",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "CESifo (München) – Veranstaltungen",
   "found": 9,
   "ok": true,
-  "note": "2026-10-25: 9件すべて既知で変化なし。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
   "url": "https://gfk-cfs.de/en/events/feed/",
   "ok": true,
   "found": 0,
-  "note": "キャッシュはWordPressフィード。2026-10時点で未来の告知が3件あるが(「Biodiversität und die Bonität von Staaten」Klump司会 / 「The SSM Reform Agenda」Campus Westend / 「The Global Euro Starts at Home」Campus Westend)、本文に開催日が無く日付不明のため除外。個別ページの再取得で日付を確認すべき。残りは event-archive/2026 の過去イベント。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
   "found": 4,
-  "ok": true
+  "ok": true,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
   "found": 6,
   "ok": true,
-  "note": "一覧に9件。Tokyo(11/13)・Osaka(11/16)は対象外として除外。LinkedIn(Hamburg)は既知の定例扱いで収載計上。新規: 11/19 Wirtschaftssicherheit(hybrid)。時刻はページの MEZ 表記をそのまま採用。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Deutsche Börse Group – Veranstaltungen",
   "found": 1,
   "ok": true,
-  "note": "2026-10-25: ETF-Forum 2026 のみ(既知)。Global Fund Summit はルクセンブルクで対象外。"
+  "note": "2026-10-26: 既知1件。"
  },
  {
   "name": "EBA – European Banking Authority – Events",
   "url": "https://www.eba.europa.eu/publications-and-media/events",
   "ok": true,
   "found": 4,
-  "note": "未来分4件(台帳既存、変化なし)。8 Dec Board of Supervisors はofficial meetingのため除外。開催地は一覧に記載なし。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ECB Banking Supervision (SSM) – Conferences & seminars",
@@ -135,7 +139,7 @@
   "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
   "ok": true,
   "found": 4,
-  "note": "Upcoming の4件(11/05, 11/13 NY Fed-ECB, 11/23 ESCB RC3, 12/02)は既知と変化なし。台帳にあるが今回のキャッシュに無い 10/29 BdI/ECB(Rome)・11/13 Mexico City・12/01 Modelling Frontiers は found に不算入。要確認: キャッシュ上 ESCB RC3 の所在地が New York と読めるが台帳は Frankfurt am Main。台帳は未変更。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ECB – Payments & Markets / Digital Euro events",
@@ -149,7 +153,7 @@
   "url": "https://www.econtribute.de/events",
   "ok": true,
   "found": 34,
-  "note": "実行日以降の収載対象34件はすべて台帳に既知で、日付・時刻・登壇者とも一致(新規・変化なし、出力なし)。除外: YEP Mentoring Workshop 2件(05.11・10.11。キャリア支援)、Mini-Workshop in Economic History(12-13.11。登壇者・時刻なし)、Expert panel 'Politik und Wirtschaft: ...extremistische Herausforderung'(13.11。テーマ外・時刻なし)。注: Federick Göhsl(16.12)は台帳が 'Jan-Federick Göhsl' 表記、キャッシュは 'Federick Göhsl'。台帳側を維持。injection-suspected: なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "EIOPA (Frankfurt) – Events",
@@ -162,29 +166,29 @@
   "name": "ESMA – Public Hearings",
   "found": 2,
   "ok": false,
-  "note": "2026-10-25: 検索で Data Day 2026(11/24 Paris ハイブリッド、日付はスニペット由来)を特定、既知の11/3 Webinar と合わせ2件。",
-  "error": "直接403(WebFetch・ua-curlとも)。tried: fetch, ua-curl, alt-paths, search"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(403)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
   "found": 12,
   "ok": true,
-  "note": "実行日以降の収載対象12件はすべて台帳に既知(日付のみの掲載で時刻・会場の変化は検知できず、出力なし)。内訳: Grüne Welt webinar 10-28, cric webinar 10-29, Reprisk 11-05, OEGUT 11-06, Europe's sustainable transition 11-06, EBS Executive School 11-09, AK/AG Institutionelles Impact Investing 11-12, cric Konferenz 11-25, Gender-Lens webinar 11-26, BAI Workshop 12-02(台帳は FS 側に既知), Eurosif webinar 12-03, VergabeFeier FNG-Siegel 2027 12-10。除外: Fair Finance Week 2026(10-27。詳細なしのキャンペーン週間、要確認)、Grüne Welt Vertriebsschulung(10-30。社内販売研修)、FNG-Mitgliederversammlung 2026(11-10。会員総会)。injection-suspected: なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "HNB – Croatian National Bank – Conferences",
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "error": "一覧がJS描画で空(Showing 1 to 20 of 85 entries のみ)。tried: fetch, ua-curl, hints",
-  "note": "2026-10-25: RECOVER 判定のキャッシュを確認したが件数・本文なし。discovery で INOMICS 等を検索。"
+  "error": "一覧がJS描画で空(Showing 1 to 20 of 85 entries のみ)。tried: fetch, hints, search",
+  "note": "2026-10-26: キャッシュ再確認、イベント行なし。discovery で INOMICS 等を検索したが新規なし。"
  },
  {
   "name": "House of Finance (Goethe大) – Veranstaltungen",
   "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
   "ok": true,
   "found": 10,
-  "note": "10件すべて台帳に既知(別ソース経由の同一イベント含む)。新規・変更なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "IMFS Frankfurt – 全ての今後のイベント",
@@ -197,27 +201,28 @@
   "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
   "url": "https://www.iwkoeln.de/institut/veranstaltungen.html",
   "ok": true,
-  "found": 1
+  "found": 1,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
   "url": "https://www.iwh-halle.de/veranstaltungen/",
   "ok": true,
   "found": 10,
-  "note": "一覧1ページ目のみ取得(2ページ目はキャッシュに無し)。10件すべて台帳に既知。演題tbaの3回は登壇者名が確定しているため件数に含めた"
+  "note": "2026-10-26: 全て既知。"
  },
  {
   "name": "IfW Kiel – Veranstaltungen",
-  "found": 10,
+  "found": 7,
   "ok": true,
-  "note": "10件すべて台帳に既知(ASPコース2件を含む)。新規は Kiel-CEPR 12/03 の URL 注意のみ"
+  "note": "2026-10-26: 全て既知。"
  },
  {
   "name": "JDZB – 日独センター (Berlin) – Veranstaltungen",
   "url": "https://jdzb.de/de/events",
   "ok": true,
   "found": 2,
-  "note": "新規1件(12/7 Industrial Leadership through Middle-Power Cooperation。詳細ページ未取得のため時刻・会場・申込はnull、テーマ付与は低確度)。既知: JDZB SERIES 'The Future of Democracy'(11/2)は変化なし。過去分(10/2 ほか)と JLPT・展示は除外。一覧1ページ目のみ。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
@@ -230,14 +235,15 @@
   "name": "MNB – Magyar Nemzeti Bank (ハンガリー) – Events",
   "url": "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "NBS – Národná banka Slovenska – Events",
   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
   "ok": true,
   "found": 3,
-  "note": "Scheduled seminars の3件(10/28, 11/05, 11/11)すべて台帳に既知。キャッシュは先頭100,000字のみ(全165,807字)"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "NBU – National Bank of Ukraine – Research Events",
@@ -250,61 +256,61 @@
   "url": "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/",
   "ok": true,
   "found": 0,
-  "note": "今後の開催予定なし。掲載は2009〜2012年の過去開催のみ。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)",
   "url": "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/",
   "ok": true,
   "found": 0,
-  "note": "Forthcoming seminarsに「There are no seminars announced for the time being」。掲載は2019年以前の開催のみ。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "PIK – Potsdam-Institut für Klimafolgenforschung",
   "found": 0,
-  "ok": false,
-  "error": "public-events がログイン画面へ誘導され本文なし。GCET27 は 9/14-16 開催済み。tried: fetch, ua-curl, hints"
+  "ok": true,
+  "note": "2026-10-26: GCET27(9/14-16)は開催済み。public-events はログイン画面。"
  },
  {
   "name": "RWI Essen – Veranstaltungen",
   "url": "https://www.rwi-essen.de/veranstaltungen",
-  "ok": false,
-  "found": 0,
-  "error": "504 が継続(/en/events/・research-seminar・workshops の全 alt を含む)。tried: fetch, ua-curl, hints, alt-paths, search"
+  "ok": true,
+  "found": 5,
+  "note": "2026-10-26: 復旧。Research Seminar 5件全て既知。"
  },
  {
   "name": "SAFE Frankfurt – Events",
   "url": "https://safe-frankfurt.de/news-latest/events.html",
   "ok": true,
   "found": 2,
-  "note": "2件とも台帳に既知で変化なし。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "SNB – Swiss National Bank – Events",
   "found": 2,
   "ok": true,
-  "note": "収載2件: 29.10.2026 Geneva Money Market Event講演、01.04.2027 Zurich Money Market Event講演(いずれも既知・変化なし)。金融政策評価・四半期報告などの公表日程、記者会見は対象外。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "SRB – Single Resolution Board – Events",
   "url": "https://www.srb.europa.eu/en/events",
   "ok": true,
   "found": 0,
-  "note": "ページ上に今後の開催予定なし(\"There are currently no upcoming events\")。掲載の2026年3〜6月の行事はすべて開催済み。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "SUERF – Events",
   "url": "https://www.suerf.org/events/",
   "ok": true,
   "found": 6,
-  "note": "対象はオンライン2026-10-27/11-04/11-10/11-23/11-30 と ブラチスラバ開催 11-17。ミラノ・ローマ・ルクセンブルク開催は地域外のため除外。IMF 10-27 は新規。他5件は台帳に既知。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Study Center Gerzensee – Events",
   "url": "https://www.szgerzensee.ch/programs/conferences-events",
   "ok": true,
   "found": 5,
-  "note": "収載5件。Macroeconomic Policyは台帳の29.10開始に対しページは30.10のため日付変更として出力(time/speakers/registration_urlは台帳からの引き継ぎ)。他4件は既知・変化なし。Research Retreat 2026の各回は日付がページに無いため除外。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Swiss Sustainable Finance (SSF) – Upcoming Events",
@@ -318,34 +324,34 @@
   "url": "https://www.unepfi.org/events/",
   "ok": true,
   "found": 4,
-  "note": "収載4件: 11/03 Role of Risk(既知)、11/10 Turning sustainability disclosures(新規)、11/12 Blended finance(既知)、11/18 Financing climate resilience LAC(新規)。Antalya(COP31関連)、Jakarta、Nairobi、Mexico Cityは対象外。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "Universität Mannheim – 経済学部イベント/セミナー",
   "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/",
   "ok": true,
   "found": 7,
-  "note": "2ファイル読了。Micro CRC TR 224 の今後7回(10/27〜12/08)は台帳と一致し新規0。--58ebc4 は研究セミナー目次のみで日程なし(found 0)。Macro CRC の台帳行は本キャッシュに日程がなく照合不能"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ZEW Mannheim – Veranstaltungen",
   "url": "https://www.zew.de/veranstaltungen",
   "ok": true,
   "found": 10,
-  "note": "既知7件(照合のみ・出力せず)+新規3件(New Products 10/28, Moral Hazard…Financial Markets 11/02, Propagation of Carbon Pricing… 11/02)。除外: ZEW Jubiläumsfeier 11/24(セミナー/会議でないため)。新規3件の会場はページ未記載のため city=Mannheim を台帳の慣例に合わせた。Moral Hazardは『Virtual』シリーズ名から format=online と推定(city/country null)。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "appliedAI Institute (München) – Events",
   "found": 13,
   "ok": true,
-  "note": "一覧の今後13件はすべてAI関連。台帳と比較し変化は時刻3件(Fundamentals 10/26、Understanding AI Agents 11/05、KI Fahrstunde 11/12。台帳null→記載時刻)。他9件は台帳と一致し出力なし。所在地は一覧に記載なし"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "dfv Euro Finance Group (Frankfurt) – Executive Events",
   "url": "https://www.dfv-eurofinance.com/executive-events/",
   "ok": true,
   "found": 6,
-  "note": "EURO FINANCE WEEK 26 のチケットページに載る6会議(Opening, China Day, Green Finance Forum, Tech Day, HQ Trust, Frankfurt European Banking Congress)はすべて台帳に既存で新規0。週全体の告知は独立レコードにせず、個別会議で代替"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "ifo Institut – Veranstaltungen",
@@ -366,7 +372,7 @@
   "url": "https://www.oenb.at/en/Calendar.html",
   "ok": true,
   "found": 0,
-  "note": "2026-10-25: sitemap.xml(先頭10万字のみ)に実行日以降のイベントURLなし。"
+  "note": "2026-10-26: sitemap.xml に実行日以降のイベントURLなし。"
  },
  {
   "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
@@ -381,28 +387,28 @@
   "url": "https://www.cepweb.org/events/",
   "ok": true,
   "found": 0,
-  "note": "2026-10-25: upcoming は準備中、archive は過去分のみ。"
+  "note": "2026-10-26: 過去イベントのみ。"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "https://www.eu-japan.eu/tags/webinar",
   "ok": true,
   "found": 0,
-  "note": "2026-10-25: 掲載分は 9/30 までで対象期間内なし。"
+  "note": "2026-10-26: 掲載分は全て開催済み。"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "https://www.eestipank.ee/en/events",
   "ok": true,
   "found": 0,
-  "note": "2026-10-25: ua-curl で /en/calendar/2026/11 を取得(サイト復旧)。収載対象のセミナーなし。代替URL: https://www.eestipank.ee/en/calendar/2026/11"
+  "note": "2026-10-26: 対象外のみ(統計公表・記者会見等)。"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "https://forum.frankfurt-school.de/konferenzen/",
   "ok": true,
-  "found": 14,
-  "note": "2026-10-25: 14件すべて既知で変化なし。"
+  "found": 11,
+  "note": "2026-10-26: 全て既知。"
  },
  {
   "name": "Latvijas Banka – Research/Events",
@@ -416,87 +422,91 @@
   "url": "https://merics.org/en/events",
   "ok": true,
   "found": 0,
-  "note": "今後のイベント一覧が空(過去イベント案内と MERICS Briefs のみ)"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
   "found": 11,
-  "note": "一覧1ページ目(10/27〜12/3)。収載条件に合う11件は全て既知で変化なし(オンライン・Sofia・Frankfurt含む)。対象外(NY/ロンドン開催): Inside the Fed's reform agenda、Future of Banking、Defence forum 2026、Capital markets in transition。2ページ目は未取得。"
+  "note": "変化なし(差分検知によりスキップ)"
  },
  {
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "https://www.wu.ac.at/en/the-university/events",
   "ok": true,
   "found": 3,
-  "note": "2026-10-25: 3件とも既知で変化なし。"
+  "note": "2026-10-26: 3件全て既知。"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
   "url": "https://veranstaltungen.dena.de/",
   "ok": true,
   "found": 8,
-  "note": "既知6件(SET Academy, dena Kongress 2026, Energiesprong KO 11/24, Bündnis Gebäudewende 12/03, WEG-Online-Seminar 12/07, Triathlon NRW 2027-02-18)+新規2件(Energiesprong Videokonferenz 1 11/11, 2 12/03)。除外: 過去日(9/15, 10/8〜10/16 の各行事), 中止(Nuclear Fusion Webinar), 対象外地域(Jordan roadmap launch 11/17)。"
+  "note": "2026-10-26: CHANGED だが新規なし(キャッシュは10万字で切り詰め)。"
  },
  {
   "name": "フランクフルト日本法人会 – 行事・活動",
   "url": "https://www.hojinkai.de/activities",
   "ok": true,
-  "found": 0,
-  "note": "2026-10-25: テーマ該当の行事なし。"
+  "found": 1,
+  "note": "2026-10-26: 既知1件に登壇者追記。"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
   "url": "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm",
-  "ok": true,
+  "ok": false,
   "found": 0,
-  "note": "2026-10-25: alt URL でプレスリリース一覧を確認、セミナー告知0件(通常運用)。"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(薄い)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
-  "ok": true,
+  "ok": false,
   "found": 4,
-  "note": "2026-10-25: lb.lt 直接は403。web検索で既知4件を再確認、新規なし。"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(403)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
-  "ok": true,
+  "ok": false,
   "found": 26,
-  "note": "2026-10-25: diw.de 直接403。alt URL(diw-berlin.de)で取得成功、26件すべて既知で変化なし。"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(403)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/news-insights/events",
   "ok": false,
   "found": 0,
-  "note": "2026-10-25: web検索で日程付き新規ウェビナーなし。",
-  "error": "直接404/403。tried: fetch, ua-curl, hints, search"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(404)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
   "url": "https://www.ewi.uni-koeln.de/de/termine-sitemap.xml",
-  "ok": true,
+  "ok": false,
   "found": 4,
-  "note": "hints(sitemap+ua-curl)で/de/termine-sitemap.xmlを取得成功。lastmod直近はEWI Insights e-mobility(10/23)だが2021年開催の旧ページで対象外。EWI-Insights 11/4・SAPHyR 11/5・Workshop Ammoniak 11/17・Energietagung 2027(1/14-15)はいずれも既知で変化なし。新規なし。"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(500)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "NBP – Narodowy Bank Polski – Conferences",
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": false,
   "found": 0,
-  "note": "2026-10-25: 共催先を検索、新規なし。",
-  "error": "Imperva でブロック。tried: fetch, ua-curl, hints, search"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(ボット対策/薄い)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
   "url": "https://www.bnr.ro/en/24077-bears",
   "ok": false,
   "found": 0,
-  "note": "2026-10-25: 検索でも2026年BEARS開催情報なし。",
-  "error": "エラーページ(ソフト404)。tried: fetch, ua-curl, hints, search"
+  "note": "2026-10-26: web検索(discovery)で新規なし。前回までの found は参考値。",
+  "error": "直接取得不可(薄い/ソフト404)。tried: fetch, hints, search(ua-curl は実行環境のポリシーで拒否され未実施)"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
@@ -509,8 +519,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 17,
-  "note": "2026-10-25: 候補17件確認・新規採用0件(15件は既知、2件は除外)。深掘り観点: デジタルユーロ/ブロック定点補完。"
+  "found": 12,
+  "note": "確認した候補12件、新規1件(Swissmem 2026-11-24)。残り11件は既知。"
  },
  {
   "name": "手動取込",
@@ -523,6 +533,6 @@
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
   "found": 3,
-  "note": "新規2件(11/9 EU T+1ウェビナー・オンライン、11/25 第9回サステナブルボンド会議・東京/オンライン)。既知: Zermatt 2027(1/29-31)は変化なし。対象外: 香港・パリ・ミラノ・ロンドン・シンガポール・リヤド・ケープタウン・北京、German Regional Lunch(Frankfurt, 11/19。会合形式で収載種別外と判断)。日付が判別できないカレンダー項目は除外。"
+  "note": "変化なし(差分検知によりスキップ)"
  }
 ]
