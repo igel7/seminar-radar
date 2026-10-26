@@ -25,7 +25,8 @@
   を使う。ページ先頭の Content-Security-Policy を緩めない。
 - `docs/calendar.ics` に書く文字列は `radar_lib.ics_escape` を通す。
 - エージェントが push した `docs/` は信用せず、main 側で再生成する(`.github/workflows/automerge.yml` の設計)。
-  この設計を変えない。
+  `data/`・`docs/` 以外に触れた push は、所有者が GitHub の environment `code-merge` で承認するまで
+  マージしない。この設計を変えない(変えてよいのは所有者だけ)。
 - GitHub Actions のワークフローを追加・変更するのは所有者だけ。エージェントは追加しない。
 
 ## 3. 調査の記録の置き場

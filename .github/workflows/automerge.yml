@@ -7,18 +7,21 @@ on:
 permissions:
   contents: write
   issues: write
-concurrency:
-  group: automerge
-  cancel-in-progress: false
+  actions: read
 jobs:
-  merge:
+  # ------------------------------------------------------------------
+  # 1. data/ と docs/ だけの変更(日次更新ジョブ)か、コードを含む変更かを判別する
+  # ------------------------------------------------------------------
+  classify:
     runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.classify.outputs.mode }}
+      files: ${{ steps.classify.outputs.files }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-      # data/ と docs/ だけの変更(日次更新ジョブ)か、コードを含む変更かを判別する
       - name: Classify changes
         id: classify
         run: |
@@ -37,25 +40,40 @@ jobs:
           else
             echo "mode=data" >> "$GITHUB_OUTPUT"
           fi
+
+  # ------------------------------------------------------------------
+  # 2a. データ更新は全自動で main に取り込む
+  # セキュリティ: 日次更新ジョブは信頼できない外部ページを読むエージェント
+  # (Claude Code / Codex)のため、pushされた docs/ は信用せず、data/ のみ取り込んで
+  # docs/ は main 側の scripts/ で再生成する(改ざんHTMLの公開を防ぐ)。
+  # --maintenance: サイトの LAST UPDATE(最終巡回時刻)は data/meta.json の値を使う。
+  # 巡回時刻は実行エージェント側の ingest.py が data/meta.json に記録済みであり、
+  # ここでの再生成はそれを進めてはならない(進めるのは巡回本体のみ)。
+  # プロファイル(ドイツモード data/ ・英国モード data/uk/)ごとに別の Routine が
+  # 別ブランチから push するため、data/ を丸ごと checkout せず、**そのブランチが変更した
+  # ファイルだけ**を取り込む(丸ごと取り込むと、先に main へ入った他方のプロファイルの
+  # データが、ブランチ分岐時点の古いコピーで巻き戻ってしまう)。
+  # docs/ は両プロファイル分(docs/ と docs/uk/)を main 側で再生成する。
+  # ------------------------------------------------------------------
+  merge-data:
+    needs: classify
+    if: needs.classify.outputs.mode == 'data'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: automerge-main
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - name: Git identity
         run: |
           git config user.name  "seminar-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-      # セキュリティ: 日次更新ジョブは信頼できない外部ページを読むエージェント
-      # (Claude Code / Codex)のため、
-      # pushされた docs/ は信用せず、data/ のみ取り込んで docs/ は main 側の
-      # scripts/ で再生成する(改ざんHTMLの公開を防ぐ)
-      # --maintenance: サイトの LAST UPDATE(最終巡回時刻)は data/meta.json の値を使う。
-      # 巡回時刻は実行エージェント側の ingest.py が data/meta.json に記録済みであり、
-      # ここでの再生成はそれを進めてはならない(進めるのは巡回本体のみ)。
-      # プロファイル(ドイツモード data/ ・英国モード data/uk/)ごとに別の Routine が
-      # 別ブランチから push するため、data/ を丸ごと checkout せず、**そのブランチが変更した
-      # ファイルだけ**を取り込む(丸ごと取り込むと、先に main へ入った他方のプロファイルの
-      # データが、ブランチ分岐時点の古いコピーで巻き戻ってしまう)。
-      # docs/ は両プロファイル分(docs/ と docs/uk/)を main 側で再生成する。
       - name: Data update — take changed data/ files only and regenerate docs/
-        if: steps.classify.outputs.mode == 'data'
         run: |
+          git fetch origin "${GITHUB_REF_NAME}"
           git diff --no-renames --name-status "origin/main...origin/${GITHUB_REF_NAME}" -- data/ \
             | while IFS=$'\t' read -r st path; do
                 case "$st" in
@@ -68,11 +86,61 @@ jobs:
           git add data/ docs/
           git diff --cached --quiet || git commit -m "daily update (from ${GITHUB_REF_NAME})"
           git push origin main
-      # コード変更も自動マージする(手動マージなしの運用方針)。ただし直後に
-      # 通知Issueを立て、身に覚えのないマージに気づけるようにする(検知型の防御)
-      - name: Code change — merge and regenerate docs/
-        if: steps.classify.outputs.mode == 'code'
+      - name: Delete agent branch
+        run: git push origin --delete "${GITHUB_REF_NAME}" || true
+      - name: Request Pages rebuild
         run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds || true
+
+  # ------------------------------------------------------------------
+  # 2b. コード変更(data/・docs/ 以外に触れた push)は所有者の承認後にだけ main に取り込む
+  # 承認は GitHub の environment "code-merge" の required reviewers で行う。
+  # 巡回先の指示文に乗っ取られたエージェントが scripts/・template・AGENTS.md・ワークフローを
+  # 書き換えて公開ページや規則を改ざんする経路を、人の承認で止めるための設計(2026-10-26)。
+  # 承認待ちのジョブは concurrency を持たない(待っている間も日次のデータ更新を止めないため)。
+  # ------------------------------------------------------------------
+  await-approval:
+    needs: classify
+    if: needs.classify.outputs.mode == 'code'
+    runs-on: ubuntu-latest
+    environment: code-merge
+    steps:
+      # environment が未設定のまま自動作成されると承認なしで通ってしまうので、
+      # required reviewers が設定されていることを確認してから先へ進む
+      - name: Verify that environment "code-merge" requires reviewers
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RULES=$(gh api "repos/${GITHUB_REPOSITORY}/environments/code-merge" --jq '[.protection_rules[]? | select(.type=="required_reviewers") | .reviewers | length] | add // 0')
+          echo "required reviewers: ${RULES}"
+          if [ "${RULES}" -lt 1 ]; then
+            echo "::error::environment 'code-merge' に required reviewers が設定されていません。"
+            echo "::error::GitHub の Settings → Environments → code-merge で Required reviewers に所有者を追加してから、このジョブを Re-run してください。"
+            exit 1
+          fi
+
+  merge-code:
+    needs: [classify, await-approval]
+    if: needs.classify.outputs.mode == 'code'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: automerge-main
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Git identity
+        run: |
+          git config user.name  "seminar-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+      - name: Code change — merge and regenerate docs/
+        run: |
+          git fetch origin "${GITHUB_REF_NAME}"
           git merge --no-edit -X theirs "origin/${GITHUB_REF_NAME}"
           python3 scripts/ingest.py --maintenance
           python3 scripts/ingest.py --maintenance --profile uk
@@ -80,14 +148,13 @@ jobs:
           git diff --cached --quiet || git commit -m "regenerate docs/ after code merge"
           git push origin main
       - name: Notify code merge via issue
-        if: steps.classify.outputs.mode == 'code'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FILES: ${{ steps.classify.outputs.files }}
+          FILES: ${{ needs.classify.outputs.files }}
         run: |
-          BODY=$(printf 'ブランチ `%s` のコード変更を自動マージしました。\n\n変更されたファイル:\n```\n%s\n```\n\n自分の指示に心当たりのある変更なら、このIssueを閉じるだけでOKです。\n心当たりがない場合は改ざんの可能性があるため、直ちに main の履歴を確認して revert してください。' "${GITHUB_REF_NAME}" "${FILES}")
+          BODY=$(printf 'ブランチ `%s` のコード変更を、environment code-merge の承認を経て main にマージしました。\n\n変更されたファイル:\n```\n%s\n```\n\n承認した覚えのある変更なら、このIssueを閉じるだけでOKです。\n心当たりがない場合は、直ちに main の履歴を確認して revert し、GitHub アカウントの状態を確認してください。' "${GITHUB_REF_NAME}" "${FILES}")
           gh issue create --repo "${GITHUB_REPOSITORY}" \
-            --title "コード変更を自動マージ: ${GITHUB_REF_NAME}" \
+            --title "コード変更をマージ(承認済み): ${GITHUB_REF_NAME}" \
             --body "${BODY}" || true
       - name: Delete agent branch
         run: git push origin --delete "${GITHUB_REF_NAME}" || true

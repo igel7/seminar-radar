@@ -65,7 +65,9 @@ Codex で作業する前にこれを読むこと(同じ調査を繰り返さな�
 
 なお `.github/workflows/automerge.yml` は `claude/**` と `codex/**` の push で発火し、
 `codex/**` 側も動作確認済みなので、将来 Codex から push できるようになれば
-自動反映はそのまま機能する。
+自動反映はそのまま機能する。`data/`・`docs/` だけの push は全自動で main に入るが、
+それ以外のファイルに触れた push は GitHub の environment `code-merge` で所有者が承認するまで
+マージされない(Settings → Environments → code-merge → Required reviewers に所有者を登録しておく)。
 
 ### 4. 初回実行の確認
 1. 実行ログ(claude.ai/code のセッション一覧、またはCodex側の実行ログ)で完了を確認
