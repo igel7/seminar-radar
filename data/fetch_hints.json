@@ -357,5 +357,9 @@
  "Grantham Research Institute (LSE) – Events": {
   "method": "search",
   "note": "2026-10-22: lse.ac.uk returns Cloudflare 522 (origin timeout) for ua-curl and Chromium - likely transient, retry. Search snippet suggests Stern Review event on 30 Oct vs known 28 Oct; verify."
+ },
+ "Bundesbank – Termine": {
+  "no_detail_pages": true,
+  "note": "2026-10-27: AI Week Frankfurt の講演枠(Mauderer)は個別ページ無し(一覧URLのみ)。"
  }
 }

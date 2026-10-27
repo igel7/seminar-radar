@@ -1911,7 +1911,7 @@
   },
   {
    "title": "Macroeconomic Policy (Study Center Gerzensee)",
-   "title_ja": "マクロ経済政策",
+   "title_ja": "マクロ経済政策(ガーゼンゼー研究会議)",
    "organizer": "Swiss National Bank",
    "date_start": "2026-10-29",
    "date_end": "2026-10-31",
@@ -1926,19 +1926,19 @@
    "open_to_public": false,
    "registration_note": "招待制(SNB主催)。宿泊・食事は主催者負担",
    "url": "https://www.szgerzensee.ch/programs/conferences-events/detail/macroeconomic-policy",
-   "summary_ja": "スイス国立銀行(SNB)と共催の、マクロ経済政策に関する研究会議。",
+   "summary_ja": "スイス国立銀行が共催する、マクロ経済政策を扱うガーゼンゼーでの研究会議。",
    "language": "en",
    "country": "CH",
    "organizer_short": "SNB",
-   "title_short": "Macroeconomic Policy Research",
+   "title_short": "Macroeconomic Policy",
    "importance": 3,
    "registration_url": "https://www.szgerzensee.ch/news/article/call-for-papers-2026-macroeconomic-policy",
    "time_end": "13:00",
    "source": "Study Center Gerzensee – Events",
    "id": "0b4bde8d041f7c74",
    "first_seen": "2026-07-17",
-   "summary_en": "Research conference on macroeconomic policy, co-organised with the Swiss National Bank.",
-   "summary_de": "Forschungskonferenz zur Makroökonomischen Politik, mitveranstaltet von der Schweizerischen Nationalbank.",
+   "summary_en": "Research conference on macroeconomic policy co-hosted by the Swiss National Bank at the Study Center Gerzensee.",
+   "summary_de": "Forschungskonferenz zur makroökonomischen Politik, mitveranstaltet von der Schweizerischen Nationalbank im Study Center Gerzensee.",
    "registration_note_en": "By invitation only. Organized by the Swiss National Bank. Accommodation and meals included.",
    "registration_note_de": "Nur auf Einladung. Von der Schweizerischen Nationalbank organisiert. Unterkunft und Mahlzeiten inklusive.",
    "speakers": [
@@ -3629,13 +3629,12 @@
    "venue": "ZEW Mannheim",
    "format": "onsite",
    "themes": [
-    "fin_markets",
-    "ai"
+    "real_economy"
    ],
    "fee": "paid",
    "open_to_public": true,
    "registration_note": "要事前登録",
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/11-zew-konferenz-zur-oekonomik-von-innovationen-und-patenten/4960",
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/11-zew-konferenz-zur-oekonomik-von-innovationen-und-patenten/4960?cHash=2996f47ed338de665ff42fe1728617a0",
    "summary_ja": "イノベーション経済学と特許制度に関する国際会議。",
    "language": "en",
    "country": "DE",
@@ -3655,18 +3654,18 @@
    "speakers": [
     {
      "name": "Fabian Gaessler",
-     "org": "Universitat Pompeu Fabra",
-     "role": null
+     "org": "UPF",
+     "role": "Prof. Dr."
     },
     {
      "name": "Matt Marx",
-     "org": "Cornell SC Johnson College of Business",
-     "role": null
+     "org": "Cornell",
+     "role": "Prof."
     },
     {
      "name": "Valentina Tartari",
-     "org": "Stockholm School of Economics",
-     "role": null
+     "org": "SSE",
+     "role": "Prof."
     }
    ],
    "notables": [],
@@ -4430,7 +4429,24 @@
    "registration_note_en": "Free online webinar, registration required.",
    "registration_note_de": "Kostenloses Online-Webseminar, Anmeldung erforderlich.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Michael Neuhaus",
+     "org": "KWW",
+     "role": "Teamleitung Kommunenbegleitung"
+    },
+    {
+     "name": "Peter Moser",
+     "org": "KWW",
+     "role": "Themengebietsleiter kleine Kommunen"
+    },
+    {
+     "name": "Tobias Nusser",
+     "org": "EGS-Plan",
+     "role": "Geschäftsführender Gesellschafter"
+    }
+   ]
   },
   {
    "title": "4. Finanzplatzkonferenz",
@@ -4857,7 +4873,7 @@
    "speakers": [
     {
      "name": "Josh Lerner",
-     "org": "HBS",
+     "org": "Harvard",
      "role": null
     }
    ],
@@ -6367,7 +6383,24 @@
    "registration_note_en": "An Austrian regional economic forum focused on economic trends, the regulatory environment, financial and capital markets, and AI.",
    "registration_note_de": "Ein österreichisches regionales Wirtschaftsforum zu wirtschaftlichen Trends, dem regulatorischen Umfeld, Finanz- und Kapitalmärkten sowie KI.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Isabel Russ",
+     "org": "VN",
+     "role": "Chefredakteurin"
+    },
+    {
+     "name": "Karlheinz Kopf",
+     "org": "WKV",
+     "role": "Präsident"
+    },
+    {
+     "name": "Elmar Hartmann",
+     "org": "IV",
+     "role": "Präsident"
+    }
+   ]
   },
   {
    "title": "Fokus Aufsichtsrat 26",
@@ -9387,7 +9420,6 @@
    "venue": "WU Vienna",
    "format": "onsite",
    "themes": [
-    "fin_markets",
     "real_economy"
    ],
    "fee": "free",
@@ -9413,7 +9445,7 @@
     {
      "name": "Yariv Brauner",
      "org": null,
-     "role": "Professor"
+     "role": null
     }
    ],
    "notables": [],
@@ -15088,7 +15120,8 @@
    "venue": "IWH, conference room and via Zoom",
    "format": "hybrid",
    "themes": [
-    "ai"
+    "ai",
+    "real_economy"
    ],
    "fee": "free",
    "fee_amount": null,
@@ -16490,7 +16523,13 @@
    "summary_en": "Advanced research workshop on housing markets, mortgages, and the role of financial intermediaries.",
    "summary_de": "Fortgeschrittenes Forschungs-Workshop zu Wohnungsmärkten, Hypotheken und der Rolle von Finanzintermediären.",
    "language": "en",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Tim Landvoigt",
+     "org": "Wharton",
+     "role": "Associate Professor of Finance"
+    }
+   ],
    "title_short": "Housing and Financial Intermediation",
    "importance": 1,
    "registration_url": null,
@@ -16574,7 +16613,48 @@
    "importance": 1,
    "registration_url": "https://www.bank-verlag.de/akademie/veranstaltungen/ai-fin-day?eventRegistration=true",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Kolja Gabriel",
+     "org": "Bankenverband",
+     "role": null
+    },
+    {
+     "name": "Steffen Bartsch",
+     "org": "Berenberg",
+     "role": null
+    },
+    {
+     "name": "Tim Hentschel",
+     "org": "Barkhausen Institut",
+     "role": null
+    },
+    {
+     "name": "Kathrin Spendl",
+     "org": "BayernLB",
+     "role": null
+    },
+    {
+     "name": "Frederic Raber",
+     "org": "BSI",
+     "role": null
+    },
+    {
+     "name": "Marcel Pochert",
+     "org": "Berenberg",
+     "role": null
+    },
+    {
+     "name": "Stephan Bautz",
+     "org": "PwC",
+     "role": null
+    },
+    {
+     "name": "Ute Kolck",
+     "org": "Bank-Verlag",
+     "role": null
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "c2986ab97754308d",
    "first_seen": "2026-09-22",
@@ -19661,8 +19741,7 @@
    "venue": "Universität Hamburg, Hauptgebäude",
    "format": "onsite",
    "themes": [
-    "real_economy",
-    "geopolitics"
+    "real_economy"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -25577,7 +25656,7 @@
    "speakers": [
     {
      "name": "Davide Avino",
-     "org": "University of Liverpool",
+     "org": "Liverpool",
      "role": null
     }
    ],
@@ -26044,7 +26123,18 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Julian Hinz",
+     "org": "IfW Kiel",
+     "role": "Leiter des Forschungszentrums Handelspolitik"
+    },
+    {
+     "name": "Jürgen Matthes",
+     "org": "IW Köln",
+     "role": "Leiter des Kompetenzfelds Internationale Wirtschaftsordnung und Konjunktur"
+    }
+   ],
    "source": "IfW Kiel – Veranstaltungen",
    "id": "6c0f2ec172d4c0dc",
    "first_seen": "2026-10-15",
@@ -26414,7 +26504,13 @@
    "country": null,
    "title_short": "AI Cybersecurity Policy Response",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Matija Franklin",
+     "org": "Google DeepMind",
+     "role": "Research Scientist"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "50212bea14da7cef",
    "first_seen": "2026-10-16",
@@ -29164,7 +29260,7 @@
    "registration_note": null,
    "registration_note_en": null,
    "registration_note_de": null,
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/new-products/5017",
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/new-products/5017?cHash=13525b632edc211894e6b3c6b3e72479",
    "summary_ja": "ZEW Mannheim Applied Seminar。Bruno Pellegrino氏(コロンビア大学)が「New Products」を報告。",
    "summary_en": "Mannheim Applied Seminar at ZEW. Bruno Pellegrino (Columbia University) presents \"New Products\".",
    "summary_de": "Mannheim Applied Seminar am ZEW. Bruno Pellegrino (Columbia University) präsentiert „New Products“.",
@@ -29179,7 +29275,7 @@
     {
      "name": "Bruno Pellegrino",
      "org": "Columbia",
-     "role": null
+     "role": "Ass. Prof."
     }
    ],
    "source": "ZEW Mannheim – Veranstaltungen",
@@ -29334,8 +29430,7 @@
    "venue": "ZEW Mannheim",
    "format": null,
    "themes": [
-    "climate_esg",
-    "real_economy"
+    "climate_esg"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -29343,7 +29438,7 @@
    "registration_note": null,
    "registration_note_en": null,
    "registration_note_de": null,
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/propagation-of-carbon-pricing-in-firm-level-production-networks/5021",
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/propagation-of-carbon-pricing-in-firm-level-production-networks/5021?cHash=37199a903b5b539c2687319e438aa67d",
    "summary_ja": "ZEW Decarbonization Seminar(ZEWとMISESの合同セミナー)。Inge van den Bijgaart氏(ユトレヒト大学)が炭素価格の企業間生産ネットワークへの波及を報告。",
    "summary_en": "ZEW Decarbonization Seminar (joint ZEW and MISES seminar). Inge van den Bijgaart (Utrecht University) presents on how carbon pricing propagates through firm-level production networks.",
    "summary_de": "ZEW Decarbonization Seminar (gemeinsames Seminar von ZEW und MISES). Inge van den Bijgaart (Universität Utrecht) präsentiert zur Ausbreitung von CO2-Preisen in firmeninternen Produktionsnetzwerken.",
@@ -29358,7 +29453,7 @@
     {
      "name": "Inge van den Bijgaart",
      "org": "Utrecht",
-     "role": null
+     "role": "Prof. Dr."
     }
    ],
    "source": "ZEW Mannheim – Veranstaltungen",
@@ -29728,7 +29823,7 @@
    "registration_note": null,
    "registration_note_en": null,
    "registration_note_de": null,
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/moral-hazard-and-imperfect-competition-in-financial-markets/5019",
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/moral-hazard-and-imperfect-competition-in-financial-markets/5019?cHash=fef62b881b98fd8eda21acca89074fb9",
    "summary_ja": "ZEW Virtual Market Design Seminar。Milena Wittwer氏(コロンビア大学)が金融市場の道徳的危険と不完全競争を報告。",
    "summary_en": "ZEW Virtual Market Design Seminar. Milena Wittwer (Columbia University) presents on moral hazard and imperfect competition in financial markets.",
    "summary_de": "ZEW Virtual Market Design Seminar. Milena Wittwer (Columbia University) präsentiert zu Moral Hazard und unvollkommenem Wettbewerb in Finanzmärkten.",
@@ -29743,7 +29838,7 @@
     {
      "name": "Milena Wittwer",
      "org": "Columbia",
-     "role": null
+     "role": "Ass. Prof."
     }
    ],
    "source": "ZEW Mannheim – Veranstaltungen",
@@ -29905,6 +30000,376 @@
     }
    ],
    "notable_tier": 2
+  },
+  {
+   "date_end": null,
+   "time": "15:30",
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Sabine Mauderer",
+     "org": "Bundesbank",
+     "role": "Executive Board Member"
+    }
+   ],
+   "language": "de",
+   "title": "Kapital braucht KI und KI braucht Kapital: Europas Chance für mehr Wachstum",
+   "title_ja": "AIと資本:欧州の成長に向けた好機",
+   "organizer": "AI Week Frankfurt 2026, AI Hub Frankfurt",
+   "date_start": "2026-10-29",
+   "themes": [
+    "ai",
+    "fin_markets"
+   ],
+   "url": "https://www.bundesbank.de/de/service/termine",
+   "summary_ja": "AI Week Frankfurt 2026でのBundesbank理事Sabine Mauderer氏の講演。AIと資本市場が欧州の成長をどう後押しできるかを論じる。",
+   "summary_en": "Talk by Bundesbank Executive Board member Sabine Mauderer at AI Week Frankfurt 2026 on how AI and capital can support Europe's growth.",
+   "summary_de": "Vortrag von Bundesbank-Vorstandsmitglied Sabine Mauderer auf der AI Week Frankfurt 2026 über KI, Kapital und Europas Wachstumschancen.",
+   "country": "DE",
+   "organizer_short": "AI Hub Frankfurt",
+   "title_short": "AI, Capital and Growth",
+   "importance": 2,
+   "source": "Bundesbank – Termine",
+   "id": "03ee88f9200721ef",
+   "first_seen": "2026-10-27",
+   "notables": [
+    {
+     "person": "sabine-mauderer",
+     "name": "Sabine Mauderer",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank VP",
+     "former": false
+    }
+   ],
+   "notable_tier": 2
+  },
+  {
+   "date_end": null,
+   "time": "16:00",
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": "Hauptverwaltung Hessen",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Itay Goldstein",
+     "org": "Wharton",
+     "role": "Joel S. Ehrenkranz Family Professor"
+    },
+    {
+     "name": "Fritzi Köhler-Geib",
+     "org": "Bundesbank",
+     "role": "Executive Board Member"
+    }
+   ],
+   "language": "en",
+   "title": "AI Trading in Financial Markets: Implications for Financial Stability",
+   "title_ja": "金融市場におけるAIトレーディング:金融安定への影響",
+   "organizer": "Deutsche Bundesbank (Bundesbank Invited Speakers Series)",
+   "date_start": "2026-11-02",
+   "themes": [
+    "fin_markets",
+    "ai"
+   ],
+   "url": "https://www.bundesbank.de/de/service/termine/ai-trading-in-financial-markets-implications-for-financial-stability-963046",
+   "summary_ja": "Bundesbank Invited Speakers Seriesの講演。Wharton SchoolのItay Goldstein氏がAI取引と金融安定への影響を論じ、Bundesbank理事Köhler-Geib氏が討論に加わる。",
+   "summary_en": "Bundesbank Invited Speakers Series talk by Itay Goldstein (Wharton) on AI trading and its implications for financial stability, followed by a discussion with Executive Board member Fritzi Köhler-Geib.",
+   "summary_de": "Vortrag von Itay Goldstein (Wharton) im Rahmen der Bundesbank Invited Speakers Series zum KI-Handel und seinen Auswirkungen auf die Finanzstabilität, anschließend Diskussion mit Vorstandsmitglied Fritzi Köhler-Geib.",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "AI Trading and Financial Stability",
+   "importance": 1,
+   "source": "Bundesbank – Termine",
+   "id": "487e96ca380bdf78",
+   "first_seen": "2026-10-27",
+   "notables": [
+    {
+     "person": "fritzi-kohler-geib",
+     "name": "Fritzi Köhler-Geib",
+     "group": "bundesbank",
+     "tier": 2,
+     "short": "Bundesbank Board member",
+     "former": false
+    }
+   ],
+   "notable_tier": 2
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "Kiel Institut für Weltwirtschaft, Standort Berlin",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Eric Monnet",
+     "org": null,
+     "role": null
+    }
+   ],
+   "language": "en",
+   "title": "Kiel-CEPR International Economics Seminar: Eric Monnet",
+   "title_ja": "Kiel-CEPR国際経済セミナー:Eric Monnet",
+   "organizer": "Kiel Institut für Weltwirtschaft",
+   "date_start": "2027-01-14",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/kiel-cepr-research-seminar/kiel-cepr-international-economics-seminar-eric-monnet/",
+   "summary_ja": "Kiel-CEPR国際経済セミナーでのEric Monnet氏の報告(ハイブリッド開催)。",
+   "summary_en": "Eric Monnet presents at the Kiel-CEPR International Economics Seminar, held in hybrid format.",
+   "summary_de": "Eric Monnet trägt im Rahmen des Kiel-CEPR International Economics Seminar vor, hybrid durchgeführt.",
+   "country": "DE",
+   "organizer_short": "IfW Kiel",
+   "title_short": "International Economics Seminar",
+   "importance": 1,
+   "source": "IfW Kiel – Veranstaltungen",
+   "id": "4abad9973158d66d",
+   "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Bratislava",
+   "venue": "NBS building, 8th floor meeting room",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "事前に連絡して参加(問い合わせ先あり)",
+   "registration_note_en": "Contact NBS in advance to attend",
+   "registration_note_de": "Teilnahme nach vorheriger Kontaktaufnahme",
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Nauro Ferreira Campos",
+     "org": "UCL",
+     "role": null
+    }
+   ],
+   "language": "en",
+   "title": "Beyond the Magnificent Seven: New Stylised Facts of Post-Communist Transition and Their Implications for Ukraine’s EU Accession",
+   "title_ja": "ポスト共産主義移行の新定型化事実とウクライナのEU加盟",
+   "organizer": "Národná banka Slovenska (NBS)",
+   "date_start": "2026-11-25",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
+   "summary_ja": "ポスト共産主義移行の定型化事実を再検討し、ウクライナのEU加盟を含む今後の拡大への含意を論じる報告。",
+   "summary_en": "Nauro Ferreira Campos (UCL) revisits the stylised facts of post-communist transition and draws implications for Ukraine's EU accession and future enlargement.",
+   "summary_de": "Nauro Ferreira Campos (UCL) überprüft die stilisierten Fakten der postkommunistischen Transformation und leitet Implikationen für den EU-Beitritt der Ukraine und künftige Erweiterungen ab.",
+   "country": "SK",
+   "organizer_short": "NBS",
+   "title_short": "Post-Communist Transition Facts",
+   "importance": 0,
+   "source": "NBS – Národná banka Slovenska – Events",
+   "id": "74645eb9255966fe",
+   "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "Berlin",
+   "venue": "Anna J. Schwartz Room (Room 5.2.010), DIW Berlin",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "非公開(所内クラスターセミナー)",
+   "registration_note_en": "Not public (internal cluster seminar)",
+   "registration_note_de": "Nicht öffentlich (interne Cluster-Veranstaltung)",
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Oscar Mauricio Diaz Botia",
+     "org": "PSE",
+     "role": null
+    }
+   ],
+   "language": "en",
+   "title": "The Impact of Restorative and Socioemotional Practices on Well-Being and Learning: Experimental Evidence from Schools in Bogota",
+   "title_ja": "ボゴタの学校における修復的実践の効果",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-11-04",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://www.diw.de/de/diw_01.c.1023190.de/veranstaltungen/the_impact_of_restorative_and_socioemotional_practices_on_we___g_and_learning__experimental_evidence_from_schools_in_bogota.html",
+   "summary_ja": "DIW Berlinのクラスターセミナー。Oscar Mauricio Diaz Botia氏(パリ経済学院)がボゴタの学校での実験に基づき、修復的・社会情動的実践の効果を報告する。",
+   "summary_en": "DIW Berlin cluster seminar: Oscar Mauricio Diaz Botia (Paris School of Economics) presents experimental evidence on restorative and socioemotional practices in Bogota schools.",
+   "summary_de": "Cluster-Seminar am DIW Berlin: Oscar Mauricio Diaz Botia (Paris School of Economics) präsentiert experimentelle Evidenz zu restaurativen und sozioemotionalen Praktiken an Schulen in Bogotá.",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Restorative Practices in Schools",
+   "importance": 0,
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "a668f2efadb984c3",
+   "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Bratislava",
+   "venue": "NBS building, 8th floor meeting room",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "事前に連絡して参加(問い合わせ先あり)",
+   "registration_note_en": "Contact NBS in advance to attend",
+   "registration_note_de": "Teilnahme nach vorheriger Kontaktaufnahme",
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Kornelia Fabisik",
+     "org": "Bern",
+     "role": null
+    }
+   ],
+   "language": "en",
+   "title": "Objective vs. Perceived Corporate Greenness: Do Individuals Understand Corporate Sustainability Information?",
+   "title_ja": "企業のグリーン度:客観と認識のずれ",
+   "organizer": "Národná banka Slovenska (NBS)",
+   "date_start": "2026-11-18",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
+   "summary_ja": "企業の排出量に関する持続可能性情報を個人が正しく読み取れるかを、事前登録済みのサーベイ実験で検証する報告。",
+   "summary_en": "Kornelia Fabisik (University of Bern) reports a pre-registered survey experiment on whether individuals correctly interpret corporate sustainability disclosures about emissions.",
+   "summary_de": "Kornelia Fabisik (Universität Bern) berichtet über ein vorregistriertes Survey-Experiment, ob Einzelpersonen Nachhaltigkeitsangaben von Unternehmen zu Emissionen korrekt interpretieren.",
+   "country": "SK",
+   "organizer_short": "NBS",
+   "title_short": "Corporate Greenness Perception",
+   "importance": 0,
+   "source": "NBS – Národná banka Slovenska – Events",
+   "id": "af1c5460e990f7da",
+   "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "Berlin",
+   "venue": "Anna J. Schwartz Room (Room 5.2.010), DIW Berlin",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "非公開(所内クラスターセミナー)",
+   "registration_note_en": "Not public (internal cluster seminar)",
+   "registration_note_de": "Nicht öffentlich (interne Cluster-Veranstaltung)",
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Honorata Bogusz",
+     "org": "DIW Berlin",
+     "role": null
+    }
+   ],
+   "language": "en",
+   "title": "Sex, Gender, and Graduate Wages",
+   "title_ja": "性別・ジェンダーと大卒者の賃金",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-10-28",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://www.diw.de/de/diw_01.c.1023178.de/veranstaltungen/sex__gender__and_graduate_wages.html",
+   "summary_ja": "DIW Berlinの「公共財政と生活状況」クラスターセミナー。Honorata Bogusz氏が性別・ジェンダーと大卒者の賃金について報告する。",
+   "summary_en": "DIW Berlin cluster seminar on Public Finance and Living Conditions: Honorata Bogusz (DIW Berlin) presents research on sex, gender and graduate wages.",
+   "summary_de": "Cluster-Seminar Öffentliche Finanzen und Lebenslagen am DIW Berlin: Honorata Bogusz (DIW Berlin) stellt Forschung zu Geschlecht und Löhnen von Hochschulabsolventen vor.",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Gender and Graduate Wages",
+   "importance": 0,
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "ce1083313d11c3ba",
+   "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Bratislava",
+   "venue": "NBS building, 8th floor meeting room",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "事前に連絡して参加(問い合わせ先あり)",
+   "registration_note_en": "Contact NBS in advance to attend",
+   "registration_note_de": "Teilnahme nach vorheriger Kontaktaufnahme",
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Ben Greiner",
+     "org": "WU Wien",
+     "role": null
+    }
+   ],
+   "language": "en",
+   "title": "Time preferences towards the end of life",
+   "title_ja": "終末期に向けた時間選好",
+   "organizer": "Národná banka Slovenska (NBS)",
+   "date_start": "2026-11-09",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
+   "summary_ja": "高齢者の時間選好が年齢と主観的余命によってどう変化するかを、インセンティブ付き実験を含む調査で分析する報告。",
+   "summary_en": "Ben Greiner (WU Vienna) presents survey and incentivized-experiment evidence on how time preferences of the elderly vary with age and subjective life expectancy.",
+   "summary_de": "Ben Greiner (WU Wien) stellt Befragungs- und Anreizexperiment-Evidenz dazu vor, wie sich die Zeitpräferenzen älterer Menschen mit Alter und subjektiver Lebenserwartung verändern.",
+   "country": "SK",
+   "organizer_short": "NBS",
+   "title_short": "Time Preferences Late in Life",
+   "importance": 0,
+   "source": "NBS – Národná banka Slovenska – Events",
+   "id": "fa09fa2de2f9da8d",
+   "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
   }
  ]
 }
