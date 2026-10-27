@@ -24,8 +24,7 @@
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 9,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 4
  },
  {
   "name": "Bank of England – Events",
@@ -67,21 +66,20 @@
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 4,
+  "found": 57,
   "note": "2026-10-26 抽出。全て既知(cepr.org/events は403、hub.cepr.org で取得)"
  },
  {
   "name": "Resolution Foundation – Events",
   "url": "https://www.resolutionfoundation.org/events/",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3
  },
  {
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
-  "found": 1,
+  "found": 3,
   "note": "2026-10-26 抽出。全て既知"
  },
  {
@@ -104,8 +102,7 @@
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": true,
-  "found": 10,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 8
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
@@ -125,21 +122,19 @@
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 1
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 5,
+  "found": 4,
   "note": "2026-10-25 抽出"
  },
  {
@@ -153,8 +148,7 @@
   "name": "LSE – Financial Markets Group (FMG) – Events",
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 2
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -181,8 +175,7 @@
   "name": "Oxford Martin School – Events",
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
   "ok": true,
-  "found": 9,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 8
  },
  {
   "name": "Cambridge Judge Business School – Events",
@@ -209,7 +202,7 @@
   "name": "Imperial College Business School – Events",
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
-  "found": 0,
+  "found": 12,
   "note": "2026-10-26 抽出。対象イベントなし"
  },
  {
@@ -244,8 +237,7 @@
   "name": "IEA – Institute of Economic Affairs – Upcoming events",
   "url": "https://iea.org.uk/events-upcoming/",
   "ok": true,
-  "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 4
  },
  {
   "name": "UK in a Changing Europe (UKICE) – Events",
@@ -279,7 +271,7 @@
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
-  "found": 2,
+  "found": 5,
   "note": "2026-10-25 抽出"
  },
  {
@@ -300,28 +292,26 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 17,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 23
  },
  {
   "name": "ISDA – Events",
   "url": "https://www.isda.org/events/",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3
  },
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
   "ok": true,
-  "found": 1,
-  "note": "2026-10-26 WebFetch で取得(curl は403)。既知1件に時刻・会場・登壇者を追記"
+  "found": 3,
+  "note": "2026-10-27 curl 403→WebFetch で取得。3件掲載のうち2件は開催地が一覧に無く未収載(捏造回避)、1件は既知"
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
-  "found": 0,
+  "found": 10,
   "note": "2026-10-26 抽出。対象テーマなし"
  },
  {
@@ -342,7 +332,7 @@
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
   "ok": true,
-  "found": 5,
+  "found": 11,
   "note": "2026-10-26 WebFetch で取得(curl は403)。5件とも既知・変化なし"
  },
  {
@@ -377,22 +367,20 @@
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
   "url": "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 8,
-  "note": "2026-10-26 確認した候補約8件。新規採用0件(RiskMinds Climate Risk Summit は有料の商用会議で importance 1 のため除外、他は開催済み・日付未確認・既知)"
+  "found": 5,
+  "note": "候補5件(既知3・商業カンファレンス1は除外)。新規採用0件"
  },
  {
   "name": "手動取込",

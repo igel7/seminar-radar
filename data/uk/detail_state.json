@@ -16,7 +16,14 @@
  "https://hub.cepr.org/events/the-impact-of-google-ai-overviews-on-publisher-traffic-and-user-experience-evidence-from-a-field-experiment-media-plurality-webinar-series": {
   "event_id": "5a503e5bd20a06c9",
   "http": 200,
-  "last": "2026-10-24",
+  "last": "2026-10-27",
+  "result": "ok",
+  "tries": 2
+ },
+ "https://ifs.org.uk/events/autumn-budget-2026-ifs-analysis": {
+  "event_id": "a28b058648338c84",
+  "http": 200,
+  "last": "2026-10-27",
   "result": "ok",
   "tries": 1
  },
@@ -210,11 +217,11 @@
   "tries": 1
  },
  "https://www.chathamhouse.org/events/upcoming": {
-  "event_id": "69110a3fdcc59570",
-  "http": 403,
-  "last": "2026-10-22",
-  "result": "FAIL-BLOCKED",
-  "tries": 2
+  "event_id": "f4147adba9442f91",
+  "http": 200,
+  "last": "2026-10-27",
+  "result": "ok",
+  "tries": 3
  },
  "https://www.esri.ie/events/19th-irish-economics-psychology-and-policy-conference": {
   "event_id": "9dfcf1249f6e8347",
@@ -387,9 +394,9 @@
  "https://www.resolutionfoundation.org/events/work-in-progress": {
   "event_id": "dcd158ec54af5583",
   "http": 200,
-  "last": "2026-10-23",
+  "last": "2026-10-27",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.suerf.org/events/challenges-for-monetary-policy-transmission-in-a-changing-world": {
   "event_id": "f878a6971edc6900",
@@ -485,9 +492,9 @@
  "https://www.unepfi.org/industries/banking/the-role-of-risk-in-responsible-banking": {
   "event_id": "cbbed177e010134d",
   "http": 200,
-  "last": "2026-10-23",
+  "last": "2026-10-27",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/themes/climate-change/financing-climate-resilience-in-latin-america-and-caribbean-a-taxonomy-based-approach": {
   "event_id": "fef25ac4424e1c4b",
