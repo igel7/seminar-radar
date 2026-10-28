@@ -647,7 +647,19 @@
    "registration_note_en": "A paid, industry-only event, not open to the general public (targeted at participants from civilian industry, the defense sector, and procurement).",
    "registration_note_de": "Kostenpflichtige Fachveranstaltung, nicht öffentlich zugänglich (für Vertreter aus ziviler Industrie, Verteidigungssektor und Beschaffung).",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Kilian Müller",
+     "org": null,
+     "role": "Founder & CEO"
+    },
+    {
+     "name": "Björn Müschen",
+     "org": "Rheinmetall",
+     "role": "Executive Vice President Corporate Purchasing"
+    }
+   ]
   },
   {
    "title": "CNB Research Seminar by John Burger (Loyola University Maryland)",
@@ -3578,7 +3590,14 @@
    "registration_note_en": "Paid course for PhD students.",
    "registration_note_de": "Kostenpflichtiger Kurs für Doktoranden.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Andrea Ferrero",
+     "org": "Oxford",
+     "role": "Professor of Economics"
+    }
+   ]
   },
   {
    "title": "Central banking economic modelling frontiers: trends, cycles and structural shifts",
@@ -4625,7 +4644,34 @@
    "registration_note_en": "Free online webinar, registration required.",
    "registration_note_de": "Kostenloses Online-Webseminar, Anmeldung erforderlich.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Peter Moser",
+     "org": "KWW",
+     "role": "Themengebietsleiter Kommunenbegleitung & Wissenstransfer"
+    },
+    {
+     "name": "Klaus Russell-Wells",
+     "org": null,
+     "role": "Wissenschaftsjournalist"
+    },
+    {
+     "name": "Jannik Hartfil",
+     "org": "EWE-Netz",
+     "role": "Leiter Kommunale Wärmeplanung"
+    },
+    {
+     "name": "Wiebke Schuber",
+     "org": "EWE-Netz",
+     "role": "Kommunalbetreuerin"
+    },
+    {
+     "name": "Sebastian Metzger",
+     "org": "co2online",
+     "role": null
+    }
+   ]
   },
   {
    "title": "KWW-Starterblock: Kleine Kommunen",
@@ -9067,7 +9113,14 @@
    "id": "757b9ef3dd3e014f",
    "first_seen": "2026-08-18",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Thorsten Höche",
+     "org": "BdB",
+     "role": "Chief Legal Counsel and Managing Director"
+    }
+   ]
   },
   {
    "title": "Klimamanagement als Business Case",
@@ -12251,7 +12304,14 @@
    "id": "7e947e4b7355d437",
    "first_seen": "2026-09-01",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Matthias Meier",
+     "org": "Mannheim",
+     "role": null
+    }
+   ]
   },
   {
    "title": "TSI Congress 2026",
@@ -21641,7 +21701,13 @@
    "summary_de": "Zeigt, wo sich KI-Verordnung und DSGVO in der Praxis überschneiden und was das für den Alltag mit KI bedeutet.",
    "importance": 1,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Demian Niemeyer",
+     "org": "appliedAI",
+     "role": "Senior AI Regulatory Expert"
+    }
+   ],
    "source": "appliedAI Institute (München) – Events",
    "language": null,
    "country": null,
@@ -26977,7 +27043,13 @@
    "importance": 1,
    "registration_url": "https://www.omfif.org/meetings/money-disrupted-ai-capital-markets-and-financial-stability/",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Alex Imas",
+     "org": "Google DeepMind",
+     "role": "Director of AGI Economics"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "59867c28ee8583f4",
    "first_seen": "2026-10-17",
@@ -28398,7 +28470,48 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Hendrik Haag",
+     "org": "ILF",
+     "role": "Vorstand"
+    },
+    {
+     "name": "Mirko Sickinger",
+     "org": "HEUKING",
+     "role": "Partner und Co-Leiter der Praxisgruppe Kapitalmarktrecht"
+    },
+    {
+     "name": "Felix Pröfrock",
+     "org": "Münchmeyer Petersen",
+     "role": "Co-Geschäftsführer"
+    },
+    {
+     "name": "Michael Schlitt",
+     "org": "Hogan Lovells",
+     "role": "Partner"
+    },
+    {
+     "name": "Maximilian Schneider",
+     "org": "ICF Bank",
+     "role": "Head of Equity & Debt Capital Markets"
+    },
+    {
+     "name": "Ingo Wegerich",
+     "org": "Wegerich Law",
+     "role": "Präsident"
+    },
+    {
+     "name": "Björn Bork",
+     "org": "Messer",
+     "role": "Senior Vice President Legal & Compliance"
+    },
+    {
+     "name": "Peter Klormann",
+     "org": "Sullivan & Cromwell",
+     "role": "Partner"
+    }
+   ],
    "source": "House of Finance (Goethe大) – Veranstaltungen",
    "id": "b587ddc9d21562f4",
    "first_seen": "2026-10-21",
@@ -28887,7 +29000,13 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ernest Gnan",
+     "org": "SUERF",
+     "role": "Secretary General"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "a9e8fa8aee46513a",
    "first_seen": "2026-10-22",
@@ -30368,6 +30487,269 @@
    "source": "NBS – Národná banka Slovenska – Events",
    "id": "fa09fa2de2f9da8d",
    "first_seen": "2026-10-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Geopolitische Risiken erkennen – unternehmerisch handlungsfähig bleiben. Geopolitisches Risikomanagement in der Praxis",
+   "title_ja": "地政学リスクの把握と実務的リスク管理",
+   "organizer": "Oldenburgische IHK",
+   "date_start": "2026-12-02",
+   "date_end": null,
+   "time": "16:00",
+   "city": "Oldenburg",
+   "venue": "Oldenburgische IHK",
+   "format": "onsite",
+   "themes": [
+    "geopolitics",
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録・無料(オルデンブルク商工会議所サイトで申込)",
+   "registration_note_en": "Advance registration required, free (via Oldenburgische IHK website)",
+   "registration_note_de": "Anmeldung erforderlich, kostenlos (über die Webseite der Oldenburgischen IHK)",
+   "url": "https://www.ihk.de/blueprint/servlet/resource/blob/7206930/8c038038c9b08498dcf0249f7eaddab6/aussenwirtschaft-aktuell-oktober-2026-data.pdf",
+   "summary_ja": "新たな関税・制裁・国際紛争がサプライチェーンや市場に与える影響を、中堅企業がどう早期に把握し意思決定に反映するかを扱う情報イベント。Peter Eitel教授が最新の地政学動向を解説する。",
+   "summary_en": "Information event on how mid-sized companies can identify new tariffs, sanctions and international conflicts early and factor them into decisions; Prof. Peter Eitel classifies current geopolitical developments and their impact.",
+   "summary_de": "Informationsveranstaltung dazu, wie mittelständische Unternehmen neue Zölle, Sanktionen und internationale Konflikte frühzeitig einordnen und in Entscheidungen berücksichtigen; Prof. Peter Eitel ordnet aktuelle geopolitische Entwicklungen und deren Auswirkungen ein.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Oldenburgische IHK",
+   "title_short": "Geopolitical Risk Management for SMEs",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": "18:30",
+   "speakers": [
+    {
+     "name": "Peter Eitel",
+     "org": "Leuphana University",
+     "role": "Gastprofessor am LCCS"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "2e474d52837c276c",
+   "first_seen": "2026-10-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Invisible Continent // Counting the Missing Poor in Developing Countries",
+   "title_ja": "途上国の「見えない」貧困層をどう数えるか",
+   "organizer": "ZEW Mannheim",
+   "date_start": "2026-11-03",
+   "date_end": null,
+   "time": null,
+   "city": "Mannheim",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/the-invisible-continent/5025?cHash=7a91d2d38f2d1acefdde33a34fb9d2c4",
+   "summary_ja": "ZEW研究セミナーで、途上国における「見えない」貧困層の数え方について、Mathieu Lefebvre氏(BETA、ストラスブール)が報告する。",
+   "summary_en": "At a ZEW Research Seminar, Mathieu Lefebvre (BETA, Strasbourg) presents on how to count the missing poor in developing countries.",
+   "summary_de": "Im ZEW-Forschungsseminar stellt Mathieu Lefebvre (BETA, Straßburg) vor, wie die fehlenden Armen in Entwicklungsländern gezählt werden können.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "ZEW",
+   "title_short": "Measuring Hidden Poverty",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Mathieu Lefebvre",
+     "org": "BETA",
+     "role": null
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "5f08892e5901154e",
+   "first_seen": "2026-10-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "SNB's General Meeting of Shareholders",
+   "title_ja": "SNB株主総会(スピーチ)",
+   "organizer": "Swiss National Bank",
+   "date_start": "2027-04-30",
+   "date_end": null,
+   "time": "10:00",
+   "city": "Bern",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.snb.ch/en/services-events/digital-services/event-schedule",
+   "summary_ja": "SNB株主総会(ベルン)で、Barbara Janom Steiner氏とMartin Schlegel氏のスピーチが予定されている。",
+   "summary_en": "Speeches by Barbara Janom Steiner and Martin Schlegel are scheduled at the SNB's General Meeting of Shareholders in Bern.",
+   "summary_de": "Bei der Generalversammlung der SNB in Bern sind Reden von Barbara Janom Steiner und Martin Schlegel angekündigt.",
+   "language": null,
+   "country": "CH",
+   "organizer_short": "SNB",
+   "title_short": "Swiss Monetary Policy Speeches",
+   "importance": 3,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Barbara Janom Steiner",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Martin Schlegel",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "SNB – Swiss National Bank – Events",
+   "id": "5f73beb6c4ee69f9",
+   "first_seen": "2026-10-28",
+   "notables": [
+    {
+     "person": "martin-schlegel",
+     "name": "Martin Schlegel",
+     "group": "ncb",
+     "tier": 1,
+     "short": "SNB Chairman",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
+  },
+  {
+   "title": "China & Nordwest – Wirtschaftsdialog und Networking in den Zukunftsbranchen Maritime Wirtschaft, Logistik und Ernährungswirtschaft",
+   "title_ja": "中国&北西部:経済対話とネットワーキング",
+   "organizer": "IHK für Ostfriesland und Papenburg / Oldenburgische IHK",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "15:00",
+   "city": "Emden",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "china",
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録・無料(オルデンブルク商工会議所サイトで申込)",
+   "registration_note_en": "Advance registration required, free (via Oldenburgische IHK website)",
+   "registration_note_de": "Anmeldung erforderlich, kostenlos (über die Webseite der Oldenburgischen IHK)",
+   "url": "https://www.ihk.de/blueprint/servlet/resource/blob/7206930/8c038038c9b08498dcf0249f7eaddab6/aussenwirtschaft-aktuell-oktober-2026-data.pdf",
+   "summary_ja": "ドイツ・中国の経済関係が地政学や貿易環境の変化に直面する中、海運・物流・食品産業を軸に短い講演と中国および地域の企業代表との交流の場を設ける経済対話。英語で開催。",
+   "summary_en": "Business dialogue on German-Chinese economic relations amid geopolitical and trade shifts, focusing on maritime economy, logistics and food industry, with short impulses and networking with Chinese and regional business representatives. Held in English.",
+   "summary_de": "Wirtschaftsdialog zu den deutsch-chinesischen Wirtschaftsbeziehungen angesichts geopolitischer und handelspolitischer Veränderungen mit Fokus auf maritime Wirtschaft, Logistik und Ernährungswirtschaft; kurze Impulse und Networking mit chinesischen und regionalen Wirtschaftsvertretern. Veranstaltungssprache Englisch.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IHK Ostfriesland/Oldenburgische IHK",
+   "title_short": "China-Northwest Germany Business Dialogue",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": "17:30",
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "a315499ca9c26239",
+   "first_seen": "2026-10-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "賛助会員限定イベント：日EU関係を振り返って――欧州連合日本政府代表部元大使が語るEUの現在地",
+   "title_ja": "日EU関係の振り返りとEUの現在地（会員限定）",
+   "organizer": "EU-Japan Centre for Industrial Cooperation",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "country": null,
+   "language": null,
+   "themes": [
+    "japan",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "賛助会員限定（一般不可）",
+   "registration_note_en": "Supporting members only (not open to the public)",
+   "registration_note_de": "Nur für Fördermitglieder (nicht öffentlich)",
+   "registration_url": null,
+   "url": "https://www.eu-japan.eu/tags/webinar",
+   "summary_ja": "賛助会員限定のウェビナー。元駐EU日本大使の相川一俊氏が、日EU関係の歩みとEUの政治・経済の現状、主要政策の動向を解説する。",
+   "summary_en": "Members-only webinar in which former Japanese Ambassador to the EU Kazutoshi Aikawa reviews the development of EU-Japan relations and the current state of EU politics, economy and key policies.",
+   "summary_de": "Veranstaltung nur für Fördermitglieder: Der frühere japanische EU-Botschafter Kazutoshi Aikawa blickt auf die Entwicklung der EU-Japan-Beziehungen sowie auf die aktuelle politische und wirtschaftliche Lage und die wichtigsten Politikfelder der EU.",
+   "organizer_short": "EU-Japan Centre",
+   "title_short": "EU-Japan Relations Review",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "相川一俊",
+     "org": null,
+     "role": "元特命全権大使"
+    }
+   ],
+   "source": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
+   "id": "a763828c2115fdef",
+   "first_seen": "2026-10-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Fourth Joint Workshop of IDOS’ Research Department “Transformation of Economic and Social Systems”, ECONtribute, and the University of Bonn’s Economics Department on “Economic Research for Development & Sustainability”",
+   "title_ja": "開発と持続可能性の経済研究 合同ワークショップ",
+   "organizer": "IDOS, ECONtribute, University of Bonn Economics Department",
+   "date_start": "2027-01-27",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "17:00",
+   "city": "Bonn",
+   "venue": null,
+   "format": null,
+   "country": "DE",
+   "language": "en",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://econtribute.de/",
+   "summary_ja": "IDOS研究部門、ECONtribute、ボン大学経済学部による第4回合同ワークショップ。開発と持続可能性をテーマとする経済研究を扱う。",
+   "summary_en": "Fourth joint workshop of IDOS' Research Department, ECONtribute and the University of Bonn's Economics Department on economic research for development and sustainability.",
+   "summary_de": "Vierter gemeinsamer Workshop des IDOS-Forschungsbereichs, von ECONtribute und der Volkswirtschaftlichen Fakultät der Universität Bonn zur ökonomischen Forschung zu Entwicklung und Nachhaltigkeit.",
+   "organizer_short": "IDOS/ECONtribute+",
+   "title_short": "Economic Research for Development",
+   "importance": 1,
+   "speakers": [],
+   "source": "ECONtribute (Bonn/Köln) – Events",
+   "id": "dea45ebaf59cdaf8",
+   "first_seen": "2026-10-28",
    "notables": [],
    "notable_tier": null
   }
