@@ -9,15 +9,15 @@ DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:Fall 2026 Frankfurt Macro Seminar
 LOCATION:Frankfurt am Main
-DESCRIPTION:ドイツ連邦銀行、ECB、フランクフルト・スクール、ゲーテ大学が共催する半年に一度のマクロ経済半日ワークショップ。 / 主催: Deutsche Bundesbank\, European Central Bank\, Frankfurt School of Finance and Management\, Goethe University Frankfurt / https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798
+DESCRIPTION:ドイツ連邦銀行、ECB、フランクフルト・スクール、ゲーテ大学が共催する半年に一度のマクロ経済半日ワークショップ。 / 主催: Deutsche Bundesbank\, European Central Bank\, Frankfurt School of Finance and Management\, Goethe University Frankfurt / https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798 / 登壇: Marina Hoch (Bundesbank)\, Maciej Sztachera (Goethe University)\, Anna Rogantini Picco (ECB)\, Fabian Seyrich (Frankfurt School)
 END:VEVENT
 BEGIN:VEVENT
 UID:101c02b611f5c100@seminar-radar
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261107
 SUMMARY:ECB Conference on Money Markets 2026
-LOCATION:Rome
-DESCRIPTION:ECBが主催するマネーマーケットに関する2日間の会議。短期金融市場の動向や金融政策の運営に関する研究・政策議論を行う。 / 主催: European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html / 登壇: Isabel Schnabel (ECB)\, Arvind Krishnamurthy (Stanford GSB)\, Pablo Hernández de Cos (BIS)\, Philip R. Lane (ECB)\, John Williams (New York Fed)\, Petra Tschudin (SNB)\, Robert Czech (Bank of England)\, Tobias Linzert (ECB) / 要人: Isabel Schnabel (ECB Board member)\, Pablo Hernández de Cos (BIS GM)\, Philip R. Lane (ECB Chief Economist)\, John C. Williams (NY Fed President)\, Petra Tschudin (SNB Board member)
+LOCATION:Frankfurt am Main
+DESCRIPTION:ECBが主催するマネーマーケットに関する国際会議。金融政策の実施、中央銀行のバランスシート、短期金融市場の動向を取り上げる。 / 主催: European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html / 登壇: Isabel Schnabel\, Arvind Krishnamurthy\, Pablo Hernández de Cos\, Philip R. Lane\, John Williams\, Petra Tschudin\, Robert Czech\, Tobias Linzert / 要人: Isabel Schnabel (ECB Board member)\, Pablo Hernández de Cos (BIS GM)\, Philip R. Lane (ECB Chief Economist)\, Petra Tschudin (SNB Board member)
 END:VEVENT
 BEGIN:VEVENT
 UID:517e4ef74daec274@seminar-radar
@@ -346,14 +346,6 @@ DTEND;VALUE=DATE:20260930
 SUMMARY:95th East Jour Fixe of the Oesterreichische Nationalbank
 LOCATION:Vienna
 DESCRIPTION:インフレ期待ギャップの解消に関する金融政策フォーラム / 主催: Oesterreichische Nationalbank / https://www.oenb.at/en/Calendar/2026/2026-09-29-east-jour-fixe.html
-END:VEVENT
-BEGIN:VEVENT
-UID:63daf4a304065612@seminar-radar
-DTSTART;VALUE=DATE:20260928
-DTEND;VALUE=DATE:20260929
-SUMMARY:Global Economy Lecture 2026
-LOCATION:Vienna
-DESCRIPTION:国際通貨体制の現在と将来の課題を論じる講演。 / 主催: Oesterreichische Nationalbank / https://www.oenb.at/en/Calendar.html
 END:VEVENT
 BEGIN:VEVENT
 UID:03e546d2b3b3c65c@seminar-radar
@@ -1441,7 +1433,7 @@ DTSTART;VALUE=DATE:20270125
 DTEND;VALUE=DATE:20270128
 SUMMARY:AWA Export Control Conference 2027
 LOCATION:Mainz
-DESCRIPTION:ITAR/DDTC、BIS/OFAC、ドイツの輸出管理法制を扱う実務者向けの輸出管理カンファレンス。対ロシア制裁など最新の輸出規制動向を扱う。 / 主催: AWA Außenwirtschafts-Akademie GmbH / https://www.awa-seminare.com/en/export-control-conference
+DESCRIPTION:ITAR/DDTC、BIS/OFAC、ドイツの輸出管理法制を扱う実務者向けの輸出管理カンファレンス。対ロシア制裁など最新の輸出規制動向を扱う。 / 主催: AWA Außenwirtschafts-Akademie GmbH / https://www.awa-seminare.com/en/export-control-conference / 登壇: Matthias Merz (AWA)\, Doug Jacobson (JBK)
 END:VEVENT
 BEGIN:VEVENT
 UID:c8b0a72fe78e15e8@seminar-radar
@@ -2068,14 +2060,6 @@ LOCATION:Munich
 DESCRIPTION:適用範囲の評価から継続的なコンプライアンスまで、AI Act対応の全段階を解説するワークショップ(ドイツ語)。 / 主催: appliedAI Institute / https://www.appliedai-institute.de/en/workshops-trainings/ai-act-umsetzen-ihr-weg-richtung-konformitaet/
 END:VEVENT
 BEGIN:VEVENT
-UID:803d15cf44fc0207@seminar-radar
-DTSTART;VALUE=DATE:20260928
-DTEND;VALUE=DATE:20260929
-SUMMARY:Classifying AI Systems: Risk Categories\, Roles and Responsibilities
-LOCATION:Munich
-DESCRIPTION:AIシステムの適切な分類方法と、それに伴う義務について学ぶワークショップ(ドイツ語)。 / 主催: appliedAI Institute / https://www.appliedai-institute.de/en/workshops-trainings/ki-systeme-einstufen-risikoklassen-rollen-pflichten/
-END:VEVENT
-BEGIN:VEVENT
 UID:8648b598c186f807@seminar-radar
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
@@ -2146,14 +2130,6 @@ DTEND;VALUE=DATE:20261003
 SUMMARY:Schleswig-Holstein: Aufbruch in stürmischen Zeiten?
 LOCATION:Hamburg
 DESCRIPTION:シュレスヴィヒ・ホルシュタイン州の経済と地域開発に関する討論会 / 主催: ZBW Leibniz-Informationszentrum Wirtschaft / https://www.kielinstitut.de/de/veranstaltungen/konferenzen/nordwaerts/schleswig-holstein-aufbruch-in-stuermischen-zeiten/
-END:VEVENT
-BEGIN:VEVENT
-UID:d424d88f2a6c833a@seminar-radar
-DTSTART;VALUE=DATE:20260928
-DTEND;VALUE=DATE:20260929
-SUMMARY:Talks@Bruegel: Ukraine's funding equation with Vladyslav Rashkovan
-LOCATION:
-DESCRIPTION:ウクライナへの90億ユーロ支援ローンの実装と条件付き政策。 / 主催: Bruegel / https://www.bruegel.org/event/talksbruegel-ukraines-funding-equation-vladyslav-rashkovan
 END:VEVENT
 BEGIN:VEVENT
 UID:d657ca0001196904@seminar-radar
@@ -3209,7 +3185,7 @@ DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:From Leniency to Data Screening // Modern Detection Mechanisms for Cartels
 LOCATION:Mannheim
-DESCRIPTION:カルテルの検知手法(リニエンシー制度からデータスクリーニングまで)を扱う、Mannheim Competition Policy Forumの講演です。 / 主催: Mannheim Competition Policy Forum / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/from-leniency-to-data-screening/5007 / 登壇: Christina Malz (Schilling\, Zutt & Anschütz)
+DESCRIPTION:カルテルの検知手法(リニエンシー制度からデータスクリーニングまで)を扱う、Mannheim Competition Policy Forumの講演です。 / 主催: Mannheim Competition Policy Forum / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/from-leniency-to-data-screening/5007?cHash=cfe6a714aa1ff7eee518376b01c65d4b / 登壇: Christina Malz (Schilling\, Zutt & Anschütz)
 END:VEVENT
 BEGIN:VEVENT
 UID:445f9b90c24d9d93@seminar-radar
@@ -3377,7 +3353,7 @@ DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
 SUMMARY:Asa no Kai: Resilience in Japan and Germany
 LOCATION:Willich
-DESCRIPTION:日独のレジリエンスをテーマに、サイバーレジリエンスや法務の観点、ビジネスネットワーキングを取り上げる朝の会合。 / 主催: DJW – Deutsch-Japanischer Wirtschaftskreis / https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-asa-no-kai-202612
+DESCRIPTION:日独のレジリエンスをテーマに、サイバーレジリエンスや法務の観点、ビジネスネットワーキングを取り上げる朝の会合。 / 主催: DJW – Deutsch-Japanischer Wirtschaftskreis / https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-asa-no-kai-202612 / 登壇: Christian Pakusch (Stadt Willich)\, Michael Johannes Pils (Taylor Wessing)\, Axel Freiherr von dem Bussche (Taylor Wessing)\, Susan Lipeyko (Taylor Wessing)
 END:VEVENT
 BEGIN:VEVENT
 UID:2d8f288922e463c1@seminar-radar
@@ -3744,8 +3720,8 @@ UID:0113b7786203d113@seminar-radar
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:New York Fed-ECB Conference on Nonbank Financial Institutions 2026
-LOCATION:Frankfurt am Main
-DESCRIPTION:ニューヨーク連銀とECBが共催する、ノンバンク金融機関(NBFI)をテーマとした会議。 / 主催: New York Fed and European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261113_ny_fed_ecb.en.html / 登壇: Jing Huang (Texas A&M)\, Isha Agarwal (UBC)\, Matteo Leombroni (Boston College)\, Thierry Foucault (HEC Paris)\, Laura Blattner (FinRegLab)\, Randall Guynn (Federal Reserve Board)\, Luc Laeven (ECB)\, Shohini Kundu (UCLA)
+LOCATION:New York
+DESCRIPTION:ニューヨーク連邦準備銀行とECBが共催する、ノンバンク金融機関(NBFI)に関する会議。金融安定と市場への影響を論じる。 / 主催: Federal Reserve Bank of New York / European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261113_ny_fed_ecb.en.html / 登壇: Jing Huang\, Isha Agarwal\, Matteo Leombroni\, Thierry Foucault\, Laura Blattner\, Randall Guynn\, Luc Laeven\, Shohini Kundu
 END:VEVENT
 BEGIN:VEVENT
 UID:2a8f4fcfe2e23283@seminar-radar
@@ -4042,5 +4018,37 @@ DTEND;VALUE=DATE:20270128
 SUMMARY:Fourth Joint Workshop of IDOS’ Research Department “Transformation of Economic and Social Systems”\, ECONtribute\, and the University of Bonn’s Economics Department on “Economic Research for Development & Sustainability”
 LOCATION:Bonn
 DESCRIPTION:IDOS研究部門、ECONtribute、ボン大学経済学部による第4回合同ワークショップ。開発と持続可能性をテーマとする経済研究を扱う。 / 主催: IDOS\, ECONtribute\, University of Bonn Economics Department / https://econtribute.de/
+END:VEVENT
+BEGIN:VEVENT
+UID:8a461c7ceea8b237@seminar-radar
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:reconcept Webinar: Investieren Sie in das Rückgrat der Energiewende
+LOCATION:
+DESCRIPTION:エネルギー転換を支える基幹インフラへの投資をテーマとするウェビナー。詳細な内容や登壇者は掲載ページに記載がない。 / 主催: reconcept / https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende-1-1
+END:VEVENT
+BEGIN:VEVENT
+UID:949b40011ef2b987@seminar-radar
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:reconcept Webinar: Investieren Sie in das Rückgrat der Energiewende
+LOCATION:
+DESCRIPTION:エネルギー転換を支える基幹インフラへの投資をテーマとするウェビナー。詳細な内容や登壇者は掲載ページに記載がない。 / 主催: reconcept / https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende-1
+END:VEVENT
+BEGIN:VEVENT
+UID:c05fb88c41f8e203@seminar-radar
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:reconcept Webinar: Investieren Sie in das Rückgrat der Energiewende
+LOCATION:
+DESCRIPTION:エネルギー転換を支える基幹インフラへの投資をテーマとするウェビナー。詳細な内容や登壇者は掲載ページに記載がない。 / 主催: reconcept / https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende
+END:VEVENT
+BEGIN:VEVENT
+UID:d31b94a602d8b82b@seminar-radar
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Künstliche Intelligenz – Hype! Fakten! Konsequenzen?
+LOCATION:Chemnitz
+DESCRIPTION:Bundesbankの講演シリーズ「Forum Bundesbank」で、AIをめぐる過度な期待(ハイプ)と実際の事実、その帰結を取り上げる講演。 / 主催: Deutsche Bundesbank – Forum Bundesbank (Hauptverwaltung Sachsen und Thüringen) / https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/kuenstliche-intelligenz-hype-fakten-konsequenzen--916704 / 登壇: Rafael Zajonz
 END:VEVENT
 END:VCALENDAR

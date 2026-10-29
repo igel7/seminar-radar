@@ -21,11 +21,11 @@
   "tries": 1
  },
  "https://digifin.berlin/de": {
-  "event_id": "9d91be80c9d5d166",
+  "event_id": "fe3dbb95cd30c299",
   "http": 200,
-  "last": "2026-10-14",
+  "last": "2026-10-29",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://en.wikipedia.org/wiki/ukraine_recovery_conference": {
   "event_id": "01c5edb264f39497",
@@ -72,9 +72,9 @@
  "https://industry.sfi.ch/en/sfi-event": {
   "event_id": "1ace20c75b6ca7de",
   "http": 200,
-  "last": "2026-10-14",
+  "last": "2026-10-29",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://japan.ahk.de/en/events-veranstaltungen/ahk-event/2nd-german-japanese-leadership-dialogue": {
   "event_id": "f0aba7765644fe56",
@@ -83,12 +83,19 @@
   "result": "ok",
   "tries": 1
  },
+ "https://jdzb.de/de/veranstaltungen/industrial-leadership-through-middle-power-cooperation": {
+  "event_id": "9c32f3ed4e8a94ca",
+  "http": 200,
+  "last": "2026-10-29",
+  "result": "ok",
+  "tries": 1
+ },
  "https://jdzb.de/de/veranstaltungen/jdzb-series-future-democracy": {
   "event_id": "461e76331fdd1722",
   "http": 200,
-  "last": "2026-10-18",
+  "last": "2026-10-29",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://live.handelsblatt.com/event/handelsblatt-ki-summit": {
   "event_id": "0330d56775827ed9",
@@ -251,6 +258,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.awa-seminare.com/en/export-control-conference": {
+  "event_id": "a3dfa6e6acc79287",
+  "http": 200,
+  "last": "2026-10-29",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.bafin.de/shareddocs/veranstaltungen/de/261110_fachtagung_geldwaesche_terrorismusfinanzierung.html": {
   "event_id": "bafad36148ace94d",
   "http": 200,
@@ -300,11 +314,25 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.banque-france.fr/en/events/central-bank-digital-currency-cbdc-retail-component-2": {
+  "event_id": "0c2b579ec75ee8d7",
+  "http": 403,
+  "last": "2026-10-29",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://www.bis.org/events/cfp_261210-bis.htm": {
   "event_id": "e4325a00146e4b38",
   "http": 404,
   "last": "2026-10-23",
   "result": "FAIL-HTTP",
+  "tries": 1
+ },
+ "https://www.bme.de/veranstaltungen/grossveranstaltungen/beschaffung-in-der-sicherheits-und-verteidigungsindustrie/informationen": {
+  "event_id": "1b041135e7ff8452",
+  "http": 200,
+  "last": "2026-10-29",
+  "result": "ok",
   "tries": 1
  },
  "https://www.bundesbank.de/de/service/termine/3-fachtagung-zur-regulierung-von-wertpapierinstituten-in-der-kapitalmarktunion-964146": {
@@ -331,9 +359,9 @@
  "https://www.bundesbank.de/en/bundesbank/research/conferences/fall-2026-frankfurt-macro-seminar-937798": {
   "event_id": "0367f964c35433c3",
   "http": 200,
-  "last": "2026-10-18",
+  "last": "2026-10-29",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.chathamhouse.org/events/all/standard-event/chatham-house-berlin-conference-2026": {
   "event_id": "c731effbf651a308",
@@ -405,6 +433,13 @@
   "result": "FAIL-BLOCKED",
   "tries": 1
  },
+ "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-asa-no-kai-202612": {
+  "event_id": "2c655dfad51df1c8",
+  "http": 200,
+  "last": "2026-10-29",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/japan-meets-berlin-brandenburg-202612": {
   "event_id": "e7cf1898ac72e68d",
   "http": 200,
@@ -425,6 +460,13 @@
   "last": "2026-10-26",
   "result": "ok",
   "tries": 1
+ },
+ "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202612": {
+  "event_id": "d3011fe2b01a9cb6",
+  "http": 200,
+  "last": "2026-10-29",
+  "result": "ok",
+  "tries": 2
  },
  "https://www.drsc.de/en/news/save-the-date-hamburg-sustainability-reporting-forum-2026-registration-opens-in-september": {
   "event_id": "b0e5bd823d952597",
@@ -706,6 +748,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.ihk.de/blueprint/servlet/resource/blob/7206930/8c038038c9b08498dcf0249f7eaddab6/aussenwirtschaft-aktuell-oktober-2026-data.pdf": {
+  "event_id": "a315499ca9c26239",
+  "http": 200,
+  "last": "2026-10-29",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.ihk.de/schwaben/produktmarken/international/kommende-veranstaltungen/deutsch-ukrainisches-wirtschaftsforum-20-11-26-7122182": {
   "event_id": "dfcfc41e69bc7fa1",
   "http": 200,
@@ -800,9 +849,9 @@
  "https://www.ndia.org/events/2026/10/28/mnc-2026": {
   "event_id": "c9356c05f0c536af",
   "http": 200,
-  "last": "2026-10-17",
-  "result": "FAIL-THIN",
-  "tries": 1
+  "last": "2026-10-29",
+  "result": "ok",
+  "tries": 2
  },
  "https://www.oenb.at/en/news-und-events/veranstaltungen/2026/2026-11-06-mnb-workshop.html": {
   "event_id": "990601f6594bb548",
@@ -919,9 +968,9 @@
  "https://www.szgerzensee.ch/programs/conferences-events/detail/international-macroeconomics-and-finance-annual-meeting-2026": {
   "event_id": "ec547ad95d27f605",
   "http": 200,
-  "last": "2026-10-13",
+  "last": "2026-10-29",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.szgerzensee.ch/programs/conferences-events/detail/macroeconomic-policy": {
   "event_id": "0b4bde8d041f7c74",
@@ -990,6 +1039,13 @@
   "event_id": "1cf0e5b8c76cf824",
   "http": 200,
   "last": "2026-10-25",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.wu.ac.at/en/economics/event": {
+  "event_id": "54298f49942cd601",
+  "http": 200,
+  "last": "2026-10-29",
   "result": "ok",
   "tries": 1
  },

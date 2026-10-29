@@ -34,18 +34,40 @@
    "registration_note_en": "See the event page for details and registration; a biannual half-day workshop.",
    "registration_note_de": "Details und Anmeldung siehe Veranstaltungsseite; halbtägiger, zweimal jährlich stattfindender Workshop.",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Marina Hoch",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Maciej Sztachera",
+     "org": "Goethe University",
+     "role": null
+    },
+    {
+     "name": "Anna Rogantini Picco",
+     "org": "ECB",
+     "role": null
+    },
+    {
+     "name": "Fabian Seyrich",
+     "org": "Frankfurt School",
+     "role": null
+    }
+   ]
   },
   {
    "title": "ECB Conference on Money Markets 2026",
-   "title_ja": "ECBマネーマーケット会議 2026",
+   "title_ja": "ECB マネーマーケット会議 2026",
    "organizer": "European Central Bank",
    "date_start": "2026-11-05",
    "date_end": "2026-11-06",
    "time": "08:00",
-   "city": "Rome",
+   "city": "Frankfurt am Main",
    "venue": "European Central Bank, Sonnemannstrasse 20",
-   "format": "onsite",
+   "format": "hybrid",
    "themes": [
     "central_bank",
     "fin_markets"
@@ -54,9 +76,9 @@
    "open_to_public": true,
    "registration_note": "無料。2026年10月15日までに参加希望を登録する必要あり。",
    "url": "https://www.ecb.europa.eu/press/conferences/html/20261105-money-markets.en.html",
-   "summary_ja": "ECBが主催するマネーマーケットに関する2日間の会議。短期金融市場の動向や金融政策の運営に関する研究・政策議論を行う。",
+   "summary_ja": "ECBが主催するマネーマーケットに関する国際会議。金融政策の実施、中央銀行のバランスシート、短期金融市場の動向を取り上げる。",
    "language": "en",
-   "country": "IT",
+   "country": "DE",
    "organizer_short": "ECB",
    "title_short": "Money Markets Conference",
    "importance": 3,
@@ -65,50 +87,50 @@
    "source": "ECB – Conferences & seminars",
    "id": "101c02b611f5c100",
    "first_seen": "2026-07-14",
-   "summary_en": "A two-day ECB conference on money market developments and the implementation of monetary policy, combining research and policy discussion.",
-   "summary_de": "Zweitägige EZB-Konferenz zu Entwicklungen an den Geldmärkten und zur Umsetzung der Geldpolitik, mit Forschung und Politikdiskussion.",
+   "summary_en": "An ECB-hosted international conference on money markets, covering monetary policy implementation, central bank balance sheets and short-term funding markets.",
+   "summary_de": "Internationale Konferenz der EZB zu Geldmärkten, mit Schwerpunkt auf geldpolitischer Umsetzung, Zentralbankbilanzen und kurzfristigen Refinanzierungsmärkten.",
    "registration_note_en": "Free of charge; interested participants must register their interest by 15 October 2026.",
    "registration_note_de": "Kostenlos; Interessierte müssen sich bis zum 15. Oktober 2026 registrieren.",
    "speakers": [
     {
      "name": "Isabel Schnabel",
-     "org": "ECB",
-     "role": "Member of the Executive Board"
+     "org": null,
+     "role": null
     },
     {
      "name": "Arvind Krishnamurthy",
-     "org": "Stanford GSB",
-     "role": "Keynote speaker"
+     "org": null,
+     "role": null
     },
     {
      "name": "Pablo Hernández de Cos",
-     "org": "BIS",
-     "role": "General Manager"
+     "org": null,
+     "role": null
     },
     {
      "name": "Philip R. Lane",
-     "org": "ECB",
-     "role": "Member of the Executive Board"
+     "org": null,
+     "role": null
     },
     {
      "name": "John Williams",
-     "org": "New York Fed",
-     "role": "President and Chief Executive Officer"
+     "org": null,
+     "role": null
     },
     {
      "name": "Petra Tschudin",
-     "org": "SNB",
-     "role": "Member of the Governing Board"
+     "org": null,
+     "role": null
     },
     {
      "name": "Robert Czech",
-     "org": "Bank of England",
-     "role": "Presenter"
+     "org": null,
+     "role": null
     },
     {
      "name": "Tobias Linzert",
-     "org": "ECB",
-     "role": "Presenter"
+     "org": null,
+     "role": null
     }
    ],
    "notables": [
@@ -134,14 +156,6 @@
      "group": "ecb",
      "tier": 1,
      "short": "ECB Chief Economist",
-     "former": false
-    },
-    {
-     "person": "john-williams",
-     "name": "John C. Williams",
-     "group": "ncb",
-     "tier": 2,
-     "short": "NY Fed President",
      "former": false
     },
     {
@@ -2258,42 +2272,6 @@
    "notable_tier": null
   },
   {
-   "title": "Global Economy Lecture 2026",
-   "title_ja": "2026年グローバル経済講演",
-   "organizer": "Oesterreichische Nationalbank",
-   "date_start": "2026-09-28",
-   "date_end": null,
-   "time": "11:00",
-   "city": "Vienna",
-   "venue": "OeNB",
-   "format": "hybrid",
-   "themes": [
-    "central_bank",
-    "geopolitics"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "無料・オンライン参加可",
-   "url": "https://www.oenb.at/en/Calendar.html",
-   "summary_ja": "国際通貨体制の現在と将来の課題を論じる講演。",
-   "language": "en",
-   "country": "AT",
-   "organizer_short": "OeNB",
-   "title_short": "International Monetary System",
-   "importance": 2,
-   "registration_url": "https://www.oenb.at/en/Calendar/2026/2026-09-28-global-economy-lecture-2026.html",
-   "time_end": "12:30",
-   "source": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
-   "id": "63daf4a304065612",
-   "first_seen": "2026-07-17",
-   "summary_en": "Lecture on current and future challenges facing the international monetary system.",
-   "summary_de": "Vortrag zu aktuellen und zukünftigen Herausforderungen des internationalen Währungssystems.",
-   "registration_note_en": "Free, online participation available",
-   "registration_note_de": "Kostenlos, Online-Teilnahme möglich",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "20th South-Eastern European Economic Research Workshop",
    "title_ja": "第20回南東欧経済研究ワークショップ",
    "organizer": "Bank of Albania",
@@ -3674,17 +3652,17 @@
     {
      "name": "Fabian Gaessler",
      "org": "UPF",
-     "role": "Prof. Dr."
+     "role": null
     },
     {
      "name": "Matt Marx",
      "org": "Cornell",
-     "role": "Prof."
+     "role": null
     },
     {
      "name": "Valentina Tartari",
      "org": "SSE",
-     "role": "Prof."
+     "role": null
     }
    ],
    "notables": [],
@@ -9611,7 +9589,19 @@
    "id": "a3dfa6e6acc79287",
    "first_seen": "2026-08-20",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Matthias Merz",
+     "org": "AWA",
+     "role": "Geschäftsführer"
+    },
+    {
+     "name": "Doug Jacobson",
+     "org": "JBK",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Privacy Conference",
@@ -13764,42 +13754,6 @@
    "notable_tier": null
   },
   {
-   "title": "Classifying AI Systems: Risk Categories, Roles and Responsibilities",
-   "title_ja": "AIシステムの分類：リスク区分と責任",
-   "organizer": "appliedAI Institute",
-   "date_start": "2026-09-28",
-   "date_end": null,
-   "time": "10:10",
-   "city": "Munich",
-   "venue": null,
-   "format": "onsite",
-   "themes": [
-    "ai"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "要事前登録",
-   "registration_note_en": "Advance registration required",
-   "registration_note_de": "Anmeldung erforderlich",
-   "url": "https://www.appliedai-institute.de/en/workshops-trainings/ki-systeme-einstufen-risikoklassen-rollen-pflichten/",
-   "summary_ja": "AIシステムの適切な分類方法と、それに伴う義務について学ぶワークショップ(ドイツ語)。",
-   "summary_en": "Workshop (in German) on how to properly classify AI systems and the obligations associated with each risk category.",
-   "summary_de": "Workshop (auf Deutsch) darüber, wie KI-Systeme korrekt eingestuft werden und welche Pflichten damit verbunden sind.",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "appliedAI",
-   "title_short": "AI Risk Classification",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": null,
-   "source": "appliedAI Institute (München) – Events",
-   "id": "803d15cf44fc0207",
-   "first_seen": "2026-09-11",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "The AI Act and the GDPR in Everyday Work Life",
    "title_ja": "AI規制とGDPRの実務上の交差",
    "organizer": "appliedAI Institute",
@@ -14211,43 +14165,6 @@
    "time_end": null,
    "source": "IfW Kiel – Veranstaltungen",
    "id": "d257272264f61231",
-   "first_seen": "2026-09-11",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Talks@Bruegel: Ukraine's funding equation with Vladyslav Rashkovan",
-   "title_ja": "ウクライナの資金問題",
-   "organizer": "Bruegel",
-   "date_start": "2026-09-28",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "ukraine",
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.bruegel.org/event/talksbruegel-ukraines-funding-equation-vladyslav-rashkovan",
-   "summary_ja": "ウクライナへの90億ユーロ支援ローンの実装と条件付き政策。",
-   "summary_en": "Discussion on Ukraine's €90 billion support loan implementation and policy conditionality.",
-   "summary_de": "Diskussion zur Umsetzung des 90-Milliarden-Euro-Kreditprogramms für die Ukraine.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "Bruegel",
-   "title_short": "Ukraine funding",
-   "importance": 2,
-   "registration_url": null,
-   "time_end": null,
-   "source": "Bruegel (Brussels) – Events",
-   "id": "d424d88f2a6c833a",
    "first_seen": "2026-09-11",
    "notables": [],
    "notable_tier": null
@@ -17511,54 +17428,6 @@
    ],
    "source": "IfW Kiel – Veranstaltungen",
    "id": "74d193869e51d62e",
-   "first_seen": "2026-09-25",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Online-Veranstaltungsreihe „Von Brüssel nach Berlin\": Regionalentwicklung und Industriepolitik",
-   "title_ja": "オンライン連続講座「ブリュッセルからベルリンへ」:地域開発と産業政策",
-   "organizer": "IW Köln",
-   "date_start": "2026-09-28",
-   "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.iwkoeln.de/institut/veranstaltungen.html",
-   "summary_ja": "EUの地域政策・産業政策をテーマにしたオンライン連続講座「ブリュッセルからベルリンへ」の1回。",
-   "summary_en": "An installment of the online series 'From Brussels to Berlin' on EU regional development and industrial policy.",
-   "summary_de": "Eine Folge der Online-Reihe „Von Brüssel nach Berlin” zu Regionalentwicklung und Industriepolitik.",
-   "language": "de",
-   "country": null,
-   "organizer_short": "IW Köln",
-   "title_short": "EU Regional Industrial Policy",
-   "importance": 0,
-   "registration_url": null,
-   "speakers": [
-    {
-     "name": "Sandra Parthie",
-     "org": null,
-     "role": null
-    },
-    {
-     "name": "Alexander Radunz",
-     "org": null,
-     "role": null
-    }
-   ],
-   "source": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
-   "id": "7a126f755c7dd2d7",
    "first_seen": "2026-09-25",
    "notables": [],
    "notable_tier": null
@@ -24204,7 +24073,7 @@
    "venue": "ZEW Mannheim",
    "format": null,
    "themes": [
-    "ai"
+    "real_economy"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -24213,7 +24082,7 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "registration_url": null,
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/from-leniency-to-data-screening/5007",
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/from-leniency-to-data-screening/5007?cHash=cfe6a714aa1ff7eee518376b01c65d4b",
    "summary_ja": "カルテルの検知手法(リニエンシー制度からデータスクリーニングまで)を扱う、Mannheim Competition Policy Forumの講演です。",
    "summary_en": "A talk at the Mannheim Competition Policy Forum on modern cartel detection, from leniency programmes to data screening.",
    "summary_de": "Vortrag des Mannheim Competition Policy Forum zu modernen Kartellerkennungsverfahren, von der Kronzeugenregelung bis zum Data Screening.",
@@ -25355,7 +25224,28 @@
    "title_short": "Japan-Germany Cyber Resilience",
    "importance": 1,
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Christian Pakusch",
+     "org": "Stadt Willich",
+     "role": "Mayor"
+    },
+    {
+     "name": "Michael Johannes Pils",
+     "org": "Taylor Wessing",
+     "role": "Partner"
+    },
+    {
+     "name": "Axel Freiherr von dem Bussche",
+     "org": "Taylor Wessing",
+     "role": "Partner"
+    },
+    {
+     "name": "Susan Lipeyko",
+     "org": "Taylor Wessing",
+     "role": "Lawyer"
+    }
+   ],
    "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
    "id": "2c655dfad51df1c8",
    "first_seen": "2026-10-14",
@@ -28606,29 +28496,29 @@
   },
   {
    "title": "New York Fed-ECB Conference on Nonbank Financial Institutions 2026",
-   "title_ja": "NY連銀・ECB ノンバンク金融機関会議",
-   "organizer": "New York Fed and European Central Bank",
+   "title_ja": "NY連銀・ECB ノンバンク金融機関会議 2026",
+   "organizer": "Federal Reserve Bank of New York / European Central Bank",
    "date_start": "2026-11-13",
    "date_end": null,
    "time": null,
-   "city": "Frankfurt am Main",
-   "venue": null,
-   "format": null,
+   "city": "New York",
+   "venue": "Federal Reserve Bank of New York, 33 Liberty Street",
+   "format": "hybrid",
    "themes": [
     "fin_markets"
    ],
    "fee": "unknown",
    "fee_amount": null,
    "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
+   "registration_note": "会場参加は招待制、オンライン視聴は一般公開",
+   "registration_note_en": "In-person attendance by invitation only; online viewing open to the public",
+   "registration_note_de": "Teilnahme vor Ort nur auf Einladung; Online-Teilnahme öffentlich",
    "url": "https://www.ecb.europa.eu/press/conferences/html/20261113_ny_fed_ecb.en.html",
-   "summary_ja": "ニューヨーク連銀とECBが共催する、ノンバンク金融機関(NBFI)をテーマとした会議。",
-   "summary_en": "Conference co-organised by the New York Fed and the ECB on nonbank financial institutions (NBFIs).",
-   "summary_de": "Konferenz der New York Fed und der EZB zu Nichtbank-Finanzinstituten (NBFI).",
+   "summary_ja": "ニューヨーク連邦準備銀行とECBが共催する、ノンバンク金融機関(NBFI)に関する会議。金融安定と市場への影響を論じる。",
+   "summary_en": "A conference co-hosted by the Federal Reserve Bank of New York and the ECB on nonbank financial institutions (NBFIs), examining financial stability and market implications.",
+   "summary_de": "Konferenz der New York Fed und der EZB zu Nichtbanken-Finanzinstituten (NBFI), mit Blick auf Finanzstabilität und Marktauswirkungen.",
    "language": "en",
-   "country": "DE",
+   "country": "US",
    "organizer_short": "NY Fed/ECB",
    "title_short": "Nonbank Financial Institutions",
    "importance": 2,
@@ -28637,42 +28527,42 @@
    "speakers": [
     {
      "name": "Jing Huang",
-     "org": "Texas A&M",
+     "org": null,
      "role": null
     },
     {
      "name": "Isha Agarwal",
-     "org": "UBC",
+     "org": null,
      "role": null
     },
     {
      "name": "Matteo Leombroni",
-     "org": "Boston College",
+     "org": null,
      "role": null
     },
     {
      "name": "Thierry Foucault",
-     "org": "HEC Paris",
+     "org": null,
      "role": null
     },
     {
      "name": "Laura Blattner",
-     "org": "FinRegLab",
+     "org": null,
      "role": null
     },
     {
      "name": "Randall Guynn",
-     "org": "Federal Reserve Board",
+     "org": null,
      "role": null
     },
     {
      "name": "Luc Laeven",
-     "org": "ECB",
+     "org": null,
      "role": null
     },
     {
      "name": "Shohini Kundu",
-     "org": "UCLA",
+     "org": null,
      "role": null
     }
    ],
@@ -29549,7 +29439,8 @@
    "venue": "ZEW Mannheim",
    "format": null,
    "themes": [
-    "climate_esg"
+    "climate_esg",
+    "real_economy"
    ],
    "fee": "unknown",
    "fee_amount": null,
@@ -29572,7 +29463,7 @@
     {
      "name": "Inge van den Bijgaart",
      "org": "Utrecht",
-     "role": "Prof. Dr."
+     "role": null
     }
    ],
    "source": "ZEW Mannheim – Veranstaltungen",
@@ -30750,6 +30641,163 @@
    "source": "ECONtribute (Bonn/Köln) – Events",
    "id": "dea45ebaf59cdaf8",
    "first_seen": "2026-10-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "reconcept Webinar: Investieren Sie in das Rückgrat der Energiewende",
+   "title_ja": "reconcept ウェビナー:エネルギー転換の基幹インフラへの投資",
+   "organizer": "reconcept",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende-1-1",
+   "summary_ja": "エネルギー転換を支える基幹インフラへの投資をテーマとするウェビナー。詳細な内容や登壇者は掲載ページに記載がない。",
+   "summary_en": "A webinar on investing in the core infrastructure behind the energy transition. The calendar entry does not list the detailed program or speakers.",
+   "summary_de": "Webinar zu Investitionen in die zentrale Infrastruktur der Energiewende. Programm und Referenten sind im Veranstaltungseintrag nicht angegeben.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "reconcept",
+   "title_short": "Energy Transition Infrastructure Investing",
+   "importance": 1,
+   "speakers": [],
+   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
+   "id": "8a461c7ceea8b237",
+   "first_seen": "2026-10-29",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "reconcept Webinar: Investieren Sie in das Rückgrat der Energiewende",
+   "title_ja": "reconcept ウェビナー:エネルギー転換の基幹インフラへの投資",
+   "organizer": "reconcept",
+   "date_start": "2026-11-06",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende-1",
+   "summary_ja": "エネルギー転換を支える基幹インフラへの投資をテーマとするウェビナー。詳細な内容や登壇者は掲載ページに記載がない。",
+   "summary_en": "A webinar on investing in the core infrastructure behind the energy transition. The calendar entry does not list the detailed program or speakers.",
+   "summary_de": "Webinar zu Investitionen in die zentrale Infrastruktur der Energiewende. Programm und Referenten sind im Veranstaltungseintrag nicht angegeben.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "reconcept",
+   "title_short": "Energy Transition Infrastructure Investing",
+   "importance": 1,
+   "speakers": [],
+   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
+   "id": "949b40011ef2b987",
+   "first_seen": "2026-10-29",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "reconcept Webinar: Investieren Sie in das Rückgrat der Energiewende",
+   "title_ja": "reconcept ウェビナー:エネルギー転換の基幹インフラへの投資",
+   "organizer": "reconcept",
+   "date_start": "2026-10-30",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende",
+   "summary_ja": "エネルギー転換を支える基幹インフラへの投資をテーマとするウェビナー。詳細な内容や登壇者は掲載ページに記載がない。",
+   "summary_en": "A webinar on investing in the core infrastructure behind the energy transition. The calendar entry does not list the detailed program or speakers.",
+   "summary_de": "Webinar zu Investitionen in die zentrale Infrastruktur der Energiewende. Programm und Referenten sind im Veranstaltungseintrag nicht angegeben.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "reconcept",
+   "title_short": "Energy Transition Infrastructure Investing",
+   "importance": 1,
+   "speakers": [],
+   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
+   "id": "c05fb88c41f8e203",
+   "first_seen": "2026-10-29",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Künstliche Intelligenz – Hype! Fakten! Konsequenzen?",
+   "title_ja": "AIの誇大宣伝・事実・帰結",
+   "organizer": "Deutsche Bundesbank – Forum Bundesbank (Hauptverwaltung Sachsen und Thüringen)",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": "17:30",
+   "time_end": null,
+   "city": "Chemnitz",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/kuenstliche-intelligenz-hype-fakten-konsequenzen--916704",
+   "summary_ja": "Bundesbankの講演シリーズ「Forum Bundesbank」で、AIをめぐる過度な期待(ハイプ)と実際の事実、その帰結を取り上げる講演。",
+   "summary_en": "A talk in the Bundesbank's Forum Bundesbank series on the hype surrounding artificial intelligence, the facts behind it, and its consequences.",
+   "summary_de": "Vortrag in der Reihe „Forum Bundesbank“ der Bundesbank über den Hype um Künstliche Intelligenz, die dahinterstehenden Fakten und deren Konsequenzen.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "AI: Hype, Facts, Consequences",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Rafael Zajonz",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
+   "id": "d31b94a602d8b82b",
+   "first_seen": "2026-10-29",
    "notables": [],
    "notable_tier": null
   }
