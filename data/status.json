@@ -15,7 +15,8 @@
  {
   "name": "BOFIT – Bank of Finland Institute for Emerging Economies – Events",
   "ok": true,
-  "found": 3
+  "found": 3,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "BaFin – Veranstaltungen",
@@ -26,14 +27,15 @@
  {
   "name": "Bank of Albania – Events",
   "found": 0,
-  "ok": false,
-  "error": "キャッシュがサイトトップのみでイベント一覧なし。tried: fetch, hints"
+  "ok": true,
+  "note": "アルバニア語ニュースのみ。今後イベントなし"
  },
  {
   "name": "Banka Slovenije – Events",
   "url": "https://www.bsi.si/en/about-us/conferences-and-seminars",
   "ok": true,
-  "found": 0
+  "found": 4,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "Berlin School of Economics – Events",
@@ -65,13 +67,14 @@
   "name": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
   "ok": true,
-  "found": 11
+  "found": 10,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "Bundesbank – Termine",
   "ok": true,
   "found": 4,
-  "note": "キャッシュは1ページ目のみ(〜2026-11-05)"
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "CBBH – Central Bank of Bosnia and Herzegovina – Events",
@@ -95,7 +98,8 @@
   "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
   "url": "https://gfk-cfs.de/en/events/feed/",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
@@ -110,14 +114,15 @@
  {
   "name": "Deutsche Börse Group – Veranstaltungen",
   "found": 0,
-  "ok": true
+  "ok": true,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "EBA – European Banking Authority – Events",
   "url": "https://www.eba.europa.eu/publications-and-media/events",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "ECB Banking Supervision (SSM) – Conferences & seminars",
@@ -142,35 +147,35 @@
   "name": "ECONtribute (Bonn/Köln) – Events",
   "url": "https://www.econtribute.de/events",
   "ok": true,
-  "found": 33,
-  "note": "Mini-Workshop in Economic History は会場・形式不明のため保留"
+  "found": 32,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "EIOPA (Frankfurt) – Events",
   "url": "https://www.eiopa.europa.eu/media/events_en",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "ESMA – Public Hearings",
-  "found": 0,
-  "ok": false,
-  "note": "403のため検索で補完。Data day(パリ)は対象外地域で除外",
-  "error": "403。tried: fetch, hints(日次ラダーの②以降は未実施:自動分類器がUA偽装curlを拒否)"
+  "found": 2,
+  "ok": true,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
-  "found": 13,
+  "found": 11,
   "ok": true,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "HNB – Croatian National Bank – Conferences",
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "error": "一覧がJS描画で本文に行なし(キャッシュは枠のみ)。tried: fetch, hints, search",
-  "note": "2026-10-26: キャッシュ再確認、イベント行なし。discovery で INOMICS 等を検索したが新規なし。"
+  "note": "抽出済み(2026-10-30)",
+  "error": "一覧がJS描画で本文に行なし(枠のみ)。tried: fetch, hints, search"
  },
  {
   "name": "House of Finance (Goethe大) – Veranstaltungen",
@@ -183,7 +188,8 @@
   "name": "IMFS Frankfurt – 全ての今後のイベント",
   "url": "https://www.imfs-frankfurt.de/en/events/upcoming-events",
   "ok": true,
-  "found": 1
+  "found": 1,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
@@ -196,25 +202,28 @@
   "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
   "url": "https://www.iwh-halle.de/veranstaltungen/",
   "ok": true,
-  "found": 10
+  "found": 11,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "IfW Kiel – Veranstaltungen",
   "found": 10,
-  "ok": true
+  "ok": true,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "JDZB – 日独センター (Berlin) – Veranstaltungen",
   "url": "https://jdzb.de/de/events",
   "ok": true,
-  "found": 2
+  "found": 2,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre",
   "ok": true,
-  "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "MNB – Magyar Nemzeti Bank (ハンガリー) – Events",
@@ -227,13 +236,14 @@
   "name": "NBS – Národná banka Slovenska – Events",
   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
   "ok": true,
-  "found": 6
+  "found": 5,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "NBU – National Bank of Ukraine – Research Events",
-  "found": 0,
+  "found": 1,
   "ok": true,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "National Bank of Serbia – Conferences",
@@ -266,13 +276,14 @@
   "name": "SAFE Frankfurt – Events",
   "url": "https://safe-frankfurt.de/news-latest/events.html",
   "ok": true,
-  "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "SNB – Swiss National Bank – Events",
   "found": 3,
-  "ok": true
+  "ok": true,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "SRB – Single Resolution Board – Events",
@@ -316,7 +327,8 @@
   "name": "ZEW Mannheim – Veranstaltungen",
   "url": "https://www.zew.de/veranstaltungen",
   "ok": true,
-  "found": 10
+  "found": 5,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "appliedAI Institute (München) – Events",
@@ -335,7 +347,7 @@
   "url": "https://www.ifo.de/veranstaltungen",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "キャッシュにイベント行なし(動的描画の可能性)"
  },
  {
   "name": "Green and Sustainable Finance Cluster Germany (Frankfurt)",
@@ -349,7 +361,7 @@
   "url": "https://www.oenb.at/en/Calendar.html",
   "ok": true,
   "found": 0,
-  "note": "sitemap先頭100,000字のみ"
+  "note": "sitemap先頭10万字のみ確認。今後イベント読めず"
  },
  {
   "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
@@ -363,51 +375,57 @@
   "name": "CEP – Council on Economic Policies (Zürich) – Events",
   "url": "https://www.cepweb.org/events/",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "https://www.eu-japan.eu/tags/webinar",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "https://www.eestipank.ee/en/events",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "https://forum.frankfurt-school.de/konferenzen/",
   "ok": true,
-  "found": 14
+  "found": 13,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "Latvijas Banka – Research/Events",
   "url": "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026",
   "ok": true,
-  "found": 1,
-  "note": "conference.bank.lv の経済会議(11/11, National Library of Latvia)は既知と一致し変化なし(登壇者8名も一致)。割当の --98e7f8.txt はキャッシュに存在せず未読。"
+  "found": 3,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
   "url": "https://merics.org/en/events",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
-  "found": 9
+  "found": 7,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "https://www.wu.ac.at/en/the-university/events",
   "ok": true,
-  "found": 4
+  "found": 1,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
@@ -419,37 +437,37 @@
   "name": "フランクフルト日本法人会 – 行事・活動",
   "url": "https://www.hojinkai.de/activities",
   "ok": true,
-  "found": 1
+  "found": 1,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
   "url": "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm",
   "ok": false,
   "found": 0,
-  "error": "本文薄い/イベント告知なし。tried: fetch, hints(日次ラダーの②以降は未実施:自動分類器がUA偽装curlを拒否)"
+  "error": "エラー殻730B。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
   "ok": false,
-  "found": 0,
+  "found": 3,
   "note": "403のためweb検索で補完(既知のみ)",
-  "error": "403。tried: fetch, hints(日次ラダーの②以降は未実施:自動分類器がUA偽装curlを拒否)"
+  "error": "403。tried: fetch, ua-curl, hints, search(検索で既知3件確認)"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
-  "ok": false,
-  "found": 0,
-  "note": "代替URL: https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
-  "error": "403。tried: fetch, hints(日次ラダーの②以降は未実施:自動分類器がUA偽装curlを拒否)"
+  "ok": true,
+  "found": 26,
+  "note": "代替URL: https://www.diw-berlin.de/ (WebFetch)"
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/news-insights/events",
   "ok": false,
   "found": 0,
-  "error": "404継続。tried: fetch, hints(日次ラダーの②以降は未実施:自動分類器がUA偽装curlを拒否)"
+  "error": "ua-curl 403・検索でも今後のイベントなし。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
@@ -463,27 +481,29 @@
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": false,
   "found": 0,
-  "error": "ボット対策/JS殻で取得不可。tried: fetch, hints(日次ラダーの②以降は未実施:自動分類器がUA偽装curlを拒否)"
+  "error": "Imperva。tried: fetch, ua-curl, hints, co-host, search"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
   "url": "https://www.bnr.ro/en/24077-bears",
-  "ok": true,
+  "ok": false,
   "found": 0,
-  "note": "キャッシュはナビのみ、BEARS記載なし"
+  "note": "キャッシュはナビのみ、BEARS記載なし",
+  "error": "エラー殻730B。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
   "ok": true,
-  "found": 2
+  "found": 2,
+  "note": "抽出済み(2026-10-30)"
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 6,
-  "note": "新規採用0件(1件は github.io 上の非公式ページのみで裏付け不能のため保留。他は既知または対象外)"
+  "found": 12,
+  "note": "候補12件(既知11・新規1採用)"
  },
  {
   "name": "手動取込",
@@ -495,6 +515,7 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 3
+  "found": 3,
+  "note": "抽出済み(2026-10-30)"
  }
 ]
