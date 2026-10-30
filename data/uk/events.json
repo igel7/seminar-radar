@@ -9481,15 +9481,15 @@
   },
   {
    "title": "Labour Economics Workshops",
-   "title_ja": "労働経済ワークショップ",
-   "organizer": "LSE – Centre for Economic Performance (CEP)",
+   "title_ja": "労働経済学ワークショップ",
+   "organizer": "Centre for Economic Performance (LSE)",
    "organizer_short": "CEP",
    "date_start": "2026-11-03",
    "date_end": null,
-   "time": "12:00",
+   "time": "12:30",
    "time_end": "13:00",
    "city": "London",
-   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "venue": "SAL 2.04, 2nd Floor Conference Room, Sir Arthur Lewis Building, LSE",
    "format": "onsite",
    "themes": [
     "real_economy"
@@ -9501,10 +9501,10 @@
    "registration_note_en": null,
    "registration_note_de": null,
    "registration_url": null,
-   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10993",
-   "summary_ja": "LSE・CEP の労働経済ワークショップ(演題は未定)。Jakob Wall 氏(University of Zurich)と Thomas Crol 氏(Uppsala University)が報告する予定。",
-   "summary_en": "LSE CEP labour economics workshop (title to be announced). Jakob Wall (University of Zurich) and Thomas Crol (Uppsala University) are scheduled to present.",
-   "summary_de": "LSE/CEP-Workshop zur Arbeitsmarktökonomik (Titel noch offen). Jakob Wall (Universität Zürich) und Thomas Crol (Universität Uppsala) sollen vortragen.",
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11029",
+   "summary_ja": "LSEのCEPによる労働経済学ワークショップ。報告者はUniversity of ZurichのJakob Wall氏で、演題は未定。",
+   "summary_en": "Labour economics workshop at LSE's CEP. Speaker Jakob Wall (University of Zurich); title to be announced.",
+   "summary_de": "Arbeitsmarktökonomischer Workshop des CEP an der LSE. Vortragender Jakob Wall (Universität Zürich), Titel noch offen.",
    "language": "en",
    "country": "GB",
    "title_short": "Labour Economics Workshop",
@@ -9513,11 +9513,6 @@
     {
      "name": "Jakob Wall",
      "org": "UZH",
-     "role": null
-    },
-    {
-     "name": "Thomas Crol",
-     "org": "Uppsala",
      "role": null
     }
    ],
@@ -12940,7 +12935,23 @@
    "organizer_short": "OMFIF",
    "title_short": "Defence Investment for Public Money",
    "importance": 2,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Luke Healy",
+     "org": "EY",
+     "role": "Global Defence and Security Leader"
+    },
+    {
+     "name": "Trevor Taylor",
+     "org": "RUSI",
+     "role": "Director, Defence, Industries and Society Programme"
+    },
+    {
+     "name": "George Robertson",
+     "org": "House of Lords",
+     "role": "Chair, International Relations and Defence Committee"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "18604a52d5c89121",
    "first_seen": "2026-10-29",
@@ -13158,7 +13169,13 @@
    "organizer_short": "NIESR",
    "title_short": "Commodity and Labour Shocks",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Lea De Greef",
+     "org": null,
+     "role": null
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "672697bb9700b3f9",
    "first_seen": "2026-10-29",
@@ -13245,7 +13262,13 @@
    "organizer_short": "NIESR",
    "title_short": "Monetary Policy Risk Premia",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ed Cornforth",
+     "org": null,
+     "role": null
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "760077b93e08c920",
    "first_seen": "2026-10-29",
@@ -13401,7 +13424,13 @@
    "organizer_short": "NIESR",
    "title_short": "Macro Model Software Overview",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Patricia Sánchez Juanino",
+     "org": null,
+     "role": null
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "bc694913be6bd3cb",
    "first_seen": "2026-10-29",
@@ -13475,7 +13504,13 @@
    "organizer_short": "NIESR",
    "title_short": "Fiscal Policy Shocks Modelling",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Shama Bernard",
+     "org": null,
+     "role": null
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "bf43b69402dc1deb",
    "first_seen": "2026-10-29",
@@ -13671,6 +13706,445 @@
    "source": "CEPR – Centre for Economic Policy Research – Events",
    "id": "f66be254cd058899",
    "first_seen": "2026-10-29",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "source": "Warwick – Department of Economics – Events",
+   "title": "CRETA Theory Seminar - Tan Gan (LSE)",
+   "title_ja": "CRETA理論セミナー",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-25",
+   "date_end": null,
+   "time": "16:00",
+   "time_end": "17:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "country": "GB",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c79ffae2c101a00ee7bc4d24c0",
+   "registration_url": null,
+   "summary_ja": "CRETA理論セミナー。報告者は Tan Gan（LSE）。",
+   "summary_en": "CRETA theory seminar at the Warwick Department of Economics, presented by Tan Gan (LSE).",
+   "summary_de": "CRETA-Theorieseminar der Volkswirtschaftlichen Fakultät der Universität Warwick, Vortrag von Tan Gan (LSE).",
+   "language": "en",
+   "organizer_short": "Warwick",
+   "title_short": "Economic Theory Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Tan Gan",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "id": "2837ad98fe2767bb",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "source": "Warwick – Department of Economics – Events",
+   "title": "Teaching & Learning Seminar - David W. McCausland (Aberdeen)",
+   "title_ja": "教育・学習セミナー",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "country": "GB",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c7a0c7154901a0c832dde60222",
+   "registration_url": null,
+   "summary_ja": "ウォーリック大学経済学部の教育・学習セミナー。報告者は David W. McCausland（Aberdeen）。",
+   "summary_en": "Teaching and learning seminar of the Warwick Department of Economics, presented by David W. McCausland (Aberdeen).",
+   "summary_de": "Lehr- und Lernseminar der Volkswirtschaftlichen Fakultät der Universität Warwick, Vortrag von David W. McCausland (Aberdeen).",
+   "language": "en",
+   "organizer_short": "Warwick",
+   "title_short": "Teaching and Learning Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "David W. McCausland",
+     "org": "Aberdeen",
+     "role": null
+    }
+   ],
+   "id": "533d358896be6343",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Research Seminar in Economics: Bansi Malde",
+   "title_ja": "経済学研究セミナー:Bansi Malde",
+   "organizer": "City St George's, University of London, Department of Economics",
+   "date_start": "2026-11-04",
+   "date_end": null,
+   "time": "11:00",
+   "city": "London",
+   "venue": "Rhind Building, room DLG09",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.citystgeorges.ac.uk/news-and-events/events/2026/november/research-seminar-in-economics-bansi-malde",
+   "summary_ja": "City St George's経済学部の週次研究セミナー。報告者はBansi Malde氏(アブストラクト未公表)。",
+   "summary_en": "Weekly Department of Economics research seminar at City St George's with Bansi Malde as speaker; abstract not yet published.",
+   "summary_de": "Wöchentliches Forschungsseminar des Economics-Departments am City St George's mit Bansi Malde als Referent; Abstract noch nicht veröffentlicht.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "City St George's",
+   "title_short": "Economics Research Seminar",
+   "importance": 0,
+   "registration_url": null,
+   "time_end": "12:00",
+   "speakers": [
+    {
+     "name": "Bansi Malde",
+     "org": "City St George's",
+     "role": "Reader"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "5e166a9d84a1441d",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Sustainability and behavioural change: a discussion",
+   "title_ja": "持続可能性と行動変容：討論会",
+   "organizer": "LSE",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": "Malaysia Auditorium, Centre Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/events/sustainability-behavioural-change",
+   "summary_ja": "LSEで開催されるハイブリッド公開討論。持続可能性と行動変容をテーマに、研究者や有識者が議論する。",
+   "summary_en": "Hybrid public discussion at LSE on sustainability and behavioural change with academics and public figures.",
+   "summary_de": "Öffentliche Hybriddiskussion an der LSE über Nachhaltigkeit und Verhaltensänderung mit Wissenschaftlerinnen und Experten.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Sustainability and Behaviour Change",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Liam Beiser-McGrath",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Kate Laffan",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Parminter",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Elizabeth J Z Robinson",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "6702a00be6e7d7c2",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "London Behavioural Finance Group - 9th Meeting",
+   "title_ja": "ロンドン行動ファイナンス・グループ第9回会合",
+   "organizer": "London Behavioural Finance Group",
+   "date_start": "2026-11-02",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "16:45",
+   "city": "London",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "招待制（一般の申込不可）",
+   "registration_note_en": "Invitation only (no public registration)",
+   "registration_note_de": "Nur auf Einladung (keine öffentliche Anmeldung)",
+   "registration_url": null,
+   "url": "https://www.fmg.ac.uk/events/london-behavioural-finance-group-9th-meeting",
+   "summary_ja": "行動ファイナンスの研究者による招待制ワークショップ(第9回)。Cameron Peng氏(LSE)らが主催。",
+   "summary_en": "Invitation-only workshop (9th meeting) of the London Behavioural Finance Group, organised by Cameron Peng (LSE) and others.",
+   "summary_de": "Nur auf Einladung besuchter Workshop (9. Treffen) der London Behavioural Finance Group, organisiert u. a. von Cameron Peng (LSE).",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Behavioural Finance Workshop",
+   "importance": 1,
+   "speakers": [],
+   "source": "LSE – Financial Markets Group (FMG) – Events",
+   "id": "68466e88853593aa",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "source": "UK in a Changing Europe (UKICE) – Events",
+   "title": "UKICE Lunch Hour: UK in a Changing Europe",
+   "title_ja": "UKICEランチアワー：英国と変わりゆく欧州",
+   "organizer": "UK in a Changing Europe (UKICE)",
+   "date_start": "2026-11-24",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "country": "GB",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://ukandeu.ac.uk/events/ukice-lunch-hour-uk-in-a-changing-europe/",
+   "registration_url": null,
+   "summary_ja": "UK in a Changing Europe（UKICE）によるランチタイムのイベント。英国とEUの関係を扱う。",
+   "summary_en": "Lunchtime event from UK in a Changing Europe (UKICE), which covers UK-EU relations.",
+   "summary_de": "Mittagsveranstaltung von UK in a Changing Europe (UKICE) zu den Beziehungen zwischen Großbritannien und der EU.",
+   "language": "en",
+   "organizer_short": "UKICE",
+   "title_short": "UK-EU Relations Lunch Hour",
+   "importance": 1,
+   "speakers": [],
+   "id": "6fc60e56078117bd",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "source": "Warwick – Department of Economics – Events",
+   "title": "AMES Workshop - Tsz Ching Fan & Giacomo Campagnola (PGRs)",
+   "title_ja": "AMESワークショップ",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "country": "GB",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c7a10f2c9001a1114bfce63d78",
+   "registration_url": null,
+   "summary_ja": "ウォーリック大学経済学部のAMESワークショップ。博士課程の大学院生2名が報告する。",
+   "summary_en": "AMES workshop at the Warwick Department of Economics, with two PhD researchers (PGRs) presenting.",
+   "summary_de": "AMES-Workshop der Volkswirtschaftlichen Fakultät der Universität Warwick, mit zwei Doktorand(inn)en als Vortragenden.",
+   "language": "en",
+   "organizer_short": "Warwick",
+   "title_short": "AMES Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Tsz Ching Fan",
+     "org": null,
+     "role": "PGR"
+    },
+    {
+     "name": "Giacomo Campagnola",
+     "org": null,
+     "role": "PGR"
+    }
+   ],
+   "id": "8f8f49a8103fcfa9",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "source": "Warwick – Department of Economics – Events",
+   "title": "MIWP (Microeconomics Work in Progress) Workshop - Youngji Sohn",
+   "title_ja": "ミクロ経済学進行中研究ワークショップ",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "country": "GB",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a176631701a17de931722ff3",
+   "registration_url": null,
+   "summary_ja": "ウォーリック大学経済学部のミクロ経済学の進行中研究ワークショップ。報告者は Youngji Sohn。",
+   "summary_en": "Microeconomics work-in-progress workshop at the Warwick Department of Economics, presented by Youngji Sohn.",
+   "summary_de": "Workshop zu laufenden mikroökonomischen Arbeiten der Volkswirtschaftlichen Fakultät der Universität Warwick, Vortrag von Youngji Sohn.",
+   "language": "en",
+   "organizer_short": "Warwick",
+   "title_short": "Microeconomics Work in Progress",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Youngji Sohn",
+     "org": null,
+     "role": null
+    }
+   ],
+   "id": "9fd8306db621d119",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "source": "Warwick – Department of Economics – Events",
+   "title": "PEPE (Political Economy & Public Economics) Seminar - Leonardo Bursztyn (UoChicago)",
+   "title_ja": "政治経済・公共経済セミナー",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": "11:15",
+   "time_end": "12:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "country": "GB",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c79ffae2c101a00f03c87a25de",
+   "registration_url": null,
+   "summary_ja": "政治経済・公共経済セミナー。報告者は Leonardo Bursztyn（UChicago）。",
+   "summary_en": "Political Economy and Public Economics seminar at the Warwick Department of Economics, presented by Leonardo Bursztyn (UChicago).",
+   "summary_de": "Seminar zu politischer und öffentlicher Ökonomik der Volkswirtschaftlichen Fakultät der Universität Warwick, Vortrag von Leonardo Bursztyn (UChicago).",
+   "language": "en",
+   "organizer_short": "Warwick",
+   "title_short": "Political and Public Economics",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Leonardo Bursztyn",
+     "org": "UChicago",
+     "role": null
+    }
+   ],
+   "id": "bf920071e0d91088",
+   "first_seen": "2026-10-30",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Tech sovereignty, security and democracy: a conversation with Henna Virkkunen",
+   "title_ja": "テック主権・安全保障・民主主義：ヘンナ・ヴィルクネンとの対話",
+   "organizer": "LSE Digital Society Initiative",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": "17:45",
+   "time_end": "18:30",
+   "city": "London",
+   "venue": "MAR 2.04, Marshall Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "ai",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/dsi/events/2025-26/public-events/tech-sovereignty-security-and-democracy-a-conversation-with-henna-virkkunen",
+   "summary_ja": "LSEで開催されるハイブリッド公開イベント。Henna Virkkunen氏との対話を通じ、テクノロジーの主権、安全保障、民主主義を論じる。",
+   "summary_en": "Hybrid public event at LSE: a conversation with Henna Virkkunen on tech sovereignty, security and democracy.",
+   "summary_de": "Öffentliche Hybridveranstaltung an der LSE: Gespräch mit Henna Virkkunen über technologische Souveränität, Sicherheit und Demokratie.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Tech Sovereignty and Democracy",
+   "importance": 2,
+   "speakers": [
+    {
+     "name": "Henna Virkkunen",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "f6e112a9c349a158",
+   "first_seen": "2026-10-30",
    "notables": [],
    "notable_tier": null
   }

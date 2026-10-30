@@ -9,7 +9,14 @@
  "https://hub.cepr.org/events/cepr-io-virtual-gathering-2026": {
   "event_id": "bb38fb526b8bf94b",
   "http": 200,
-  "last": "2026-10-24",
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 2
+ },
+ "https://hub.cepr.org/events/steg-annual-conference-theme-workshops-2027": {
+  "event_id": "bbe8ae9321d8663d",
+  "http": 200,
+  "last": "2026-10-30",
   "result": "ok",
   "tries": 1
  },
@@ -95,6 +102,41 @@
   "http": 403,
   "last": "2026-10-24",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/autumn-2026-economic-forum": {
+  "event_id": "8de0465d49eb470b",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-introduction-commodity-and-labour-market-shocks-1126": {
+  "event_id": "672697bb9700b3f9",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-introduction-fiscal-policy-shocks-1126": {
+  "event_id": "bf43b69402dc1deb",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-introduction-monetary-policy-and-risk-premia-1126": {
+  "event_id": "760077b93e08c920",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-nigem-software-overview-1126": {
+  "event_id": "bc694913be6bd3cb",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
   "tries": 1
  },
  "https://public.unpri.org/all-events-and-webinars/fight-flight-or-freeze-anticipating-responses-to-physical-climate-risk/13688.article": {
@@ -195,6 +237,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.cbbc.org/events/suzhou-industrial-park-business-seminar": {
+  "event_id": "d7dab8e174b1782d",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.centralbank.ie/events/upcoming-events/2026/11/02/default-calendar/financial-system-conference-2026": {
   "event_id": "2f3cca5510240795",
   "http": 200,
@@ -205,9 +254,9 @@
  "https://www.centralbank.ie/events/upcoming-events/2026/11/06/default-calendar/funding-levy-consultation-event": {
   "event_id": "5a91cd4a63b255a6",
   "http": 200,
-  "last": "2026-10-23",
+  "last": "2026-10-30",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.centralbank.ie/events/upcoming-events/2026/11/18/default-calendar/financial-industry-forum---international-subgroup": {
   "event_id": "b2ac46ceaecb1d55",
@@ -221,6 +270,13 @@
   "http": 200,
   "last": "2026-10-25",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.chathamhouse.org/events/all/standard-event/critical-minerals-uks-role-securing-resilient-supply-chains": {
+  "event_id": "d12936ed27709220",
+  "http": 403,
+  "last": "2026-10-30",
+  "result": "FAIL-BLOCKED",
   "tries": 1
  },
  "https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026": {
@@ -370,6 +426,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/the-future-of-public-money-defence-investment-for-growth-resilience-and-innovation": {
+  "event_id": "18604a52d5c89121",
+  "http": 200,
+  "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/the-policy-response-to-ai-cybersecurity-threats": {
   "event_id": "50212bea14da7cef",
   "http": 200,
@@ -451,6 +514,13 @@
   "event_id": "6f8e17a18a3d6033",
   "http": 200,
   "last": "2026-10-21",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ukfinance.org.uk/events-training/ai-native-software-delivery-mission-critical-banking-platforms": {
+  "event_id": "3fa2bab0f0c98ae9",
+  "http": 200,
+  "last": "2026-10-30",
   "result": "ok",
   "tries": 1
  },
