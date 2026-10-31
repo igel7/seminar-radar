@@ -1,369 +1,373 @@
 {
- "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。 permanent_block: {since, recheck_days, last_recheck} が付いたソースは恒常ブロック扱いで、fetch_all.py が日次取得をスキップし recheck_days ごとに再確認する(運用ルールは AGENTS.md B手順1.5・2a)。",
- "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen": {
-  "method": "search",
-  "alt_urls": [
-   "https://dgap.org/en/events?page=1"
-  ],
-  "permanent_block": {
-   "since": "2026-09-27",
-   "recheck_days": 7,
-   "last_recheck": "2026-10-25"
+  "_readme": "ソース別の取得成功実績台帳。日次更新(AGENTS.md B手順2a)とリトライジョブ(同C)が参照・更新する。キーは sources.yaml の name と完全一致させる。method: ua-curl=実ブラウザUA付きcurl / alt-url=alt_urlsの代替URL / search=site:検索で個別ページを探す / sub-pages=同ドメインのサブページを辿る / co-host=共催機関のページ経由。last_ok: その手段で最後に成功した日。初期データは2026-07-28〜08-08のstatus.json履歴から抽出。 permanent_block: {since, recheck_days, last_recheck} が付いたソースは恒常ブロック扱いで、fetch_all.py が日次取得をスキップし recheck_days ごとに再確認する(運用ルールは AGENTS.md B手順1.5・2a)。",
+  "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen": {
+    "method": "search",
+    "alt_urls": [
+      "https://dgap.org/en/events?page=1"
+    ],
+    "permanent_block": {
+      "since": "2026-09-27",
+      "recheck_days": 7,
+      "last_recheck": "2026-10-25"
+    },
+    "note": "2026-09-27: 独語版・英語版とも継続してCloudflare系のブラウザ検証ページ(JS空殻)のみで、少なくとも3回連続(2026-09-25, 09-26, 09-27)取得不可を確認。web検索でも2026年10-11月の具体的な日程は確認できず。恒常ブロックとして登録し週次(7日ごと)に再確認する。2026-10-04: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-11)。 2026-10-11: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-18)。 2026-10-18: 週次再確認日。WebFetch(EN alt URL)でも依然Cloudflareブラウザ検証ページのみ、web検索でも日程確認できず。解除せず(次回再確認 2026-10-25)。"
   },
-  "note": "2026-09-27: 独語版・英語版とも継続してCloudflare系のブラウザ検証ページ(JS空殻)のみで、少なくとも3回連続(2026-09-25, 09-26, 09-27)取得不可を確認。web検索でも2026年10-11月の具体的な日程は確認できず。恒常ブロックとして登録し週次(7日ごと)に再確認する。2026-10-04: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-11)。 2026-10-11: 週次再確認日。キャッシュ本文は依然Cloudflare検証ページのみで解除せず(次回再確認 2026-10-18)。 2026-10-18: 週次再確認日。WebFetch(EN alt URL)でも依然Cloudflareブラウザ検証ページのみ、web検索でも日程確認できず。解除せず(次回再確認 2026-10-25)。"
- },
- "OeNB – Oesterreichische Nationalbank – Veranstaltungen": {
-  "method": "sitemap",
-  "alt_urls": [
-   "https://www.oenb.at/sitemap.xml",
-   "https://www.suerf.org/events/new-challenges-in-safeguarding-financial-stability-and-managing-financial-crises-in-a-world-of-digital-finance-and-artificial-intelligence/"
-  ],
-  "last_ok": "2026-10-18",
-  "note": "2026-10-08: sitemap法で継続確認。CEEI 2026 と Global Payment Fraud & Financial Crime Summit の台帳URL(旧 /en/Calendar/2026/...)が404化し、新パターン /en/news-und-events/veranstaltungen/2026/... に移行済みと判明(両イベントとも新URLで本文確認、台帳のurlを更新)。OeNB Freitagsseminar with Catalina Martínez Hernández(10/9)は旧URL・新URLパターンとも404で後継ページ見当たらず(サイト側で削除された可能性)。 2026-10-18: 元URL(/en/Calendar.html)は404継続。sitemap.xml(curl、全文取得)から/en/news-und-events/veranstaltungen/2026-2027配下のURL一覧を抽出し、未収載の新規3件を確認(freitagsseminar-lukas-diebold 10/23、oenb-talks-on-international-and-climate-economics 10/29、money-and-more-st-poelten 10/30)。記者会見3件(pk-finanzverhalten、pk-buero-fiskalrat、Pk-Financial-Stability-Report-52)は収載対象外。"
- },
- "DIW Berlin – Veranstaltungen": {
-  "method": "webfetch",
-  "alt_urls": [
-   "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
-  ],
-  "last_ok": "2026-10-17",
-  "note": "2026-10-08: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。24件中20件が収載条件に合致、新規2件(Berlin Macro Seminar 2027-01-26、Charity hazard climate adaptation seminar 2027-03-04)を採用、残りは既知で変化なし。 2026-10-11: alt URL(diw-berlin.de)をWebFetchで再取得、22件(採用・研修2件除外後)すべて既知で変化なし。 2026-10-15: alt URL(diw-berlin.de)をWebFetchで再取得(1回目503、再試行で成功)、28件既知で変化なし。 2026-10-16: 直接(diw.de)403継続、alt URL(diw-berlin.de)をWebFetchで取得成功。30件中、新規2件(SOEP入門 11/4-18、年金タウンホール11/11)を採用、採用関連2件・演題未定5件を除外、残りは既知で変化なし。 2026-10-17: 直接(diw.de)403継続、alt URL(diw-berlin.de)をWebFetchで取得成功。31件中、採用関連2件(IMF Economist Program Recruitment Outreach、Job Market Interview Training)を除外し29件が対象。新規2件(SOEP Brown Bag Seminar: CODECHECK 12/16、Berlin Macro Seminar: Mlikota 2027-02-09)を採用、残りは既知で変化なし。"
- },
- "ifo Institut – Veranstaltungen": {
-  "method": "alt-url+search",
-  "alt_urls": [],
-  "last_ok": "2026-08-17",
-  "note": "一覧はJS描画で直接取得不可。alt_urls の CESifo会議一覧は独立ソース『CESifo (München) – Veranstaltungen』と重複のため2026-08-28に削除。site:ifo.de veranstaltung 検索で補完する"
- },
- "RWI Essen – Veranstaltungen": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
-   "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar",
-   "https://www.rwi-essen.de/en/events/"
-  ],
-  "last_ok": "2026-08-19",
-  "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる / 2026-08-28: 英語の全イベント一覧 /en/events/ を追加(研究セミナー系ページだけでは他イベントを取りこぼすため)"
- },
- "IMFS Frankfurt – 全ての今後のイベント": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.imfs-frankfurt.de/en/events/imfs-conferences/",
-   "https://www.imfs-frankfurt.de/en/events/imfs-distinguished-lectures/"
-  ],
-  "last_ok": "2026-08-08",
-  "note": "一覧はJS描画。カテゴリ別サブページを実ブラウザUA付きcurlで辿る / 2026-08-28: distinguished-lectures のカテゴリページを追加(実在・イベント掲載を確認)"
- },
- "SUERF – Events": {
-  "method": "ua-curl",
-  "alt_urls": [],
-  "last_ok": "2026-10-03",
-  "note": "2026-10-03: https://www.suerf.org/events/ をWebFetchで取得したところ本文が十分読めた(前回THIN判定を更新)。既知4件+新規1件確認。"
- },
- "Frankfurt School of Finance & Management – Events": {
-  "method": "ua-curl",
-  "alt_urls": [],
-  "last_ok": "2026-08-27",
-  "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完 2026-10-21: 一覧(forum.frankfurt-school.de/konferenzen/)にはイベント個別ページへのリンクが無く、登壇者も載らない。url は一覧のままでよい(no_detail_pages)。登壇者は検索(イベント名 + Referenten)で補完するか諦める。",
-  "no_detail_pages": true
- },
- "Bank of Albania – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-10-08",
-  "note": "2026-10-08: ua-curlで/Events/を取得するとトップページへリダイレクトされ、イベント一覧が取得できなくなっている(2026-08-08時点のua-curl成功報告から仕様変更の可能性)。web検索で既知イベント(20th South-Eastern European Economic Research Workshop, 2026-11-24/25 Tirana)を再確認、新規なし。次回もまずweb検索を優先する方が確実。"
- },
- "NBU – National Bank of Ukraine – Research Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://bank.gov.ua/en/research/events"
-  ],
-  "last_ok": "2026-08-17",
-  "note": "WebFetchは403だが実ブラウザUA付きcurlでほぼ毎日成功していた(個別詳細ページ /en/research/events/330 等も同様)。「JS SPA」と即断しないこと"
- },
- "dena – Deutsche Energie-Agentur (Berlin)": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://veranstaltungen.dena.de/",
-   "https://www.dena.de/dena-kongress/",
-   "https://www.dena.de/api/media/any"
-  ],
-  "last_ok": "2026-08-17",
-  "note": "本体の一覧はJS描画。専用イベントサイト veranstaltungen.dena.de が確実(毎日2〜9件の実績)。/api/media/any はバックエンドAPI直叩きの成功実績あり"
- },
- "Agora Energiewende (Berlin)": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.agora-energiewende.de/veranstaltungen",
-   "https://www.agora-energiewende.org/news-events/filter/tab-3",
-   "https://www.agora-energiewende.de/aktuelles/filter/tab-3"
-  ],
-  "last_ok": "2026-08-19",
-  "note": ".org が503の時は .de ドメインで取れる。イベントは tab-3 フィルタのAJAX一覧に出る"
- },
- "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://sustainablefinancecluster.com/en/events/"
-  ],
-  "last_ok": "2026-09-24",
-  "note": "2026-09-24: fetch_all.py(alt-url)は本日もCSS/フォント宣言のみ(サブエージェント2回も同様)。メインモデルがWebFetchで直接取得し2件確認(いずれも既知・変化なし)。fetch_allの本文が空/CSSのみの場合はWebFetchを試す運用を継続。 2026-10-24: fetch_allのキャッシュは先頭100k字でCSSのみ。実ブラウザUA付きcurlでHTML全体(約93万字)を取得すると本文が読める。"
- },
- "NBP – Narodowy Bank Polski – Conferences": {
-  "method": "co-host",
-  "alt_urls": [],
-  "last_ok": "2026-10-17",
-  "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。 2026-10-11: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし(Imperva継続)。 2026-10-15: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし。 2026-10-16: 直接アクセスは引き続きImperva継続。web検索で共催CEBRA(6th Biennial Conference, 9/24-25 Warsaw)を再確認したが開催済み。新規なし。 2026-10-17: 直接アクセスは引き続きImperva継続。web検索で共催先(CEBRA・IFC/ECB外部統計会議)を確認したがいずれも開催済みで新規なし。"
- },
- "EPC – European Payments Council – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-10-17",
-  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-16: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず。 2026-10-17: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず(EPC Community Conference Luxembourgは対象外地域かつ開催済み)。"
- },
- "PIK – Potsdam-Institut für Klimafolgenforschung": {
-  "method": "search",
-  "alt_urls": [
-   "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27"
-  ],
-  "last_ok": "2026-09-02",
-  "note": "イベント一覧ページはイントラのログイン画面へリダイレクトされることが多い(接続不可の日もある)。site:pik-potsdam.de 検索で個別イベントページ(GCET27等)を探す。2026-09-02はGCET27(既知)を確認。"
- },
- "dfv Euro Finance Group (Frankfurt) – Executive Events": {
-  "method": "sub-pages",
-  "alt_urls": [
-   "https://tickets.dfv-eurofinance.com/EFW26/",
-   "https://frankfurt-ebc.com"
-  ],
-  "last_ok": "2026-08-19",
-  "note": "一覧ページに具体的日付が無いことがある。個別カンファレンスページ・チケットサイトを辿って日付を確定する(毎日3〜9件の実績)"
- },
- "Bank of Lithuania – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-10-17",
-  "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-16: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-17: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)・Fraud conference(11/19)・FinTech conference(11/30)を再確認、既知で変化なし。 2026-10-24: 2026-10-24: 直接403継続(ua-curlも403)。web検索(site:lb.lt)で年次不動産会議 2026-11-24 Vilnius(/lt/renginiai/nekilnojamojo-turto-konferencija-2026)を新規発見。lb.lt個別ページはWebFetch 403だが検索スニペットで内容確認可。"
- },
- "HNB – Croatian National Bank – Conferences": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-08-17",
-  "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い 2026-10-22 調査: 一覧は独自ウィジェットが /o/hnb-content/v1/search(GET、structureId=3820166、assetCategoryIds 等)を呼んで描画するが、実ブラウザ(Playwright)でもこの API がトップページの HTML を 404 で返し、一覧は空のまま。Chromium 描画(--wait 15000)も本文 1,136 字で無意味。Liferay の asset publisher ページ送り(cur=1..5)はページネータだけでエントリ本体を含まない。headless-delivery API は 403。sitemap.xml は空。サイト側の不具合と判断し、描画・待ち時間の調整では解決しない。復旧確認は月1回程度 API を叩けばよい。日次は従来どおり検索補完。 2026-10-22: discovery_topics に INOMICS 経由(site:inomics.com Dubrovnik Economic Conference / Young Economists' Seminar)の検索観点を追加。"
- },
- "Jacques Delors Centre (Hertie School, Berlin) – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-10-03",
-  "note": "2026-10-03: 直接取得・WebFetchとも403継続。web検索でも新規確認できず。 2026-10-11: 403継続、web検索でも日程付きの新規イベント確認できず。"
- },
- "PRI – Principles for Responsible Investment – Events": {
-  "method": "chromium",
-  "alt_urls": [
-   "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
-  ],
-  "last_ok": "2026-10-20",
-  "note": "2026-10-20: unpri.org/events は curl では JS殻だが headless Chromium で一覧が描画できる。2026-10-21: Routines でも Chromium は使える(同日の英国モード Routine が BoE を描画取得)ことを確認し、render: chromium で fetch_all が日次に自動描画するよう変更。public.unpri.org の個別ページは Chromium でも Cloudflare。描画に失敗した日は search 補完。",
-  "render": "chromium"
- },
- "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-10-16",
-  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-24: 2026-10-24: ua-curlでもエラーページ(本文なし)。web検索でBEARS 2026情報なし。"
- },
- "EBA – European Banking Authority – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-08-08",
-  "note2": "2026-08-19: site:検索は実行できたが、見つかった公聴会・ワークショップはすべて過去日程だった(検索結果が古い場合あり、日付の確認を要する)",
-  "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
- },
- "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
-  "method": "webfetch",
-  "alt_urls": [
-   "https://www.iwkoeln.de/institut/veranstaltungen.html"
-  ],
-  "last_ok": "2026-09-26",
-  "note": "2026-09-26: curlは403継続だがWebFetchで取得成功。今後予定はオンライン講座(9/28、既知)のみ、Brussels開催分は対象地域外。"
- },
- "BNB – Bulgarian National Bank – Events": {
-  "method": "webfetch",
-  "alt_urls": [
-   "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
-  ],
-  "last_ok": "2026-10-17",
-  "note": "2026-10-08: WebFetchで同alt URLを再取得し正規の本文(プレスリリース一覧、2026年1月以降89件)を確認。セミナー・会議の告知は依然0件(通常運用)。 2026-10-11: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-15: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-17: alt URL(bnb.bg)をWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。"
- },
- "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.cbbh.ba/press/AllNews"
-  ],
-  "last_ok": "2026-08-19",
-  "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
- },
- "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
-  "method": "sitemap+ua-curl",
-  "alt_urls": [
-   "https://www.ewi.uni-koeln.de/de/ewi-energietagung/",
-   "https://www.ewi.uni-koeln.de/de/termine-sitemap.xml"
-  ],
-  "last_ok": "2026-10-15",
-  "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。 2026-10-11: termine-sitemap.xmlを再取得、SAPHyR Webinar・Workshop Ammoniakとも既知で変化なし。新規なし。 2026-10-15: termine-sitemap.xmlを再取得、SAPHyR・Workshop Ammoniak・EWI-Insights・EWI-Energietagung 2027とも既知で変化なし。 2026-10-24: 2026-10-24: termine-sitemap.xmlをua-curlで再取得成功。lastmod最新(10/23)のe-mobilityページは2021年の旧イベントで対象外(lastmodだけで新規と判断しない)。新規なし。"
- },
- "CEP – Council on Economic Policies (Zürich) – Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.cepweb.org/events/upcoming-events/",
-   "https://www.cepweb.org/feed/"
-  ],
-  "last_ok": "2026-08-27",
-  "note": "Cloudflareチャレンジは2026-08-27のリトライで解消を確認(ua-curlで/events/upcoming-events/が読める。RSS /feed/ も生きている)、恒常ブロック解除。再発時はdiscoveryのESGクエリで補完"
- },
- "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.bofit.fi/en/research/seminars/",
-   "https://www.bofit.fi/en/research/conferences-and-workshops/"
-  ],
-  "last_ok": "2026-09-18",
-  "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下 / 2026-09-18: fetch_all.py(ua-curl)は元URL・alt_urlsとも info.suomenpankki.fi の通知ページへリダイレクトされ失敗。WebFetchでは正常にカレンダー内容(今後2件)を取得できた。ua-curlが失敗した場合はWebFetchを試すこと。"
- },
- "Latvijas Banka – Research/Events": {
-  "method": "search",
-  "alt_urls": [
-   "https://conference.bank.lv/"
-  ],
-  "last_ok": "2026-09-19",
-  "note": "2026-09-19: 主URL(macroeconomics.lv)はfetch_all/WebFetchともFAIL-THIN(空白)。web検索で新設の会議専用サイト conference.bank.lv を発見、旗艦会議 'From Policy to Impact'(2026-11-11, Riga)を確認・採用。次回以降はこのURLもalt_urlsとして併せて確認する。"
- },
- "Universität Mannheim – 経済学部イベント/セミナー": {
-  "method": "sub-pages",
-  "alt_urls": [
-   "https://www.vwl.uni-mannheim.de/en/forschung/forschungsseminare/micro-crc-tr-224-seminar-1/"
-  ],
-  "last_ok": "2026-10-09",
-  "note": "2026-10-09: 元URL(/en/research/research-seminars/)はインデックスのみでWebFetch可。下位ページ群(macro-crc-tr-224-seminar, internal-department-seminar, mannheim-applied-seminar, forschungsseminare/micro-crc-tr-224-seminar-1)を個別に辿る必要あり。Micro CRC TR 224 Seminar(上記alt_url)は今回初めて発見、既存のMacro CRC系列とは別シリーズ。internal-department-seminar/mannheim-applied-seminarは直近は過去学期分のみで今後分の掲載なし(0件が通常)。"
- },
- "ECONtribute (Bonn/Köln) – Events": {
-  "method": "api",
-  "alt_urls": [
-   "https://www.econtribute.de/wp-json/dhsv/v2/eco/events?per_page=100"
-  ],
-  "last_ok": "2026-10-09",
-  "note": "2026-10-09: 通常の/eventsページはJS描画のナビのみ(fetch/ua-curl失敗)。sitemap_index.xml経由でWordPressの未公開REST名前空間 dhsv/v2/eco/events を発見、今後のセミナー(日付・時刻・講演者・リンク)を構造化データで取得できる(per_page=100で全件)。次回以降はこのAPIエンドポイントを優先的に試す。"
- },
- "Eesti Pank (エストニア) – Events": {
-  "method": "ua-curl",
-  "alt_urls": [
-   "https://www.eestipank.ee/en/calendar/2026/11"
-  ],
-  "last_ok": "2026-10-25",
-  "note": "2026-10-16: ドメイン全体が503(トップページ・research-seminars・calendar・sitemap.xmlすべて503)。サイト側障害の可能性。web検索でも今後の日程付きイベント確認できず(Tuulelohe lend・30周年記念・理事会セミナー等いずれも過去開催)。"
- },
- "CEPR – Centre for Economic Policy Research – Events": {
-  "method": "alt-domain",
-  "last_ok": "2026-10-20",
-  "alt_urls": [
-   "https://hub.cepr.org/events/upcoming-events?page=0",
-   "https://hub.cepr.org/events/upcoming-events?page=1",
-   "https://hub.cepr.org/events/upcoming-events?page=2",
-   "https://hub.cepr.org/events/upcoming-events?page=3",
-   "https://hub.cepr.org/events/upcoming-events?page=4",
-   "https://hub.cepr.org/events/upcoming-events?page=5"
-  ],
-  "note": "2026-10-20: cepr.org 本体は Cloudflare 403(sitemap/RSS/jsonapi も)。別ドメイン hub.cepr.org の今後イベント一覧(page=0..5)は UA付きcurl で200。一覧に日付・時刻・種別はあるが会場は原則なし(詳細はログイン要)。会場は共催先ページで確認する。"
- },
- "LSE – Centre for Macroeconomics (CFM) – Events": {
-  "method": "alt-domain",
-  "last_ok": "2026-10-20",
-  "alt_urls": [
-   "https://www.lse.ac.uk/CFM/events-and-seminars/Upcoming-Events",
-   "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars"
-  ],
-  "note": "2026-10-20: centreformacroeconomics.ac.uk はプロキシ経由で TLS 不可。実体は www.lse.ac.uk/CFM/ 配下(og:url)で UA付きcurl で200。Seminars ページに学期の全日程(Money-Macro Seminar 火14:30)。"
- },
- "UK Finance – Events": {
-  "method": "chromium",
-  "last_ok": "2026-10-20",
-  "note": "2026-10-20: curl は 403(/events/feed も)だが headless Chromium で一覧(/events/events-training-schedule)と詳細が描画できる。2026-10-21: Routines でも Chromium は使えることを確認し、render: chromium + alt_urls で日次に自動描画するよう変更。業界団体のため旗艦会議(★3)と無料公開ウェビナーのみ収載。",
-  "render": "chromium",
-  "alt_urls": [
-   "https://www.ukfinance.org.uk/events/events-training-schedule"
-  ]
- },
- "Daiwa Anglo-Japanese Foundation – Events": {
-  "method": "chromium",
-  "last_ok": "2026-10-22",
-  "note": "2026-10-22: ua-curl 403, Chromium (--wait 5000) renders upcoming list incl. detail links (/event/<slug>). Confirmed again. 2026-10-22: Routine 本番で curl 403・Chromium 描画は成功(--wait 5000)と記録されたため render: chromium を付与(描画に失敗した環境では通常取得に戻る)。",
-  "render": "chromium"
- },
- "CBBC – China-Britain Business Council – Events": {
-  "method": "chromium",
-  "last_ok": "2026-10-20",
-  "note": "2026-10-20: curl 403。headless Chromium で一覧(?page=1 も)と詳細が描画できる。2026-10-21: Routines でも Chromium は使えることを確認し、render: chromium で日次に自動描画するよう変更(10/21 は WebFetch でも一覧が取れた)。描画に失敗した日は search 補完。",
-  "render": "chromium"
- },
- "IFS – Institute for Fiscal Studies – Events": {
-  "method": "search",
-  "note": "2026-10-20 再挑戦: sitemap/RSS/wp-json/サブページ/Chromium/WebFetch すべて Cloudflare 403。検索で見つかる今後の案件は有料研修コースのみ。"
- },
- "Chatham House – Events": {
-  "method": "search",
-  "note": "2026-10-22: all direct routes Cloudflare-blocked; searching the event title (e.g. 'Chatham House Iraq Initiative Conference 2026 date') returns the official event page snippet with date/time - title-specific queries work better than site: queries."
- },
- "IISS – International Institute for Strategic Studies – Events": {
-  "method": "search",
-  "note": "2026-10-20 再挑戦: 一覧・sitemap・RSS・詳細ページとも Cloudflare。検索では域外(Manama・Prague)のみ。"
- },
- "Policy Exchange – Events": {
-  "method": "search",
-  "note": "2026-10-20 再挑戦: HTTPS は HTTP/2・1.1 とも接続断、HTTP は sgcaptcha のボット認証、Chromium も不可。検索は過去イベントのみ。"
- },
- "Oxford – Saïd Business School – Events": {
-  "method": "search",
-  "note": "2026-10-20 再挑戦: sitemap/RSS/Chromium すべて Cloudflare。OxTalks 後継の events.ox.ac.uk は CloudFront 403。"
- },
- "Bayes Business School – Events": {
-  "method": "search",
-  "note": "2026-10-20 再挑戦: Cloudflare(Chromium も不可)。実際の一覧は /news-and-events/events。"
- },
- "Bank of England – Events": {
-  "render": "chromium",
-  "note": "2026-10-20: 一覧はJS描画で静的HTMLは0件。fetch_all が headless Chromium(scripts/fetch_page.py)で描画して取得する(render: chromium)。個別イベントページは静的で fetch_details.py で登壇者を補完できる。Chromium が使えない環境では通常取得に戻り FAIL-THIN になる(その場合は site: 検索で補完)"
- },
- "NIESR – National Institute of Economic and Social Research – Events": {
-  "method": "fetch",
-  "last_ok": "2026-10-20",
-  "note": "一覧(WordPress Tribe Events)は『N events found.』の後に月別で今後のイベントが並ぶ(静的・通常5件前後)。/event/<slug> の詳細ページに日時・形式(Virtual Event=オンライン)・参加費・登壇者が明記される。ユーザー指示(2026-10-20): この団体はレセプション・懇親会もパネル討論付きなら収載する(招待制として記録)。AGM(理事限定の総会)のみ除外。2026-10-19 に『該当0件』と誤判定した実績があるので、一覧に日付付きの項目があれば必ず抽出すること"
- },
- "PRA – Prudential Regulation Authority – Publications RSS": {
-  "method": "fetch",
-  "last_ok": "2026-10-21",
-  "note": "2026-10-21 追加。静的 RSS(XML)。fetch_all の html_to_text で項目ごとに URL・題名・要約・日付のテキストになる。ほとんどは CP/PS/SS 等の文書で、イベント告知(roundtable/seminar/webinar)は年に数件。告知を見つけたらリンク先を開いて開催日・形式(hybrid/online/onsite)・申込方法を確認してから収載する。organizer_short は \"PRA\"。"
- },
- "ZEW Mannheim – Veranstaltungen": {
-  "note": "2026-10-21: 収載済みの詳細URL(/veranstaltungen-und-weiterbildung/detail/<slug>/<id>・/VA<id>)が404。一覧のリンクをそのまま使い、URLを推測・創作しないこと。個別リンクが取れない場合は一覧URLにする。"
- },
- "JETRO London – Events": {
-  "method": "alt-url",
-  "alt_urls": [
-   "https://www.jetro.go.jp/uk/topics.html",
-   "https://www.jetro.go.jp/uk/"
-  ],
-  "last_ok": "2026-10-22",
-  "note": "2026-10-22: /uk/events.html is AccessDenied (dead); topics page via ua-curl works but lists only RFPs and a past June 2026 event. Candidate for sources.yaml url replacement (2b) - human/main-agent decision."
- },
- "Grantham Research Institute (LSE) – Events": {
-  "method": "search",
-  "note": "2026-10-22: lse.ac.uk returns Cloudflare 522 (origin timeout) for ua-curl and Chromium - likely transient, retry. Search snippet suggests Stern Review event on 30 Oct vs known 28 Oct; verify."
- },
- "Bundesbank – Termine": {
-  "no_detail_pages": true,
-  "note": "2026-10-27: AI Week Frankfurt の講演枠(Mauderer)は個別ページ無し(一覧URLのみ)。"
- },
- "SNB – Swiss National Bank – Events": {
-  "no_detail_pages": true,
-  "note": "2026-10-28: 一覧に個別ページへのリンクなし(General Meeting等)。no_detail_pages 付与。"
- }
+  "OeNB – Oesterreichische Nationalbank – Veranstaltungen": {
+    "method": "sitemap",
+    "alt_urls": [
+      "https://www.oenb.at/sitemap.xml",
+      "https://www.suerf.org/events/new-challenges-in-safeguarding-financial-stability-and-managing-financial-crises-in-a-world-of-digital-finance-and-artificial-intelligence/"
+    ],
+    "last_ok": "2026-10-18",
+    "note": "2026-10-08: sitemap法で継続確認。CEEI 2026 と Global Payment Fraud & Financial Crime Summit の台帳URL(旧 /en/Calendar/2026/...)が404化し、新パターン /en/news-und-events/veranstaltungen/2026/... に移行済みと判明(両イベントとも新URLで本文確認、台帳のurlを更新)。OeNB Freitagsseminar with Catalina Martínez Hernández(10/9)は旧URL・新URLパターンとも404で後継ページ見当たらず(サイト側で削除された可能性)。 2026-10-18: 元URL(/en/Calendar.html)は404継続。sitemap.xml(curl、全文取得)から/en/news-und-events/veranstaltungen/2026-2027配下のURL一覧を抽出し、未収載の新規3件を確認(freitagsseminar-lukas-diebold 10/23、oenb-talks-on-international-and-climate-economics 10/29、money-and-more-st-poelten 10/30)。記者会見3件(pk-finanzverhalten、pk-buero-fiskalrat、Pk-Financial-Stability-Report-52)は収載対象外。"
+  },
+  "DIW Berlin – Veranstaltungen": {
+    "method": "webfetch",
+    "alt_urls": [
+      "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html"
+    ],
+    "last_ok": "2026-10-17",
+    "note": "2026-10-08: 直接取得403継続、alt URL(diw-berlin.de)をWebFetchで取得成功再確認。24件中20件が収載条件に合致、新規2件(Berlin Macro Seminar 2027-01-26、Charity hazard climate adaptation seminar 2027-03-04)を採用、残りは既知で変化なし。 2026-10-11: alt URL(diw-berlin.de)をWebFetchで再取得、22件(採用・研修2件除外後)すべて既知で変化なし。 2026-10-15: alt URL(diw-berlin.de)をWebFetchで再取得(1回目503、再試行で成功)、28件既知で変化なし。 2026-10-16: 直接(diw.de)403継続、alt URL(diw-berlin.de)をWebFetchで取得成功。30件中、新規2件(SOEP入門 11/4-18、年金タウンホール11/11)を採用、採用関連2件・演題未定5件を除外、残りは既知で変化なし。 2026-10-17: 直接(diw.de)403継続、alt URL(diw-berlin.de)をWebFetchで取得成功。31件中、採用関連2件(IMF Economist Program Recruitment Outreach、Job Market Interview Training)を除外し29件が対象。新規2件(SOEP Brown Bag Seminar: CODECHECK 12/16、Berlin Macro Seminar: Mlikota 2027-02-09)を採用、残りは既知で変化なし。"
+  },
+  "ifo Institut – Veranstaltungen": {
+    "method": "alt-url+search",
+    "alt_urls": [],
+    "last_ok": "2026-08-17",
+    "note": "一覧はJS描画で直接取得不可。alt_urls の CESifo会議一覧は独立ソース『CESifo (München) – Veranstaltungen』と重複のため2026-08-28に削除。site:ifo.de veranstaltung 検索で補完する"
+  },
+  "RWI Essen – Veranstaltungen": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar",
+      "https://www.rwi-essen.de/veranstaltungen/fuer-forschende/rwi-research-seminar",
+      "https://www.rwi-essen.de/en/events/"
+    ],
+    "last_ok": "2026-08-19",
+    "note": "トップはカテゴリ紹介のみで日程なし。Research Seminarサブページに個別日程がある。WebFetchが503の時はブラウザUA付きcurlで200になる / 2026-08-28: 英語の全イベント一覧 /en/events/ を追加(研究セミナー系ページだけでは他イベントを取りこぼすため)"
+  },
+  "IMFS Frankfurt – 全ての今後のイベント": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.imfs-frankfurt.de/en/events/imfs-conferences/",
+      "https://www.imfs-frankfurt.de/en/events/imfs-distinguished-lectures/"
+    ],
+    "last_ok": "2026-08-08",
+    "note": "一覧はJS描画。カテゴリ別サブページを実ブラウザUA付きcurlで辿る / 2026-08-28: distinguished-lectures のカテゴリページを追加(実在・イベント掲載を確認)"
+  },
+  "SUERF – Events": {
+    "method": "ua-curl",
+    "alt_urls": [],
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: https://www.suerf.org/events/ をWebFetchで取得したところ本文が十分読めた(前回THIN判定を更新)。既知4件+新規1件確認。"
+  },
+  "Frankfurt School of Finance & Management – Events": {
+    "method": "ua-curl",
+    "alt_urls": [],
+    "last_ok": "2026-08-27",
+    "note": "403ボット対策は実ブラウザUA付きcurlで通る。2026-08中旬のJS空殻は2026-08-27のリトライで解消を確認(一覧が静的HTMLに出る)、恒常ブロック解除。再発時はdiscoveryの検索クエリ(Frankfurt School Konferenz)で補完 2026-10-21: 一覧(forum.frankfurt-school.de/konferenzen/)にはイベント個別ページへのリンクが無く、登壇者も載らない。url は一覧のままでよい(no_detail_pages)。登壇者は検索(イベント名 + Referenten)で補完するか諦める。",
+    "no_detail_pages": true
+  },
+  "Bank of Albania – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-10-08",
+    "note": "2026-10-08: ua-curlで/Events/を取得するとトップページへリダイレクトされ、イベント一覧が取得できなくなっている(2026-08-08時点のua-curl成功報告から仕様変更の可能性)。web検索で既知イベント(20th South-Eastern European Economic Research Workshop, 2026-11-24/25 Tirana)を再確認、新規なし。次回もまずweb検索を優先する方が確実。"
+  },
+  "NBU – National Bank of Ukraine – Research Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://bank.gov.ua/en/research/events"
+    ],
+    "last_ok": "2026-08-17",
+    "note": "WebFetchは403だが実ブラウザUA付きcurlでほぼ毎日成功していた(個別詳細ページ /en/research/events/330 等も同様)。「JS SPA」と即断しないこと"
+  },
+  "dena – Deutsche Energie-Agentur (Berlin)": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://veranstaltungen.dena.de/",
+      "https://www.dena.de/dena-kongress/",
+      "https://www.dena.de/api/media/any"
+    ],
+    "last_ok": "2026-08-17",
+    "note": "本体の一覧はJS描画。専用イベントサイト veranstaltungen.dena.de が確実(毎日2〜9件の実績)。/api/media/any はバックエンドAPI直叩きの成功実績あり"
+  },
+  "Agora Energiewende (Berlin)": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.agora-energiewende.de/veranstaltungen",
+      "https://www.agora-energiewende.org/news-events/filter/tab-3",
+      "https://www.agora-energiewende.de/aktuelles/filter/tab-3"
+    ],
+    "last_ok": "2026-08-19",
+    "note": ".org が503の時は .de ドメインで取れる。イベントは tab-3 フィルタのAJAX一覧に出る"
+  },
+  "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://sustainablefinancecluster.com/en/events/"
+    ],
+    "last_ok": "2026-09-24",
+    "note": "2026-09-24: fetch_all.py(alt-url)は本日もCSS/フォント宣言のみ(サブエージェント2回も同様)。メインモデルがWebFetchで直接取得し2件確認(いずれも既知・変化なし)。fetch_allの本文が空/CSSのみの場合はWebFetchを試す運用を継続。 2026-10-24: fetch_allのキャッシュは先頭100k字でCSSのみ。実ブラウザUA付きcurlでHTML全体(約93万字)を取得すると本文が読める。"
+  },
+  "NBP – Narodowy Bank Polski – Conferences": {
+    "method": "co-host",
+    "alt_urls": [],
+    "last_ok": "2026-10-17",
+    "note": "2026-10-03: Imperva継続。web検索(共催先CEBRA等)で新規なし再確認。 2026-10-11: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし(Imperva継続)。 2026-10-15: web検索でCEEI 2026(OeNB共催)を再確認、既知で変化なし。 2026-10-16: 直接アクセスは引き続きImperva継続。web検索で共催CEBRA(6th Biennial Conference, 9/24-25 Warsaw)を再確認したが開催済み。新規なし。 2026-10-17: 直接アクセスは引き続きImperva継続。web検索で共催先(CEBRA・IFC/ECB外部統計会議)を確認したがいずれも開催済みで新規なし。"
+  },
+  "EPC – European Payments Council – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-10-17",
+    "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-16: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず。 2026-10-17: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず(EPC Community Conference Luxembourgは対象外地域かつ開催済み)。"
+  },
+  "PIK – Potsdam-Institut für Klimafolgenforschung": {
+    "method": "search",
+    "alt_urls": [
+      "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27"
+    ],
+    "last_ok": "2026-09-02",
+    "note": "イベント一覧ページはイントラのログイン画面へリダイレクトされることが多い(接続不可の日もある)。site:pik-potsdam.de 検索で個別イベントページ(GCET27等)を探す。2026-09-02はGCET27(既知)を確認。"
+  },
+  "dfv Euro Finance Group (Frankfurt) – Executive Events": {
+    "method": "sub-pages",
+    "alt_urls": [
+      "https://tickets.dfv-eurofinance.com/EFW26/",
+      "https://frankfurt-ebc.com"
+    ],
+    "last_ok": "2026-08-19",
+    "note": "一覧ページに具体的日付が無いことがある。個別カンファレンスページ・チケットサイトを辿って日付を確定する(毎日3〜9件の実績)"
+  },
+  "Bank of Lithuania – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-10-17",
+    "note": "2026-10-08: lb.lt直接アクセスは引き続きCloudflareで403(個別イベントページも含む)。web検索で既知3件(Economics Conference 11/13, Fraud conference 11/19, FinTech conference 11/30)を確認し、Fraud/Economics 2件は正しい会場・時刻・登壇者・個別URLで台帳を補強(従来はINBOX経由のプレースホルダURLのみだった)。 2026-10-11: lb.lt直接アクセスは引き続き403。web検索でBreakthrough(11/13)・Fraud(11/19)会議を再確認、既知で変化なし。 2026-10-15: lb.lt直接アクセスは引き続き403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-16: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)を再確認、既知で変化なし。 2026-10-17: lb.lt直接アクセスは引き続きCloudflareで403。web検索でEconomics Conference(11/13)・Fraud conference(11/19)・FinTech conference(11/30)を再確認、既知で変化なし。 2026-10-24: 2026-10-24: 直接403継続(ua-curlも403)。web検索(site:lb.lt)で年次不動産会議 2026-11-24 Vilnius(/lt/renginiai/nekilnojamojo-turto-konferencija-2026)を新規発見。lb.lt個別ページはWebFetch 403だが検索スニペットで内容確認可。"
+  },
+  "HNB – Croatian National Bank – Conferences": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-08-17",
+    "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い 2026-10-22 調査: 一覧は独自ウィジェットが /o/hnb-content/v1/search(GET、structureId=3820166、assetCategoryIds 等)を呼んで描画するが、実ブラウザ(Playwright)でもこの API がトップページの HTML を 404 で返し、一覧は空のまま。Chromium 描画(--wait 15000)も本文 1,136 字で無意味。Liferay の asset publisher ページ送り(cur=1..5)はページネータだけでエントリ本体を含まない。headless-delivery API は 403。sitemap.xml は空。サイト側の不具合と判断し、描画・待ち時間の調整では解決しない。復旧確認は月1回程度 API を叩けばよい。日次は従来どおり検索補完。 2026-10-22: discovery_topics に INOMICS 経由(site:inomics.com Dubrovnik Economic Conference / Young Economists' Seminar)の検索観点を追加。"
+  },
+  "Jacques Delors Centre (Hertie School, Berlin) – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-10-03",
+    "note": "2026-10-03: 直接取得・WebFetchとも403継続。web検索でも新規確認できず。 2026-10-11: 403継続、web検索でも日程付きの新規イベント確認できず。"
+  },
+  "PRI – Principles for Responsible Investment – Events": {
+    "method": "chromium",
+    "alt_urls": [
+      "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars"
+    ],
+    "last_ok": "2026-10-20",
+    "note": "2026-10-20: unpri.org/events は curl では JS殻だが headless Chromium で一覧が描画できる。2026-10-21: Routines でも Chromium は使える(同日の英国モード Routine が BoE を描画取得)ことを確認し、render: chromium で fetch_all が日次に自動描画するよう変更。public.unpri.org の個別ページは Chromium でも Cloudflare。描画に失敗した日は search 補完。",
+    "render": "chromium"
+  },
+  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-10-16",
+    "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-24: 2026-10-24: ua-curlでもエラーページ(本文なし)。web検索でBEARS 2026情報なし。"
+  },
+  "EBA – European Banking Authority – Events": {
+    "method": "search",
+    "alt_urls": [],
+    "last_ok": "2026-08-08",
+    "note2": "2026-08-19: site:検索は実行できたが、見つかった公聴会・ワークショップはすべて過去日程だった(検索結果が古い場合あり、日付の確認を要する)",
+    "note": "一覧はJS描画で静的HTMLに出ない。site:eba.europa.eu 検索で公聴会・ウェビナーを補完する"
+  },
+  "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
+    "method": "webfetch",
+    "alt_urls": [
+      "https://www.iwkoeln.de/institut/veranstaltungen.html"
+    ],
+    "last_ok": "2026-09-26",
+    "note": "2026-09-26: curlは403継続だがWebFetchで取得成功。今後予定はオンライン講座(9/28、既知)のみ、Brussels開催分は対象地域外。"
+  },
+  "BNB – Bulgarian National Bank – Events": {
+    "method": "webfetch",
+    "alt_urls": [
+      "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
+    ],
+    "last_ok": "2026-10-17",
+    "note": "2026-10-08: WebFetchで同alt URLを再取得し正規の本文(プレスリリース一覧、2026年1月以降89件)を確認。セミナー・会議の告知は依然0件(通常運用)。 2026-10-11: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-15: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-17: alt URL(bnb.bg)をWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。"
+  },
+  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.cbbh.ba/press/AllNews"
+    ],
+    "last_ok": "2026-08-19",
+    "note": "旧 /en/Events は恒常500。ニュース一覧を読む(英語表示あり)。会議告知は稀で found:0 が正常"
+  },
+  "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
+    "method": "sitemap+ua-curl",
+    "alt_urls": [
+      "https://www.ewi.uni-koeln.de/de/ewi-energietagung/",
+      "https://www.ewi.uni-koeln.de/de/termine-sitemap.xml"
+    ],
+    "last_ok": "2026-10-15",
+    "note": "2026-09-01: 元URL(/de/veranstaltungen/)はアーカイブ(過去分)しか表示しないことがある。今後開催予定はEWI-Energietagung特設ページ(alt_url)で確認する。2026-09-26: 直接取得・alt_urlとも403継続、web検索でも新規の今後開催予定は確認できず(次回Energietagungは2027-01-14/15で既知)。2026-10-04: 元URLが実は「Termine – Archiv」(過去イベントのみ)と判明。/de/termine-sitemap.xml(XMLサイトマップ)から個別イベントURL一覧(<loc>+<lastmod>)を取得し、lastmodが直近のページをua-curlで個別に辿ることで一覧に出ない新規イベント2件(SAPHyR Webinar、Workshop Ammoniak)を発見。元URL・alt URLが500/404/アーカイブ化している場合はこの手法を使う。 2026-10-11: termine-sitemap.xmlを再取得、SAPHyR Webinar・Workshop Ammoniakとも既知で変化なし。新規なし。 2026-10-15: termine-sitemap.xmlを再取得、SAPHyR・Workshop Ammoniak・EWI-Insights・EWI-Energietagung 2027とも既知で変化なし。 2026-10-24: 2026-10-24: termine-sitemap.xmlをua-curlで再取得成功。lastmod最新(10/23)のe-mobilityページは2021年の旧イベントで対象外(lastmodだけで新規と判断しない)。新規なし。"
+  },
+  "CEP – Council on Economic Policies (Zürich) – Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.cepweb.org/events/upcoming-events/",
+      "https://www.cepweb.org/feed/"
+    ],
+    "last_ok": "2026-08-27",
+    "note": "Cloudflareチャレンジは2026-08-27のリトライで解消を確認(ua-curlで/events/upcoming-events/が読める。RSS /feed/ も生きている)、恒常ブロック解除。再発時はdiscoveryのESGクエリで補完"
+  },
+  "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.bofit.fi/en/research/seminars/",
+      "https://www.bofit.fi/en/research/conferences-and-workshops/"
+    ],
+    "last_ok": "2026-09-18",
+    "note": "2026-09-14 追加時に実ブラウザUA付きcurlで元URL・alt_urlsとも取得成功(静的HTML)。元URLはフィンランド銀行カレンダーのBOFIT絞り込み、alt はbofit.fi側のセミナー一覧と会議一覧。個別イベントは suomenpankki.fi/en/news-and-topical/events/calendar/events/bofit2/ 配下 / 2026-09-18: fetch_all.py(ua-curl)は元URL・alt_urlsとも info.suomenpankki.fi の通知ページへリダイレクトされ失敗。WebFetchでは正常にカレンダー内容(今後2件)を取得できた。ua-curlが失敗した場合はWebFetchを試すこと。"
+  },
+  "Latvijas Banka – Research/Events": {
+    "method": "search",
+    "alt_urls": [
+      "https://conference.bank.lv/"
+    ],
+    "last_ok": "2026-09-19",
+    "note": "2026-09-19: 主URL(macroeconomics.lv)はfetch_all/WebFetchともFAIL-THIN(空白)。web検索で新設の会議専用サイト conference.bank.lv を発見、旗艦会議 'From Policy to Impact'(2026-11-11, Riga)を確認・採用。次回以降はこのURLもalt_urlsとして併せて確認する。"
+  },
+  "Universität Mannheim – 経済学部イベント/セミナー": {
+    "method": "sub-pages",
+    "alt_urls": [
+      "https://www.vwl.uni-mannheim.de/en/forschung/forschungsseminare/micro-crc-tr-224-seminar-1/"
+    ],
+    "last_ok": "2026-10-09",
+    "note": "2026-10-09: 元URL(/en/research/research-seminars/)はインデックスのみでWebFetch可。下位ページ群(macro-crc-tr-224-seminar, internal-department-seminar, mannheim-applied-seminar, forschungsseminare/micro-crc-tr-224-seminar-1)を個別に辿る必要あり。Micro CRC TR 224 Seminar(上記alt_url)は今回初めて発見、既存のMacro CRC系列とは別シリーズ。internal-department-seminar/mannheim-applied-seminarは直近は過去学期分のみで今後分の掲載なし(0件が通常)。"
+  },
+  "ECONtribute (Bonn/Köln) – Events": {
+    "method": "api",
+    "alt_urls": [
+      "https://www.econtribute.de/wp-json/dhsv/v2/eco/events?per_page=100"
+    ],
+    "last_ok": "2026-10-09",
+    "note": "2026-10-09: 通常の/eventsページはJS描画のナビのみ(fetch/ua-curl失敗)。sitemap_index.xml経由でWordPressの未公開REST名前空間 dhsv/v2/eco/events を発見、今後のセミナー(日付・時刻・講演者・リンク)を構造化データで取得できる(per_page=100で全件)。次回以降はこのAPIエンドポイントを優先的に試す。"
+  },
+  "Eesti Pank (エストニア) – Events": {
+    "method": "ua-curl",
+    "alt_urls": [
+      "https://www.eestipank.ee/en/calendar/2026/11"
+    ],
+    "last_ok": "2026-10-25",
+    "note": "2026-10-16: ドメイン全体が503(トップページ・research-seminars・calendar・sitemap.xmlすべて503)。サイト側障害の可能性。web検索でも今後の日程付きイベント確認できず(Tuulelohe lend・30周年記念・理事会セミナー等いずれも過去開催)。"
+  },
+  "CEPR – Centre for Economic Policy Research – Events": {
+    "method": "alt-domain",
+    "last_ok": "2026-10-20",
+    "alt_urls": [
+      "https://hub.cepr.org/events/upcoming-events?page=0",
+      "https://hub.cepr.org/events/upcoming-events?page=1",
+      "https://hub.cepr.org/events/upcoming-events?page=2",
+      "https://hub.cepr.org/events/upcoming-events?page=3",
+      "https://hub.cepr.org/events/upcoming-events?page=4",
+      "https://hub.cepr.org/events/upcoming-events?page=5"
+    ],
+    "note": "2026-10-20: cepr.org 本体は Cloudflare 403(sitemap/RSS/jsonapi も)。別ドメイン hub.cepr.org の今後イベント一覧(page=0..5)は UA付きcurl で200。一覧に日付・時刻・種別はあるが会場は原則なし(詳細はログイン要)。会場は共催先ページで確認する。"
+  },
+  "LSE – Centre for Macroeconomics (CFM) – Events": {
+    "method": "alt-domain",
+    "last_ok": "2026-10-20",
+    "alt_urls": [
+      "https://www.lse.ac.uk/CFM/events-and-seminars/Upcoming-Events",
+      "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars"
+    ],
+    "note": "2026-10-20: centreformacroeconomics.ac.uk はプロキシ経由で TLS 不可。実体は www.lse.ac.uk/CFM/ 配下(og:url)で UA付きcurl で200。Seminars ページに学期の全日程(Money-Macro Seminar 火14:30)。"
+  },
+  "UK Finance – Events": {
+    "method": "chromium",
+    "last_ok": "2026-10-20",
+    "note": "2026-10-20: curl は 403(/events/feed も)だが headless Chromium で一覧(/events/events-training-schedule)と詳細が描画できる。2026-10-21: Routines でも Chromium は使えることを確認し、render: chromium + alt_urls で日次に自動描画するよう変更。業界団体のため旗艦会議(★3)と無料公開ウェビナーのみ収載。",
+    "render": "chromium",
+    "alt_urls": [
+      "https://www.ukfinance.org.uk/events/events-training-schedule"
+    ]
+  },
+  "Daiwa Anglo-Japanese Foundation – Events": {
+    "method": "chromium",
+    "last_ok": "2026-10-22",
+    "note": "2026-10-22: ua-curl 403, Chromium (--wait 5000) renders upcoming list incl. detail links (/event/<slug>). Confirmed again. 2026-10-22: Routine 本番で curl 403・Chromium 描画は成功(--wait 5000)と記録されたため render: chromium を付与(描画に失敗した環境では通常取得に戻る)。",
+    "render": "chromium"
+  },
+  "CBBC – China-Britain Business Council – Events": {
+    "method": "chromium",
+    "last_ok": "2026-10-20",
+    "note": "2026-10-20: curl 403。headless Chromium で一覧(?page=1 も)と詳細が描画できる。2026-10-21: Routines でも Chromium は使えることを確認し、render: chromium で日次に自動描画するよう変更(10/21 は WebFetch でも一覧が取れた)。描画に失敗した日は search 補完。",
+    "render": "chromium"
+  },
+  "IFS – Institute for Fiscal Studies – Events": {
+    "method": "search",
+    "note": "2026-10-20 再挑戦: sitemap/RSS/wp-json/サブページ/Chromium/WebFetch すべて Cloudflare 403。検索で見つかる今後の案件は有料研修コースのみ。"
+  },
+  "Chatham House – Events": {
+    "method": "search",
+    "note": "2026-10-22: all direct routes Cloudflare-blocked; searching the event title (e.g. 'Chatham House Iraq Initiative Conference 2026 date') returns the official event page snippet with date/time - title-specific queries work better than site: queries."
+  },
+  "IISS – International Institute for Strategic Studies – Events": {
+    "method": "search",
+    "note": "2026-10-20 再挑戦: 一覧・sitemap・RSS・詳細ページとも Cloudflare。検索では域外(Manama・Prague)のみ。"
+  },
+  "Policy Exchange – Events": {
+    "method": "search",
+    "note": "2026-10-20 再挑戦: HTTPS は HTTP/2・1.1 とも接続断、HTTP は sgcaptcha のボット認証、Chromium も不可。検索は過去イベントのみ。"
+  },
+  "Oxford – Saïd Business School – Events": {
+    "method": "search",
+    "note": "2026-10-20 再挑戦: sitemap/RSS/Chromium すべて Cloudflare。OxTalks 後継の events.ox.ac.uk は CloudFront 403。"
+  },
+  "Bayes Business School – Events": {
+    "method": "search",
+    "note": "2026-10-20 再挑戦: Cloudflare(Chromium も不可)。実際の一覧は /news-and-events/events。"
+  },
+  "Bank of England – Events": {
+    "render": "chromium",
+    "note": "2026-10-20: 一覧はJS描画で静的HTMLは0件。fetch_all が headless Chromium(scripts/fetch_page.py)で描画して取得する(render: chromium)。個別イベントページは静的で fetch_details.py で登壇者を補完できる。Chromium が使えない環境では通常取得に戻り FAIL-THIN になる(その場合は site: 検索で補完)"
+  },
+  "NIESR – National Institute of Economic and Social Research – Events": {
+    "method": "fetch",
+    "last_ok": "2026-10-20",
+    "note": "一覧(WordPress Tribe Events)は『N events found.』の後に月別で今後のイベントが並ぶ(静的・通常5件前後)。/event/<slug> の詳細ページに日時・形式(Virtual Event=オンライン)・参加費・登壇者が明記される。ユーザー指示(2026-10-20): この団体はレセプション・懇親会もパネル討論付きなら収載する(招待制として記録)。AGM(理事限定の総会)のみ除外。2026-10-19 に『該当0件』と誤判定した実績があるので、一覧に日付付きの項目があれば必ず抽出すること"
+  },
+  "PRA – Prudential Regulation Authority – Publications RSS": {
+    "method": "fetch",
+    "last_ok": "2026-10-21",
+    "note": "2026-10-21 追加。静的 RSS(XML)。fetch_all の html_to_text で項目ごとに URL・題名・要約・日付のテキストになる。ほとんどは CP/PS/SS 等の文書で、イベント告知(roundtable/seminar/webinar)は年に数件。告知を見つけたらリンク先を開いて開催日・形式(hybrid/online/onsite)・申込方法を確認してから収載する。organizer_short は \"PRA\"。"
+  },
+  "ZEW Mannheim – Veranstaltungen": {
+    "note": "2026-10-21: 収載済みの詳細URL(/veranstaltungen-und-weiterbildung/detail/<slug>/<id>・/VA<id>)が404。一覧のリンクをそのまま使い、URLを推測・創作しないこと。個別リンクが取れない場合は一覧URLにする。"
+  },
+  "JETRO London – Events": {
+    "method": "alt-url",
+    "alt_urls": [
+      "https://www.jetro.go.jp/uk/topics.html",
+      "https://www.jetro.go.jp/uk/"
+    ],
+    "last_ok": "2026-10-22",
+    "note": "2026-10-22: /uk/events.html is AccessDenied (dead); topics page via ua-curl works but lists only RFPs and a past June 2026 event. Candidate for sources.yaml url replacement (2b) - human/main-agent decision."
+  },
+  "Grantham Research Institute (LSE) – Events": {
+    "method": "search",
+    "note": "2026-10-22: lse.ac.uk returns Cloudflare 522 (origin timeout) for ua-curl and Chromium - likely transient, retry. Search snippet suggests Stern Review event on 30 Oct vs known 28 Oct; verify."
+  },
+  "Bundesbank – Termine": {
+    "no_detail_pages": true,
+    "note": "2026-10-27: AI Week Frankfurt の講演枠(Mauderer)は個別ページ無し(一覧URLのみ)。"
+  },
+  "SNB – Swiss National Bank – Events": {
+    "no_detail_pages": true,
+    "note": "2026-10-28: 一覧に個別ページへのリンクなし(General Meeting等)。no_detail_pages 付与。"
+  },
+  "CESifo (München) – Veranstaltungen": {
+    "no_detail_pages": true,
+    "note": "2026-10-31: Labor Economics の会議は一覧に個別ページへのリンクが無い(一覧のみ)。Public Economics は個別ページあり"
+  }
 }
