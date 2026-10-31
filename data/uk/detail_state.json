@@ -153,6 +153,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://ukandeu.ac.uk/events/ukice-lunch-hour-uk-in-a-changing-europe": {
+  "event_id": "6fc60e56078117bd",
+  "http": 200,
+  "last": "2026-10-31",
+  "result": "ok",
+  "tries": 1
+ },
  "https://warwick.ac.uk/fac/soc/economics/research/centres/cage/events/02-12-26-guest_lecture_the_economic_consequences_of_conflict_in_ukraine": {
   "event_id": "0154008d5b940ce1",
   "http": 200,
@@ -296,9 +303,9 @@
  "https://www.esri.ie/events/19th-irish-economics-psychology-and-policy-conference": {
   "event_id": "9dfcf1249f6e8347",
   "http": 200,
-  "last": "2026-10-22",
+  "last": "2026-10-31",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.fmg.ac.uk/events/how-make-impact-investing-work": {
   "event_id": "b792a359a3679405",
@@ -306,6 +313,13 @@
   "last": "2026-10-26",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.fmg.ac.uk/events/london-behavioural-finance-group-9th-meeting": {
+  "event_id": "68466e88853593aa",
+  "http": 200,
+  "last": "2026-10-31",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.icmagroup.org/events/20th-icma-european-primary-market-forum": {
   "event_id": "2e9c9c8775b854b9",
