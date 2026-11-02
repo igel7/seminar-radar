@@ -10390,7 +10390,13 @@
    "organizer_short": "SUERF/BAFFI",
    "title_short": "ECB Financial Stability Review",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ernest Gnan",
+     "org": "SUERF",
+     "role": "Secretary General"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "a9e8fa8aee46513a",
    "first_seen": "2026-10-22",
@@ -11273,7 +11279,38 @@
    "importance": 1,
    "registration_url": "https://www.icmagroup.org/events/webinar-preparing-for-eu-t-1-understanding-the-new-gating-event-for-sfts/registration-webinar-preparing-for-eu-t-1-understanding-the-new-gating-event-for-sfts",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Arnaud Jochems",
+     "org": "Clearstream",
+     "role": "Head of Settlement Product"
+    },
+    {
+     "name": "Remy Al Sbinati",
+     "org": "ECB",
+     "role": "T2S experts"
+    },
+    {
+     "name": "Matej Mesar",
+     "org": "ECB",
+     "role": "T2S experts"
+    },
+    {
+     "name": "Thomas Hansen",
+     "org": "Santander CIB",
+     "role": "Global Head of Securities Finance"
+    },
+    {
+     "name": "Roy Zimmerhansel",
+     "org": "WTS Hansuke",
+     "role": "Head of Capital Markets"
+    },
+    {
+     "name": "James Upton",
+     "org": "LSEG",
+     "role": "COO, LCH RepoClear and Collateral and Liquidity Management"
+    }
+   ],
    "source": "ICMA – International Capital Market Association – Events",
    "id": "82e18136f2d82080",
    "first_seen": "2026-10-24",
@@ -14397,10 +14434,128 @@
    "organizer_short": "Westminster Forum",
    "title_short": "UK Transition Finance Priorities",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Vikas Aggarwal",
+     "org": "CDP",
+     "role": "Director, Government and Regulatory Affairs"
+    },
+    {
+     "name": "Cassie McGoldrick",
+     "org": "FCA",
+     "role": "Manager, Primary Markets Policy"
+    },
+    {
+     "name": "Irem Yerdelen",
+     "org": "Transition Finance Council",
+     "role": "Deputy Chair"
+    },
+    {
+     "name": "Martina Macpherson",
+     "org": "Value Balancing Alliance",
+     "role": "Head, Financial Markets"
+    },
+    {
+     "name": "Tomas Gardfors",
+     "org": "Addleshaw Goddard",
+     "role": "Partner and Head of Transition Finance"
+    },
+    {
+     "name": "Paul Pritchard",
+     "org": "BSI",
+     "role": "Chair, BSI Sustainable Finance Committee"
+    },
+    {
+     "name": "Jonathan Dunn",
+     "org": "Anglo American",
+     "role": "Vice President, Climate and Nature"
+    },
+    {
+     "name": "Ritchie Thomson",
+     "org": "Aegon Asset Management",
+     "role": "Senior Responsible Investment Associate"
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "9c0e440df86cf50c",
    "first_seen": "2026-11-01",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Tokenized finance and the perimeter of central banking: How is tokenization reshaping financial markets and the future role of central banks?",
+   "title_ja": "トークン化金融と中央銀行の役割",
+   "organizer": "SUERF BAFFI Bocconi",
+   "date_start": "2027-01-20",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "central_bank",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "事前登録あり(参加費は不明)",
+   "registration_note_en": "Registration link provided (fee not stated)",
+   "registration_note_de": "Anmeldelink angegeben (Gebühr nicht angegeben)",
+   "url": "https://www.suerf.org/events/tokenized-finance-and-the-perimeter-of-central-banking-how-is-tokenization-reshaping-financial-markets-and-the-future-role-of-central-banks/",
+   "registration_url": "https://www.suerf.org/events/tokenized-finance-and-the-perimeter-of-central-banking-how-is-tokenization-reshaping-financial-markets-and-the-future-role-of-central-banks/registration",
+   "summary_ja": "SUERFとBocconi大学BAFFIセンターによるオンラインの講演。トークン化が金融市場と中央銀行の役割をどう変えるかを扱う。",
+   "summary_en": "Online SUERF BAFFI Bocconi e-lecture on how tokenization is reshaping financial markets and the future role of central banks.",
+   "summary_de": "Online-Vortrag der SUERF BAFFI Bocconi e-lecture darüber, wie Tokenisierung die Finanzmärkte und die künftige Rolle der Zentralbanken verändert.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "SUERF/BAFFI",
+   "title_short": "Tokenized Finance and Central Banking",
+   "importance": 1,
+   "speakers": [],
+   "source": "SUERF – Events",
+   "id": "67f84bc0bcd4bc16",
+   "first_seen": "2026-11-02",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "AI boom or bubble? How will it affect the global economy?",
+   "title_ja": "AIブームかバブルか:世界経済への影響",
+   "organizer": "Chatham House",
+   "date_start": "2026-11-04",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "London",
+   "venue": "Chatham House",
+   "format": "hybrid",
+   "themes": [
+    "ai",
+    "real_economy",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.chathamhouse.org/events/all/standard-event/ai-boom-or-bubble-how-will-it-affect-global-economy",
+   "summary_ja": "AI主導の成長が世界経済で存在感を増す中、現状がバブルか正当な再評価かを議論するパネル。AI投資の資金調達やリスクの所在、米中以外の利害関係者も検討する。",
+   "summary_en": "Panel examining whether the AI boom is a bubble, a justified revaluation or a mix of both, how the AI buildout is financed, where the risks sit, and who beyond the US and China has a stake.",
+   "summary_de": "Podium zur Frage, ob der KI-Boom eine Blase, eine gerechtfertigte Neubewertung oder beides ist, wie der KI-Ausbau finanziert wird, wo die Risiken liegen und wer jenseits der USA und Chinas betroffen ist.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Chatham House",
+   "title_short": "AI Boom or Bubble",
+   "importance": 1,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "966dc43483c2fe99",
+   "first_seen": "2026-11-02",
    "notables": [],
    "notable_tier": null
   }

@@ -338,9 +338,9 @@
  "https://www.icmagroup.org/events/webinar-preparing-for-eu-t-1-understanding-the-new-gating-event-for-sfts": {
   "event_id": "82e18136f2d82080",
   "http": 200,
-  "last": "2026-10-25",
+  "last": "2026-11-02",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.instituteforgovernment.org.uk/event/budget-2026-john-healey-economy-and-government": {
   "event_id": "d651b52c78b0a15b",
@@ -513,9 +513,9 @@
  "https://www.suerf.org/events/key-takeaways-from-the-ecb-november-2026-financial-stability-review": {
   "event_id": "a9e8fa8aee46513a",
   "http": 200,
-  "last": "2026-10-24",
+  "last": "2026-11-02",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies": {
   "event_id": "3ec80de8464fb78a",
@@ -607,5 +607,12 @@
   "last": "2026-10-25",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.westminsterforumprojects.co.uk/conference/trans-finance-26": {
+  "event_id": "9c0e440df86cf50c",
+  "http": 200,
+  "last": "2026-11-02",
+  "result": "ok",
+  "tries": 1
  }
 }
