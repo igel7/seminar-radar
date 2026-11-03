@@ -79,9 +79,9 @@
  "https://my.rusi.org/events/the-long-war-conference-2026.html": {
   "event_id": "a6ef107b932e561d",
   "http": 200,
-  "last": "2026-10-21",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://my.rusi.org/events/the-shadow-battlefield-forging-a-european-front-against-hybrid-threats.html": {
   "event_id": "ffd0f68c1c3a2153",
@@ -219,9 +219,9 @@
  "https://www.bennettschool.cam.ac.uk/events/uk-digital-economics-2026": {
   "event_id": "c8dccdaec541a1e9",
   "http": 200,
-  "last": "2026-10-24",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.cbbc.org/events/briefing-british-ambassador-china-and-hmtc-china": {
   "event_id": "6801f5e2886544a3",
@@ -277,6 +277,13 @@
   "http": 200,
   "last": "2026-10-25",
   "result": "ok",
+  "tries": 1
+ },
+ "https://www.chathamhouse.org/events/all/standard-event/ai-boom-or-bubble-how-will-it-affect-global-economy": {
+  "event_id": "966dc43483c2fe99",
+  "http": 403,
+  "last": "2026-11-03",
+  "result": "FAIL-BLOCKED",
   "tries": 1
  },
  "https://www.chathamhouse.org/events/all/standard-event/critical-minerals-uks-role-securing-resilient-supply-chains": {
@@ -517,6 +524,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.suerf.org/events/tokenized-finance-and-the-perimeter-of-central-banking-how-is-tokenization-reshaping-financial-markets-and-the-future-role-of-central-banks": {
+  "event_id": "67f84bc0bcd4bc16",
+  "http": 200,
+  "last": "2026-11-03",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.suerf.org/events/who-owns-what-and-where-the-revamped-finflows-dataset-for-analysing-global-financial-interdependencies": {
   "event_id": "3ec80de8464fb78a",
   "http": 200,
@@ -583,9 +597,9 @@
  "https://www.unepfi.org/events/turning-sustainability-disclosures-into-risk-insights-new-sustainability-risk-management-tools-and-research": {
   "event_id": "307b72b626bc033f",
   "http": 200,
-  "last": "2026-10-25",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/industries/banking/the-role-of-risk-in-responsible-banking": {
   "event_id": "cbbed177e010134d",

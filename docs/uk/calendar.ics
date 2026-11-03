@@ -758,10 +758,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:8c04dc467852d43e@seminar-radar
 DTSTART;VALUE=DATE:20270217
-DTEND;VALUE=DATE:20270218
+DTEND;VALUE=DATE:20270219
 SUMMARY:Challenges to Monetary Policy: University of Leeds and Bank of England Workshop
-LOCATION:London
-DESCRIPTION:リーズ大学とイングランド銀行による、金融政策の課題に関するワークショップ。 / 主催: University of Leeds and Bank of England / https://www.bankofengland.co.uk/events/2027/february/challenges-to-monetary-policy-university-of-leeds-and-boe-workshop
+LOCATION:Leeds
+DESCRIPTION:リーズ大学経済学部とイングランド銀行が共催する、金融政策と中央銀行運営の現在・将来の課題を議論するワークショップ。基調講演はHuw Pill(BoEチーフエコノミスト)。 / 主催: University of Leeds and Bank of England / https://www.bankofengland.co.uk/events/2027/february/challenges-to-monetary-policy-university-of-leeds-and-boe-workshop / 登壇: Huw Pill (BoE) / 要人: Huw Pill (BoE Chief Economist)
 END:VEVENT
 BEGIN:VEVENT
 UID:929a7e95c77d46db@seminar-radar
@@ -953,7 +953,7 @@ DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Building Inclusive Heat Resilience: Strengthening Action for a Hotter UK
 LOCATION:London
-DESCRIPTION:英国の高温化に備えた包摂的な熱レジリエンス対策を取り上げる公開講演。Adeline Stuart-Watt賞の初代受賞者を発表し、その後パネル討論が行われる。 / 主催: Grantham Research Institute on climate change and the environment\, LSE / https://www.lse.ac.uk/granthaminstitute/events/building-inclusive-heat-resilience-strengthening-action-for-a-hotter-uk/ / 登壇: Swenja Surminski (Grantham)\, Candice Howarth (Quadrature)\, Ashok Sinha (Ashden)\, Jane Davidson (Wales Net Zero 2035)\, Sally Uren (Forum for the Future)\, Yetunde Abdul (WGBC)
+DESCRIPTION:英国の高温化に備えた包摂的な熱レジリエンス対策を取り上げる公開講演。Adeline Stuart-Watt賞の初代受賞者を発表し、その後パネル討論が行われる。 / 主催: Grantham Research Institute on climate change and the environment\, LSE / https://www.lse.ac.uk/granthaminstitute/events/building-inclusive-heat-resilience-strengthening-action-for-a-hotter-uk/ / 登壇: Emma Howard Boyd\, Swenja Surminski\, Candice Howarth
 END:VEVENT
 BEGIN:VEVENT
 UID:f641c64e7835ba24@seminar-radar
@@ -1353,7 +1353,7 @@ DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Tokenized finance and the perimeter of central banking: How is tokenization reshaping financial markets and the future role of central banks?
 LOCATION:
-DESCRIPTION:SUERFとBocconi大学BAFFIセンターによるオンラインの講演。トークン化が金融市場と中央銀行の役割をどう変えるかを扱う。 / 主催: SUERF BAFFI Bocconi / https://www.suerf.org/events/tokenized-finance-and-the-perimeter-of-central-banking-how-is-tokenization-reshaping-financial-markets-and-the-future-role-of-central-banks/
+DESCRIPTION:SUERFとBocconi大学BAFFIセンターによるオンラインの講演。トークン化が金融市場と中央銀行の役割をどう変えるかを扱う。 / 主催: SUERF BAFFI Bocconi / https://www.suerf.org/events/tokenized-finance-and-the-perimeter-of-central-banking-how-is-tokenization-reshaping-financial-markets-and-the-future-role-of-central-banks/ / 登壇: Darrell Duffie (Stanford)\, Martin Scheicher (SSM)\, Ernest Gnan (SUERF)\, Ulrich Bindseil (Frankfurt School)\, Aino Bunge (Riksbank)\, Filiz Unsal (OECD) / 要人: Aino Bunge
 END:VEVENT
 BEGIN:VEVENT
 UID:966dc43483c2fe99@seminar-radar
@@ -1362,5 +1362,29 @@ DTEND;VALUE=DATE:20261105
 SUMMARY:AI boom or bubble? How will it affect the global economy?
 LOCATION:London
 DESCRIPTION:AI主導の成長が世界経済で存在感を増す中、現状がバブルか正当な再評価かを議論するパネル。AI投資の資金調達やリスクの所在、米中以外の利害関係者も検討する。 / 主催: Chatham House / https://www.chathamhouse.org/events/all/standard-event/ai-boom-or-bubble-how-will-it-affect-global-economy
+END:VEVENT
+BEGIN:VEVENT
+UID:7997aedc5501d699@seminar-radar
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:The economics of transitioning away from fossil fuels
+LOCATION:London
+DESCRIPTION:化石燃料からの移行を経済学の観点から議論する公開イベント。Robin Burgess、André Corrêa do Lago、Rachel Kyte、José Scheinkman が登壇予定。 / 主催: London School of Economics and Political Science / https://www.lse.ac.uk/global-school-of-sustainability/events-gsos/the-economics-of-transitioning-away-from-fossil-fuels / 登壇: Robin Burgess\, André Corrêa do Lago\, Rachel Kyte\, José Scheinkman
+END:VEVENT
+BEGIN:VEVENT
+UID:d06ca07244888836@seminar-radar
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:When climate science enters the courtroom
+LOCATION:London
+DESCRIPTION:ペルーの農民がドイツのエネルギー企業に氷河融解の責任を問えるかを題材に、気候科学が法廷でどう扱われるかを論じるLSEの研究発表。 / 主催: Grantham Research Institute on Climate Change and the Environment\, LSE / https://www.lse.ac.uk/granthaminstitute/events/when-climate-science-enters-the-courtroom/
+END:VEVENT
+BEGIN:VEVENT
+UID:fff479e760a49afd@seminar-radar
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:What markets won't fix: do payments need public intervention?
+LOCATION:
+DESCRIPTION:決済システムが進化するなか、中央銀行が効率性と耐性の強化を図る中で公的介入が必要かを問うOMFIFのライブ配信。 / 主催: Digital Monetary Institute (OMFIF) / https://www.omfif.org/meetings/what-markets-wont-fix-do-payments-need-public-intervention/
 END:VEVENT
 END:VCALENDAR

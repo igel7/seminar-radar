@@ -6285,7 +6285,7 @@
    "notable_tier": null
   },
   {
-   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "organizer": "Centre for Macroeconomics (CFM), London School of Economics",
    "organizer_short": "CFM",
    "city": "London",
    "country": "GB",
@@ -6301,32 +6301,32 @@
    "date_end": null,
    "importance": 0,
    "source": "LSE – Centre for Macroeconomics (CFM) – Events",
-   "title": "Faculty Work in Progress Seminar: Emi Nakamura & Jón Steinsson",
-   "title_ja": "教員研究進捗セミナー: Emi Nakamura & Jón Steinsson",
+   "title": "Money-Macro Seminar: Emi Nakamura & Jón Steinsson (University of California, Berkeley)",
+   "title_ja": "Money-Macroセミナー: Nakamura・Steinsson",
    "date_start": "2027-05-11",
-   "time": "12:00",
-   "time_end": "13:00",
+   "time": "14:30",
+   "time_end": "16:00",
    "venue": "LSE, SAL.1.04",
    "themes": [
-    "real_economy"
+    "central_bank"
    ],
    "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
-   "title_short": "Macro Research Seminar",
+   "title_short": "Money-Macro Seminar",
    "speakers": [
     {
      "name": "Emi Nakamura",
-     "org": null,
+     "org": "UC Berkeley",
      "role": null
     },
     {
      "name": "Jón Steinsson",
-     "org": null,
+     "org": "UC Berkeley",
      "role": null
     }
    ],
-   "summary_ja": "LSEマクロ経済学の教員向け研究進捗セミナー。Emi Nakamura、Jón Steinssonが報告。",
-   "summary_en": "A faculty work-in-progress seminar in LSE macroeconomics, with Emi Nakamura and Jón Steinsson presenting.",
-   "summary_de": "Faculty-Work-in-Progress-Seminar der LSE-Makroökonomie; Emi Nakamura und Jón Steinsson stellt/stellen vor.",
+   "summary_ja": "CFMのMoney-Macroセミナーで、Emi Nakamura氏とJón Steinsson氏(カリフォルニア大学バークレー校)が報告する。演題は未掲載。",
+   "summary_en": "Emi Nakamura and Jón Steinsson (University of California, Berkeley) present in the CFM Money-Macro Seminar series. No paper title is listed.",
+   "summary_de": "Emi Nakamura und Jón Steinsson (UC Berkeley) präsentieren in der Money-Macro-Seminarreihe des CFM. Ein Vortragstitel ist nicht angegeben.",
    "id": "2d9029fd8e2df20d",
    "first_seen": "2026-10-20",
    "notables": [],
@@ -7401,40 +7401,55 @@
   },
   {
    "title": "Challenges to Monetary Policy: University of Leeds and Bank of England Workshop",
-   "title_ja": "金融政策の課題：リーズ大学・BoEワークショップ",
+   "title_ja": "金融政策の課題:リーズ大学・BoE共催ワークショップ",
    "organizer": "University of Leeds and Bank of England",
    "date_start": "2027-02-17",
-   "date_end": null,
+   "date_end": "2027-02-18",
    "time": null,
-   "city": "London",
+   "city": "Leeds",
    "venue": null,
    "format": "onsite",
    "themes": [
     "central_bank"
    ],
-   "fee": "unknown",
+   "fee": "free",
    "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
+   "open_to_public": false,
+   "registration_note": "参加費なし(旅費・宿泊費は自己負担)。論文投稿制:全文を2026-12-10までにメール提出、採択通知は2026-12-20予定",
+   "registration_note_en": "No attendance fee (travel and accommodation at own cost). Paper-submission based: full papers due by email 10 Dec 2026, acceptance notified by 20 Dec 2026",
+   "registration_note_de": "Keine Teilnahmegebühr (Reise und Unterkunft auf eigene Kosten). Einreichung von Papers erforderlich: Volltexte per E-Mail bis 10.12.2026, Benachrichtigung bis 20.12.2026",
    "url": "https://www.bankofengland.co.uk/events/2027/february/challenges-to-monetary-policy-university-of-leeds-and-boe-workshop",
-   "summary_ja": "リーズ大学とイングランド銀行による、金融政策の課題に関するワークショップ。",
-   "summary_en": "Workshop by the University of Leeds and the Bank of England on challenges to monetary policy.",
-   "summary_de": "Workshop der Universität Leeds und der Bank of England zu Herausforderungen der Geldpolitik.",
+   "summary_ja": "リーズ大学経済学部とイングランド銀行が共催する、金融政策と中央銀行運営の現在・将来の課題を議論するワークショップ。基調講演はHuw Pill(BoEチーフエコノミスト)。",
+   "summary_en": "A joint workshop of the University of Leeds Department of Economics and the Bank of England on current and future challenges in monetary policy and central banking. Keynote by Huw Pill, BoE Chief Economist.",
+   "summary_de": "Gemeinsamer Workshop der University of Leeds und der Bank of England zu aktuellen und künftigen Herausforderungen der Geldpolitik. Keynote von Huw Pill, Chefvolkswirt der BoE.",
    "language": "en",
    "country": "GB",
-   "organizer_short": "BoE/Leeds",
+   "organizer_short": "Leeds/BoE",
    "title_short": "Challenges to Monetary Policy",
-   "importance": 1,
+   "importance": 2,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Huw Pill",
+     "org": "BoE",
+     "role": "Chief Economist"
+    }
+   ],
    "source": "Bank of England – Events",
    "id": "8c04dc467852d43e",
    "first_seen": "2026-10-20",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "huw-pill",
+     "name": "Huw Pill",
+     "group": "ncb",
+     "tier": 2,
+     "short": "BoE Chief Economist",
+     "former": false
+    }
+   ],
+   "notable_tier": 2
   },
   {
    "title": "5th Annual Workshop of the ESCB Research Cluster on Climate Change",
@@ -9443,34 +9458,19 @@
    "time_end": null,
    "speakers": [
     {
+     "name": "Emma Howard Boyd",
+     "org": null,
+     "role": null
+    },
+    {
      "name": "Swenja Surminski",
-     "org": "Grantham",
-     "role": "Professor in Practice"
+     "org": null,
+     "role": null
     },
     {
      "name": "Candice Howarth",
-     "org": "Quadrature",
-     "role": "Research Director"
-    },
-    {
-     "name": "Ashok Sinha",
-     "org": "Ashden",
-     "role": "CEO"
-    },
-    {
-     "name": "Jane Davidson",
-     "org": "Wales Net Zero 2035",
-     "role": "Chair"
-    },
-    {
-     "name": "Sally Uren",
-     "org": "Forum for the Future",
-     "role": "Executive Director"
-    },
-    {
-     "name": "Yetunde Abdul",
-     "org": "WGBC",
-     "role": "Programmes Director"
+     "org": null,
+     "role": null
     }
    ],
    "source": "Grantham Research Institute (LSE) – Events",
@@ -14513,12 +14513,52 @@
    "organizer_short": "SUERF/BAFFI",
    "title_short": "Tokenized Finance and Central Banking",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Darrell Duffie",
+     "org": "Stanford",
+     "role": "Adams Distinguished Professor of Management and Professor of Finance, Emeritus"
+    },
+    {
+     "name": "Martin Scheicher",
+     "org": "SSM",
+     "role": "Adviser"
+    },
+    {
+     "name": "Ernest Gnan",
+     "org": "SUERF",
+     "role": "Secretary General"
+    },
+    {
+     "name": "Ulrich Bindseil",
+     "org": "Frankfurt School",
+     "role": "Professor"
+    },
+    {
+     "name": "Aino Bunge",
+     "org": "Riksbank",
+     "role": "Deputy Governor"
+    },
+    {
+     "name": "Filiz Unsal",
+     "org": "OECD",
+     "role": "Deputy Director of the Policy and Research Branch"
+    }
+   ],
    "source": "SUERF – Events",
    "id": "67f84bc0bcd4bc16",
    "first_seen": "2026-11-02",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "aino-bunge",
+     "name": "Aino Bunge",
+     "group": "ncb",
+     "tier": 2,
+     "short": null,
+     "former": false
+    }
+   ],
+   "notable_tier": 2
   },
   {
    "title": "AI boom or bubble? How will it affect the global economy?",
@@ -14556,6 +14596,220 @@
    "source": "web検索(discovery)",
    "id": "966dc43483c2fe99",
    "first_seen": "2026-11-02",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": "Old Theatre, Old Building",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Robin Burgess",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "André Corrêa do Lago",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Rachel Kyte",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "José Scheinkman",
+     "org": null,
+     "role": null
+    }
+   ],
+   "title": "The economics of transitioning away from fossil fuels",
+   "title_ja": "化石燃料からの移行の経済学",
+   "organizer": "London School of Economics and Political Science",
+   "date_start": "2026-11-05",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "url": "https://www.lse.ac.uk/global-school-of-sustainability/events-gsos/the-economics-of-transitioning-away-from-fossil-fuels",
+   "summary_ja": "化石燃料からの移行を経済学の観点から議論する公開イベント。Robin Burgess、André Corrêa do Lago、Rachel Kyte、José Scheinkman が登壇予定。",
+   "summary_en": "A public discussion of the economics of moving away from fossil fuels, with Robin Burgess, André Corrêa do Lago, Rachel Kyte and José Scheinkman.",
+   "summary_de": "Öffentliche Diskussion zur Ökonomie des Ausstiegs aus fossilen Brennstoffen mit Robin Burgess, André Corrêa do Lago, Rachel Kyte und José Scheinkman.",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Economics of Fossil Fuel Transition",
+   "importance": 2,
+   "source": "LSE – Public events (Search)",
+   "id": "7997aedc5501d699",
+   "first_seen": "2026-11-03",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": null,
+   "speakers": [
+    {
+     "name": "Emilio Zaratiegui",
+     "org": "BoE",
+     "role": null
+    }
+   ],
+   "title": "Macro/International Economics Seminar - Emilio Zaratiegui (Bank of England)",
+   "title_ja": "マクロ・国際経済セミナー(Bank of England)",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2026-11-26",
+   "themes": [
+    "central_bank",
+    "real_economy"
+   ],
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c79ffae2c101a00f1331012608",
+   "summary_ja": "ウォリック大学経済学部のセミナー(演題は未定)。Bank of England の Emilio Zaratiegui 氏が講演。",
+   "summary_en": "Seminar at the University of Warwick Department of Economics with Emilio Zaratiegui of the Bank of England (title to be advised).",
+   "summary_de": "Seminar am Fachbereich Volkswirtschaft der Universität Warwick (Thema noch offen).",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Macroeconomic Dynamics",
+   "importance": 0,
+   "source": "Warwick – Department of Economics – Events",
+   "id": "983973d803cbbd9a",
+   "first_seen": "2026-11-03",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": null,
+   "speakers": [],
+   "title": "Econometrics Seminar - Juan Carlos (UCarlos III de Madrid)",
+   "title_ja": "計量経済学セミナー(UC3M)",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2026-11-30",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c5a0a4cf6001a0aa328df66ad4",
+   "summary_ja": "ウォリック大学経済学部のセミナー(演題は未定)。UCarlos III de Madrid からの講演者。",
+   "summary_en": "Seminar at the University of Warwick Department of Economics with a guest speaker from UCarlos III de Madrid (title to be advised).",
+   "summary_de": "Seminar am Fachbereich Volkswirtschaft der Universität Warwick (Thema noch offen).",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Econometric Methods",
+   "importance": 0,
+   "source": "Warwick – Department of Economics – Events",
+   "id": "c238aa8da9a4dba2",
+   "first_seen": "2026-11-03",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "venue": null,
+   "format": null,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "speakers": [],
+   "title": "When climate science enters the courtroom",
+   "title_ja": "気候科学が法廷に入るとき",
+   "organizer": "Grantham Research Institute on Climate Change and the Environment, LSE",
+   "date_start": "2026-11-03",
+   "themes": [
+    "climate_esg"
+   ],
+   "url": "https://www.lse.ac.uk/granthaminstitute/events/when-climate-science-enters-the-courtroom/",
+   "summary_ja": "ペルーの農民がドイツのエネルギー企業に氷河融解の責任を問えるかを題材に、気候科学が法廷でどう扱われるかを論じるLSEの研究発表。",
+   "summary_en": "An LSE research showcase on climate litigation, using the case of a farmer in the Peruvian Andes who asks whether a German energy company can be held responsible for glacier melt.",
+   "summary_de": "Eine Forschungspräsentation der LSE zur Klimaklage: Kann ein Bauer in den peruanischen Anden einen deutschen Energiekonzern für das Abschmelzen eines Gletschers verantwortlich machen?",
+   "country": "GB",
+   "organizer_short": "Grantham",
+   "title_short": "Climate Science in Court",
+   "importance": 1,
+   "source": "Grantham Research Institute (LSE) – Events",
+   "id": "d06ca07244888836",
+   "first_seen": "2026-11-03",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録・費用不明",
+   "registration_note_en": "Registration required; fee not stated",
+   "registration_note_de": "Anmeldung erforderlich; Gebühr nicht angegeben",
+   "registration_url": null,
+   "language": "en",
+   "speakers": [],
+   "title": "What markets won't fix: do payments need public intervention?",
+   "title_ja": "市場が解決できないこと:決済に公的介入は必要か",
+   "organizer": "Digital Monetary Institute (OMFIF)",
+   "date_start": "2026-12-01",
+   "themes": [
+    "central_bank"
+   ],
+   "url": "https://www.omfif.org/meetings/what-markets-wont-fix-do-payments-need-public-intervention/",
+   "summary_ja": "決済システムが進化するなか、中央銀行が効率性と耐性の強化を図る中で公的介入が必要かを問うOMFIFのライブ配信。",
+   "summary_en": "An OMFIF live broadcast asking whether payments systems need public intervention as central banks seek to improve efficiency and resilience.",
+   "summary_de": "Live-Übertragung von OMFIF zur Frage, ob Zahlungssysteme staatliche Eingriffe benötigen.",
+   "organizer_short": "OMFIF",
+   "title_short": "Public Intervention in Payments",
+   "importance": 1,
+   "source": "OMFIF – Events/Meetings",
+   "country": null,
+   "id": "fff479e760a49afd",
+   "first_seen": "2026-11-03",
    "notables": [],
    "notable_tier": null
   }
