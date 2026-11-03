@@ -23,9 +23,9 @@
  "https://digifin.berlin/de": {
   "event_id": "fe3dbb95cd30c299",
   "http": 200,
-  "last": "2026-10-29",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://en.wikipedia.org/wiki/ukraine_recovery_conference": {
   "event_id": "01c5edb264f39497",
@@ -160,12 +160,19 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.afme.eu/events/events-calendar/afme-s-european-aml-conference-2026": {
+  "event_id": "d58b2e419fb80157",
+  "http": 200,
+  "last": "2026-11-03",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.appliedai-institute.de/en/workshops-trainings/ai-act-engineering-von-den-anforderungen-zum-code-auf-englisch-2": {
   "event_id": "b06ba005eb43218c",
   "http": 200,
-  "last": "2026-10-28",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.appliedai-institute.de/en/workshops-trainings/ai-act-fuer-einsteiger-was-wie-und-warum-wird-reguliert-2": {
   "event_id": "87b4469ddd10e6bc",
@@ -319,6 +326,13 @@
   "http": 403,
   "last": "2026-10-29",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.bis.org/events/20261117-call-papers-workshop-banking-and-banking-regulation": {
+  "event_id": "130387f7450a915b",
+  "http": 200,
+  "last": "2026-11-03",
+  "result": "ok",
   "tries": 1
  },
  "https://www.bis.org/events/cfp_261210-bis.htm": {
@@ -506,9 +520,9 @@
  "https://www.eba.europa.eu/publications-and-media/events/public-hearing-implementing-technical-standards-joint-decisions-institution-specific-prudential": {
   "event_id": "b1499b7183c7e19b",
   "http": 200,
-  "last": "2026-10-26",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.ecb.europa.eu/press/conferences/html/20261029_bdi_ecb_conference.en.html": {
   "event_id": "1d133245fa92f441",
@@ -574,11 +588,11 @@
   "tries": 2
  },
  "https://www.eu-japan.eu/eubusinessinjapan/events": {
-  "event_id": "5ee3e7105938306f",
+  "event_id": "61787e2a0795b276",
   "http": 200,
-  "last": "2026-10-31",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.eventbrite.at/e/vorarlberger-wirtschaftsforum-2026-tickets-1978880309275": {
   "event_id": "7807908f69a0ca86",
@@ -785,10 +799,10 @@
  },
  "https://www.ihk.de/blueprint/servlet/resource/blob/7206930/8c038038c9b08498dcf0249f7eaddab6/aussenwirtschaft-aktuell-oktober-2026-data.pdf": {
   "event_id": "a315499ca9c26239",
-  "http": 200,
-  "last": "2026-10-29",
-  "result": "ok",
-  "tries": 1
+  "http": 404,
+  "last": "2026-11-03",
+  "result": "FAIL-HTTP",
+  "tries": 2
  },
  "https://www.ihk.de/schwaben/produktmarken/international/kommende-veranstaltungen/deutsch-ukrainisches-wirtschaftsforum-20-11-26-7122182": {
   "event_id": "dfcfc41e69bc7fa1",
@@ -986,6 +1000,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.suerf.org/events/tokenized-finance-and-the-perimeter-of-central-banking-how-is-tokenization-reshaping-financial-markets-and-the-future-role-of-central-banks": {
+  "event_id": "67f84bc0bcd4bc16",
+  "http": 200,
+  "last": "2026-11-03",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.szgerzensee.ch/programs/conferences-events/detail/fintech-digital-currency": {
   "event_id": "37b05fc670a1b268",
   "http": 200,
@@ -1031,9 +1052,9 @@
  "https://www.unepfi.org/events/turning-sustainability-disclosures-into-risk-insights-new-sustainability-risk-management-tools-and-research": {
   "event_id": "307b72b626bc033f",
   "http": 200,
-  "last": "2026-10-26",
+  "last": "2026-11-03",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/industries/banking/the-role-of-risk-in-responsible-banking": {
   "event_id": "cbbed177e010134d",
