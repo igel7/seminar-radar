@@ -19,6 +19,7 @@ curl/WebFetch では取得できない(ボット対策・JSでイベント一覧
     0  … 成功
     1  … ページ取得・レンダリングに失敗(Cloudflare等のブロックを含む)
     2  … playwright が未インストール
+    3  … Chromium のサンドボックスを有効にできない(降格不可など。描画を諦める)
 
 セキュリティ上の前提(SECURITY_NOTES.md 2):
     巡回先は信頼できない HTML なので、
@@ -27,10 +28,9 @@ curl/WebFetch では取得できない(ボット対策・JSでイベント一覧
       2. Chromium のサンドボックスを有効にする。Playwright は既定で無効(--no-sandbox)にし、
          root では Chromium 自身がサンドボックス起動を拒否するため、root で動く環境では
          専用の非 root ユーザーに降格して自分自身を再実行する。
-    どちらも出来ない環境では従来どおり動かすが、stderr に「sandbox=off」と出す
-    (fetch_all.py がその旨を notes に載せる)。
-    検証用の無効化: SR_NO_SANDBOX=1(降格・サンドボックスをしない)、
-    SR_NO_BROWSER_DOWNLOAD=1(ブラウザをダウンロードしない)。
+    サンドボックスを有効にできない環境(root のまま降格できない等)では、保護なしで
+    描画せず終了コード 3 で諦める(fetch_all.py は通常取得に戻し、その旨を notes に載せる)。
+    検証用: SR_NO_BROWSER_DOWNLOAD=1(ブラウザをダウンロードしない)。
 """
 
 import argparse
@@ -286,9 +286,8 @@ def _ensure_user(name):
 
 def reexec_unprivileged(argv):
     """root で動いているなら、ブラウザを用意した上で専用ユーザーに降格して自分を再実行する。
-    子の終了コードを返す。準備のどこかで失敗したら None(呼び出し側は従来どおり root・
-    サンドボックス無しで動く)。"""
-    if os.geteuid() != 0 or os.environ.get(ENV_CHILD) or os.environ.get("SR_NO_SANDBOX"):
+    子の終了コードを返す。準備のどこかで失敗したら None(呼び出し側は描画を諦める)。"""
+    if os.geteuid() != 0 or os.environ.get(ENV_CHILD):
         return None
     if not shutil.which("setpriv"):
         log("setpriv が無いため降格できない")
@@ -368,8 +367,8 @@ class LaunchFailed(Exception):
     """ブラウザ自体が起動できない(ページ側の失敗と区別する)。"""
 
 
-def launch_browser(p, proxy_url, sandbox):
-    kwargs = {"headless": True, "chromium_sandbox": sandbox}
+def launch_browser(p, proxy_url):
+    kwargs = {"headless": True, "chromium_sandbox": True}
     if proxy_url:
         kwargs["proxy"] = {"server": proxy_url}
     last = None
@@ -384,16 +383,15 @@ def launch_browser(p, proxy_url, sandbox):
             return p.chromium.launch(executable_path=exe, **kwargs)
         except Exception as e:
             last = e
-            log(f"起動に失敗(sandbox={'on' if sandbox else 'off'}, exe={exe or 'playwright既定'}): "
+            log(f"起動に失敗(exe={exe or 'playwright既定'}): "
                 f"{str(e).splitlines()[0][:160]}")
     raise LaunchFailed(str(last) if last else "起動できるブラウザが無い")
 
 
-def try_fetch(p, args, proxy_url, ignore_tls, sandbox):
-    browser = launch_browser(p, proxy_url, sandbox)
+def try_fetch(p, args, proxy_url, ignore_tls):
+    browser = launch_browser(p, proxy_url)
     try:
-        # この行は fetch_all.py が読む(「sandbox=off」なら notes に警告を載せる)
-        log(f"Chromium {browser.version} sandbox={'on' if sandbox else 'off'} uid={os.geteuid()}")
+        log(f"Chromium {browser.version} sandbox=on uid={os.geteuid()}")
         context = browser.new_context(user_agent=DEFAULT_UA,
                                       ignore_https_errors=ignore_tls)
         page = context.new_page()
@@ -413,14 +411,11 @@ def main():
         sys.exit(rc)
 
     args = parse_args()
+    if os.geteuid() == 0:
+        # root では Chromium がサンドボックス起動を拒否する。保護なしで描画はしない。
+        log("サンドボックスを有効にできない(root のまま降格できなかった)ため Chromium 描画を諦める")
+        sys.exit(3)
     ensure_proxy_ca_in_nss()
-
-    # サンドボックス: 非 root なら有効にする。root(降格できなかった場合)では Chromium が
-    # サンドボックス起動を拒否するので最初から無効。
-    sandbox_modes = [True, False] if (os.geteuid() != 0 and not os.environ.get("SR_NO_SANDBOX")) \
-        else [False]
-    if sandbox_modes == [False]:
-        log("警告: サンドボックス無しで描画する(root のまま、または SR_NO_SANDBOX)")
 
     # Chromiumは環境変数のプロキシ設定を確実には拾わないため明示的に渡す。
     # それでも環境によりプロキシとの相性問題(TLS再終端の信用不可、透過
@@ -438,28 +433,18 @@ def main():
     content = None
     errors = []
     with sync_playwright() as p:
-        for sandbox in sandbox_modes:
-            if not sandbox and len(sandbox_modes) > 1:
-                log("警告: サンドボックス有効ではブラウザを起動できなかったため、無効にして再試行する")
-            launch_failed = False
-            for purl, ignore_tls in attempts:
-                try:
-                    content = try_fetch(p, args, purl, ignore_tls, sandbox)
-                    break
-                except LaunchFailed as e:
-                    # 起動自体の失敗だけがサンドボックス無しへの切替理由。ページ側の失敗
-                    # (タイムアウト・ブロック等)で無効化すると、怪しいページほど
-                    # 保護無しで描画することになるので切り替えない。
-                    launch_failed = True
-                    errors.append(f"[sandbox={'on' if sandbox else 'off'}] 起動失敗: {e}")
-                    break
-                except Exception as e:
-                    errors.append(
-                        f"[sandbox={'on' if sandbox else 'off'}, "
-                        f"proxy={'明示' if purl else 'なし'}, "
-                        f"TLS検証={'なし' if ignore_tls else 'あり'}] {e}")
-            if content is not None or not launch_failed:
+        for purl, ignore_tls in attempts:
+            try:
+                content = try_fetch(p, args, purl, ignore_tls)
                 break
+            except LaunchFailed as e:
+                # サンドボックス有効で起動できないなら、無効にして試さず諦める
+                log(f"サンドボックス有効でブラウザを起動できないため Chromium 描画を諦める: {e}")
+                sys.exit(3)
+            except Exception as e:
+                errors.append(
+                    f"[proxy={'明示' if purl else 'なし'}, "
+                    f"TLS検証={'なし' if ignore_tls else 'あり'}] {e}")
 
     if content is None:
         print("ページの取得に失敗しました:\n  " + "\n  ".join(errors),

@@ -20,9 +20,10 @@
 - `scripts/fetch_page.py` は描画に使うブラウザを毎回 **Chrome for Testing の最新安定版**に揃え
   (Playwright 同梱の版は安定版より古い開発スナップショットなので使わない)、root で動く環境では
   専用の非 root ユーザーに降格して **Chromium のサンドボックスを有効にする**(Playwright の既定は
-  無効)。どちらも出来ない環境でだけ従来どおり動き、その場合は fetch_all の出力に
-  「サンドボックス無しで描画した」と出る(所有者に報告する)。ブラウザを手で古い版に固定しない、
-  サンドボックスを外さない(`SR_NO_BROWSER_DOWNLOAD=1`・`SR_NO_SANDBOX=1` は検証用)。
+  無効)。**サンドボックスを有効にできない環境では保護なしで描画せず、Chromium 描画を諦める**
+  (fetch_all は通常取得に戻り、出力に「サンドボックスを有効にできないため描画を諦めた」と出る。
+  所有者に報告する)。ブラウザを手で古い版に固定しない、サンドボックス無しで描画する経路を
+  足さない(`SR_NO_BROWSER_DOWNLOAD=1` は検証用)。
 - PDF の取り込みは `scripts/fetch_details.py` の上限(サイズ・頁数・件数)を守る。上限を外さない。
 - `scripts/template.html` を変更するときは、巡回先由来の文字列は必ず `esc()` を通し、リンクは
   `safeUrl()` を通したものだけを `href` に入れる。`<script>` 内に埋め込む JSON は `radar_lib.script_json`

@@ -232,8 +232,8 @@ def render_with_chromium(url, notes=None):
     (headless Chromium)で描画後のHTMLを取り、(200, url, bytes, "utf-8") の形で返す。
     失敗(環境でChromiumが使えない・タイムアウト・空応答)なら None(呼び出し側が通常取得に戻す)。
     JS描画の一覧(Bank of England の Events 等)を日次で読むための手段。トークンは使わない。
-    fetch_page.py がサンドボックス無しで描画した場合は notes(渡されていれば)に警告を載せる
-    (SECURITY_NOTES.md 2: 所有者に報告する事項)。"""
+    fetch_page.py が Chromium のサンドボックスを有効にできず描画を諦めた場合(終了コード 3)は
+    notes(渡されていれば)にその旨を載せる(SECURITY_NOTES.md 2: 所有者に報告する事項)。"""
     import subprocess
     try:
         r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetch_page.py"), url,
@@ -241,8 +241,9 @@ def render_with_chromium(url, notes=None):
                            capture_output=True, timeout=150)
     except (subprocess.TimeoutExpired, OSError):
         return None
-    if notes is not None and b"sandbox=off" in (r.stderr or b""):
-        notes.append(f"警告: Chromium をサンドボックス無しで描画した(所有者に報告): {url}")
+    if notes is not None and r.returncode == 3:
+        notes.append("警告: Chromium のサンドボックスを有効にできないため描画を諦めた"
+                     f"(所有者に報告): {url}")
     out = r.stdout or b""
     if r.returncode != 0 or len(out) < 200:
         return None
