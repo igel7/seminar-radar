@@ -785,7 +785,7 @@ DTSTART;VALUE=DATE:20270310
 DTEND;VALUE=DATE:20270312
 SUMMARY:Climate and energy summit 2027
 LOCATION:London
-DESCRIPTION:チャタムハウスの年次サミット。気候変動と地政学的ショックが激化するなか、各界のリーダーが集まり、強靱なエネルギー転換への道筋を議論する(2日間・対面+オンライン)。 / 主催: Chatham House – The Royal Institute of International Affairs / https://www.chathamhouse.org/events/upcoming
+DESCRIPTION:ホルムズ海峡の混乱後のエネルギー安全保障、重要鉱物、電力コスト、AIの電力需要、米中のエネルギー政策、重工業の脱炭素投資などを扱うチャタムハウスの年次2日間サミット。ハイブリッド開催。 / 主催: Chatham House / https://www.chathamhouse.org/events/all/conference/climate-and-energy-summit-2027
 END:VEVENT
 BEGIN:VEVENT
 UID:9812230a5de11f12@seminar-radar
@@ -1420,6 +1420,14 @@ LOCATION:
 DESCRIPTION:11月5日のMPC会合後に開催されるオンライン経済アップデート。IoDのチーフエコノミストらが登壇する。 / 主催: Institute of Directors / https://www.iod.com/events/economic_update_with_the_bank_of_england75047425/
 END:VEVENT
 BEGIN:VEVENT
+UID:45891399703df0a5@seminar-radar
+DTSTART;VALUE=DATE:20270224
+DTEND;VALUE=DATE:20270225
+SUMMARY:Chatham House Debates: The world is on the verge of a global financial crisis
+LOCATION:London
+DESCRIPTION:「世界は金融危機の瀬戸際にある」という動議をめぐり、チャタムハウス・ルールの下で賛否を戦わせる討論会。会場のみ。 / 主催: Chatham House / https://www.chathamhouse.org/events/upcoming?page=1
+END:VEVENT
+BEGIN:VEVENT
 UID:5441cf71f16951f4@seminar-radar
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261114
@@ -1452,6 +1460,14 @@ LOCATION:London
 DESCRIPTION:LSEの公開イベント。Jacqueline Novogratz氏を迎え、フィランソロピーとインパクト経済を論じる。 / 主催: LSE / https://www.lse.ac.uk/events/philanthropy-impact-economy / 登壇: Jacqueline Novogratz
 END:VEVENT
 BEGIN:VEVENT
+UID:aa6c8d85ab37d8d2@seminar-radar
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270128
+SUMMARY:The Road to 2028: What will be America’s global role?
+LOCATION:London
+DESCRIPTION:2028年米大統領選を見据え、米国外交の将来と世界における役割を検討するチャタムハウスのシリーズ「The Road to 2028」のパネル討論。会場とオンラインのハイブリッド開催。 / 主催: Chatham House / https://www.chathamhouse.org/events/upcoming?page=1
+END:VEVENT
+BEGIN:VEVENT
 UID:d7dfd9a58146b385@seminar-radar
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
@@ -1460,11 +1476,27 @@ LOCATION:
 DESCRIPTION:就学・就労・職業訓練のいずれにも属さない若者(NEET)の問題を取り上げ、経済・雇用主・公共政策への影響を論じる。 / 主催: National Institute of Economic and Social Research / https://niesr.ac.uk/event/neet-challenge-no-neat-answers
 END:VEVENT
 BEGIN:VEVENT
+UID:e71db4fe917d4e34@seminar-radar
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Authorised Payment Fraud: How to Get Started
+LOCATION:
+DESCRIPTION:RUSI 金融安全保障センターの新しいツールキットを基に、各国が詐欺への国家的対応をどこから構築し始めるべきかを実務的に議論するウェビナー。 / 主催: RUSI Centre for Finance and Security / https://my.rusi.org/events.html
+END:VEVENT
+BEGIN:VEVENT
 UID:f095c012f6b31839@seminar-radar
 DTSTART;VALUE=DATE:20270317
 DTEND;VALUE=DATE:20270319
 SUMMARY:Global Trade 2027
 LOCATION:London
 DESCRIPTION:チャタムハウスの年次世界貿易会議。国際経済ガバナンスとWTO改革、G20議長国としての英国の貿易政策、中国の貿易黒字、米国の政策が世界貿易に与える影響などを2日間で議論する。ハイブリッド開催。 / 主催: Chatham House / https://www.chathamhouse.org/events/all/conference/global-trade-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:f248124a05f3af8b@seminar-radar
+DTSTART;VALUE=DATE:20270203
+DTEND;VALUE=DATE:20270204
+SUMMARY:The Middle East and North Africa: Shaping the next decade
+LOCATION:London
+DESCRIPTION:政策立案者・研究者・論客が集まり、今後10年の中東・北アフリカを形づくる要因を検討する1日会議。会場とオンラインのハイブリッド開催。 / 主催: Chatham House / https://www.chathamhouse.org/events/upcoming?page=1
 END:VEVENT
 END:VCALENDAR
