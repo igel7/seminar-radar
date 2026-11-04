@@ -69,10 +69,12 @@
   "no_detail_pages": true
  },
  "Bank of Albania – Events": {
-  "method": "search",
-  "alt_urls": [],
-  "last_ok": "2026-10-08",
-  "note": "2026-10-08: ua-curlで/Events/を取得するとトップページへリダイレクトされ、イベント一覧が取得できなくなっている(2026-08-08時点のua-curl成功報告から仕様変更の可能性)。web検索で既知イベント(20th South-Eastern European Economic Research Workshop, 2026-11-24/25 Tirana)を再確認、新規なし。次回もまずweb検索を優先する方が確実。"
+  "method": "alt-url",
+  "alt_urls": [
+   "https://www.bankofalbania.org/rss_index.php?idstemp=CI-17857-30-1-550&k=17857&ln=1"
+  ],
+  "last_ok": "2026-11-04",
+  "note": "2026-10-08: ua-curlで/Events/を取得するとトップページへリダイレクトされ、イベント一覧が取得できなくなっている(2026-08-08時点のua-curl成功報告から仕様変更の可能性)。web検索で既知イベント(20th South-Eastern European Economic Research Workshop, 2026-11-24/25 Tirana)を再確認、新規なし。次回もまずweb検索を優先する方が確実。 2026-11-04 リトライ: /Events/ 系は全てホームへリダイレクト、sitemap 404。フッターの RSS(アルバニア語プレスリリース、約20件)が唯一読める入口で、会議告知(例: 第8回地域カードスキーム会議 11/4-5)はここに出る。alt_urls に RSS を登録(fetch_all が日次で読む。XML のタイトル+リンクが本文化される)。個別告知は ?crd=NNNNN&ln=1 → /Shtypi/Njoftimet_per_shtyp/ へリダイレクト。"
  },
  "NBU – National Bank of Ukraine – Research Events": {
   "method": "ua-curl",
@@ -120,7 +122,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-11-04",
-  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-16: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず。 2026-10-17: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず(EPC Community Conference Luxembourgは対象外地域かつ開催済み)。 2026-11-04: 2026-11-04: search found no dated webinar."
+  "note": "2026-10-03: 直接404継続。web検索でFRIDA Rulebookウェビナー(既知)を再確認、新規なし。 2026-10-11: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-15: web検索で日程付きの新規ウェビナー確認できず(直接404継続)。 2026-10-16: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず。 2026-10-17: 直接404継続。web検索でも日程付きの新規ウェビナー確認できず(EPC Community Conference Luxembourgは対象外地域かつ開催済み)。 2026-11-04: 2026-11-04: search found no dated webinar. 2026-11-04 リトライ: 全パス Cloudflare 403 で新一覧URL未確認。検索で今後のウェビナーなし。"
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "method": "search",
@@ -149,7 +151,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-08-17",
-  "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い 2026-10-22 調査: 一覧は独自ウィジェットが /o/hnb-content/v1/search(GET、structureId=3820166、assetCategoryIds 等)を呼んで描画するが、実ブラウザ(Playwright)でもこの API がトップページの HTML を 404 で返し、一覧は空のまま。Chromium 描画(--wait 15000)も本文 1,136 字で無意味。Liferay の asset publisher ページ送り(cur=1..5)はページネータだけでエントリ本体を含まない。headless-delivery API は 403。sitemap.xml は空。サイト側の不具合と判断し、描画・待ち時間の調整では解決しない。復旧確認は月1回程度 API を叩けばよい。日次は従来どおり検索補完。 2026-10-22: discovery_topics に INOMICS 経由(site:inomics.com Dubrovnik Economic Conference / Young Economists' Seminar)の検索観点を追加。"
+  "note": "Liferayの完全JS描画で一覧取得不可(内部API /o/hnb-content/v1/search は404)。旗艦のDubrovnik Economic Conference(毎年5月末)・Young Economists Seminarをweb検索で確認する。該当0件が正常な時期も多い 2026-10-22 調査: 一覧は独自ウィジェットが /o/hnb-content/v1/search(GET、structureId=3820166、assetCategoryIds 等)を呼んで描画するが、実ブラウザ(Playwright)でもこの API がトップページの HTML を 404 で返し、一覧は空のまま。Chromium 描画(--wait 15000)も本文 1,136 字で無意味。Liferay の asset publisher ページ送り(cur=1..5)はページネータだけでエントリ本体を含まない。headless-delivery API は 403。sitemap.xml は空。サイト側の不具合と判断し、描画・待ち時間の調整では解決しない。復旧確認は月1回程度 API を叩けばよい。日次は従来どおり検索補完。 2026-10-22: discovery_topics に INOMICS 経由(site:inomics.com Dubrovnik Economic Conference / Young Economists' Seminar)の検索観点を追加。 2026-11-04 リトライ: 検索API は 404 から空応答(HTTP 000)に変化、一覧は依然空殻、sitemap 空。2027年日程は検索でも未公表(Dubrovnik 2027・YES 2027 の CfP 未掲載)。"
  },
  "Jacques Delors Centre (Hertie School, Berlin) – Events": {
   "method": "search",
@@ -170,7 +172,7 @@
   "method": "search",
   "alt_urls": [],
   "last_ok": "2026-11-04",
-  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-24: 2026-10-24: ua-curlでもエラーページ(本文なし)。web検索でBEARS 2026情報なし。 2026-11-04: 2026-11-04: search found no BEARS 2026 date."
+  "note": "2026-10-03: モバイル版URLもブロック。web検索でも10月分の開催告知確認できず。 2026-10-11: 本文薄い状態継続、web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-16: 本文薄い状態継続。web検索でも2026年BEARSセミナー開催情報確認できず。 2026-10-24: 2026-10-24: ua-curlでもエラーページ(本文なし)。web検索でBEARS 2026情報なし。 2026-11-04: 2026-11-04: search found no BEARS 2026 date. 2026-11-04 リトライ: 実パスは 24076-seminarul-de-analiza-si-cercetare-economica(BEARS)・2671-evenimente・2675-calendar だが全て WAF エラーページ/JS空殻。検索でも日程なし。"
  },
  "EBA – European Banking Authority – Events": {
   "method": "search",
@@ -193,7 +195,7 @@
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm"
   ],
   "last_ok": "2026-11-04",
-  "note": "2026-10-08: WebFetchで同alt URLを再取得し正規の本文(プレスリリース一覧、2026年1月以降89件)を確認。セミナー・会議の告知は依然0件(通常運用)。 2026-10-11: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-15: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-17: alt URL(bnb.bg)をWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-11-04: 2026-11-04: alt URL WebFetch OK, 0 seminar announcements."
+  "note": "2026-10-08: WebFetchで同alt URLを再取得し正規の本文(プレスリリース一覧、2026年1月以降89件)を確認。セミナー・会議の告知は依然0件(通常運用)。 2026-10-11: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-15: alt URLをWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-10-17: alt URL(bnb.bg)をWebFetchで再取得、プレスリリース一覧(セミナー告知0件、通常運用)を再確認。 2026-11-04: 2026-11-04: alt URL WebFetch OK, 0 seminar announcements. 2026-11-04 リトライ: 元URL POEvents は2010年で止まった旧一覧(11件)。POCalendar は統計公表日のみ。会議告知の入口は見当たらず。"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
   "method": "alt-url",
@@ -307,27 +309,28 @@
  },
  "IFS – Institute for Fiscal Studies – Events": {
   "method": "search",
-  "note": "2026-10-20 再挑戦: sitemap/RSS/wp-json/サブページ/Chromium/WebFetch すべて Cloudflare 403。検索で見つかる今後の案件は有料研修コースのみ。"
+  "note": "2026-10-20 再挑戦: sitemap/RSS/wp-json/サブページ/Chromium/WebFetch すべて Cloudflare 403。検索で見つかる今後の案件は有料研修コースのみ。 2026-11-04 リトライ: 403継続。検索で2027年は学生向け Public Economics Day(1/8)のみ。"
  },
  "Chatham House – Events": {
   "method": "search",
-  "note": "2026-10-22: all direct routes Cloudflare-blocked; searching the event title (e.g. 'Chatham House Iraq Initiative Conference 2026 date') returns the official event page snippet with date/time - title-specific queries work better than site: queries."
+  "note": "2026-10-22: all direct routes Cloudflare-blocked; searching the event title (e.g. 'Chatham House Iraq Initiative Conference 2026 date') returns the official event page snippet with date/time - title-specific queries work better than site: queries. 2026-11-04 リトライ: 直接403継続。'Chatham House <event name> 2027' 型の検索で公式ページのスニペット(日付・時刻・hybrid)が取れる。1月2件・3月2件を回収。",
+  "last_ok": "2026-11-04"
  },
  "IISS – International Institute for Strategic Studies – Events": {
   "method": "search",
-  "note": "2026-10-20 再挑戦: 一覧・sitemap・RSS・詳細ページとも Cloudflare。検索では域外(Manama・Prague)のみ。"
+  "note": "2026-10-20 再挑戦: 一覧・sitemap・RSS・詳細ページとも Cloudflare。検索では域外(Manama・Prague)のみ。 2026-11-04 リトライ: 403継続。検索で2027年日程なし。"
  },
  "Policy Exchange – Events": {
   "method": "search",
-  "note": "2026-10-20 再挑戦: HTTPS は HTTP/2・1.1 とも接続断、HTTP は sgcaptcha のボット認証、Chromium も不可。検索は過去イベントのみ。"
+  "note": "2026-10-20 再挑戦: HTTPS は HTTP/2・1.1 とも接続断、HTTP は sgcaptcha のボット認証、Chromium も不可。検索は過去イベントのみ。 2026-11-04 リトライ: 接続断継続。検索で2027年なし。"
  },
  "Oxford – Saïd Business School – Events": {
   "method": "search",
-  "note": "2026-10-20 再挑戦: sitemap/RSS/Chromium すべて Cloudflare。OxTalks 後継の events.ox.ac.uk は CloudFront 403。"
+  "note": "2026-10-20 再挑戦: sitemap/RSS/Chromium すべて Cloudflare。OxTalks 後継の events.ox.ac.uk は CloudFront 403。 2026-11-04 リトライ: 403継続。検索で2027年1-2月なし。"
  },
  "Bayes Business School – Events": {
   "method": "search",
-  "note": "2026-10-20 再挑戦: Cloudflare(Chromium も不可)。実際の一覧は /news-and-events/events。"
+  "note": "2026-10-20 再挑戦: Cloudflare(Chromium も不可)。実際の一覧は /news-and-events/events。 2026-11-04 リトライ: 403継続。検索で2027年なし。"
  },
  "Bank of England – Events": {
   "render": "chromium",
@@ -370,5 +373,9 @@
  "CESifo (München) – Veranstaltungen": {
   "no_detail_pages": true,
   "note": "2026-10-31: Labor Economics の会議は一覧に個別ページへのリンクが無い(一覧のみ)。Public Economics は個別ページあり"
+ },
+ "RUSI – Royal United Services Institute – Events": {
+  "method": "search",
+  "note": "2026-11-04 リトライ: 403継続。検索で2027年日程なし。"
  }
 }
