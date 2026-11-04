@@ -296,9 +296,9 @@
  "https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026": {
   "event_id": "fc50007b778ed08a",
   "http": 403,
-  "last": "2026-10-21",
+  "last": "2026-11-04",
   "result": "FAIL-BLOCKED",
-  "tries": 1
+  "tries": 2
  },
  "https://www.chathamhouse.org/events/upcoming": {
   "event_id": "f4147adba9442f91",
@@ -468,6 +468,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/what-markets-wont-fix-do-payments-need-public-intervention": {
+  "event_id": "fff479e760a49afd",
+  "http": 200,
+  "last": "2026-11-04",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.oxfordmartin.ox.ac.uk/events/china-us": {
   "event_id": "59a469f792916f26",
   "http": 200,
@@ -548,9 +555,9 @@
  "https://www.ukfinance.org.uk/events-training/ai-native-software-delivery-mission-critical-banking-platforms": {
   "event_id": "3fa2bab0f0c98ae9",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-04",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.ukfinance.org.uk/events-training/digital-innovation-summit-2027": {
   "event_id": "61ec174eb0d8c70a",
