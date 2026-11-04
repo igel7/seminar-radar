@@ -61,7 +61,7 @@
   "ok": false,
   "found": 0,
   "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)",
-  "note": "本日も403/NET-ERR。discovery の site: 検索でも今後のイベント0件"
+  "note": "2026-11-04 リトライ: 直接・個別ページとも403。検索で見つかった2027年案件は学生向け Public Economics Day(1/8)のみで、対象外(学生向け・採用セッション含む)として除外。tried: fetch, ua-curl, hints, search(4クエリ)"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
@@ -94,17 +94,17 @@
  {
   "name": "Chatham House – Events",
   "url": "https://www.chathamhouse.org/events",
-  "ok": false,
-  "found": 0,
-  "note": "本日も403/NET-ERR。discovery の site: 検索でも今後のイベント0件",
-  "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)"
+  "ok": true,
+  "found": 5,
+  "note": "2026-11-04 リトライ: 1月2件(所長年次講演 1/12、Ten conflicts to watch 1/14)・3月2件(Security and Defence 3/3-4、Global Trade 3/17-18)を新規収載。Climate and Energy Summit 3/10-11 は既知。tried: fetch, ua-curl, hints, search",
+  "error": "リトライで回復: web検索(タイトル指定クエリ。直接取得は依然403)"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": false,
   "found": 0,
-  "note": "2026-11-03 抽出済み",
+  "note": "2026-11-04 リトライ: 直接403。検索(4クエリ)で2027年の日程は索引に無し。tried: fetch, ua-curl, hints, search",
   "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)"
  },
  {
@@ -113,7 +113,7 @@
   "ok": false,
   "found": 0,
   "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)",
-  "note": "本日も403/NET-ERR。discovery の site: 検索でも今後のイベント0件"
+  "note": "2026-11-04 リトライ: 直接403。検索(4クエリ)で iiss.org/events の2027年ページは索引に無し(Manama・Prague は域外)。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "Policy Exchange – Events",
@@ -121,7 +121,7 @@
   "ok": false,
   "found": 0,
   "error": "NET-ERR(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)",
-  "note": "本日も403/NET-ERR。discovery の site: 検索でも今後のイベント0件"
+  "note": "2026-11-04 リトライ: 接続断継続。検索(3クエリ)で2027年イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
@@ -178,7 +178,7 @@
   "ok": false,
   "found": 0,
   "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)",
-  "note": "本日も403/NET-ERR。discovery の site: 検索でも今後のイベント0件"
+  "note": "2026-11-04 リトライ: 直接403。検索(3クエリ)で2027年1-2月の公開イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "Oxford Martin School – Events",
@@ -235,7 +235,7 @@
   "ok": false,
   "found": 0,
   "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索)",
-  "note": "本日も403/NET-ERR。discovery の site: 検索でも今後のイベント0件"
+  "note": "2026-11-04 リトライ: 直接403。検索(3クエリ)で2027年イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
