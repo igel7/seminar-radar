@@ -227,11 +227,13 @@ def html_to_text(raw, base_url, _allow_main_fallback=True):
     return text
 
 
-def render_with_chromium(url):
+def render_with_chromium(url, notes=None):
     """fetch_hints.json で "render": "chromium" が付いたソース用。scripts/fetch_page.py
     (headless Chromium)で描画後のHTMLを取り、(200, url, bytes, "utf-8") の形で返す。
     失敗(環境でChromiumが使えない・タイムアウト・空応答)なら None(呼び出し側が通常取得に戻す)。
-    JS描画の一覧(Bank of England の Events 等)を日次で読むための手段。トークンは使わない。"""
+    JS描画の一覧(Bank of England の Events 等)を日次で読むための手段。トークンは使わない。
+    fetch_page.py がサンドボックス無しで描画した場合は notes(渡されていれば)に警告を載せる
+    (SECURITY_NOTES.md 2: 所有者に報告する事項)。"""
     import subprocess
     try:
         r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetch_page.py"), url,
@@ -239,6 +241,8 @@ def render_with_chromium(url):
                            capture_output=True, timeout=150)
     except (subprocess.TimeoutExpired, OSError):
         return None
+    if notes is not None and b"sandbox=off" in (r.stderr or b""):
+        notes.append(f"警告: Chromium をサンドボックス無しで描画した(所有者に報告): {url}")
     out = r.stdout or b""
     if r.returncode != 0 or len(out) < 200:
         return None
@@ -333,7 +337,7 @@ def process_source(src, hints, prev_state, prev_status_ok):
     page_verdicts = []
     use_chromium = (hint.get("render") == "chromium")
     for u in candidates:
-        got = render_with_chromium(u) if use_chromium else None
+        got = render_with_chromium(u, view["notes"]) if use_chromium else None
         if got is None:
             if use_chromium:
                 view["notes"].append(f"Chromium 描画に失敗したため通常取得に戻した: {u}")
