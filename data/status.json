@@ -28,11 +28,11 @@
  },
  {
   "name": "Bank of Albania – Events",
-  "url": "",
-  "ok": false,
-  "found": 0,
-  "note": "キャッシュの final-url が https://www.bankofalbania.org/ (ホーム)へリダイレクトされており、Events 一覧ではなくホームページ本文(通貨政策の記者会見・報告書・フォトアルバム等)。収載対象の告知は確認できず0件。台帳の既存2件(SEE経済研究ワークショップ 2026-11-24〜25 Tirana)はこのキャッシュには現れず、再照合していない。",
-  "error": "キャッシュの final-url が https://www.bankofalbania.org/ (ホーム)へリダイレクトされており、Events 一覧ではなくホームページ本文(通貨政策の記者会見・報告書・フォトアルバム等)。収載対象の告知は確認できず0件。台帳の既存2件(SEE経済研究ワークショップ 2026-11-24〜25 Tirana)はこのキャッシュには現れず、再照合していない。 tried: fetch, hints"
+  "url": "https://www.bankofalbania.org/Events/",
+  "ok": true,
+  "found": 2,
+  "note": "2026-11-04 リトライ: /Events/・/Events/Events_calendar/・/Ngjarje/ は全てホームへリダイレクト、sitemap.xml は404。フッターの RSS(rss_index.php?idstemp=CI-17857-30-1-550&k=17857&ln=1)は読めてプレスリリース約20件を配信しており、会議告知はここに出る。第8回地域カードスキーム国際会議(11/4-5 Tirana)を新規収載、SEE研究ワークショップ(11/24-25)は既知で変化なし。2027年の告知はなし。tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, search",
+  "error": "リトライで回復: RSS(プレスリリース配信)経由。/Events/ は依然ホームへリダイレクト"
  },
  {
   "name": "Banka Slovenije – Events",
@@ -186,7 +186,7 @@
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "note": "一覧がJS描画で、キャッシュに個別イベントが1件も入っていない(Total events 空・85件中0件表示)。抽出0件。fetch_hints.json の記録どおり一覧は取得不可で、日次は web 検索による補完が必要。",
+  "note": "2026-11-04 リトライ: 一覧は依然JS空殻(85 entries 表示・本文なし)。検索API /o/hnb-content/v1/search は 404 から空応答(HTTP 000)に変化し未復旧。sitemap.xml は空。検索(4クエリ・クロアチア語含む)で2027年の日程・Dubrovnik 2027 CfP・YES 2027 とも未公表。tried: fetch, ua-curl, hints, alt-paths, sitemap, api, search",
   "error": "一覧がJS描画で、キャッシュに個別イベントが1件も入っていない(Total events 空・85件中0件表示)。抽出0件。fetch_hints.json の記録どおり一覧は取得不可で、日次は web 検索による補完が必要。 tried: fetch, hints"
  },
  {
@@ -463,7 +463,7 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "alt URL via WebFetch OK; press releases only (latest 2026-10-28), no seminar announcements"
+  "note": "2026-11-04 リトライ: 元URL(POEvents)は WebFetch で読めるが掲載は2004-2010年の11件で止まった古い一覧。POCalendar(統計公表日24件)・プレスリリース一覧には会議告知なし。sitemap・/Research/ は WAF。検索(3クエリ・ブルガリア語含む)でも2026-11以降の会議なし。tried: fetch, ua-curl, hints, alt-paths, sitemap, search"
  },
  {
   "name": "Bank of Lithuania – Events",
@@ -484,7 +484,7 @@
   "url": "https://www.europeanpaymentscouncil.eu/events",
   "ok": true,
   "found": 0,
-  "note": "web search: no dated webinar on/after 11-04 found"
+  "note": "2026-11-04 リトライ: /news-insights/events は404継続、/events・/news-insights・sitemap.xml・トップとも Cloudflare チャレンジ(403)で新しい一覧URLを確認できず(2b の差し替え不可)。検索(3クエリ)で今後のウェビナー告知なし(直近は 10/13 FRIDA ウェビナー、開催済み)。tried: fetch, ua-curl, hints, alt-paths, sitemap, search"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
@@ -505,7 +505,7 @@
   "url": "https://www.bnr.ro/en/24077-bears",
   "ok": true,
   "found": 0,
-  "note": "web search: no confirmed BEARS 2026 date (inferred last-Thursday only, not published)"
+  "note": "2026-11-04 リトライ: 元URL・/en/・sitemap・rss・評価ページ(24076/2671/2675/2125)とも WAF の 'This page can't be displayed'(200・730字)または JS 空殻。検索(2クエリ)でも BEARS 2026-27 の日程なし。tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, search"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
