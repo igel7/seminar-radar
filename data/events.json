@@ -2028,14 +2028,19 @@
    "registration_note_de": "Einladungen werden Ende November versandt; Interessierte wenden sich an event@zew.de.",
    "speakers": [
     {
-     "name": "Achim Wambach",
-     "org": "ZEW",
-     "role": "Präsident"
-    },
-    {
      "name": "Monika Schnitzer",
      "org": "LMU",
      "role": "Vorsitzende des Sachverständigenrates"
+    },
+    {
+     "name": "Danyal Bayaz",
+     "org": null,
+     "role": "Finanzminister Baden-Württemberg"
+    },
+    {
+     "name": "Achim Wambach",
+     "org": "ZEW",
+     "role": null
     }
    ],
    "notables": [
@@ -4384,7 +4389,7 @@
   },
   {
    "title": "CESifo-TransforM Workshop on the Economic and Societal Impacts of AI",
-   "title_ja": "AIの経済的・社会的影響に関するワークショップ",
+   "title_ja": "AIの経済・社会的影響ワークショップ",
    "organizer": "CESifo",
    "date_start": "2026-12-03",
    "date_end": "2026-12-04",
@@ -4393,26 +4398,25 @@
    "venue": "CESifo, Poschingerstr. 5",
    "format": "onsite",
    "themes": [
-    "ai",
-    "real_economy"
+    "ai"
    ],
    "fee": "free",
    "open_to_public": false,
    "registration_note": "招待制/査読制の学術ワークショップ。AIが労働市場・生産性・企業組織に与える影響を議論する。",
    "url": "https://www.ifo.de/en/cesifo/event/2026-12-03/cesifo-transform-workshop-economic-and-societal-impacts-ai-2026",
-   "summary_ja": "人工知能が経済と社会に与える影響に関するワークショップ。労働市場・生産性・規制の課題を扱う。",
+   "summary_ja": "AIの経済的・社会的影響をテーマとするCESifo-TransforMワークショップ。ミュンヘンで2日間開催される。",
    "language": "en",
    "country": "DE",
    "organizer_short": "CESifo",
-   "title_short": "AI Economic Impacts",
+   "title_short": "AI Economic and Societal Impacts",
    "importance": 2,
    "registration_url": null,
    "time_end": null,
    "source": "ifo Institut – Veranstaltungen",
    "id": "3ff2ed33a5bd304f",
    "first_seen": "2026-07-27",
-   "summary_en": "Workshop examining economic and societal impacts of AI, covering labor market, productivity, and regulatory issues.",
-   "summary_de": "Workshop zu wirtschaftlichen und gesellschaftlichen Auswirkungen von KI.",
+   "summary_en": "A CESifo-TransforM workshop on the economic and societal impacts of artificial intelligence, held over two days in Munich.",
+   "summary_de": "Ein CESifo-TransforM-Workshop zu den wirtschaftlichen und gesellschaftlichen Auswirkungen von KI, zweitägig in München.",
    "registration_note_en": "Invitation/paper-selection based academic workshop on AI's impact on labor markets, productivity and firm organization.",
    "registration_note_de": "Akademischer Workshop mit Papierauswahl zu den Auswirkungen von KI auf Arbeitsmarkt, Produktivität und Unternehmensorganisation.",
    "notables": [],
@@ -5096,35 +5100,34 @@
   },
   {
    "title": "Japanese-Bavarian Business Dialogue: Munichiwa!",
-   "title_ja": "日独バイエルン州ビジネス対話",
-   "organizer": "Deutsch-Japanischer Wirtschaftskreis",
+   "title_ja": "日本・バイエルン ビジネス対話「Munichiwa!」",
+   "organizer": "Deutsch-Japanischer Wirtschaftskreis (DJW)",
    "date_start": "2026-11-12",
    "date_end": null,
-   "time": "19:00",
+   "time": "17:30",
    "city": "Munich",
    "venue": "JAPATAPA TOSHIBAR",
    "format": "onsite",
    "themes": [
-    "japan",
-    "real_economy"
+    "japan"
    ],
    "fee": "paid",
    "open_to_public": true,
    "registration_note": "独日経済インパルス、二国間交流、ネットワーキング",
    "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202611",
-   "summary_ja": "ミュンヘンでのDJW主催の日独ビジネス対話。バイエルン州の経済と日本との連携について討論。",
-   "language": "de",
+   "summary_ja": "日本とバイエルンの企業・関係者による業界対話と交流会。ミュンヘンで開催される。",
+   "language": "en+de",
    "country": "DE",
    "organizer_short": "DJW",
-   "title_short": "Bavaria Japan Business Dialogue",
+   "title_short": "Japan-Bavaria Business Dialogue",
    "importance": 1,
    "registration_url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202611",
    "time_end": "22:00",
    "source": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
    "id": "b399f41ae46d5fd9",
    "first_seen": "2026-07-27",
-   "summary_en": "A Japanese-Bavarian business dialogue organized by DJW in Munich, fostering economic ties between Bavaria and Japan.",
-   "summary_de": "Ein deutsch-bayerischer Wirtschaftsdialog der DJW in München zur Förderung wirtschaftlicher Beziehungen.",
+   "summary_en": "A business dialogue and networking meeting between Japanese and Bavarian business communities in Munich.",
+   "summary_de": "Wirtschaftsdialog und Netzwerktreffen zwischen japanischen und bayerischen Akteuren in München.",
    "registration_note_en": "German-Japanese business impulses, bilateral exchange, networking",
    "registration_note_de": "Deutsch-japanische Wirtschaftsimpulse, bilateraler Austausch, Networking",
    "fee_amount": 60,
@@ -6318,7 +6321,7 @@
   },
   {
    "title": "CES Munich Lectures in Economics",
-   "title_ja": "ミュンヘン経済学講座",
+   "title_ja": "CESミュンヘン経済講演会",
    "organizer": "CESifo",
    "date_start": "2026-11-19",
    "date_end": null,
@@ -6338,13 +6341,13 @@
    "registration_note_de": "Keine Anmeldung erforderlich, öffentlich zugänglich",
    "url": "https://www.ifo.de/en/cesifo/event/2026-11-19/ces-munich-lectures-economics-2026",
    "registration_url": null,
-   "summary_ja": "著名な経済学者による講演シリーズ。",
-   "summary_en": "Traditional CESifo lecture series featuring prominent economists.",
-   "summary_de": "Traditionelle CESifo-Vortragsreihe mit renommierten Ökonomen.",
+   "summary_ja": "CESifoが主催する経済学の講演シリーズ「CES Munich Lectures in Economics」。ミュンヘンで開催される。",
+   "summary_en": "The CES Munich Lectures in Economics, a lecture series organized by CESifo in Munich.",
+   "summary_de": "Die CES Munich Lectures in Economics, eine vom CESifo in München veranstaltete Vortragsreihe.",
    "language": "en",
    "country": "DE",
    "organizer_short": "CESifo",
-   "title_short": "Munich Lectures Economics",
+   "title_short": "CES Munich Economics Lectures",
    "importance": 2,
    "source": "ifo Institut – Veranstaltungen",
    "id": "829aaa238bf32a96",
@@ -6561,14 +6564,19 @@
    "first_seen": "2026-07-31",
    "speakers": [
     {
-     "name": "Achim Wambach",
-     "org": "ZEW",
-     "role": "Präsident"
-    },
-    {
      "name": "Monika Schnitzer",
      "org": "LMU",
      "role": "Vorsitzende des Sachverständigenrates"
+    },
+    {
+     "name": "Danyal Bayaz",
+     "org": null,
+     "role": "Finanzminister Baden-Württemberg"
+    },
+    {
+     "name": "Achim Wambach",
+     "org": "ZEW",
+     "role": null
     }
    ],
    "notables": [
@@ -6932,7 +6940,7 @@
   },
   {
    "title": "20th Workshop on Political Economy",
-   "title_ja": "政治経済学に関する第20回ワークショップ",
+   "title_ja": "第20回政治経済学ワークショップ",
    "organizer": "CESifo",
    "date_start": "2026-11-20",
    "date_end": "2026-11-21",
@@ -6951,9 +6959,9 @@
    "registration_note_en": "Call for papers deadline 27 September 2026",
    "registration_note_de": "Einreichungsfrist für Papiere: 27. September 2026",
    "url": "https://www.ifo.de/en/cesifo/event/2026-11-20/20th-workshop-political-economy",
-   "summary_ja": "政治制度と経済政策の相互作用を研究するワークショップ。",
-   "summary_en": "Workshop examining the interaction between political institutions and economic policy.",
-   "summary_de": "Workshop zur Wechselwirkung zwischen politischen Institutionen und Wirtschaftspolitik.",
+   "summary_ja": "CESifoの政治経済学ワークショップ(第20回)。ドレスデンで2日間開催される。",
+   "summary_en": "The 20th CESifo Workshop on Political Economy, held over two days in Dresden.",
+   "summary_de": "Der 20. CESifo-Workshop zur Politischen Ökonomie, zweitägig in Dresden.",
    "language": "en",
    "country": "DE",
    "organizer_short": "CESifo",
@@ -29567,7 +29575,48 @@
    "importance": 1,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Stuart Broadley",
+     "org": "EIC",
+     "role": "CEO"
+    },
+    {
+     "name": "Heiko Staubitz",
+     "org": "GTAI",
+     "role": "Energie, Bau & Umwelttechnologien"
+    },
+    {
+     "name": "Niklas Schafer",
+     "org": "GASCADE",
+     "role": "Business Development & Sustainability"
+    },
+    {
+     "name": "Jillis Raadschelders",
+     "org": "Mott Macdonald",
+     "role": "Business Development Manager New Energy Europe"
+    },
+    {
+     "name": "Christopher Frey",
+     "org": "Sunfire",
+     "role": "Head of Regulatory Affairs"
+    },
+    {
+     "name": "Bengt Bergt",
+     "org": "Die Gas- und Wasserstoffwirtschaft",
+     "role": "Public Affairs"
+    },
+    {
+     "name": "Hazel Lince",
+     "org": "OPITO",
+     "role": "VP Strategic Partnerships"
+    },
+    {
+     "name": "Prem Mahi",
+     "org": "Mott Macdonald",
+     "role": "Technical Excellence Director – Energy"
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "4c3c2bc063938c2c",
    "first_seen": "2026-11-03",
@@ -29690,7 +29739,13 @@
    "organizer_short": "SAFE",
    "title_short": "Cross-Sectional Asset Pricing",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Paulo F. Maio",
+     "org": "Hanken",
+     "role": "Professor of Economics"
+    }
+   ],
    "source": "SAFE Frankfurt – Events",
    "id": "987126fcb0719447",
    "first_seen": "2026-11-03",
@@ -29792,7 +29847,13 @@
    "registration_note_en": "Registration opens about two weeks before the event",
    "registration_note_de": "Anmeldung ca. zwei Wochen vor der Veranstaltung möglich",
    "registration_url": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Rainer Klump",
+     "org": "CFS",
+     "role": "Co-Direktor"
+    }
+   ],
    "language": "de",
    "country": "DE",
    "title": "Biodiversität und die Bonität von Staaten",
@@ -29889,10 +29950,311 @@
    "importance": 1,
    "registration_url": "https://www.omfif.org/meetings/what-markets-wont-fix-do-payments-need-public-intervention/",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "John Orchard",
+     "org": "OMFIF",
+     "role": "Chairman, Digital Monetary Institute"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "fff479e760a49afd",
    "first_seen": "2026-11-03",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "UNEP FI at GFC IC1",
+   "title_ja": "GFC IC1におけるUNEP FIの関連行事",
+   "organizer": "UNEP FI",
+   "date_start": "2026-11-16",
+   "date_end": "2026-11-20",
+   "time": null,
+   "time_end": null,
+   "city": "Geneva",
+   "venue": null,
+   "format": null,
+   "country": "CH",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.unepfi.org/events/unep-fi-at-gfc-ic1/",
+   "summary_ja": "UNEP FIは、GFC実施プログラムの民間資金・投資ワークストリームを取りまとめており、ジュネーブで開かれるGFC IC1の期間中に複数の行事に参加する予定。",
+   "summary_en": "UNEP FI, convenor of the GFC private sector financing and investment workstream, will take part in a range of events during GFC IC1 in Geneva.",
+   "summary_de": "UNEP FI, Koordinatorin des Workstreams zu privater Finanzierung und Investitionen im GFC-Umsetzungsprogramm, wird sich während GFC IC1 in Genf an mehreren Veranstaltungen beteiligen.",
+   "language": "en",
+   "organizer_short": "UNEP FI",
+   "title_short": "Private Sector Financing Workstream",
+   "importance": 1,
+   "speakers": [],
+   "source": "UNEP FI – Events",
+   "id": "0f5bd013ba7d95e4",
+   "first_seen": "2026-11-04",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Governor Ülo Kaasik speaks at the University of Tartu conference „Ülo Kaasik 100” on the family’s view of Ülo Kaasik’s legacy",
+   "title_ja": "タルトゥ大学会議『Ülo Kaasik 100』で総裁が講演",
+   "title_short": "Legacy of Ülo Kaasik",
+   "organizer": "University of Tartu",
+   "organizer_short": "Univ. of Tartu",
+   "date_start": "2026-11-07",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Tartu",
+   "venue": "University of Tartu",
+   "format": null,
+   "country": "EE",
+   "themes": [
+    "central_bank"
+   ],
+   "importance": 1,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.eestipank.ee/en/calendar/governor-ulo-kaasik-speaks-university-tartu-conference-ulo-kaasik-100-familys-view-ulo-kaasiks-30102026",
+   "summary_ja": "タルトゥ大学で開かれる会議『Ülo Kaasik 100』で、Ülo Kaasik総裁が、家族の視点から見た同氏の業績について講演する。",
+   "summary_en": "Governor Ülo Kaasik speaks at the University of Tartu conference 'Ülo Kaasik 100' on the family's view of his legacy.",
+   "summary_de": "Gouverneur Ülo Kaasik spricht auf der Konferenz „Ülo Kaasik 100” der Universität Tartu über die Sicht der Familie auf sein Vermächtnis.",
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Ülo Kaasik",
+     "org": "Eesti Pank",
+     "role": "Governor"
+    }
+   ],
+   "source": "Eesti Pank (エストニア) – Events",
+   "id": "293008d6fa13ad7f",
+   "first_seen": "2026-11-04",
+   "notables": [
+    {
+     "person": "ulo-kaasik",
+     "name": "Ülo Kaasik",
+     "group": "ncb",
+     "tier": 1,
+     "short": "Eesti Pank Gov.",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
+  },
+  {
+   "title": "100 Years of Business Cycle Research at the Kiel Institute: Lessons from the Astwik-Vienna Debate – Stefan Kooths",
+   "title_ja": "景気循環研究の100年とウィーン論争",
+   "title_short": "Business Cycle Research History",
+   "source": "IfW Kiel – Veranstaltungen",
+   "organizer": "Kiel Institut für Weltwirtschaft",
+   "organizer_short": "IfW Kiel",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Kiel",
+   "country": "DE",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/100-years-of-business-cycle-research-at-the-kiel-institute-lessons-from-the-astwik-vienna-debate-stefan-kooths/",
+   "summary_ja": "キール研究所における景気循環研究の100年を振り返り、アストヴィク・ウィーン論争から得られる教訓を論じる研究セミナーです。報告者はStefan Koothsです。",
+   "summary_en": "A research seminar reviewing a century of business-cycle research at the Kiel Institute and the lessons of the Astwik-Vienna debate, presented by Stefan Kooths.",
+   "summary_de": "Forschungsseminar zu 100 Jahren Konjunkturforschung am Kiel Institut und den Lehren aus der Astwik-Wien-Debatte, Referent: Stefan Kooths.",
+   "language": "en",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Stefan Kooths",
+     "org": null,
+     "role": null
+    }
+   ],
+   "id": "755c76ab33930739",
+   "first_seen": "2026-11-04",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "SAFE-CEPR Web Seminar on Financial regulation in the era of fragmentation, AI, and geopolitics",
+   "title_ja": "SAFE-CEPR ウェビナー: 分断・AI・地政学時代の金融規制",
+   "organizer": "SAFE / CEPR",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "country": null,
+   "themes": [
+    "fin_markets",
+    "ai",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://safe-frankfurt.de/news-media/events/event-view/safe-cepr-web-seminar-on-financial-regulation-in-the-era-of-fragmentation-ai-and-geopolitics.html",
+   "summary_ja": "SAFEとCEPRが開催するウェビナー。分断化、AI、地政学が進む中での金融規制を論じる。",
+   "summary_en": "A SAFE-CEPR web seminar on financial regulation amid fragmentation, AI and geopolitics.",
+   "summary_de": "SAFE-CEPR-Webseminar zur Finanzregulierung im Zeitalter von Fragmentierung, KI und Geopolitik.",
+   "language": "en",
+   "organizer_short": "SAFE/CEPR",
+   "title_short": "Financial Regulation Amid Fragmentation",
+   "importance": 1,
+   "speakers": [],
+   "source": "SAFE Frankfurt – Events",
+   "id": "9f467216903d6431",
+   "first_seen": "2026-11-04",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Eesti Pank economist Rasmus Kattai speaks on the panel „The Biggest Risks and Opportunities for the Economy” at the 19th Nordic Security & Risk Management Forum",
+   "title_ja": "北欧安全保障・リスク管理フォーラムのパネル(エストニア中銀)",
+   "title_short": "Economic Risks and Opportunities",
+   "organizer": "Nordic Security & Risk Management Forum",
+   "organizer_short": "Nordic Security & Risk Mgmt Forum",
+   "date_start": "2026-11-04",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "country": "EE",
+   "themes": [
+    "geopolitics",
+    "real_economy"
+   ],
+   "importance": 1,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.eestipank.ee/en/calendar/eesti-pank-economist-rasmus-kattai-speaks-panel-biggest-risks-and-opportunities-economy-19th-nordic-30102026",
+   "summary_ja": "エストニア中央銀行のエコノミスト、ラスムス・カッタイ氏が、第19回北欧安全保障・リスク管理フォーラムのパネルで経済のリスクと機会について議論する。",
+   "summary_en": "Eesti Pank economist Rasmus Kattai joins a panel on the biggest risks and opportunities for the economy at the 19th Nordic Security & Risk Management Forum.",
+   "summary_de": "Ökonom Rasmus Kattai von der Eesti Pank diskutiert auf dem 19. Nordic Security & Risk Management Forum in einer Paneldiskussion die größten Risiken und Chancen für die Wirtschaft.",
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Rasmus Kattai",
+     "org": "Eesti Pank",
+     "role": "Economist"
+    }
+   ],
+   "source": "Eesti Pank (エストニア) – Events",
+   "id": "c75ca59d995da89d",
+   "first_seen": "2026-11-04",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Vortragsveranstaltung mit Podiumsdiskussion: Vermögensungleichheit als demokratische Herausforderung",
+   "title_ja": "講演・パネル討論:資産格差という民主主義の課題",
+   "organizer": "SAFE",
+   "date_start": "2026-11-16",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "country": "DE",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://safe-frankfurt.de/news-media/events/event-view/vortragsveranstaltung-mit-podiumsdiskussion-vermoegensungleichheit-als-demokratische-herausforderung.html",
+   "summary_ja": "SAFEで開かれる講演会とパネル討論。資産格差を民主主義にとっての課題として取り上げる。",
+   "summary_en": "A lecture followed by a panel discussion at SAFE on wealth inequality as a challenge for democracy.",
+   "summary_de": "Vortrag mit anschließender Podiumsdiskussion am SAFE zur Vermögensungleichheit als demokratische Herausforderung.",
+   "language": "de",
+   "organizer_short": "SAFE",
+   "title_short": "Wealth Inequality as Democratic Challenge",
+   "importance": 1,
+   "speakers": [],
+   "source": "SAFE Frankfurt – Events",
+   "id": "e83a1cd11256f0f1",
+   "first_seen": "2026-11-04",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Strommarkttreffen im Rheinland – StromVKG und Kapazitätsmarkt",
+   "title_ja": "ライン地方電力市場会合:容量市場",
+   "organizer": "Energiewirtschaftliches Institut an der Universität zu Köln (EWI)",
+   "date_start": "2026-11-27",
+   "date_end": null,
+   "time": "10:00",
+   "time_end": "13:00",
+   "city": "Cologne",
+   "venue": "Amprion, Pulheim bei Köln",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前申込(抽選で参加枠を配分、落選者はキャンセル待ち)",
+   "registration_note_en": "Registration required; places allocated by lottery, others waitlisted",
+   "registration_note_de": "Anmeldung erforderlich; Plätze werden verlost, übrige Anmeldungen kommen auf die Warteliste",
+   "url": "https://www.ewi.uni-koeln.de/de/termine/strommarkttreffen-im-rheinland-redispatch-2/",
+   "registration_url": null,
+   "summary_ja": "EWIの定例電力市場会合。Marlene Brücker(EWI)が容量市場賦課金の設計と含意を報告し、Oliver Ruhnauが司会を務める。今回はAmprion(プルハイム)が会場。",
+   "summary_en": "Regular EWI electricity market meeting hosted by Amprion in Pulheim near Cologne. Marlene Brücker (EWI) presents on the design and implications of capacity market levies, moderated by Prof. Oliver Ruhnau.",
+   "summary_de": "Reguläres Strommarkttreffen des EWI, zu Gast bei Amprion in Pulheim bei Köln. Marlene Brücker (EWI) spricht über Design und Implikationen von Kapazitätsmarktumlagen; Moderation: Prof. Dr. Oliver Ruhnau.",
+   "language": "en+de",
+   "country": "DE",
+   "organizer_short": "EWI Köln",
+   "title_short": "Capacity Market Levies",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Marlene Brücker",
+     "org": "EWI Köln",
+     "role": null
+    }
+   ],
+   "source": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
+   "id": "fb328687a7060ab9",
+   "first_seen": "2026-11-04",
    "notables": [],
    "notable_tier": null
   }
