@@ -29,7 +29,9 @@ jobs:
           CHANGED=$(git diff --name-only "origin/main...origin/${GITHUB_REF_NAME}")
           echo "changed files:"
           echo "$CHANGED"
-          CODE=$(printf '%s\n' "$CHANGED" | grep -vE '^(data|docs)/' | grep -v '^$' || true)
+          # INBOX.md / INBOX_UK.md は手動取込の貼り付け欄で、取込後に区切り線以下を空にする編集だけが
+          # エージェントから入る(AGENTS.md B-7)。データ更新と同じ扱いにし、承認待ちにしない。
+          CODE=$(printf '%s\n' "$CHANGED" | grep -vE '^(data|docs)/' | grep -vE '^INBOX(_UK)?\.md$' | grep -v '^$' || true)
           if [ -n "$CODE" ]; then
             echo "mode=code" >> "$GITHUB_OUTPUT"
             {
