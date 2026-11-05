@@ -6285,7 +6285,7 @@
    "notable_tier": null
   },
   {
-   "organizer": "Centre for Macroeconomics (CFM), London School of Economics",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
    "organizer_short": "CFM",
    "city": "London",
    "country": "GB",
@@ -6301,32 +6301,32 @@
    "date_end": null,
    "importance": 0,
    "source": "LSE – Centre for Macroeconomics (CFM) – Events",
-   "title": "Money-Macro Seminar: Emi Nakamura & Jón Steinsson (University of California, Berkeley)",
-   "title_ja": "Money-Macroセミナー: Nakamura・Steinsson",
+   "title": "Faculty Work in Progress Seminar: Emi Nakamura & Jón Steinsson",
+   "title_ja": "教員研究進捗セミナー: Emi Nakamura・Jón Steinsson",
    "date_start": "2027-05-11",
-   "time": "14:30",
-   "time_end": "16:00",
+   "time": "12:00",
+   "time_end": "13:00",
    "venue": "LSE, SAL.1.04",
    "themes": [
-    "central_bank"
+    "real_economy"
    ],
    "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
-   "title_short": "Money-Macro Seminar",
+   "title_short": "Faculty Macro Research Discussion",
    "speakers": [
     {
      "name": "Emi Nakamura",
-     "org": "UC Berkeley",
+     "org": null,
      "role": null
     },
     {
      "name": "Jón Steinsson",
-     "org": "UC Berkeley",
+     "org": null,
      "role": null
     }
    ],
-   "summary_ja": "CFMのMoney-Macroセミナーで、Emi Nakamura氏とJón Steinsson氏(カリフォルニア大学バークレー校)が報告する。演題は未掲載。",
-   "summary_en": "Emi Nakamura and Jón Steinsson (University of California, Berkeley) present in the CFM Money-Macro Seminar series. No paper title is listed.",
-   "summary_de": "Emi Nakamura und Jón Steinsson (UC Berkeley) präsentieren in der Money-Macro-Seminarreihe des CFM. Ein Vortragstitel ist nicht angegeben.",
+   "summary_ja": "LSE の CFM が主催する教員の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Faculty work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, presenting ongoing research.",
+   "summary_de": "Work-in-Progress-Seminar für Fakultätsmitglieder in Makroökonomik am LSE Centre for Macroeconomics mit laufenden Forschungsarbeiten.",
    "id": "2d9029fd8e2df20d",
    "first_seen": "2026-10-20",
    "notables": [],
@@ -15026,7 +15026,13 @@
    "title_short": "Bank of England Economic Update",
    "importance": 1,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Anna Leach",
+     "org": "IoD",
+     "role": "Chief Economist"
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "34ef2981a23edcee",
    "first_seen": "2026-11-04",
@@ -15465,7 +15471,33 @@
    "summary_ja": "就学・就労・職業訓練のいずれにも属さない若者(NEET)の問題を取り上げ、経済・雇用主・公共政策への影響を論じる。",
    "summary_en": "A discussion of the challenge of young people not in education, employment or training (NEETs) and its implications for the economy, employers and public policy.",
    "summary_de": "Diskussion über junge Menschen ohne Ausbildung, Beschäftigung oder Weiterbildung (NEET) und deren Folgen für Wirtschaft, Arbeitgeber und öffentliche Politik.",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Adrian Pabst",
+     "org": "NIESR",
+     "role": "Chair"
+    },
+    {
+     "name": "Andy Westwood",
+     "org": null,
+     "role": "Professor of Politics and Public Policy, University of Birmingham"
+    },
+    {
+     "name": "Daisy Goodall",
+     "org": "TUC",
+     "role": "Young Workers' Policy Officer"
+    },
+    {
+     "name": "Evie Matthews",
+     "org": "CBI",
+     "role": "Senior Policy Advisor, Future of Work and Skills"
+    },
+    {
+     "name": "Jake MacDonald",
+     "org": "DWP",
+     "role": "Youth Employment Lead, Labour Market Directorate"
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "d7dfd9a58146b385",
    "first_seen": "2026-11-04",
@@ -15624,6 +15656,915 @@
    "source": "手動取込: INBOX_UK",
    "id": "f248124a05f3af8b",
    "first_seen": "2026-11-04",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Diego Ferreras Garrucho & Marie Fuchs",
+   "title_ja": "学生研究進捗セミナー: Diego Ferreras Garrucho・Marie Fuchs",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-02-08",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Diego Ferreras Garrucho",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Marie Fuchs",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "02e4597c50ceae9f",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Dimitrios Athanassiou & Tuo Fan",
+   "title_ja": "学生研究進捗セミナー: Dimitrios Athanassiou・Tuo Fan",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-02-01",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Dimitrios Athanassiou",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Tuo Fan",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "199f0833eca3e1aa",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Marina Santos Feliciano & Ludovica Priviero",
+   "title_ja": "学生研究進捗セミナー: Marina Santos Feliciano・Ludovica Priviero",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-02-22",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Marina Santos Feliciano",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Ludovica Priviero",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "1b239e28e017e994",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Sasha Abrahams & Corentin Laffitte",
+   "title_ja": "学生研究進捗セミナー: Sasha Abrahams・Corentin Laffitte",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-03-15",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Sasha Abrahams",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Corentin Laffitte",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "2636260f59919e13",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Brayan Segura Solano",
+   "title_ja": "学生研究進捗セミナー: Brayan Segura Solano",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2026-11-30",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Brayan Segura Solano",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "27e707177c234514",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Brayan Segura Solano",
+   "title_ja": "学生研究進捗セミナー: Brayan Segura Solano",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-04-26",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Brayan Segura Solano",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "2b18fb1e379957f9",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Jasper Bechtold",
+   "title_ja": "学生研究進捗セミナー: Jasper Bechtold",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-01-18",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Jasper Bechtold",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "3c511f3299340d78",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "International Economics Workshops",
+   "title_ja": "国際経済ワークショップ",
+   "organizer": "Centre for Economic Performance, LSE",
+   "date_start": "2026-12-02",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11003",
+   "summary_ja": "CEP の国際経済ワークショップ。Emiliano Rinaldi(LSE)が報告する。演題は未定。",
+   "summary_en": "A CEP International Economics Workshop at which Emiliano Rinaldi (LSE) presents; the title is to be announced.",
+   "summary_de": "Ein CEP-Workshop zur Internationalen Ökonomie, in dem Emiliano Rinaldi (LSE) vorträgt; der Titel steht noch nicht fest.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "International Economics Research",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Emiliano Rinaldi",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "3eee3b02a49085b0",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Closing the gap between nature and climate: from Yerevan to Antalya",
+   "title_ja": "自然と気候の隔たりを埋める：エレバンからアンタルヤへ",
+   "organizer": "The Global School of Sustainability, Grantham Research Institute, CETEx and TPI Global Climate Transition Centre",
+   "date_start": "2026-11-05",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.lse.ac.uk/granthaminstitute/events/closing-the-gap-between-nature-and-climate-from-yerevan-to-antalya/",
+   "registration_url": null,
+   "summary_ja": "自然と気候の政策の隔たりを埋める方策を議論するオンラインイベント。4つの機関が共同で主催する。",
+   "summary_en": "Online event on how to close the gap between nature and climate policy, hosted jointly by four sustainability and climate institutes.",
+   "summary_de": "Online-Veranstaltung über die Frage, wie die Lücke zwischen Natur- und Klimapolitik geschlossen werden kann, veranstaltet von vier Nachhaltigkeits- und Klimainstituten.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Grantham",
+   "title_short": "Nature and Climate Gap",
+   "importance": 1,
+   "speakers": [],
+   "source": "Grantham Research Institute (LSE) – Events",
+   "id": "46206a18b72c2d85",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Jasper Bechtold",
+   "title_ja": "学生研究進捗セミナー: Jasper Bechtold",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-05-17",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Jasper Bechtold",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "576741e130754713",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Delia Macaluso",
+   "title_ja": "学生研究進捗セミナー: Delia Macaluso",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-01-25",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Delia Macaluso",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "68085139f3335085",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Delia Macaluso",
+   "title_ja": "学生研究進捗セミナー: Delia Macaluso",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-05-24",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Delia Macaluso",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "6faa795a56f46dbc",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Sierene Abdelsayed",
+   "title_ja": "学生研究進捗セミナー: Sierene Abdelsayed",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-05-10",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Sierene Abdelsayed",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "7f21208a69c88b7e",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Moritz May & Paul Brems",
+   "title_ja": "学生研究進捗セミナー: Moritz May・Paul Brems",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2026-12-07",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Moritz May",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Paul Brems",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "8ea7667390407829",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Edward Manuel & Giovanni Minolfi",
+   "title_ja": "学生研究進捗セミナー: Edward Manuel・Giovanni Minolfi",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-02-15",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Edward Manuel",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Giovanni Minolfi",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "9a452da23c13dd35",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Xiao Sun & Alessandro Sciacchetano",
+   "title_ja": "学生研究進捗セミナー: Xiao Sun・Alessandro Sciacchetano",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-03-08",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Xiao Sun",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Alessandro Sciacchetano",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "a679151aefd5204b",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Tommaso Paolucci & Tiago Brinkmann Torres Uva Paul",
+   "title_ja": "学生研究進捗セミナー: Tommaso Paolucci・Tiago Brinkmann Torres Uva Paul",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-03-01",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Tommaso Paolucci",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Tiago Brinkmann Torres Uva Paul",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "c6339fd2fd6d2b98",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Mitch Scott",
+   "title_ja": "学生研究進捗セミナー: Mitch Scott",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-06-07",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Mitch Scott",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "c86e4c18540bca8c",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Student Work in Progress Seminar: Sierene Abdelsayed",
+   "title_ja": "学生研究進捗セミナー: Sierene Abdelsayed",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "date_start": "2027-01-11",
+   "date_end": null,
+   "time": "10:30",
+   "time_end": "12:00",
+   "city": "London",
+   "venue": "SAL.1.04",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
+   "summary_ja": "LSE の CFM が主催する学生の研究進捗セミナー（マクロ経済学）。研究途中の論文を報告する。",
+   "summary_en": "Student work-in-progress seminar in macroeconomics at the LSE Centre for Macroeconomics, where students present ongoing research.",
+   "summary_de": "Studentisches Work-in-Progress-Seminar in Makroökonomik am LSE Centre for Macroeconomics, in dem laufende Forschungsarbeiten vorgestellt werden.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CFM",
+   "title_short": "Student Macro Research Discussion",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Sierene Abdelsayed",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Macroeconomics (CFM) – Events",
+   "id": "e3ebe65ac8d29d4b",
+   "first_seen": "2026-11-05",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The challenges to peace and democracy in the Middle East",
+   "title_ja": "中東における平和と民主主義の課題",
+   "organizer": "LSE",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": null,
+   "format": "hybrid",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録(チケット制)",
+   "registration_note_en": "Advance ticket registration required",
+   "registration_note_de": "Anmeldung mit Ticket erforderlich",
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/events/challenges-to-peace",
+   "summary_ja": "中東の平和と民主主義をテーマとする公開イベント。登壇者4名、現地とオンラインの併催。",
+   "summary_en": "A public event on peace and democracy in the Middle East with four speakers, held in person and online.",
+   "summary_de": "Öffentliche Veranstaltung zu Frieden und Demokratie im Nahen Osten mit vier Referierenden, vor Ort und online.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Middle East Peace and Democracy",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Rula Daood",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Alon-Lee Green",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Mary Kaldor",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Yonatan Levi",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "f2852e8800a8733e",
+   "first_seen": "2026-11-05",
    "notables": [],
    "notable_tier": null
   }

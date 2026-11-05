@@ -6,6 +6,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://globalsanctions.com/2026/10/c5-events-this-november-in-london-women-in-international-trade-sanctions-and-london-forum-on-global-economic-sanctions-global-sanctions-discounts": {
+  "event_id": "5441cf71f16951f4",
+  "http": 403,
+  "last": "2026-11-05",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://hub.cepr.org/events/cepr-io-virtual-gathering-2026": {
   "event_id": "bb38fb526b8bf94b",
   "http": 200,
@@ -100,14 +107,21 @@
  "https://netzerocompare.com/events/nature-finance-uk-conference-2026": {
   "event_id": "5525de4461c0fc2e",
   "http": 403,
-  "last": "2026-10-24",
+  "last": "2026-11-05",
   "result": "FAIL-BLOCKED",
-  "tries": 1
+  "tries": 2
  },
  "https://niesr.ac.uk/event/autumn-2026-economic-forum": {
   "event_id": "8de0465d49eb470b",
   "http": 200,
   "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/neet-challenge-no-neat-answers": {
+  "event_id": "d7dfd9a58146b385",
+  "http": 200,
+  "last": "2026-11-05",
   "result": "ok",
   "tries": 1
  },
@@ -300,6 +314,13 @@
   "result": "FAIL-BLOCKED",
   "tries": 2
  },
+ "https://www.chathamhouse.org/events/all/standard-event/ten-conflicts-watch-2027": {
+  "event_id": "9bb5715d7386aebd",
+  "http": 403,
+  "last": "2026-11-05",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
  "https://www.chathamhouse.org/events/upcoming": {
   "event_id": "f4147adba9442f91",
   "http": 200,
@@ -353,6 +374,13 @@
   "event_id": "d651b52c78b0a15b",
   "http": 200,
   "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.iod.com/events/economic_update_with_the_bank_of_england75047425": {
+  "event_id": "34ef2981a23edcee",
+  "http": 200,
+  "last": "2026-11-05",
   "result": "ok",
   "tries": 1
  },
@@ -590,16 +618,16 @@
  "https://www.ukfinance.org.uk/events-training/uk-fraud-landscape-emerging-threats-ai-next-line-defence": {
   "event_id": "986cc04219891b2d",
   "http": 200,
-  "last": "2026-10-23",
+  "last": "2026-11-05",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/events/blended-finance-in-the-sustainable-blue-economy": {
   "event_id": "38ce929b41291aec",
   "http": 200,
-  "last": "2026-10-23",
+  "last": "2026-11-05",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/events/turning-sustainability-disclosures-into-risk-insights-new-sustainability-risk-management-tools-and-research": {
   "event_id": "307b72b626bc033f",
@@ -623,11 +651,11 @@
   "tries": 2
  },
  "https://www.unpri.org/events/webinar-ai-data-centres": {
-  "event_id": "509c00b9aa56b993",
+  "event_id": "79820f8703aeaba0",
   "http": 200,
-  "last": "2026-10-25",
+  "last": "2026-11-05",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.westminsterforumprojects.co.uk/conference/trans-finance-26": {
   "event_id": "9c0e440df86cf50c",
