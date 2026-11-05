@@ -113,6 +113,14 @@ sources:
     category: uni
     verified: false   # 403(ボット対策): 実ブラウザUA付きcurlで再試行、駄目なら検索補完かINBOX
 
+  # 2026-11-05 追加。Frankfurt School 内の中央銀行研究センター(CCB)。
+  # Upcoming Events に Bundesbank/ECB 幹部のゲスト講義等が載る。静的HTML(約6MB)で
+  # イベント部分は先頭付近。個別ページは無く、リンク先は申込フォーム(applyexec)。
+  - name: "Frankfurt School – Centre for Central Banking (CCB) – Events"
+    url: "https://www.frankfurt-school.de/en/research-and-faculty/research-centres/centre-for-central-banking"
+    category: uni
+    verified: true    # 2026-11-05 実ブラウザUA付きcurlで200・イベント2件を確認
+
   - name: "CESifo (München) – Veranstaltungen"
     url: "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences"
     category: tt

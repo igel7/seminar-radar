@@ -377,5 +377,12 @@
  "RUSI – Royal United Services Institute – Events": {
   "method": "search",
   "note": "2026-11-04 リトライ: 403継続。検索で2027年日程なし。"
+ },
+ "Frankfurt School – Centre for Central Banking (CCB) – Events": {
+  "method": "ua-curl",
+  "alt_urls": [],
+  "last_ok": "2026-11-05",
+  "note": "2026-11-05 追加時リハーサル: fetch_all.py の標準取得(実ブラウザUA)で200、約6MBの静的HTML(Next.js)。Upcoming Events はHTML先頭20KB付近に静的に出るので切り詰めの影響なし。イベント個別ページは無く、リンク先は申込フォーム(applyexec.frankfurt-school.de)で全イベント共通。url は一覧ページのままでよい(no_detail_pages)。登壇者はタイトルに含まれる(例: Guest Lecture by Sabine Mauderer | Bundesbank)。",
+  "no_detail_pages": true
  }
 }
