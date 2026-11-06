@@ -20,6 +20,13 @@
   "result": "FAIL-BLOCKED",
   "tries": 1
  },
+ "https://dgap.org/de/events": {
+  "event_id": "5c7c4181b9d890d9",
+  "http": 200,
+  "last": "2026-11-06",
+  "result": "ok",
+  "tries": 2
+ },
  "https://digifin.berlin/de": {
   "event_id": "fe3dbb95cd30c299",
   "http": 200,
@@ -79,9 +86,9 @@
  "https://industry.sfi.ch/en/sfi-event": {
   "event_id": "1ace20c75b6ca7de",
   "http": 200,
-  "last": "2026-10-29",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://japan.ahk.de/en/events-veranstaltungen/ahk-event/2nd-german-japanese-leadership-dialogue": {
   "event_id": "f0aba7765644fe56",
@@ -121,8 +128,15 @@
  "https://netzerocompare.com/events/world-class-sustainability-management-2026": {
   "event_id": "2f88717a0d457769",
   "http": 403,
-  "last": "2026-10-27",
+  "last": "2026-11-06",
   "result": "FAIL-BLOCKED",
+  "tries": 2
+ },
+ "https://nielsonsmith.com/events/sanctions-export-compliance-in-europe-conference": {
+  "event_id": "825ea43b9f47c28c",
+  "http": 200,
+  "last": "2026-11-06",
+  "result": "ok",
   "tries": 1
  },
  "https://nielsonsmith.com/events/us-and-eu-sanctions-export-controls-compliance-conference": {
@@ -142,9 +156,16 @@
  "https://rebuildukraine.in.ua/en": {
   "event_id": "7bf66b856dd2946a",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 2
+  "tries": 3
+ },
+ "https://safe-frankfurt.de/news-media/events/event-view/safe-cepr-web-seminar-on-financial-regulation-in-the-era-of-fragmentation-ai-and-geopolitics.html": {
+  "event_id": "9f467216903d6431",
+  "http": 200,
+  "last": "2026-11-06",
+  "result": "ok",
+  "tries": 1
  },
  "https://safe-frankfurt.de/news-media/events/event-view/safe-phd-level-mini-course-topics-in-cross-sectional-asset-pricing.html": {
   "event_id": "987126fcb0719447",
@@ -157,6 +178,13 @@
   "event_id": "b4f4e6f971dfa2df",
   "http": 200,
   "last": "2026-10-27",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://safe-frankfurt.de/news-media/events/event-view/vortragsveranstaltung-mit-podiumsdiskussion-vermoegensungleichheit-als-demokratische-herausforderung.html": {
+  "event_id": "e83a1cd11256f0f1",
+  "http": 200,
+  "last": "2026-11-06",
   "result": "ok",
   "tries": 1
  },
@@ -233,9 +261,9 @@
  "https://www.appliedai-institute.de/en/workshops-trainings/ki-fahrstunde-prompting-llms-3": {
   "event_id": "8bcc144b5170b225",
   "http": 200,
-  "last": "2026-10-27",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.appliedai-institute.de/en/workshops-trainings/ki-kompetenzen-aufbauen-der-weg-zur-agent-native-organisation-2": {
   "event_id": "c7855e5b021275b2",
@@ -483,11 +511,11 @@
   "tries": 1
  },
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202611": {
-  "event_id": "b399f41ae46d5fd9",
+  "event_id": "e3c5efdb768b676c",
   "http": 200,
-  "last": "2026-10-26",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202612": {
   "event_id": "d3011fe2b01a9cb6",
@@ -506,9 +534,9 @@
  "https://www.drsc.de/en/news/save-the-date-hamburg-sustainability-reporting-forum-2026-registration-opens-in-september": {
   "event_id": "b0e5bd823d952597",
   "http": 200,
-  "last": "2026-10-22",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.eba.europa.eu/publications-and-media/events/13th-joint-esas-consumer-protection-day": {
   "event_id": "bfa1808f33f5231a",
@@ -632,9 +660,9 @@
  "https://www.fid.gov.lv/en/news/save-the-date-international-sanctions-conference-in-riga-to-focus-on-measures-degrading-russias-war-machine": {
   "event_id": "0694f8b9f2cf7591",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.forum-ng.org/en/termine/veranstaltung/cric-ev-konferenz-zur-klimagerechtigkeit-in-frankfurt-am-main": {
   "event_id": "400118719d35f837",
@@ -912,9 +940,9 @@
  "https://www.lb.lt/en/events/economics-conference-breakthrough-in-advanced-sectors-from-global-ideas-to-solutions-for-lithuania": {
   "event_id": "56766b927f09115b",
   "http": 403,
-  "last": "2026-10-30",
+  "last": "2026-11-06",
   "result": "FAIL-BLOCKED",
-  "tries": 2
+  "tries": 3
  },
  "https://www.mnb.hu/en/the-central-bank/conferences/budapest-renminbi-initiative-conference/budapest-renminbi-initiative-conference-2026": {
   "event_id": "8e6745d3afb58874",
@@ -1045,9 +1073,9 @@
  "https://www.szgerzensee.ch/programs/conferences-events/detail/fintech-digital-currency": {
   "event_id": "37b05fc670a1b268",
   "http": 200,
-  "last": "2026-10-14",
+  "last": "2026-11-06",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.szgerzensee.ch/programs/conferences-events/detail/gerzensee-alumni-conference-2026": {
   "event_id": "b2c0e3521f0afd47",
@@ -1090,6 +1118,13 @@
   "last": "2026-11-03",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.unepfi.org/events/unep-fi-at-gfc-ic1": {
+  "event_id": "0f5bd013ba7d95e4",
+  "http": 200,
+  "last": "2026-11-06",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.unepfi.org/industries/banking/the-role-of-risk-in-responsible-banking": {
   "event_id": "cbbed177e010134d",
