@@ -4,28 +4,28 @@
   "url": "https://www.suerf.org/events/",
   "ok": true,
   "found": 4,
-  "note": "抽出済み"
+  "note": "オンライン分4件を収載(BAFFI e-lecture 系)。Milan・Luxembourg・Rome・Bratislava は対象外。申込URL1件追加。"
  },
  {
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
   "found": 10,
-  "note": "抽出済み"
+  "note": "地域内(ロンドン)・オンライン分のみ収載。フランクフルト・NY・ワシントンは対象外。新規1件(11/24)、他は台帳と同一。"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
   "ok": true,
   "found": 1,
-  "note": "抽出済み"
+  "note": "収載は AI data centres ウェビナー(12/03 online)のみ。HK・アブダビ・トロント・NYC と連続講座は対象外。台帳と同一。"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 3,
-  "note": "抽出済み"
+  "found": 4,
+  "note": "オンラインのウェビナー4件を収載。COP31(Antalya)・GFC(Geneva)・国連フォーラム(Geneva)・地域ラウンドテーブルは対象外。新規1件(12/10)。"
  },
  {
   "name": "Bank of England – Events",
@@ -38,15 +38,15 @@
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 3,
-  "note": "抽出済み"
+  "found": 4,
+  "note": "Lombardelli 登壇(台帳の Bank of England Watchers' Conference に併合する薄いレコード1件)。Pill IIMR・Pill/Shortall briefing・12th BdF-BoE-BdI workshop は台帳既知で変化なしのため出さず。過去分(Ben Martin 11/4、Saporta 11/5 Frankfurt)、Bailey 11/9 Zurich、Vicky White 香港は除外"
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "キャッシュ上の今後のイベントなし。Annual Public Meeting 2026(10/6、Edinburgh)は終了済み。過去分のみ(webinar案内は既存情報・日付なし)のため収載なし。"
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
@@ -60,15 +60,15 @@
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索) / 2026-11-05 再取得も403/NET-ERR",
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search",
   "note": "2026-11-04 リトライ: 直接・個別ページとも403。検索で見つかった2027年案件は学生向け Public Economics Day(1/8)のみで、対象外(学生向け・採用セッション含む)として除外。tried: fetch, ua-curl, hints, search(4クエリ)"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 19,
-  "note": "抽出済み"
+  "found": 12,
+  "note": "hub.cepr.org upcoming page 0-5(6ファイル)。英国・アイルランド・北欧・オンライン該当12件(Olken, VDEV-BREAD 84/85, Media Plurality, Zebang Xu, Romei, Boccola, Wolf, STEG Manchester, ReCIPE Oxford, CBI-UCD conf, BoF-CEPR conf)は全て台帳既知で変化なし。開催地未記載の回・番号のみのシリーズ・パリ/ボン/チリ/スイス等は除外"
  },
  {
   "name": "Resolution Foundation – Events",
@@ -82,22 +82,22 @@
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "今後の掲載は How can democratic countries get better political leaders?(11/10、ハイブリッド)と IfG DevoLab #7: health-related inactivity(11/23、Sheffield)。いずれも政治リーダーシップ・地方自治/公衆衛生のテーマで9テーマに非該当のため除外。"
  },
  {
   "name": "CER – Centre for European Reform – Events",
   "url": "https://www.cer.eu/events",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "掲載は2026-10 までの開催済みイベントのみ(Ukraine: Winter is coming 10/28 London 含む)。今後分なし"
  },
  {
   "name": "Chatham House – Events",
   "url": "https://www.chathamhouse.org/events",
-  "ok": true,
-  "found": 5,
+  "ok": false,
+  "found": 0,
   "note": "変化なし(差分検知によりスキップ)",
-  "error": "リトライで回復: web検索(タイトル指定クエリ。直接取得は依然403)"
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
@@ -105,14 +105,14 @@
   "ok": false,
   "found": 0,
   "note": "2026-11-04 リトライ: 直接403。検索(4クエリ)で2027年の日程は索引に無し。tried: fetch, ua-curl, hints, search",
-  "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索) / 2026-11-05 再取得も403/NET-ERR"
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索) / 2026-11-05 再取得も403/NET-ERR",
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search",
   "note": "2026-11-04 リトライ: 直接403。検索(4クエリ)で iiss.org/events の2027年ページは索引に無し(Manama・Prague は域外)。tried: fetch, ua-curl, hints, search"
  },
  {
@@ -120,43 +120,43 @@
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "NET-ERR(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索) / 2026-11-05 再取得も403/NET-ERR",
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search",
   "note": "2026-11-04 リトライ: 接続断継続。検索(3クエリ)で2027年イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
-  "found": 2,
-  "note": "抽出済み"
+  "found": 1,
+  "note": "今後のイベントは Protect or Prepare? Crop insurance and adaptation in a changing climate (2027-02-24) のみ。台帳と一致・変化なしのため再出力せず。Stern Review イベント(10/28)は終了済み。"
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "/latest/ はニュース・ブログのみでイベント掲載なし"
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 5,
-  "note": "抽出済み"
+  "found": 4,
+  "note": "収載対象4件(Philanthropy・Challenges to peace・From values・Structural change)。うち新規1件。政治・市民・芸術系の公開イベントは除外"
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
   "url": "https://www.centreformacroeconomics.ac.uk/events",
   "ok": true,
-  "found": 49,
-  "note": "抽出済み"
+  "found": 50,
+  "note": "2026-11-09〜2027-06-08 のセミナー49件と Upcoming の1件(計50件)。うち新規2件(2027-02-09 Kohlhas、2027-05-11 Money-Macro Nakamura/Steinsson)。日付未定の 2027-03-22 は除外"
  },
  {
   "name": "LSE – Financial Markets Group (FMG) – Events",
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
   "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-12 From values to impact、2026-11-13 How to Make Impact Investing Work(いずれも既知・変化なし)。Seminars 3件は日付なしで除外"
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -169,15 +169,15 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 25,
-  "note": "抽出済み"
+  "found": 26,
+  "note": "2026-11-09〜12-09 の26件はすべて台帳照合済み(既知・変化なし)"
  },
  {
   "name": "Oxford – Saïd Business School – Events",
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索) / 2026-11-05 再取得も403/NET-ERR",
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search",
   "note": "2026-11-04 リトライ: 直接403。検索(3クエリ)で2027年1-2月の公開イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
@@ -185,14 +185,14 @@
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
   "ok": true,
   "found": 7,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "全件 Oxford・Oxford Martin School & Online(hybrid, 17:00)。台帳と同一。"
  },
  {
   "name": "Cambridge Judge Business School – Events",
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "キャッシュは JS 描画前のナビ・フィルタ枠のみでイベント項目なし"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -212,15 +212,15 @@
   "name": "Imperial College Business School – Events",
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
-  "found": 12,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "今後の掲載は採用・入学説明会(Masters/MBA/BSc information session、one-to-one 等)と Relational Leadership: Book Launch(11/17 London)。前者は収載対象外(採用・入学系)、後者は経営学テーマで9テーマに非該当のため除外。"
  },
  {
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 29,
-  "note": "抽出済み"
+  "found": 30,
+  "note": "Coventry 開催の定例セミナー等のうち、登壇者名が確定したもの30件を収載(演題TBAは可、登壇者TBAの MIWP 1件は除外)。新規4件、会場変更1件、登壇者追加1件(薄いレコード)。"
  },
  {
   "name": "Warwick Business School – Events",
@@ -234,7 +234,7 @@
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403/取得不可(fetch_all判定)。tried: fetch, ua-curl, hints, search(discovery内の site: 検索) / 2026-11-05 再取得も403/NET-ERR",
+  "error": "HTTP 403/NET-ERR(Cloudflare等のボット対策)。tried: fetch, ua-curl, hints, search",
   "note": "2026-11-04 リトライ: 直接403。検索(3クエリ)で2027年イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
@@ -256,7 +256,7 @@
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
   "found": 1,
-  "note": "抽出済み"
+  "note": "UKICE Lunch Hour(11/24)。台帳と同一。開催形式・都市はページ未記載。"
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
@@ -270,7 +270,7 @@
   "url": "https://www.esri.ie/events",
   "ok": true,
   "found": 1,
-  "note": "抽出済み"
+  "note": "19th Irish Economics, Psychology and Policy Conference(12/15 Dublin)は台帳既知で変化なし。Chronic absence(教育)・Health inequalities(保健)はテーマ外のため除外"
  },
  {
   "name": "Trinity College Dublin – Economics seminar series",
@@ -284,14 +284,14 @@
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
   "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2ページを統合。有料業界会議のうち importance 3 相当の2件のみ収載(Economic Crime Congress、Digital Innovation Summit 2027)。ウェビナー・研修・ディナー等は除外。"
  },
  {
   "name": "TheCityUK – Events",
   "url": "https://www.thecityuk.com/events/",
   "ok": true,
   "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "National Conference 2026(Bristol, 11/19)のみ。台帳と同一。"
  },
  {
   "name": "LSEG – London Stock Exchange Group – Events",
@@ -305,14 +305,14 @@
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
   "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "英国内の該当は4件(T+1 webinar 11/9 オンライン、20th ICMA European Primary Market Forum 11/11 London、ICMA Future Leaders fireside chat 11/11 London、ICMA Secondary Markets & AMIC Buy-side Forum 11/30 London)すべて台帳に既知・変化なしのため再出力せず。Milan・Paris・Frankfurt・Vienna・Tokyo(ハイブリッド含む)・Singapore・Hong Kong・Dubai・Riyadh・Zermatt・Cape Town・Beijing 等は英国モード対象外のため除外。"
  },
  {
   "name": "ISDA – Events",
   "url": "https://www.isda.org/events/",
   "ok": true,
   "found": 1,
-  "note": "抽出済み"
+  "note": "英国内は Trading Book Capital(2026-11-30 London)のみ。台帳に既知・変化なしのため再出力せず。ISDA Derivatives Trading Forum Hong Kong(11/12)・ISDA 41st AGM(Singapore)は対象外。"
  },
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
@@ -326,28 +326,28 @@
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "Upcoming 9件はオンライン読書会・教育・晩餐会・ワークショップ・観賞ツアー等で収載テーマ外"
  },
  {
   "name": "JETRO London – Events",
   "url": "https://www.jetro.go.jp/uk/events.html",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "Topics・トップページのみ。個別イベントの掲載なし(RFP・告知のみ)。日付不明の Event Announcement は除外"
  },
  {
   "name": "SOAS – What's on (SOAS China Institute を含む)",
   "url": "https://www.soas.ac.uk/about/whats-on",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "取得本文に What's on の一覧が描画されておらず、告知イベントを取得できず(ナビゲーションのみ)。"
  },
  {
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
   "ok": true,
-  "found": 2,
-  "note": "抽出済み"
+  "found": 0,
+  "note": "カレンダーは日付と UK/China 区分のみで題目・会場なし。抽出不能のため0件"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
@@ -382,27 +382,26 @@
   "url": "https://cb.is/",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "カレンダーは統計公表予定(残高・実質為替・外貨準備)のみで、イベント告知なし。"
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
   "url": "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
   "ok": true,
   "found": 0,
-  "note": "抽出済み"
+  "note": "RSS は規制公表の告知のみで、イベント告知なし。"
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
   "found": 6,
-  "note": "16クエリ・候補6件、新規採用0件(Watchers' Conference・CBI Winter Workshopは既知、FinTech Connectは商用で対象外、他は日付未確認)"
+  "note": "約23クエリ(基本8+深掘り(無料ウェビナー/AI各3)+定点補完+中国/日本/ウクライナ/アイルランド/北欧/年次)。確認候補6件、うち5件は既知(BoE Watchers 11/10、IoD 11/10、TheCityUK 11/19 Bristol、Central Bank of Ireland Winter Workshop 12/21 Dublin)等、新規1件。FinTech Connect(12/1-2 ExCeL)は公式ページ404で未確認のため除外"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-04 手動セッションで INBOX_UK を処理: Chatham House 7件(新規3: Road to 2028 1/27・MENA 2/3・Debates 2/24。Climate summit は参加費・公式URLを追記)、RUSI 8件(新規1: 11/25 ウェビナー)、CEPR 5件(全て既知)。IISS は域外(Hamburg は独側で既知)、IFS は研修・学生向けのみ"
+  "found": 0
  }
 ]
