@@ -903,11 +903,11 @@
   "tries": 1
  },
  "https://www.kielinstitut.de/de/veranstaltungen/global-china-conversations/wenn-china-kredite-an-industrielaender-vergibt-schreibt-peking-die-regeln-der-globalen-finanzordnung-um": {
-  "event_id": "6dd8cdeddfbb7a7b",
+  "event_id": "0dd210de9dc7b29e",
   "http": 200,
-  "last": "2026-10-25",
+  "last": "2026-11-07",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.kielinstitut.de/de/veranstaltungen/individual-asp-courses/new-keynesian-models-andrea-ferrero": {
   "event_id": "c03fd17a4514fb2f",
@@ -969,6 +969,13 @@
   "event_id": "ca692364653fc4bf",
   "http": 200,
   "last": "2026-10-22",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/democrats-midterm-victory-and-the-future-of-us-sustainable-finance": {
+  "event_id": "7c4c18d357a7b7e8",
+  "http": 200,
+  "last": "2026-11-07",
   "result": "ok",
   "tries": 1
  },
@@ -1108,9 +1115,9 @@
  "https://www.unepfi.org/events/blended-finance-in-the-sustainable-blue-economy": {
   "event_id": "38ce929b41291aec",
   "http": 200,
-  "last": "2026-10-27",
+  "last": "2026-11-07",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/events/turning-sustainability-disclosures-into-risk-insights-new-sustainability-risk-management-tools-and-research": {
   "event_id": "307b72b626bc033f",
@@ -1140,12 +1147,19 @@
   "result": "ok",
   "tries": 2
  },
- "https://www.unpri.org/events/webinar-ai-data-centres": {
-  "event_id": "509c00b9aa56b993",
+ "https://www.unepfi.org/themes/climate-change/lost-in-translation-the-information-gap-holding-back-climate-adaptation-finance": {
+  "event_id": "214ab7808ede10da",
   "http": 200,
-  "last": "2026-10-28",
+  "last": "2026-11-07",
   "result": "ok",
-  "tries": 2
+  "tries": 1
+ },
+ "https://www.unpri.org/events/webinar-ai-data-centres": {
+  "event_id": "79820f8703aeaba0",
+  "http": 200,
+  "last": "2026-11-07",
+  "result": "ok",
+  "tries": 3
  },
  "https://www.whu.edu/en/news-insights/events/csr-the-economy-and-financial-markets": {
   "event_id": "3438e7d74a8efba9",
