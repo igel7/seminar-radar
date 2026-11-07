@@ -332,6 +332,10 @@
   "method": "search",
   "note": "2026-10-20 再挑戦: Cloudflare(Chromium も不可)。実際の一覧は /news-and-events/events。 2026-11-04 リトライ: 403継続。検索で2027年なし。"
  },
+ "Bank of England – Upcoming external events involving Bank staff": {
+  "no_detail_pages": true,
+  "note": "2026-11-07: 職員登壇の一覧。個別ページが無い項目(外部会議)あり"
+ },
  "Bank of England – Events": {
   "render": "chromium",
   "note": "2026-10-20: 一覧はJS描画で静的HTMLは0件。fetch_all が headless Chromium(scripts/fetch_page.py)で描画して取得する(render: chromium)。個別イベントページは静的で fetch_details.py で登壇者を補完できる。Chromium が使えない環境では通常取得に戻り FAIL-THIN になる(その場合は site: 検索で補完)"
