@@ -31,7 +31,7 @@
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
   "found": 0,
-  "note": "2026-11-07 抽出"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "Banka Slovenije – Events",
@@ -126,7 +126,7 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "2026-11-07 抽出"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "EBA – European Banking Authority – Events",
@@ -185,7 +185,7 @@
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "error": "一覧が描画されずイベント項目なし。tried: fetch, alt-urls"
+  "error": "一覧が描画されずイベント項目なし(Showing 1 to 20 of 85 のみ)。tried: fetch, chromium, hints"
  },
  {
   "name": "House of Finance (Goethe大) – Veranstaltungen",
@@ -227,7 +227,7 @@
   "url": "",
   "ok": true,
   "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
@@ -364,15 +364,15 @@
   "ok": false,
   "found": 0,
   "note": "変化なし(差分検知によりスキップ)",
-  "error": "カレンダー未描画でイベント一覧がキャッシュに無い。tried: fetch, alt-urls"
+  "error": "カレンダー未描画(WebFetchでも見出しのみ)。tried: fetch, alt-urls, webfetch"
  },
  {
   "name": "Green and Sustainable Finance Cluster Germany (Frankfurt)",
   "url": "https://sustainablefinancecluster.com/en/events/",
-  "ok": false,
+  "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)",
-  "error": "キャッシュにイベント本文なし(CSSのみ)。tried: fetch, alt-urls"
+  "note": "2026-11-08 WebFetchで取得: Upcoming events は Nothing Found",
+  "error": "代替: WebFetch(fetch_allはCSSのみ)"
  },
  {
   "name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
@@ -386,7 +386,7 @@
   "url": "https://dgap.org/de/veranstaltungen",
   "ok": false,
   "found": 0,
-  "note": "2026-10-25: 週次再確認実施。Cloudflare 検証ページのみで解除せず(次回再確認 2026-11-01)",
+  "note": "2026-11-08: 週次再確認実施。Cloudflare 検証ページのみで解除せず(次回再確認 2026-11-15)",
   "error": "恒常ブロック(週次再確認待ち)"
  },
  {
@@ -394,41 +394,41 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "2026-11-07 抽出"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "",
   "ok": true,
   "found": 1,
-  "note": "2026-11-07 抽出"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "全件エストニア開催で対象外"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "",
   "ok": true,
   "found": 14,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "Latvijas Banka – Research/Events",
   "url": "",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-07 抽出"
+  "found": 0,
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "OMFIF – Events/Meetings",
@@ -442,7 +442,7 @@
   "url": "",
   "ok": true,
   "found": 3,
-  "note": "2026-11-07 抽出"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
@@ -456,7 +456,7 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "2026-11-07 抽出"
+  "note": "2026-11-08 抽出"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
@@ -470,21 +470,21 @@
   "url": "https://www.lb.lt/en/events",
   "ok": true,
   "found": 3,
-  "note": "WebSearch(site:)経由で確認、直接取得は403"
+  "note": "2026-11-08 直接403、discovery検索で既知2件を再確認"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
   "found": 25,
-  "note": "diw.de へ301後に取得成功"
+  "note": "2026-11-08 diw.de へ301後にWebFetchで取得、全件既知"
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/events",
   "ok": false,
   "found": 0,
-  "note": "直接404、web検索で日程付きウェビナーなし",
+  "note": "2026-11-08 直接404、discovery検索で日程付きウェビナーなし",
   "error": "403/404。tried: fetch, search"
  },
  {
@@ -499,8 +499,8 @@
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": false,
   "found": 0,
-  "note": "co-host web search: 新規なし",
-  "error": "Imperva ボット対策。tried: fetch, search"
+  "note": "2026-11-08 co-host/検索: 新規なし",
+  "error": "Imperva ボット対策。tried: fetch, hints, search"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
@@ -508,14 +508,14 @@
   "ok": false,
   "found": 0,
   "note": "2026-11-04 リトライ: 元URL・/en/・sitemap・rss・評価ページ(24076/2671/2675/2125)とも WAF の 'This page can't be displayed'(200・730字)または JS 空殻。検索(2クエリ)でも BEARS 2026-27 の日程なし。tried: fetch, ua-curl, hints, alt-paths, sitemap, rss, search",
-  "error": "本文に日程なし。tried: fetch, search"
+  "error": "本文に日程なし。tried: fetch, search 2026-11-08: キャッシュは見出し・メニューのみ。tried: fetch, search"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "",
   "ok": true,
-  "found": 8,
-  "note": "2026-11-07 抽出"
+  "found": 2,
+  "note": "2026-11-08 抽出。NBS-PRI-ECGI講演シリーズは開始日が過去・期間集約で個別開催日不明のため不採用"
  },
  {
   "name": "ICMA – International Capital Market Association – Events",
@@ -528,15 +528,15 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 3,
-  "note": "候補3件は全て既知、新規採用0件"
+  "found": 12,
+  "note": "候補約12件は全て既知、新規採用0件"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "2026-11-04 手動セッションで INBOX を処理: BNR(BEARS・events)・BNB(トップ・研究)は今後の日付なし、DGAP 3件(11/9・11/10・11/11)を収載、Bank of Lithuania 2件は既知、Jacques Delors Centre は政治学の研究報告のみで対象外、EBA はパリ現地開催のみでオンライン明記なしのため対象外"
+  "note": "INBOX・manual とも対象なし"
  },
  {
   "name": "Frankfurt School – Centre for Central Banking (CCB) – Events",
