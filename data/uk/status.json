@@ -10,21 +10,20 @@
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
-  "found": 11,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 15
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
-  "ok": true,
-  "found": 1
+  "ok": false,
+  "found": 0,
+  "error": "Chromium描画でも本文が薄い(FAIL-THIN)。tried: fetch, chromium, hints, search"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 5,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 5
  },
  {
   "name": "Bank of England – Events",
@@ -37,8 +36,7 @@
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 7
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
@@ -115,7 +113,7 @@
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search (UA偽装curlは実行環境の権限で不可)",
+  "error": "NET-ERR(接続断)。tried: fetch, hints, search",
   "note": "2026-11-04 リトライ: 接続断継続。検索(3クエリ)で2027年イベント無し。tried: fetch, ua-curl, hints, search"
  },
  {
@@ -129,14 +127,13 @@
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 4
+  "found": 12
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -149,8 +146,7 @@
   "name": "LSE – Financial Markets Group (FMG) – Events",
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
-  "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 2
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -177,8 +173,7 @@
   "name": "Oxford Martin School – Events",
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
   "ok": true,
-  "found": 7,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 6
  },
  {
   "name": "Cambridge Judge Business School – Events",
@@ -252,8 +247,7 @@
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
-  "found": 5,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 4
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -273,8 +267,7 @@
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
-  "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 2
  },
  {
   "name": "TheCityUK – Events",
@@ -294,8 +287,7 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 3
  },
  {
   "name": "ISDA – Events",
@@ -369,8 +361,7 @@
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
-  "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
@@ -383,8 +374,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 14,
-  "note": "候補約14件を確認、新規採用0件(全て既知・対象外・日付未確認)"
+  "found": 12,
+  "note": "候補約12件を確認。新規採用0件(FT Climate & Impact Summit 2027は有料商用・importance2のため不採用、他は既知/対象外/過去)。ブロック8ソースの検索補完も新規なし"
  },
  {
   "name": "手動取込",
