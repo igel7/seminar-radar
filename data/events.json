@@ -2551,41 +2551,6 @@
    "notable_tier": null
   },
   {
-   "title": "Börsentag in Berlin",
-   "title_ja": "ベルリン証券取引所デー",
-   "organizer": "BaFin",
-   "date_start": "2026-10-10",
-   "date_end": null,
-   "time": "09:30",
-   "city": "Berlin",
-   "venue": "Ludwig Erhard Haus Berlin, Fasanenstraße 85",
-   "format": "onsite",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "BaFinは出展者として参加(主催者ではない)。詳細は主催者サイトを参照。",
-   "url": "https://www.bafin.de/SharedDocs/Veranstaltungen/DE/261010_boersentag_berlin_26.html?nn=149586",
-   "summary_ja": "ベルリンで開催される証券市場および金融機関向けの公開イベント。",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "BaFin",
-   "title_short": "Stock Exchange Day Berlin",
-   "importance": 1,
-   "registration_url": "https://www.boersentag-berlin.de/anmeldung.html",
-   "time_end": "16:30",
-   "source": "BaFin – Veranstaltungen",
-   "id": "bbc88c3accc77d5a",
-   "first_seen": "2026-07-23",
-   "summary_en": "Public event in Berlin for capital market professionals and financial institutions.",
-   "summary_de": "Öffentliche Veranstaltung in Berlin für Kapitalmarktfachleute und Finanzinstitute.",
-   "registration_note_en": "BaFin participates as an exhibitor, not as organiser; see the organiser's website for details.",
-   "registration_note_de": "Die BaFin ist als Aussteller vertreten, nicht als Veranstalter; Details siehe Website des Veranstalters.",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Empirical International Finance",
    "title_ja": "実証国際金融論",
    "organizer": "IfW Kiel",
@@ -2932,8 +2897,59 @@
    "summary_de": "EZB-Konferenz zu strukturellem Wandel, Konjunkturzyklen und Geldpolitik, mit Themen wie KI, geopolitischer Fragmentierung, demografischem Wandel und grüner Transformation.",
    "registration_note_en": "Paper submission deadline 6 September 2026; includes a policymaker-focused 'Day-Ahead' session.",
    "registration_note_de": "Einreichungsfrist für Papiere: 6. September 2026; mit einer politikorientierten 'Day-Ahead'-Session.",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "philip-lane",
+     "name": "Philip R. Lane",
+     "group": "ecb",
+     "tier": 1,
+     "short": "ECB Chief Economist",
+     "former": false
+    }
+   ],
+   "notable_tier": 1,
+   "speakers": [
+    {
+     "name": "Oscar Arce",
+     "org": "ECB",
+     "role": null
+    },
+    {
+     "name": "Rachel Ngai",
+     "org": "LSE",
+     "role": null
+    },
+    {
+     "name": "Jesús Fernández-Villaverde",
+     "org": "UPenn",
+     "role": null
+    },
+    {
+     "name": "Philip R. Lane",
+     "org": "ECB",
+     "role": "Member of the Executive Board"
+    },
+    {
+     "name": "Guido Ascari",
+     "org": "DNB",
+     "role": null
+    },
+    {
+     "name": "Anton Korinek",
+     "org": "Anthropic",
+     "role": null
+    },
+    {
+     "name": "Peter McCrory",
+     "org": "Anthropic",
+     "role": null
+    },
+    {
+     "name": "Tobias Adrian",
+     "org": "IMF",
+     "role": null
+    }
+   ]
   },
   {
    "title": "11. ZEW-Konferenz zur Ökonomik von Innovationen und Patenten",
@@ -3384,8 +3400,8 @@
    "venue": "bcc Berlin Congress Center, Alexanderstraße 11, 10178 Berlin",
    "format": "onsite",
    "themes": [
-    "real_economy",
-    "climate_esg"
+    "climate_esg",
+    "real_economy"
    ],
    "fee": "paid",
    "open_to_public": true,
@@ -3409,9 +3425,19 @@
    "fee_amount": 849,
    "speakers": [
     {
+     "name": "Corinna Enders",
+     "org": "dena",
+     "role": "Vorsitzende der Geschäftsführung"
+    },
+    {
      "name": "Steffen Bilger",
-     "org": "BMV",
+     "org": null,
      "role": "Bundesminister für Verkehr"
+    },
+    {
+     "name": "Frank Wetzel",
+     "org": "BMWE",
+     "role": "Staatssekretär"
     },
     {
      "name": "Rita Schwarzelühr-Sutter",
@@ -3419,29 +3445,24 @@
      "role": "Parlamentarische Staatssekretärin"
     },
     {
+     "name": "Melanie Weber-Moritz",
+     "org": "Deutscher Mieterbund",
+     "role": "Präsidentin"
+    },
+    {
+     "name": "Ingbert Liebing",
+     "org": "VKU",
+     "role": "Hauptgeschäftsführer"
+    },
+    {
      "name": "Ingeborg Esser",
      "org": "GdW",
      "role": "Hauptgeschäftsführerin"
     },
     {
-     "name": "Melanie Weber-Moritz",
-     "org": "DMB",
-     "role": "Präsidentin"
-    },
-    {
-     "name": "Bastian Gierull",
-     "org": "octopus energy",
-     "role": "Chief Executive Officer"
-    },
-    {
-     "name": "Susanne König",
-     "org": "Kraftblock",
-     "role": "Co-Founder & Chief of External Affairs"
-    },
-    {
-     "name": "Corinna Enders",
-     "org": "dena",
-     "role": "Vorsitzende der dena-Geschäftsführung"
+     "name": "Markus Staudt",
+     "org": "BDH",
+     "role": "Hauptgeschäftsführer"
     }
    ],
    "notables": [],
@@ -24230,7 +24251,23 @@
    "organizer_short": "ZEW",
    "title_short": "EU Budget Talks",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Zareh Asatryan",
+     "org": "ZEW",
+     "role": null
+    },
+    {
+     "name": "Max von Ehrlich",
+     "org": "U Bern",
+     "role": null
+    },
+    {
+     "name": "Enrico Pesaresi",
+     "org": "EC",
+     "role": null
+    }
+   ],
    "source": "ZEW Mannheim – Veranstaltungen",
    "id": "f6d50e6486e9417d",
    "first_seen": "2026-10-23",
@@ -29174,6 +29211,422 @@
     }
    ],
    "notable_tier": 2
+  },
+  {
+   "title": "ECB Banking supervision media seminar 2026",
+   "title_ja": "ECB銀行監督メディアセミナー2026",
+   "organizer": "European Central Bank",
+   "date_start": "2026-11-18",
+   "date_end": "2026-11-19",
+   "time": null,
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bankingsupervision.europa.eu/press/conferences/html/20261118_media_seminar.en.html",
+   "summary_ja": "ECB銀行監督部門が主催するメディアセミナー(2026年11月18日〜19日、フランクフルト)。",
+   "summary_en": "ECB media seminar on banking supervision, 18–19 November 2026 in Frankfurt am Main.",
+   "summary_de": "Medienseminar der EZB zur Bankenaufsicht, 18.–19. November 2026 in Frankfurt am Main.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "ECB",
+   "title_short": "Banking Supervision Media Seminar",
+   "importance": 1,
+   "speakers": [],
+   "source": "ECB Banking Supervision (SSM) – Conferences & seminars",
+   "id": "148d670732666ebc",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Decision-Making Dynamics and Policy Responsibilities in the European Union: Evidence from a Recent Survey",
+   "title_ja": "EUの意思決定ダイナミクスと政策責任（調査データ）",
+   "organizer": "Jacques Delors Centre (Hertie School)",
+   "date_start": "2026-11-24",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "16:00",
+   "city": "Berlin",
+   "venue": "Hertie School, Friedrichstraße 180",
+   "format": "hybrid",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "一般公開・オンライン参加可",
+   "registration_note_en": "Open to the public; online participation possible",
+   "registration_note_de": "Öffentlich zugänglich; Online-Teilnahme möglich",
+   "registration_url": null,
+   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/decision-making-dynamics-and-policy-responsibilities-in-the-european-union-evidence-from-a-recent-survey",
+   "summary_ja": "EUの意思決定ダイナミクスと政策責任を近年の調査データから分析する研究報告（LMUのLucas Schramm氏）。",
+   "summary_en": "Research presentation analysing decision-making dynamics and policy responsibilities in the EU with a recent survey, by Lucas Schramm (LMU).",
+   "summary_de": "Forschungsvortrag zu Entscheidungsdynamiken und politischer Verantwortung in der EU auf Basis einer aktuellen Umfrage, von Lucas Schramm (LMU).",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "Delors Centre",
+   "title_short": "EU Decision-Making and Responsibilities",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Lucas Schramm",
+     "org": "LMU",
+     "role": "Chair of Political Systems and European Integration"
+    }
+   ],
+   "source": "Jacques Delors Centre (Hertie School, Berlin) – Events",
+   "id": "5834feed80e7af80",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Eurosceptic Mobilization of Constitutional Law",
+   "title_ja": "憲法法のEU懐疑的な動員",
+   "organizer": "Jacques Delors Centre (Hertie School)",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": "14:30",
+   "time_end": "16:00",
+   "city": "Berlin",
+   "venue": "Hertie School, Friedrichstraße 180",
+   "format": "hybrid",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "一般公開・オンライン参加可",
+   "registration_note_en": "Open to the public; online participation possible",
+   "registration_note_de": "Öffentlich zugänglich; Online-Teilnahme möglich",
+   "registration_url": null,
+   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/the-eurosceptic-mobilization-of-constitutional-law",
+   "summary_ja": "EU懐疑派が憲法法をどのように動員するかを扱う研究報告。",
+   "summary_en": "Research presentation on how Eurosceptic actors mobilise constitutional law.",
+   "summary_de": "Forschungsvortrag darüber, wie euroskeptische Akteure das Verfassungsrecht mobilisieren.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "Delors Centre",
+   "title_short": "Euroscepticism and Constitutional Law",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Pablo Castillo-Ortiz",
+     "org": "Esade",
+     "role": "Associate Professor"
+    },
+    {
+     "name": "Giuseppe Martinico",
+     "org": "Sant'Anna",
+     "role": "Full Professor"
+    }
+   ],
+   "source": "Jacques Delors Centre (Hertie School, Berlin) – Events",
+   "id": "5e34efc53c71c252",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Integrating under Pressure? Crisis Rhetoric, Legislative Speed and Authority Expansion in the EU",
+   "title_ja": "危機下の統合？EUにおける危機言説と権限拡大",
+   "organizer": "Jacques Delors Centre (Hertie School)",
+   "date_start": "2026-11-10",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": "15:30",
+   "city": "Berlin",
+   "venue": "Hertie School, Friedrichstraße 180",
+   "format": "hybrid",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "一般公開・オンライン参加可",
+   "registration_note_en": "Open to the public; online participation possible",
+   "registration_note_de": "Öffentlich zugänglich; Online-Teilnahme möglich",
+   "registration_url": null,
+   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/integrating-under-pressure-crisis-rhetoric-legislative-speed-and-authority-expansion-in-the-eu",
+   "summary_ja": "Jacques Delors Centreの研究報告。危機時の政治的言説と立法の迅速化がEUの権限拡大をどう伴ったかを検討する。",
+   "summary_en": "Research presentation by the Jacques Delors Centre on how crisis rhetoric and fast-track legislation expanded EU authority.",
+   "summary_de": "Forschungsvortrag des Jacques Delors Centre zu der Frage, wie Krisenrhetorik und beschleunigte Gesetzgebung die Kompetenzen der EU erweitert haben.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "Delors Centre",
+   "title_short": "EU Crisis Rhetoric and Integration",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Lukas Hetzer",
+     "org": "Delors Centre",
+     "role": "Postdoctoral Researcher"
+    }
+   ],
+   "source": "Jacques Delors Centre (Hertie School, Berlin) – Events",
+   "id": "63c75fd1df7a7e1b",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Spring Conference 2027: Macroeconomic Stabilization in the Presence of Fiscal and Geopolitical Risks",
+   "title_ja": "2027年春季会議: 財政・地政学リスク下のマクロ安定化",
+   "organizer": "Deutsche Bundesbank – Danmarks Nationalbank – Norges Bank",
+   "date_start": "2027-06-03",
+   "date_end": "2027-06-04",
+   "time": null,
+   "city": "Eltville am Rhein",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank",
+    "real_economy",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bundesbank.de/en/bundesbank/research/conferences/spring-conference-2027-macroeconomic-stabilization-in-the-presence-of-fiscal-and-geopolitical-risks-636648",
+   "summary_ja": "ドイツ連邦銀行、デンマーク国立銀行、ノルウェー中央銀行が共催する研究会議。財政リスクと地政学リスクがある下でのマクロ経済安定化を扱う。",
+   "summary_en": "A research conference co-hosted by Deutsche Bundesbank, Danmarks Nationalbank and Norges Bank on macroeconomic stabilization amid fiscal and geopolitical risks.",
+   "summary_de": "Forschungskonferenz der Deutschen Bundesbank, der Danmarks Nationalbank und der Norges Bank zur makroökonomischen Stabilisierung angesichts fiskalischer und geopolitischer Risiken.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "Bundesbank+",
+   "title_short": "Macro Stabilization Under Risks",
+   "importance": 2,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "Bundesbank – Forschungskonferenzen",
+   "id": "7f5b82dfe20e142d",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "How Cold Will Winter Be? Towards an Energy Future That’s Fair, Sustainable, and Affordable",
+   "title_ja": "今冬の寒さは？公正で持続可能なエネルギー未来",
+   "organizer": "WU Wien (Wirtschaftsuniversität Wien)",
+   "date_start": "2026-12-02",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "Vienna",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.wu.ac.at/en/the-university/events",
+   "summary_ja": "WU Wien（ウィーン経済大学）で開かれるオンサイトの催し。公正で持続可能かつ手頃な価格のエネルギー未来を主題とする。",
+   "summary_en": "An on-site event at WU Vienna on building a fair, sustainable and affordable energy future.",
+   "summary_de": "Eine Präsenzveranstaltung an der WU Wien zu einer fairen, nachhaltigen und bezahlbaren Energiezukunft.",
+   "language": "en",
+   "country": "AT",
+   "organizer_short": "WU Wien",
+   "title_short": "Affordable Energy Future",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [],
+   "source": "WU Wien (Wirtschaftsuniversität) – Events",
+   "id": "a1cb5d6bc479151b",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Berlin x Tokyo: Partners in Innovation",
+   "title_ja": "ベルリン×東京 イノベーションの連携",
+   "organizer": "Japanisch-Deutsches Zentrum Berlin",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "japan",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://jdzb.de/de/veranstaltungen/berlin-x-tokyo-partners-innovation",
+   "summary_ja": "JDZBが開催するベルリンと東京のイノベーション連携をテーマとするイベント。",
+   "summary_en": "JDZB event on innovation partnership between Berlin and Tokyo.",
+   "summary_de": "JDZB-Veranstaltung zur Innovationspartnerschaft zwischen Berlin und Tokio.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "JDZB",
+   "title_short": "Berlin-Tokyo Innovation Partnership",
+   "importance": 1,
+   "speakers": [],
+   "source": "JDZB – 日独センター (Berlin) – Veranstaltungen",
+   "id": "bcfd18a3e19972ea",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Accelerating Decarbonization of Iron and Steel Production",
+   "title_ja": "鉄鋼生産の脱炭素化を加速する",
+   "organizer": "ZEW Mannheim (joint with MISES)",
+   "date_start": "2026-11-30",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Mannheim",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/accelerating-decarbonization-of-iron-and-steel-production/5039",
+   "summary_ja": "ZEWとMISESの合同の脱炭素化セミナー。鉄鋼生産の脱炭素化の加速を扱う研究報告。",
+   "summary_en": "A joint ZEW and MISES decarbonization seminar on accelerating decarbonization of iron and steel production.",
+   "summary_de": "Gemeinsames Dekarbonisierungsseminar von ZEW und MISES zur Beschleunigung der Dekarbonisierung der Eisen- und Stahlproduktion.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "ZEW+",
+   "title_short": "Decarbonizing Iron and Steel",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Valerie Karplus",
+     "org": "Carnegie Mellon University",
+     "role": null
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "de3bcdf4ce0cba5f",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Who Is Stricter, and Why? // Lending Standards With Directed Consumer Search",
+   "title_ja": "誰がより厳しいのか：指向的消費者サーチと貸出基準",
+   "organizer": "ZEW Mannheim",
+   "date_start": "2026-11-19",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Mannheim",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/who-is-stricter-and-why/5041",
+   "summary_ja": "ZEWの研究セミナー。指向的な消費者サーチの下での貸出基準を扱う研究報告。",
+   "summary_en": "ZEW research seminar presenting work on lending standards under directed consumer search.",
+   "summary_de": "ZEW-Forschungsseminar zu Kreditvergabestandards bei gerichteter Kundensuche.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "ZEW",
+   "title_short": "Lending Standards and Search",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Joeri Smits",
+     "org": "Tufts University",
+     "role": null
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "e881875297022b93",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "IWH Research Seminar - Andrea Chiavari",
+   "title_ja": "IWH研究セミナー（演題未定）",
+   "organizer": "Leibniz-Institut für Wirtschaftsforschung Halle (IWH)",
+   "date_start": "2027-01-12",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:45",
+   "city": "Halle (Saale)",
+   "venue": "IWH, conference room, Leipziger Straße 100",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/tba-46",
+   "summary_ja": "IWH研究セミナー（演題未定）で、オックスフォード大学のAndrea Chiavari氏が報告する。",
+   "summary_en": "IWH research seminar (title to be announced) with a presentation by Andrea Chiavari (University of Oxford).",
+   "summary_de": "IWH-Forschungsseminar (Thema noch offen) mit einem Vortrag von Andrea Chiavari (University of Oxford).",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IWH",
+   "title_short": "Economic Research Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Andrea Chiavari",
+     "org": "Oxford",
+     "role": null
+    }
+   ],
+   "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+   "id": "f640bec5a6aeb9bc",
+   "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
   }
  ]
 }

@@ -364,14 +364,6 @@ LOCATION:Frankfurt am Main
 DESCRIPTION:金融規制に関する政界・産業界・規制当局の対話の場となる、フランクフルト・スクール主催の年次会議。 / 主催: Frankfurt Competence Centre for German and Global Regulation (FCCR)\, Frankfurt School of Finance & Management / https://fccr.frankfurt-school.de/8-frankfurter-regulierungskonferenz-2026/
 END:VEVENT
 BEGIN:VEVENT
-UID:bbc88c3accc77d5a@seminar-radar
-DTSTART;VALUE=DATE:20261010
-DTEND;VALUE=DATE:20261011
-SUMMARY:Börsentag in Berlin
-LOCATION:Berlin
-DESCRIPTION:ベルリンで開催される証券市場および金融機関向けの公開イベント。 / 主催: BaFin / https://www.bafin.de/SharedDocs/Veranstaltungen/DE/261010_boersentag_berlin_26.html?nn=149586
-END:VEVENT
-BEGIN:VEVENT
 UID:2d287d40a92b3398@seminar-radar
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261121
@@ -441,7 +433,7 @@ DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261203
 SUMMARY:Central banking economic modelling frontiers: trends\, cycles and structural shifts
 LOCATION:Frankfurt am Main
-DESCRIPTION:構造変化・景気循環と金融政策運営を扱うECB会議。AI、地政学的分断、人口動態、グリーン移行などのテーマを含む。 / 主催: European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261201_cb_econ_model_frontiers.en.html
+DESCRIPTION:構造変化・景気循環と金融政策運営を扱うECB会議。AI、地政学的分断、人口動態、グリーン移行などのテーマを含む。 / 主催: European Central Bank / https://www.ecb.europa.eu/press/conferences/html/20261201_cb_econ_model_frontiers.en.html / 登壇: Oscar Arce (ECB)\, Rachel Ngai (LSE)\, Jesús Fernández-Villaverde (UPenn)\, Philip R. Lane (ECB)\, Guido Ascari (DNB)\, Anton Korinek (Anthropic)\, Peter McCrory (Anthropic)\, Tobias Adrian (IMF) / 要人: Philip R. Lane (ECB Chief Economist)
 END:VEVENT
 BEGIN:VEVENT
 UID:c8d9a36f0ee33da5@seminar-radar
@@ -529,7 +521,7 @@ DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261111
 SUMMARY:dena Kongress 2026
 LOCATION:Berlin
-DESCRIPTION:エネルギー転換に関する業界最大級の国際会議。50以上のセッションと200人以上の講演者が参加。 / 主催: Deutsche Energie-Agentur (dena) / https://www.dena.de/dena-kongress/ / 登壇: Steffen Bilger (BMV)\, Rita Schwarzelühr-Sutter (BMUKN)\, Ingeborg Esser (GdW)\, Melanie Weber-Moritz (DMB)\, Bastian Gierull (octopus energy)\, Susanne König (Kraftblock)\, Corinna Enders (dena)
+DESCRIPTION:エネルギー転換に関する業界最大級の国際会議。50以上のセッションと200人以上の講演者が参加。 / 主催: Deutsche Energie-Agentur (dena) / https://www.dena.de/dena-kongress/ / 登壇: Corinna Enders (dena)\, Steffen Bilger\, Frank Wetzel (BMWE)\, Rita Schwarzelühr-Sutter (BMUKN)\, Melanie Weber-Moritz (Deutscher Mieterbund)\, Ingbert Liebing (VKU)\, Ingeborg Esser (GdW)\, Markus Staudt (BDH)
 END:VEVENT
 BEGIN:VEVENT
 UID:11e215a0524f70fd@seminar-radar
@@ -3001,7 +2993,7 @@ DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Webinarreihe: EU Budget Talks
 LOCATION:
-DESCRIPTION:EUの予算交渉を取り上げるウェビナーシリーズ（#ZEWlive）。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/webinarreihe-eu-budget-talks/4906?cHash=75a21b40a7fd61bd2ea32427171b7f30
+DESCRIPTION:EUの予算交渉を取り上げるウェビナーシリーズ（#ZEWlive）。 / 主催: ZEW Mannheim / https://www.zew.de/veranstaltungen-und-weiterbildung/detail/webinarreihe-eu-budget-talks/4906?cHash=75a21b40a7fd61bd2ea32427171b7f30 / 登壇: Zareh Asatryan (ZEW)\, Max von Ehrlich (U Bern)\, Enrico Pesaresi (EC)
 END:VEVENT
 BEGIN:VEVENT
 UID:fb7377a5bea8d8b2@seminar-radar
@@ -3722,5 +3714,61 @@ DTEND;VALUE=DATE:20261113
 SUMMARY:Finanzmarktklausur 2026
 LOCATION:Berlin
 DESCRIPTION:CDU経済評議会(Wirtschaftsrat)主催の金融市場クラウスール。Michael Theurer氏が「リスクが高まる世界における独国の金融システム」について講演する。 / 主催: Wirtschaftsrat der CDU / https://www.bundesbank.de/de/service/termine / 登壇: Michael Theurer / 要人: Michael Theurer (Bundesbank Board member)
+END:VEVENT
+BEGIN:VEVENT
+UID:148d670732666ebc@seminar-radar
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261120
+SUMMARY:ECB Banking supervision media seminar 2026
+LOCATION:Frankfurt am Main
+DESCRIPTION:ECB銀行監督部門が主催するメディアセミナー(2026年11月18日〜19日、フランクフルト)。 / 主催: European Central Bank / https://www.bankingsupervision.europa.eu/press/conferences/html/20261118_media_seminar.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:5834feed80e7af80@seminar-radar
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Decision-Making Dynamics and Policy Responsibilities in the European Union: Evidence from a Recent Survey
+LOCATION:Berlin
+DESCRIPTION:EUの意思決定ダイナミクスと政策責任を近年の調査データから分析する研究報告（LMUのLucas Schramm氏）。 / 主催: Jacques Delors Centre (Hertie School) / https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/decision-making-dynamics-and-policy-responsibilities-in-the-european-union-evidence-from-a-recent-survey / 登壇: Lucas Schramm (LMU)
+END:VEVENT
+BEGIN:VEVENT
+UID:5e34efc53c71c252@seminar-radar
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:The Eurosceptic Mobilization of Constitutional Law
+LOCATION:Berlin
+DESCRIPTION:EU懐疑派が憲法法をどのように動員するかを扱う研究報告。 / 主催: Jacques Delors Centre (Hertie School) / https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/the-eurosceptic-mobilization-of-constitutional-law / 登壇: Pablo Castillo-Ortiz (Esade)\, Giuseppe Martinico (Sant'Anna)
+END:VEVENT
+BEGIN:VEVENT
+UID:63c75fd1df7a7e1b@seminar-radar
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Integrating under Pressure? Crisis Rhetoric\, Legislative Speed and Authority Expansion in the EU
+LOCATION:Berlin
+DESCRIPTION:Jacques Delors Centreの研究報告。危機時の政治的言説と立法の迅速化がEUの権限拡大をどう伴ったかを検討する。 / 主催: Jacques Delors Centre (Hertie School) / https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/integrating-under-pressure-crisis-rhetoric-legislative-speed-and-authority-expansion-in-the-eu / 登壇: Lukas Hetzer (Delors Centre)
+END:VEVENT
+BEGIN:VEVENT
+UID:7f5b82dfe20e142d@seminar-radar
+DTSTART;VALUE=DATE:20270603
+DTEND;VALUE=DATE:20270605
+SUMMARY:Spring Conference 2027: Macroeconomic Stabilization in the Presence of Fiscal and Geopolitical Risks
+LOCATION:Eltville am Rhein
+DESCRIPTION:ドイツ連邦銀行、デンマーク国立銀行、ノルウェー中央銀行が共催する研究会議。財政リスクと地政学リスクがある下でのマクロ経済安定化を扱う。 / 主催: Deutsche Bundesbank – Danmarks Nationalbank – Norges Bank / https://www.bundesbank.de/en/bundesbank/research/conferences/spring-conference-2027-macroeconomic-stabilization-in-the-presence-of-fiscal-and-geopolitical-risks-636648
+END:VEVENT
+BEGIN:VEVENT
+UID:a1cb5d6bc479151b@seminar-radar
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:How Cold Will Winter Be? Towards an Energy Future That’s Fair\, Sustainable\, and Affordable
+LOCATION:Vienna
+DESCRIPTION:WU Wien（ウィーン経済大学）で開かれるオンサイトの催し。公正で持続可能かつ手頃な価格のエネルギー未来を主題とする。 / 主催: WU Wien (Wirtschaftsuniversität Wien) / https://www.wu.ac.at/en/the-university/events
+END:VEVENT
+BEGIN:VEVENT
+UID:bcfd18a3e19972ea@seminar-radar
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:Berlin x Tokyo: Partners in Innovation
+LOCATION:Berlin
+DESCRIPTION:JDZBが開催するベルリンと東京のイノベーション連携をテーマとするイベント。 / 主催: Japanisch-Deutsches Zentrum Berlin / https://jdzb.de/de/veranstaltungen/berlin-x-tokyo-partners-innovation
 END:VEVENT
 END:VCALENDAR
