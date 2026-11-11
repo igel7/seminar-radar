@@ -23379,7 +23379,48 @@
    "importance": 2,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Chris Wright",
+     "org": "DOE",
+     "role": "Secretary of Energy"
+    },
+    {
+     "name": "Miłosz Motyka",
+     "org": "Ministry of Energy (Poland)",
+     "role": "Minister of Energy"
+    },
+    {
+     "name": "Władysław Kosiniak-Kamysz",
+     "org": "Ministry of Defence (Poland)",
+     "role": "Deputy Prime Minister and Minister of Defense"
+    },
+    {
+     "name": "Lukas Savickas",
+     "org": "Ministry of Energy (Lithuania)",
+     "role": "Minister of Energy"
+    },
+    {
+     "name": "Mechthild Wörsdörfer",
+     "org": "ENTSOG",
+     "role": "Deputy Director-General for Energy, DG ENER; General Director"
+    },
+    {
+     "name": "Grzegorz Onichimowski",
+     "org": "PSE",
+     "role": "President of the Management Board"
+    },
+    {
+     "name": "Kiril Ravnachki",
+     "org": "Bulgartransgaz",
+     "role": "Chief Executive Officer"
+    },
+    {
+     "name": "Mihai Laurențiu Gioară",
+     "org": "Nuclearelectrica",
+     "role": "Chief Executive Officer"
+    }
+   ],
    "source": "web検索(discovery)",
    "id": "a367a458693adebb",
    "first_seen": "2026-10-21",
@@ -29242,12 +29283,78 @@
    "organizer_short": "ECB",
    "title_short": "Banking Supervision Media Seminar",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Boris Vujčić",
+     "org": "ECB",
+     "role": "Vice-President of the ECB"
+    },
+    {
+     "name": "Claudia Buch",
+     "org": "ECB",
+     "role": "Chair of the Supervisory Board"
+    },
+    {
+     "name": "Frank Elderson",
+     "org": "ECB",
+     "role": "Member of the Executive Board and Vice-Chair of the Supervisory Board"
+    },
+    {
+     "name": "Patrick Montagner",
+     "org": "ECB",
+     "role": "Member of the Supervisory Board"
+    },
+    {
+     "name": "Thomas Jorgensen",
+     "org": "ECB",
+     "role": "Director General Specialised Institutions and Less Significant Institutions"
+    },
+    {
+     "name": "Eleni Angelopoulou",
+     "org": "ECB",
+     "role": "Deputy Director General Systemic & International Banks"
+    },
+    {
+     "name": "Mario Quagliariello",
+     "org": "ECB",
+     "role": "Director Supervisory Strategy & Risk"
+    },
+    {
+     "name": "Anne Fröhling",
+     "org": "ECB",
+     "role": "Head of Institutional & Sectoral Oversight Division"
+    }
+   ],
    "source": "ECB Banking Supervision (SSM) – Conferences & seminars",
    "id": "148d670732666ebc",
    "first_seen": "2026-11-10",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "boris-vujcic",
+     "name": "Boris Vujčić",
+     "group": "ecb",
+     "tier": 1,
+     "short": "ECB VP",
+     "former": false
+    },
+    {
+     "person": "claudia-buch",
+     "name": "Claudia Buch",
+     "group": "supervisor",
+     "tier": 1,
+     "short": "SSM Chair",
+     "former": false
+    },
+    {
+     "person": "frank-elderson",
+     "name": "Frank Elderson",
+     "group": "ecb",
+     "tier": 2,
+     "short": "ECB Board member",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
   },
   {
    "title": "Decision-Making Dynamics and Policy Responsibilities in the European Union: Evidence from a Recent Survey",
@@ -29625,6 +29732,701 @@
    "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
    "id": "f640bec5a6aeb9bc",
    "first_seen": "2026-11-10",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Shifting Household Power Demand Across Time // Incentives and Automation",
+   "title_ja": "時間をまたぐ家計の電力需要シフト",
+   "organizer": "ZEW and MISES",
+   "date_start": "2026-11-16",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/shifting-household-power-demand-across-time/5043",
+   "summary_ja": "インセンティブと自動化が、時間をまたいだ家計の電力需要をどうずらすかを扱う研究セミナー。",
+   "summary_en": "A research seminar on how incentives and automation can shift household power demand across time.",
+   "summary_de": "Forschungsseminar zur zeitlichen Verlagerung der Haushaltsstromnachfrage durch Anreize und Automatisierung.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "ZEW+",
+   "title_short": "Household Power Demand Shifts",
+   "importance": 0,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Mirabelle Muûls",
+     "org": "Imperial College",
+     "role": null
+    }
+   ],
+   "source": "ZEW Mannheim – Veranstaltungen",
+   "id": "069549813bae9147",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Berufliche Bildung unter Druck: Mit Zukunftsmut die Transformation gestalten",
+   "title_ja": "圧力下の職業教育：変革を担う勇気",
+   "organizer": "Institut der deutschen Wirtschaft (IW)",
+   "date_start": "2026-11-19",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.iwkoeln.de/institut/veranstaltungen/dirk-werner-sibylle-stippler-berufliche-bildung-unter-druck-mit-zukunftsmut-die-transformation-gestalten.html",
+   "summary_ja": "景気・立地の危機が4年目に入る中、労働市場と職業教育が圧力を受けている現状を取り上げ、変革への取り組みを論じる。",
+   "summary_en": "Examines how the labour market and vocational training are under pressure as the economic and location crisis enters its fourth year, and how the transformation can be shaped.",
+   "summary_de": "Untersucht, wie Arbeitsmarkt und berufliche Bildung im vierten Jahr der Konjunktur- und Standortkrise unter Druck geraten und wie der Wandel gestaltet werden kann.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "IW Köln",
+   "title_short": "Vocational Training Under Pressure",
+   "importance": 1,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Dirk Werner",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Sibylle Stippler",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
+   "id": "157b3982ca7f45ae",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Geopolitische Umbrüche - Wie bleibt Europas Wirtschaft stabil?",
+   "title_ja": "地政学的転換と欧州経済の安定",
+   "organizer": "Rock Capital",
+   "date_start": "2026-11-12",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": null,
+   "city": "Aschheim",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "geopolitics",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bundesbank.de/de/service/termine",
+   "registration_url": null,
+   "summary_ja": "Rock Capital主催の「Talking Heads」シリーズの一回。ヨアヒム・ナーゲル氏を招き、地政学的な転換のなかで欧州経済をどう安定させるかを議論する。",
+   "summary_en": "A panel in Rock Capital's \"Talking Heads\" series with Joachim Nagel on how Europe's economy can stay stable amid geopolitical upheaval.",
+   "summary_de": "Podiumsdiskussion in der Reihe „Talking Heads“ von Rock Capital mit Joachim Nagel zur Frage, wie Europas Wirtschaft bei geopolitischen Umbrüchen stabil bleibt.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Rock Capital",
+   "title_short": "Geopolitics and Economic Stability",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Joachim Nagel",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "Bundesbank – Termine",
+   "id": "1dbe5ea55fe24540",
+   "first_seen": "2026-11-11",
+   "notables": [
+    {
+     "person": "joachim-nagel",
+     "name": "Joachim Nagel",
+     "group": "bundesbank",
+     "tier": 1,
+     "short": "Bundesbank President",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
+  },
+  {
+   "title": "KI-Standort Deutschland – zwischen Wissen, Können, Wollen und Müssen",
+   "title_ja": "ドイツのAI拠点：知る・できる・望む・すべき",
+   "organizer": "Institut der deutschen Wirtschaft (IW)",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "ai",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.iwkoeln.de/institut/veranstaltungen/barbara-engels-ki-standort-deutschland-zwischen-wissen-koennen-wollen-und-muessen.html",
+   "summary_ja": "IWのオンライン連続講座「Resilienz im Epochenbruch」の一回。ドイツのAI拠点としての課題を、知識・能力・意思・必要性の観点から論じる。",
+   "summary_en": "An online session in the IW series \"Resilience in the Epochal Break\" on Germany as an AI location, looking at knowledge, capability, will and necessity.",
+   "summary_de": "Eine Online-Folge der IW-Reihe „Resilienz im Epochenbruch“ zum KI-Standort Deutschland zwischen Wissen, Können, Wollen und Müssen.",
+   "language": "de",
+   "country": null,
+   "organizer_short": "IW Köln",
+   "title_short": "Germany as AI Location",
+   "importance": 1,
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Barbara Engels",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
+   "id": "347281c5755ce149",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Economic Challenges in Germany and the Future of Europe",
+   "title_ja": "ドイツ経済の課題と欧州の将来",
+   "organizer": "Latvijas Banka",
+   "date_start": "2026-11-11",
+   "date_end": null,
+   "time": "10:20",
+   "time_end": null,
+   "city": "Riga",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.bundesbank.de/de/service/termine",
+   "registration_url": null,
+   "summary_ja": "ラトビア銀行主催の「Economic Conference 2026」でのパネル討論。ヨアヒム・ナーゲル氏が登壇し、ドイツ経済の課題と欧州の将来を論じる。",
+   "summary_en": "A panel discussion at the Economic Conference 2026 hosted by Latvijas Banka, with Joachim Nagel on the economic challenges in Germany and the future of Europe.",
+   "summary_de": "Podiumsdiskussion auf der Economic Conference 2026 der Latvijas Banka mit Joachim Nagel zu den wirtschaftlichen Herausforderungen in Deutschland und der Zukunft Europas.",
+   "language": "en",
+   "country": "LV",
+   "organizer_short": "Latvijas Banka",
+   "title_short": "Economic Challenges and Europe",
+   "importance": 2,
+   "speakers": [
+    {
+     "name": "Joachim Nagel",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "Bundesbank – Termine",
+   "id": "382e3834112ba1a5",
+   "first_seen": "2026-11-11",
+   "notables": [
+    {
+     "person": "joachim-nagel",
+     "name": "Joachim Nagel",
+     "group": "bundesbank",
+     "tier": 1,
+     "short": "Bundesbank President",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
+  },
+  {
+   "title": "Sustainable Finance Webinar Series | Impact Performance Measurement: What is the Way Forward?",
+   "title_ja": "インパクト測定の今後(SBAウェビナー)",
+   "organizer": "Swiss Bankers Association",
+   "date_start": "2026-12-10",
+   "date_end": null,
+   "time": "11:00",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "会員機関の従業員限定のシリーズ",
+   "registration_note_en": "Series exclusively for employees of member institutions",
+   "registration_note_de": "Reihe ausschliesslich für Mitarbeitende der Mitgliedsinstitute",
+   "url": "https://www.swissbanking.ch/en/services/events/sustainable-finance-webinar-series-2",
+   "summary_ja": "ジュネーブ大学のRajna Gibson教授が、インパクト投資の測定方法、新たな研究成果と指標の限界、より適切な資本配分の判断方法を解説する。",
+   "summary_en": "Prof. Rajna Gibson (University of Geneva) discusses how impact investing can be measured more effectively, presents research on impact metrics and their limits, and shows how investors can allocate capital better.",
+   "summary_de": "Prof. Rajna Gibson (Universität Genf) erläutert, wie sich Impact Investing besser messen lässt, stellt Forschung zu Wirkungskennzahlen und deren Grenzen vor und zeigt Wege zu fundierteren Anlageentscheidungen.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "SBA",
+   "title_short": "Impact Performance Measurement",
+   "importance": 1,
+   "registration_url": "https://events.swissbanking.ch/en/event/impact-performance-measurement-what-is-the-way-forward",
+   "time_end": null,
+   "speakers": [
+    {
+     "name": "Rajna Gibson",
+     "org": "University of Geneva",
+     "role": null
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "57dc4c478d705970",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "CNB Research Seminar by Alex Grimaud (Oesterreichische Nationalbank & TU Wien)",
+   "title_ja": "CNB研究セミナー（Alex Grimaud）",
+   "organizer": "Czech National Bank",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Prague",
+   "venue": "CNB",
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "招待者のみ参加可",
+   "registration_note_en": "Invited participants only",
+   "registration_note_de": "Nur für eingeladene Teilnehmende",
+   "registration_url": null,
+   "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/",
+   "summary_ja": "CNB研究セミナー（招待制）。報告者は Alex Grimaud 氏（オーストリア国立銀行・ウィーン工科大学）。",
+   "summary_en": "CNB research seminar by Alex Grimaud (Oesterreichische Nationalbank & TU Wien), held in the CNB building or online; invited participants only.",
+   "summary_de": "CNB-Forschungsseminar mit Alex Grimaud (Oesterreichische Nationalbank & TU Wien), im CNB-Gebäude oder online; nur für eingeladene Teilnehmende.",
+   "language": "en",
+   "country": "CZ",
+   "organizer_short": "CNB",
+   "title_short": "Central Bank Research Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Alex Grimaud",
+     "org": "OeNB",
+     "role": null
+    }
+   ],
+   "source": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
+   "id": "604ba94515499b45",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Stewardship in Practice: From the Stewardship Code to Effective, Comparable & Measurable Outcomes",
+   "title_ja": "実践のスチュワードシップ: 規範から成果へ",
+   "organizer": "Swiss Sustainable Finance, AMAS, Ethos",
+   "date_start": "2027-01-14",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Geneva",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
+   "registration_url": null,
+   "summary_ja": "スチュワードシップ規範を、実効的で比較可能、かつ測定可能な成果に結びつけることを議論する催し。SSF、AMAS、Ethosの共催。詳細は後日案内。",
+   "summary_en": "An event on turning the stewardship code into effective, comparable and measurable outcomes, co-organised by SSF, AMAS and Ethos. Details to follow.",
+   "summary_de": "Veranstaltung zur Frage, wie der Stewardship Code in wirksame, vergleichbare und messbare Ergebnisse überführt werden kann; Mitveranstalter sind AMAS und Ethos. Weitere Informationen folgen.",
+   "language": "en",
+   "country": "CH",
+   "organizer_short": "SSF+",
+   "title_short": "Stewardship in Practice",
+   "importance": 1,
+   "speakers": [],
+   "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
+   "id": "669c3c9713b925ee",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Das Klima verändert sich – was haben Zentralbanken damit zu tun?",
+   "title_ja": "気候変動と中央銀行の役割",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": "18:00",
+   "time_end": null,
+   "city": "Frankfurt am Main",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg",
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen/-das-klima-veraendert-sich-was-haben-zentralbanken-damit-zu-tun--891898",
+   "summary_ja": "Forum Bundesbank の講演。Bundesbank の Nachhaltigkeit 部門の担当者が、気候変動と中央銀行の関わりを解説する。",
+   "summary_en": "Forum Bundesbank talk by a Bundesbank sustainability specialist on climate change and what central banks have to do with it.",
+   "summary_de": "Vortrag im Rahmen des Forum Bundesbank eines Experten der Abteilung Nachhaltigkeit der Deutschen Bundesbank zum Klimawandel und zur Rolle der Zentralbanken.",
+   "language": "de",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Climate and Central Banks",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "David Döhrmann",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ],
+   "source": "Bundesbank – Forum Bundesbank (Hauptverwaltungen)",
+   "id": "6c7517566aa08d64",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Appropriate Entrepreneurship? The Rise of China and the Developing World",
+   "title_ja": "適切な起業か? 中国と途上国の台頭",
+   "organizer": "Leibniz-Institut für Wirtschaftsforschung Halle (IWH)",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "09:00",
+   "time_end": "10:30",
+   "city": "Halle (Saale)",
+   "venue": "IWH, conference room and via Zoom",
+   "format": "hybrid",
+   "themes": [
+    "china"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/appropriate-entrepreneurship-the-rise-of-china-and-the-developing-world",
+   "registration_url": null,
+   "summary_ja": "中国が高潜力の起業とベンチャーキャピタルの拠点として台頭したことが、途上国を含む世界のイノベーションと起業に与える影響を分析する研究報告。",
+   "summary_en": "Research seminar on the international consequences of China's rise as a hub for high-potential entrepreneurship and venture capital.",
+   "summary_de": "Forschungsseminar zu den internationalen Folgen des Aufstiegs Chinas zu einem Zentrum für innovative Gründungen und Risikokapital.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IWH",
+   "title_short": "China's Rise in Entrepreneurship",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Josh Lerner",
+     "org": "HBS",
+     "role": null
+    }
+   ],
+   "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+   "id": "817f9dda3ed3a545",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Public hearing on the draft Supervisory Statement on IBIP Sales Processes",
+   "title_ja": "IBIP販売プロセス監督声明案の公聴会",
+   "organizer": "European Insurance and Occupational Pensions Authority",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.eiopa.europa.eu/media/events/public-hearing-draft-supervisory-statement-ibip-sales-processes-2026-12-01_en",
+   "summary_ja": "EIOPAが、IBIP（保険ベース投資商品）の販売プロセスに関する監督声明案について、オンラインで公開ヒアリングを行う。",
+   "summary_en": "EIOPA holds an online public hearing on its draft supervisory statement on sales processes for insurance-based investment products (IBIPs).",
+   "summary_de": "Die EIOPA führt eine öffentliche Online-Anhörung zum Entwurf einer aufsichtlichen Erklärung zu den Verkaufsprozessen für versicherungsbasierte Anlageprodukte (IBIP) durch.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "EIOPA",
+   "title_short": "IBIP Sales Processes Hearing",
+   "importance": 1,
+   "time_end": null,
+   "speakers": [],
+   "source": "EIOPA (Frankfurt) – Events",
+   "id": "8701349a28b7d0f3",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "EZB-Geldpolitik im Wandel: Wieder zurück zur „Normalität“ – Implikationen für Banken und Gesellschaft",
+   "title_ja": "ECB金融政策の正常化と銀行への含意(講演)",
+   "organizer": "Wirtschaftskammer Kärnten",
+   "date_start": "2026-12-03",
+   "date_end": null,
+   "time": "18:30",
+   "city": "Klagenfurt am Wörthersee",
+   "venue": "Wirtschaftskammer Kärnten, Festsaal, Europaplatz 1",
+   "format": "onsite",
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "無料。申込方法はページに明記なし",
+   "registration_note_en": "Free of charge; registration method not specified on the page",
+   "registration_note_de": "Kostenlos; Anmeldemodalitäten auf der Seite nicht angegeben",
+   "url": "https://www.wko.at/veranstaltungen/e6fd3431-f0b9-4d96-9535-33d894b99393",
+   "summary_ja": "講演シリーズ「Kompassnadel Europa」の一回。ECBが非伝統的政策から通常の金利政策へ戻る過程と、銀行収益の正常化への影響を論じる。",
+   "summary_en": "Part of the lecture series \"Kompassnadel Europa\": the talk covers the ECB's return from unconventional measures to orthodox rate policy and the normalisation of bank profits.",
+   "summary_de": "Teil der Vortragsreihe „Kompassnadel Europa“: Der Vortrag behandelt die Rückkehr der EZB von unkonventionellen Maßnahmen zur klassischen Zinspolitik und die Normalisierung der Bankgewinne.",
+   "language": "de",
+   "country": "AT",
+   "organizer_short": "WKO Kärnten",
+   "title_short": "ECB Policy Normalisation",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": "20:00",
+   "speakers": [
+    {
+     "name": "Gunter Deuber",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "8951fc52282826a1",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "IWH Research Seminar - Francisco Amaral",
+   "title_ja": "IWH研究セミナー(演題未定)",
+   "organizer": "Leibniz-Institut für Wirtschaftsforschung Halle (IWH)",
+   "date_start": "2027-01-19",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:45",
+   "city": "Halle (Saale)",
+   "venue": "IWH, conference room, Leipziger Straße 100 and via Zoom",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen/detail/tba-53",
+   "registration_url": null,
+   "summary_ja": "IWH研究セミナーでの経済学の研究報告(演題は未定)。講演者はUniversität Zürichのフランシスコ・アマラル。",
+   "summary_en": "IWH research seminar in economics (talk title to be announced), presented by Francisco Amaral of the University of Zurich.",
+   "summary_de": "IWH-Forschungsseminar in der Volkswirtschaftslehre (Vortragstitel noch offen), vorgetragen von Francisco Amaral, Universität Zürich.",
+   "language": null,
+   "country": "DE",
+   "organizer_short": "IWH",
+   "title_short": "Economics Research Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Francisco Amaral",
+     "org": "UZH",
+     "role": null
+    }
+   ],
+   "source": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
+   "id": "9b9b79504d95506b",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Seafood Finance Navigator: Going beneath the surface of seafood risks",
+   "title_ja": "シーフード金融ナビゲーター: 水産物リスクの深層",
+   "organizer": "UNEP Finance Initiative",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.unepfi.org/events/the-seafood-finance-navigator-going-beneath-the-surface-of-seafood-risks/",
+   "summary_ja": "水産物サプライチェーンの環境・社会リスクを金融機関が把握し管理するための新オンラインプラットフォーム「Seafood Finance Navigator」を紹介するウェビナー。",
+   "summary_en": "A webinar introducing the Seafood Finance Navigator, a new online platform that helps financial institutions identify and manage environmental and social risks across seafood value chains.",
+   "summary_de": "Webinar zur Vorstellung des Seafood Finance Navigator, einer neuen Online-Plattform, mit der Finanzinstitute ökologische und soziale Risiken entlang von Seafood-Wertschöpfungsketten erkennen und steuern können.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "UNEP FI",
+   "title_short": "Seafood Supply Chain Risk",
+   "importance": 1,
+   "speakers": [],
+   "source": "UNEP FI – Events",
+   "id": "dc6ae59b24bb1314",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "How to Defend Europe? Military, Economic, and Political Defense",
+   "title_ja": "欧州をどう守るか：軍事・経済・政治の防衛",
+   "organizer": "ESMT",
+   "date_start": "2026-12-07",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Berlin",
+   "venue": "ESMT",
+   "format": null,
+   "themes": [
+    "geopolitics",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "招待制",
+   "registration_note_en": "By invitation only",
+   "registration_note_de": "Nur auf Einladung",
+   "registration_url": null,
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/how-to-defend-europe-military-economic-and-political-defense/",
+   "summary_ja": "軍事・経済・政治の各面から欧州の防衛を論じる招待制セミナー。",
+   "summary_en": "Invitation-only seminar on how to defend Europe across military, economic and political dimensions.",
+   "summary_de": "Seminar auf Einladung zur Verteidigung Europas in militärischer, wirtschaftlicher und politischer Hinsicht.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "ESMT",
+   "title_short": "Defending Europe",
+   "importance": 1,
+   "speakers": [],
+   "source": "IfW Kiel – Veranstaltungen",
+   "id": "e74eabca6c322459",
+   "first_seen": "2026-11-11",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Individual Effects of Socialism – Christoph Schlömer",
+   "title_ja": "社会主義が個人に与えた影響",
+   "organizer": "Kiel Institut für Weltwirtschaft",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "Kiel",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.kielinstitut.de/de/veranstaltungen/seminare-vortraege-workshops/research-seminar/the-individual-effects-of-socialism-christoph-schloemer/",
+   "summary_ja": "キール研究セミナーでのChristoph Schlömer氏の講演。社会主義が個人に与えた影響を扱う。",
+   "summary_en": "Talk by Christoph Schlömer in the Kiel Research Seminar series, on the individual effects of socialism.",
+   "summary_de": "Vortrag von Christoph Schlömer im Kieler Forschungsseminar zu den individuellen Auswirkungen des Sozialismus.",
+   "language": "en",
+   "country": "DE",
+   "organizer_short": "IfW Kiel",
+   "title_short": "Effects of Socialism",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Christoph Schlömer",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "IfW Kiel – Veranstaltungen",
+   "id": "f5d84d1e93eea192",
+   "first_seen": "2026-11-11",
    "notables": [],
    "notable_tier": null
   }

@@ -97,6 +97,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://jdzb.de/de/veranstaltungen/berlin-x-tokyo-partners-innovation": {
+  "event_id": "bcfd18a3e19972ea",
+  "http": 200,
+  "last": "2026-11-11",
+  "result": "ok",
+  "tries": 1
+ },
  "https://jdzb.de/de/veranstaltungen/industrial-leadership-through-middle-power-cooperation": {
   "event_id": "9c32f3ed4e8a94ca",
   "http": 200,
@@ -303,9 +310,9 @@
  "https://www.atlanticcouncil.org": {
   "event_id": "a367a458693adebb",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-11",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.awa-seminare.com/en/export-control-conference": {
   "event_id": "a3dfa6e6acc79287",
@@ -353,6 +360,13 @@
   "event_id": "c2986ab97754308d",
   "http": 200,
   "last": "2026-10-27",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.bankingsupervision.europa.eu/press/conferences/html/20261118_media_seminar.en.html": {
+  "event_id": "148d670732666ebc",
+  "http": 200,
+  "last": "2026-11-11",
   "result": "ok",
   "tries": 1
  },
@@ -499,9 +513,9 @@
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/japan-meets-berlin-brandenburg-202612": {
   "event_id": "e7cf1898ac72e68d",
   "http": 200,
-  "last": "2026-10-28",
+  "last": "2026-11-11",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/linkedin-for-japanese-expats": {
   "event_id": "420b12c9f96d5b8a",
@@ -663,6 +677,13 @@
   "last": "2026-11-06",
   "result": "ok",
   "tries": 3
+ },
+ "https://www.forum-ng.org/en/termine/veranstaltung/10-sustainable-investor-summit-2027-zuerich": {
+  "event_id": "1c2add41e67059c1",
+  "http": 200,
+  "last": "2026-11-11",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.forum-ng.org/en/termine/veranstaltung/cric-ev-konferenz-zur-klimagerechtigkeit-in-frankfurt-am-main": {
   "event_id": "400118719d35f837",
@@ -1157,9 +1178,9 @@
  "https://www.unepfi.org/themes/climate-change/financing-climate-resilience-in-latin-america-and-caribbean-a-taxonomy-based-approach": {
   "event_id": "fef25ac4424e1c4b",
   "http": 200,
-  "last": "2026-10-31",
+  "last": "2026-11-11",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.unepfi.org/themes/climate-change/lost-in-translation-the-information-gap-holding-back-climate-adaptation-finance": {
   "event_id": "214ab7808ede10da",
