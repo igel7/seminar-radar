@@ -342,6 +342,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.esri.ie/events/save-the-date-regional-income-inequality-on-the-island-of-ireland": {
+  "event_id": "e75217e670082d51",
+  "http": 200,
+  "last": "2026-11-12",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.fmg.ac.uk/events/how-make-impact-investing-work": {
   "event_id": "b792a359a3679405",
   "http": 200,
@@ -399,11 +406,11 @@
   "tries": 2
  },
  "https://www.lse.ac.uk/granthaminstitute/events/building-inclusive-heat-resilience-strengthening-action-for-a-hotter-uk": {
-  "event_id": "181d6b6fdd967839",
+  "event_id": "251e0fd12fec251b",
   "http": 200,
-  "last": "2026-10-23",
+  "last": "2026-11-12",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.lse.ac.uk/hayek/events/climate-change-and-liberal-political-economy": {
   "event_id": "52a3d7993d6a8d34",
@@ -444,6 +451,13 @@
   "event_id": "35c49c778013342a",
   "http": 200,
   "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/holding-power-how-reserves-technology-and-investors-are-reshaping-the-gold-market-landing-page": {
+  "event_id": "584fcf65af23a1f6",
+  "http": 200,
+  "last": "2026-11-12",
   "result": "ok",
   "tries": 1
  },
@@ -617,10 +631,10 @@
  },
  "https://www.ukfinance.org.uk/events-training/economic-crime-congress-2026-leading-collective-response-global-threat": {
   "event_id": "bd8486a733bb96dd",
-  "http": 403,
-  "last": "2026-10-20",
-  "result": "FAIL-BLOCKED",
-  "tries": 1
+  "http": 200,
+  "last": "2026-11-12",
+  "result": "ok",
+  "tries": 2
  },
  "https://www.ukfinance.org.uk/events-training/financial-crimes-blind-spot-why-better-ai-isnt-enough": {
   "event_id": "f9374725db0f93d0",
@@ -632,9 +646,9 @@
  "https://www.ukfinance.org.uk/events-training/mapping-concentration-risks-in-financial-services-supply-chains": {
   "event_id": "3a070cfbca9383bb",
   "http": 200,
-  "last": "2026-10-29",
+  "last": "2026-11-12",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.ukfinance.org.uk/events-training/uk-fraud-landscape-emerging-threats-ai-next-line-defence": {
   "event_id": "986cc04219891b2d",
@@ -649,6 +663,13 @@
   "last": "2026-11-05",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.unepfi.org/events/the-seafood-finance-navigator-going-beneath-the-surface-of-seafood-risks": {
+  "event_id": "dc6ae59b24bb1314",
+  "http": 200,
+  "last": "2026-11-12",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.unepfi.org/events/turning-sustainability-disclosures-into-risk-insights-new-sustainability-risk-management-tools-and-research": {
   "event_id": "307b72b626bc033f",
@@ -686,11 +707,11 @@
   "tries": 1
  },
  "https://www.unpri.org/events/webinar-ai-data-centres": {
-  "event_id": "79820f8703aeaba0",
+  "event_id": "509c00b9aa56b993",
   "http": 200,
-  "last": "2026-11-05",
+  "last": "2026-11-12",
   "result": "ok",
-  "tries": 3
+  "tries": 4
  },
  "https://www.westminsterforumprojects.co.uk/conference/trans-finance-26": {
   "event_id": "9c0e440df86cf50c",
