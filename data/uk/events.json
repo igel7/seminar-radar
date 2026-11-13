@@ -6303,7 +6303,7 @@
    "notable_tier": null
   },
   {
-   "organizer": "Centre for Macroeconomics (CFM), London School of Economics and Political Science",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
    "organizer_short": "CFM",
    "city": "London",
    "country": "GB",
@@ -6319,17 +6319,17 @@
    "date_end": null,
    "importance": 0,
    "source": "LSE – Centre for Macroeconomics (CFM) – Events",
-   "title": "Faculty Work in Progress Seminar: Emi Nakamura & Jón Steinsson",
-   "title_ja": "教員ワーク・イン・プログレス(Nakamura・Steinsson)",
+   "title": "Money-Macro Seminar: Emi Nakamura & Jón Steinsson (University of California, Berkeley)",
+   "title_ja": "マネー・マクロ・セミナー（Nakamura・Steinsson）",
    "date_start": "2027-05-11",
-   "time": "12:00",
-   "time_end": "13:00",
+   "time": "14:30",
+   "time_end": "16:00",
    "venue": "LSE, SAL.1.04",
    "themes": [
-    "real_economy"
+    "central_bank"
    ],
    "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
-   "title_short": "Faculty Work in Progress",
+   "title_short": "Money and Macroeconomics",
    "speakers": [
     {
      "name": "Emi Nakamura",
@@ -6342,9 +6342,9 @@
      "role": null
     }
    ],
-   "summary_ja": "LSE マクロ経済学センター(CFM)の教員向けワーク・イン・プログレス・セミナー。Emi Nakamura 氏と Jón Steinsson 氏が報告する(演題はページに未掲載)。",
-   "summary_en": "Faculty Work in Progress seminar of the LSE Centre for Macroeconomics, presented by Emi Nakamura and Jón Steinsson (title not listed on the page).",
-   "summary_de": "Faculty-Work-in-Progress-Seminar des LSE Centre for Macroeconomics (CFM), vorgetragen von Emi Nakamura und Jón Steinsson (Titel auf der Seite nicht angegeben).",
+   "summary_ja": "LSE CFM のマネー・マクロ・セミナー。Emi Nakamura と Jón Steinsson（UC バークレー）が報告する。",
+   "summary_en": "Money-Macro seminar at LSE CFM presented by Emi Nakamura and Jón Steinsson (University of California, Berkeley).",
+   "summary_de": "Money-Macro-Seminar des LSE CFM mit Emi Nakamura und Jón Steinsson (University of California, Berkeley).",
    "id": "2d9029fd8e2df20d",
    "first_seen": "2026-10-20",
    "notables": [],
@@ -8805,8 +8805,8 @@
   },
   {
    "title": "Student Work in Progress Seminar: Corentin Laffitte",
-   "title_ja": "学生研究進捗セミナー",
-   "organizer": "Centre for Macroeconomics (CFM)",
+   "title_ja": "学生研究進捗セミナー（Laffitte）",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
    "date_start": "2026-11-23",
    "date_end": null,
    "time": "10:30",
@@ -8825,17 +8825,22 @@
    "registration_note_de": null,
    "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
    "registration_url": null,
-   "summary_ja": "LSE の CFM で開かれる学生の研究進捗セミナー。Corentin Laffitte が報告する。",
-   "summary_en": "Student work-in-progress seminar at LSE's Centre for Macroeconomics, with presentations by Corentin Laffitte.",
-   "summary_de": "Studentisches Work-in-Progress-Seminar des CFM an der LSE mit Vorträgen von Corentin Laffitte.",
+   "summary_ja": "LSE CFM の学生研究進捗セミナー。Corentin Laffitte と Mitch Scott が報告する（10:30–12:00、SAL.1.04）。",
+   "summary_en": "LSE CFM student work-in-progress seminar; Corentin Laffitte and Mitch Scott present (10:30–12:00, SAL.1.04).",
+   "summary_de": "Work-in-Progress-Seminar für Studierende des LSE CFM; Corentin Laffitte und Mitch Scott präsentieren (10:30–12:00, SAL.1.04).",
    "language": "en",
    "country": "GB",
    "organizer_short": "CFM",
-   "title_short": "Student Macro Work in Progress",
+   "title_short": "Macro Research Work in Progress",
    "importance": 0,
    "speakers": [
     {
      "name": "Corentin Laffitte",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Mitch Scott",
      "org": null,
      "role": null
     }
@@ -10786,20 +10791,20 @@
    "country": null,
    "speakers": [],
    "title": "The Impact of Google AI Overviews on Publisher Traffic and User Experience: Evidence from a Field Experiment - Media Plurality Webinar Series",
-   "title_ja": "Google AI Overviewsと出版社トラフィック",
+   "title_ja": "Google AIオーバービューがパブリッシャーに与える影響",
    "organizer": "CEPR",
    "organizer_short": "CEPR",
    "date_start": "2026-11-17",
    "themes": [
     "ai"
    ],
-   "title_short": "Google AI Overviews Publisher Traffic",
+   "title_short": "AI Overviews and Publisher Traffic",
    "importance": 1,
    "url": "https://hub.cepr.org/events/the-impact-of-google-ai-overviews-on-publisher-traffic-and-user-experience-evidence-from-a-field-experiment-media-plurality-webinar-series",
    "source": "CEPR – Centre for Economic Policy Research – Events",
-   "summary_ja": "Google AI Overviewsがニュース出版社のウェブトラフィックと利用者の体験に与える影響を、フィールド実験で検証するメディア多元性ウェビナー。",
-   "summary_en": "A Media Plurality webinar presenting field-experiment evidence on how Google AI Overviews affect publisher traffic and user experience.",
-   "summary_de": "Ein Webinar der Media-Plurality-Reihe mit Feldexperiment-Befunden zu den Auswirkungen von Google AI Overviews auf den Traffic von Verlagen und das Nutzererlebnis.",
+   "summary_ja": "Google AIオーバービューがパブリッシャーのトラフィックとユーザー体験に与える影響を、フィールド実験のデータで検証するオンラインセミナーです。",
+   "summary_en": "An online CEPR Media Plurality webinar presenting field-experiment evidence on how Google AI Overviews affect publisher traffic and user experience.",
+   "summary_de": "Online-Webinar der CEPR-Reihe zur Medienpluralität mit Feldexperimenten zu den Auswirkungen von Google AI Overviews auf den Publisher-Traffic und die Nutzererfahrung.",
    "id": "5a503e5bd20a06c9",
    "first_seen": "2026-10-23",
    "notables": [],
@@ -16871,8 +16876,8 @@
    "notable_tier": null
   },
   {
-   "title": "MIEW (Macro & International Economics Workshop) - David Boll (PGR)",
-   "title_ja": "マクロ・国際経済ワークショップ(MIEW)",
+   "title": "MIEW (Macro & International Economics Workshop) - Ernil Sabaj (Warwick)",
+   "title_ja": "マクロ・国際経済ワークショップ（E. Sabaj）",
    "organizer": "University of Warwick, Department of Economics",
    "date_start": "2026-11-17",
    "date_end": null,
@@ -16892,19 +16897,19 @@
    "registration_note_de": null,
    "registration_url": null,
    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a1a0e34501a1ab63a91270fa",
-   "summary_ja": "Warwick 経済学部の定例のマクロ・国際経済ワークショップで、David Boll(PGR)が報告する。",
-   "summary_en": "Regular Macro & International Economics Workshop at Warwick Economics, with a presentation by David Boll (PGR).",
-   "summary_de": "Regulärer Makro- und Internationaler Ökonomie-Workshop der Warwick Economics mit einem Vortrag von David Boll (PGR).",
+   "summary_ja": "Warwick経済学部のマクロ・国際経済ワークショップでの報告（Ernil Sabaj）。演題は「原油市場のニュースと米国住宅価格：OPEC発表からの証拠」。",
+   "summary_en": "Macro & International Economics Workshop at Warwick Economics, with Ernil Sabaj presenting \"Oil-Market News and U.S. House Prices: Evidence from OPEC Announcements\".",
+   "summary_de": "Macro & International Economics Workshop der Warwick Economics, Vortrag von Ernil Sabaj zu „Oil-Market News and U.S. House Prices: Evidence from OPEC Announcements“.",
    "language": "en",
    "country": "GB",
    "organizer_short": "Warwick",
-   "title_short": "Macro and International Economics",
+   "title_short": "Oil News and US Housing",
    "importance": 0,
    "speakers": [
     {
-     "name": "David Boll",
+     "name": "Ernil Sabaj",
      "org": "Warwick",
-     "role": "PGR"
+     "role": null
     }
    ],
    "source": "Warwick – Department of Economics – Events",
@@ -18052,7 +18057,23 @@
    "organizer_short": "NIESR",
    "title_short": "Fiscal Devolution and Growth",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Kate Barker",
+     "org": "South Yorkshire Mayoral Economic Advisory Council",
+     "role": "Member"
+    },
+    {
+     "name": "Philip McCann",
+     "org": "Alliance Manchester Business School",
+     "role": "Sir Terry Leahy Chair of Urban and Regional Economics"
+    },
+    {
+     "name": "Paul Swinney",
+     "org": "The Data City",
+     "role": "Chief Economist"
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "4c3ce1d95c2fab9d",
    "first_seen": "2026-11-12",
@@ -18220,7 +18241,13 @@
    "organizer_short": "NIESR",
    "title_short": "Rising Japanese Bond Yields",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Toshitaka Sekine",
+     "org": "Hitotsubashi University",
+     "role": "Professor of Asian Public Policy Program"
+    }
+   ],
    "source": "NIESR – National Institute of Economic and Social Research – Events",
    "id": "92f17f6d3c0228e1",
    "first_seen": "2026-11-12",
@@ -18453,6 +18480,526 @@
    "source": "LSE – Centre for Economic Performance (CEP) – Events",
    "id": "e0badd859ba0812a",
    "first_seen": "2026-11-12",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "SAWP (Seminar Applied Work in Progress) - Ao Wang (Warwick)",
+   "title_ja": "応用研究進行中セミナー（Ao Wang）",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a09dde8b01a0a0162e470cb9",
+   "summary_ja": "Warwick経済学部の応用研究進行中セミナー（SAWP）での報告（Ao Wang）。演題は未定。",
+   "summary_en": "Applied Work in Progress seminar (SAWP) at Warwick Economics, presented by Ao Wang; title to be advised.",
+   "summary_de": "Seminar zu laufenden angewandten Arbeiten (SAWP) der Warwick Economics, Vortrag von Ao Wang; Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Applied Economics Work in Progress",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Ao Wang",
+     "org": "Warwick",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "2fa31fe66606b634",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Power and the people: a history of British energy since 1810",
+   "title_ja": "英国エネルギー史（1810年以降）",
+   "organizer": "LSE European Institute",
+   "date_start": "2026-11-17",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": "MAR.1.08, Marshall Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.lse.ac.uk/european-institute/events/2026-27/power-and-the-people-a-history-of-british-energy-since-1810",
+   "summary_ja": "1810年以降の英国のエネルギーの歴史を扱う LSE European Institute の公開講演（対面）。Arthur Downing が登壇する。",
+   "summary_en": "In-person public lecture from the LSE European Institute on the history of British energy since 1810, given by Arthur Downing.",
+   "summary_de": "Öffentlicher Vortrag (vor Ort) des LSE European Institute zur Geschichte der britischen Energieversorgung seit 1810, mit Arthur Downing.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "British Energy History",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Arthur Downing",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "4512cdb675012774",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The international politics of energy transitions, climate battles, and 21st century power rivalry",
+   "title_ja": "エネルギー転換・気候対立と大国間競争の国際政治",
+   "organizer": "LSE European Institute",
+   "date_start": "2026-11-19",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": "MAR.1.04, Marshall Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "geopolitics",
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.lse.ac.uk/european-institute/events/2026-27/the-international-politics-of-energy-transitions-climate-battles-and-21st-century-power-rivalry",
+   "summary_ja": "エネルギー転換と気候対立、21世紀の大国間競争をめぐる国際政治を論じる公開講演（対面・オンライン併用）。Federica Genovese が登壇する。",
+   "summary_en": "Public lecture (in person and online) on the international politics of energy transitions, climate conflict and great-power rivalry, given by Federica Genovese.",
+   "summary_de": "Öffentlicher Vortrag (vor Ort und online) zur internationalen Politik der Energiewende, der Klimakonflikte und des Machtwettbewerbs, mit Federica Genovese.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Energy Transitions and Power",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Federica Genovese",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "568d9a351b7955db",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "AMES Workshop - Edoardo Badii (PGR)",
+   "title_ja": "AMESワークショップ（E. Badii）",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-12-10",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "Coventry",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a10bc5a801a1114e25d54435",
+   "summary_ja": "Warwick経済学部のAMESワークショップ。博士課程の大学院生（PGR）Edoardo Badiiが報告。会場は未定。",
+   "summary_en": "AMES workshop at Warwick Economics, with PhD researcher Edoardo Badii presenting; venue to be advised.",
+   "summary_de": "AMES-Workshop der Warwick Economics, Vortrag des Doktoranden Edoardo Badii; Veranstaltungsort noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Doctoral Economics Research Workshop",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Edoardo Badii",
+     "org": null,
+     "role": "PGR"
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "623077db8923c795",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Climate, nature and prosperity",
+   "title_ja": "気候・自然・繁栄(ヒール教授講演)",
+   "organizer": "LSE Department of Geography and Environment / Global School of Sustainability",
+   "date_start": "2026-12-10",
+   "date_end": null,
+   "time": "18:30",
+   "city": "London",
+   "venue": "LSE campus (venue tbc to ticketholders)",
+   "format": "hybrid",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "公開講演。現地参加またはLSE Liveでオンライン視聴(要登録)。料金は記載なし",
+   "registration_note_en": "Public lecture; attend on campus or register to watch online via LSE Live. Fee not stated",
+   "registration_note_de": "Öffentlicher Vortrag; Teilnahme vor Ort oder Online-Anmeldung über LSE Live. Gebühr nicht angegeben",
+   "url": "https://www.lse.ac.uk/events/climate-nature-prosperity",
+   "summary_ja": "環境・資源経済学の知見から、気候変動と生物多様性の損失が経済的価値・自然資本・長期的厚生とどう結びつくかを論じる公開講演。議長はスターン卿。",
+   "summary_en": "Public lecture by Geoffrey Heal on how climate change and biodiversity loss connect to economic value, natural capital and long-term welfare; chaired by Lord Stern.",
+   "summary_de": "Öffentlicher Vortrag von Geoffrey Heal darüber, wie Klimawandel und Biodiversitätsverlust mit wirtschaftlichem Wert, Naturkapital und langfristigem Wohlstand zusammenhängen; Vorsitz: Lord Stern.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Climate, Nature and Prosperity",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": "20:00",
+   "speakers": [
+    {
+     "name": "Geoffrey Heal",
+     "org": null,
+     "role": "Professor Emeritus, Columbia Business School"
+    },
+    {
+     "name": "Eugenie Dugoua",
+     "org": "LSE",
+     "role": "Assistant Professor of Environmental Economics"
+    },
+    {
+     "name": "Nicholas Stern",
+     "org": "LSE",
+     "role": "Chair; Chairman, Grantham Research Institute"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "75ffb2f947a1e54f",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Save the Date ISDA Annual Legal Forum",
+   "title_ja": "ISDA年次法務フォーラム(日程予告)",
+   "organizer": "International Swaps and Derivatives Association",
+   "date_start": "2027-01-27",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.isda.org/event/london/save-the-date-isda-annual-legal-forum-2027-01-27/",
+   "registration_url": null,
+   "summary_ja": "2027年1月27日にロンドンで開催予定のISDA年次法務フォーラムの日程予告です。詳細はまだ公表されていません。",
+   "summary_en": "Save-the-date notice for the ISDA Annual Legal Forum, scheduled for 27 January 2027 in London. Further details have not yet been published.",
+   "summary_de": "Terminankündigung für das ISDA Annual Legal Forum am 27. Januar 2027 in London. Weitere Details sind noch nicht veröffentlicht.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "ISDA",
+   "title_short": "Derivatives Legal Developments",
+   "importance": 2,
+   "speakers": [],
+   "source": "ISDA – Events",
+   "id": "894a70445f8fdae1",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Future of British progress (British progress and the centre-right)",
+   "title_ja": "英国の進歩の将来:中道右派と生産性",
+   "organizer": "LSE Hayek Programme in Economics and Liberal Political Economy (STICERD)",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": "18:30",
+   "city": "London",
+   "venue": "LSE campus (venue tbc to ticketholders)",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "チケット制の公開イベント。現地またはLSE Liveでオンライン視聴。料金は記載なし",
+   "registration_note_en": "Ticketed public event; attend on campus or watch online via LSE Live. Fee not stated",
+   "registration_note_de": "Öffentliche Veranstaltung mit Ticket; Teilnahme vor Ort oder online über LSE Live. Gebühr nicht angegeben",
+   "url": "https://www.lse.ac.uk/events/british-progress",
+   "summary_ja": "英国の生産性停滞と地域格差を市場主導で解決できるかを議論する公開討論。安価なエネルギーや建築を認める計画制度などが論点。",
+   "summary_en": "A public discussion on whether markets can address Britain's stagnant productivity and regional gaps, covering cheaper energy, competition and a planning system that permits building.",
+   "summary_de": "Öffentliche Diskussion darüber, ob Märkte die stagnierende Produktivität und regionale Unterschiede in Großbritannien lösen können, u. a. günstigere Energie, Wettbewerb und ein Planungssystem, das Bauen erlaubt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "British Productivity and Growth",
+   "importance": 1,
+   "registration_url": null,
+   "time_end": "20:00",
+   "speakers": [
+    {
+     "name": "Steve Baker",
+     "org": null,
+     "role": "Chairman, Fighting for a Free Future"
+    },
+    {
+     "name": "Luke Johnson",
+     "org": null,
+     "role": "Entrepreneur and investor"
+    },
+    {
+     "name": "Julia Willemyns",
+     "org": null,
+     "role": "Co-founder, Centre for British Progress"
+    },
+    {
+     "name": "Luis Garicano",
+     "org": "LSE",
+     "role": "Professor (chair)"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "b3cbe1f4eb7f81ee",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Can global value chains go green? Trade, investment and the net-zero development challenge",
+   "title_ja": "グローバル価値連鎖は脱炭素化できるか",
+   "organizer": "LSE",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": null,
+   "format": "hybrid",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://www.lse.ac.uk/events/global-value-chains",
+   "summary_ja": "貿易・投資とネットゼロの開発課題の観点から、グローバル価値連鎖の脱炭素化可能性を論じる公開イベント（対面・オンライン併用）。",
+   "summary_en": "Public event (in person and online) on whether global value chains can go green, covering trade, investment and the net-zero development challenge.",
+   "summary_de": "Öffentliche Veranstaltung (vor Ort und online) darüber, ob globale Wertschöpfungsketten grün werden können, mit Blick auf Handel, Investitionen und die Netto-Null-Herausforderung.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "Green Global Value Chains",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Erik Berglöf",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Riccardo Crescenzi",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Oliver Harman",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Ralph de Haas",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Daria Taglioni",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "b469fa2ae70be68b",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Labour Economics Workshops",
+   "title_ja": "労働経済学ワークショップ",
+   "organizer": "Centre for Economic Performance, London School of Economics and Political Science",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10998",
+   "registration_url": null,
+   "summary_ja": "LSEの労働経済学ワークショップ(演題未定)。Ola Aboukhsaiwan(LSE)が報告します。",
+   "summary_en": "Labour Economics Workshop (talk title TBA), presented by Ola Aboukhsaiwan (LSE).",
+   "summary_de": "Labour-Economics-Workshop (Vortragstitel noch offen) mit Ola Aboukhsaiwan (LSE).",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Labour Economics Research",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Ola Aboukhsaiwan",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "b64eb27ded6fbd29",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Labour and Education Seminars",
+   "title_ja": "労働・教育経済学セミナー",
+   "organizer": "Centre for Economic Performance, London School of Economics and Political Science",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": "13:30",
+   "time_end": "14:45",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10936",
+   "registration_url": null,
+   "summary_ja": "LSEの労働・教育経済学セミナー(演題未定)。Hanna Virtanen(ETLA)が報告します。オンラインと会場の両方で参加可能です。",
+   "summary_en": "Labour and Education Seminar (talk title TBA), presented by Hanna Virtanen (ETLA Economic Research). Available both online and in person.",
+   "summary_de": "Seminar zu Arbeitsmarkt und Bildung (Vortragstitel noch offen) mit Hanna Virtanen (ETLA Economic Research). Online und vor Ort möglich.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Labour and Education Economics",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Hanna Virtanen",
+     "org": "ETLA",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "ddb149b0fbf0b112",
+   "first_seen": "2026-11-13",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "MIWP (Microeconomics Work in Progress) - Damiano Turchet / Christian Soegaard",
+   "title_ja": "ミクロ経済学進行中ワークショップ（D. Turchet / C. Soegaard）",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2026-12-10",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a17662d601a17ded6d6b5f44",
+   "summary_ja": "Warwick経済学部のミクロ経済学進行中ワークショップ（MIWP）。Damiano Turchet と Christian Soegaard が報告。演題は未定。",
+   "summary_en": "Microeconomics Work in Progress workshop at Warwick Economics, with Damiano Turchet and Christian Soegaard presenting; title to be advised.",
+   "summary_de": "Workshop zu laufenden mikroökonomischen Arbeiten (MIWP) der Warwick Economics; Vortrag von Damiano Turchet und Christian Soegaard, Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Microeconomics Work in Progress",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Damiano Turchet",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Christian Soegaard",
+     "org": null,
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "efcb5d38dd2e392d",
+   "first_seen": "2026-11-13",
    "notables": [],
    "notable_tier": null
   }
