@@ -254,9 +254,9 @@
  "https://www.appliedai-institute.de/en/workshops-trainings/der-ai-act-fuer-generative-und-agentische-ki-auf-englisch-2": {
   "event_id": "b52bce1cb6121547",
   "http": 200,
-  "last": "2026-10-31",
+  "last": "2026-11-13",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.appliedai-institute.de/en/workshops-trainings/grundlagen-der-ki-von-maschinellem-lernen-bis-zu-ki-agenten-2": {
   "event_id": "59a294958eb223da",
@@ -501,6 +501,13 @@
   "http": 403,
   "last": "2026-10-16",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/86-deutsch-japanische-wirtschaftsgespraeche": {
+  "event_id": "d3ea64ce02751409",
+  "http": 200,
+  "last": "2026-11-13",
+  "result": "ok",
   "tries": 1
  },
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/djw-asa-no-kai-202612": {
@@ -891,9 +898,9 @@
  "https://www.ihk.de/schwaben/produktmarken/international/kommende-veranstaltungen/deutsch-ukrainisches-wirtschaftsforum-20-11-26-7122182": {
   "event_id": "dfcfc41e69bc7fa1",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-13",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.ilf-frankfurt.de/seminars/upcoming-conferences-guest-lectures/details/11th-banking-union-conference-1": {
   "event_id": "2d9f894baa2161fb",
