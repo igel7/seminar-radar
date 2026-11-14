@@ -18,50 +18,50 @@
   "url": "https://www.unpri.org/events",
   "ok": true,
   "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-14"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
   "found": 4,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "Bank of England – Events",
   "url": "https://www.bankofengland.co.uk/news/events",
   "ok": true,
-  "found": 2,
-  "note": "2026-11-13"
+  "found": 4,
+  "note": "2026-11-14"
  },
  {
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-13"
+  "found": 3,
+  "note": "2026-11-14"
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
   "url": "https://niesr.ac.uk/events",
   "ok": true,
-  "found": 8,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 7,
+  "note": "2026-11-14"
  },
  {
   "name": "IFS – Institute for Fiscal Studies – Events",
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search",
-  "note": "2026-11-13"
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search",
+  "note": "2026-11-14"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
@@ -82,46 +82,46 @@
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
   "found": 1,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "CER – Centre for European Reform – Events",
   "url": "https://www.cer.eu/events",
   "ok": true,
   "found": 0,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "Chatham House – Events",
   "url": "https://www.chathamhouse.org/events",
   "ok": false,
   "found": 0,
-  "note": "2026-11-13",
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search"
+  "note": "2026-11-14 検索で2027年分を確認、ベルリン開催のみで対象外",
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": false,
   "found": 0,
-  "note": "2026-11-13",
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search"
+  "note": "2026-11-14",
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search"
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search",
-  "note": "2026-11-13"
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search",
+  "note": "2026-11-14"
  },
  {
   "name": "Policy Exchange – Events",
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search",
-  "note": "2026-11-13"
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search",
+  "note": "2026-11-14"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
@@ -135,14 +135,14 @@
   "url": "https://www.e3g.org/latest/",
   "ok": true,
   "found": 0,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
   "found": 5,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -169,16 +169,16 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 25,
-  "note": "2026-11-13"
+  "found": 26,
+  "note": "2026-11-14"
  },
  {
   "name": "Oxford – Saïd Business School – Events",
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search",
-  "note": "2026-11-13"
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search",
+  "note": "2026-11-14"
  },
  {
   "name": "Oxford Martin School – Events",
@@ -192,7 +192,7 @@
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-14 一覧が本文に無い(イベント0件)"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -219,8 +219,8 @@
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 28,
-  "note": "2026-11-13"
+  "found": 29,
+  "note": "2026-11-14"
  },
  {
   "name": "Warwick Business School – Events",
@@ -234,8 +234,8 @@
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, hints, search",
-  "note": "2026-11-13"
+  "error": "HTTP 403/NET-ERR(ボット対策)。tried: fetch, ua-curl, hints, search",
+  "note": "2026-11-14"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
@@ -256,14 +256,14 @@
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
   "found": 1,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
   "found": 5,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -283,8 +283,8 @@
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
-  "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 6,
+  "note": "2026-11-14"
  },
  {
   "name": "TheCityUK – Events",
@@ -298,14 +298,14 @@
   "url": "https://www.lseg.com/en/events",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-14"
  },
  {
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 1,
+  "note": "2026-11-14"
  },
  {
   "name": "ISDA – Events",
@@ -317,16 +317,17 @@
  {
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
-  "ok": true,
-  "found": 5,
-  "note": "変化なし(差分検知によりスキップ)"
+  "ok": false,
+  "found": 0,
+  "note": "2026-11-14",
+  "error": "403・Chromium描画に失敗(本日)。tried: fetch, ua-curl, hints"
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "JETRO London – Events",
@@ -347,7 +348,7 @@
   "url": "https://www.cbbc.org/events",
   "ok": true,
   "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-14"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
@@ -375,34 +376,34 @@
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
   "ok": true,
   "found": 1,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
   "found": 0,
-  "note": "2026-11-13"
+  "note": "2026-11-14"
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
   "url": "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-14"
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 35,
-  "note": "2026-11-13 候補約35件、新規採用2件(LSE 2件。他は既知または条件外)"
+  "found": 22,
+  "note": "2026-11-14 候補22件確認。新規採用3件(他は既知・過去・日付未確認)"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "2026-11-13 INBOX_UK空"
+  "note": "2026-11-14"
  }
 ]
