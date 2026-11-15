@@ -3,7 +3,8 @@
   "name": "Agora Energiewende (Berlin)",
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
-  "found": 0
+  "found": 0,
+  "note": "差分検知で抽出"
  },
  {
   "name": "BIS – Bank for International Settlements – Events",
@@ -30,7 +31,7 @@
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
   "found": 0,
-  "note": "Events ページ(1ff9f7)と RSS(3c30c5)に今後開催の催し物は無い。掲載は報道発表・政策決定の記者会見・報告書で、収載条件外。最新日付は 2026-11-13。注意: data/known_events.json に Bank of Albania 由来で 2026-11-24/25 開催の『20th South-Eastern European Economic Research Workshop』『XX Workshop of Economic Research for Southeastern Europe』(Tirana)が載っているが、今回のキャッシュ上には見当た"
+  "note": "差分検知で抽出"
  },
  {
   "name": "Banka Slovenije – Events",
@@ -125,7 +126,7 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "日付付きの今後イベントなし。掲載は過去の Open Day 2026(2026-09-24)、Analystenkonferenz Q3 の録画、ganzjährig の常設案内(Börsenbesuch、Anleger-Webinare、Art Collection)のみ。"
+  "note": "差分検知で抽出"
  },
  {
   "name": "EBA – European Banking Authority – Events",
@@ -146,8 +147,8 @@
   "name": "ECB – Conferences & seminars",
   "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
   "ok": true,
-  "found": 4,
-  "note": "今後の掲載4件はいずれも台帳に既存で変化なし: (1) 12-14/11/2026 Seventh Joint BoC–ECB–NY Fed–Banxico Conference on Expectations Surveys (今日終了), (2) 23-24/11 ESCB Research Cluster 3 workshop, (3) 01-02/12 Central banking economic modelling frontiers (Frankfurt), (4) 02-03/12 ECB Conference on Financial Stability and Macro"
+  "found": 3,
+  "note": "差分検知で抽出"
  },
  {
   "name": "ECB – Payments & Markets / Digital Euro events",
@@ -185,7 +186,7 @@
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "error": "一覧がJS描画で本文に無い(サイト側不具合・fetch_hints参照)。tried: fetch, hints, search(discovery)",
+  "error": "一覧がJS描画で本文に無い(Chromium描画でもイベント行なし)。tried: fetch, hints, search(discovery), chromium",
   "note": "ページ全体は確認済み(1,489行)。イベント一覧は『Showing 1 to 20 of 85 entries』と表示されるが、一覧項目(タイトル・日付・会場)は本文に含まれず、2026/2027 の文字列もゼロ件。一覧が動的描画のためキャッシュに中身が無い。前回失敗からの復旧は未達で、再取得(JS描画後のHTMLまたは個別URL)が必要。"
  },
  {
@@ -356,8 +357,8 @@
   "name": "dfv Euro Finance Group (Frankfurt) – Executive Events",
   "url": "https://www.dfv-eurofinance.com/executive-events/",
   "ok": true,
-  "found": 7,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 4,
+  "note": "差分検知で抽出"
  },
  {
   "name": "ifo Institut – Veranstaltungen",
@@ -378,7 +379,7 @@
   "url": "",
   "ok": false,
   "found": 0,
-  "error": "/en/Calendar.html は404、新URL /en/news-und-events/veranstaltungen.html は一覧が動的描画で本文に無い。tried: fetch, ua-curl, hints, alt-paths(sitemap)",
+  "error": "/en/Calendar.html 404、一覧は動的描画で本文に無い。tried: fetch, hints, alt-paths(sitemap)",
   "note": "台帳にある OeNB の 2026-11-19(Global Payment Fraud & Financial Crime Summit)・2026-11-23〜24(CEEI 2026)は今回のキャッシュで確認できないため、既存値を保持。カレンダーの再取得が必要。"
  },
  {
@@ -387,28 +388,28 @@
   "ok": false,
   "found": 0,
   "note": "2026-11-14: 恒常ブロック継続(次回再確認 2026-11-15)",
-  "error": "恒常ブロック(週次再確認待ち)"
+  "error": "恒常ブロック(週次再確認待ち)。2026-11-15再確認: 依然Cloudflare検証ページのみ"
  },
  {
   "name": "CEP – Council on Economic Policies (Zürich) – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "Upcoming Events ページは『Updates coming up shortly. Please check again soon.』で掲載なし。RSS の項目は2026-09〜10公開の既往記事のみ。月別アーカイブも2026-11以降の件数なし。"
+  "note": "差分検知で抽出"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "一覧に今後のイベントなし。最新の 12/11/2026 (賛助会員限定ウェビナー) は今日より前に終了。他は2026年9月以前の過去開催。キャッシュ内に命令文なし。"
+  "note": "差分検知で抽出"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "2ファイル(…--438120 は英語UI版、…--9138e0 は calendar/2026/11 版)とも内容は同一で2026年11月分のみ。今日以降で収載条件に合う件数なし: 19/11 Interest rates の統計公表、24/11 Financial Stability Review の記者会見は非対象(統計公表・記者会見)。05/11 の研究セミナーと 11/11 の OMFIF ウェビナーは過去。12月以降の掲載はキャッシュになし。キャッシュ内に命令文なし。"
+  "note": "差分検知で抽出"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
@@ -422,7 +423,7 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "研究セミナーページ(98e7f8)の 'Upcoming seminars' は 11-04・11-05 のみで、いずれも今日(2026-11-14)より前。カンファレンスページ(8c8831)の 'From Policy to Impact' も 11-11 開催で過去。今後の収載対象は0件。台帳にある 2026-12-14 'XV World Finance & Banking Symposium' は今回のキャッシュに無いため未確認(台帳の既存値を保持)。"
+  "note": "差分検知で抽出"
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
@@ -441,8 +442,8 @@
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "",
   "ok": true,
-  "found": 4,
-  "note": "Matched upcoming items, all known: The Relationship Between Austria, Europe and the United States (18.11), Honorary Lecture 'Taxing Work in the 21st Century' (30.11), How Cold Will Winter Be? (02.12), The Hidden Cost of Care (16.12). Excluded: the cartoon exhibition (exhibition), 'Leading through hi"
+  "found": 3,
+  "note": "差分検知で抽出"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
@@ -456,14 +457,14 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "No upcoming item matches the criteria. The only future listing is the futsal tournament on 22.11.2026 (sports, outside the 9 themes). The concert (13.11), the lecture by Tetsu Kumagai (06.11), and the 85th German-Japanese Economic Conference (16.10) are past. No instruction-like text was found in th"
+  "note": "差分検知で抽出"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "FAIL-THIN。検索補完でも確認できたイベントなし"
+  "note": "差分検知で抽出"
  },
  {
   "name": "Bank of Lithuania – Events",
@@ -478,7 +479,8 @@
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
   "found": 26,
-  "note": "元URL403。検索補完で既載のみ確認"
+  "note": "新規なし",
+  "error": "代替URL: https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html (WebFetch)"
  },
  {
   "name": "EPC – European Payments Council – Events",
@@ -527,7 +529,7 @@
   "url": "",
   "ok": true,
   "found": 22,
-  "note": "候補22件確認、新規採用0件(全て既知)"
+  "note": "候補22件確認、新規採用2件(Bundesbank他 Business Cycle conf 2027、Defence24 Days 2027)"
  },
  {
   "name": "手動取込",
