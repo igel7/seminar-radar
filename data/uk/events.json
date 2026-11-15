@@ -19019,7 +19019,13 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Stuti Saksena",
+     "org": "NatWest",
+     "role": "Economics Manager"
+    }
+   ],
    "title": "Economic Outlook Webinar (1 December 2026)",
    "title_ja": "経済見通しウェビナー(12月1日)",
    "organizer": "RBS (NatWest Group)",
@@ -19056,7 +19062,18 @@
    "registration_url": null,
    "language": "en",
    "country": "GB",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Richard Blundell",
+     "org": "UCL",
+     "role": "David Ricardo Chair of Political Economy"
+    },
+    {
+     "name": "Francisco H. G. Ferreira",
+     "org": "LSE",
+     "role": "Amartya Sen Professor of Inequality Studies"
+    }
+   ],
    "title": "Addressing the adverse consequences of inequality (John Hills Memorial Lecture)",
    "title_ja": "不平等の悪影響への対処(ジョン・ヒルズ記念講演)",
    "organizer": "LSE International Inequalities Institute",
@@ -19189,7 +19206,13 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Julian David",
+     "org": "techUK",
+     "role": "CEO"
+    }
+   ],
    "title": "AI Adoption Conference 2027: From Ambition to Impact",
    "title_ja": "AI導入会議2027(構想から成果へ)",
    "organizer": "techUK",
@@ -19350,6 +19373,44 @@
    "source": "UK Finance – Events",
    "id": "fea5c63b5dd23b22",
    "first_seen": "2026-11-14",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Digital Money Summit 2027",
+   "title_ja": "OMFIFデジタルマネー・サミット2027",
+   "organizer": "OMFIF",
+   "date_start": "2027-05-18",
+   "date_end": "2027-05-19",
+   "time": null,
+   "city": "London",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "central_bank",
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "関心登録のみ受付中・参加費不明",
+   "registration_note_en": "Registration of interest only for now; fee not stated",
+   "registration_note_de": "Derzeit nur Interessenbekundung möglich; Teilnahmegebühr nicht angegeben",
+   "url": "https://www.omfif.org/meetings/digital-money-summit-2027/",
+   "summary_ja": "OMFIFのデジタルマネー旗艦会議。ステーブルコイン、トークン化預金、決済の将来などを議論する(登壇者は未発表)。",
+   "summary_en": "OMFIF's flagship convening on digital money covering stablecoins, tokenised deposits and the future of payments. 2027 speakers not yet announced.",
+   "summary_de": "Das OMFIF-Flaggschiff-Treffen zu digitalem Geld behandelt Stablecoins, tokenisierte Einlagen und die Zukunft des Zahlungsverkehrs. Referenten noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "OMFIF",
+   "title_short": "Digital Money and Payments",
+   "importance": 2,
+   "registration_url": null,
+   "time_end": null,
+   "speakers": [],
+   "source": "web検索(discovery)",
+   "id": "9f7c9ebddd0f4fbe",
+   "first_seen": "2026-11-15",
    "notables": [],
    "notable_tier": null
   }
