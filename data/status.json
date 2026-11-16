@@ -4,7 +4,7 @@
   "url": "https://www.agora-energiewende.org/news-events",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。イベント掲載なし(ニュース一覧のみ)"
  },
  {
   "name": "BIS – Bank for International Settlements – Events",
@@ -31,7 +31,7 @@
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。RSS告知にイベント情報なし"
  },
  {
   "name": "Banka Slovenije – Events",
@@ -126,7 +126,7 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。日付付きの今後のイベントなし"
  },
  {
   "name": "EBA – European Banking Authority – Events",
@@ -186,7 +186,7 @@
   "url": "https://www.hnb.hr/en/about-us/events",
   "ok": false,
   "found": 0,
-  "error": "一覧がJS描画で本文に無い(Chromium描画でもイベント行なし)。tried: fetch, hints, search(discovery), chromium",
+  "error": "一覧がJS描画で本文に無い(Chromium描画でもイベント行なし)。tried: fetch, hints, search(discovery), chromium 2026-11-16: 再度JS殻のみ(キャッシュにイベント行なし)。tried: fetch, hints, search(discovery), chromium",
   "note": "ページ全体は確認済み(1,489行)。イベント一覧は『Showing 1 to 20 of 85 entries』と表示されるが、一覧項目(タイトル・日付・会場)は本文に含まれず、2026/2027 の文字列もゼロ件。一覧が動的描画のためキャッシュに中身が無い。前回失敗からの復旧は未達で、再取得(JS描画後のHTMLまたは個別URL)が必要。"
  },
  {
@@ -228,7 +228,7 @@
   "url": "",
   "ok": true,
   "found": 2,
-  "note": "新規1件（Berlin x Tokyo: Partners in Innovation, 11/26, 種別Sonstiges・詳細ページ未取得のため形式・会場は null）。既知1件（Industrial Leadership through Middle-Power Cooperation, 12/7）。除外: JLPT Winter 2026 (12/6, テーマ外), JEX Concluding Event (11/21, テーマ外・交流事業の閉会式)。"
+  "note": "差分検知で抽出。既知。登壇者を詳細ページ/PDFから補完"
  },
  {
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
@@ -372,14 +372,14 @@
   "url": "https://sustainablefinancecluster.com/en/events/",
   "ok": true,
   "found": 0,
-  "note": "実ブラウザUA付きcurlで全HTML取得。Upcoming events は「Nothing Found」(今後のイベントなし)"
+  "note": "WebFetchで確認: Upcoming events は Nothing Found(キャッシュはCSSのみ)"
  },
  {
   "name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
   "url": "",
   "ok": false,
   "found": 0,
-  "error": "/en/Calendar.html 404、一覧は動的描画で本文に無い。tried: fetch, hints, alt-paths(sitemap)",
+  "error": "sitemap.xml キャッシュは先頭10万字のみで2025年以降の催事なし、Calendar.html 404。tried: fetch, hints, alt-paths(sitemap)",
   "note": "台帳にある OeNB の 2026-11-19(Global Payment Fraud & Financial Crime Summit)・2026-11-23〜24(CEEI 2026)は今回のキャッシュで確認できないため、既存値を保持。カレンダーの再取得が必要。"
  },
  {
@@ -395,35 +395,35 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。今後のイベントなし"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。今後のイベントなし"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。該当イベントなし"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "",
   "ok": true,
-  "found": 10,
-  "note": "一覧(個別ページなし。no_detail_pages)から今後のイベント11件を確認し、収載条件に合う10件を found に計上。すべて台帳に既存で変化なし。計上: Future of Work 26 (ai), Risiko Geldwäsche 26 (fin_markets), Digital Society 26 (central_bank), BAI Workshop Sustainable Finance & ESG 2026 (climate_esg), Finanzdienstleister der nächsten Generation 27, Capital Market"
+  "found": 11,
+  "note": "差分検知で抽出。全て既知で変化なし"
  },
  {
   "name": "Latvijas Banka – Research/Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。今後の回は終了済みのみ"
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
@@ -442,22 +442,22 @@
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "",
   "ok": true,
-  "found": 3,
-  "note": "差分検知で抽出"
+  "found": 5,
+  "note": "差分検知で抽出。全て既知で変化なし"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
   "url": "https://veranstaltungen.dena.de/",
   "ok": true,
   "found": 7,
-  "note": "2026-11-13 抽出"
+  "note": "差分検知で抽出。全て既知で変化なし"
  },
  {
   "name": "フランクフルト日本法人会 – 行事・活動",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "差分検知で抽出"
+  "note": "差分検知で抽出。対象イベントなし"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
@@ -471,7 +471,7 @@
   "url": "https://www.lb.lt/en/events",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search(discovery)",
+  "error": "403。tried: fetch, ua-curl, hints, search(discovery) 2026-11-16: web検索でも今後の日程確認できず。tried: fetch, ua-curl, hints, alt-paths, search",
   "note": "検索でも新規の今後イベントなし"
  },
  {
@@ -479,15 +479,15 @@
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
   "found": 26,
-  "note": "新規なし",
-  "error": "代替URL: https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html (WebFetch)"
+  "note": "WebFetch(diw.de)で取得。全て既知で変化なし",
+  "error": "代替URL: https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/events",
   "ok": false,
   "found": 0,
-  "error": "404。tried: fetch, hints, alt-paths, search(discovery)"
+  "error": "404。tried: fetch, hints, alt-paths, search(discovery) 2026-11-16: web検索でも今後の日程確認できず。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
@@ -501,7 +501,7 @@
   "url": "https://nbp.pl/en/economic-education/conferences/",
   "ok": false,
   "found": 0,
-  "error": "一覧なし(200だがFAIL-BLOCKED)。tried: fetch, hints, alt-paths, search(discovery)"
+  "error": "一覧なし(200だがFAIL-BLOCKED)。tried: fetch, hints, alt-paths, search(discovery) 2026-11-16: web検索でも今後の日程確認できず。tried: fetch, ua-curl, hints, alt-paths, search"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
@@ -528,8 +528,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 22,
-  "note": "候補22件確認、新規採用2件(Bundesbank他 Business Cycle conf 2027、Defence24 Days 2027)"
+  "found": 34,
+  "note": "候補34件確認、新規採用1件(Frankfurt School Biodiversity Masterclass)。他は既知"
  },
  {
   "name": "手動取込",
