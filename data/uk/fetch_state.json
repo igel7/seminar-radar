@@ -2,7 +2,7 @@
  "_readme": "fetch_all.py が管理するソース別・ページ別の内容ハッシュ台帳。手で編集しない。hash はページ本文テキスト(切り詰め前の全文)の sha256 先頭20桁。pages の last_changed は最後に変化を検知した(または定期リフレッシュで取り直した)日。",
  "SUERF – Events": {
   "url": "https://www.suerf.org/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.suerf.org/events/": {
     "hash": "80d452f2a4c2ce40cf73",
@@ -16,7 +16,7 @@
  },
  "OMFIF – Events/Meetings": {
   "url": "https://www.omfif.org/meetings/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.omfif.org/meetings/": {
     "hash": "3a4c8dca6c92e7b7ded2",
@@ -30,14 +30,14 @@
  },
  "PRI – Principles for Responsible Investment – Events": {
   "url": "https://www.unpri.org/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.unpri.org/events": {
-    "hash": "b3752e82877dad25cd96",
-    "chars": 5788,
+    "hash": "4aa9763baee31f96ac3e",
+    "chars": 5874,
     "http": 200,
     "cache_file": "data/uk/cache/pri-principles-for-responsible-investment-events-60c10d--e5760a.txt",
-    "last_changed": "2026-11-15"
+    "last_changed": "2026-11-17"
    },
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars": {
     "hash": "0a407e0d14e6e70f6505",
@@ -47,136 +47,136 @@
     "last_changed": "2026-10-30"
    }
   },
-  "verdict": "FAIL-THIN"
+  "verdict": "CHANGED"
  },
  "UNEP FI – Events": {
   "url": "https://www.unepfi.org/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.unepfi.org/events/": {
-    "hash": "9591d18f3c317a26c041",
-    "chars": 23263,
+    "hash": "9f11d107850040db8514",
+    "chars": 22818,
     "http": 200,
     "cache_file": "data/uk/cache/unep-fi-events-526eb0--d11c29.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "Bank of England – Events": {
   "url": "https://www.bankofengland.co.uk/news/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.bankofengland.co.uk/news/events": {
-    "hash": "c9c225d996ea5e89574e",
-    "chars": 16014,
+    "hash": "30a4b7c2fb67aa06f158",
+    "chars": 15428,
     "http": 200,
     "cache_file": "data/uk/cache/bank-of-england-events-1ea1d2--c03c75.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "Bank of England – Upcoming external events involving Bank staff": {
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.bankofengland.co.uk/events/upcoming-events": {
-    "hash": "312d438121e2b0f232bb",
-    "chars": 17740,
+    "hash": "e485d50841c8681c55ad",
+    "chars": 17631,
     "http": 200,
     "cache_file": "data/uk/cache/bank-of-england-upcoming-external-events-involving-689339--912d1e.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "FCA – Financial Conduct Authority – Events": {
   "url": "https://www.fca.org.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.fca.org.uk/events": {
-    "hash": "deca8754bc0538d54c2b",
+    "hash": "66660dcb035e92dc14d6",
     "chars": 16027,
     "http": 200,
     "cache_file": "data/uk/cache/fca-financial-conduct-authority-events-9b1357--d7acd6.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "NIESR – National Institute of Economic and Social Research – Events": {
   "url": "https://niesr.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://niesr.ac.uk/events": {
-    "hash": "2780f1badc4b706a6686",
-    "chars": 11207,
+    "hash": "ed836c828d77a965c0ab",
+    "chars": 11166,
     "http": 200,
     "cache_file": "data/uk/cache/niesr-national-institute-of-economic-and-social-re-960fe6--b90524.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "IFS – Institute for Fiscal Studies – Events": {
   "url": "https://ifs.org.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "CEPR – Centre for Economic Policy Research – Events": {
   "url": "https://cepr.org/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://hub.cepr.org/events/upcoming-events?page=0": {
-    "hash": "093f219378bb5bc6f3e2",
+    "hash": "0473ebcae4e345c30e19",
     "chars": 5480,
     "http": 200,
     "cache_file": "data/uk/cache/cepr-centre-for-economic-policy-research-events-f6d970--f041cd.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    },
    "https://hub.cepr.org/events/upcoming-events?page=1": {
-    "hash": "d61c4aa2b02b3362ff06",
-    "chars": 5534,
+    "hash": "e6bceb2dd9219c227c31",
+    "chars": 5494,
     "http": 200,
     "cache_file": "data/uk/cache/cepr-centre-for-economic-policy-research-events-f6d970--8f452e.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    },
    "https://hub.cepr.org/events/upcoming-events?page=2": {
-    "hash": "4e7f342a8a4a3d0ed893",
-    "chars": 6000,
+    "hash": "d9b6b81741dfbbd55be3",
+    "chars": 5960,
     "http": 200,
     "cache_file": "data/uk/cache/cepr-centre-for-economic-policy-research-events-f6d970--0a1379.txt",
-    "last_changed": "2026-11-15"
+    "last_changed": "2026-11-17"
    },
    "https://hub.cepr.org/events/upcoming-events?page=3": {
-    "hash": "05758c8a53ad20a39d56",
-    "chars": 5691,
+    "hash": "5e6d0b6e52bece727dde",
+    "chars": 5700,
     "http": 200,
     "cache_file": "data/uk/cache/cepr-centre-for-economic-policy-research-events-f6d970--829d41.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    },
    "https://hub.cepr.org/events/upcoming-events?page=4": {
-    "hash": "d1673fd26a11395d65d8",
-    "chars": 4121,
+    "hash": "0032216b0e4e9156b778",
+    "chars": 4613,
     "http": 200,
     "cache_file": "data/uk/cache/cepr-centre-for-economic-policy-research-events-f6d970--41937c.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    },
    "https://hub.cepr.org/events/upcoming-events?page=5": {
-    "hash": "e154ad83d113a4e772d3",
-    "chars": 1065,
+    "hash": "e2686707635b67463497",
+    "chars": 1055,
     "http": 200,
     "cache_file": "data/uk/cache/cepr-centre-for-economic-policy-research-events-f6d970--b653a5.txt",
-    "last_changed": "2026-11-08"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "Resolution Foundation – Events": {
   "url": "https://www.resolutionfoundation.org/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.resolutionfoundation.org/events/": {
     "hash": "b9c1d201407e9ec9c534",
@@ -190,41 +190,41 @@
  },
  "Institute for Government – Events": {
   "url": "https://www.instituteforgovernment.org.uk/our-events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.instituteforgovernment.org.uk/our-events": {
-    "hash": "abd41922e5cc184dca3a",
+    "hash": "4b09c83d32349249f97f",
     "chars": 14084,
     "http": 200,
     "cache_file": "data/uk/cache/institute-for-government-events-5d680f--2c657a.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "CER – Centre for European Reform – Events": {
   "url": "https://www.cer.eu/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.cer.eu/events": {
-    "hash": "cddb36fba80c54ba6494",
+    "hash": "83980849f427b4754569",
     "chars": 8450,
     "http": 200,
     "cache_file": "data/uk/cache/cer-centre-for-european-reform-events-4c29a2--efefb1.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "Chatham House – Events": {
   "url": "https://www.chathamhouse.org/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "RUSI – Royal United Services Institute – Events": {
   "url": "https://my.rusi.org/events.html",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://my.rusi.org/events.html": {
     "hash": "385dade88efda05e6995",
@@ -238,61 +238,61 @@
  },
  "IISS – International Institute for Strategic Studies – Events": {
   "url": "https://www.iiss.org/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "Policy Exchange – Events": {
   "url": "https://policyexchange.org.uk/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {},
   "verdict": "FAIL-NET"
  },
  "Grantham Research Institute (LSE) – Events": {
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.lse.ac.uk/granthaminstitute/events/": {
-    "hash": "ad450c7144be5f2efbf4",
-    "chars": 19443,
+    "hash": "444ab7542a8bc75daca5",
+    "chars": 19592,
     "http": 200,
     "cache_file": "data/uk/cache/grantham-research-institute-lse-events-347d5f--4e33c7.txt",
-    "last_changed": "2026-11-13"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "E3G – Latest (events are mixed into the news feed)": {
   "url": "https://www.e3g.org/latest/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.e3g.org/latest/": {
-    "hash": "e30caccc85ac45562365",
-    "chars": 10912,
+    "hash": "e9d7cd8fff0e90158926",
+    "chars": 10997,
     "http": 200,
     "cache_file": "data/uk/cache/e3g-latest-events-are-mixed-into-the-news-feed-e6aac2--ecd055.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "LSE – Public events (Search)": {
   "url": "https://www.lse.ac.uk/Events/Search-Events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.lse.ac.uk/Events/Search-Events": {
-    "hash": "3176473827c5f36586b1",
-    "chars": 19900,
+    "hash": "59dd6c43028f24b0355e",
+    "chars": 19962,
     "http": 200,
     "cache_file": "data/uk/cache/lse-public-events-search-81a4bd--4dea45.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "LSE – Centre for Macroeconomics (CFM) – Events": {
   "url": "https://www.centreformacroeconomics.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.lse.ac.uk/CFM/events-and-seminars/Upcoming-Events": {
     "hash": "9647155789408316423a",
@@ -313,21 +313,21 @@
  },
  "LSE – Financial Markets Group (FMG) – Events": {
   "url": "https://www.fmg.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.fmg.ac.uk/events": {
-    "hash": "dde4e7c74d403e541091",
-    "chars": 3905,
+    "hash": "95a48194cf31281b0002",
+    "chars": 4031,
     "http": 200,
     "cache_file": "data/uk/cache/lse-financial-markets-group-fmg-events-a1f1fd--bd49bf.txt",
-    "last_changed": "2026-11-12"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "LSE – Systemic Risk Centre (SRC) – Events": {
   "url": "https://www.systemicrisk.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.systemicrisk.ac.uk/events": {
     "hash": "6bd76597dfe41e138e4c",
@@ -341,27 +341,27 @@
  },
  "LSE – Centre for Economic Performance (CEP) – Events": {
   "url": "https://cep.lse.ac.uk/_new/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://cep.lse.ac.uk/_new/events/": {
-    "hash": "84d50349119849ec3647",
-    "chars": 24631,
+    "hash": "6ab41e3cf9889f81cb16",
+    "chars": 24356,
     "http": 200,
     "cache_file": "data/uk/cache/lse-centre-for-economic-performance-cep-events-6fc072--f460dc.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Oxford – Saïd Business School – Events": {
   "url": "https://www.sbs.ox.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "Oxford Martin School – Events": {
   "url": "https://www.oxfordmartin.ox.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.oxfordmartin.ox.ac.uk/events": {
     "hash": "f7646e2925c80b6b9a0a",
@@ -375,21 +375,21 @@
  },
  "Cambridge Judge Business School – Events": {
   "url": "https://www.jbs.cam.ac.uk/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.jbs.cam.ac.uk/events/": {
-    "hash": "12c3e26877a0811436d5",
-    "chars": 29070,
+    "hash": "ce3cffa3f2a24bed32da",
+    "chars": 29048,
     "http": 200,
     "cache_file": "data/uk/cache/cambridge-judge-business-school-events-7b48e5--7cff48.txt",
-    "last_changed": "2026-11-15"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "Bennett School of Public Policy (Cambridge) – Events": {
   "url": "https://www.bennettschool.cam.ac.uk/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.bennettschool.cam.ac.uk/events/": {
     "hash": "1467c685cb1d9dc5064b",
@@ -403,7 +403,7 @@
  },
  "KCL – Qatar Centre for Global Banking & Finance – Event series": {
   "url": "https://www.kcl.ac.uk/events/series/qatar-centre-for-global-banking-finance-event-series",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.kcl.ac.uk/events/series/qatar-centre-for-global-banking-finance-event-series": {
     "hash": "eb4fe2ebde2b0be5f17a",
@@ -413,11 +413,11 @@
     "last_changed": "2026-11-16"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Imperial College Business School – Events": {
   "url": "https://www.imperial.ac.uk/business-school/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.imperial.ac.uk/business-school/events/": {
     "hash": "15c408d14aa9f4c1a5b9",
@@ -431,21 +431,21 @@
  },
  "Warwick – Department of Economics – Events": {
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://warwick.ac.uk/fac/soc/economics/events/": {
-    "hash": "b4d9124b9fc10dab9d60",
-    "chars": 32804,
+    "hash": "385b55602352286ac73e",
+    "chars": 35266,
     "http": 200,
     "cache_file": "data/uk/cache/warwick-department-of-economics-events-fc9545--8d68d2.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Warwick Business School – Events": {
   "url": "https://www.wbs.ac.uk/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.wbs.ac.uk/events/": {
     "hash": "62635701e8f7d394b143",
@@ -459,13 +459,13 @@
  },
  "Bayes Business School – Events": {
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "MMF – Money Macro and Finance Society": {
   "url": "https://mmf.ac.uk/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://mmf.ac.uk/": {
     "hash": "d6688e9de6cd007ddd82",
@@ -475,11 +475,11 @@
     "last_changed": "2026-11-16"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "IEA – Institute of Economic Affairs – Upcoming events": {
   "url": "https://iea.org.uk/events-upcoming/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://iea.org.uk/events-upcoming/": {
     "hash": "58b6e2fca08784b157c7",
@@ -493,35 +493,35 @@
  },
  "UK in a Changing Europe (UKICE) – Events": {
   "url": "https://ukandeu.ac.uk/all-events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://ukandeu.ac.uk/all-events/": {
-    "hash": "3df19e5d37b16c11f5ec",
+    "hash": "ff2fe27a97d3989db62b",
     "chars": 3400,
     "http": 200,
     "cache_file": "data/uk/cache/uk-in-a-changing-europe-ukice-events-886fa6--665667.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "Central Bank of Ireland – Upcoming events": {
   "url": "https://www.centralbank.ie/events/upcoming-events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.centralbank.ie/events/upcoming-events": {
-    "hash": "0b3f408ceaf63c4ae61b",
-    "chars": 38051,
+    "hash": "0eee2089a44123bf0a0b",
+    "chars": 38600,
     "http": 200,
     "cache_file": "data/uk/cache/central-bank-of-ireland-upcoming-events-ee4fd8--212a68.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "ESRI – Economic and Social Research Institute (Dublin) – Events": {
   "url": "https://www.esri.ie/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.esri.ie/events": {
     "hash": "23c1fa926bdda5d178ee",
@@ -535,42 +535,42 @@
  },
  "Trinity College Dublin – Economics seminar series": {
   "url": "https://www.tcd.ie/economics/research/seminar-series/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.tcd.ie/economics/research/seminar-series/": {
-    "hash": "8e5be4d951419e567dd4",
-    "chars": 44358,
+    "hash": "1d5ebd922990f327f283",
+    "chars": 44403,
     "http": 200,
     "cache_file": "data/uk/cache/trinity-college-dublin-economics-seminar-series-d8c9f7--616d1b.txt",
-    "last_changed": "2026-11-11"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "UK Finance – Events": {
   "url": "https://www.ukfinance.org.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.ukfinance.org.uk/events": {
-    "hash": "ab2c07a9b99aa64a9386",
-    "chars": 17824,
+    "hash": "a261fd2d859e7ddbd67b",
+    "chars": 17434,
     "http": 200,
     "cache_file": "data/uk/cache/uk-finance-events-b32860--dcdef6.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    },
    "https://www.ukfinance.org.uk/events/events-training-schedule": {
-    "hash": "874c5aff72bdfdd7b3ed",
-    "chars": 46013,
+    "hash": "88a4a376ecbdfc6dafa8",
+    "chars": 45623,
     "http": 200,
     "cache_file": "data/uk/cache/uk-finance-events-b32860--9f7736.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "TheCityUK – Events": {
   "url": "https://www.thecityuk.com/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.thecityuk.com/events/": {
     "hash": "803761c1675d31c82bf1",
@@ -584,7 +584,7 @@
  },
  "LSEG – London Stock Exchange Group – Events": {
   "url": "https://www.lseg.com/en/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.lseg.com/en/events": {
     "hash": "4b655e208be104d398c9",
@@ -598,21 +598,21 @@
  },
  "ICMA – International Capital Market Association – Events": {
   "url": "https://www.icmagroup.org/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.icmagroup.org/events/": {
-    "hash": "da66e0fd1eff3f620ce2",
-    "chars": 72935,
+    "hash": "5970ac969ed47afcfdb8",
+    "chars": 72916,
     "http": 200,
     "cache_file": "data/uk/cache/icma-international-capital-market-association-even-6aa6d3--681c77.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "ISDA – Events": {
   "url": "https://www.isda.org/events/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.isda.org/events/": {
     "hash": "57c7c8b04a005e65f143",
@@ -626,35 +626,35 @@
  },
  "Daiwa Anglo-Japanese Foundation – Events": {
   "url": "https://dajf.org.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://dajf.org.uk/events": {
-    "hash": "c36612c2b357e974e84d",
-    "chars": 8878,
+    "hash": "1da296b15423db89511e",
+    "chars": 7999,
     "http": 200,
     "cache_file": "data/uk/cache/daiwa-anglo-japanese-foundation-events-be2ee2--4bb4fa.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Japan Society (London) – Events": {
   "url": "https://www.japansociety.org.uk/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.japansociety.org.uk/events": {
-    "hash": "5efa9e49345ba2494fba",
-    "chars": 13760,
+    "hash": "29c2b0225d70ac8b754f",
+    "chars": 12663,
     "http": 200,
     "cache_file": "data/uk/cache/japan-society-london-events-a99c3f--40694d.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "JETRO London – Events": {
   "url": "https://www.jetro.go.jp/uk/events.html",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.jetro.go.jp/uk/events.html": {
     "hash": "aeb87d7023108767e9ea",
@@ -682,7 +682,7 @@
  },
  "SOAS – What's on (SOAS China Institute を含む)": {
   "url": "https://www.soas.ac.uk/about/whats-on",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.soas.ac.uk/about/whats-on": {
     "hash": "800cde351d5f71e739c4",
@@ -696,35 +696,35 @@
  },
  "CBBC – China-Britain Business Council – Events": {
   "url": "https://www.cbbc.org/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.cbbc.org/events": {
-    "hash": "1904f753b899fd9682d3",
-    "chars": 13374,
+    "hash": "c32f29225eba4e399f4c",
+    "chars": 13343,
     "http": 200,
     "cache_file": "data/uk/cache/cbbc-china-britain-business-council-events-bd01cc--93b8a2.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "Sveriges Riksbank – Conferences": {
   "url": "https://www.riksbank.se/en-gb/press-and-published/conferences/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.riksbank.se/en-gb/press-and-published/conferences/": {
     "hash": "e7984423245fc8c19cce",
     "chars": 12355,
     "http": 200,
     "cache_file": "data/uk/cache/sveriges-riksbank-conferences-612957--45d2f8.txt",
-    "last_changed": "2026-11-03"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "UNCHANGED"
  },
  "Norges Bank – Research conferences": {
   "url": "https://www.norges-bank.no/en/topics/Research/Conferences/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.norges-bank.no/en/topics/Research/Conferences/": {
     "hash": "c4d59f24ba69cb45cddb",
@@ -734,11 +734,11 @@
     "last_changed": "2026-11-16"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Danmarks Nationalbank – Research events": {
   "url": "https://www.nationalbanken.dk/en/research/events",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.nationalbanken.dk/en/research/events": {
     "hash": "32c3447a57aa551483e8",
@@ -752,35 +752,35 @@
  },
  "Suomen Pankki – Bank of Finland – Events calendar": {
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/": {
-    "hash": "9f518d44f73817d61083",
-    "chars": 44194,
+    "hash": "1ca1852431ccc6e49824",
+    "chars": 43912,
     "http": 200,
     "cache_file": "data/uk/cache/suomen-pankki-bank-of-finland-events-calendar-2ff4f3--c9fa92.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "Seðlabanki Íslands – Central Bank of Iceland": {
   "url": "https://cb.is/",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://cb.is/": {
-    "hash": "753c673f5ff41ca03116",
-    "chars": 14070,
+    "hash": "a6e3026bcfe95581c5d3",
+    "chars": 14032,
     "http": 200,
     "cache_file": "data/uk/cache/se-labanki-slands-central-bank-of-iceland-c42489--45e89b.txt",
-    "last_changed": "2026-11-16"
+    "last_changed": "2026-11-17"
    }
   },
   "verdict": "CHANGED"
  },
  "PRA – Prudential Regulation Authority – Publications RSS": {
   "url": "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
-  "last_fetch": "2026-11-16",
+  "last_fetch": "2026-11-17",
   "pages": {
    "https://www.bankofengland.co.uk/rss/prudential-regulation-publications": {
     "hash": "034a6cdd2ae508d8efc7",

@@ -6303,7 +6303,7 @@
    "notable_tier": null
   },
   {
-   "organizer": "LSE Centre for Macroeconomics (CFM)",
+   "organizer": "LSE Centre for Macroeconomics",
    "organizer_short": "CFM",
    "city": "London",
    "country": "GB",
@@ -6319,32 +6319,32 @@
    "date_end": null,
    "importance": 0,
    "source": "LSE – Centre for Macroeconomics (CFM) – Events",
-   "title": "Money-Macro Seminar: Emi Nakamura & Jón Steinsson (University of California, Berkeley)",
-   "title_ja": "マネー・マクロ・セミナー（Nakamura・Steinsson）",
+   "title": "Faculty Work in Progress Seminar: Emi Nakamura & Jón Steinsson",
+   "title_ja": "教員研究進捗セミナー(Nakamura・Steinsson)",
    "date_start": "2027-05-11",
-   "time": "14:30",
-   "time_end": "16:00",
-   "venue": "LSE, SAL.1.04",
+   "time": "12:00",
+   "time_end": "13:00",
+   "venue": "SAL.1.04",
    "themes": [
-    "central_bank"
+    "real_economy"
    ],
    "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
-   "title_short": "Money and Macroeconomics",
+   "title_short": "Macro Faculty Research Seminar",
    "speakers": [
     {
      "name": "Emi Nakamura",
-     "org": "UC Berkeley",
+     "org": null,
      "role": null
     },
     {
      "name": "Jón Steinsson",
-     "org": "UC Berkeley",
+     "org": null,
      "role": null
     }
    ],
-   "summary_ja": "LSE CFM のマネー・マクロ・セミナー。Emi Nakamura と Jón Steinsson（UC バークレー）が報告する。",
-   "summary_en": "Money-Macro seminar at LSE CFM presented by Emi Nakamura and Jón Steinsson (University of California, Berkeley).",
-   "summary_de": "Money-Macro-Seminar des LSE CFM mit Emi Nakamura und Jón Steinsson (University of California, Berkeley).",
+   "summary_ja": "LSE 中央マクロ経済センター(CFM)の教員研究進捗セミナー。Emi Nakamura と Jón Steinsson が報告する。",
+   "summary_en": "Faculty work-in-progress seminar of the LSE Centre for Macroeconomics (CFM), presented by Emi Nakamura and Jón Steinsson.",
+   "summary_de": "Fakultäts-Work-in-Progress-Seminar des LSE Centre for Macroeconomics (CFM) mit Emi Nakamura und Jón Steinsson.",
    "id": "2d9029fd8e2df20d",
    "first_seen": "2026-10-20",
    "notables": [],
@@ -19487,10 +19487,197 @@
    "organizer_short": "IfG",
    "title_short": "Mayors and Health-Related Inactivity",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "David MacDougall",
+     "org": "South Yorkshire MCA",
+     "role": "Director of Work and Skills"
+    },
+    {
+     "name": "Nicola McLeod",
+     "org": "Greater Manchester CA",
+     "role": "Director – Education, Work & Skills"
+    },
+    {
+     "name": "Michelle Burton",
+     "org": "West Yorkshire CA",
+     "role": "Head of Employment and Skills"
+    },
+    {
+     "name": "Ben Paxton",
+     "org": "IfG",
+     "role": "Senior Researcher"
+    }
+   ],
    "source": "Institute for Government – Events",
    "id": "f49bb6c12d3db0ff",
    "first_seen": "2026-11-16",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Workshop: Digital Money & the Future of the Payments System",
+   "title_ja": "ワークショップ：デジタルマネーと決済システムの将来",
+   "organizer": "Central Bank of Ireland",
+   "date_start": "2027-01-12",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.centralbank.ie/events/upcoming-events/2027/01/12/default-calendar/workshop--digital-money---the-future-of-the-payments-system",
+   "summary_ja": "アイルランド中央銀行がトリニティ・カレッジ・ダブリンと共催する、デジタルマネーと決済システムの将来をテーマとするワークショップ。",
+   "summary_en": "Workshop co-hosted by the Central Bank of Ireland and Trinity College Dublin on digital money and the future of the payments system.",
+   "summary_de": "Workshop der Zentralbank Irlands und des Trinity College Dublin zu digitalem Geld und der Zukunft des Zahlungsverkehrs.",
+   "language": "en",
+   "country": "IE",
+   "organizer_short": "Central Bank of Ireland",
+   "title_short": "Digital Money and Payments",
+   "importance": 2,
+   "speakers": [],
+   "source": "Central Bank of Ireland – Upcoming events",
+   "id": "0e2e8c67785a7bd3",
+   "first_seen": "2026-11-17",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "CRETA Theory Seminar - Hersh Chopra (LSE)",
+   "title_ja": "CRETA理論セミナー(Hersh Chopra・LSE)",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2026-11-18",
+   "date_end": null,
+   "time": "16:00",
+   "time_end": "17:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00ee7010a015e",
+   "summary_ja": "LSEのHersh Chopra氏が、Jeff Elyとの共同研究として、最適オークションにおける入札者の情報取得の均衡を報告する。",
+   "summary_en": "Hersh Chopra (LSE) presents joint work with Jeff Ely on equilibrium information acquisition by bidders in optimal auctions.",
+   "summary_de": "Hersh Chopra (LSE) stellt gemeinsame Arbeit mit Jeff Ely zur Informationsbeschaffung von Bietern in optimalen Auktionen vor.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Information Acquisition in Auctions",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Hersh Chopra",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "7a0de861fe56e4e5",
+   "first_seen": "2026-11-17",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "PEPE (Political Economy & Public Economics) Seminar - Horacio Larreguy (ITAM)",
+   "title_ja": "PEPE政治経済・公共経済セミナー(Horacio Larreguy・ITAM)",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2027-02-11",
+   "date_end": null,
+   "time": "11:15",
+   "time_end": "12:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00f07795102b3",
+   "summary_ja": "ITAMのHoracio Larreguy氏が、PEPE(政治経済・公共経済)セミナーで報告する。演題は未定。",
+   "summary_en": "Horacio Larreguy (ITAM) presents at the PEPE political economy and public economics seminar; the title is to be advised.",
+   "summary_de": "Horacio Larreguy (ITAM) spricht im PEPE-Seminar zu politischer Ökonomie und öffentlicher Ökonomik; der Vortragstitel steht noch nicht fest.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Political Economy Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Horacio Larreguy",
+     "org": "ITAM",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "ba73cda256ed097a",
+   "first_seen": "2026-11-17",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Trade and Urban Seminars",
+   "title_ja": "貿易・都市セミナー",
+   "organizer": "Centre for Economic Performance, LSE",
+   "date_start": "2026-12-09",
+   "date_end": null,
+   "time": "12:30",
+   "time_end": "14:00",
+   "city": "London",
+   "venue": "SAL 1.04, 1st Floor Conference Room, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10896",
+   "summary_ja": "CEP の貿易・都市セミナー。Fabian Eckert(UCSD)が報告する(演題未定)。対面とオンラインの併用。",
+   "summary_en": "Trade and Urban Seminar of the LSE Centre for Economic Performance (CEP), with Fabian Eckert (UCSD); talk title to be announced. Hybrid format.",
+   "summary_de": "Handels- und Stadtökonomik-Seminar des LSE Centre for Economic Performance (CEP) mit Fabian Eckert (UCSD); Vortragstitel noch offen. Hybridformat.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Trade and Urban Economics",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Fabian Eckert",
+     "org": "UCSD",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "d41f4c047779bcd8",
+   "first_seen": "2026-11-17",
    "notables": [],
    "notable_tier": null
   }

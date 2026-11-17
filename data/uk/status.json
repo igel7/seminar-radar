@@ -11,50 +11,49 @@
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
   "found": 11,
-  "note": "2026-11-13"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "https://www.unpri.org/events",
-  "ok": false,
-  "found": 0,
-  "note": "2026-11-15 抽出済み",
-  "error": "Chromium描画後も本文が薄い(JS殻)。tried: fetch, hints, alt-urls, search"
+  "ok": true,
+  "found": 1,
+  "note": "2026-11-17 Chromium描画で取得(public.unpri.org)"
  },
  {
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
   "found": 4,
-  "note": "2026-11-14"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Bank of England – Events",
   "url": "https://www.bankofengland.co.uk/news/events",
   "ok": true,
-  "found": 4,
-  "note": "2026-11-14"
+  "found": 5,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 3,
-  "note": "2026-11-14"
+  "found": 6,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
   "found": 0,
-  "note": "2026-11-16 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
   "url": "https://niesr.ac.uk/events",
   "ok": true,
-  "found": 7,
-  "note": "2026-11-14"
+  "found": 8,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "IFS – Institute for Fiscal Studies – Events",
@@ -67,8 +66,8 @@
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 11,
-  "note": "2026-11-16 抽出済み"
+  "found": 33,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Resolution Foundation – Events",
@@ -81,15 +80,15 @@
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
-  "found": 2,
-  "note": "2026-11-16 抽出済み"
+  "found": 3,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "CER – Centre for European Reform – Events",
   "url": "https://www.cer.eu/events",
   "ok": true,
   "found": 0,
-  "note": "2026-11-16 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Chatham House – Events",
@@ -124,35 +123,35 @@
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
   "found": 1,
-  "note": "2026-11-13"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
   "found": 0,
-  "note": "2026-11-14"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
   "found": 6,
-  "note": "2026-11-16 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
   "url": "https://www.centreformacroeconomics.ac.uk/events",
   "ok": true,
-  "found": 46,
-  "note": "2026-11-13"
+  "found": 45,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "LSE – Financial Markets Group (FMG) – Events",
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
-  "found": 2,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -165,8 +164,8 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 25,
-  "note": "2026-11-16 抽出済み"
+  "found": 26,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Oxford – Saïd Business School – Events",
@@ -187,7 +186,7 @@
   "url": "https://www.jbs.cam.ac.uk/events/",
   "ok": true,
   "found": 0,
-  "note": "2026-11-15 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -214,8 +213,8 @@
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 28,
-  "note": "2026-11-16 抽出済み"
+  "found": 29,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Warwick Business School – Events",
@@ -250,14 +249,14 @@
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
   "found": 1,
-  "note": "2026-11-16 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
-  "found": 5,
-  "note": "2026-11-14"
+  "found": 6,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -271,14 +270,14 @@
   "url": "https://www.tcd.ie/economics/research/seminar-series/",
   "ok": true,
   "found": 16,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "UK Finance – Events",
   "url": "https://www.ukfinance.org.uk/events",
   "ok": true,
-  "found": 6,
-  "note": "2026-11-14"
+  "found": 2,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "TheCityUK – Events",
@@ -298,8 +297,8 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-14"
+  "found": 2,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "ISDA – Events",
@@ -312,22 +311,22 @@
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
   "ok": true,
-  "found": 3,
-  "note": "2026-11-16 抽出済み"
+  "found": 2,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-16 抽出済み"
+  "found": 6,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "JETRO London – Events",
   "url": "https://www.jetro.go.jp/uk/events.html",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "SOAS – What's on (SOAS China Institute を含む)",
@@ -340,15 +339,15 @@
   "name": "CBBC – China-Britain Business Council – Events",
   "url": "https://www.cbbc.org/events",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-14"
+  "found": 3,
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Sveriges Riksbank – Conferences",
   "url": "https://www.riksbank.se/en-gb/press-and-published/conferences/",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Norges Bank – Research conferences",
@@ -369,14 +368,14 @@
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
   "ok": true,
   "found": 1,
-  "note": "2026-11-16 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
   "found": 0,
-  "note": "2026-11-16 抽出済み"
+  "note": "2026-11-17 抽出済み"
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
@@ -389,8 +388,8 @@
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 15,
-  "note": "2026-11-16 候補15件確認。新規採用0件(全て既知・過去・地域外・日付/場所未確認)。ブロック先(IFS等)の補完検索も新規なし"
+  "found": 12,
+  "note": "2026-11-17 候補12件が全て既知、新規採用0件"
  },
  {
   "name": "手動取込",
