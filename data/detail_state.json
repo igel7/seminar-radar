@@ -163,9 +163,9 @@
  "https://osapiens.com/en/events-webinars/upcoming-webinars/2026/sustainable-finance-reporting-claims-that-stick": {
   "event_id": "b4b2fc5982806f08",
   "http": 200,
-  "last": "2026-11-14",
+  "last": "2026-11-18",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://public.unpri.org/all-events-and-webinars/fight-flight-or-freeze-anticipating-responses-to-physical-climate-risk/13688.article": {
   "event_id": "2a8f4fcfe2e23283",
@@ -268,9 +268,9 @@
  "https://www.appliedai-institute.de/en/workshops-trainings/artikel-50-in-der-praxis-2": {
   "event_id": "a28403b89d01d39b",
   "http": 200,
-  "last": "2026-11-04",
+  "last": "2026-11-18",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.appliedai-institute.de/en/workshops-trainings/der-ai-act-fuer-generative-und-agentische-ki-auf-englisch-2": {
   "event_id": "b52bce1cb6121547",
@@ -401,9 +401,9 @@
  "https://www.banque-france.fr/en/events/central-bank-digital-currency-cbdc-retail-component-2": {
   "event_id": "0c2b579ec75ee8d7",
   "http": 403,
-  "last": "2026-10-29",
+  "last": "2026-11-18",
   "result": "FAIL-BLOCKED",
-  "tries": 1
+  "tries": 2
  },
  "https://www.bis.org/events/20261117-call-papers-workshop-banking-and-banking-regulation": {
   "event_id": "130387f7450a915b",
@@ -456,10 +456,10 @@
  },
  "https://www.chathamhouse.org/events/all/standard-event/chatham-house-berlin-conference-2026": {
   "event_id": "c731effbf651a308",
-  "http": 200,
-  "last": "2026-11-04",
-  "result": "ok",
-  "tries": 2
+  "http": 403,
+  "last": "2026-11-18",
+  "result": "FAIL-BLOCKED",
+  "tries": 3
  },
  "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/public-panel-writing-europes-next-chapter-a-franco-german-outline": {
   "event_id": "346564a8927a9491",
@@ -664,6 +664,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.ecb.europa.eu/press/intro/events/html/fs_20261208.en.html": {
+  "event_id": "decfb60cc0097444",
+  "http": 200,
+  "last": "2026-11-18",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.eflab.de/events/detail/efl-annual-conference-2026": {
   "event_id": "b68ebaad5c315186",
   "http": 200,
@@ -737,9 +744,9 @@
  "https://www.forum-ng.org/en/termine/veranstaltung/cric-ev-konferenz-zur-klimagerechtigkeit-in-frankfurt-am-main": {
   "event_id": "400118719d35f837",
   "http": 200,
-  "last": "2026-11-04",
+  "last": "2026-11-18",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.forum-ng.org/en/termine/veranstaltung/cric-evwebinar-esg-beginnt-nicht-im-portfolio-sondern-in-der-fabrik": {
   "event_id": "593302b3991b24b1",
@@ -828,9 +835,9 @@
  "https://www.govevents.com/event/25877/global-security-and-innovation-summit": {
   "event_id": "db5ad10064cff934",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-18",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.gtai.de/en/meta/events/eic-connect-germany--2039010": {
   "event_id": "4c3c2bc063938c2c",
