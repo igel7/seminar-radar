@@ -71,10 +71,10 @@
  },
  "https://my.rusi.org/events/from-coordination-to-collective-power-uk-eu-sanctions-cooperation.html": {
   "event_id": "dc9bee8bada4bbc9",
-  "http": 200,
-  "last": "2026-10-25",
-  "result": "ok",
-  "tries": 1
+  "http": 403,
+  "last": "2026-11-18",
+  "result": "FAIL-BLOCKED",
+  "tries": 2
  },
  "https://my.rusi.org/events/rusi-military-technology-conference-2026.html": {
   "event_id": "ccf2d69738432fa9",
@@ -318,6 +318,13 @@
   "event_id": "40d17776fcbfebcd",
   "http": 200,
   "last": "2026-10-25",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.centralbank.ie/events/upcoming-events/2027/01/12/default-calendar/workshop--digital-money---the-future-of-the-payments-system": {
+  "event_id": "0e2e8c67785a7bd3",
+  "http": 200,
+  "last": "2026-11-18",
   "result": "ok",
   "tries": 1
  },
@@ -674,9 +681,9 @@
  "https://www.ukfinance.org.uk/events-training/ai-native-software-delivery-mission-critical-banking-platforms": {
   "event_id": "3fa2bab0f0c98ae9",
   "http": 200,
-  "last": "2026-11-04",
+  "last": "2026-11-18",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.ukfinance.org.uk/events-training/digital-innovation-summit-2027": {
   "event_id": "61ec174eb0d8c70a",
