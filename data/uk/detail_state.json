@@ -57,10 +57,10 @@
  },
  "https://my.rusi.org/events/closing-the-crypto-recovery-gap.html": {
   "event_id": "3480cb0f740242f0",
-  "http": 200,
-  "last": "2026-10-26",
-  "result": "ok",
-  "tries": 2
+  "http": 403,
+  "last": "2026-11-19",
+  "result": "FAIL-BLOCKED",
+  "tries": 3
  },
  "https://my.rusi.org/events/cryptocurrencies-in-uk-politics.html": {
   "event_id": "2a84929c6f2b709c",
@@ -146,6 +146,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://niesr.ac.uk/event/nigem-workshop-introducing-ngfs-phase-6-1226": {
+  "event_id": "0c5ab8545298becc",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://niesr.ac.uk/event/nigem-workshop-introduction-commodity-and-labour-market-shocks-1126": {
   "event_id": "672697bb9700b3f9",
   "http": 200,
@@ -171,6 +178,27 @@
   "event_id": "bc694913be6bd3cb",
   "http": 200,
   "last": "2026-10-30",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-risks-and-macroeconomy-1226": {
+  "event_id": "657aa9e14469aeff",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-stranded-assets-1226": {
+  "event_id": "c51493081fb4f785",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://niesr.ac.uk/event/nigem-workshop-us-ai-investment-shock": {
+  "event_id": "2ac0691fa23810fd",
+  "http": 200,
+  "last": "2026-11-19",
   "result": "ok",
   "tries": 1
  },
@@ -398,6 +426,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.icmagroup.org/events/european-primary-bond-markets-regulation-conference-2027": {
+  "event_id": "6b60379cbaa30a69",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.icmagroup.org/events/icma-secondary-markets-and-amic-buyside-forum": {
   "event_id": "76c1152ec732654d",
   "http": 200,
@@ -545,6 +580,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/money-disrupted-private-credit-as-an-source-of-growth-or-risk": {
+  "event_id": "3a1ea6b8cfd63870",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/money-disrupted-us-monetary-policy-and-emerging-markets": {
   "event_id": "50dcabc24a70ceaf",
   "http": 200,
@@ -600,6 +642,13 @@
   "last": "2026-11-16",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.resolutionfoundation.org/events/degrees-of-separation": {
+  "event_id": "ba582cb8c09f1ed0",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.resolutionfoundation.org/events/pleasing-people-and-satisfying-markets": {
   "event_id": "05f55e1e65367d3f",
@@ -699,10 +748,24 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.ukfinance.org.uk/events-training/financial-crime-2026-emerging-risks-fca-intervention-and-market-integrity": {
+  "event_id": "3f9f8f4d1b2d3571",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.ukfinance.org.uk/events-training/financial-crimes-blind-spot-why-better-ai-isnt-enough": {
   "event_id": "f9374725db0f93d0",
   "http": 200,
   "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.ukfinance.org.uk/events-training/future-tax-and-finance-in-uk-banking-ai-automation-governance-and-new-compliance": {
+  "event_id": "d058687ba6608700",
+  "http": 200,
+  "last": "2026-11-19",
   "result": "ok",
   "tries": 1
  },
@@ -714,11 +777,11 @@
   "tries": 3
  },
  "https://www.ukfinance.org.uk/events-training/uk-fraud-landscape-emerging-threats-ai-next-line-defence": {
-  "event_id": "986cc04219891b2d",
+  "event_id": "fea5c63b5dd23b22",
   "http": 200,
-  "last": "2026-11-05",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.unepfi.org/events/blended-finance-in-the-sustainable-blue-economy": {
   "event_id": "38ce929b41291aec",
@@ -744,9 +807,9 @@
  "https://www.unepfi.org/industries/banking/scaling-credible-transition-finance-launch-of-unep-fi-transition-finance-guidance-for-banks": {
   "event_id": "972f14abe6add552",
   "http": 200,
-  "last": "2026-11-08",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/industries/banking/the-role-of-risk-in-responsible-banking": {
   "event_id": "cbbed177e010134d",
@@ -765,9 +828,9 @@
  "https://www.unepfi.org/themes/climate-change/lost-in-translation-the-information-gap-holding-back-climate-adaptation-finance": {
   "event_id": "214ab7808ede10da",
   "http": 200,
-  "last": "2026-11-07",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unpri.org/events/webinar-ai-data-centres": {
   "event_id": "509c00b9aa56b993",

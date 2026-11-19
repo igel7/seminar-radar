@@ -6228,7 +6228,7 @@
    "notable_tier": null
   },
   {
-   "organizer": "LSE Centre for Macroeconomics",
+   "organizer": "LSE Centre for Macroeconomics (CFM)",
    "organizer_short": "CFM",
    "city": "London",
    "country": "GB",
@@ -6244,32 +6244,32 @@
    "date_end": null,
    "importance": 0,
    "source": "LSE – Centre for Macroeconomics (CFM) – Events",
-   "title": "Faculty Work in Progress Seminar: Emi Nakamura & Jón Steinsson",
-   "title_ja": "教員研究進捗セミナー(Nakamura・Steinsson)",
+   "title": "Money-Macro Seminar: Emi Nakamura & Jón Steinsson",
+   "title_ja": "マネー・マクロ・セミナー(Nakamura・Steinsson)",
    "date_start": "2027-05-11",
-   "time": "12:00",
-   "time_end": "13:00",
+   "time": "14:30",
+   "time_end": "16:00",
    "venue": "SAL.1.04",
    "themes": [
-    "real_economy"
+    "central_bank"
    ],
    "url": "https://www.lse.ac.uk/CFM/events-and-seminars/Seminars",
-   "title_short": "Macro Faculty Research Seminar",
+   "title_short": "Money-Macro Research Seminar",
    "speakers": [
     {
      "name": "Emi Nakamura",
-     "org": null,
+     "org": "UC Berkeley",
      "role": null
     },
     {
      "name": "Jón Steinsson",
-     "org": null,
+     "org": "UC Berkeley",
      "role": null
     }
    ],
-   "summary_ja": "LSE 中央マクロ経済センター(CFM)の教員研究進捗セミナー。Emi Nakamura と Jón Steinsson が報告する。",
-   "summary_en": "Faculty work-in-progress seminar of the LSE Centre for Macroeconomics (CFM), presented by Emi Nakamura and Jón Steinsson.",
-   "summary_de": "Fakultäts-Work-in-Progress-Seminar des LSE Centre for Macroeconomics (CFM) mit Emi Nakamura und Jón Steinsson.",
+   "summary_ja": "LSE CFMのマネー・マクロ定例セミナー。Emi Nakamura氏とJón Steinsson氏(UC Berkeley)が報告する。",
+   "summary_en": "Money-Macro seminar of the LSE Centre for Macroeconomics, with Emi Nakamura and Jón Steinsson (UC Berkeley).",
+   "summary_de": "Money-Macro-Seminar des LSE Centre for Macroeconomics mit Emi Nakamura und Jón Steinsson (UC Berkeley).",
    "id": "2d9029fd8e2df20d",
    "first_seen": "2026-10-20",
    "notables": [],
@@ -19690,7 +19690,13 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ian Hurst",
+     "org": "NIESR",
+     "role": null
+    }
+   ],
    "title": "NiGEM Workshop: Introducing NGFS Phase 6",
    "title_ja": "NiGEM研修: NGFS Phase 6の導入",
    "organizer": "NIESR",
@@ -19770,7 +19776,13 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ed Cornforth",
+     "org": "NIESR",
+     "role": null
+    }
+   ],
    "title": "NiGEM Workshop: The US AI Investment Shock",
    "title_ja": "NiGEM研修: 米国AI投資ショック",
    "organizer": "NIESR",
@@ -19808,7 +19820,13 @@
    "registration_url": "https://www.omfif.org/meetings/money-disrupted-private-credit-as-an-source-of-growth-or-risk/",
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Andrea Correa",
+     "org": "OMFIF",
+     "role": "Head of Research"
+    }
+   ],
    "title": "Money Disrupted: private credit as a source of growth or risk?",
    "title_ja": "私的信用は成長かリスクか",
    "organizer": "OMFIF",
@@ -19920,7 +19938,13 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Patricia Sánchez Juanino",
+     "org": "NIESR",
+     "role": null
+    }
+   ],
    "title": "NiGEM Workshop: Risks and the Macroeconomy",
    "title_ja": "NiGEM研修: リスクとマクロ経済",
    "organizer": "NIESR",
@@ -19958,7 +19982,48 @@
    "registration_url": "https://www.icmagroup.org/events/european-primary-bond-markets-regulation-conference-2027/registration-european-primary-bond-markets-regulation-conference-2027",
    "language": "en",
    "country": "GB",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Bryan Pascoe",
+     "org": "ICMA",
+     "role": "Chief Executive"
+    },
+    {
+     "name": "Cesare Posti",
+     "org": "EC",
+     "role": "Team Leader – Securities Markets Team"
+    },
+    {
+     "name": "Ina O'Sullivan",
+     "org": "Central Bank of Ireland",
+     "role": "Head of Function, Primary Markets"
+    },
+    {
+     "name": "Stephan Weinandy",
+     "org": "BaFin",
+     "role": "Deputy Head of Primary Market Policy and Surveillance Division"
+    },
+    {
+     "name": "Damien Dotter",
+     "org": "AMF",
+     "role": "Senior Policy Officer, Issuers Regulation Division"
+    },
+    {
+     "name": "Eoghan O'Neill",
+     "org": "ESMA",
+     "role": "Policy Officer"
+    },
+    {
+     "name": "Jennifer Cresswell",
+     "org": "A&O Shearman",
+     "role": "Global Head of Knowledge, Finance/International Capital Markets"
+    },
+    {
+     "name": "Shrey Kohli",
+     "org": "LSEG",
+     "role": "Head of Debt Capital Markets and Issuer Services"
+    }
+   ],
    "title": "European Primary Bond Markets Regulation Conference",
    "title_ja": "欧州プライマリー債市場規制会議",
    "organizer": "International Capital Market Association",
@@ -20032,7 +20097,13 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Iana Liadze",
+     "org": "NIESR",
+     "role": null
+    }
+   ],
    "title": "NiGEM Workshop: Stranded Assets and EMU Scenarios",
    "title_ja": "NiGEM研修: 座礁資産とEMUシナリオ",
    "organizer": "NIESR",
@@ -20213,6 +20284,369 @@
    "source": "LSE – Public events (Search)",
    "id": "dee4aa98a960df5f",
    "first_seen": "2026-11-18",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "London",
+   "venue": "SAL 4.10, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Rocco Machiavello",
+     "org": "LSE",
+     "role": null
+    }
+   ],
+   "title": "European Seminars on the Economics of Crime (ESEC)",
+   "title_ja": "欧州犯罪経済学セミナー(ESEC)",
+   "organizer": "Centre for Economic Performance (CEP), LSE",
+   "date_start": "2026-12-11",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10855",
+   "summary_ja": "LSE CEPの欧州犯罪経済学セミナー(ESEC)。Rocco Machiavello氏(LSE)が報告する。",
+   "summary_en": "European Seminars on the Economics of Crime at LSE CEP, with a talk by Rocco Machiavello (LSE).",
+   "summary_de": "Europäische Seminarreihe zur Ökonomie der Kriminalität am LSE CEP mit einem Vortrag von Rocco Machiavello (LSE).",
+   "organizer_short": "CEP",
+   "title_short": "Economics of Crime Seminar",
+   "importance": 0,
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "29ab409e8811db95",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録",
+   "registration_note_en": "Advance registration required",
+   "registration_note_de": "Anmeldung erforderlich",
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "The ECB in 2027: European growth perspectives, policy priorities and leadership challenges",
+   "title_ja": "2027年のECB:欧州成長見通し・政策優先課題・人事",
+   "organizer": "OMFIF",
+   "date_start": "2026-11-25",
+   "themes": [
+    "central_bank"
+   ],
+   "url": "https://www.omfif.org/meetings/the-ecb-in-2027-european-growth-perspectives-policy-priorities-and-leadership-challenges/",
+   "summary_ja": "OMFIFの仮想ラウンドテーブル。2027年2月以降のECB人事を含め、欧州の成長見通しと政策優先課題を議論する。",
+   "summary_en": "OMFIF virtual roundtable on European growth, ECB policy priorities and the leadership transition after February 2027.",
+   "summary_de": "OMFIF-Online-Roundtable zu europäischem Wachstum, den geldpolitischen Prioritäten der EZB und dem Führungswechsel nach Februar 2027.",
+   "organizer_short": "OMFIF",
+   "title_short": "ECB Policy and Leadership",
+   "importance": 1,
+   "source": "OMFIF – Events/Meetings",
+   "id": "2e8ee97752212218",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "14:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "PRI reporting: going further with your data",
+   "title_ja": "PRIレポーティング:データ活用をさらに深める",
+   "organizer": "PRI",
+   "date_start": "2027-02-16",
+   "themes": [
+    "climate_esg"
+   ],
+   "url": "https://www.unpri.org/events/reporting-going-further-with-your-data",
+   "summary_ja": "2026年の報告データの分析結果と報告ツール Reporting PRO を紹介するオンラインセッション(BrightTALK経由)。",
+   "summary_en": "Online session (via BrightTALK) on findings from the 2026 PRI reporting data and the Reporting PRO tool.",
+   "summary_de": "Online-Sitzung (über BrightTALK) zu den Ergebnissen der PRI-Berichterstattung 2026 und dem Tool Reporting PRO.",
+   "organizer_short": "PRI",
+   "title_short": "PRI Reporting Data Insights",
+   "importance": 1,
+   "source": "PRI – Principles for Responsible Investment – Events",
+   "id": "313e52cd181a96aa",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "15:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "SAFE-CEPR Policy Webinar: The ECB Financial Stability Review November 2026",
+   "title_ja": "SAFE-CEPR政策ウェビナー:ECB金融安定レビュー(2026年11月)",
+   "organizer": "SAFE-CEPR",
+   "date_start": "2026-11-19",
+   "themes": [
+    "fin_markets"
+   ],
+   "url": "https://hub.cepr.org/events/safe-cepr-policy-webinar-the-ecb-financial-stability-review-november-2026",
+   "summary_ja": "ECB金融安定レビュー(2026年11月号)を取り上げるSAFE・CEPRの政策ウェビナー。",
+   "summary_en": "SAFE-CEPR policy webinar discussing the ECB's November 2026 Financial Stability Review.",
+   "summary_de": "SAFE-CEPR-Policy-Webinar zum Finanzstabilitätsbericht der EZB vom November 2026.",
+   "organizer_short": "SAFE-CEPR",
+   "title_short": "ECB Financial Stability Review",
+   "importance": 1,
+   "source": "CEPR – Centre for Economic Policy Research – Events",
+   "id": "32526ef94046ce0f",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Economic History Seminar - Jeanet Benzen (U o Copenhagen)",
+   "title_ja": "経済史セミナー(Jeanet Benzen・コペンハーゲン大)",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2027-02-22",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:00",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c59ffae67101a00f21fe6f174c",
+   "summary_ja": "ウォーリック大学経済学部の経済史セミナー。報告者はJeanet Benzen氏(コペンハーゲン大学)で、演題は未定。",
+   "summary_en": "Warwick Department of Economics economic history seminar with Jeanet Benzen (University of Copenhagen); title to be advised.",
+   "summary_de": "Wirtschaftshistorisches Seminar des Fachbereichs Volkswirtschaft der Universität Warwick mit Jeanet Benzen (Universität Kopenhagen); Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Economic History Research",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Jeanet Benzen",
+     "org": "UCPH",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "54d7ba5fe6594c7a",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": "16:00",
+   "time_end": "17:00",
+   "city": "London",
+   "venue": "SAL 2.04, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": "GB",
+   "speakers": [
+    {
+     "name": "Ricardo Perez Truglia",
+     "org": "UCLA",
+     "role": null
+    }
+   ],
+   "title": "Is Money Overrated? Misperceived Satisfaction From Income",
+   "title_ja": "お金は過大評価されているか(所得満足の誤認)",
+   "organizer": "Centre for Economic Performance (CEP), LSE",
+   "date_start": "2026-12-10",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10926",
+   "summary_ja": "LSE CEPのWellbeingセミナー。Ricardo Perez Truglia氏(UCLA)が、所得に関する誤った学習と満足度の研究を報告する。",
+   "summary_en": "CEP Wellbeing seminar at LSE where Ricardo Perez Truglia (UCLA) presents a model of misspecified learning about income and satisfaction.",
+   "summary_de": "Wellbeing-Seminar des LSE CEP, in dem Ricardo Perez Truglia (UCLA) ein Modell zu fehlerhaftem Lernen über Einkommen und Zufriedenheit vorstellt.",
+   "organizer_short": "CEP",
+   "title_short": "Income and Satisfaction",
+   "importance": 0,
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "80bae2957a7d052a",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [],
+   "title": "The Law Society of Ireland: EU Restrictive Measures Update Webinar",
+   "title_ja": "アイルランド法曹協会:EU制裁措置アップデート・ウェビナー",
+   "organizer": "Central Bank of Ireland; The Law Society of Ireland",
+   "date_start": "2026-11-26",
+   "themes": [
+    "geopolitics"
+   ],
+   "url": "https://www.centralbank.ie/events/upcoming-events/2026/11/26/default-calendar/the-law-society-of-ireland--eu-restrictive-measures-update-webinar",
+   "summary_ja": "CBIとアイルランド法曹協会が、ソリシター向けにEU制限措置(制裁)の最新動向を解説するウェビナー。",
+   "summary_en": "Webinar by the Central Bank of Ireland and the Law Society of Ireland giving solicitors an update on EU restrictive measures (sanctions).",
+   "summary_de": "Webinar der Zentralbank von Irland und der Law Society of Ireland mit einem Update zu den EU-Sanktionen (restriktive Maßnahmen) für Rechtsanwälte.",
+   "organizer_short": "Central Bank of Ireland",
+   "title_short": "EU Sanctions Update",
+   "importance": 1,
+   "source": "Central Bank of Ireland – Upcoming events",
+   "id": "a20971d7db57cb5c",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "EBER Seminar - Canishk Naik (IIES)",
+   "title_ja": "EBERセミナー(Canishk Naik・IIES)",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2027-02-18",
+   "date_end": null,
+   "time": "14:30",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c59ffae67101a01052cc90295c",
+   "summary_ja": "ウォーリック大学経済学部のEBERセミナー。報告者はCanishk Naik氏(IIES)で、演題は未定。",
+   "summary_en": "Warwick Department of Economics EBER seminar with Canishk Naik (IIES); title to be advised.",
+   "summary_de": "EBER-Seminar des Fachbereichs Volkswirtschaft der Universität Warwick mit Canishk Naik (IIES); Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Economics Research Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Canishk Naik",
+     "org": "IIES",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "d71e4ebc6825389b",
+   "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録",
+   "registration_note_en": "Advance registration required",
+   "registration_note_de": "Anmeldung erforderlich",
+   "registration_url": null,
+   "language": "en",
+   "country": null,
+   "speakers": [
+    {
+     "name": "Richard Clarida",
+     "org": null,
+     "role": null
+    }
+   ],
+   "title": "December FOMC watch",
+   "title_ja": "12月FOMCウォッチ",
+   "organizer": "OMFIF",
+   "date_start": "2026-12-10",
+   "themes": [
+    "central_bank"
+   ],
+   "url": "https://www.omfif.org/meetings/december-fomc-watch/",
+   "summary_ja": "12月FOMC後のOMFIFライブ番組。Richard Clarida氏がMark Sobel氏と会合の結果を議論する。",
+   "summary_en": "OMFIF live broadcast after the December FOMC meeting, with Richard Clarida joining Mark Sobel to discuss the outcome.",
+   "summary_de": "OMFIF-Live-Sendung nach der FOMC-Sitzung im Dezember, in der Richard Clarida mit Mark Sobel das Ergebnis erörtert.",
+   "organizer_short": "OMFIF",
+   "title_short": "December FOMC Watch",
+   "importance": 1,
+   "source": "OMFIF – Events/Meetings",
+   "id": "fb4189cc1d2f0968",
+   "first_seen": "2026-11-19",
    "notables": [],
    "notable_tier": null
   }
