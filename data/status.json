@@ -18,7 +18,7 @@
   "url": "",
   "ok": true,
   "found": 2,
-  "note": "Two upcoming seminars (2026-12-08 Aguirre, 2027-01-12 Lai), both already in ledger. Both cache files read."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "BaFin – Veranstaltungen",
@@ -31,14 +31,14 @@
   "url": "https://www.bankofalbania.org/Events/",
   "ok": true,
   "found": 0,
-  "note": "Cached pages are news/press items only; no future seminar or conference. Ledger has two Bank of Albania entries dated 2026-11-24 that do not appear in the cached pages (possibly stale)."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Banka Slovenije – Events",
   "url": "https://www.bsi.si/en/about-us/conferences-and-seminars",
   "ok": true,
   "found": 3,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Berlin School of Economics – Events",
@@ -57,8 +57,8 @@
   "name": "Bruegel (Brussels) – Events",
   "url": "https://www.bruegel.org/events",
   "ok": true,
-  "found": 4,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Bundesbank – Forschungskonferenzen",
@@ -79,14 +79,14 @@
   "url": "",
   "ok": true,
   "found": 3,
-  "note": "Cache holds only page 1 of 5 (43 results, 10 shown); pages 2+ not cached. Found 3 are all already in ledger and unchanged: EURO FINANCE Tech Day 2026 (2026-11-18 Frankfurt), Navigationshilfen im ETF-Dschungel (2026-11-19 Duesseldorf), Was macht die Bundesbank eigentlich (fuer mich)? (2026-11-19 Osnabrueck). Excluded: Singapore items 18/19.11 (outside region, not ECB/BIS), Leipzig exhibition, Stuttgart trade fair, NRW teacher training (virtual), Monatsbericht publication, Quiz Night Frankfurt 19.11 (social after-work event, not a seminar/lecture)."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "CBBH – Central Bank of Bosnia and Herzegovina – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "CEBRA – Central Bank Research Association – Events",
@@ -106,28 +106,28 @@
   "name": "CFS – Center for Financial Studies (Frankfurt) – Events",
   "url": "https://gfk-cfs.de/en/events/feed/",
   "ok": true,
-  "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "CNB – Czech National Bank – Conferences, Seminars, Workshops",
-  "found": 5,
+  "found": 4,
   "ok": true,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen",
   "url": "",
   "ok": true,
   "found": 7,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Deutsche Börse Group – Veranstaltungen",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "Only a past event (Open Day 2026, 24.09.2026) and generic calendar categories. Global Funding and Financing Summit (26.-28.01.2027, Clearstream) has no location on the page, so it was not extracted."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "EBA – European Banking Authority – Events",
@@ -141,7 +141,7 @@
   "url": "",
   "ok": true,
   "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "ECB – Conferences & seminars",
@@ -160,8 +160,8 @@
  {
   "name": "ECONtribute (Bonn/Köln) – Events",
   "ok": true,
-  "found": 9,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 0,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "EIOPA (Frankfurt) – Events",
@@ -194,8 +194,8 @@
   "name": "House of Finance (Goethe大) – Veranstaltungen",
   "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
   "ok": true,
-  "found": 11,
-  "note": "New: ECB Nov 2026 FSR (11-19), Pelizzon job-market seminar (11-25), LawFin dealer leverage (11-23), LawFin Admati (11-30), ICIR Digital Insurance Forum (12-09). Venue city for SAFE/LawFin/ICIR entries is inferred from the Frankfurt listing context, not stated per event. Excluded: SAFE seminar 17.11 (before 2026-11-18)."
+  "found": 12,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "IMFS Frankfurt – 全ての今後のイベント",
@@ -208,29 +208,29 @@
   "name": "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen",
   "url": "https://www.iwkoeln.de/institut/veranstaltungen.html",
   "ok": true,
-  "found": 1,
-  "note": "Only future event on the page: 19 November 2026 'Berufliche Bildung unter Druck: Mit Zukunftsmut die Transformation gestalten' (Dirk Werner / Sibylle Stippler). Already in ledger with same date and speakers, so not returned. Location and format are not on the page; the topic (vocational training / labour market) fits real_economy only loosely. Other listed items (9 Sep to 17 Nov 2026) are past."
+  "found": 2,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen",
   "url": "https://www.iwh-halle.de/veranstaltungen/",
   "ok": true,
   "found": 10,
-  "note": "New: Linda Goldberg (2027-01-26), Roni Michaely (2027-02-16). Page 2 of the listing (\"nächste\") is not in the cache, so later events are not covered. Rest already in ledger."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "IfW Kiel – Veranstaltungen",
   "url": "",
   "ok": true,
   "found": 10,
-  "note": "10 in-scope future events on page, all already in data/known_events.json with the same date and title and no new speakers: Global China Conversations #52 (19.11), Forum Bundesbank 'Wie nehmen Haushalte Inflation wahr...' (25.11, Kiel), 2. Industrial Policy Lab Annual Conference (30.11-01.12), Kiel Research Seminar Arbuzova (01.12), Kiel-CEPR Goldfayn-Frank (03.12), Global China Conversations #51 (10.12), Kiel-CEPR Monnet (14.01.27), How to Defend Europe (07.12), ASP New Keynesian Models (07-11.12), ASP Empirical International Finance (09-20.11). Excluded: KIEL-CEPR-World Bank AEDC (28-29.01.27), venue 'Centro Convegni Carlo Azeglio Ciampi'; no city on page, appears to be Italy (outside region), not in ledger. Ledger anomalies noted, not changed: known_events.json line 195 'Global China Conversations #51' has date_start 2026-11-05, but the page gives 10 Dec 2026 (line 527 has 2026-12-10); line 490 (Kiel-CEPR Goldfayn-Frank) has a URL slug for a different seminar ('public-displays-of-alignment-jaya-y-wen-1-1-1')."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "JDZB – 日独センター (Berlin) – Veranstaltungen",
   "url": "",
   "ok": true,
   "found": 3,
-  "note": "Only page 1 of 21 was cached. 3 found: 2 known and unchanged, 1 new. Excluded: JLPT Winter 2026 (language exam), JEX Concluding Event (exchange programme, no theme fit), 24.11 closed alumni event (not open to the public)."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Jacques Delors Centre (Hertie School, Berlin) – Events",
@@ -332,8 +332,8 @@
   "name": "UNEP FI – Events",
   "url": "https://www.unepfi.org/events/",
   "ok": true,
-  "found": 5,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 4,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Universität Mannheim – 経済学部イベント/セミナー",
@@ -346,8 +346,8 @@
   "name": "ZEW Mannheim – Veranstaltungen",
   "url": "https://www.zew.de/veranstaltungen",
   "ok": true,
-  "found": 11,
-  "note": "New: Border Carbon (11-23), 2027 Public Finance Conference (2027-05-10; year taken from title, listing shows only 10.05.). Excluded: Jubilaeumsfeier 35 Jahre ZEW (24.11, celebration, not a seminar type); 22.02 DISS workshop (no year on page). All others already in ledger."
+  "found": 10,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "appliedAI Institute (München) – Events",
@@ -368,21 +368,21 @@
   "url": "https://www.ifo.de/veranstaltungen",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Green and Sustainable Finance Cluster Germany (Frankfurt)",
   "url": "https://sustainablefinancecluster.com/en/events/",
   "ok": true,
   "found": 0,
-  "note": "ua-curlで取得、今後のイベント掲載なし(過去報告のみ)"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "OeNB – Oesterreichische Nationalbank – Veranstaltungen",
   "url": "",
-  "ok": false,
+  "ok": true,
   "found": 0,
-  "error": "キャッシュはsitemapのみ、/en/news-und-events/veranstaltungen.html もイベント日付なし(JS描画の疑い)。tried: fetch, ua-curl, hints, alt-paths"
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen",
@@ -397,56 +397,55 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "Upcoming-events cache (5b4111--c3965c) shows only 'Updates coming up shortly'; the events archive cache (5b4111--37b846) lists no dated events after 2026-11-18. Nothing to extract."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "EU-Japan Centre for Industrial Cooperation – Events/Webinars",
   "url": "",
   "ok": true,
-  "found": 8,
-  "note": "/events 一覧から新規2件(Green Materials 12/4、About Japan 277 12/8)。Horizon Europe in Brussels 11/26は対象外地域、Nanotech Mission(日本現地・12/14)は対象外",
-  "error": "元URL https://www.eu-japan.eu/tags/webinar はua-curlで200(WebFetch不使用)。代替URL: https://www.eu-japan.eu/events"
+  "found": 1,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Eesti Pank (エストニア) – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "Two cache files (same Nov 2026 calendar, different URLs) merged into one status. Items dated 18.11 onward are ECB/board-internal meetings (Governing Council, Digital Euro HLTF, HLTF SRI), meetings with stakeholders, press conference (24.11 Financial Stability Review), statistical releases, or a reception; none are public seminars/conferences, so excluded."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Frankfurt School of Finance & Management – Events",
   "url": "",
   "ok": true,
-  "found": 11,
-  "note": "11 future events on page, all already in the ledger (url = listing page, as fetch_hints.json has no_detail_pages for this source): Risiko Geldwäsche 26, Digital Society 26, BAI Workshop Sustainable Finance & ESG, Performance Management & Controlling, Mittelstandsagenda 27, Finanzdienstleister der nächsten Generation 27, Capital Markets Day 27, Defence Finance 2027, NPL Forum 27, M&A und Private Equity 27, Fokus Aufsichtsrat 27. The last two are theme-borderline but already accepted in the ledger. Excluded: 'Top Executive Programme / Advanced Management Programme' (19.04-04.06.27), an executive education programme, not in ledger."
+  "found": 12,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "Latvijas Banka – Research/Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "Upcoming seminars listed are 4 and 5 November 2026, both before 2026-11-18. Menu-only link 'From Policy to Impact. Europe's Economic Future' has no date in the cache, so not extracted (date unknown)."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "MERICS – Mercator Institute for China Studies (Berlin) – Events",
   "ok": true,
   "found": 0,
-  "note": "Cached events page lists only past events, a link to past events archive, and a MERICS report. No upcoming events on the cached page."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "OMFIF – Events/Meetings",
   "url": "https://www.omfif.org/meetings/",
   "ok": true,
-  "found": 9,
-  "note": "New: Money Disrupted private credit (8 Dec, virtual). Known and unchanged: Spain and the euro area (18 Nov), AI cybersecurity (19 Nov), Money Disrupted AI (23 Nov), Democrats midterm (24 Nov), Japan's new policy era (30 Nov), What markets won't fix (1 Dec), Chief economists briefing (3 Dec), European digital sovereignty forum (3 Dec, Frankfurt). Excluded: Holding power gold report launch (19 Nov, no location or format on listing), London/Washington/New York events, past events. Cache holds page 1 of 2 only (pagination '2' not in cache)."
+  "found": 10,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "WU Wien (Wirtschaftsuniversität) – Events",
   "url": "",
   "ok": true,
-  "found": 4,
-  "note": "No new events. Known and unchanged: Austria-Europe-US (18 Nov), Taxing Work honorary lecture (30 Nov), How Cold Will Winter Be (2 Dec), Hidden Cost of Care (16 Dec). Not counted: law symposium 19-20 Nov (outside the 9 themes; ledger holds it), WU Master's Week online info sessions, Cartoons exhibition."
+  "found": 3,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "dena – Deutsche Energie-Agentur (Berlin)",
@@ -460,38 +459,38 @@
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "Only future item is the 22 Nov 2026 futsal tournament (sports, not a seminar/conference, excluded). Other items (6 Nov lecture, 13 Nov concert, 16 Oct Japan-Germany economic meeting, etc.) are past."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "BNB – Bulgarian National Bank – Events",
   "url": "",
   "ok": true,
   "found": 0,
-  "note": "変化なし(差分検知によりスキップ)"
+  "note": "alt URL WebFetch OK, セミナー告知0件(通常運用)"
  },
  {
   "name": "Bank of Lithuania – Events",
   "url": "https://www.lb.lt/en/events",
   "ok": true,
-  "found": 3,
+  "found": 2,
   "error": "lb.lt直接403。web検索で確認",
-  "note": "検索スニペットで既知3件(Economics 11/13開催済・Fraud 11/19・Real Estate 11/24等)を確認、12月の掲載なし。新規なし"
+  "note": "lb.lt直接403。web検索で確認"
  },
  {
   "name": "DIW Berlin – Veranstaltungen",
   "url": "https://www.diw-berlin.de/de/diw_01.c.806339.de/veranstaltungen.html",
   "ok": true,
-  "found": 26,
-  "note": "27件中、採用関連なし。新規2件(Brown Bag 11/18、Konjunktur-Lunch 12/1)。他は既知または演題未定/テーマ外(SOEP BB 11/25・12/2、Feminizidmap Workshop 1/29は除外)",
-  "error": "代替URL: https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html (diw-berlin.de は301でdiw.deへ。WebFetch 2回目で取得)"
+  "found": 27,
+  "note": "代替URL: https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
+  "error": "代替URL: https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html"
  },
  {
   "name": "EPC – European Payments Council – Events",
   "url": "https://www.europeanpaymentscouncil.eu/events",
   "ok": true,
   "found": 0,
-  "error": "直接URLはCloudflare 403(ua-curlでも/news-insights/events,/latest とも403)。web検索のみ可",
-  "note": "web検索で12月の日程付きウェビナーなし(FRIDA協議は12/10まで・イベントではない)。新規なし"
+  "error": "直接403/404。web検索のみ",
+  "note": "直接403/404。web検索で日程付きウェビナーなし"
  },
  {
   "name": "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen",
@@ -506,36 +505,35 @@
   "ok": true,
   "found": 0,
   "error": "直接アクセス不可(Imperva)。web検索(共催先)で確認",
-  "note": "co-host検索で12月以降の新規なし(NBP-LB-CEBRA 9/24-25は開催済み)"
+  "note": "直接アクセス不可(Imperva)。共催先の検索で新規なし"
  },
  {
   "name": "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars",
   "url": "https://www.bnr.ro/en/24077-bears",
-  "ok": false,
+  "ok": true,
   "found": 0,
-  "note": "BEARS公式ページ(pid=16413)は2024年までの掲載のみ。月末木曜開催(12月除く)と書かれるが日付確定情報なし",
-  "error": "bnr.ro はWAFエラーページ(本文なし)、web検索でも2026年BEARS日程を確認できず。tried: fetch, ua-curl, hints, search"
+  "note": "前回失敗から復旧扱いで再取得(WebFetch含む)。ページはナビのみでBEARS開催一覧なし。found 0"
  },
  {
   "name": "PRI – Principles for Responsible Investment – Events",
   "url": "",
   "ok": true,
-  "found": 1,
-  "note": "Counted: 3 Dec 2026 webinar 'AI data centres and responsible investment' (online). Already in ledger with same date and speakers, so not returned. Excluded: NBS-PRI-ECGI lecture series (ended 10 Nov 2026); PRI in Person 2027 (Hong Kong); IEN Annual Forum (Toronto); Unlocking AI for Sustainability (Singapore); PE Sustainability Practicum (New York). Ledger hygiene: data/known_events.json line 417 holds a stale duplicate of the webinar dated 2026-11-26, which the page does not show. Not modified."
+  "found": 2,
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
   "found": 2,
-  "note": "New: 9th ICMA & JSDA Sustainable Bond Conference (25 Nov, Tokyo/virtual). Known: ICMA Switzerland and Liechtenstein Winter Event (Zermatt). Excluded as out of region: Singapore, Paris, Milan, London, Riyadh, Cape Town, Beijing, Hong Kong events. Excluded as networking/no seminar content (no detail on page): German Regional Lunch (19 Nov, Frankfurt), ICMA Future Leaders Connect in Vienna (17 Dec)."
+  "note": "抽出済み(キャッシュから)"
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 48,
-  "note": "約33検索(EN/DE)、候補約48件。新規採用1件(BIS-CEPR-Gerzensee-SFI 2027)、他は既知"
+  "found": 14,
+  "note": "候補約14件を確認、全て既知または見送り。新規採用0件"
  },
  {
   "name": "手動取込",

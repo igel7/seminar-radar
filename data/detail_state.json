@@ -107,7 +107,14 @@
  "https://jdzb.de/de/veranstaltungen/berlin-x-tokyo-partners-innovation": {
   "event_id": "bcfd18a3e19972ea",
   "http": 200,
-  "last": "2026-11-11",
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 2
+ },
+ "https://jdzb.de/de/veranstaltungen/deutsch-japanisches-forum-2026": {
+  "event_id": "3598cbcea5b6c3ca",
+  "http": 200,
+  "last": "2026-11-19",
   "result": "ok",
   "tries": 1
  },
@@ -181,10 +188,24 @@
   "result": "ok",
   "tries": 3
  },
+ "https://safe-frankfurt.de/news-media/events/event-view/ecb-november-2026-financial-stability-repoert.html": {
+  "event_id": "3a0517c4d460a2ac",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://safe-frankfurt.de/news-media/events/event-view/safe-cepr-web-seminar-on-financial-regulation-in-the-era-of-fragmentation-ai-and-geopolitics.html": {
   "event_id": "9f467216903d6431",
   "http": 200,
   "last": "2026-11-06",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://safe-frankfurt.de/news-media/events/event-view/safe-phd-level-mini-course-firms-in-the-age-of-private-debt-and-ai.html": {
+  "event_id": "b7f62b114ab936df",
+  "http": 200,
+  "last": "2026-11-19",
   "result": "ok",
   "tries": 1
  },
@@ -415,9 +436,9 @@
  "https://www.bis.org/events/cfp_261210-bis.htm": {
   "event_id": "e4325a00146e4b38",
   "http": 404,
-  "last": "2026-10-30",
+  "last": "2026-11-19",
   "result": "FAIL-HTTP",
-  "tries": 2
+  "tries": 3
  },
  "https://www.bme.de/veranstaltungen/grossveranstaltungen/beschaffung-in-der-sicherheits-und-verteidigungsindustrie/informationen": {
   "event_id": "1b041135e7ff8452",
@@ -576,9 +597,9 @@
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/munichiwa-202612": {
   "event_id": "d3011fe2b01a9cb6",
   "http": 200,
-  "last": "2026-10-29",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 2
+  "tries": 4
  },
  "https://www.dreso.com/de/en/company/events/details/energy-meets-industries-2026": {
   "event_id": "1e34c77fde8ade64",
@@ -590,9 +611,9 @@
  "https://www.drsc.de/en/news/save-the-date-hamburg-sustainability-reporting-forum-2026-registration-opens-in-september": {
   "event_id": "b0e5bd823d952597",
   "http": 200,
-  "last": "2026-11-06",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.eba.europa.eu/publications-and-media/events/13th-joint-esas-consumer-protection-day": {
   "event_id": "bfa1808f33f5231a",
@@ -741,6 +762,20 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.forum-ng.org/en/termine/veranstaltung/bmluk-oesterreich-webinar-emission-performance-of-austrian-equity-funds-presentation-of-the-results-of-the-i-peps-pilot-study": {
+  "event_id": "b4aac141364a8e3e",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.forum-ng.org/en/termine/veranstaltung/bmluk-oesterreichemissionsperformance-oesterreichischer-aktienfonds-praesentation-der-ergebnisse-der-i-peps-pilotstudie": {
+  "event_id": "d6d43c47c8b72bdb",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.forum-ng.org/en/termine/veranstaltung/cric-ev-konferenz-zur-klimagerechtigkeit-in-frankfurt-am-main": {
   "event_id": "400118719d35f837",
   "http": 200,
@@ -864,6 +899,13 @@
   "event_id": "3ed10ec79d99d74b",
   "http": 200,
   "last": "2026-10-23",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.icir.de/events": {
+  "event_id": "b38ecc930b578877",
+  "http": 200,
+  "last": "2026-11-19",
   "result": "ok",
   "tries": 1
  },
@@ -1126,6 +1168,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/money-disrupted-private-credit-as-an-source-of-growth-or-risk": {
+  "event_id": "3a1ea6b8cfd63870",
+  "http": 200,
+  "last": "2026-11-19",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/money-disrupted-us-monetary-policy-and-emerging-markets": {
   "event_id": "50dcabc24a70ceaf",
   "http": 200,
@@ -1178,9 +1227,9 @@
  "https://www.szgerzensee.ch/programs/conferences-events/detail/fintech-digital-currency": {
   "event_id": "37b05fc670a1b268",
   "http": 200,
-  "last": "2026-11-06",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.szgerzensee.ch/programs/conferences-events/detail/gerzensee-alumni-conference-2026": {
   "event_id": "b2c0e3521f0afd47",
@@ -1248,9 +1297,9 @@
  "https://www.unepfi.org/industries/banking/scaling-credible-transition-finance-launch-of-unep-fi-transition-finance-guidance-for-banks": {
   "event_id": "972f14abe6add552",
   "http": 200,
-  "last": "2026-11-08",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unepfi.org/industries/banking/the-role-of-risk-in-responsible-banking": {
   "event_id": "cbbed177e010134d",
@@ -1269,9 +1318,9 @@
  "https://www.unepfi.org/themes/climate-change/lost-in-translation-the-information-gap-holding-back-climate-adaptation-finance": {
   "event_id": "214ab7808ede10da",
   "http": 200,
-  "last": "2026-11-07",
+  "last": "2026-11-19",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.unpri.org/events/webinar-ai-data-centres": {
   "event_id": "509c00b9aa56b993",
