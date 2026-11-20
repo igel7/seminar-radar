@@ -2316,8 +2316,8 @@
    "registration_url": null,
    "speakers": [
     {
-     "name": "Sonia Bhalotra",
-     "org": "Warwick",
+     "name": "Rocco Macchiavello",
+     "org": "LSE",
      "role": null
     }
    ],
@@ -9837,15 +9837,15 @@
   },
   {
    "title": "The science of second chances",
-   "title_ja": "二度目のチャンスの科学",
+   "title_ja": "第二のチャンスの科学",
    "organizer": "Centre for Economic Performance (CEP), LSE",
    "date_start": "2026-12-09",
    "date_end": null,
-   "time": null,
-   "time_end": null,
-   "city": null,
-   "venue": null,
-   "format": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "venue": "Hong Kong Theatre, CLM 01, Ground Floor, Clement House, LSE",
+   "format": "hybrid",
    "themes": [
     "real_economy"
    ],
@@ -9857,18 +9857,23 @@
    "registration_note_de": null,
    "registration_url": null,
    "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10846",
-   "summary_ja": "Jennifer Doleac が、小規模な介入によって再犯の可能性を下げられることを示す、刑事司法改革への新しいアプローチを紹介する。",
-   "summary_en": "Jennifer Doleac presents an approach to criminal justice reform, showing how small-scale interventions can reduce the chances of reoffending.",
-   "summary_de": "Jennifer Doleac stellt einen neuen Ansatz zur Reform der Strafjustiz vor und zeigt, wie kleine Interventionen die Rückfallwahrscheinlichkeit senken können.",
+   "summary_ja": "Jennifer Doleac氏の新著『The Science of Second Chances』に基づく公開講演。小規模な介入によって再犯を減らせることを示す。",
+   "summary_en": "Public talk on Jennifer Doleac's new book The Science of Second Chances, on how small-scale interventions can reduce reoffending.",
+   "summary_de": "Öffentlicher Vortrag zu Jennifer Doleacs neuem Buch „The Science of Second Chances“ über kleine Interventionen zur Senkung der Rückfallquote.",
    "language": "en",
-   "country": null,
+   "country": "GB",
    "organizer_short": "CEP",
-   "title_short": "Science of Second Chances",
+   "title_short": "Second Chances in Justice",
    "importance": 1,
    "speakers": [
     {
+     "name": "Tom Kirchmaier",
+     "org": "CEP",
+     "role": null
+    },
+    {
      "name": "Jennifer Doleac",
-     "org": null,
+     "org": "Renaissance Philanthropy",
      "role": null
     }
    ],
@@ -19872,8 +19877,8 @@
    "country": "GB",
    "speakers": [
     {
-     "name": "Rocco Machiavello",
-     "org": "LSE",
+     "name": "Sonia Bhalotra",
+     "org": "Warwick",
      "role": null
     }
    ],
@@ -19913,7 +19918,28 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Vítor Constâncio",
+     "org": "ECB",
+     "role": "Vice President"
+    },
+    {
+     "name": "David Marsh",
+     "org": "OMFIF",
+     "role": "Chairman"
+    },
+    {
+     "name": "Øystein Olsen",
+     "org": "Norges Bank",
+     "role": "Governor"
+    },
+    {
+     "name": "Ernst Welteke",
+     "org": "Bundesbank",
+     "role": "President"
+    }
+   ],
    "title": "The ECB in 2027: European growth perspectives, policy priorities and leadership challenges",
    "title_ja": "2027年のECB:欧州成長見通し・政策優先課題・人事",
    "organizer": "OMFIF",
@@ -19931,8 +19957,17 @@
    "source": "OMFIF – Events/Meetings",
    "id": "2e8ee97752212218",
    "first_seen": "2026-11-19",
-   "notables": [],
-   "notable_tier": null
+   "notables": [
+    {
+     "person": "vitor-constancio",
+     "name": "Vítor Constâncio",
+     "group": "ecb",
+     "tier": 1,
+     "short": "ex-ECB VP",
+     "former": true
+    }
+   ],
+   "notable_tier": 1
   },
   {
    "date_end": null,
@@ -20110,7 +20145,28 @@
    "registration_url": null,
    "language": "en",
    "country": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Vivian Meacham",
+     "org": "Central Bank of Ireland",
+     "role": "Financial Sanctions Manager"
+    },
+    {
+     "name": "Andy Brennan",
+     "org": "GNECB",
+     "role": "Detective Sergeant"
+    },
+    {
+     "name": "Ian Foley",
+     "org": "DETE",
+     "role": "Deputy Director"
+    },
+    {
+     "name": "Maeve O’Malley",
+     "org": "Revenue",
+     "role": "Principal Officer"
+    }
+   ],
    "title": "The Law Society of Ireland: EU Restrictive Measures Update Webinar",
    "title_ja": "アイルランド法曹協会:EU制裁措置アップデート・ウェビナー",
    "organizer": "Central Bank of Ireland; The Law Society of Ireland",
@@ -20214,6 +20270,387 @@
    "source": "OMFIF – Events/Meetings",
    "id": "fb4189cc1d2f0968",
    "first_seen": "2026-11-19",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Who builds world order when the hegemon won't?",
+   "title_ja": "覇権国が動かないとき世界秩序を誰が築くか",
+   "organizer": "LSE International Relations",
+   "date_start": "2026-12-01",
+   "date_end": null,
+   "time": "18:15",
+   "time_end": "19:30",
+   "city": "London",
+   "venue": "MAR 1.04, Marshall Building",
+   "format": "onsite",
+   "themes": [
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "一般公開の対面イベント(申込方法は未記載)",
+   "registration_note_en": "Public in-person event (registration details not stated)",
+   "registration_note_de": "Öffentliche Präsenzveranstaltung (Anmeldedetails nicht angegeben)",
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/international-relations/events/2026/who-builds-world-order-when-the-hegemon-wont",
+   "summary_ja": "覇権国が秩序形成から退く中で、誰が世界秩序を築くのかを問う公開講演。",
+   "summary_en": "A public lecture asking who will build world order when the hegemon steps back.",
+   "summary_de": "Öffentlicher Vortrag zur Frage, wer die Weltordnung gestaltet, wenn die Hegemonialmacht sich zurückzieht.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "LSE",
+   "title_short": "World Order and Hegemony",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Danny Quah",
+     "org": null,
+     "role": "Professor"
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "04a1f955f68b60f7",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "CDM Showcase 2027",
+   "title_ja": "CDMショーケース2027",
+   "organizer": "International Capital Market Association",
+   "date_start": "2027-02-10",
+   "date_end": null,
+   "time": null,
+   "city": "London",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "一般参加可・申込ページあり",
+   "registration_note_en": "Open to all; registration page available",
+   "registration_note_de": "Für alle offen; Anmeldeseite verfügbar",
+   "url": "https://www.icmagroup.org/events/cdm-showcase-2027/",
+   "summary_ja": "ICMAが2027年2月にロンドンで開催するCDMショーケース。一般参加可。",
+   "summary_en": "ICMA's CDM Showcase 2027 in London, open to all.",
+   "summary_de": "ICMA-CDM-Showcase 2027 in London, für alle offen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "ICMA",
+   "title_short": "Capital Markets Showcase",
+   "importance": 1,
+   "registration_url": "https://www.icmagroup.org/events/cdm-showcase-2027/registration-cdm-showcase-2027",
+   "time_end": null,
+   "speakers": [],
+   "source": "ICMA – International Capital Market Association – Events",
+   "id": "1c04c69bc9119b59",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Capabilities, Competition and Innovation Seminars",
+   "title_ja": "能力・競争・イノベーション研究セミナー",
+   "organizer": "Centre for Economic Performance (CEP), LSE",
+   "date_start": "2027-02-11",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "city": "London",
+   "venue": "MAR 6.33, The Marshall Building, LSE",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11011",
+   "summary_ja": "LSE経済学研究センター(CEP)の能力・競争・イノベーションに関する研究セミナー。報告者はシカゴ大学のAgostina Brinatti氏で、演題は未定。",
+   "summary_en": "Research seminar from LSE's Centre for Economic Performance on capabilities, competition and innovation. Speaker Agostina Brinatti (University of Chicago); title to be announced.",
+   "summary_de": "Forschungsseminar des CEP an der LSE zu Fähigkeiten, Wettbewerb und Innovation. Vortrag: Agostina Brinatti (Universität Chicago), Titel noch offen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Capabilities and Competition",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Agostina Brinatti",
+     "org": "Chicago",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "26df5fd3372685e3",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Europe's Energy Dilemma: National Security, Household Affordability and the Green Transition",
+   "title_ja": "欧州のエネルギー・ジレンマ:安全保障・家計負担・グリーン転換",
+   "organizer": "Department of Economics, University of Warwick; Warwick Women in Economics; Warwick Economic Summit; Warwick Economics Society; Rethink Economics Warwick",
+   "date_start": "2026-11-25",
+   "date_end": null,
+   "time": "10:00",
+   "time_end": "11:00",
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "real_economy",
+    "geopolitics",
+    "climate_esg"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/2026/11/europes_energy_dilemma_national_security_household_affordability_and_the_green_transition/",
+   "summary_ja": "欧州のエネルギー政策について、国家安全保障、家計のエネルギー負担、グリーン転換の三つの緊張関係を論じる企画。",
+   "summary_en": "A Warwick event on how Europe balances national security, household energy affordability and the green transition.",
+   "summary_de": "Eine Veranstaltung der Universität Warwick dazu, wie Europa nationale Sicherheit, bezahlbare Haushaltsenergie und die grüne Transformation miteinander vereinbart.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Europe's Energy Dilemma",
+   "importance": 1,
+   "speakers": [],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "973dbde4abcad703",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Trade and Urban Seminars",
+   "title_ja": "貿易・都市に関する研究セミナー",
+   "organizer": "Centre for Economic Performance (CEP), LSE",
+   "date_start": "2027-02-17",
+   "date_end": null,
+   "time": "12:30",
+   "time_end": "14:00",
+   "city": "London",
+   "venue": "SAL 1.04, 1st Floor Conference Room, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10897",
+   "summary_ja": "LSE・CEPの貿易・都市経済学の研究セミナー。報告者はオックスフォード大学のPaola Conconi氏で、演題は未定。対面とオンラインの併用。",
+   "summary_en": "Trade and urban economics research seminar from LSE's CEP, with Paola Conconi (Oxford) presenting; title to be announced. Hybrid format.",
+   "summary_de": "Forschungsseminar des CEP (LSE) zu Handel und Stadtökonomik. Vortrag: Paola Conconi (Oxford), Titel noch offen. Hybrid.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Trade and Urban Economics",
+   "importance": 0,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Paola Conconi",
+     "org": "Oxford",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "a16993cf554644c5",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Work Matters 2026: Will working lives improve in 2027?",
+   "title_ja": "Work Matters 2026:2027年に働き方は改善するか",
+   "organizer": "The Work Foundation at Lancaster University",
+   "date_start": "2026-12-15",
+   "date_end": null,
+   "time": "11:00",
+   "time_end": "12:00",
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "free",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録・無料(Zoom、リンクは開催前に送付)",
+   "registration_note_en": "Advance registration required, free (Zoom link sent before the event)",
+   "registration_note_de": "Anmeldung erforderlich, kostenlos (Zoom-Link vor der Veranstaltung)",
+   "registration_url": "https://www.eventbrite.co.uk/e/work-matters-2026-will-working-lives-improve-in-2027-tickets-2002072231940",
+   "url": "https://www.lancaster.ac.uk/work-foundation/events/work-matters-2026-will-working-lives-improve-in-2027",
+   "summary_ja": "ONSの最新の労働市場・インフレ統計を踏まえ、雇用・賃金・生活水準を振り返り、雇用権利法改革などを含め2027年に労働者や求職者・企業の状況が変わるかを議論するオンラインウェビナー。",
+   "summary_en": "Online briefing reviewing the latest ONS labour market and inflation data on jobs, pay and living standards, and asking whether 2027 will bring change for workers, jobseekers and employers, including Employment Rights Act reforms.",
+   "summary_de": "Online-Briefing zu den neuesten ONS-Daten zu Arbeitsmarkt und Inflation (Beschäftigung, Löhne, Lebensstandard) und zur Frage, ob 2027 Verbesserungen für Beschäftigte, Arbeitssuchende und Unternehmen bringt, einschließlich der Reformen des Employment Rights Act.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Work Foundation",
+   "title_short": "UK Labour Market Outlook",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Daniella Jenkins",
+     "org": "Women's Budget Group",
+     "role": "Executive Director"
+    },
+    {
+     "name": "Ben Zaranko",
+     "org": "The Observer",
+     "role": "Economics Editor"
+    },
+    {
+     "name": "Ben Harrison",
+     "org": "Work Foundation",
+     "role": null
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "d7c0bf2e6a2a6679",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Applied & Development Seminar - Frederic Vermulen (KU Leuven)",
+   "title_ja": "応用・開発経済学セミナー(F. Vermulen)",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2027-02-23",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00eda0f78009d",
+   "summary_ja": "応用・開発経済学の定例セミナーで、KU Leuven の Frederic Vermulen 氏が報告する(演題未定)。",
+   "summary_en": "Applied and development economics seminar with a talk by Frederic Vermulen (KU Leuven); title to be advised.",
+   "summary_de": "Seminar zur angewandten und Entwicklungsökonomik mit einem Vortrag von Frederic Vermulen (KU Leuven); Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Applied Development Economics",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Frederic Vermulen",
+     "org": "KU Leuven",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "da0c3a1514a656fb",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "PEPE (Political Economy & Public Economics) Seminar - Claudio Ferraz (UBC)",
+   "title_ja": "政治経済・公共経済セミナー(C. Ferraz)",
+   "organizer": "Department of Economics, University of Warwick",
+   "date_start": "2027-02-25",
+   "date_end": null,
+   "time": "11:15",
+   "time_end": "12:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00f090da402b7",
+   "summary_ja": "政治経済学・公共経済学の定例セミナーで、UBC の Claudio Ferraz 氏が報告する(演題未定)。",
+   "summary_en": "Political economy and public economics seminar with a talk by Claudio Ferraz (UBC); title to be advised.",
+   "summary_de": "Seminar zu politischer Ökonomie und öffentlicher Ökonomik mit einem Vortrag von Claudio Ferraz (UBC); Titel noch nicht bekannt.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Political Economy Seminar",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Claudio Ferraz",
+     "org": "UBC",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "dc41ee13d9d6568b",
+   "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Future of Money: Hayek's 'Denationalisation of Money' at 50",
+   "title_ja": "貨幣の未来:ハイエク『貨幣の脱国家化』50年",
+   "organizer": "Institute of Economic Affairs",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": null,
+   "city": null,
+   "venue": null,
+   "format": null,
+   "themes": [
+    "central_bank"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "申込フォームあり",
+   "registration_note_en": "Registration form available",
+   "registration_note_de": "Anmeldeformular verfügbar",
+   "url": "https://iea.org.uk/events-upcoming/",
+   "summary_ja": "ハイエクの『貨幣の脱国家化』刊行50年を機に、貨幣の将来を論じるイベント。",
+   "summary_en": "An IEA event marking 50 years since Hayek's 'Denationalisation of Money', discussing the future of money.",
+   "summary_de": "IEA-Veranstaltung zum 50. Jahrestag von Hayeks 'Denationalisation of Money' über die Zukunft des Geldes.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "IEA",
+   "title_short": "Hayek and Denationalised Money",
+   "importance": 1,
+   "registration_url": "https://instituteofeconomicaffairs.beaconforms.com/form/c28a9856",
+   "time_end": null,
+   "speakers": [],
+   "source": "IEA – Institute of Economic Affairs – Upcoming events",
+   "id": "e78107a14cc720a7",
+   "first_seen": "2026-11-20",
    "notables": [],
    "notable_tier": null
   }
