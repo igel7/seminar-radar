@@ -475,6 +475,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.cepweb.org/governing-finance-for-investments-in-productive-capital": {
+  "event_id": "40377bc363decdb8",
+  "http": 200,
+  "last": "2026-11-21",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.chathamhouse.org/events/all/standard-event/chatham-house-berlin-conference-2026": {
   "event_id": "c731effbf651a308",
   "http": 403,
@@ -923,6 +930,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.icmagroup.org/events/icma-future-leaders-credit-outlook-and-networking": {
+  "event_id": "8e64550fe37a8aa8",
+  "http": 200,
+  "last": "2026-11-21",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.icmagroup.org/events/icma-switzerland-and-liechtenstein-region-winter-event-2027": {
   "event_id": "bf37270a1d648444",
   "http": 200,
@@ -1090,6 +1104,13 @@
   "last": "2026-11-06",
   "result": "FAIL-BLOCKED",
   "tries": 3
+ },
+ "https://www.mcdermottlaw.com": {
+  "event_id": "a85bc6fc79f41170",
+  "http": 403,
+  "last": "2026-11-21",
+  "result": "FAIL-BLOCKED",
+  "tries": 1
  },
  "https://www.mnb.hu/en/the-central-bank/conferences/budapest-renminbi-initiative-conference/budapest-renminbi-initiative-conference-2026": {
   "event_id": "8e6745d3afb58874",

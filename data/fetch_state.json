@@ -2,21 +2,21 @@
  "_readme": "fetch_all.py が管理するソース別の内容ハッシュ台帳。手で編集しない。hash はキャッシュ本文テキストの sha256 先頭20桁。",
  "ECB – Conferences & seminars": {
   "url": "https://www.ecb.europa.eu/press/conferences/html/index.en.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.ecb.europa.eu/press/conferences/html/index.en.html": {
-    "hash": "fa62e0c704bf0a6b7462",
-    "chars": 62639,
+    "hash": "c4c20b5715d64ba1f554",
+    "chars": 62883,
     "http": 200,
     "cache_file": "data/cache/ecb-conferences-seminars-931b4c--45c410.txt",
-    "last_changed": "2026-11-15"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "ECB Banking Supervision (SSM) – Conferences & seminars": {
   "url": "https://www.bankingsupervision.europa.eu/press/conferences/html/index.en.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bankingsupervision.europa.eu/press/conferences/html/index.en.html": {
     "hash": "d1f67a4036df030b5ae4",
@@ -26,25 +26,25 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Bundesbank – Termine": {
   "url": "https://www.bundesbank.de/de/service/termine",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bundesbank.de/de/service/termine": {
-    "hash": "e47373041850f7d953a3",
-    "chars": 86605,
+    "hash": "60426e6e0c0021081748",
+    "chars": 86370,
     "http": 200,
     "cache_file": "data/cache/bundesbank-termine-b4a507--70e681.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "Bundesbank – Forschungskonferenzen": {
   "url": "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bundesbank.de/de/bundesbank/forschung/konferenzen/konferenzen-758656": {
     "hash": "2ab319744ef06ca85e8a",
@@ -58,7 +58,7 @@
  },
  "Bundesbank – Forum Bundesbank (Hauptverwaltungen)": {
   "url": "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bundesbank.de/de/bundesbank/hauptverwaltungen-filialen/veranstaltungen": {
     "hash": "3c7c906db43fed403d0b",
@@ -68,11 +68,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "ifo Institut – Veranstaltungen": {
   "url": "https://www.ifo.de/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences": {
     "hash": "b368a1ca53d614bdd87f",
@@ -86,17 +86,17 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "DIW Berlin – Veranstaltungen": {
   "url": "https://www.diw.de/de/diw_01.c.806339.de/veranstaltungen.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "IfW Kiel – Veranstaltungen": {
   "url": "https://www.kielinstitut.de/de/institut/veranstaltungen/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.kielinstitut.de/de/veranstaltungen/": {
     "hash": "eab8a7d5ada509d0a06e",
@@ -110,11 +110,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "RWI Essen – Veranstaltungen": {
   "url": "https://www.rwi-essen.de/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.rwi-essen.de/en/events/for-researchers/rwi-research-seminar": {
     "hash": "001409998d8dedd18123",
@@ -149,21 +149,21 @@
  },
  "SAFE Frankfurt – Events": {
   "url": "https://safe-frankfurt.de/news-latest/events.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://safe-frankfurt.de/news-latest/events.html": {
-    "hash": "a963c32c7515534b222e",
-    "chars": 18150,
+    "hash": "2d912931b938827d7067",
+    "chars": 17904,
     "http": 200,
     "cache_file": "data/cache/safe-frankfurt-events-23543b--2673d2.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "IMFS Frankfurt – 全ての今後のイベント": {
   "url": "https://www.imfs-frankfurt.de/en/events/upcoming-events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.imfs-frankfurt.de/en/events/imfs-conferences/": {
     "hash": "209671d645a0e4bf1087",
@@ -187,81 +187,81 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "House of Finance (Goethe大) – Veranstaltungen": {
   "url": "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.hof.uni-frankfurt.de/aktivitaeten/veranstaltungen": {
-    "hash": "eea6fab6f1ca5cf38b8d",
-    "chars": 11062,
+    "hash": "2afb5cd4a1d48bd947a1",
+    "chars": 11115,
     "http": 200,
     "cache_file": "data/cache/house-of-finance-goethe-veranstaltungen-91bf47--2788db.txt",
-    "last_changed": "2026-11-19"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "SUERF – Events": {
   "url": "https://www.suerf.org/events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.suerf.org/events/": {
-    "hash": "fcee2daaca9a39c90550",
-    "chars": 11860,
+    "hash": "9639bf5496481e0491bd",
+    "chars": 11749,
     "http": 200,
     "cache_file": "data/cache/suerf-events-7b6cfb--b0ea5c.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "ZEW Mannheim – Veranstaltungen": {
   "url": "https://www.zew.de/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.zew.de/veranstaltungen": {
-    "hash": "e30bd7fb1798aab4f260",
-    "chars": 33608,
+    "hash": "a7264324bdd2baf26d75",
+    "chars": 33670,
     "http": 200,
     "cache_file": "data/cache/zew-mannheim-veranstaltungen-9e030c--72a81d.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "CFS – Center for Financial Studies (Frankfurt) – Events": {
   "url": "https://gfk-cfs.de/en/events/feed/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://gfk-cfs.de/en/events/feed/": {
-    "hash": "fc373379854b259b60a5",
-    "chars": 20444,
+    "hash": "13865e85b6f75ff72443",
+    "chars": 21173,
     "http": 200,
     "cache_file": "data/cache/cfs-center-for-financial-studies-frankfurt-events-c1926e--b81958.txt",
-    "last_changed": "2026-11-19"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "Frankfurt School of Finance & Management – Events": {
   "url": "https://forum.frankfurt-school.de/konferenzen/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://forum.frankfurt-school.de/konferenzen/": {
-    "hash": "19a046d96b6e3eed533a",
-    "chars": 9737,
+    "hash": "d04a6d2049bc303eb13c",
+    "chars": 9733,
     "http": 200,
     "cache_file": "data/cache/frankfurt-school-of-finance-management-events-6ae95b--0ccfa3.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "CESifo (München) – Veranstaltungen": {
   "url": "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.ifo.de/en/cesifo/cesifo-upcoming-conferences": {
     "hash": "7638a02edeff5d287e08",
@@ -271,11 +271,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Jacques Delors Centre (Hertie School, Berlin) – Events": {
   "url": "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre": {
     "hash": "b06e8c23f76e80a06eb8",
@@ -285,11 +285,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "IWH – Leibniz-Institut für Wirtschaftsforschung Halle – Veranstaltungen": {
   "url": "https://www.iwh-halle.de/veranstaltungen/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.iwh-halle.de/ueber-das-iwh/veranstaltungen": {
     "hash": "4e3dd71cebcc68295d2a",
@@ -303,29 +303,29 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "BaFin – Veranstaltungen": {
   "url": "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bafin.de/DE/die-bafin/aktuelles-presse/veranstaltungen/veranstaltungen_node": {
     "hash": "03f4a90600a337be3cc6",
     "last_changed": "2026-08-27"
    },
    "https://www.bafin.de/DE/DieBaFin/Service/Veranstaltungen/veranstaltungen_node.html": {
-    "hash": "8595169dccb9ae8bef54",
-    "chars": 13462,
+    "hash": "aa000a6d14647cf04322",
+    "chars": 13328,
     "http": 200,
     "cache_file": "data/cache/bafin-veranstaltungen-051f62--3212e5.txt",
-    "last_changed": "2026-11-14"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "EIOPA (Frankfurt) – Events": {
   "url": "https://www.eiopa.europa.eu/media/events_en",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.eiopa.europa.eu/media/events_en": {
     "hash": "4aad544bc04c4aa3a2ec",
@@ -339,7 +339,7 @@
  },
  "SRB – Single Resolution Board – Events": {
   "url": "https://www.srb.europa.eu/en/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.srb.europa.eu/en/events": {
     "hash": "306ffdc0b8e98985af4d",
@@ -353,14 +353,14 @@
  },
  "dfv Euro Finance Group (Frankfurt) – Executive Events": {
   "url": "https://www.dfv-eurofinance.com/executive-events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://tickets.dfv-eurofinance.com/EFW26/": {
-    "hash": "1877f1d5f475a4ae53fb",
-    "chars": 2824,
+    "hash": "5af301b0cb3298c2581b",
+    "chars": 2787,
     "http": 200,
     "cache_file": "data/cache/dfv-euro-finance-group-frankfurt-executive-events-be926b--00d07c.txt",
-    "last_changed": "2026-11-15"
+    "last_changed": "2026-11-21"
    },
    "https://www.dfv-eurofinance.com/executive-events/": {
     "hash": "de9e37a06e7a3943735e",
@@ -381,21 +381,21 @@
  },
  "Deutsche Börse Group – Veranstaltungen": {
   "url": "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.deutsche-boerse.com/dbg-de/ueber-uns/deutsche-boerse-group/veranstaltungen": {
-    "hash": "0c30d353e5668015a144",
-    "chars": 36843,
+    "hash": "39678d65ca9c2b854558",
+    "chars": 37005,
     "http": 200,
     "cache_file": "data/cache/deutsche-b-rse-group-veranstaltungen-8c76a2--a15adb.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "DGAP – Deutsche Gesellschaft für Auswärtige Politik – Veranstaltungen": {
   "url": "https://dgap.org/de/veranstaltungen",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://dgap.org/de/events": {
     "hash": "391f03430e0596a94ae2",
@@ -413,21 +413,21 @@
  },
  "EWI – Energiewirtschaftliches Institut an der Universität zu Köln – Veranstaltungen": {
   "url": "https://www.ewi.uni-koeln.de/de/veranstaltungen/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.ewi.uni-koeln.de/de/ewi-energietagung/": {
-    "hash": "62875b0fd8fb09a95b13",
-    "chars": 12071,
+    "hash": "3b5c2c544befe3a908c3",
+    "chars": 12062,
     "http": 200,
     "cache_file": "data/cache/ewi-energiewirtschaftliches-institut-an-der-univer-3504cd--c6b361.txt",
-    "last_changed": "2026-11-06"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "FAIL-BLOCKED"
+  "verdict": "CHANGED"
  },
  "IW Köln – Institut der deutschen Wirtschaft – Veranstaltungen": {
   "url": "https://www.iwkoeln.de/institut/veranstaltungen.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.iwkoeln.de/institut/veranstaltungen.html": {
     "hash": "15dfdb7b5ef265611e0f",
@@ -437,39 +437,39 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Bruegel (Brussels) – Events": {
   "url": "https://www.bruegel.org/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bruegel.org/events": {
-    "hash": "bda9fedc0aa02910f7aa",
-    "chars": 24587,
+    "hash": "470b8e02f548eb45d6c7",
+    "chars": 24563,
     "http": 200,
     "cache_file": "data/cache/bruegel-brussels-events-ffbcf5--0274a7.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "OMFIF – Events/Meetings": {
   "url": "https://www.omfif.org/meetings/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.omfif.org/meetings/": {
-    "hash": "dca8412168e54eb6595c",
-    "chars": 18263,
+    "hash": "f1c6db7c920a8b2b6bfb",
+    "chars": 17441,
     "http": 200,
     "cache_file": "data/cache/omfif-events-meetings-e2f113--ba62f4.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "BIS – Bank for International Settlements – Events": {
   "url": "https://www.bis.org/ifc/events.htm",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bis.org/ifc/events.htm": {
     "hash": "93185a6124231f5528ef",
@@ -483,7 +483,7 @@
  },
  "SNB – Swiss National Bank – Events": {
   "url": "https://www.snb.ch/en/services-events/digital-services/event-schedule",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.snb.ch/en/services-events/digital-services/event-schedule": {
     "hash": "23a9bd5a7c7a26c5ccfe",
@@ -497,7 +497,7 @@
  },
  "OeNB – Oesterreichische Nationalbank – Veranstaltungen": {
   "url": "https://www.oenb.at/en/Calendar.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.oenb.at/en/Calendar.html": {
     "hash": "6e21fcb814aae62f7a5d",
@@ -507,18 +507,18 @@
     "last_changed": "2026-09-30"
    },
    "https://www.oenb.at/sitemap.xml": {
-    "hash": "c3b04f12d2d720a54711",
-    "chars": 141004,
+    "hash": "91738ea9a17ea84e762f",
+    "chars": 141022,
     "http": 200,
     "cache_file": "data/cache/oenb-oesterreichische-nationalbank-veranstaltungen-306b2a--b41398.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "CNB – Czech National Bank – Conferences, Seminars, Workshops": {
   "url": "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.cnb.cz/en/economic-research/conferences-seminars-and-workshops/": {
     "hash": "771614d378106d390235",
@@ -532,27 +532,27 @@
  },
  "NBP – Narodowy Bank Polski – Conferences": {
   "url": "https://nbp.pl/en/economic-education/conferences/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "NBU – National Bank of Ukraine – Research Events": {
   "url": "https://bank.gov.ua/en/research/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://bank.gov.ua/en/research/events": {
-    "hash": "9c9ae7a8cef5692c7d7d",
-    "chars": 16497,
+    "hash": "942b84a58c70c9e1cd8a",
+    "chars": 16560,
     "http": 200,
     "cache_file": "data/cache/nbu-national-bank-of-ukraine-research-events-472b83--d0493e.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "NBS – Národná banka Slovenska – Events": {
   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/": {
     "hash": "495bef39249a531ef492",
@@ -562,24 +562,24 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Bank of Lithuania – Events": {
   "url": "https://www.lb.lt/en/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {},
   "verdict": "FAIL-BLOCKED"
  },
  "Latvijas Banka – Research/Events": {
   "url": "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.macroeconomics.lv/research-seminars/research-seminars-latvijas-banka-2026": {
-    "hash": "b35a3cf758b9d38d53c2",
+    "hash": "d7e5d0b5aa9132bb70b2",
     "chars": 9778,
     "http": 200,
     "cache_file": "data/cache/latvijas-banka-research-events-2b3091--98e7f8.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    },
    "https://conference.bank.lv/": {
     "hash": "c08167560a7c979549de",
@@ -593,7 +593,7 @@
  },
  "Study Center Gerzensee – Events": {
   "url": "https://www.szgerzensee.ch/programs/conferences-events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.szgerzensee.ch/programs/conferences-events": {
     "hash": "afd3172e01ece9ccf202",
@@ -607,7 +607,7 @@
  },
  "CEBRA – Central Bank Research Association – Events": {
   "url": "https://cebra.org/events/upcoming/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://cebra.org/events/upcoming/": {
     "hash": "b1ca6f82e91b1f49832a",
@@ -621,28 +621,28 @@
  },
  "Eesti Pank (エストニア) – Events": {
   "url": "https://www.eestipank.ee/en/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.eestipank.ee/en/events": {
-    "hash": "568bfdc768c09adccda9",
+    "hash": "907dc1beadc387a50661",
     "chars": 8239,
     "http": 200,
     "cache_file": "data/cache/eesti-pank-events-512047--438120.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    },
    "https://www.eestipank.ee/en/calendar/2026/11": {
-    "hash": "908c7b7d1080a0b9b8c9",
+    "hash": "4b64c5bf302b7ccb137d",
     "chars": 8239,
     "http": 200,
     "cache_file": "data/cache/eesti-pank-events-512047--9138e0.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "MNB – Magyar Nemzeti Bank (ハンガリー) – Events": {
   "url": "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.mnb.hu/web/en/financial-stability/financial-stability-conference-2026": {
     "hash": "dcb571f0f90e067556d0",
@@ -656,7 +656,7 @@
  },
  "NBR – National Bank of Romania (BEARSセミナー) – Conferences & Seminars": {
   "url": "https://www.bnr.ro/en/24077-bears",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bnr.ro/en/24077-bears": {
     "hash": "d8af93d39ba4ae114714",
@@ -666,11 +666,11 @@
     "last_changed": "2026-11-12"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "FAIL-THIN"
  },
  "HNB – Croatian National Bank – Conferences": {
   "url": "https://www.hnb.hr/en/about-us/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.hnb.hr/en/about-us/events": {
     "hash": "427e00045f4fdae6239d",
@@ -684,7 +684,7 @@
  },
  "BNB – Bulgarian National Bank – Events": {
   "url": "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bnb.bg/AboutUs/PressOffice/POPressReleases/POPRDate/index.htm": {
     "hash": "1a53ac8e42226ec1e9ff",
@@ -694,11 +694,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "FAIL-THIN"
  },
  "National Bank of Serbia – Research Seminars (Belgrade Economics and Finance)": {
   "url": "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/": {
     "hash": "4d0646ab107849a5d2dd",
@@ -708,11 +708,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "National Bank of Serbia – Conferences": {
   "url": "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://nbs.rs/en/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/": {
     "hash": "25ac6749d57d50d08cd0",
@@ -722,68 +722,68 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Banka Slovenije – Events": {
   "url": "https://www.bsi.si/en/about-us/conferences-and-seminars",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bsi.si/en/upcoming-events": {
     "hash": "c013e288c5ffb4c41e4e",
     "last_changed": "2026-08-28"
    },
    "https://www.bsi.si/en/about-us/conferences-and-seminars": {
-    "hash": "8a8f0e1306bafa3d4f59",
-    "chars": 10887,
+    "hash": "cc666a20d8eaeceb2bdd",
+    "chars": 11255,
     "http": 200,
     "cache_file": "data/cache/banka-slovenije-events-db66e2--801a16.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "CBBH – Central Bank of Bosnia and Herzegovina – Events": {
   "url": "https://www.cbbh.ba/press/AllNews",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.cbbh.ba/press/AllNews": {
-    "hash": "b7d952ddb0be2f3acfad",
-    "chars": 10925,
+    "hash": "ceb49507ec4d6b97eefa",
+    "chars": 11148,
     "http": 200,
     "cache_file": "data/cache/cbbh-central-bank-of-bosnia-and-herzegovina-events-b737e0--0b4630.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "Bank of Albania – Events": {
   "url": "https://www.bankofalbania.org/Events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bankofalbania.org/": {
     "hash": "4c7bb361396c6f31e859",
     "last_changed": "2026-08-27"
    },
    "https://www.bankofalbania.org/Events/": {
-    "hash": "930d53ec27d4b480d005",
-    "chars": 32690,
+    "hash": "faee3c8465b8880fcaf1",
+    "chars": 32694,
     "http": 200,
     "cache_file": "data/cache/bank-of-albania-events-3faa36--1ff9f7.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    },
    "https://www.bankofalbania.org/rss_index.php?idstemp=CI-17857-30-1-550&k=17857&ln=1": {
-    "hash": "939d9c638b680192cd35",
-    "chars": 4662,
+    "hash": "36139d893855e90c9415",
+    "chars": 4661,
     "http": 200,
     "cache_file": "data/cache/bank-of-albania-events-3faa36--3c30c5.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "ECB – Payments & Markets / Digital Euro events": {
   "url": "https://www.ecb.europa.eu/paym/intro/events/html/index.en.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.ecb.europa.eu/press/intro/events/html/index.en.html": {
     "hash": "c6bb450392890a01b0f4",
@@ -801,13 +801,13 @@
  },
  "EPC – European Payments Council – Events": {
   "url": "https://www.europeanpaymentscouncil.eu/news-insights/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {},
   "verdict": "FAIL-HTTP"
  },
  "ECONtribute (Bonn/Köln) – Events": {
   "url": "https://www.econtribute.de/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://econtribute.de/events/": {
     "hash": "95a629d04355a7114268",
@@ -828,18 +828,18 @@
     "last_changed": "2026-10-30"
    },
    "https://econtribute.de/wp-json/wp/v2/event?per_page=100": {
-    "hash": "8d2e69c555ec0f373894",
-    "chars": 463027,
+    "hash": "623d4a3a6e8cbfe59e77",
+    "chars": 463159,
     "http": 200,
     "cache_file": "data/cache/econtribute-bonn-k-ln-events-ac51c9--738544.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "Berlin School of Economics – Events": {
   "url": "https://berlinschoolofeconomics.de/home",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://berlinschoolofeconomics.de/home": {
     "hash": "e5e97eb396ae3b2acb93",
@@ -853,7 +853,7 @@
  },
  "Universität Mannheim – 経済学部イベント/セミナー": {
   "url": "https://www.vwl.uni-mannheim.de/en/research/research-seminars/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.vwl.uni-mannheim.de/en/research/research-seminars/": {
     "hash": "fac0332f74e8913be6e5",
@@ -863,32 +863,32 @@
     "last_changed": "2026-11-11"
    },
    "https://www.vwl.uni-mannheim.de/en/forschung/forschungsseminare/micro-crc-tr-224-seminar-1/": {
-    "hash": "76047eebfd5481491d69",
-    "chars": 28832,
+    "hash": "9d538bedc17afe4eec7f",
+    "chars": 28970,
     "http": 200,
     "cache_file": "data/cache/universit-t-mannheim-d7ce71--1d9070.txt",
-    "last_changed": "2026-11-11"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "WU Wien (Wirtschaftsuniversität) – Events": {
   "url": "https://www.wu.ac.at/en/the-university/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.wu.ac.at/en/the-university/events": {
-    "hash": "40ff0de445979c9cb83a",
-    "chars": 37726,
+    "hash": "db00136993afd438aa4e",
+    "chars": 37393,
     "http": 200,
     "cache_file": "data/cache/wu-wien-wirtschaftsuniversit-t-events-a73107--5afd44.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "Green and Sustainable Finance Cluster Germany (Frankfurt)": {
   "url": "https://gsfc-germany.com/en/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://sustainablefinancecluster.com/en/events/": {
     "hash": "117714d1537d9ae44f98",
@@ -902,7 +902,7 @@
  },
  "FNG – Forum Nachhaltige Geldanlagen (Berlin)": {
   "url": "https://www.forum-ng.org/en/termine",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.forum-ng.org/en/termine": {
     "hash": "32782c59c388cd24053f",
@@ -916,7 +916,7 @@
  },
  "PIK – Potsdam-Institut für Klimafolgenforschung": {
   "url": "https://www.pik-potsdam.de/en/news/events/public-events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.pik-potsdam.de/en/institute/departments/activities/gcet27": {
     "hash": "9f5a3124d1fad84e93de",
@@ -933,11 +933,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Agora Energiewende (Berlin)": {
   "url": "https://www.agora-energiewende.org/news-events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.agora-energiewende.de/aktuelles/filter/tab-3": {
     "hash": "a7c9aa7bbbd8ef75ab23",
@@ -968,18 +968,18 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "dena – Deutsche Energie-Agentur (Berlin)": {
   "url": "https://www.dena.de/infocenter/alle-veranstaltungen/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://veranstaltungen.dena.de/": {
-    "hash": "261bc0ba22bad6a68ab7",
-    "chars": 8641,
+    "hash": "3cf86026231f5a847fe2",
+    "chars": 7065,
     "http": 200,
     "cache_file": "data/cache/dena-deutsche-energie-agentur-berlin-ef509c--402453.txt",
-    "last_changed": "2026-11-17"
+    "last_changed": "2026-11-21"
    },
    "https://www.dena.de/infocenter/alle-veranstaltungen/": {
     "hash": "840d62748873e0d0c654",
@@ -1003,11 +1003,11 @@
     "last_changed": "2026-11-16"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "EBA – European Banking Authority – Events": {
   "url": "https://www.eba.europa.eu/publications-and-media/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.eba.europa.eu/publications-and-media/events": {
     "hash": "9b8c160784bdad5ef987",
@@ -1017,11 +1017,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "ESMA – Public Hearings": {
   "url": "https://www.esma.europa.eu/press-news/hearings",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.esma.europa.eu/press-news/hearings": {
     "hash": "fb6a1aa132b849fa9062",
@@ -1035,7 +1035,7 @@
  },
  "Swiss Sustainable Finance (SSF) – Upcoming Events": {
   "url": "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.sustainablefinance.ch/en/events/register-upcoming-ssf-events.html": {
     "hash": "ca09006672232b9e9e64",
@@ -1045,46 +1045,46 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "CEP – Council on Economic Policies (Zürich) – Events": {
   "url": "https://www.cepweb.org/events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.cepweb.org/events/upcoming-events/": {
-    "hash": "388aa6304c74f8239171",
-    "chars": 46590,
+    "hash": "bb13f6e4903875273fc7",
+    "chars": 47713,
     "http": 200,
     "cache_file": "data/cache/cep-council-on-economic-policies-z-rich-events-5b4111--c3965c.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    },
    "https://www.cepweb.org/events/": {
-    "hash": "ae63512bf5f37c2fb888",
-    "chars": 54690,
+    "hash": "a2ff329ef3f5508df3f0",
+    "chars": 54899,
     "http": 200,
     "cache_file": "data/cache/cep-council-on-economic-policies-z-rich-events-5b4111--37b846.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    },
    "https://www.cepweb.org/feed/": {
-    "hash": "3fcdd7e8eaf1580f6c6e",
-    "chars": 4614,
+    "hash": "8e9f9eb591e1e37ab207",
+    "chars": 5029,
     "http": 200,
     "cache_file": "data/cache/cep-council-on-economic-policies-z-rich-events-5b4111--c1d3bf.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "PRI – Principles for Responsible Investment – Events": {
   "url": "https://www.unpri.org/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.unpri.org/events": {
-    "hash": "f8bcfe350f149b237ec0",
-    "chars": 5911,
+    "hash": "b545ae8c59b80938b78c",
+    "chars": 5839,
     "http": 200,
     "cache_file": "data/cache/pri-principles-for-responsible-investment-events-60c10d--e5760a.txt",
-    "last_changed": "2026-11-19"
+    "last_changed": "2026-11-21"
    },
    "https://public.unpri.org/news-and-events/upcoming-events/all-events-and-webinars": {
     "hash": "0a407e0d14e6e70f6505",
@@ -1094,43 +1094,43 @@
     "last_changed": "2026-10-30"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "UNEP FI – Events": {
   "url": "https://www.unepfi.org/events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.unepfi.org/category/events/": {
     "hash": "7246bd60849fa30d71e5",
     "last_changed": "2026-08-27"
    },
    "https://www.unepfi.org/events/": {
-    "hash": "821f74781f6b53230f3a",
-    "chars": 21938,
+    "hash": "62c60661c8e5225e0ad9",
+    "chars": 21759,
     "http": 200,
     "cache_file": "data/cache/unep-fi-events-526eb0--d11c29.txt",
-    "last_changed": "2026-11-19"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "appliedAI Institute (München) – Events": {
   "url": "https://www.appliedai-institute.de/en/participate/events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.appliedai-institute.de/en/participate/events/": {
-    "hash": "09c43a3e419aef2f3ccc",
-    "chars": 8572,
+    "hash": "ee2e6f9219a4c4de7b9a",
+    "chars": 8429,
     "http": 200,
     "cache_file": "data/cache/appliedai-institute-m-nchen-events-28c504--bddc81.txt",
-    "last_changed": "2026-11-13"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  },
  "Bitkom (Berlin) – Veranstaltungen": {
   "url": "https://www.bitkom.org/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.bitkom.org/events": {
     "hash": "9e657247c250e375595c",
@@ -1140,11 +1140,11 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "MERICS – Mercator Institute for China Studies (Berlin) – Events": {
   "url": "https://merics.org/en/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://merics.org/en/events": {
     "hash": "b7ea4353464386d03b23",
@@ -1154,25 +1154,25 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "フランクフルト日本法人会 – 行事・活動": {
   "url": "https://www.hojinkai.de/activities",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.hojinkai.de/activities": {
-    "hash": "0e7c7ebf19a82b77de6b",
-    "chars": 6700,
+    "hash": "153800f2d3a8c0ad180b",
+    "chars": 6704,
     "http": 200,
     "cache_file": "data/cache/src-d81f51--fca699.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "JDZB – 日独センター (Berlin) – Veranstaltungen": {
   "url": "https://jdzb.de/de/events",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://jdzb.de/de/events": {
     "hash": "26e096f13e97f8b668be",
@@ -1186,42 +1186,42 @@
  },
  "DJW – Deutsch-Japanischer Wirtschaftskreis (Düsseldorf) – Veranstaltungen": {
   "url": "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/": {
-    "hash": "b3510ab73107d85a7960",
-    "chars": 16162,
+    "hash": "ec0450ea268132cbea01",
+    "chars": 16167,
     "http": 200,
     "cache_file": "data/cache/djw-deutsch-japanischer-wirtschaftskreis-d-sseldor-34496b--481897.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "EU-Japan Centre for Industrial Cooperation – Events/Webinars": {
   "url": "https://www.eu-japan.eu/tags/webinar",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.eu-japan.eu/tags/webinar": {
-    "hash": "a24e00bd1fff4ec939e0",
-    "chars": 14574,
+    "hash": "cfec69852aa21067deaa",
+    "chars": 14593,
     "http": 200,
     "cache_file": "data/cache/eu-japan-centre-for-industrial-cooperation-events--69b9c5--d39cf4.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    },
    "https://www.eu-japan.eu/events": {
-    "hash": "391af573067cd9376fbb",
-    "chars": 14243,
+    "hash": "f3de30a1fa870550d9f4",
+    "chars": 14257,
     "http": 200,
     "cache_file": "data/cache/eu-japan-centre-for-industrial-cooperation-events--69b9c5--a21973.txt",
-    "last_changed": "2026-11-20"
+    "last_changed": "2026-11-21"
    }
   },
   "verdict": "CHANGED"
  },
  "BOFIT – Bank of Finland Institute for Emerging Economies – Events": {
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/?c=26,24,25",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/?c=26,24,25": {
     "hash": "9380054035eeaa7392b3",
@@ -1245,11 +1245,11 @@
     "last_changed": "2026-11-14"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "ICMA – International Capital Market Association – Events": {
   "url": "https://www.icmagroup.org/events/",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.icmagroup.org/events/": {
     "hash": "cc37a1d9ef356791c07b",
@@ -1259,20 +1259,20 @@
     "last_changed": "2026-11-20"
    }
   },
-  "verdict": "CHANGED"
+  "verdict": "UNCHANGED"
  },
  "Frankfurt School – Centre for Central Banking (CCB) – Events": {
   "url": "https://www.frankfurt-school.de/en/research-and-faculty/research-centres/centre-for-central-banking",
-  "last_fetch": "2026-11-20",
+  "last_fetch": "2026-11-21",
   "pages": {
    "https://www.frankfurt-school.de/en/research-and-faculty/research-centres/centre-for-central-banking": {
     "hash": "d257a58aed16c31944d3",
     "chars": 18506,
     "http": 200,
     "cache_file": "data/cache/frankfurt-school-centre-for-central-banking-ccb-ev-016b0c--e4268b.txt",
-    "last_changed": "2026-11-07"
+    "last_changed": "2026-11-21"
    }
   },
-  "verdict": "UNCHANGED"
+  "verdict": "CHANGED"
  }
 }
