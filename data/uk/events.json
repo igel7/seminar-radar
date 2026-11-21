@@ -18067,7 +18067,7 @@
    "time": "18:30",
    "time_end": "20:00",
    "city": "London",
-   "venue": "LSE campus (venue TBC)",
+   "venue": "Old Theatre, Old Building",
    "format": "hybrid",
    "fee": "unknown",
    "fee_amount": null,
@@ -18081,26 +18081,21 @@
    "speakers": [
     {
      "name": "Richard Blundell",
-     "org": "UCL",
-     "role": "David Ricardo Chair of Political Economy"
-    },
-    {
-     "name": "Francisco H. G. Ferreira",
-     "org": "LSE",
-     "role": "Amartya Sen Professor of Inequality Studies"
+     "org": null,
+     "role": "Professor"
     }
    ],
    "title": "Addressing the adverse consequences of inequality (John Hills Memorial Lecture)",
-   "title_ja": "不平等の悪影響への対処(ジョン・ヒルズ記念講演)",
-   "organizer": "LSE International Inequalities Institute",
+   "title_ja": "不平等がもたらす弊害への対処（ジョン・ヒルズ記念講演）",
+   "organizer": "LSE",
    "date_start": "2026-11-25",
    "themes": [
     "real_economy"
    ],
    "url": "https://www.lse.ac.uk/events/consequences-inequality",
-   "summary_ja": "IFSのディートン・レビュー(不平等)に基づき、所得・雇用・資産・地域・健康の不平等の悪影響を論じる第1回ジョン・ヒルズ記念講演。",
-   "summary_en": "Inaugural John Hills Memorial Lecture drawing on the IFS Deaton Review of Inequalities, covering income, work, wealth, place and health.",
-   "summary_de": "Erste John-Hills-Gedächtnisvorlesung auf Basis der IFS Deaton Review of Inequalities zu Einkommen, Arbeit, Vermögen, Region und Gesundheit.",
+   "summary_ja": "所得・資産の不平等がもたらす弊害と、その対処の方向性を論じる公開講演。",
+   "summary_en": "A public lecture on the adverse consequences of inequality and how they might be addressed.",
+   "summary_de": "Öffentlicher Vortrag über die nachteiligen Folgen von Ungleichheit und mögliche Wege, ihnen zu begegnen.",
    "organizer_short": "LSE",
    "title_short": "Consequences of Inequality",
    "importance": 1,
@@ -19947,7 +19942,28 @@
    "organizer_short": "Warwick",
    "title_short": "Europe's Energy Dilemma",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Ludovica Gazze",
+     "org": "Warwick",
+     "role": "Associate Professor of Economics"
+    },
+    {
+     "name": "Ana Maria Jaller-Makarewicz",
+     "org": "IEEFA",
+     "role": "Lead Energy Analyst Europe"
+    },
+    {
+     "name": "Michael Grubb",
+     "org": "UCL",
+     "role": "Professor of Energy and Climate Change"
+    },
+    {
+     "name": "Stephen Phipson",
+     "org": "Make UK",
+     "role": "Chief Executive Officer"
+    }
+   ],
    "source": "Warwick – Department of Economics – Events",
    "id": "973dbde4abcad703",
    "first_seen": "2026-11-20",
@@ -20170,6 +20186,178 @@
    "source": "IEA – Institute of Economic Affairs – Upcoming events",
    "id": "e78107a14cc720a7",
    "first_seen": "2026-11-20",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Global Trends in Green Jobs 2026 – Report Launch",
+   "title_ja": "グローバル・グリーンジョブ動向2026 報告書発表会",
+   "organizer": "Grantham Research Institute on Climate Change and the Environment, LSE",
+   "organizer_short": "Grantham",
+   "date_start": "2026-12-10",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "country": "GB",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "importance": 1,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/granthaminstitute/events/global-trends-in-green-jobs-2026-report-launch/",
+   "summary_ja": "新しい報告書シリーズ『Global Trends in Green Jobs 2026』の初版の発表会。グリーン雇用の世界的な動向を取り上げる。",
+   "summary_en": "Launch event for the first edition of the new Global Trends in Green Jobs 2026 report series, covering global green employment trends.",
+   "summary_de": "Veranstaltung zur Vorstellung der ersten Ausgabe der neuen Berichtsreihe „Global Trends in Green Jobs 2026“ zu globalen Trends bei grünen Arbeitsplätzen.",
+   "language": "en",
+   "title_short": "Global Green Jobs Trends",
+   "speakers": [],
+   "source": "Grantham Research Institute (LSE) – Events",
+   "id": "8ef553ba025ac2c3",
+   "first_seen": "2026-11-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Megan Greene: SIGNUM Roundtable, 'UK Monetary Policy: How to Handle the Iran Shock', London",
+   "title_ja": "英国金融政策とイラン・ショック（SIGNUM円卓）",
+   "organizer": "SIGNUM",
+   "date_start": "2026-11-24",
+   "date_end": null,
+   "time": "12:30",
+   "time_end": null,
+   "city": "London",
+   "venue": null,
+   "format": "onsite",
+   "themes": [
+    "central_bank",
+    "real_economy",
+    "geopolitics"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "要事前登録（Zoom ウェビナー）",
+   "registration_note_en": "Advance registration required (Zoom webinar)",
+   "registration_note_de": "Anmeldung erforderlich (Zoom-Webinar)",
+   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
+   "summary_ja": "SIGNUM主催のラウンドテーブルで、BoEのMegan Greene氏がイラン・ショックへの英国金融政策の対応を議論する。",
+   "summary_en": "A SIGNUM roundtable in London where Megan Greene of the Bank of England discusses how UK monetary policy should respond to the Iran shock.",
+   "summary_de": "Ein SIGNUM-Roundtable in London, bei dem Megan Greene von der Bank of England erörtert, wie die britische Geldpolitik auf den Iran-Schock reagieren sollte.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "SIGNUM",
+   "title_short": "UK Monetary Policy Iran Shock",
+   "importance": 1,
+   "registration_url": null,
+   "speakers": [
+    {
+     "name": "Megan Greene",
+     "org": "BoE",
+     "role": null
+    }
+   ],
+   "source": "Bank of England – Upcoming external events involving Bank staff",
+   "id": "98698d1121637971",
+   "first_seen": "2026-11-21",
+   "notables": [
+    {
+     "person": "megan-greene",
+     "name": "Megan Greene",
+     "group": "ncb",
+     "tier": 2,
+     "short": null,
+     "former": false
+    }
+   ],
+   "notable_tier": 2
+  },
+  {
+   "title": "What happened at COP31, and what happens next?",
+   "title_ja": "COP31の結果と今後の展望",
+   "organizer": "Grantham Research Institute on Climate Change and the Environment, LSE",
+   "organizer_short": "Grantham",
+   "date_start": "2026-11-26",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": "London",
+   "country": "GB",
+   "venue": null,
+   "format": null,
+   "themes": [
+    "climate_esg"
+   ],
+   "importance": 1,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/granthaminstitute/events/what-happened-at-cop31-and-what-happens-next/",
+   "summary_ja": "COP31国連気候変動会議の成果と今後の課題について、LSEおよび外部の専門家によるパネルが議論する公開イベント。",
+   "summary_en": "A panel of LSE and external experts discusses the outcomes of the COP31 UN climate summit and what comes next.",
+   "summary_de": "Ein Expertenpanel der LSE und externer Fachleute diskutiert die Ergebnisse des UN-Klimagipfels COP31 und die nächsten Schritte.",
+   "language": "en",
+   "title_short": "COP31 Outcomes and Next Steps",
+   "speakers": [],
+   "source": "Grantham Research Institute (LSE) – Events",
+   "id": "a4ccd0b219f18791",
+   "first_seen": "2026-11-21",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "From AlphaGo to general reasoning: the future of artificial intelligence and what it means",
+   "title_ja": "AlphaGoから汎用推論へ：AIの未来",
+   "organizer": "LSE",
+   "organizer_short": "LSE",
+   "date_start": "2026-11-24",
+   "date_end": null,
+   "time": "18:30",
+   "time_end": "20:00",
+   "city": "London",
+   "country": "GB",
+   "venue": "Sheikh Zayed Theatre, Cheng Kin Ku Building",
+   "format": "hybrid",
+   "themes": [
+    "ai"
+   ],
+   "importance": 1,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://www.lse.ac.uk/events/general-artificial-intelligence",
+   "summary_ja": "AlphaGoから汎用的な推論能力に至るAIの発展と、その社会的な意味を論じる公開講演。",
+   "summary_en": "A public lecture by Professor Thore Graepel on the development of AI from AlphaGo toward general reasoning and what it means.",
+   "summary_de": "Öffentlicher Vortrag von Professor Thore Graepel über die Entwicklung der KI von AlphaGo hin zu allgemeinem logischem Schließen und deren Bedeutung.",
+   "language": "en",
+   "title_short": "Future of Artificial Intelligence",
+   "speakers": [
+    {
+     "name": "Thore Graepel",
+     "org": null,
+     "role": "Professor"
+    }
+   ],
+   "source": "LSE – Public events (Search)",
+   "id": "d194b4a10423d1ae",
+   "first_seen": "2026-11-21",
    "notables": [],
    "notable_tier": null
   }
