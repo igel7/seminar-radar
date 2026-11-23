@@ -475,6 +475,13 @@
   "result": "ok",
   "tries": 2
  },
+ "https://www.cepweb.org/fuel-and-food-tax-cuts-in-response-to-the-energy-crisis-a-tax-expenditure-perspective": {
+  "event_id": "07ea53357bd0f37b",
+  "http": 200,
+  "last": "2026-11-23",
+  "result": "FAIL-THIN",
+  "tries": 1
+ },
  "https://www.cepweb.org/governing-finance-for-investments-in-productive-capital": {
   "event_id": "40377bc363decdb8",
   "http": 200,
@@ -1175,6 +1182,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/global-blockchain-policy-working-group-report-launch-landing-page": {
+  "event_id": "a7969aac37d25121",
+  "http": 200,
+  "last": "2026-11-23",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/insurance-a-catalyst-for-financial-resilience": {
   "event_id": "d42d370a4207f0c9",
   "http": 200,
@@ -1388,9 +1402,9 @@
  "https://www.world-finance-conference.com/conference.php": {
   "event_id": "a6fa9fe88d3add30",
   "http": 200,
-  "last": "2026-10-30",
+  "last": "2026-11-23",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.worldenergy.org/experiences-events/events/entry/world-energy-council-germany-fuels-conference-2026": {
   "event_id": "1cf0e5b8c76cf824",
