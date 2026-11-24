@@ -730,9 +730,9 @@
  "https://www.eiopa.europa.eu/media/events/public-hearing-draft-supervisory-statement-ibip-sales-processes-2026-12-01_en": {
   "event_id": "8701349a28b7d0f3",
   "http": 200,
-  "last": "2026-11-12",
+  "last": "2026-11-24",
   "result": "ok",
-  "tries": 1
+  "tries": 2
  },
  "https://www.esma.europa.eu/press-news/hearings/webinar-social-media-and-retail-trading-behaviour-how-can-these-platforms": {
   "event_id": "5100ab391d96dee5",
@@ -856,9 +856,9 @@
  "https://www.forum-ng.org/en/termine/veranstaltung/reconcept-webinar-investieren-sie-in-das-rueckgrat-der-energiewende-1-1": {
   "event_id": "8a461c7ceea8b237",
   "http": 200,
-  "last": "2026-11-10",
+  "last": "2026-11-24",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.forum-ng.org/en/termine/veranstaltung/reprisk-webinar-the-energy-transiton-under-scrutiny": {
   "event_id": "856f136806327189",
@@ -1461,6 +1461,13 @@
   "last": "2026-10-30",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/disclosure-information-sharing-and-secrecy-diss-10/5029": {
+  "event_id": "62fb0cf196fbb61a",
+  "http": 200,
+  "last": "2026-11-24",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/webinarreihe-eu-budget-talks/4906": {
   "event_id": "f6d50e6486e9417d",
