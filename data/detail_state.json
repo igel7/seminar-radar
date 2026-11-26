@@ -478,9 +478,9 @@
  "https://www.cepweb.org/fuel-and-food-tax-cuts-in-response-to-the-energy-crisis-a-tax-expenditure-perspective": {
   "event_id": "07ea53357bd0f37b",
   "http": 200,
-  "last": "2026-11-23",
-  "result": "FAIL-THIN",
-  "tries": 1
+  "last": "2026-11-26",
+  "result": "ok",
+  "tries": 2
  },
  "https://www.cepweb.org/governing-finance-for-investments-in-productive-capital": {
   "event_id": "40377bc363decdb8",
@@ -1035,6 +1035,13 @@
   "result": "ok",
   "tries": 3
  },
+ "https://www.ihk.de/stuttgart/fuer-unternehmen/international/termine-aussenwirtschaft/iex-sanktionslistenscreening4-7232944": {
+  "event_id": "aa4562e16878ad2a",
+  "http": 200,
+  "last": "2026-11-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.ilf-frankfurt.de/seminars/upcoming-conferences-guest-lectures/details/11th-banking-union-conference-1": {
   "event_id": "2d9f894baa2161fb",
   "http": 200,
@@ -1444,9 +1451,9 @@
  "https://www.wu.ac.at/en/isk": {
   "event_id": "4a9f2d7306f59be8",
   "http": 200,
-  "last": "2026-11-02",
+  "last": "2026-11-26",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.zew.de/va4954": {
   "event_id": "1773aee45e76e9f3",
