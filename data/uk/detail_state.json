@@ -426,12 +426,26 @@
   "result": "ok",
   "tries": 3
  },
+ "https://www.esri.ie/events/regional-income-inequality-on-the-island-of-ireland": {
+  "event_id": "e75217e670082d51",
+  "http": 200,
+  "last": "2026-11-26",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.esri.ie/events/save-the-date-regional-income-inequality-on-the-island-of-ireland": {
   "event_id": "e75217e670082d51",
   "http": 200,
   "last": "2026-11-23",
   "result": "ok",
   "tries": 2
+ },
+ "https://www.esri.ie/events/save-the-date-what-matters-for-public-support-for-climate-policy": {
+  "event_id": "1b183660fb53958a",
+  "http": 200,
+  "last": "2026-11-26",
+  "result": "ok",
+  "tries": 1
  },
  "https://www.fmg.ac.uk/events/how-make-impact-investing-work": {
   "event_id": "b792a359a3679405",
@@ -500,6 +514,13 @@
   "event_id": "f49bb6c12d3db0ff",
   "http": 200,
   "last": "2026-11-17",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.instituteforgovernment.org.uk/event/preventative-public-spending": {
+  "event_id": "13f088049463743e",
+  "http": 200,
+  "last": "2026-11-26",
   "result": "ok",
   "tries": 1
  },
@@ -814,9 +835,9 @@
  "https://www.ukfinance.org.uk/events-training/economic-crime-congress-2026-leading-collective-response-global-threat": {
   "event_id": "bd8486a733bb96dd",
   "http": 200,
-  "last": "2026-11-12",
+  "last": "2026-11-26",
   "result": "ok",
-  "tries": 2
+  "tries": 3
  },
  "https://www.ukfinance.org.uk/events-training/financial-crime-2026-emerging-risks-fca-intervention-and-market-integrity": {
   "event_id": "3f9f8f4d1b2d3571",
