@@ -14,7 +14,7 @@
 
 | 項目 | 現状 | 出典 |
 |---|---|---|
-| 対象地域の強制 | `REGION` 集合(DE/CH/AT/中東欧/バルカン/バルト/UA)と `region_ok()`。ECB・BIS 主催と `anywhere: true` の定点だけ開催国不問 | `scripts/radar_lib.py` |
+| 対象地域の強制 | `REGION` 集合(DE/CH/AT/NL/中東欧/バルカン/バルト/UA。NL は 2026-11-27 追加)と `region_ok()`。ECB・BIS 主催と `anywhere: true` の定点だけ開催国不問 | `scripts/radar_lib.py` |
 | 地域ごとの重要度下限 | **存在しない**。旗艦パターン(`FLAGSHIP_PATTERNS`)で下限3を強制する仕組みはある | 同上 |
 | 定点リスト | 1本(約77ソース)。`category`(cb/tt/uni/other)と `anywhere` の属性のみ。地域属性なし | `sources.yaml` |
 | 発見検索の観点 | 1本(16観点、独語クエリ混在) | 同上 `discovery_topics` |
