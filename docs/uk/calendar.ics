@@ -623,9 +623,9 @@ BEGIN:VEVENT
 UID:c4f6cedcf8c9582b@seminar-radar
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261202
-SUMMARY:Central Bank of Ireland\, UCD\, CEPR Conference on Macro-Finance and Financial Stability Policies 2026
+SUMMARY:Conference on Macro-Finance and Financial Stability Policies 2026
 LOCATION:Dublin
-DESCRIPTION:アイルランド中央銀行・UCD・CEPR共催のマクロ金融・金融安定政策に関する研究会議。地政学リスク・ノンバンク・マクロプルーデンス政策の較正・企業金融を主題に、Kalemli-ÖzcanとGelos(BIS)が基調講演を行う。 / 主催: Central Bank of Ireland / University College Dublin / CEPR / https://www.centralbank.ie/events/event-detail/2026/11/30/default-calendar/conference-on-macro-finance-and-financial-stability-policies-2026 / 登壇: Şebnem Kalemli-Özcan (Brown University)\, Gaston Gelos (BIS)
+DESCRIPTION:アイルランド中央銀行、UCD、CEPRが共催する、マクロプルーデンス・金融安定政策に関する研究会議。金利変動、地政学・貿易の緊張、ノンバンク金融の拡大などを論点とする。 / 主催: Central Bank of Ireland\, University College Dublin\, CEPR / https://www.centralbank.ie/events/2026/11/30/default-calendar/conference-on-macro-finance-and-financial-stability-policies-2026 / 登壇: Şebnem Kalemli-Özcan (Brown University)\, Gaston Gelos (BIS)
 END:VEVENT
 BEGIN:VEVENT
 UID:c8dccdaec541a1e9@seminar-radar
@@ -1945,7 +1945,7 @@ DTSTART;VALUE=DATE:20270223
 DTEND;VALUE=DATE:20270224
 SUMMARY:Germany’s economic outlook: Investment\, competitiveness and fiscal priorities for 2027
 LOCATION:
-DESCRIPTION:ドイツは公共投資の増加を持続的な成長に結びつけ、産業競争力を強化するという課題に直面している。その見通しと財政の優先課題を論じるオンライン円卓会議。 / 主催: OMFIF / https://www.omfif.org/meetings/germanys-economic-outlook-investment-competitiveness-and-fiscal-priorities-for-2027/
+DESCRIPTION:ドイツは公共投資の増加を持続的な成長に結びつけ、産業競争力を強化するという課題に直面している。その見通しと財政の優先課題を論じるオンライン円卓会議。 / 主催: OMFIF / https://www.omfif.org/meetings/germanys-economic-outlook-investment-competitiveness-and-fiscal-priorities-for-2027/ / 登壇: Steffen Meyer (BMF)
 END:VEVENT
 BEGIN:VEVENT
 UID:9c411defe45a4327@seminar-radar
@@ -1953,6 +1953,22 @@ DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Who creates\, who captures? Value\, power\, and the future of digital ecosystems
 LOCATION:London
-DESCRIPTION:デジタル・エコシステムにおいて価値がどのように生まれ、誰がそれを獲得し、権力がどこに集まるのかを論じる講演。 / 主催: Imperial Business School / https://www.imperial.ac.uk/events/212662/who-creates-who-captures-value-power-and-the-future-of-digital-ecosystems/
+DESCRIPTION:デジタル・エコシステムにおいて価値がどのように生まれ、誰がそれを獲得し、権力がどこに集まるのかを論じる講演。 / 主催: Imperial Business School / https://www.imperial.ac.uk/events/212662/who-creates-who-captures-value-power-and-the-future-of-digital-ecosystems/ / 登壇: Tobias Kretschmer (Imperial)
+END:VEVENT
+BEGIN:VEVENT
+UID:91418989c1c599e4@seminar-radar
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Global webinar: Key themes for 2027
+LOCATION:
+DESCRIPTION:Oxford Economicsのエコノミストが2027年の世界経済見通しを解説するオンラインウェビナー。AIブーム、根強いインフレ、財政懸念を取り上げ、質疑応答を設ける。 / 主催: Oxford Economics / https://www.oxfordeconomics.com/webinar/global-webinar-key-themes-for-2027/ / 登壇: Ryan Sweet (Oxford Economics)\, Louise Loo (Oxford Economics)\, Ben May (Oxford Economics)\, Bernard Yaros (Oxford Economics)\, Ángel Talavera (Oxford Economics)
+END:VEVENT
+BEGIN:VEVENT
+UID:f71a1829c7f2fea0@seminar-radar
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270205
+SUMMARY:European banking resilience: Strengthening resolution and crisis preparedness
+LOCATION:
+DESCRIPTION:欧州の銀行部門の強化と金融統合の深化を背景に、破綻処理と危機への備えを議論するOMFIFのオンライン円卓会議。 / 主催: OMFIF / https://www.omfif.org/meetings/european-banking-resilience-strengthening-resolution-and-crisis-preparedness/
 END:VEVENT
 END:VCALENDAR

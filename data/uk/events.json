@@ -6632,14 +6632,14 @@
    "notable_tier": 2
   },
   {
-   "title": "Central Bank of Ireland, UCD, CEPR Conference on Macro-Finance and Financial Stability Policies 2026",
-   "title_ja": "マクロ金融と金融安定政策会議2026(ダブリン)",
-   "organizer": "Central Bank of Ireland / University College Dublin / CEPR",
+   "title": "Conference on Macro-Finance and Financial Stability Policies 2026",
+   "title_ja": "マクロ金融・金融安定政策会議2026",
+   "organizer": "Central Bank of Ireland, University College Dublin, CEPR",
    "date_start": "2026-11-30",
    "date_end": "2026-12-01",
-   "time": "09:00",
+   "time": "10:15",
    "city": "Dublin",
-   "venue": null,
+   "venue": "Central Bank of Ireland, Dockland Campus",
    "format": "onsite",
    "themes": [
     "fin_markets",
@@ -6651,13 +6651,13 @@
    "registration_note": "CEPR HUB経由で参加申請(無料・論文公募型)",
    "registration_note_en": "Apply to attend via the CEPR HUB; no registration fee (call-for-papers conference)",
    "registration_note_de": "Teilnahmeantrag über den CEPR HUB; keine Teilnahmegebühr (Konferenz mit Call for Papers)",
-   "url": "https://www.centralbank.ie/events/event-detail/2026/11/30/default-calendar/conference-on-macro-finance-and-financial-stability-policies-2026",
-   "summary_ja": "アイルランド中央銀行・UCD・CEPR共催のマクロ金融・金融安定政策に関する研究会議。地政学リスク・ノンバンク・マクロプルーデンス政策の較正・企業金融を主題に、Kalemli-ÖzcanとGelos(BIS)が基調講演を行う。",
-   "summary_en": "Research conference of the Central Bank of Ireland, UCD and CEPR on macro-finance and financial stability policy, covering geopolitical risk, non-bank intermediaries, macroprudential calibration and firm financing, with keynotes by Şebnem Kalemli-Özcan and Gaston Gelos (BIS).",
-   "summary_de": "Forschungskonferenz der irischen Zentralbank, des UCD und des CEPR zu Makrofinanz und Finanzstabilitätspolitik: geopolitische Risiken, Nichtbanken, Kalibrierung makroprudenzieller Instrumente und Unternehmensfinanzierung; Keynotes von Şebnem Kalemli-Özcan und Gaston Gelos (BIZ).",
+   "url": "https://www.centralbank.ie/events/2026/11/30/default-calendar/conference-on-macro-finance-and-financial-stability-policies-2026",
+   "summary_ja": "アイルランド中央銀行、UCD、CEPRが共催する、マクロプルーデンス・金融安定政策に関する研究会議。金利変動、地政学・貿易の緊張、ノンバンク金融の拡大などを論点とする。",
+   "summary_en": "Research conference on macroprudential and financial stability policy co-organised by the Central Bank of Ireland, UCD and CEPR, addressing shifting interest rates, geopolitical and trade tensions and the growth of non-bank financial intermediation.",
+   "summary_de": "Forschungskonferenz zu makroprudenzieller Politik und Finanzstabilität, gemeinsam von der irischen Zentralbank, UCD und CEPR veranstaltet; Themen sind u. a. Zinsänderungen, geopolitische Spannungen und das Wachstum der Nichtbanken.",
    "language": "en",
    "country": "IE",
-   "organizer_short": "Central Bank of Ireland/UCD/CEPR",
+   "organizer_short": "Central Bank of Ireland+",
    "title_short": "Macro-Finance and Financial Stability",
    "importance": 2,
    "registration_url": "https://hub.cepr.org/event/5240/step1",
@@ -20805,7 +20805,13 @@
    "organizer_short": "OMFIF",
    "title_short": "Germany Economic Outlook",
    "importance": 1,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Steffen Meyer",
+     "org": "BMF",
+     "role": "State Secretary"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "6ff8da4693c751dd",
    "first_seen": "2026-11-26",
@@ -20842,7 +20848,13 @@
    "importance": 1,
    "registration_url": null,
    "time_end": "18:30",
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Tobias Kretschmer",
+     "org": "Imperial",
+     "role": "Professor of Strategy, Technology and Organisation"
+    }
+   ],
    "source": "Imperial College Business School – Events",
    "id": "9c411defe45a4327",
    "first_seen": "2026-11-26",
@@ -20975,6 +20987,278 @@
    "source": "Warwick – Department of Economics – Events",
    "id": "fd036d27bd8dfcd6",
    "first_seen": "2026-11-26",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Virginia Work Requirements Experiment",
+   "title_ja": "バージニア州の就労要件実験",
+   "organizer": "CEP/STICERD",
+   "date_start": "2026-11-30",
+   "date_end": null,
+   "time": "12:00",
+   "time_end": "13:30",
+   "city": "London",
+   "venue": "SAL 1.04, 1st Floor Conference Room, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10931",
+   "summary_ja": "就労要件と社会扶助の関係を、米バージニア州の就労要件実験の知見から検証する研究報告。",
+   "summary_en": "A seminar presenting evidence from the Virginia work requirements experiment on the link between work and social assistance.",
+   "summary_de": "Seminar mit Befunden zum Virginia-Experiment über Arbeitspflichten und Sozialhilfe.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Virginia Work Requirements Experiment",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Tim Layton",
+     "org": "UVA",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "5d189bd780f7570d",
+   "first_seen": "2026-11-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Global webinar: Key themes for 2027",
+   "title_ja": "グローバルウェビナー:2027年の主要テーマ",
+   "organizer": "Oxford Economics",
+   "date_start": "2026-11-30",
+   "date_end": null,
+   "time": "14:00",
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "事前登録が必要(ON24)。2回開催(11/30 14:00 GMT、12/1 香港時間10:00)",
+   "registration_note_en": "Registration required (ON24). Two sessions: 30 Nov 14:00 GMT and 1 Dec 10:00 HKT",
+   "registration_note_de": "Anmeldung erforderlich (ON24). Zwei Sitzungen: 30. Nov 14:00 GMT und 1. Dez 10:00 HKT",
+   "registration_url": null,
+   "url": "https://www.oxfordeconomics.com/webinar/global-webinar-key-themes-for-2027/",
+   "summary_ja": "Oxford Economicsのエコノミストが2027年の世界経済見通しを解説するオンラインウェビナー。AIブーム、根強いインフレ、財政懸念を取り上げ、質疑応答を設ける。",
+   "summary_en": "Oxford Economics economists present their core expectations for the global economy in 2027, covering the AI boom, persistent inflation and fiscal concerns, with an extended audience Q&A.",
+   "summary_de": "Ökonomen von Oxford Economics stellen ihre Kernerwartungen für die Weltwirtschaft 2027 vor, darunter KI-Boom, anhaltende Inflation und Haushaltsrisiken, mit ausführlicher Fragerunde.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "Oxford Economics",
+   "title_short": "Global Outlook for 2027",
+   "importance": 1,
+   "speakers": [
+    {
+     "name": "Ryan Sweet",
+     "org": "Oxford Economics",
+     "role": "Chief Global Economist"
+    },
+    {
+     "name": "Louise Loo",
+     "org": "Oxford Economics",
+     "role": "Head of Asia Economics"
+    },
+    {
+     "name": "Ben May",
+     "org": "Oxford Economics",
+     "role": "Director, Macro Forecasting & Analysis"
+    },
+    {
+     "name": "Bernard Yaros",
+     "org": "Oxford Economics",
+     "role": "Deputy Chief US Economist"
+    },
+    {
+     "name": "Ángel Talavera",
+     "org": "Oxford Economics",
+     "role": "Chief European Economist"
+    }
+   ],
+   "source": "web検索(discovery)",
+   "id": "91418989c1c599e4",
+   "first_seen": "2026-11-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "The Turing Valley: How AI Capabilities Shape Labor Income",
+   "title_ja": "AI能力と労働所得（Turing Valley）",
+   "organizer": "Centre for Economic Performance (CEP)",
+   "date_start": "2026-12-03",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "city": "London",
+   "venue": "MAR 6.33, 6th floor, The Marshall Building",
+   "format": "onsite",
+   "themes": [
+    "ai"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=11010",
+   "summary_ja": "AIの能力が労働所得をどう形作るかを扱う、競争・イノベーション研究セミナーの報告。",
+   "summary_en": "A seminar on how AI capabilities shape labour income, part of the CEP capabilities, competition and innovation series.",
+   "summary_de": "Seminar darüber, wie KI-Fähigkeiten das Arbeitseinkommen prägen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "AI and Labor Income",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Eduard Talamas",
+     "org": "IESE",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "cd26e3d880e9e013",
+   "first_seen": "2026-11-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Why Adults Study: Selection and Returns to Adult Education",
+   "title_ja": "成人教育の選択と収益率",
+   "organizer": "Centre for Economic Performance (CEP)",
+   "date_start": "2026-12-08",
+   "date_end": null,
+   "time": "13:30",
+   "time_end": "14:45",
+   "city": "London",
+   "venue": "SAL 2.04, 2nd Floor Conference Room, Sir Arthur Lewis Building, LSE",
+   "format": "hybrid",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://cep.lse.ac.uk/_new/events/event.asp?index=10936",
+   "summary_ja": "成人教育に誰が参加するか（選択）とその収益率を分析する、労働・教育セミナーの報告。",
+   "summary_en": "A seminar analysing who selects into adult education and what returns it yields.",
+   "summary_de": "Seminar zur Selektion in die Erwachsenenbildung und deren Erträgen.",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "CEP",
+   "title_short": "Adult Education Returns",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Hanna Virtanen",
+     "org": "ETLA",
+     "role": null
+    }
+   ],
+   "source": "LSE – Centre for Economic Performance (CEP) – Events",
+   "id": "d99ca0b8f8fe9e15",
+   "first_seen": "2026-11-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "Applied & Development Seminar - Clement Imbert (Science Po)",
+   "title_ja": "応用・開発経済学セミナー(Imbert報告)",
+   "organizer": "University of Warwick, Department of Economics",
+   "date_start": "2027-03-09",
+   "date_end": null,
+   "time": "14:15",
+   "time_end": "15:30",
+   "city": "Coventry",
+   "venue": "S2.79",
+   "format": "onsite",
+   "themes": [
+    "real_economy"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a00dae0b01a00edae12f0139",
+   "summary_ja": "ワーウィック大学経済学部の応用・開発経済学セミナーで、Clement Imbert(Sciences Po)が研究報告を行う。",
+   "summary_en": "Applied and development economics seminar at the University of Warwick Department of Economics, with a research presentation by Clement Imbert (Sciences Po).",
+   "summary_de": "Seminar zur angewandten und Entwicklungsökonomik an der Universität Warwick (Fachbereich Volkswirtschaftslehre) mit einem Forschungsvortrag von Clement Imbert (Sciences Po).",
+   "language": "en",
+   "country": "GB",
+   "organizer_short": "Warwick",
+   "title_short": "Applied Development Economics Research",
+   "importance": 0,
+   "speakers": [
+    {
+     "name": "Clement Imbert",
+     "org": "Sciences Po",
+     "role": null
+    }
+   ],
+   "source": "Warwick – Department of Economics – Events",
+   "id": "db086958e222c5ce",
+   "first_seen": "2026-11-27",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title": "European banking resilience: Strengthening resolution and crisis preparedness",
+   "title_ja": "欧州銀行の耐性:破綻処理と危機への備え",
+   "organizer": "OMFIF",
+   "date_start": "2027-02-04",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "city": null,
+   "venue": null,
+   "format": "online",
+   "themes": [
+    "fin_markets"
+   ],
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "要事前登録",
+   "registration_note_en": "Advance registration required",
+   "registration_note_de": "Anmeldung erforderlich",
+   "registration_url": null,
+   "url": "https://www.omfif.org/meetings/european-banking-resilience-strengthening-resolution-and-crisis-preparedness/",
+   "summary_ja": "欧州の銀行部門の強化と金融統合の深化を背景に、破綻処理と危機への備えを議論するOMFIFのオンライン円卓会議。",
+   "summary_en": "Virtual roundtable hosted by OMFIF on strengthening European bank resolution and crisis preparedness as Europe deepens financial integration.",
+   "summary_de": "Virtuelle Runde von OMFIF zur Stärkung der Abwicklung und Krisenvorsorge im europäischen Bankensektor bei vertiefter Finanzintegration.",
+   "language": "en",
+   "country": null,
+   "organizer_short": "OMFIF",
+   "title_short": "European Banking Crisis Preparedness",
+   "importance": 1,
+   "speakers": [],
+   "source": "OMFIF – Events/Meetings",
+   "id": "f71a1829c7f2fea0",
+   "first_seen": "2026-11-27",
    "notables": [],
    "notable_tier": null
   }
