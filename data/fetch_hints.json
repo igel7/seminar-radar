@@ -396,5 +396,22 @@
   ],
   "note": "2026-11-18: ua-curlで/tags/webinarと/eventsが200。/events に今後のイベント一覧(日付付き)があり有効。個別ページはWebFetchで取得可。新規2件採用。",
   "last_ok": "2026-11-18"
+ },
+ "DNB – De Nederlandsche Bank – Research Seminars": {
+  "method": "chromium",
+  "render": "chromium",
+  "alt_urls": [
+   "https://www.dnb.nl/en/research/dnb-research-conferences/other-conferences-and-workshops/",
+   "https://www.dnb.nl/en/research/dnb-research-conferences/annual-research-conferences/"
+  ],
+  "last_ok": "2026-11-27",
+  "note": "2026-11-27: 定点追加時の検証。curl/ua-curl は全ページ 403(Akamai)。headless Chromium(--wait 5000)でセミナー一覧・会議2ページとも描画できた。セミナーは表形式で日付に年が付かない(見出しの年を使う)。個別ページは無い。",
+  "no_detail_pages": true
+ },
+ "HCSS – The Hague Centre for Strategic Studies – Events": {
+  "method": "chromium",
+  "render": "chromium",
+  "last_ok": "2026-11-27",
+  "note": "2026-11-27: 定点追加時の検証。ua-curl は 403。headless Chromium(--wait 6000)で今後のイベント(日時・会場付き)と過去分の一覧が描画できた。"
  }
 }
