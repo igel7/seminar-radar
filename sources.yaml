@@ -461,8 +461,7 @@ sources:
 
   # --- 追加: オランダ(2026-11-27 ユーザー指示で対象地域に追加。アムステルダム中心) ---
   # verified は 2026-11-27 にこの実行環境から実取得し、日付付きの今後のイベントが読めた結果。
-  # 取得できず見送ったもの: Clingendael(Chromium でもボット検証ページ)、Sustainable Finance Lab
-  # (Anubis のチャレンジ)、Netspar・SEO・KVS・VU SBE(今後の予定が載る一覧を特定できず)。
+  # 取得できず見送ったもの: Sustainable Finance Lab(Anubis のチャレンジ)、Netspar・SEO・KVS・VU SBE(今後の予定が載る一覧を特定できず)。
   # Erasmus School of Economics・VU のセミナーは Tinbergen Institute の一覧に含まれるため別建てにしない。
   - name: "DNB – De Nederlandsche Bank – Research Seminars"
     url: "https://www.dnb.nl/en/research/research-seminars/"
@@ -498,6 +497,12 @@ sources:
     url: "https://leidenasiacentre.nl/events/"
     category: tt
     verified: true    # 静的。中国・日本・アジア関連の講演(オランダ語の回あり)
+
+  # 2026-11-27 ユーザー指示で追加(取得不可を承知の上で定点に入れる)。
+  - name: "Clingendael – Netherlands Institute of International Relations – Events"
+    url: "https://www.clingendael.org/events"
+    category: tt
+    verified: false   # 2026-11-27: curl は 403、headless Chromium でもボット検証ページ(268字)のみ。site:clingendael.org 検索補完か INBOX
 
 
   # ============================================================
@@ -798,7 +803,7 @@ discovery_topics:
   - "省庁・規制当局・業界団体・メディア主催の単発イベント(サミット、年次会議、パネル討論)。例: BMF BMWK Konferenz, Bankenverband Veranstaltung, finance summit Germany 2026"
   - "中東欧・バルカン・バルトの中央銀行の研究セミナー・年次会議(例: NBR BEARS seminar, Eesti Pank research seminar, Banka Slovenije seminar, CBBH research seminar, National Bank of Serbia seminar, central bank research conference CEE)"
   - "クロアチア中銀(HNB)の旗艦会議。HNB の一覧ページはサイト側の検索 API 不調で読めないため(2026-10-22 確認)、INOMICS 等の外部掲載から拾う(例: site:inomics.com Dubrovnik Economic Conference, site:inomics.com Young Economists' Seminar HNB, Dubrovnik Economic Conference 2027 call for papers, site:hnb.hr/documents call-for-papers)。毎年5月末〜6月中旬のドブロヴニク開催・importance 3。call for papers 段階でも開催日が明記されていれば収載する"
-  - "オランダの中央銀行・シンクタンク・大学の会議やセミナー(例: DNB conference, Clingendael event, Netspar event, Sustainable Finance Lab, SUERF Amsterdam, Amsterdam economics conference, CPB lecture)。Clingendael 等は定点で取得できないため検索で補う。2026-11-27 追加"
+  - "オランダの中央銀行・シンクタンク・大学の会議やセミナー(例: DNB conference, Clingendael event, Netspar event, Sustainable Finance Lab, SUERF Amsterdam, Amsterdam economics conference, CPB lecture)。Clingendael は定点にあるがボット対策で取得できないことが多く、検索で補う。2026-11-27 追加"
   - "中東欧の大型政策・安全保障・経済フォーラム(例: Economic Forum Karpacz, Bled Strategic Forum, Warsaw Security Forum, GLOBSEC, IISS Prague Defence Summit, MSPO defence exhibition)。防衛・地経学はテーマ②・④に直結"
   - "デジタルユーロ・CBDC・決済インフラに関するイベントやウェビナー(例: digital euro webinar, CBDC conference, Zahlungsverkehr Veranstaltung, ECB digital euro information session)"
   - "巡回がブロックされがちな定点先の今後のイベントを検索で直接補完する(例: SUERF conference 2026, Frankfurt School Konferenz, Hertie School event, site:nbp.pl conference seminar, Bank of Lithuania conference, site:lb.lt events, European Payments Council event, Bank of Albania conference)。検索結果のイベント個別ページから日付・場所が確認できたものだけ収載する"
