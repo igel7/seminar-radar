@@ -503,6 +503,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/eu-to-go-big-plans-tight-budgets": {
+  "event_id": "6acb55f12cf69e28",
+  "http": 200,
+  "last": "2026-11-27",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.delorscentre.eu/en/events-at-the-jacques-delors-centre/detail/event/public-panel-writing-europes-next-chapter-a-franco-german-outline": {
   "event_id": "346564a8927a9491",
   "http": 200,
@@ -571,6 +578,13 @@
   "http": 403,
   "last": "2026-10-16",
   "result": "FAIL-BLOCKED",
+  "tries": 1
+ },
+ "https://www.diw.de/de/diw_01.c.1026593.de/veranstaltungen/wettbewerb_und_kuenstliche_intelligenz__was_sich_in_europa_aendern_muss.html": {
+  "event_id": "b12c38fa86eade80",
+  "http": 200,
+  "last": "2026-11-27",
+  "result": "ok",
   "tries": 1
  },
  "https://www.djw.de/de/veranstaltungen/djw-veranstaltungen/86-deutsch-japanische-wirtschaftsgespraeche": {
@@ -1129,9 +1143,9 @@
  "https://www.mcdermottlaw.com": {
   "event_id": "a85bc6fc79f41170",
   "http": 403,
-  "last": "2026-11-21",
+  "last": "2026-11-27",
   "result": "FAIL-BLOCKED",
-  "tries": 1
+  "tries": 2
  },
  "https://www.mnb.hu/en/the-central-bank/conferences/budapest-renminbi-initiative-conference/budapest-renminbi-initiative-conference-2026": {
   "event_id": "8e6745d3afb58874",
@@ -1168,6 +1182,13 @@
   "result": "ok",
   "tries": 1
  },
+ "https://www.omfif.org/meetings/cop31-in-review-the-path-forward-without-consensus": {
+  "event_id": "2e25c004136b750e",
+  "http": 200,
+  "last": "2026-11-27",
+  "result": "ok",
+  "tries": 1
+ },
  "https://www.omfif.org/meetings/democrats-midterm-victory-and-the-future-of-us-sustainable-finance": {
   "event_id": "7c4c18d357a7b7e8",
   "http": 200,
@@ -1193,6 +1214,13 @@
   "event_id": "35c49c778013342a",
   "http": 200,
   "last": "2026-10-26",
+  "result": "ok",
+  "tries": 1
+ },
+ "https://www.omfif.org/meetings/germanys-economic-outlook-investment-competitiveness-and-fiscal-priorities-for-2027": {
+  "event_id": "6ff8da4693c751dd",
+  "http": 200,
+  "last": "2026-11-27",
   "result": "ok",
   "tries": 1
  },
