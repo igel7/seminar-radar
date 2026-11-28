@@ -1,8 +1,142 @@
 [
  {
   "date": "2026-11-28",
-  "added": [],
-  "updated": []
+  "added": [
+   {
+    "id": "827cdaaf8acb6a56",
+    "title": "RBC Macro & Markets Conference: Central Banks in the Spotlight: Policy, Politics & the Path Ahead",
+    "title_ja": "RBCマクロ&マーケッツ会議「脚光を浴びる中央銀行」",
+    "title_short": "Central Banks Under Scrutiny",
+    "importance": 2,
+    "organizer_short": "RBC",
+    "date_start": "2026-12-02",
+    "date_end": null,
+    "city": "London",
+    "url": "https://www.bankofengland.co.uk/events/upcoming-events"
+   },
+   {
+    "id": "d91b3ee52afee3ff",
+    "title": "UK Policy Series: The Roadmap to Tokenised Markets",
+    "title_ja": "英国政策シリーズ「トークン化市場へのロードマップ」",
+    "title_short": "Tokenised Markets Roadmap",
+    "importance": 2,
+    "organizer_short": "FCA/BoE",
+    "date_start": "2026-12-07",
+    "date_end": null,
+    "city": "London",
+    "url": "https://go.bloomberg.com/attend/invite/uk-policy-series-the-roadmap-to-tokenised-markets/"
+   },
+   {
+    "id": "bc2c3e0fa5baceb8",
+    "title": "CLS FX Market Leaders Shaping FX event",
+    "title_ja": "CLS FX市場リーダーズ・イベント",
+    "title_short": "FX Market Leaders Event",
+    "importance": 1,
+    "organizer_short": "CLS",
+    "date_start": "2026-12-09",
+    "date_end": null,
+    "city": "London",
+    "url": "https://www.bankofengland.co.uk/speech/2026/december/victoria-cleland-cls-fx-market-leaders-shaping-fx-event-london"
+   },
+   {
+    "id": "86d3d8de8d000c27",
+    "title": "Macro/International Economics Seminar - Zhang Chen (UoHong Kong)",
+    "title_ja": "マクロ・国際経済セミナー: Zhang Chen（香港大学）",
+    "title_short": "Macro and International Economics",
+    "importance": 0,
+    "organizer_short": "Warwick",
+    "date_start": "2027-03-04",
+    "date_end": null,
+    "city": "Coventry",
+    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c4a00dae0f01a00f17839202d7"
+   },
+   {
+    "id": "f573bdbeaa7b3c83",
+    "title": "EBER Seminar - Katie Coffman (HBS)",
+    "title_ja": "EBERセミナー: Katie Coffman（HBS）",
+    "title_short": "Economic Research Seminar",
+    "importance": 0,
+    "organizer_short": "Warwick",
+    "date_start": "2027-03-04",
+    "date_end": null,
+    "city": "Coventry",
+    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a00dae0b01a01053a0e71072"
+   },
+   {
+    "id": "ab45d447b3246447",
+    "title": "UK Women in Finance Workshop 2027",
+    "title_ja": "英国女性ファイナンス研究者ワークショップ2027",
+    "title_short": "Women in Finance Research",
+    "importance": 1,
+    "organizer_short": "Bath SoM",
+    "date_start": "2027-05-17",
+    "date_end": null,
+    "city": "Bath",
+    "url": "https://www.bath.ac.uk/events/uk-women-in-finance-workshop-2027/"
+   },
+   {
+    "id": "6412712fbfa744ad",
+    "title": "The drivers of growth in the 21st century",
+    "title_ja": "21世紀の成長の原動力",
+    "title_short": "Drivers of Growth",
+    "importance": 2,
+    "organizer_short": "EBRD/Bayes",
+    "date_start": "2027-06-09",
+    "date_end": "2027-06-10",
+    "city": "London",
+    "url": "https://www.ebrd.com/home/news-and-events/news/events/The-drivers-of-growth-in-the-21st-century.html"
+   }
+  ],
+  "updated": [
+   {
+    "id": "87807dfbdf009642",
+    "title": "Applied & Development Seminar - Kate Smith (LSE)",
+    "title_ja": "応用・開発経済セミナー: Kate Smith（LSE）",
+    "title_short": "Earnings Risk and Entrepreneurship",
+    "importance": 0,
+    "organizer_short": "Warwick",
+    "date_start": "2026-12-01",
+    "date_end": null,
+    "city": "Coventry",
+    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c6a206975901a20d1a33af698c",
+    "fields": [
+     "time"
+    ]
+   },
+   {
+    "id": "7f692f5e7c3c2415",
+    "title": "MIWP (Microeconomics Work in Progress) - Agustin Troccoli Moretti (Pompeu Fabra)",
+    "title_ja": "ミクロ経済学ワーク・イン・プログレス: Agustin Troccoli Moretti（UPF）",
+    "title_short": "Anxiety and Dynamic Choice",
+    "importance": 0,
+    "organizer_short": "Warwick",
+    "date_start": "2026-12-02",
+    "date_end": null,
+    "city": "Coventry",
+    "url": "https://warwick.ac.uk/fac/soc/economics/events/?calendarItem=8ac672c5a17b89ad01a17deacca167a9",
+    "fields": [
+     "format",
+     "venue"
+    ]
+   },
+   {
+    "id": "0154008d5b940ce1",
+    "title": "Guest Lecture: The economic consequences of conflict in Ukraine",
+    "title_ja": "ゲスト講演: ウクライナ紛争の経済的帰結",
+    "title_short": "Economic Costs of Ukraine War",
+    "importance": 1,
+    "organizer_short": "Warwick",
+    "date_start": "2026-12-02",
+    "date_end": null,
+    "city": "Coventry",
+    "url": "https://warwick.ac.uk/fac/soc/economics/events/2026/12/the_economic_consequences_of_russias_invasion_of_ukraine/",
+    "fields": [
+     "venue"
+    ]
+   }
+  ],
+  "end": "2026-11-28T06:50:21+01:00",
+  "start": "2026-11-28T06:45:53+01:00"
  },
  {
   "date": "2026-11-27",

@@ -38,15 +38,13 @@
   "name": "Bank of England – Upcoming external events involving Bank staff",
   "url": "https://www.bankofengland.co.uk/events/upcoming-events",
   "ok": true,
-  "found": 5,
-  "note": "2026-11-27 抽出"
+  "found": 8
  },
  {
   "name": "FCA – Financial Conduct Authority – Events",
   "url": "https://www.fca.org.uk/events",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 0
  },
  {
   "name": "NIESR – National Institute of Economic and Social Research – Events",
@@ -60,14 +58,13 @@
   "url": "https://ifs.org.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "CEPR – Centre for Economic Policy Research – Events",
   "url": "https://cepr.org/events",
   "ok": true,
-  "found": 12,
-  "note": "2026-11-27 抽出"
+  "found": 44
  },
  {
   "name": "Resolution Foundation – Events",
@@ -80,64 +77,59 @@
   "name": "Institute for Government – Events",
   "url": "https://www.instituteforgovernment.org.uk/our-events",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-27 抽出"
+  "found": 1
  },
  {
   "name": "CER – Centre for European Reform – Events",
   "url": "https://www.cer.eu/events",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 0
  },
  {
   "name": "Chatham House – Events",
   "url": "https://www.chathamhouse.org/events",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "RUSI – Royal United Services Institute – Events",
   "url": "https://my.rusi.org/events.html",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "IISS – International Institute for Strategic Studies – Events",
   "url": "https://www.iiss.org/events/",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "Policy Exchange – Events",
   "url": "https://policyexchange.org.uk/events/",
   "ok": false,
   "found": 0,
-  "error": "NET-ERR。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "Grantham Research Institute (LSE) – Events",
   "url": "https://www.lse.ac.uk/granthaminstitute/events/",
   "ok": true,
-  "found": 2,
-  "note": "2026-11-27 抽出"
+  "found": 2
  },
  {
   "name": "E3G – Latest (events are mixed into the news feed)",
   "url": "https://www.e3g.org/latest/",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 0
  },
  {
   "name": "LSE – Public events (Search)",
   "url": "https://www.lse.ac.uk/Events/Search-Events",
   "ok": true,
-  "found": 3,
-  "note": "2026-11-27 抽出"
+  "found": 12
  },
  {
   "name": "LSE – Centre for Macroeconomics (CFM) – Events",
@@ -150,8 +142,7 @@
   "name": "LSE – Financial Markets Group (FMG) – Events",
   "url": "https://www.fmg.ac.uk/events",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 0
  },
  {
   "name": "LSE – Systemic Risk Centre (SRC) – Events",
@@ -164,15 +155,14 @@
   "name": "LSE – Centre for Economic Performance (CEP) – Events",
   "url": "https://cep.lse.ac.uk/_new/events/",
   "ok": true,
-  "found": 25,
-  "note": "2026-11-27 抽出"
+  "found": 25
  },
  {
   "name": "Oxford – Saïd Business School – Events",
   "url": "https://www.sbs.ox.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "Oxford Martin School – Events",
@@ -184,9 +174,9 @@
  {
   "name": "Cambridge Judge Business School – Events",
   "url": "https://www.jbs.cam.ac.uk/events/",
-  "ok": true,
+  "ok": false,
   "found": 0,
-  "note": "2026-11-27 抽出"
+  "error": "キャッシュにイベント一覧なし(ナビ・記事のみ)。tried: fetch, hints"
  },
  {
   "name": "Bennett School of Public Policy (Cambridge) – Events",
@@ -206,15 +196,13 @@
   "name": "Imperial College Business School – Events",
   "url": "https://www.imperial.ac.uk/business-school/events/",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-27 抽出"
+  "found": 1
  },
  {
   "name": "Warwick – Department of Economics – Events",
   "url": "https://warwick.ac.uk/fac/soc/economics/events/",
   "ok": true,
-  "found": 25,
-  "note": "2026-11-27 抽出"
+  "found": 31
  },
  {
   "name": "Warwick Business School – Events",
@@ -228,7 +216,7 @@
   "url": "https://www.bayes.citystgeorges.ac.uk/events",
   "ok": false,
   "found": 0,
-  "error": "403。tried: fetch, ua-curl, hints, search"
+  "error": "403/接続不可(ボット対策)。tried: fetch, hints, search(discovery)。UA付きcurlは実行環境の権限拒否で未実施"
  },
  {
   "name": "MMF – Money Macro and Finance Society",
@@ -241,22 +229,19 @@
   "name": "IEA – Institute of Economic Affairs – Upcoming events",
   "url": "https://iea.org.uk/events-upcoming/",
   "ok": true,
-  "found": 1,
-  "note": "変化なし(差分検知によりスキップ)"
+  "found": 1
  },
  {
   "name": "UK in a Changing Europe (UKICE) – Events",
   "url": "https://ukandeu.ac.uk/all-events/",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 0
  },
  {
   "name": "Central Bank of Ireland – Upcoming events",
   "url": "https://www.centralbank.ie/events/upcoming-events",
   "ok": true,
-  "found": 6,
-  "note": "2026-11-25 抽出"
+  "found": 5
  },
  {
   "name": "ESRI – Economic and Social Research Institute (Dublin) – Events",
@@ -297,8 +282,7 @@
   "name": "ICMA – International Capital Market Association – Events",
   "url": "https://www.icmagroup.org/events/",
   "ok": true,
-  "found": 4,
-  "note": "2026-11-27 抽出"
+  "found": 3
  },
  {
   "name": "ISDA – Events",
@@ -311,15 +295,13 @@
   "name": "Daiwa Anglo-Japanese Foundation – Events",
   "url": "https://dajf.org.uk/events",
   "ok": true,
-  "found": 1,
-  "note": "2026-11-27 抽出"
+  "found": 2
  },
  {
   "name": "Japan Society (London) – Events",
   "url": "https://www.japansociety.org.uk/events",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 6
  },
  {
   "name": "JETRO London – Events",
@@ -366,36 +348,32 @@
  {
   "name": "Suomen Pankki – Bank of Finland – Events calendar",
   "url": "https://www.suomenpankki.fi/en/news-and-topical/events/calendar/",
-  "ok": false,
-  "found": 0,
-  "error": "サイト障害告知ページのみ(ソフト404相当)。tried: fetch, chromium-render(redirect info.suomenpankki.fi), search"
+  "ok": true,
+  "found": 8
  },
  {
   "name": "Seðlabanki Íslands – Central Bank of Iceland",
   "url": "https://cb.is/",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-27 抽出"
+  "found": 0
  },
  {
   "name": "PRA – Prudential Regulation Authority – Publications RSS",
   "url": "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-25 抽出"
+  "found": 0
  },
  {
   "name": "web検索(discovery)",
   "url": "",
   "ok": true,
-  "found": 17,
-  "note": "候補約17件、新規採用2件(RES 2027は掲載元が第三者サイトのため見送り)"
+  "found": 20,
+  "note": "候補約20件中2件を新規採用。他は既知または未確認"
  },
  {
   "name": "手動取込",
   "url": "",
   "ok": true,
-  "found": 0,
-  "note": "2026-11-21"
+  "found": 0
  }
 ]
