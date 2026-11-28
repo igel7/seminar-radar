@@ -2390,41 +2390,6 @@
    "notable_tier": null
   },
   {
-   "title": "8. Frankfurter Regulierungskonferenz",
-   "title_ja": "第8回フランクフルト規制会議",
-   "organizer": "Frankfurt Competence Centre for German and Global Regulation (FCCR), Frankfurt School of Finance & Management",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "09:00",
-   "city": "Frankfurt am Main",
-   "venue": "Frankfurt School of Finance & Management, Adickesallee 32-34",
-   "format": "onsite",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "paid",
-   "open_to_public": true,
-   "registration_note": "金融規制対話のための年次フォーラム。詳細はFCCRに問合せ。",
-   "url": "https://fccr.frankfurt-school.de/8-frankfurter-regulierungskonferenz-2026/",
-   "summary_ja": "金融規制に関する政界・産業界・規制当局の対話の場となる、フランクフルト・スクール主催の年次会議。",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "FCCR",
-   "title_short": "Financial regulation conference",
-   "importance": 2,
-   "registration_url": "https://www.eventbrite.de/e/8-frankfurter-regulierungskonferenz-2026-tickets-1786163947449",
-   "time_end": "17:00",
-   "source": "web検索(discovery)",
-   "id": "7552b9bd644a7a4c",
-   "first_seen": "2026-07-23",
-   "summary_en": "An annual conference hosted by Frankfurt School serving as a dialogue platform on financial regulation among business, politics and regulators.",
-   "summary_de": "Eine jährliche von der Frankfurt School ausgerichtete Konferenz als Dialogplattform zur Finanzregulierung zwischen Wirtschaft, Politik und Aufsicht.",
-   "registration_note_en": "Annual forum for regulatory dialogue; contact FCCR for details.",
-   "registration_note_de": "Jährliches Forum für den Regulierungsdialog; Details bei der FCCR erfragen.",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Empirical International Finance",
    "title_ja": "実証国際金融論",
    "organizer": "IfW Kiel",
@@ -4439,41 +4404,6 @@
    "notable_tier": null
   },
   {
-   "title": "Economics Research Seminar: Andreas Lichter (TU Dortmund) – The Role of Comparative Advantage in Shaping Economic Geography: Evidence from East Germany",
-   "title_ja": "WU経済学部定例セミナー",
-   "organizer": "WU Vienna, Department of Economics",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "14:00",
-   "city": "Vienna",
-   "venue": "WU Vienna",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "free",
-   "open_to_public": true,
-   "registration_note": "登録不要の経済学部定例研究セミナー",
-   "url": "https://www.wu.ac.at/en/economics/research/economics-research-seminar",
-   "summary_ja": "WU経済学部の定例研究セミナー。Andreas Lichter氏(TU Dortmund)が「The Role of Comparative Advantage in Shaping Economic Geography: Evidence from East Germany」を報告。",
-   "language": "en",
-   "country": "AT",
-   "organizer_short": "WU Wien",
-   "title_short": "WU Economics Research Seminar",
-   "importance": 1,
-   "registration_url": null,
-   "time_end": "15:30",
-   "source": "WU Wien (Wirtschaftsuniversität) – Events",
-   "id": "b462fea30ab10c2f",
-   "first_seen": "2026-07-27",
-   "summary_en": "Regular WU Department of Economics research seminar, with Andreas Lichter (TU Dortmund) presenting \"The Role of Comparative Advantage in Shaping Economic Geography: Evidence from East Germany\".",
-   "summary_de": "Reguläres Forschungsseminar des WU-Instituts für Volkswirtschaftslehre mit einem Vortrag von Andreas Lichter (TU Dortmund) zu „The Role of Comparative Advantage in Shaping Economic Geography: Evidence from East Germany“.",
-   "registration_note_en": "No registration required; regular Department of Economics research seminar.",
-   "registration_note_de": "Keine Anmeldung erforderlich; reguläres Forschungsseminar des Instituts für Volkswirtschaftslehre.",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Macro CRC TR 224 Seminar: Leonard Bocquet",
    "title_ja": "マクロ経済学セミナー:Leonard Bocquet",
    "organizer": "Universität Mannheim",
@@ -6070,7 +6000,14 @@
    "id": "770491402749b070",
    "first_seen": "2026-08-05",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Sebastian Horn",
+     "org": "University of Hamburg",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Data Leakage in Time-Series Forecasting",
@@ -7144,7 +7081,7 @@
    "venue": "Elinor Ostrom Hall, DIW Berlin",
    "format": "onsite",
    "themes": [
-    "central_bank"
+    "real_economy"
    ],
    "fee": "free",
    "fee_amount": null,
@@ -7167,7 +7104,14 @@
    "id": "18cbd5603addd115",
    "first_seen": "2026-08-23",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Tom D. Holden",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ]
   },
   {
    "title": "EURO FINANCE Tech Day 2026",
@@ -7370,7 +7314,14 @@
    "id": "75292bd778c9d9e6",
    "first_seen": "2026-08-23",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Andrej Mijakovic",
+     "org": "University of Mannheim",
+     "role": null
+    }
+   ]
   },
   {
    "title": "Berlin Macro Seminar – Shu Wang (University of Göttingen)",
@@ -7406,7 +7357,14 @@
    "id": "ae9623352e065e07",
    "first_seen": "2026-08-23",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Shu Wang",
+     "org": "University of Göttingen",
+     "role": null
+    }
+   ]
   },
   {
    "title": "12th Green Finance Forum",
@@ -7557,7 +7515,14 @@
    "id": "fec4cbc205d21c22",
    "first_seen": "2026-08-23",
    "notables": [],
-   "notable_tier": null
+   "notable_tier": null,
+   "speakers": [
+    {
+     "name": "Zeno Enders",
+     "org": "University of Heidelberg",
+     "role": null
+    }
+   ]
   },
   {
    "title": "ReBuild Ukraine 2026",
@@ -8228,44 +8193,6 @@
    ]
   },
   {
-   "title": "Investing in a Just Transition",
-   "title_ja": "公正な移行への投資",
-   "organizer": "Wirtschaftsuniversität Wien (WU Vienna)",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "18:00",
-   "time_end": "19:30",
-   "city": "Vienna",
-   "venue": "WU Vienna Campus",
-   "format": "onsite",
-   "themes": [
-    "climate_esg",
-    "geopolitics",
-    "fin_markets"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "対面イベント",
-   "registration_note_en": "On-site event",
-   "registration_note_de": "Präsenzveranstaltung",
-   "url": "https://www.wu.ac.at/en/the-university/events",
-   "registration_url": null,
-   "summary_ja": "サステナビリティ・地政学・法律の観点から、公正な移行への投資の課題と機会を検討するパネルディスカッション。",
-   "summary_en": "Panel discussion examining investment in a just transition through the lenses of sustainability, geopolitics, and law.",
-   "summary_de": "Podiumsdiskussion zu Investitionen in einen gerechten Übergang unter Berücksichtigung von Nachhaltigkeit, Geopolitik und Recht.",
-   "language": "en",
-   "country": "AT",
-   "organizer_short": "WU Wien",
-   "title_short": "Just Transition Investment",
-   "importance": 1,
-   "source": "WU Wien (Wirtschaftsuniversität) – Events",
-   "id": "b4392e04bdfb37dd",
-   "first_seen": "2026-09-10",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Chatham House Berlin Conference 2026",
    "title_ja": "チャタムハウス・ベルリン会議2026",
    "organizer": "Chatham House (Royal Institute of International Affairs)",
@@ -8421,43 +8348,6 @@
      "role": null
     }
    ],
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Exploring Nature Data #1 | Nature Value at Risk",
-   "title_ja": "自然データ探索#1",
-   "organizer": "Swiss Sustainable Finance",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "climate_esg",
-    "fin_markets"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "無料・要事前登録",
-   "registration_note_en": "Free, requires pre-registration",
-   "registration_note_de": "Kostenlos, Voranmeldung erforderlich",
-   "url": "https://www.globalcompact.ch/event-details/exploring-nature-data-part-1",
-   "summary_ja": "GIST Impactが開発したNature Value at Riskフレームワークを紹介し、生態系の劣化が経済成長と企業ポートフォリオに与える影響を定量化する方法を解説するウェビナー。",
-   "summary_en": "Webinar introducing the Nature Value at Risk framework developed by GIST Impact, demonstrating how ecosystem degradation impacts economic output and corporate portfolios.",
-   "summary_de": "Webinar zum von GIST Impact entwickelten Framework zur Bewertung von Naturrisiken, das zeigt, wie der Rückgang von Ökosystemen wirtschaftliche Auswirkungen hat.",
-   "language": "en",
-   "country": null,
-   "organizer_short": "SSF",
-   "title_short": "Nature Value Risk Assessment",
-   "importance": 1,
-   "registration_url": "https://www.globalcompact.ch/event-details/exploring-nature-data-part-1",
-   "time_end": null,
-   "source": "Swiss Sustainable Finance (SSF) – Upcoming Events",
-   "id": "316e66dc6cf7b84f",
-   "first_seen": "2026-09-11",
    "notables": [],
    "notable_tier": null
   },
@@ -9773,48 +9663,6 @@
    "notable_tier": null
   },
   {
-   "title": "Central Bank Losses and Inflation: 350 Years of Evidence",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "10:30",
-   "city": "Bratislava",
-   "venue": "NBS building, 8th floor meeting room",
-   "format": "hybrid",
-   "country": "SK",
-   "themes": [
-    "central_bank"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "現地・オンライン参加可。登録先research@nbs.sk",
-   "registration_note_en": "On-site or online participation. Register at research@nbs.sk",
-   "registration_note_de": "Teilnahme vor Ort oder online. Anmeldung unter research@nbs.sk",
-   "url": "https://nbs.sk/en/research-at-nbs/seminars-and-conferences/",
-   "registration_url": null,
-   "summary_ja": "中央銀行の損失がインフレーションに与える影響を分析するNBS研究セミナー。スウェーデン中銀の350年のデータを活用。",
-   "summary_en": "An NBS research seminar on how central bank losses affect inflation, using 350 years of data from the Swedish central bank.",
-   "summary_de": "Ein NBS-Forschungsseminar über die Auswirkungen von Zentralbankverlusten auf die Inflation, basierend auf 350 Jahren Daten der schwedischen Zentralbank.",
-   "language": "en",
-   "importance": 1,
-   "speakers": [
-    {
-     "name": "Martin Kliem",
-     "org": "Bundesbank",
-     "role": null
-    }
-   ],
-   "source": "NBS – Národná banka Slovenska – Events",
-   "organizer_short": "NBS",
-   "title_ja": "中央銀行損失とインフレーション",
-   "title_short": "Central Bank Losses and Inflation",
-   "time_end": null,
-   "id": "0e80feaf1f5ec5a0",
-   "first_seen": "2026-09-24",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Global Payment Fraud & Financial Crime Summit – Vienna 2026",
    "date_start": "2026-11-19",
    "date_end": null,
@@ -10404,43 +10252,6 @@
    "speakers": [],
    "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
    "id": "5fc407fce3557e53",
-   "first_seen": "2026-09-27",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Webinar Grüne Welt 100 pur – Nachhaltigkeit ohne Kompromisse",
-   "title_ja": "ウェビナー：グリーンワールド100",
-   "organizer": "Grüne Welt",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": null,
-   "city": null,
-   "venue": null,
-   "format": "online",
-   "themes": [
-    "climate_esg"
-   ],
-   "fee": "free",
-   "fee_amount": null,
-   "open_to_public": true,
-   "registration_note": "無料ウェビナー・要事前登録",
-   "registration_note_en": "Free webinar, advance registration required",
-   "registration_note_de": "Kostenloses Webinar, Anmeldung erforderlich",
-   "url": "https://www.forum-ng.org/en/termine/veranstaltung/gruene-welt-100-pur-nachhaltigkeit-ohne-kompromisse",
-   "summary_ja": "ESGスクリーニング・サステナブルファイナンスに関するウェビナー。",
-   "summary_en": "Webinar on ESG screening and sustainable finance strategies.",
-   "summary_de": "Webinar zu ESG-Screening und Nachhaltigkeitsfinanzierung.",
-   "language": "de",
-   "country": null,
-   "organizer_short": "Grüne Welt",
-   "title_short": "Sustainable Finance Webinar",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": null,
-   "speakers": [],
-   "source": "FNG – Forum Nachhaltige Geldanlagen (Berlin)",
-   "id": "a931050b0a0fe5d2",
    "first_seen": "2026-09-27",
    "notables": [],
    "notable_tier": null
@@ -13362,49 +13173,6 @@
    "notable_tier": null
   },
   {
-   "title": "Michaela Pagel (WUSTL): \"Opportunistic Borrowing in the Credit Card Market\"",
-   "title_ja": "クレジットカード市場での機会主義的借入",
-   "organizer": "ECONtribute",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "12:00",
-   "city": "Cologne",
-   "venue": "Studierenden-Service-Center, Room 3.206, Universitätsstraße 22a, University of Cologne",
-   "format": "onsite",
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://econtribute.de/event/michaela-pagel-wustl-tba/",
-   "summary_ja": "WUSTLのMichaela Pagel氏による研究セミナー。クレジットカード市場における機会主義的な借入行動を扱う。",
-   "summary_en": "Research seminar by Michaela Pagel (WUSTL) on opportunistic borrowing in the credit card market.",
-   "summary_de": "Forschungsseminar von Michaela Pagel (WUSTL) zu opportunistischer Kreditaufnahme auf dem Kreditkartenmarkt.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ECONtribute",
-   "title_short": "Credit Card Borrowing",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": "13:15",
-   "speakers": [
-    {
-     "name": "Michaela Pagel",
-     "org": "WUSTL",
-     "role": null
-    }
-   ],
-   "source": "ECONtribute (Bonn/Köln) – Events",
-   "id": "8d2af7ae51112089",
-   "first_seen": "2026-10-09",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Johannes Spinnewijn (LSE): \"tba\"",
    "title_ja": "ECONtribute講演：Spinnewijn",
    "organizer": "ECONtribute – Cluster of Excellence \"Markets & Public Policy\"",
@@ -13726,49 +13494,6 @@
    ],
    "source": "Universität Mannheim – 経済学部イベント/セミナー",
    "id": "bb89dae80a95167f",
-   "first_seen": "2026-10-09",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Michaela Pagel (Washington University St. Louis)",
-   "title_ja": "ECONtribute講演：Pagel",
-   "organizer": "ECONtribute – Cluster of Excellence \"Markets & Public Policy\"",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "12:00",
-   "city": null,
-   "venue": null,
-   "format": null,
-   "themes": [
-    "fin_markets"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://econtribute.de/event/michaela-pagel-washington-university-st-louis/",
-   "summary_ja": "Michaela Pagel氏（Washington University in St. Louis）が報告するECONtributeの定例研究セミナー（報告テーマは未公表）。",
-   "summary_en": "Michaela Pagel (Washington University in St. Louis) gives a talk at this regular ECONtribute research seminar (topic not yet announced).",
-   "summary_de": "Michaela Pagel (Washington University in St. Louis) hält einen Vortrag im Rahmen dieses regelmäßigen ECONtribute-Forschungsseminars (Thema noch nicht bekannt gegeben).",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ECONtribute",
-   "title_short": "Economics Research Seminar",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": "13:15",
-   "speakers": [
-    {
-     "name": "Michaela Pagel",
-     "org": "Washington University in St. Louis",
-     "role": null
-    }
-   ],
-   "source": "ECONtribute (Bonn/Köln) – Events",
-   "id": "bc8651910ed8a6b7",
    "first_seen": "2026-10-09",
    "notables": [],
    "notable_tier": null
@@ -15597,49 +15322,6 @@
    ],
    "source": "DIW Berlin – Veranstaltungen",
    "id": "ecf6fcb8730f8466",
-   "first_seen": "2026-10-14",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "title": "Geschlechtsspezifische Unterschiede beim Lohnaufschlag in städtischen Gebieten",
-   "title_ja": "都市部の男女賃金格差",
-   "organizer": "DIW Berlin",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": "12:30",
-   "time_end": "13:30",
-   "city": "Berlin",
-   "venue": "Karl-Popper-Raum, DIW Berlin",
-   "format": "onsite",
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.diw.de/de/diw_01.c.1022158.de/veranstaltungen/geschlechtsspezifische_unterschiede_beim_lohnaufschlag_in_st___n_gebieten__zusammen_mit_kenza_elass_und_christian_schluter.html",
-   "summary_ja": "DIW BerlinのSOEPブラウンバッグセミナーで、都市部における男女間の賃金プレミアム差についての研究発表が行われる。",
-   "summary_en": "A SOEP Brown Bag Seminar at DIW Berlin presenting research on gender differences in urban wage premiums, by Cecilia García Peñalosa.",
-   "summary_de": "Im Rahmen des SOEP Brown Bag Seminars am DIW Berlin stellt Cecilia García Peñalosa Forschung zu geschlechtsspezifischen Unterschieden beim Lohnaufschlag in städtischen Gebieten vor.",
-   "language": "de",
-   "country": "DE",
-   "organizer_short": "DIW Berlin",
-   "title_short": "Gender Wage Gap Urban Areas",
-   "importance": 0,
-   "registration_url": null,
-   "speakers": [
-    {
-     "name": "Cecilia García Peñalosa",
-     "org": null,
-     "role": null
-    }
-   ],
-   "source": "DIW Berlin – Veranstaltungen",
-   "id": "f74acec966725df5",
    "first_seen": "2026-10-14",
    "notables": [],
    "notable_tier": null
@@ -18371,49 +18053,6 @@
    "notable_tier": null
   },
   {
-   "title": "New Products",
-   "title_ja": "新製品(研究セミナー)",
-   "organizer": "ZEW Mannheim",
-   "date_start": "2026-10-28",
-   "date_end": null,
-   "time": null,
-   "city": "Mannheim",
-   "venue": "ZEW Mannheim",
-   "format": null,
-   "themes": [
-    "real_economy"
-   ],
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": null,
-   "registration_note": null,
-   "registration_note_en": null,
-   "registration_note_de": null,
-   "url": "https://www.zew.de/veranstaltungen-und-weiterbildung/detail/new-products/5017?cHash=13525b632edc211894e6b3c6b3e72479",
-   "summary_ja": "ZEW Mannheim Applied Seminar。Bruno Pellegrino氏(コロンビア大学)が「New Products」を報告。",
-   "summary_en": "Mannheim Applied Seminar at ZEW. Bruno Pellegrino (Columbia University) presents \"New Products\".",
-   "summary_de": "Mannheim Applied Seminar am ZEW. Bruno Pellegrino (Columbia University) präsentiert „New Products“.",
-   "language": "en",
-   "country": "DE",
-   "organizer_short": "ZEW",
-   "title_short": "New Products Research",
-   "importance": 0,
-   "registration_url": null,
-   "time_end": null,
-   "speakers": [
-    {
-     "name": "Bruno Pellegrino",
-     "org": "Columbia",
-     "role": "Ass. Prof."
-    }
-   ],
-   "source": "ZEW Mannheim – Veranstaltungen",
-   "id": "08613b37194e708e",
-   "first_seen": "2026-10-24",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
    "title": "Turning sustainability disclosures into risk insights: New sustainability risk management tools and research",
    "title_ja": "サステナビリティ開示をリスク洞察へ：新たなリスク管理ツールと研究",
    "organizer": "UNEP Finance Initiative",
@@ -19388,49 +19027,6 @@
    "importance": 0,
    "source": "NBS – Národná banka Slovenska – Events",
    "id": "af1c5460e990f7da",
-   "first_seen": "2026-10-27",
-   "notables": [],
-   "notable_tier": null
-  },
-  {
-   "date_end": null,
-   "time": "12:00",
-   "time_end": "13:00",
-   "city": "Berlin",
-   "venue": "Anna J. Schwartz Room (Room 5.2.010), DIW Berlin",
-   "format": "onsite",
-   "fee": "unknown",
-   "fee_amount": null,
-   "open_to_public": false,
-   "registration_note": "非公開(所内クラスターセミナー)",
-   "registration_note_en": "Not public (internal cluster seminar)",
-   "registration_note_de": "Nicht öffentlich (interne Cluster-Veranstaltung)",
-   "registration_url": null,
-   "speakers": [
-    {
-     "name": "Honorata Bogusz",
-     "org": "DIW Berlin",
-     "role": null
-    }
-   ],
-   "language": "en",
-   "title": "Sex, Gender, and Graduate Wages",
-   "title_ja": "性別・ジェンダーと大卒者の賃金",
-   "organizer": "DIW Berlin",
-   "date_start": "2026-10-28",
-   "themes": [
-    "real_economy"
-   ],
-   "url": "https://www.diw.de/de/diw_01.c.1023178.de/veranstaltungen/sex__gender__and_graduate_wages.html",
-   "summary_ja": "DIW Berlinの「公共財政と生活状況」クラスターセミナー。Honorata Bogusz氏が性別・ジェンダーと大卒者の賃金について報告する。",
-   "summary_en": "DIW Berlin cluster seminar on Public Finance and Living Conditions: Honorata Bogusz (DIW Berlin) presents research on sex, gender and graduate wages.",
-   "summary_de": "Cluster-Seminar Öffentliche Finanzen und Lebenslagen am DIW Berlin: Honorata Bogusz (DIW Berlin) stellt Forschung zu Geschlecht und Löhnen von Hochschulabsolventen vor.",
-   "country": "DE",
-   "organizer_short": "DIW Berlin",
-   "title_short": "Gender and Graduate Wages",
-   "importance": 0,
-   "source": "DIW Berlin – Veranstaltungen",
-   "id": "ce1083313d11c3ba",
    "first_seen": "2026-10-27",
    "notables": [],
    "notable_tier": null
@@ -22623,7 +22219,13 @@
    "importance": 0,
    "registration_url": null,
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Josephine Semb",
+     "org": null,
+     "role": null
+    }
+   ],
    "source": "DIW Berlin – Veranstaltungen",
    "id": "7562b1fa13a2f066",
    "first_seen": "2026-11-06",
@@ -22978,23 +22580,33 @@
    "importance": 1,
    "speakers": [
     {
+     "name": "Nicola Brandt",
+     "org": null,
+     "role": null
+    },
+    {
      "name": "Chiara Criscuolo",
-     "org": "OECD",
+     "org": null,
      "role": null
     },
     {
      "name": "Sandra Detzer",
      "org": null,
-     "role": "Member of the German Bundestag"
+     "role": null
+    },
+    {
+     "name": "Bernhard Ganglmair",
+     "org": null,
+     "role": null
     },
     {
      "name": "Alexander Glätzle",
-     "org": "planqc",
-     "role": "CEO and Co-Founder"
+     "org": null,
+     "role": null
     },
     {
      "name": "Alexander Schiersch",
-     "org": "DIW Berlin",
+     "org": null,
      "role": null
     }
    ],
@@ -24947,13 +24559,13 @@
      "role": null
     },
     {
-     "name": "Helen Winter",
+     "name": "Larissa Holzki",
      "org": null,
      "role": null
     },
     {
      "name": "Marcel Fratzscher",
-     "org": "DIW Berlin",
+     "org": null,
      "role": null
     }
    ],
@@ -29384,8 +28996,13 @@
    "speakers": [
     {
      "name": "Justus Haucap",
-     "org": "DICE",
-     "role": "Direktor des DICE"
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Alexander S. Kritikos",
+     "org": null,
+     "role": null
     }
    ],
    "source": "DIW Berlin – Veranstaltungen",
@@ -29941,10 +29558,474 @@
    "importance": 1,
    "registration_url": "https://www.omfif.org/meetings/european-banking-resilience-strengthening-resolution-and-crisis-preparedness/",
    "time_end": null,
-   "speakers": [],
+   "speakers": [
+    {
+     "name": "Dominique Laboureix",
+     "org": "SRB",
+     "role": "Chair"
+    },
+    {
+     "name": "David Marsh",
+     "org": null,
+     "role": "Chairman"
+    }
+   ],
    "source": "OMFIF – Events/Meetings",
    "id": "f71a1829c7f2fea0",
    "first_seen": "2026-11-27",
+   "notables": [
+    {
+     "person": "dominique-laboureix",
+     "name": "Dominique Laboureix",
+     "group": "supervisor",
+     "tier": 1,
+     "short": "SRB Chair",
+     "former": false
+    }
+   ],
+   "notable_tier": 1
+  },
+  {
+   "title_ja": "国際マクロ経済・金融ワークショップ(第2回、SNB/ECB共催)",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "venue": null,
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "論文募集(締切2027-01-31)。参加は採択者中心、一般登録の案内なし",
+   "registration_note_en": "Call for papers (deadline 31 Jan 2027); attendance mainly for accepted authors",
+   "registration_note_de": "Call for Papers (bis 31.01.2027); Teilnahme v.a. für angenommene Beiträge",
+   "registration_url": null,
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Anusha Chari",
+     "org": "UNC",
+     "role": null
+    },
+    {
+     "name": "Ralph Ossa",
+     "org": "University of Zurich",
+     "role": null
+    },
+    {
+     "name": "Hélène Rey",
+     "org": "BIS",
+     "role": null
+    }
+   ],
+   "title": "Workshop on International Macroeconomics and Finance (2nd edition)",
+   "organizer": "Swiss National Bank / European Central Bank",
+   "date_start": "2027-07-02",
+   "city": "Zurich",
+   "themes": [
+    "central_bank",
+    "real_economy"
+   ],
+   "url": "https://www.suerf.org/membership/member-announcements/workshop-on-international-macroeconomics-and-finance-2-july-2027/",
+   "summary_ja": "SNBとECBが共催する国際マクロ・金融ワークショップ。地政学的緊張や貿易・金融の分断が貿易、資本フロー、ショック波及に与える影響を議論する。",
+   "summary_en": "Joint SNB-ECB workshop on how geopolitical tensions and trade and financial fragmentation reshape trade, capital flows and shock transmission.",
+   "summary_de": "Gemeinsamer Workshop von SNB und EZB zu geopolitischen Spannungen, Handels- und Finanzfragmentierung und deren Folgen für Handel und Kapitalströme.",
+   "country": "CH",
+   "organizer_short": "SNB/ECB",
+   "title_short": "International Macro and Finance",
+   "importance": 2,
+   "source": "web検索(discovery)",
+   "id": "04b0c570c665f08b",
+   "first_seen": "2026-11-28",
+   "notables": [
+    {
+     "person": "helene-rey",
+     "name": "Hélène Rey",
+     "group": "bis",
+     "tier": 2,
+     "short": "BIS Chief Economist",
+     "former": false
+    }
+   ],
+   "notable_tier": 2
+  },
+  {
+   "title_ja": "ブンデスバンク金融安定報告書の紹介",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "14:15",
+   "venue": "Karl Popper Room, DIW Berlin",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "de",
+   "speakers": [
+    {
+     "name": "Benedikt Schwemmlein",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Tobias Herbst",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Pia Hüttl",
+     "org": null,
+     "role": null
+    }
+   ],
+   "title": "Präsentation des Finanzstabilitätsberichts der Bundesbank",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-12-09",
+   "city": "Berlin",
+   "themes": [
+    "fin_markets",
+    "central_bank"
+   ],
+   "url": "https://www.diw.de/de/diw_01.c.1026273.de/veranstaltungen/praesentation_des_finanzstabilitaetsberichts_der_bundesbank_2026.html",
+   "summary_ja": "ドイツ連邦銀行の2026年金融安定報告書を紹介する公開講演。",
+   "summary_en": "Public presentation of the Deutsche Bundesbank's 2026 Financial Stability Report at DIW Berlin.",
+   "summary_de": "Öffentliche Vorstellung des Finanzstabilitätsberichts 2026 der Deutschen Bundesbank am DIW Berlin.",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Financial Stability Report",
+   "importance": 1,
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "49db5a5e4ebfebe2",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "BDEWコングレス2027「確実に!」",
+   "date_end": "2027-06-24",
+   "time": "09:30",
+   "time_end": null,
+   "venue": "STATION-Berlin",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": "オンラインでチケット申込(料金は掲載なし)",
+   "registration_note_en": "Tickets via online registration (fee not stated)",
+   "registration_note_de": "Ticketbuchung über die Online-Anmeldung (Gebühr nicht genannt)",
+   "registration_url": "https://bdew-kongress.anmeldung.medien.de",
+   "language": "de",
+   "speakers": [],
+   "title": "BDEW Kongress 2027: MIT SICHERHEIT!",
+   "organizer": "BDEW Bundesverband der Energie- und Wasserwirtschaft",
+   "date_start": "2027-06-23",
+   "city": "Berlin",
+   "themes": [
+    "real_economy",
+    "geopolitics"
+   ],
+   "url": "https://www.bdew.de/service/bdew-kongress-2027/",
+   "summary_ja": "ドイツ・エネルギー業界最大の会合。2027年のテーマは「安全」で、安定供給、送電網、重要インフラ、サイバー安全、レジリエンスを扱う。",
+   "summary_en": "Germany's largest energy industry gathering, themed security: reliable supply, grids, critical infrastructure, cyber security and resilience.",
+   "summary_de": "Größtes Branchentreffen der Energiewirtschaft unter dem Motto Sicherheit: Versorgung, Netze, kritische Infrastruktur, Cybersicherheit und Resilienz.",
+   "country": "DE",
+   "organizer_short": "BDEW",
+   "title_short": "Energy Security and Resilience",
+   "importance": 2,
+   "source": "web検索(discovery)",
+   "id": "7cdab7f0a12f259b",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "SETテックフェスティバル&SET賞授賞式 2027",
+   "date_end": null,
+   "time": "09:00",
+   "time_end": "22:00",
+   "venue": "Gasometer, EUREF-Campus 17",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": null,
+   "speakers": [],
+   "title": "SET Tech Festival and SET Award Ceremony 2027",
+   "organizer": "dena",
+   "date_start": "2027-03-11",
+   "city": "Berlin",
+   "themes": [
+    "climate_esg"
+   ],
+   "url": "https://veranstaltungen.dena.de/event.php?vnrtoken=JJroCs4Axv2BWBq+sa+Q4eZONKuY3JWP1UBN9bKIwBm1AKKf2eY2WX7cVsJbsy1ElPkV+vvNYvrZTlKKPVHmx2OK7tikhCCMSH+AjHKTFQtVAPtLO05Q7lpN1S/bJrqUuLqmAmrrfbRGtSWOqgcZoHV+rnHtQYQfLHyEQ0GFHfuyVLy4QR5CPeuWCEiX/6jaXjPJDwd6HUqFpFxwnnQ8JCZ0bO/THD6ztqOWq1une9W+6OC7qfX1yDx/NzKYft/HmESdD/Zgf3RqL3njQNcvNSTypq8nKw2h5YmrEc4IDQAYcPdgI85VNZXIlHnhjlO5zu3QU1JtJCplChZ4uoxYvFWYf/7/emXYnSUs9aNbV6Y1&intLinkSource=OVLli",
+   "summary_ja": "エネルギー転換分野の技術フェスティバルとSET賞授賞式を、2027年3月11日にベルリンのGasometerで開催する。",
+   "summary_en": "A full-day SET Tech Festival combined with the SET Award Ceremony 2027 at the Gasometer in Berlin.",
+   "summary_de": "Ganztägiges SET Tech Festival mit der SET-Award-Verleihung 2027 im Gasometer in Berlin.",
+   "country": "DE",
+   "organizer_short": "dena",
+   "title_short": "Energy Transition Tech Festival",
+   "importance": 1,
+   "source": "dena – Deutsche Energie-Agentur (Berlin)",
+   "id": "85e30f7a40084bdb",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "招待講演シリーズ: 高齢化と政府債務",
+   "date_end": null,
+   "time": "16:00",
+   "time_end": null,
+   "venue": null,
+   "format": null,
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "de",
+   "speakers": [
+    {
+     "name": "Ludwig Straub",
+     "org": "Bundesbank",
+     "role": null
+    },
+    {
+     "name": "Philipp Nimmermann",
+     "org": "Bundesbank",
+     "role": null
+    }
+   ],
+   "title": "Bundesbank Invited Speakers Series: Alterung und Staatsschulden",
+   "organizer": "Deutsche Bundesbank",
+   "date_start": "2026-12-03",
+   "city": "Frankfurt am Main",
+   "themes": [
+    "real_economy"
+   ],
+   "url": "https://www.bundesbank.de/de/service/termine",
+   "summary_ja": "連邦銀行の招待講演シリーズとして、人口高齢化と国家債務をテーマにパネルディスカッションを行う。",
+   "summary_en": "A Bundesbank Invited Speakers Series panel discussion on population ageing and sovereign debt.",
+   "summary_de": "Podiumsdiskussion der Invited Speakers Series der Bundesbank zu Alterung und Staatsschulden.",
+   "country": "DE",
+   "organizer_short": "Bundesbank",
+   "title_short": "Ageing and Sovereign Debt",
+   "importance": 1,
+   "source": "Bundesbank – Termine",
+   "id": "97d148850e00b25b",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "マクロ経済部門アルムナイ・ワークショップ",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "venue": "DIW Berlin",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": false,
+   "registration_note": "非公開のワークショップ",
+   "registration_note_en": "Closed workshop (not public)",
+   "registration_note_de": "Nicht öffentlicher Workshop",
+   "registration_url": null,
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Stefan Gebauer",
+     "org": "ECB",
+     "role": null
+    },
+    {
+     "name": "Pablo Anaya Longaric",
+     "org": "ECB",
+     "role": null
+    },
+    {
+     "name": "Catalina Martinez Hernandez",
+     "org": "ECB",
+     "role": null
+    },
+    {
+     "name": "Gökhan Ider",
+     "org": "Banco de España",
+     "role": null
+    },
+    {
+     "name": "Anna Gibert",
+     "org": "Bocconi",
+     "role": null
+    },
+    {
+     "name": "Mahmut S. İpek",
+     "org": "Bilkent",
+     "role": null
+    },
+    {
+     "name": "Frederik Kurcz",
+     "org": "University of Bonn",
+     "role": null
+    },
+    {
+     "name": "Kristin Trautmann",
+     "org": null,
+     "role": null
+    }
+   ],
+   "title": "Alumni Workshop of the Macroeconomics Department",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-12-17",
+   "city": "Berlin",
+   "themes": [
+    "central_bank",
+    "real_economy"
+   ],
+   "url": "https://www.diw.de/de/diw_01.c.1026901.de/veranstaltungen/back_to_macro.html",
+   "summary_ja": "DIWマクロ経済部門のOB・OGによる非公開の研究ワークショップ。",
+   "summary_en": "Closed research workshop of alumni of the DIW Macroeconomics Department.",
+   "summary_de": "Nicht öffentlicher Forschungsworkshop der Alumni der Makroökonomie-Abteilung des DIW Berlin.",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Macro Alumni Workshop",
+   "importance": 1,
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "a6b93515baa1d10b",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "エネルギー・送電インフラの持続的規制(Rosellón教授記念シンポ)",
+   "date_end": null,
+   "time": "13:00",
+   "time_end": "15:00",
+   "venue": "Karl Popper Room, DIW Berlin",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": true,
+   "registration_note": null,
+   "registration_note_en": null,
+   "registration_note_de": null,
+   "registration_url": null,
+   "language": "en",
+   "speakers": [
+    {
+     "name": "Maria Teresa Costa Campi",
+     "org": null,
+     "role": null
+    },
+    {
+     "name": "Wolf-Peter Schill",
+     "org": null,
+     "role": null
+    }
+   ],
+   "title": "Sustainable Regulation of Energy and Transmission Infrastructure - A Special SÖT Symposium in Honor of Professor Juan Rosellón, PhD",
+   "organizer": "DIW Berlin",
+   "date_start": "2026-12-03",
+   "city": "Berlin",
+   "themes": [
+    "real_economy",
+    "climate_esg"
+   ],
+   "url": "https://www.diw.de/de/diw_01.c.1026988.de/veranstaltungen/sustainable_regulation_of_energy_and_transmission_infrastruc___ial_soet_symposium_in_honor_of_professor_juan_rosell__n__phd.html",
+   "summary_ja": "エネルギーおよび送電インフラの規制の持続可能性を扱う、Juan Rosellón 教授記念の特別 SÖT シンポジウム。",
+   "summary_en": "A special SÖT symposium honoring Professor Juan Rosellón on the sustainable regulation of energy and transmission infrastructure.",
+   "summary_de": "Ein SÖT-Sondersymposium zu Ehren von Professor Juan Rosellón über die nachhaltige Regulierung von Energie- und Übertragungsinfrastruktur.",
+   "country": "DE",
+   "organizer_short": "DIW Berlin",
+   "title_short": "Energy Infrastructure Regulation",
+   "importance": 1,
+   "source": "DIW Berlin – Veranstaltungen",
+   "id": "c8c7ec0764a096eb",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "ドレスデン・エネルギー・サミット2027",
+   "date_end": null,
+   "time": null,
+   "time_end": null,
+   "venue": "Dresden Congress Center",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "参加費は未定、申込方法は掲載なし",
+   "registration_note_en": "Fee to be determined; registration details not yet published",
+   "registration_note_de": "Teilnahmegebühr noch offen; Anmeldeinformationen noch nicht veröffentlicht",
+   "registration_url": null,
+   "language": "en",
+   "speakers": [],
+   "title": "Dresden Energy Summit 2027",
+   "organizer": "TU Dresden – Future Energy Lab",
+   "date_start": "2027-05-26",
+   "city": "Dresden",
+   "themes": [
+    "real_economy",
+    "climate_esg"
+   ],
+   "url": "https://tu-dresden.de/ing/forschung/bereichs-labs/futureenergylab/veranstaltungen/energy-summit-2027-1?set_language=en",
+   "summary_ja": "エネルギー転換を再エネ拡大にとどまらない課題として捉え、自己組織化・適応型のエネルギーシステムを議論するサミット。基調講演、パネル、ワークショップを実施する。",
+   "summary_en": "Summit on the energy transition as a challenge beyond expanding renewables, asking how a self-organizing, adaptive energy system can work in practice. Keynotes, panels and workshops.",
+   "summary_de": "Gipfel zur Energiewende als Aufgabe jenseits des Ausbaus erneuerbarer Energien: Wie kann ein selbstorganisierendes, adaptives Energiesystem funktionieren? Keynotes, Panels und Workshops.",
+   "country": "DE",
+   "organizer_short": "TU Dresden",
+   "title_short": "Adaptive Energy Systems",
+   "importance": 1,
+   "source": "web検索(discovery)",
+   "id": "d0152548491921ec",
+   "first_seen": "2026-11-28",
+   "notables": [],
+   "notable_tier": null
+  },
+  {
+   "title_ja": "未来会議「電圧転換」(電化)",
+   "date_end": null,
+   "time": "10:00",
+   "time_end": "16:00",
+   "venue": "Bundesumweltministerium",
+   "format": "onsite",
+   "fee": "unknown",
+   "fee_amount": null,
+   "open_to_public": null,
+   "registration_note": "申込・参加費の情報は掲載なし",
+   "registration_note_en": "No registration or fee information on the page",
+   "registration_note_de": "Keine Angaben zu Anmeldung oder Gebühr",
+   "registration_url": null,
+   "language": "de",
+   "speakers": [],
+   "title": "Zukunftskongress Spannungswechsel",
+   "organizer": "Bundesumweltministerium (BMUKN)",
+   "date_start": "2027-02-09",
+   "city": "Berlin",
+   "themes": [
+    "climate_esg",
+    "real_economy"
+   ],
+   "url": "https://www.bundesumweltministerium.de/veranstaltung/zukunftskongress-spannungswechsel",
+   "summary_ja": "スマートな電化が気候保護と経済力にどう貢献するかを議論する会議。再エネ、電動モビリティ、ヒートポンプ、蓄電池、産業の電化を取り上げる。",
+   "summary_en": "Congress on how smart electrification can support climate protection and economic strength: renewables, e-mobility, heat pumps, battery storage and industrial electrification.",
+   "summary_de": "Kongress dazu, wie smarte Elektrifizierung Klimaschutz und Wirtschaftskraft stärken kann: Erneuerbare, E-Mobilität, Wärmepumpen, Batteriespeicher, Industrie.",
+   "country": "DE",
+   "organizer_short": "BMUKN",
+   "title_short": "Smart Electrification",
+   "importance": 1,
+   "source": "web検索(discovery)",
+   "id": "d5a66a1905edd2e8",
+   "first_seen": "2026-11-28",
    "notables": [],
    "notable_tier": null
   }
